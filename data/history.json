@@ -2,7 +2,7 @@
   {
     "date": "2026-09-02",
     "reading": {
-      "intro": "The quiet, safety-first summer ended fast: Anthropic shipped a Fable/Mythos 5.1 upgrade and OpenAI's Astra is right behind it — clearing the company's own 'Critical' cybersecurity threshold in the process. Add a new Fei-Fei Li world model, a $47B Cognition valuation, a Bernie Sanders op-ed calling for a global pause, and a sober postmortem on the OpenAI/Hugging Face agent breach, and it's a dense news day. Newsletters covering the same launches today: TLDR AI, The Rundown, and Towards Data Science.",
+      "intro": "The quiet, safety-first summer ended fast: Anthropic shipped a Fable/Mythos 5.1 upgrade and OpenAI's Astra is right behind it \u2014 clearing the company's own 'Critical' cybersecurity threshold in the process. Add a new Fei-Fei Li world model, a $47B Cognition valuation, a Bernie Sanders op-ed calling for a global pause, and a sober postmortem on the OpenAI/Hugging Face agent breach, and it's a dense news day. Newsletters covering the same launches today: TLDR AI, The Rundown, and Towards Data Science.",
       "items": [
         {
           "title": "Anthropic ships Claude Fable 5.1 and Mythos 5.1",
@@ -16,7 +16,7 @@
           "title": "OpenAI says Astra is its first model to cross a 'Critical' cyber-risk threshold",
           "url": "https://openai.com/index/path-to-astra/",
           "source": "OpenAI (via CNBC, TLDR AI, The Rundown)",
-          "why": "Astra can reportedly find and exploit previously unknown vulnerabilities without step-by-step human guidance, tripping OpenAI's strictest Preparedness Framework tier. Release will be limited and reviewed by outside safety evaluators first — a direct safety-vs-shipping test landing the same week as Anthropic's upgrade.",
+          "why": "Astra can reportedly find and exploit previously unknown vulnerabilities without step-by-step human guidance, tripping OpenAI's strictest Preparedness Framework tier. Release will be limited and reviewed by outside safety evaluators first \u2014 a direct safety-vs-shipping test landing the same week as Anthropic's upgrade.",
           "minutes": 4,
           "skip_ok": false
         },
@@ -24,7 +24,7 @@
           "title": "World Labs' Atlas turns photos into full 3D scenes and video",
           "url": "https://www.worldlabs.ai/blog/atlas",
           "source": "World Labs (via TLDR AI)",
-          "why": "Fei-Fei Li's startup released a world-generation model trained from scratch to jointly handle text, images, video, and 3D in a shared spatial context, aimed at simulation and reconstruction rather than chat — an early look at models built around spatial intelligence, not language.",
+          "why": "Fei-Fei Li's startup released a world-generation model trained from scratch to jointly handle text, images, video, and 3D in a shared spatial context, aimed at simulation and reconstruction rather than chat \u2014 an early look at models built around spatial intelligence, not language.",
           "minutes": 10,
           "skip_ok": true
         },
@@ -48,7 +48,7 @@
           "title": "Bernie Sanders escalates the AI-pause conversation",
           "url": "https://www.foxnews.com/opinion/sen-bernie-sanders-yes-we-must-hit-pause-button-ai-before-it-is-too-late",
           "source": "Fox News op-ed (via The Rundown)",
-          "why": "Sanders calls for a global pause on frontier model development, citing job losses, environmental costs, and recent security incidents including the OpenAI/Hugging Face breach — notable for appearing in a conservative outlet and for urging a 'Cold War'-style US-China AI deal.",
+          "why": "Sanders calls for a global pause on frontier model development, citing job losses, environmental costs, and recent security incidents including the OpenAI/Hugging Face breach \u2014 notable for appearing in a conservative outlet and for urging a 'Cold War'-style US-China AI deal.",
           "minutes": 4,
           "skip_ok": true
         },
@@ -56,7 +56,7 @@
           "title": "Meta launches Muse Voice Transcribe",
           "url": "https://research.meta.ai/blog/introducing-muse-voice-transcribe",
           "source": "Meta AI Research (via TLDR AI, The Rundown)",
-          "why": "Meta's first real-time audio-perception model handles streaming speech recognition and diarization for 20+ speakers plus multilingual code-switching, and reportedly tops Artificial Analysis's leaderboard — relevant for anyone building live transcription or meeting-notes tools.",
+          "why": "Meta's first real-time audio-perception model handles streaming speech recognition and diarization for 20+ speakers plus multilingual code-switching, and reportedly tops Artificial Analysis's leaderboard \u2014 relevant for anyone building live transcription or meeting-notes tools.",
           "minutes": 4,
           "skip_ok": true
         },
@@ -64,7 +64,7 @@
           "title": "Your LLM can return perfect JSON and still be wrong",
           "url": "https://towardsdatascience.com/your-llm-can-return-perfect-json-and-still-be-wrong/",
           "source": "Towards Data Science",
-          "why": "A practical reminder that schema-valid structured output doesn't guarantee semantically correct data — validation needs to check values, not just shape, which matters for anyone wiring LLM outputs into production pipelines.",
+          "why": "A practical reminder that schema-valid structured output doesn't guarantee semantically correct data \u2014 validation needs to check values, not just shape, which matters for anyone wiring LLM outputs into production pipelines.",
           "minutes": 6,
           "skip_ok": true
         }
@@ -72,12 +72,22 @@
       "quiz": [
         {
           "q": "What is the name of the more permissive sibling model Anthropic released alongside Claude Fable 5.1?",
-          "choices": ["Mythos 5.1", "Opus 5.1", "Sonnet 5.1", "Sage 5.1"],
+          "choices": [
+            "Mythos 5.1",
+            "Opus 5.1",
+            "Sonnet 5.1",
+            "Sage 5.1"
+          ],
           "a": "Mythos 5.1"
         },
         {
           "q": "By roughly how much did Anthropic say Fable 5.1 cuts typical costs versus Fable 5?",
-          "choices": ["10%", "25%", "50%", "75%"],
+          "choices": [
+            "10%",
+            "25%",
+            "50%",
+            "75%"
+          ],
           "a": "25%"
         },
         {
@@ -86,7 +96,12 @@
         },
         {
           "q": "Which upcoming OpenAI model was the first to cross the company's 'Critical' cybersecurity capability threshold?",
-          "choices": ["Astra", "GPT-5.6 Sol", "o5", "Orion"],
+          "choices": [
+            "Astra",
+            "GPT-5.6 Sol",
+            "o5",
+            "Orion"
+          ],
           "a": "Astra"
         },
         {
@@ -95,7 +110,12 @@
         },
         {
           "q": "Whose startup released the Atlas world model?",
-          "choices": ["Fei-Fei Li (World Labs)", "Yann LeCun", "Andrew Ng", "Ilya Sutskever"],
+          "choices": [
+            "Fei-Fei Li (World Labs)",
+            "Yann LeCun",
+            "Andrew Ng",
+            "Ilya Sutskever"
+          ],
           "a": "Fei-Fei Li (World Labs)"
         },
         {
@@ -108,7 +128,12 @@
         },
         {
           "q": "What was Cognition's valuation in May 2026, before this new ~$47B round?",
-          "choices": ["$10B", "$26B", "$47B", "$60B"],
+          "choices": [
+            "$10B",
+            "$26B",
+            "$47B",
+            "$60B"
+          ],
           "a": "$26B"
         },
         {
@@ -117,6 +142,39 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Catch the LLM extractions that are schema-valid but factually wrong.",
+      "category": "data/eval exercise",
+      "why": "Riffs directly on today's Towards Data Science piece, 'Your LLM can return perfect JSON and still be wrong' \u2014 the article argues schema validation alone doesn't catch semantic errors. Building a small semantic-validation layer on top of Claude's structured output makes that lesson concrete: you'll watch JSON-schema checks pass while your own logic checks catch hallucinated totals, impossible dates, and invented line items.",
+      "plan": [
+        {
+          "step": "Define a small extraction task: turn a plain-text receipt/invoice into a JSON schema (items, quantities, unit_price, total, date, vendor).",
+          "minutes": 10
+        },
+        {
+          "step": "Write 5 test documents, including 2-3 'traps' where a plausible extraction would be schema-valid but semantically wrong (e.g. line items that don't sum to the stated total, a delivery date before the order date, a vendor name not present in the source text).",
+          "minutes": 10
+        },
+        {
+          "step": "Call the Claude API with a JSON schema tool definition to extract structured data from each document.",
+          "minutes": 15
+        },
+        {
+          "step": "Write a semantic validator with Pydantic + custom checks: sum(line items) == total, dates are chronologically sane, every extracted value is traceable back to the source text.",
+          "minutes": 15
+        },
+        {
+          "step": "Run the pipeline over all 5 docs and print a report: which passed schema validation, which the semantic layer additionally flagged, and why.",
+          "minutes": 10
+        }
+      ],
+      "done_looks_like": "A single Python script that extracts all 5 test documents via Claude, shows all 5 pass JSON-schema validation, but the semantic validator flags 2-3 of them with human-readable reasons (e.g. 'total $84.50 does not match sum of line items $76.00') printed as a clear pass/fail table.",
+      "stretch_goal": "Turn the semantic checks into a reusable @semantic_validate decorator that wraps any Pydantic model, or add a second Claude call that self-critiques its own extraction against the source text before your rule-based checks run.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "Claude API tool-use / structured output",
+        "Pydantic"
+      ]
+    }
   }
 ]
