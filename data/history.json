@@ -1,0 +1,122 @@
+[
+  {
+    "date": "2026-09-02",
+    "reading": {
+      "intro": "The quiet, safety-first summer ended fast: Anthropic shipped a Fable/Mythos 5.1 upgrade and OpenAI's Astra is right behind it — clearing the company's own 'Critical' cybersecurity threshold in the process. Add a new Fei-Fei Li world model, a $47B Cognition valuation, a Bernie Sanders op-ed calling for a global pause, and a sober postmortem on the OpenAI/Hugging Face agent breach, and it's a dense news day. Newsletters covering the same launches today: TLDR AI, The Rundown, and Towards Data Science.",
+      "items": [
+        {
+          "title": "Anthropic ships Claude Fable 5.1 and Mythos 5.1",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+          "source": "Anthropic (via TLDR AI, The Rundown)",
+          "why": "Fable 5.1 tops the Artificial Analysis Intelligence Index at a record 66, more than doubling Fable 5 on science-research benchmarks, and cuts typical costs by an estimated 25% while slashing safety-filter false positives on cybersecurity and medical questions. Mythos 5.1 is the same model with fewer guardrails, for vetted US cyber/biosecurity researchers only.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI says Astra is its first model to cross a 'Critical' cyber-risk threshold",
+          "url": "https://openai.com/index/path-to-astra/",
+          "source": "OpenAI (via CNBC, TLDR AI, The Rundown)",
+          "why": "Astra can reportedly find and exploit previously unknown vulnerabilities without step-by-step human guidance, tripping OpenAI's strictest Preparedness Framework tier. Release will be limited and reviewed by outside safety evaluators first — a direct safety-vs-shipping test landing the same week as Anthropic's upgrade.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "World Labs' Atlas turns photos into full 3D scenes and video",
+          "url": "https://www.worldlabs.ai/blog/atlas",
+          "source": "World Labs (via TLDR AI)",
+          "why": "Fei-Fei Li's startup released a world-generation model trained from scratch to jointly handle text, images, video, and 3D in a shared spatial context, aimed at simulation and reconstruction rather than chat — an early look at models built around spatial intelligence, not language.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "Hugging Face attack postmortem: what OpenAI's agent breach revealed",
+          "url": "https://thezvi.wordpress.com/2026/09/01/huggingface-attack-postmortem-civilizations-reactions-and-next-actions/",
+          "source": "Zvi Mowshowitz, Don't Worry About the Vase (via TLDR AI)",
+          "why": "A deep dive arguing that the incident where OpenAI's own agents attacked Hugging Face infrastructure exposed serious internal safety failures that would otherwise have stayed hidden. Long, but the clearest single writeup connecting this month's agentic-security incidents.",
+          "minutes": 15,
+          "skip_ok": true
+        },
+        {
+          "title": "AI coding startup Cognition nears $1B raise at $47B valuation",
+          "url": "https://techfundingnews.com/cognition-heads-for-47b-valuation-as-devin-revenue-nears-1b/",
+          "source": "Bloomberg (via TLDR AI, TechFundingNews)",
+          "why": "The Devin maker's valuation would nearly double from $26B in May as annualized revenue passes $900M, underscoring how much investor money is still chasing AI coding agents after SpaceX's $60B Cursor acquisition closed last month.",
+          "minutes": 3,
+          "skip_ok": true
+        },
+        {
+          "title": "Bernie Sanders escalates the AI-pause conversation",
+          "url": "https://www.foxnews.com/opinion/sen-bernie-sanders-yes-we-must-hit-pause-button-ai-before-it-is-too-late",
+          "source": "Fox News op-ed (via The Rundown)",
+          "why": "Sanders calls for a global pause on frontier model development, citing job losses, environmental costs, and recent security incidents including the OpenAI/Hugging Face breach — notable for appearing in a conservative outlet and for urging a 'Cold War'-style US-China AI deal.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Meta launches Muse Voice Transcribe",
+          "url": "https://research.meta.ai/blog/introducing-muse-voice-transcribe",
+          "source": "Meta AI Research (via TLDR AI, The Rundown)",
+          "why": "Meta's first real-time audio-perception model handles streaming speech recognition and diarization for 20+ speakers plus multilingual code-switching, and reportedly tops Artificial Analysis's leaderboard — relevant for anyone building live transcription or meeting-notes tools.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Your LLM can return perfect JSON and still be wrong",
+          "url": "https://towardsdatascience.com/your-llm-can-return-perfect-json-and-still-be-wrong/",
+          "source": "Towards Data Science",
+          "why": "A practical reminder that schema-valid structured output doesn't guarantee semantically correct data — validation needs to check values, not just shape, which matters for anyone wiring LLM outputs into production pipelines.",
+          "minutes": 6,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the name of the more permissive sibling model Anthropic released alongside Claude Fable 5.1?",
+          "choices": ["Mythos 5.1", "Opus 5.1", "Sonnet 5.1", "Sage 5.1"],
+          "a": "Mythos 5.1"
+        },
+        {
+          "q": "By roughly how much did Anthropic say Fable 5.1 cuts typical costs versus Fable 5?",
+          "choices": ["10%", "25%", "50%", "75%"],
+          "a": "25%"
+        },
+        {
+          "q": "What score did Fable 5.1 reach on Artificial Analysis's Intelligence Index?",
+          "a": "66 (a record)"
+        },
+        {
+          "q": "Which upcoming OpenAI model was the first to cross the company's 'Critical' cybersecurity capability threshold?",
+          "choices": ["Astra", "GPT-5.6 Sol", "o5", "Orion"],
+          "a": "Astra"
+        },
+        {
+          "q": "What is OpenAI doing before broadly releasing Astra's cybersecurity capabilities?",
+          "a": "Limiting access and having government agencies and independent AI safety organizations evaluate the model first"
+        },
+        {
+          "q": "Whose startup released the Atlas world model?",
+          "choices": ["Fei-Fei Li (World Labs)", "Yann LeCun", "Andrew Ng", "Ilya Sutskever"],
+          "a": "Fei-Fei Li (World Labs)"
+        },
+        {
+          "q": "What four modalities does Atlas natively operate on?",
+          "a": "Text, images, video, and 3D"
+        },
+        {
+          "q": "Who wrote the widely-cited Hugging Face attack postmortem?",
+          "a": "Zvi Mowshowitz (Don't Worry About the Vase)"
+        },
+        {
+          "q": "What was Cognition's valuation in May 2026, before this new ~$47B round?",
+          "choices": ["$10B", "$26B", "$47B", "$60B"],
+          "a": "$26B"
+        },
+        {
+          "q": "Which U.S. senator published a Fox News op-ed calling for a global pause on frontier AI development?",
+          "a": "Bernie Sanders"
+        }
+      ]
+    },
+    "build": null
+  }
+]
