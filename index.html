@@ -333,7 +333,22 @@
         </ol>
       </details>
       <h3 class="section-label">Today's build</h3>
-      <div class="build-box"><p class="muted">Build idea lands at 11:30am.</p></div>
+      <div class="build-box">
+        <h4>Build a minimal agent harness with a real control loop — state, tools, and a stop condition — instead of one big prompt.</h4>
+        <p class="build-cat mono">agent/tool-building</p>
+        <p class="why">Riffs on today&#x27;s &#x27;How to build a reliable agent harness&#x27; (Stencil) — its core argument is that unavoidable complexity (state management, control flow, tool routing) should live in core abstractions, not get pushed onto extensions and users. Building a small but properly-separated harness makes that concrete: you&#x27;ll feel exactly where state, the tool-call loop, and termination logic want to live, instead of just reading about it.</p>
+        <p class="plan-label">Plan (~60 min)</p>
+        <ol class="plan">
+          <li>Set up: install anthropic, define two simple tools via function calling — get_weather(city) (return static/mock data) and calculate(expression) (safe eval via a restricted parser). <span class="mono mins">(10 min)</span></li>
+          <li>Write an explicit AgentState dataclass (messages, tool_call_count, done flag) kept separate from the loop function and from the tool functions — the article&#x27;s core recommendation. <span class="mono mins">(15 min)</span></li>
+          <li>Write the control loop: call Claude with the tool definitions; if the response contains tool_use, execute the matching tool, append the result to state.messages, and loop. Stop when Claude returns final text with no tool calls, or when tool_call_count hits a max. <span class="mono mins">(15 min)</span></li>
+          <li>Test with a prompt that needs both tools in sequence, e.g. &#x27;What&#x27;s the weather in Lagos, and what&#x27;s 45000 * 0.02?&#x27; — confirm the loop calls both tools and produces a final answer. <span class="mono mins">(10 min)</span></li>
+          <li>Add a trace: print state before/after every tool call so the control flow is visible step by step. <span class="mono mins">(10 min)</span></li>
+        </ol>
+        <p class="muted"><strong>Done looks like:</strong> Running the script end to end prints a clean step-by-step trace across 2+ tool calls and terminates cleanly on either a final answer or the max-turns guard, with AgentState only ever mutated by the loop — never directly by the tool functions.</p>
+        <p class="muted"><strong>Stretch goal:</strong> Replace the hard-coded max_turns stop condition with a soft check — ask Claude &#x27;have you fully answered the user&#x27;s question yet?&#x27; — or add a third tool that intentionally raises an error and confirm the loop handles it without corrupting state.</p>
+        <p class="muted"><strong>Tools:</strong> Anthropic Python SDK (anthropic), Claude API tool use / function calling, Python dataclasses</p>
+      </div>
     </section>
 
 <section class="archive">

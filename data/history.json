@@ -308,6 +308,39 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a minimal agent harness with a real control loop — state, tools, and a stop condition — instead of one big prompt.",
+      "category": "agent/tool-building",
+      "why": "Riffs on today's 'How to build a reliable agent harness' (Stencil) — its core argument is that unavoidable complexity (state management, control flow, tool routing) should live in core abstractions, not get pushed onto extensions and users. Building a small but properly-separated harness makes that concrete: you'll feel exactly where state, the tool-call loop, and termination logic want to live, instead of just reading about it.",
+      "plan": [
+        {
+          "step": "Set up: install anthropic, define two simple tools via function calling — get_weather(city) (return static/mock data) and calculate(expression) (safe eval via a restricted parser).",
+          "minutes": 10
+        },
+        {
+          "step": "Write an explicit AgentState dataclass (messages, tool_call_count, done flag) kept separate from the loop function and from the tool functions — the article's core recommendation.",
+          "minutes": 15
+        },
+        {
+          "step": "Write the control loop: call Claude with the tool definitions; if the response contains tool_use, execute the matching tool, append the result to state.messages, and loop. Stop when Claude returns final text with no tool calls, or when tool_call_count hits a max.",
+          "minutes": 15
+        },
+        {
+          "step": "Test with a prompt that needs both tools in sequence, e.g. 'What's the weather in Lagos, and what's 45000 * 0.02?' — confirm the loop calls both tools and produces a final answer.",
+          "minutes": 10
+        },
+        {
+          "step": "Add a trace: print state before/after every tool call so the control flow is visible step by step.",
+          "minutes": 10
+        }
+      ],
+      "done_looks_like": "Running the script end to end prints a clean step-by-step trace across 2+ tool calls and terminates cleanly on either a final answer or the max-turns guard, with AgentState only ever mutated by the loop — never directly by the tool functions.",
+      "stretch_goal": "Replace the hard-coded max_turns stop condition with a soft check — ask Claude 'have you fully answered the user's question yet?' — or add a third tool that intentionally raises an error and confirm the loop handles it without corrupting state.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "Claude API tool use / function calling",
+        "Python dataclasses"
+      ]
+    }
   }
 ]
