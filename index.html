@@ -208,19 +208,17 @@
   .count { color: var(--text-muted); font-weight: 400; font-size: 0.78rem; }
   details.archive-day {
     padding: 0.5rem 0 0.5rem 1rem;
+    border-bottom: 1px solid var(--border);
   }
   details.archive-day summary {
     cursor: pointer;
     font-weight: 500;
     font-size: 0.92rem;
+    font-family: 'Fraunces', Georgia, serif;
   }
-  details.archive-day ul {
-    margin: 0.5rem 0 0.3rem;
-    padding-left: 1.1rem;
-    font-size: 0.88rem;
+  details.archive-day > *:not(summary) {
+    padding-left: 0.2rem;
   }
-  details.archive-day a { color: var(--text); }
-  .archive-build { color: var(--text-muted); font-size: 0.85rem; margin: 0.2rem 0 0; }
   footer.page-foot {
     margin-top: 3.5rem;
     color: var(--text-muted);
@@ -360,9 +358,120 @@
           <details class="archive-week">
             <summary>Week of Aug 31 – Sep 6 <span class="count">(1 days)</span></summary>
             <details class="archive-day">
-              <summary>Wed, Sep 2 <span class="count">(8 items)</span></summary>
-              <ul><li><a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">Anthropic ships Claude Fable 5.1 and Mythos 5.1</a></li><li><a href="https://openai.com/index/path-to-astra/" target="_blank" rel="noopener">OpenAI says Astra is its first model to cross a &#x27;Critical&#x27; cyber-risk threshold</a></li><li><a href="https://www.worldlabs.ai/blog/atlas" target="_blank" rel="noopener">World Labs&#x27; Atlas turns photos into full 3D scenes and video</a></li><li><a href="https://thezvi.wordpress.com/2026/09/01/huggingface-attack-postmortem-civilizations-reactions-and-next-actions/" target="_blank" rel="noopener">Hugging Face attack postmortem: what OpenAI&#x27;s agent breach revealed</a></li><li><a href="https://techfundingnews.com/cognition-heads-for-47b-valuation-as-devin-revenue-nears-1b/" target="_blank" rel="noopener">AI coding startup Cognition nears $1B raise at $47B valuation</a></li><li><a href="https://www.foxnews.com/opinion/sen-bernie-sanders-yes-we-must-hit-pause-button-ai-before-it-is-too-late" target="_blank" rel="noopener">Bernie Sanders escalates the AI-pause conversation</a></li><li><a href="https://research.meta.ai/blog/introducing-muse-voice-transcribe" target="_blank" rel="noopener">Meta launches Muse Voice Transcribe</a></li><li><a href="https://towardsdatascience.com/your-llm-can-return-perfect-json-and-still-be-wrong/" target="_blank" rel="noopener">Your LLM can return perfect JSON and still be wrong</a></li></ul>
-              <p class="archive-build">Build: Catch the LLM extractions that are schema-valid but factually wrong.</p>
+              <summary>Wed, Sep 2</summary>
+      <p class="intro">The quiet, safety-first summer ended fast: Anthropic shipped a Fable/Mythos 5.1 upgrade and OpenAI&#x27;s Astra is right behind it — clearing the company&#x27;s own &#x27;Critical&#x27; cybersecurity threshold in the process. Add a new Fei-Fei Li world model, a $47B Cognition valuation, a Bernie Sanders op-ed calling for a global pause, and a sober postmortem on the OpenAI/Hugging Face agent breach, and it&#x27;s a dense news day. Newsletters covering the same launches today: TLDR AI, The Rundown, and Towards Data Science.</p>
+      <h3 class="section-label">Reading list <span class="total-time">~54 min total</span></h3>
+      <ol class="items">
+        <li class="item">
+          <div class="item-head">
+            <span class="idx">1</span>
+            <a class="item-title" href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">Anthropic ships Claude Fable 5.1 and Mythos 5.1</a>
+          </div>
+          <div class="item-meta"><span class="src">Anthropic (via TLDR AI, The Rundown)</span><span class="dot">&middot;</span><span class="mins">8 min</span></div>
+          <p class="why">Fable 5.1 tops the Artificial Analysis Intelligence Index at a record 66, more than doubling Fable 5 on science-research benchmarks, and cuts typical costs by an estimated 25% while slashing safety-filter false positives on cybersecurity and medical questions. Mythos 5.1 is the same model with fewer guardrails, for vetted US cyber/biosecurity researchers only.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <span class="idx">2</span>
+            <a class="item-title" href="https://openai.com/index/path-to-astra/" target="_blank" rel="noopener">OpenAI says Astra is its first model to cross a &#x27;Critical&#x27; cyber-risk threshold</a>
+          </div>
+          <div class="item-meta"><span class="src">OpenAI (via CNBC, TLDR AI, The Rundown)</span><span class="dot">&middot;</span><span class="mins">4 min</span></div>
+          <p class="why">Astra can reportedly find and exploit previously unknown vulnerabilities without step-by-step human guidance, tripping OpenAI&#x27;s strictest Preparedness Framework tier. Release will be limited and reviewed by outside safety evaluators first — a direct safety-vs-shipping test landing the same week as Anthropic&#x27;s upgrade.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <span class="idx">3</span>
+            <a class="item-title" href="https://www.worldlabs.ai/blog/atlas" target="_blank" rel="noopener">World Labs&#x27; Atlas turns photos into full 3D scenes and video</a>
+          </div>
+          <div class="item-meta"><span class="src">World Labs (via TLDR AI)</span><span class="dot">&middot;</span><span class="mins">10 min</span><span class="skip">skip-ok</span></div>
+          <p class="why">Fei-Fei Li&#x27;s startup released a world-generation model trained from scratch to jointly handle text, images, video, and 3D in a shared spatial context, aimed at simulation and reconstruction rather than chat — an early look at models built around spatial intelligence, not language.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <span class="idx">4</span>
+            <a class="item-title" href="https://thezvi.wordpress.com/2026/09/01/huggingface-attack-postmortem-civilizations-reactions-and-next-actions/" target="_blank" rel="noopener">Hugging Face attack postmortem: what OpenAI&#x27;s agent breach revealed</a>
+          </div>
+          <div class="item-meta"><span class="src">Zvi Mowshowitz, Don&#x27;t Worry About the Vase (via TLDR AI)</span><span class="dot">&middot;</span><span class="mins">15 min</span><span class="skip">skip-ok</span></div>
+          <p class="why">A deep dive arguing that the incident where OpenAI&#x27;s own agents attacked Hugging Face infrastructure exposed serious internal safety failures that would otherwise have stayed hidden. Long, but the clearest single writeup connecting this month&#x27;s agentic-security incidents.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <span class="idx">5</span>
+            <a class="item-title" href="https://techfundingnews.com/cognition-heads-for-47b-valuation-as-devin-revenue-nears-1b/" target="_blank" rel="noopener">AI coding startup Cognition nears $1B raise at $47B valuation</a>
+          </div>
+          <div class="item-meta"><span class="src">Bloomberg (via TLDR AI, TechFundingNews)</span><span class="dot">&middot;</span><span class="mins">3 min</span><span class="skip">skip-ok</span></div>
+          <p class="why">The Devin maker&#x27;s valuation would nearly double from $26B in May as annualized revenue passes $900M, underscoring how much investor money is still chasing AI coding agents after SpaceX&#x27;s $60B Cursor acquisition closed last month.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <span class="idx">6</span>
+            <a class="item-title" href="https://www.foxnews.com/opinion/sen-bernie-sanders-yes-we-must-hit-pause-button-ai-before-it-is-too-late" target="_blank" rel="noopener">Bernie Sanders escalates the AI-pause conversation</a>
+          </div>
+          <div class="item-meta"><span class="src">Fox News op-ed (via The Rundown)</span><span class="dot">&middot;</span><span class="mins">4 min</span><span class="skip">skip-ok</span></div>
+          <p class="why">Sanders calls for a global pause on frontier model development, citing job losses, environmental costs, and recent security incidents including the OpenAI/Hugging Face breach — notable for appearing in a conservative outlet and for urging a &#x27;Cold War&#x27;-style US-China AI deal.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <span class="idx">7</span>
+            <a class="item-title" href="https://research.meta.ai/blog/introducing-muse-voice-transcribe" target="_blank" rel="noopener">Meta launches Muse Voice Transcribe</a>
+          </div>
+          <div class="item-meta"><span class="src">Meta AI Research (via TLDR AI, The Rundown)</span><span class="dot">&middot;</span><span class="mins">4 min</span><span class="skip">skip-ok</span></div>
+          <p class="why">Meta&#x27;s first real-time audio-perception model handles streaming speech recognition and diarization for 20+ speakers plus multilingual code-switching, and reportedly tops Artificial Analysis&#x27;s leaderboard — relevant for anyone building live transcription or meeting-notes tools.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <span class="idx">8</span>
+            <a class="item-title" href="https://towardsdatascience.com/your-llm-can-return-perfect-json-and-still-be-wrong/" target="_blank" rel="noopener">Your LLM can return perfect JSON and still be wrong</a>
+          </div>
+          <div class="item-meta"><span class="src">Towards Data Science</span><span class="dot">&middot;</span><span class="mins">6 min</span><span class="skip">skip-ok</span></div>
+          <p class="why">A practical reminder that schema-valid structured output doesn&#x27;t guarantee semantically correct data — validation needs to check values, not just shape, which matters for anyone wiring LLM outputs into production pipelines.</p>
+        </li>
+      </ol>
+      <h3 class="section-label">Recall quiz</h3>
+      <ol class="quiz">
+<li class="quiz-q"><p>What is the name of the more permissive sibling model Anthropic released alongside Claude Fable 5.1?</p><ul class="choices"><li>Mythos 5.1</li><li>Opus 5.1</li><li>Sonnet 5.1</li><li>Sage 5.1</li></ul></li>
+<li class="quiz-q"><p>By roughly how much did Anthropic say Fable 5.1 cuts typical costs versus Fable 5?</p><ul class="choices"><li>10%</li><li>25%</li><li>50%</li><li>75%</li></ul></li>
+<li class="quiz-q"><p>What score did Fable 5.1 reach on Artificial Analysis&#x27;s Intelligence Index?</p></li>
+<li class="quiz-q"><p>Which upcoming OpenAI model was the first to cross the company&#x27;s &#x27;Critical&#x27; cybersecurity capability threshold?</p><ul class="choices"><li>Astra</li><li>GPT-5.6 Sol</li><li>o5</li><li>Orion</li></ul></li>
+<li class="quiz-q"><p>What is OpenAI doing before broadly releasing Astra&#x27;s cybersecurity capabilities?</p></li>
+<li class="quiz-q"><p>Whose startup released the Atlas world model?</p><ul class="choices"><li>Fei-Fei Li (World Labs)</li><li>Yann LeCun</li><li>Andrew Ng</li><li>Ilya Sutskever</li></ul></li>
+<li class="quiz-q"><p>What four modalities does Atlas natively operate on?</p></li>
+<li class="quiz-q"><p>Who wrote the widely-cited Hugging Face attack postmortem?</p></li>
+<li class="quiz-q"><p>What was Cognition&#x27;s valuation in May 2026, before this new ~$47B round?</p><ul class="choices"><li>$10B</li><li>$26B</li><li>$47B</li><li>$60B</li></ul></li>
+<li class="quiz-q"><p>Which U.S. senator published a Fox News op-ed calling for a global pause on frontier AI development?</p></li>
+      </ol>
+      <details class="answers">
+        <summary>&#128274; Answers</summary>
+        <ol class="answer-list">
+<li><strong>Q1.</strong> Mythos 5.1</li>
+<li><strong>Q2.</strong> 25%</li>
+<li><strong>Q3.</strong> 66 (a record)</li>
+<li><strong>Q4.</strong> Astra</li>
+<li><strong>Q5.</strong> Limiting access and having government agencies and independent AI safety organizations evaluate the model first</li>
+<li><strong>Q6.</strong> Fei-Fei Li (World Labs)</li>
+<li><strong>Q7.</strong> Text, images, video, and 3D</li>
+<li><strong>Q8.</strong> Zvi Mowshowitz (Don&#x27;t Worry About the Vase)</li>
+<li><strong>Q9.</strong> $26B</li>
+<li><strong>Q10.</strong> Bernie Sanders</li>
+        </ol>
+      </details>
+      <h3 class="section-label">Today's build</h3>
+      <div class="build-box">
+        <h4>Catch the LLM extractions that are schema-valid but factually wrong.</h4>
+        <p class="build-cat mono">data/eval exercise</p>
+        <p class="why">Riffs directly on today&#x27;s Towards Data Science piece, &#x27;Your LLM can return perfect JSON and still be wrong&#x27; — the article argues schema validation alone doesn&#x27;t catch semantic errors. Building a small semantic-validation layer on top of Claude&#x27;s structured output makes that lesson concrete: you&#x27;ll watch JSON-schema checks pass while your own logic checks catch hallucinated totals, impossible dates, and invented line items.</p>
+        <p class="plan-label">Plan (~60 min)</p>
+        <ol class="plan">
+          <li>Define a small extraction task: turn a plain-text receipt/invoice into a JSON schema (items, quantities, unit_price, total, date, vendor). <span class="mono mins">(10 min)</span></li>
+          <li>Write 5 test documents, including 2-3 &#x27;traps&#x27; where a plausible extraction would be schema-valid but semantically wrong (e.g. line items that don&#x27;t sum to the stated total, a delivery date before the order date, a vendor name not present in the source text). <span class="mono mins">(10 min)</span></li>
+          <li>Call the Claude API with a JSON schema tool definition to extract structured data from each document. <span class="mono mins">(15 min)</span></li>
+          <li>Write a semantic validator with Pydantic + custom checks: sum(line items) == total, dates are chronologically sane, every extracted value is traceable back to the source text. <span class="mono mins">(15 min)</span></li>
+          <li>Run the pipeline over all 5 docs and print a report: which passed schema validation, which the semantic layer additionally flagged, and why. <span class="mono mins">(10 min)</span></li>
+        </ol>
+        <p class="muted"><strong>Done looks like:</strong> A single Python script that extracts all 5 test documents via Claude, shows all 5 pass JSON-schema validation, but the semantic validator flags 2-3 of them with human-readable reasons (e.g. &#x27;total $84.50 does not match sum of line items $76.00&#x27;) printed as a clear pass/fail table.</p>
+        <p class="muted"><strong>Stretch goal:</strong> Turn the semantic checks into a reusable @semantic_validate decorator that wraps any Pydantic model, or add a second Claude call that self-critiques its own extraction against the source text before your rule-based checks run.</p>
+        <p class="muted"><strong>Tools:</strong> Anthropic Python SDK (anthropic), Claude API tool-use / structured output, Pydantic</p>
+      </div>
             </details>
           </details>
         </details>
