@@ -440,6 +440,30 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Peek at what's actually popular on the platform Nvidia just bought for $12.93B.",
+      "category": "API-exploration",
+      "why": "Riffs on today's Nvidia-acquires-Hugging-Face story — a quick, read-only tour of the huggingface_hub API to see what's trending on the platform right now, the same week it changed hands. Teaches the basics of hitting a real ML-infra API and turning raw metadata into a readable summary, no training or GPUs required.",
+      "plan": [
+        {
+          "step": "Install huggingface_hub (pip install huggingface_hub) and instantiate HfApi() — no auth token needed for read-only browsing.",
+          "minutes": 5
+        },
+        {
+          "step": "Call api.list_models(sort='downloads', direction=-1, limit=10) and print a simple table: model id, downloads, likes for the top 10.",
+          "minutes": 10
+        },
+        {
+          "step": "Pull a larger batch (~50 models), group by pipeline_tag, and print a one-line count breakdown of which task type dominates right now (text-generation vs image vs audio, etc).",
+          "minutes": 10
+        }
+      ],
+      "done_looks_like": "Running the script prints a top-10 table (model id / downloads / likes) plus a one-line breakdown of task types by count — a real snapshot of the Hub, zero manual scraping.",
+      "stretch_goal": "Filter for models tagged 'nvidia' or uploaded in the last 7 days to see how fast the catalog is already reacting to the acquisition news, or plot the tag breakdown with matplotlib.",
+      "tools": [
+        "huggingface_hub (Python)",
+        "Hugging Face Hub API"
+      ]
+    }
   }
 ]

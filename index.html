@@ -288,7 +288,16 @@
 <li><strong>Q10.</strong> Temporarily pause advanced AI development until a new federal AI-safety agency sets rules, and pursue international agreements against building superintelligence anywhere</li>
 </ol></details>
 <h3 class="section-label">Today's build</h3>
-<div class="build-box"><p class="muted">Build idea lands at 11:30am.</p></div>
+<div class="build-box">
+  <h4>Peek at what&#x27;s actually popular on the platform Nvidia just bought for $12.93B.</h4>
+  <p class="build-cat mono">API-exploration</p>
+  <p class="why">Riffs on today&#x27;s Nvidia-acquires-Hugging-Face story — a quick, read-only tour of the huggingface_hub API to see what&#x27;s trending on the platform right now, the same week it changed hands. Teaches the basics of hitting a real ML-infra API and turning raw metadata into a readable summary, no training or GPUs required.</p>
+  <p class="plan-label">Plan (~25 min)</p>
+  <ol class="plan"><li>Install huggingface_hub (pip install huggingface_hub) and instantiate HfApi() — no auth token needed for read-only browsing. <span class="mono mins">(5 min)</span></li><li>Call api.list_models(sort=&#x27;downloads&#x27;, direction=-1, limit=10) and print a simple table: model id, downloads, likes for the top 10. <span class="mono mins">(10 min)</span></li><li>Pull a larger batch (~50 models), group by pipeline_tag, and print a one-line count breakdown of which task type dominates right now (text-generation vs image vs audio, etc). <span class="mono mins">(10 min)</span></li></ol>
+  <p class="muted"><strong>Done looks like:</strong> Running the script prints a top-10 table (model id / downloads / likes) plus a one-line breakdown of task types by count — a real snapshot of the Hub, zero manual scraping.</p>
+  <p class="muted"><strong>Stretch goal:</strong> Filter for models tagged &#x27;nvidia&#x27; or uploaded in the last 7 days to see how fast the catalog is already reacting to the acquisition news, or plot the tag breakdown with matplotlib.</p>
+  <p class="muted"><strong>Tools:</strong> huggingface_hub (Python), Hugging Face Hub API</p>
+</div>
     </section>
 
 <section class="archive">
