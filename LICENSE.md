@@ -8,6 +8,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 ### Newsletter Content & Articles
 
-© 2026 [Your Name or Newsletter Name]. All rights reserved. 
+© 2026 [[Pri's Daily AI Brief]](https://priyankabiswas.github.io/ai-daily-brief/). All rights reserved. 
 
 **No permission** is granted to copy, reproduce, repost, or redistribute the written newsletter articles, text, images, or media files contained in this repository on other blogs, websites, or commercial platforms without explicit written consent from the author.
