@@ -465,5 +465,110 @@
         "Hugging Face Hub API"
       ]
     }
+  },
+  {
+    "date": "2026-09-05",
+    "reading": {
+      "intro": "Been quiet on these — shorter list today. Three items from the last day: xAI opens Grok Bot to enterprises (with a hands-on review framing it against OpenClaw), a safety researcher's jailbreak that broke most frontier models tested, and Microsoft's cut-rate transcription model. Newsletters covering today: TLDR AI and Latent.Space.",
+      "items": [
+        {
+          "title": "Grok Bot goes enterprise — and a five-day review calls it \"MacBook simplicity\" next to OpenClaw's \"Linux power\"",
+          "url": "https://x.ai/news/grok-bot-for-enterprise",
+          "source": "xAI (via TLDR AI); hands-on review via Latent.Space (swyx)",
+          "why": "xAI opened its persistent, cloud-hosted AI agent to enterprises — free for two weeks for Grok and Cursor Enterprise customers, org-wide invites included. A five-day hands-on review from Latent.Space frames the tradeoff clearly: Grok Bot is a managed \"agent computer\" (one-click connectors, no config, xAI operates the machine) versus OpenClaw's user-owned \"agent platform\" (more control, more setup). Worth reading if you're weighing managed agent products against building your own agent stack.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "A safety-research prompt became a near-universal jailbreak — and broke most models tested",
+          "url": "https://www.lesswrong.com/posts/hHk5CpiqZTBBiHmYt/from-safety-research-prompt-to-cross-model-universal",
+          "source": "LessWrong, a MATS researcher (via TLDR AI)",
+          "why": "A prompt originally built to generate synthetic transcripts for safety research turned out to double as a near-universal jailbreak template, hitting 84-100% attack success on the 9 most vulnerable of 23 models tested. Only recent Anthropic models and Meta's Muse Spark 1.1 never fully broke — a concrete, current data point on which labs' safety training actually holds up under adversarial pressure.",
+          "minutes": 12,
+          "skip_ok": false
+        },
+        {
+          "title": "Microsoft's MAI-Transcribe-2 undercuts OpenAI, Google, and ElevenLabs on transcription price",
+          "url": "https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/",
+          "source": "Microsoft AI (via TLDR AI; additional detail via VentureBeat)",
+          "why": "The new speech-recognition model adds diarization, configurable transcription styles, and word-level timestamps across 60 languages, priced at 10 cents per hour of audio — and reportedly beats Gemini 3.5 Transcribe, GPT-Transcribe, and Whisper V3-Large. Part of a pattern: Microsoft keeps building its own frontier-class model one modality at a time, then swapping it into products that used to run on OpenAI's tech.",
+          "minutes": 6,
+          "skip_ok": false
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In the Latent.Space hands-on review, Grok Bot is compared to a MacBook. What is OpenClaw compared to?",
+          "choices": [
+            "Linux",
+            "Windows",
+            "an iPad",
+            "a mainframe"
+          ],
+          "a": "Linux"
+        },
+        {
+          "q": "What's the core structural difference between Grok Bot and OpenClaw, per that review?",
+          "a": "Grok Bot is a managed agent computer that xAI supplies and operates; OpenClaw is a user-owned agent platform you choose how and where to run"
+        },
+        {
+          "q": "What free-trial offer came with the Grok Bot enterprise launch?",
+          "choices": [
+            "1 week free for all users",
+            "2 weeks free for Grok and Cursor Enterprise customers",
+            "A permanent free tier",
+            "50% off for a month"
+          ],
+          "a": "2 weeks free for Grok and Cursor Enterprise customers"
+        },
+        {
+          "q": "In the review, what does the author call the \"atomic unit\" of programming inside Grok Bot?",
+          "a": "The Bot itself (not a function or service)"
+        },
+        {
+          "q": "What attack success rate did the cross-model jailbreak achieve on the 9 most vulnerable of 23 models tested?",
+          "choices": [
+            "10-25%",
+            "40-60%",
+            "84-100%",
+            "exactly 50%"
+          ],
+          "a": "84-100%"
+        },
+        {
+          "q": "Which two model families reportedly were never fully broken by that jailbreak?",
+          "a": "Recent Anthropic models and Meta's Muse Spark 1.1"
+        },
+        {
+          "q": "What was the jailbreak prompt originally built to do?",
+          "a": "Generate synthetic transcripts for safety research"
+        },
+        {
+          "q": "How much does Microsoft's MAI-Transcribe-2 cost per hour of audio?",
+          "choices": [
+            "1 cent",
+            "10 cents",
+            "$1",
+            "$10"
+          ],
+          "a": "10 cents"
+        },
+        {
+          "q": "How many languages does MAI-Transcribe-2 transcribe?",
+          "choices": [
+            "12",
+            "30",
+            "60",
+            "100"
+          ],
+          "a": "60"
+        },
+        {
+          "q": "Name two features MAI-Transcribe-2 adds beyond raw transcription.",
+          "a": "Diarization, configurable transcription styles, and word-level timestamps (any two)"
+        }
+      ]
+    },
+    "build": null
   }
 ]
