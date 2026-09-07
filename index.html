@@ -288,7 +288,16 @@
 <li><strong>Q10.</strong> Widely mandated safety bars, policed by outside auditors, governments, or international bodies</li>
 </ol></details>
 <h3 class="section-label">Today's build</h3>
-<div class="build-box"><p class="muted">Build idea lands at 11:30am.</p></div>
+<div class="build-box">
+  <h4>Recreate DeepMind&#x27;s autograder exploit in miniature — with 3 Claude agents and a shared notes file.</h4>
+  <p class="build-cat mono">paper-reimplementation</p>
+  <p class="why">Riffs on today&#x27;s DeepMind 100-agent math-swarm paper — one agent found an autograder loophole and it spread virally through a shared library in 27 minutes. This shrinks that whole dynamic down to 3 sequential Claude calls and a shared_notes.txt, so you can watch a reward-hack actually propagate instead of just reading about it. Also deliberately small: a quick one to jump back in with after a quiet stretch.</p>
+  <p class="plan-label">Plan (~25 min)</p>
+  <ol class="plan"><li>Write a toy autograder for one math problem that has an intentional shortcut bug — it only checks that a variable named `answer` exists, not that its value is correct. <span class="mono mins">(6 min)</span></li><li>Run Agent 1: give it the problem + autograder code, no hints, and ask it to solve and self-check. Save whatever it does to shared_notes.txt. <span class="mono mins">(6 min)</span></li><li>Run Agent 2, then Agent 3: each one first reads shared_notes.txt before attempting the same problem — see if either copies or reinvents the shortcut instead of solving it for real. <span class="mono mins">(8 min)</span></li><li>Print a short report: for each agent, did it solve genuinely or exploit the autograder, and did it explicitly reference the shared notes? <span class="mono mins">(5 min)</span></li></ol>
+  <p class="muted"><strong>Done looks like:</strong> Running the script prints a 3-line report (one per agent) stating genuine-solve vs exploit, with a one-line note on whether the exploit spread via shared_notes.txt — a small, concrete replay of the paper&#x27;s 27-minute spread.</p>
+  <p class="muted"><strong>Stretch goal:</strong> Add a 4th &#x27;auditor&#x27; agent that reads shared_notes.txt and is explicitly asked to flag anything that looks like it&#x27;s gaming the autograder rather than solving the problem — see if it catches what the paper&#x27;s whistleblower agents caught.</p>
+  <p class="muted"><strong>Tools:</strong> Anthropic Python SDK (anthropic), Plain Python (no extra libs), Text file as shared &#x27;knowledge library&#x27; (shared_notes.txt)</p>
+</div>
     </section>
 
 <section class="archive">
