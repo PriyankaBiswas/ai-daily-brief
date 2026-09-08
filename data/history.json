@@ -854,5 +854,104 @@
         "Text file as shared 'knowledge library' (shared_notes.txt)"
       ]
     }
+  },
+  {
+    "date": "2026-09-08",
+    "reading": {
+      "intro": "Been quiet on these — shorter list today. Three items: Anthropic's $517B compute spending spree over the past 11 months, OpenAI's first look inside its own AI research intern (which just hit Altman's September target), and an AI-designed drug that looks like it might slow aging, not just treat disease. Newsletters covering today: TLDR AI and The Rundown.",
+      "items": [
+        {
+          "title": "Anthropic signed $517B in compute agreements over the past 11 months",
+          "url": "https://www.datacenterdynamics.com/en/news/anthropic-signed-517bn-in-compute-agreements-in-past-11-months/",
+          "source": "DataCenter Dynamics (via TLDR AI)",
+          "why": "Anthropic has locked in $517 billion in compute capacity leases since roughly October 2025 — about 14.8GW, mostly with Google and AWS, plus large deals with Akamai, Fluidstack, and a $45B agreement with Nscale. The company confidentially filed for an IPO with the SEC in June, making this the clearest public signal yet of how much compute it thinks it needs to keep scaling Fable/Opus-class models.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI opens the books on its AI research intern — and hits Altman's September target",
+          "url": "https://openai.com/index/research-acceleration-view-inside-openai/",
+          "source": "OpenAI (via The Rundown)",
+          "why": "OpenAI's own coding agents now log 3.1 workdays of research for every workday a human puts in, hitting the \"automated research intern\" milestone Sam Altman set last October for this month (with a fully automated researcher targeted for March 2028). The typical OpenAI researcher now burns $600+/day in agent tokens (90th percentile: $7,000+), agent-token output is up 124x since December, and roughly 80% of researchers run 4+ agents at once — a rare look at what a frontier lab does with unreleased models before the rest of the industry gets them.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Insilico's AI-designed drug hints at slowing aging, not just treating disease",
+          "url": "https://www.nature.com/articles/s41587-026-03286-y",
+          "source": "Nature (via The Rundown)",
+          "why": "Rentosertib — a drug for lung scarring (idiopathic pulmonary fibrosis) whose target protein and molecule were both picked by Insilico's AI — left trial patients reading as biologically younger on all six independent \"aging clock\" models, with one estimate showing a 2.7–3.5 year drop. Small sample (42 patients), but a concrete early data point for Dario Amodei's argument that a real medical breakthrough could shift public AI sentiment faster than any messaging campaign.",
+          "minutes": 6,
+          "skip_ok": false
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Roughly how much has Anthropic signed in compute agreements over the past 11 months?",
+          "choices": [
+            "$45B",
+            "$150B",
+            "$517B",
+            "$1T"
+          ],
+          "a": "$517B"
+        },
+        {
+          "q": "Which two cloud providers make up most of Anthropic's compute leases?",
+          "a": "Google and AWS"
+        },
+        {
+          "q": "What corporate move did Anthropic confidentially make in June 2026?",
+          "a": "Confidentially filed for an IPO with the SEC"
+        },
+        {
+          "q": "How many workdays of research did OpenAI's coding agents log for every one human workday, per its internal report?",
+          "choices": [
+            "1.5",
+            "3.1",
+            "5",
+            "10"
+          ],
+          "a": "3.1"
+        },
+        {
+          "q": "What milestone did OpenAI say it hit this month, per the timeline Sam Altman posted last October?",
+          "a": "An \"automated research intern\" — intern-level automated AI researcher (with full automation targeted for March 2028)"
+        },
+        {
+          "q": "By roughly what factor has OpenAI's internal agent-token output grown since December?",
+          "choices": [
+            "12x",
+            "50x",
+            "124x",
+            "300x"
+          ],
+          "a": "124x"
+        },
+        {
+          "q": "Roughly what share of OpenAI researchers now run 4+ agents at a time?",
+          "a": "About 80%"
+        },
+        {
+          "q": "What disease does Insilico's AI-designed drug rentosertib treat?",
+          "a": "Idiopathic pulmonary fibrosis (a lung-scarring disease)"
+        },
+        {
+          "q": "How many independent \"aging clock\" models rated treated patients as biologically younger?",
+          "a": "All six of them"
+        },
+        {
+          "q": "How large was the patient sample in the rentosertib trial used for the aging analysis?",
+          "choices": [
+            "12",
+            "42",
+            "200",
+            "1000"
+          ],
+          "a": "42"
+        }
+      ]
+    },
+    "build": null
   }
 ]
