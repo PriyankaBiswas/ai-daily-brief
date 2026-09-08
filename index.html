@@ -288,7 +288,16 @@
 <li><strong>Q10.</strong> 42</li>
 </ol></details>
 <h3 class="section-label">Today's build</h3>
-<div class="build-box"><p class="muted">Build idea lands at 11:30am.</p></div>
+<div class="build-box">
+  <h4>Watch your own token spend rack up in real time — the same instinct that made OpenAI track $600+/day in agent costs.</h4>
+  <p class="build-cat mono">infra/deployment</p>
+  <p class="why">Riffs on today&#x27;s OpenAI research-intern story — the typical researcher now burns $600+/day in agent tokens (90th percentile: $7,000+), with agent-token output up 124x since December. This builds the defensive instinct behind that number: a tiny wrapper that logs every API call&#x27;s tokens and cost as you go, so you see the running total instead of finding out from an invoice. Also deliberately small: a quick one to jump back in with after a quiet stretch.</p>
+  <p class="plan-label">Plan (~28 min)</p>
+  <ol class="plan"><li>Write log_call(response): pulls input_tokens/output_tokens off a Claude API response, computes cost from Sonnet&#x27;s per-token pricing, and appends {timestamp, tokens_in, tokens_out, cost} to spend_log.jsonl. <span class="mono mins">(8 min)</span></li><li>Wire it into 5 quick, varied client.messages.create calls (a couple short prompts, a couple longer ones) so the log has real, differently-sized entries. <span class="mono mins">(7 min)</span></li><li>Write a summary function that reads spend_log.jsonl and prints a running total: call count, total tokens in/out, total cost so far, as a simple table. <span class="mono mins">(8 min)</span></li><li>Sanity check: run the whole script twice in a row and confirm the log appends (not overwrites) and the running total grows correctly across runs. <span class="mono mins">(5 min)</span></li></ol>
+  <p class="muted"><strong>Done looks like:</strong> Running the script prints a clean summary table (calls / tokens in / tokens out / total cost) with 5+ logged entries, and running it again appends new rows and grows the total instead of resetting it.</p>
+  <p class="muted"><strong>Stretch goal:</strong> Add a per-model cost breakdown if you mix models in the test calls, or set a spend_limit constant and have log_call print a warning the moment the running total crosses it — a one-line cost guardrail.</p>
+  <p class="muted"><strong>Tools:</strong> Anthropic Python SDK (anthropic), JSON Lines (jsonl), Plain Python (no extra libs needed)</p>
+</div>
     </section>
 
 <section class="archive">
