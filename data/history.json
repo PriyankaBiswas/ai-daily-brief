@@ -982,5 +982,104 @@
         "Plain Python (no extra libs needed)"
       ]
     }
+  },
+  {
+    "date": "2026-09-09",
+    "reading": {
+      "intro": "Been quiet on these — shorter list today. Three items: OpenAI's still-unreleased model quietly cracked a $1M Millennium Prize math problem (then a credit fight broke out with the mathematicians who got there first), Meta shipped its long-teased Muse personal AI agent, and an Anthropic researcher publicly resigned warning frontier labs are racing toward self-improving AI they can't control. Newsletters covering today: TLDR AI and The Rundown.",
+      "items": [
+        {
+          "title": "OpenAI's next model quietly solves a $1M Millennium Prize problem — then a credit dispute erupts",
+          "url": "https://openai.com/index/navier-stokes-solution/",
+          "source": "OpenAI (via TLDR AI, The Rundown); credit dispute via TechCrunch, Axios",
+          "why": "An internal OpenAI model 'significantly more capable' than the just-released GPT-6 Astra ran roughly 10,000 agents for 88 hours to prove that 3D Navier–Stokes fluid dynamics can develop a finite-time singularity — one of math's seven $1M Millennium Prize problems. It landed with a fight attached: NYU's Tristan Buckmaster and Anthropic's Levent Alpöge say they'd spent nearly a year chasing the same proof and that word of their progress reached OpenAI before it raced to publish first; Buckmaster alleges OpenAI's Sébastien Bubeck asked him to drop Alpöge's credit as part of a compromise. OpenAI denies using their work, says it can't fully rule out that de-identified usage data helped, and now credits both men for concurrent work. OpenAI says it won't claim the prize money.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Meta launches Muse, \"the world's first personal AI agent built for everyone\"",
+          "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+          "source": "Meta (via TLDR AI, The Rundown)",
+          "why": "Muse runs in its own secure cloud VM and can book travel, shop, and send emails on your behalf across connected apps (Gmail, Spotify, Ticketmaster, OpenTable), reachable via a dedicated app, WhatsApp, or the web. US-only, 18+, with a free tier plus $20/month (Power) and $100/month (Maximum) paid tiers. One more entrant — after Grok Bot, OpenClaw, and Hermes — in the fast-forming 'managed personal agent' category.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "An Anthropic researcher quits, warning labs are \"gambling with our lives\" on self-improving AI",
+          "url": "https://techcrunch.com/2026/09/09/gambling-with-our-lives-anthropic-researcher-quits-warns-against-self-improving-ai/",
+          "source": "TechCrunch (via TLDR AI); also covered by WSJ, CNBC, Newsweek",
+          "why": "Jacob Coxon, three years into pretraining research at OpenAI then Anthropic, resigned saying both labs are racing toward self-improving superintelligence they can't control — \"by the end of next year things could be out of control already.\" Anthropic's own alignment science lead, Evan Hubinger, pushed back on the timeline but agreed the company has no plan yet to solve alignment for superintelligence. Lands the same week as Pachocki's 'An Alien Mind' slow-down essay and Anthropic's METR review — a second frontier-lab insider raising the alarm publicly within days.",
+          "minutes": 6,
+          "skip_ok": false
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Roughly how many agents did OpenAI run, and for how long, to produce its Navier-Stokes proof?",
+          "choices": [
+            "1,000 agents over 12 hours",
+            "10,000 agents over 88 hours",
+            "100 agents over 24 hours",
+            "50,000 agents over 200 hours"
+          ],
+          "a": "10,000 agents over 88 hours"
+        },
+        {
+          "q": "Which Millennium Prize problem did OpenAI's internal model reportedly solve?",
+          "choices": [
+            "Navier–Stokes existence and smoothness",
+            "The Riemann Hypothesis",
+            "P vs NP",
+            "The Poincaré Conjecture"
+          ],
+          "a": "Navier–Stokes existence and smoothness"
+        },
+        {
+          "q": "True or false: OpenAI says it will claim the $1M Millennium Prize payout for the proof.",
+          "a": "False — OpenAI says it will not claim the prize money"
+        },
+        {
+          "q": "Which two mathematicians say they'd spent nearly a year chasing the same Navier-Stokes proof before OpenAI published?",
+          "a": "Tristan Buckmaster (NYU) and Levent Alpöge (Anthropic)"
+        },
+        {
+          "q": "What did Buckmaster allege OpenAI's Sébastien Bubeck asked him to do as part of a proposed compromise?",
+          "a": "Remove Levent Alpöge's credit from the announcement"
+        },
+        {
+          "q": "What is Meta's new personal AI agent called, and what secure environment does it run in?",
+          "choices": [
+            "Muse / Muse Secure VM",
+            "Hermes / SecureBox",
+            "Spark / Muse Confidential VM",
+            "Astra / Sentinel VM"
+          ],
+          "a": "Muse / Muse Secure VM"
+        },
+        {
+          "q": "What are Muse's two paid subscription tiers and their monthly prices?",
+          "a": "Power at $20/month and Maximum at $100/month"
+        },
+        {
+          "q": "Which Anthropic researcher resigned this week, warning AI labs are \"gambling with our lives\" on self-improving AI?",
+          "a": "Jacob Coxon"
+        },
+        {
+          "q": "Per Coxon, by when could things be \"out of control already\" under the most aggressive scenarios?",
+          "choices": [
+            "End of this year",
+            "End of next year (2027)",
+            "2030",
+            "2035"
+          ],
+          "a": "End of next year (2027)"
+        },
+        {
+          "q": "Which Anthropic alignment science lead agreed the company has no plan yet to solve alignment for superintelligence, even while pushing back on Coxon's timeline?",
+          "a": "Evan Hubinger"
+        }
+      ]
+    },
+    "build": null
   }
 ]
