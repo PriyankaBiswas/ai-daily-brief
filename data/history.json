@@ -1260,6 +1260,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a tripwire eval that catches the exact 'silent failure' bug today's multi-agent article warns about — a handoff that passes its own check but quietly drops what matters.",
+      "category": "data/eval exercise",
+      "why": "Riffs on today's ‘Why most multi-agent systems fail even when evaluation passes’ (Towards Data Science): schema-only evals wave through handoffs that are technically valid but semantically broken. You'll reproduce that failure in miniature, in about a dozen lines of eval code, and see why it matters to check meaning, not just shape.",
+      "plan": [
+        {
+          "step": "Chain two tiny agent calls: Agent A turns a support-ticket string into JSON {issue, urgency}; Agent B drafts a reply from that JSON alone.",
+          "minutes": 10
+        },
+        {
+          "step": "Write the 'standard' eval everyone ships first: just checks Agent A's output is valid JSON with the right keys. Confirm it passes.",
+          "minutes": 5
+        },
+        {
+          "step": "Feed a ticket where urgency is implied, not stated ('this is blocking our launch tomorrow') — watch Agent A's summary flatten it, Agent B's reply miss it, and the schema eval still pass green.",
+          "minutes": 5
+        },
+        {
+          "step": "Add one semantic check: re-read the original ticket + Agent B's reply together and assert the reply actually addresses the urgency. Watch it catch what the schema eval missed.",
+          "minutes": 10
+        }
+      ],
+      "done_looks_like": "A runnable script where the schema eval prints PASS and the semantic eval prints FAIL on the same run — the exact silent-failure pattern from today's article, caught on purpose instead of by accident.",
+      "stretch_goal": "Run it against 3 more tickets with different flavors of hidden signal (urgency, sentiment, a specific ask) and see how often the semantic eval catches something the schema eval doesn't.",
+      "tools": [
+        "Python",
+        "Anthropic Claude API (or OpenAI API) for the two agent calls",
+        "plain asserts/print — no eval framework needed"
+      ]
+    }
   }
 ]
