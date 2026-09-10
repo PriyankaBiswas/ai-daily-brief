@@ -1382,6 +1382,44 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Fine-tune a tiny model with LoRA in under 30 minutes — touch 1% of the weights, watch 100% of the behavior change.",
+      "category": "fine-tuning/training",
+      "why": "Riffs on today's DeepSeek V4.1-Flash item: its whole efficiency story is doing more with fewer active parameters (8B/16B active out of 552B, plus a smaller KV cache). LoRA is that same idea in miniature and within reach solo — you freeze a base model and train a tiny low-rank adapter instead of the whole network, so you feel directly how little you actually need to touch to reshape output.",
+      "plan": [
+        {
+          "step": "Install transformers, peft, and torch (or use a prebuilt Colab/venv that already has them).",
+          "minutes": 5
+        },
+        {
+          "step": "Load distilgpt2 + its tokenizer, and write ~15 tiny toy examples that all follow one narrow, obvious style (e.g. every answer written as a haiku, or always ending in a fixed sign-off).",
+          "minutes": 5
+        },
+        {
+          "step": "Wrap the model with a peft LoraConfig (rank=4, target the attention projection layers) — note how few parameters actually become trainable.",
+          "minutes": 5
+        },
+        {
+          "step": "Train for a handful of steps on the toy set with a plain Trainer loop.",
+          "minutes": 8
+        },
+        {
+          "step": "Generate the same prompt through the base model and the LoRA-adapted model side by side and compare.",
+          "minutes": 5
+        },
+        {
+          "step": "Save just the adapter weights (not the full model) and note how small the file is.",
+          "minutes": 2
+        }
+      ],
+      "done_looks_like": "A printed side-by-side where the base distilgpt2 output and the LoRA-adapted output on the same prompt are visibly different in style — proof you reshaped behavior by training a tiny fraction of the parameters, not the whole model.",
+      "stretch_goal": "Try rank=1 instead of rank=4 and see how little rank still gets the style to stick, or swap in a second, different toy style and train a second adapter you can hot-swap on the same base model.",
+      "tools": [
+        "transformers",
+        "peft (LoRA)",
+        "torch",
+        "datasets"
+      ]
+    }
   }
 ]
