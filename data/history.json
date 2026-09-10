@@ -1290,5 +1290,98 @@
         "plain asserts/print — no eval framework needed"
       ]
     }
+  },
+  {
+    "date": "2026-09-10",
+    "reading": {
+      "intro": "Been quiet on these — shorter list today. Top 3: Anthropic's internal safety debate escalated into public extinction-odds talk from its own alignment lead, Apple finally ships Siri AI in beta (with real limits attached), and DeepSeek quietly shipped a leaner flagship model. Newsletters covering today: TLDR AI and The Rundown.",
+      "items": [
+        {
+          "title": "An Anthropic exit becomes an extinction debate — alignment lead puts odds above 10%",
+          "url": "https://therundownai.beehiiv.com/p/an-anthropic-exit-becomes-an-extinction-debate",
+          "source": "The Rundown; Jacob Coxon and Evan Hubinger on X",
+          "why": "Yesterday's Coxon resignation kept escalating: Anthropic's own Alignment Science lead, Evan Hubinger, publicly backed the “gambling with our lives” framing, writing “we really do earnestly believe AI could kill all humans” and putting the odds above 10% within the next decade. He clarified today's models are low risk — the danger he's flagging is self-improvement — and that there's still no plan for controlling superintelligence. Notable because it's not an outside critic or an ex-employee anymore; it's the person literally in charge of Anthropic's alignment research saying this on the record.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Siri AI launches in beta on iOS 27 — with daily usage caps and a paid tier coming",
+          "url": "https://appleinsider.com/articles/26/09/09/siri-ai-will-launch-in-beta-complicated-by-daily-usage-caps-future-paid-access",
+          "source": "AppleInsider (via TLDR AI)",
+          "why": "Apple's long-delayed AI assistant overhaul ships in beta alongside OS 27 on September 14, but arrives hedged rather than triumphant: daily usage caps, regional and language restrictions, and a paid tier planned later for expanded access. Limits are rationed by Apple's available server capacity — a tell that Apple still isn't confident in its own inference headroom for a base this large.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "DeepSeek launches V4.1-Flash, quietly retires its flagship V4-Pro",
+          "url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
+          "source": "DeepSeek (via TLDR AI); also TechNode, The Next Web",
+          "why": "A 552B-parameter MoE model built on a new asymmetric “causal encoder-decoder” architecture (8B active params for input, 16B for output), with native multimodal support and a smaller KV cache for cheaper inference. DeepSeek says it beats V4-Pro on performance, cost, and speed in both internal and external testing — and from September 14, all V4-Pro API traffic gets rerouted to V4.1-Flash at Flash pricing until a V4.1-Pro shows up.",
+          "minutes": 4,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which Anthropic staffer publicly put the odds of AI killing all humans within a decade above 10%?",
+          "choices": [
+            "Jacob Coxon",
+            "Evan Hubinger",
+            "Dario Amodei",
+            "Sébastien Bubeck"
+          ],
+          "a": "Evan Hubinger, Anthropic's Alignment Science lead"
+        },
+        {
+          "q": "True or false: Hubinger said today's Anthropic models are high risk.",
+          "a": "False — he said current models are low risk; the danger he's flagging is self-improvement"
+        },
+        {
+          "q": "Who was the Anthropic researcher whose resignation kicked off this whole debate?",
+          "a": "Jacob Coxon"
+        },
+        {
+          "q": "What ships alongside iOS 27 on September 14?",
+          "choices": [
+            "A finished, uncapped Siri AI",
+            "Siri AI in beta, with daily usage caps",
+            "Siri AI, US-only and free forever",
+            "Siri AI delayed again"
+          ],
+          "a": "Siri AI in beta, with daily usage caps"
+        },
+        {
+          "q": "How will Apple offer expanded Siri AI access in the future?",
+          "a": "Through a paid tier/fee"
+        },
+        {
+          "q": "Fill in the blank: Apple is rolling out Siri AI access gradually to manage its available ___.",
+          "a": "server capacity"
+        },
+        {
+          "q": "Which DeepSeek model does V4.1-Flash replace / get traffic rerouted from, starting September 14?",
+          "a": "V4-Pro"
+        },
+        {
+          "q": "Roughly how many total parameters does DeepSeek-V4.1-Flash have?",
+          "choices": [
+            "55 billion",
+            "552 billion",
+            "5.5 billion",
+            "1.2 trillion"
+          ],
+          "a": "552 billion (MoE)"
+        },
+        {
+          "q": "What's the new architecture behind V4.1-Flash's efficiency gains?",
+          "a": "An asymmetric causal encoder-decoder architecture (8B active input params, 16B active output params) with a smaller KV cache"
+        },
+        {
+          "q": "Short answer: name one thing all three of today's items have in common with each other (hint: think about who's making them).",
+          "a": "Open-ended — e.g. all three are frontier AI labs/companies making public commitments or claims about capability, cost, or risk this week"
+        }
+      ]
+    },
+    "build": null
   }
 ]
