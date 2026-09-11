@@ -1421,5 +1421,92 @@
         "datasets"
       ]
     }
+  },
+  {
+    "date": "2026-09-11",
+    "reading": {
+      "intro": "Been quiet on these — shorter list today. Top 3: Anthropic published a warts-and-all report on eight months of Claude misuse — including rival Chinese labs quietly distilling and reselling it as their own — OpenAI opened up the agent harness behind Codex as a public API, and Cognition shipped a coding model that undercuts the frontier on price. Newsletters covering today: TLDR AI and The Rundown.",
+      "items": [
+        {
+          "title": "Anthropic opens the files on 8 months of Claude misuse — rocket guidance, spy networks, and rival labs reselling it as their own",
+          "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+          "source": "Anthropic (via The Rundown, TLDR AI)",
+          "why": "A 150+ page threat report covering disruptions from December 2025 through August: a Yemen-based actor using Claude Code to build rocket guidance software (and returning for advice after a failed test flight), a consultant building surveillance software to track 25M Mali phone lines, five biology cases flagged for possible weapons applications (Anthropic \"does not assert they intended harm\"), and — the sharpest detail — seven Chinese labs (Alibaba, DeepSeek, Moonshot, Xiaomi, Zhipu, SenseTime, MiniMax) named for distilling Claude via thousands of fraudulent accounts, with Moonshot and DeepSeek allegedly serving Claude to their own customers and training on the outputs. All of it was caught with Opus-class models and below — future reports covering more capable models will be harder to read comfortably.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI launches the Agents API in public beta — the Codex harness, now one API call away",
+          "url": "https://openai.com/index/introducing-the-agents-api/",
+          "source": "OpenAI (via TLDR AI)",
+          "why": "The managed agent infrastructure that runs Codex and ChatGPT for Work — context compression, tool search, subagents with a concurrency limit, persistent execution, sandboxed code environments — is now available to any developer via API, in public beta with no markup beyond usage costs. Early adopters report large wins (SafetyKit cut costs 60%, Hypha cut failures 86%, per OpenAI's own numbers — worth treating as a vendor claim until independently verified). The real story is the shift itself: long-running agent infrastructure is becoming a commodity API rather than something every team builds from scratch.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Cognition ships SWE-2 — near-frontier coding at 64% less cost, built on a 2.8T-parameter base",
+          "url": "https://cognition.com/blog/swe-2",
+          "source": "Cognition (via TLDR AI, The Rundown)",
+          "why": "Post-trained from Kimi K3 (2.8T parameters) using Cognition's RL recipe scaled to a multi-trillion-parameter model for the first time, SWE-2 lands within about a point of Fable 5.1 on FrontierCode 1.1 Main at roughly 64% less cost, and beats its own predecessor SWE-1.7 using 58% fewer turns. It's free for a month on every paid Devin tier. Worth a skim if you're picking a coding model on a budget; skip if you're not currently choosing one.",
+          "minutes": 4,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "How many Chinese AI labs did Anthropic name in its threat report for allegedly distilling Claude via fraudulent accounts?",
+          "a": "Seven — Alibaba, DeepSeek, Moonshot, Xiaomi, Zhipu, SenseTime, and MiniMax."
+        },
+        {
+          "q": "Which two of the named labs allegedly went further and served Claude to their own customers as if it were their own model?",
+          "choices": [
+            "Alibaba and Xiaomi",
+            "Moonshot and DeepSeek",
+            "Zhipu and SenseTime",
+            "MiniMax and Alibaba"
+          ],
+          "a": "Moonshot and DeepSeek"
+        },
+        {
+          "q": "What country was home to the actor who used Claude Code to build rocket guidance software?",
+          "a": "Yemen"
+        },
+        {
+          "q": "True or false: Anthropic said its five flagged biology cases definitely intended harm.",
+          "a": "False — Anthropic explicitly said it does not assert they intended harm."
+        },
+        {
+          "q": "What time span does Anthropic's threat report cover?",
+          "a": "December 2025 through August 2026 — about 8 months."
+        },
+        {
+          "q": "What existing OpenAI product/harness powers the new Agents API under the hood?",
+          "a": "Codex — the same managed harness that runs Codex and ChatGPT for Work."
+        },
+        {
+          "q": "Which of these was NOT among the capabilities OpenAI highlighted for the Agents API?",
+          "choices": [
+            "Running code in sandboxed environments",
+            "Splitting work across subagents with a concurrency limit",
+            "Real-time video generation",
+            "Tool search"
+          ],
+          "a": "Real-time video generation"
+        },
+        {
+          "q": "What base model did Cognition post-train to build SWE-2?",
+          "a": "Kimi K3, a 2.8-trillion-parameter model."
+        },
+        {
+          "q": "On FrontierCode 1.1 Main, SWE-2 lands within about a point of which model — at roughly 64% less cost?",
+          "a": "Fable 5.1"
+        },
+        {
+          "q": "About how much cheaper does SWE-2 run than its predecessor SWE-1.7 on average, per the turns/cost comparison?",
+          "a": "About 81% cheaper, using 58% fewer turns."
+        }
+      ]
+    },
+    "build": null
   }
 ]
