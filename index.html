@@ -488,7 +488,20 @@ a { color: var(--accent); }
 </section>
 <section class="build-section">
 <h3 class="section-heading">🛠 Build Idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch"><strong>Build a mini ‘tool search’ router by hand — the same trick OpenAI just baked into its new Agents API.</strong></p>
+<p class="build-category meta-mono">prompt-engineering</p>
+<p class="build-why">Riffs on today’s OpenAI Agents API launch, whose headline features include ‘tool search’ — letting the model pick relevant tools from a big library before acting, instead of stuffing every tool description into context. You’ll build that same idea by hand with a plain prompt, and feel directly how much context (and cost) narrowing the tool list first can save.</p>
+<h4 class="sub-heading">Plan</h4>
+<ol class="build-plan">
+<li>Define 12-15 fake tools as name + one-line description pairs — a mini tool library (e.g. send_email, get_weather, search_docs…). <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Write a ‘router’ prompt: given a user query, ask the model to return just the 2-3 most relevant tool names from the full list. <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Run the router on 3 different sample queries and confirm it picks sensible, different subsets each time. <span class="step-minutes meta-mono">(6 min)</span></li>
+<li>Feed only the shortlisted tools (not all 15) into a second call as the real ‘available tools’, and get the model to actually answer using them. <span class="step-minutes meta-mono">(7 min)</span></li>
+<li>Compare the token count of sending all 15 tool descriptions vs. just the 2-3 selected ones — print the savings. <span class="step-minutes meta-mono">(4 min)</span></li>
+</ol>
+<p class="done-looks-like"><strong>Done looks like:</strong> A script that, for 3 different queries, prints the shortlisted tools it picked, the final answer using only those tools, and a token-count comparison showing how much smaller the actual API call became.</p>
+<p class="stretch-goal"><strong>Stretch goal:</strong> Swap the LLM-based router for a cheap embedding-similarity search (cosine distance between the query and each tool description) and see if it picks the same subset without an extra model call.</p>
+<p class="tools"><strong>Tools:</strong> Anthropic Python SDK (anthropic), plain Python, tiktoken (or a simple word-count estimate) for the token comparison</p>
 </section>
   </section>
 <details class="archive-root"><summary>Archive</summary><div class="archive-body">

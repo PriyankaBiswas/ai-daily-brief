@@ -1507,6 +1507,39 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a mini ‘tool search’ router by hand — the same trick OpenAI just baked into its new Agents API.",
+      "category": "prompt-engineering",
+      "why": "Riffs on today’s OpenAI Agents API launch, whose headline features include ‘tool search’ — letting the model pick relevant tools from a big library before acting, instead of stuffing every tool description into context. You’ll build that same idea by hand with a plain prompt, and feel directly how much context (and cost) narrowing the tool list first can save.",
+      "plan": [
+        {
+          "step": "Define 12-15 fake tools as name + one-line description pairs — a mini tool library (e.g. send_email, get_weather, search_docs…).",
+          "minutes": 5
+        },
+        {
+          "step": "Write a ‘router’ prompt: given a user query, ask the model to return just the 2-3 most relevant tool names from the full list.",
+          "minutes": 5
+        },
+        {
+          "step": "Run the router on 3 different sample queries and confirm it picks sensible, different subsets each time.",
+          "minutes": 6
+        },
+        {
+          "step": "Feed only the shortlisted tools (not all 15) into a second call as the real ‘available tools’, and get the model to actually answer using them.",
+          "minutes": 7
+        },
+        {
+          "step": "Compare the token count of sending all 15 tool descriptions vs. just the 2-3 selected ones — print the savings.",
+          "minutes": 4
+        }
+      ],
+      "done_looks_like": "A script that, for 3 different queries, prints the shortlisted tools it picked, the final answer using only those tools, and a token-count comparison showing how much smaller the actual API call became.",
+      "stretch_goal": "Swap the LLM-based router for a cheap embedding-similarity search (cosine distance between the query and each tool description) and see if it picks the same subset without an extra model call.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "plain Python",
+        "tiktoken (or a simple word-count estimate) for the token comparison"
+      ]
+    }
   }
 ]
