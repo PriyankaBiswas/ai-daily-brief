@@ -1541,5 +1541,92 @@
         "tiktoken (or a simple word-count estimate) for the token comparison"
       ]
     }
+  },
+  {
+    "date": "2026-09-12",
+    "reading": {
+      "intro": "Been quiet on these — shorter list today. Top 3: OpenAI's Sam Altman told staff the company is open to slowing down frontier development, star AI researcher Andrew Tulloch left Meta for Anthropic months after landing a reported $1.5B pay package, and OpenAI shipped a full-duplex voice model that can listen and talk at once. Newsletters covering today: TLDR AI and The Rundown.",
+      "items": [
+        {
+          "title": "OpenAI is open to slowing cutting-edge AI development, Sam Altman tells staff",
+          "url": "https://www.seattletimes.com/business/openai-is-open-to-slowing-cutting-edge-ai-ceo-sam-altman-tells-staff/",
+          "source": "Bloomberg/Seattle Times (via TLDR AI)",
+          "why": "In a companywide meeting, Altman said OpenAI would consider pacing frontier development — ideally alongside other labs, though he acknowledged some may not agree to join. It's the CEO stepping into a debate that's been building all week: Jacob Coxon's resignation warning both OpenAI and Anthropic are “gambling with our lives,” Anthropic alignment lead Evan Hubinger publicly backing over-10%-odds extinction talk, and chief scientist Jakub Pachocki's essay calling for labs to “coordinate to slow down future development as needed.” OpenAI says it has already paused parts of internal training over safety concerns.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Andrew Tulloch leaves Meta for Anthropic, months after a reported $1.5B Zuckerberg pay package",
+          "url": "https://qz.com/andrew-tulloch-meta-anthropic-ai-researcher-091026",
+          "source": "Quartz (via The Rundown); also Semafor, The Next Web",
+          "why": "Tulloch co-founded Thinking Machines Lab with former OpenAI CTO Mira Murati, then reversed course last October and (re)joined Meta under a package Zuckerberg reportedly pitched at up to $1.5B over six years (Meta calls the figure “inaccurate and ridiculous”). Less than a year later — and right after Meta shipped its Muse personal agent — he's headed to Anthropic's inference and performance team. A concrete data point in the ongoing AI talent war, and notably he waited for Muse's launch before telling colleagues he was leaving.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI ships GPT-Live-1 — a full-duplex voice model that can listen and talk at once",
+          "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api/",
+          "source": "OpenAI (via TLDR AI); also Unite.AI, TestingCatalog",
+          "why": "Now in the API at $0.05/minute with 12 voice options, GPT-Live-1 handles interruptions while generating audio and hands off reasoning or tool use to a separate backend model, rather than the old cascaded record-transcribe-respond pipeline. OpenAI says it improves Full Duplex Bench performance 30 points over GPT-Realtime-2.1 and cuts the code needed to build a voice agent by about 80%, with telephony support (inbound calls, reservations, support lines) built in. Worth a skim if you build voice products; skip otherwise.",
+          "minutes": 4,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who told OpenAI staff the company is open to slowing down cutting-edge AI development?",
+          "a": "Sam Altman"
+        },
+        {
+          "q": "True or false: Altman said OpenAI would only slow down if every other AI lab agreed to do the same first.",
+          "a": "False — he said OpenAI would consider pacing development, ideally alongside other labs, but acknowledged some might not join."
+        },
+        {
+          "q": "Which OpenAI chief scientist wrote an essay calling for labs to “coordinate to slow down future development as needed”?",
+          "a": "Jakub Pachocki"
+        },
+        {
+          "q": "Which Anthropic researcher's resignation, warning labs are “gambling with our lives,” kicked off this week's safety debate?",
+          "a": "Jacob Coxon"
+        },
+        {
+          "q": "Which AI lab is Andrew Tulloch leaving?",
+          "choices": [
+            "Anthropic",
+            "Meta",
+            "OpenAI",
+            "Thinking Machines"
+          ],
+          "a": "Meta"
+        },
+        {
+          "q": "Roughly how large was the pay package Zuckerberg reportedly offered Tulloch to (re)join Meta?",
+          "a": "Up to $1.5B over six years (a figure Meta disputes as “inaccurate and ridiculous”)."
+        },
+        {
+          "q": "What Meta product did Tulloch wait to see launch before announcing his departure?",
+          "a": "Muse, Meta's personal AI agent"
+        },
+        {
+          "q": "What team is Tulloch joining at Anthropic?",
+          "a": "The inference and performance team"
+        },
+        {
+          "q": "How much does GPT-Live-1 cost per minute in the OpenAI API?",
+          "choices": [
+            "$0.005",
+            "$0.05",
+            "$0.50",
+            "$5.00"
+          ],
+          "a": "$0.05 per minute"
+        },
+        {
+          "q": "By about how much does OpenAI say GPT-Live-1 cuts the code needed to build a voice agent, versus the old cascaded pipeline?",
+          "a": "About 80%"
+        }
+      ]
+    },
+    "build": null
   }
 ]
