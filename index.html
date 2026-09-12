@@ -488,13 +488,26 @@ a { color: var(--accent); }
 </section>
 <section class="build-section">
 <h3 class="section-heading">🛠 Build Idea</h3>
-<p class="build-pending">Build idea lands at 11:30am</p>
+<p class="build-pitch"><strong>Simulate GPT-Live-1&#x27;s ‘interrupt while thinking’ trick — build a chat loop where a new message can barge in and cancel the model&#x27;s reply mid-stream.</strong></p>
+<p class="build-category meta-mono">agent/tool-building</p>
+<p class="build-why">Riffs on today&#x27;s GPT-Live-1 launch: its headline trick is handling interruptions by running a lightweight audio layer alongside a separate reasoning backend, so talking over it doesn&#x27;t mean restarting from scratch. You&#x27;ll fake that same architecture in text — a background task generating tokens, and a foreground listener that can cancel it — and feel exactly what ‘handles interruptions’ costs to actually build.</p>
+<h4 class="sub-heading">Plan</h4>
+<ol class="build-plan">
+<li>Write a plain async function that streams a Claude response for a given prompt, printing tokens as they arrive. <span class="step-minutes meta-mono">(6 min)</span></li>
+<li>Wrap that call in an asyncio.Task so it runs in the background while your main loop keeps listening for input. <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Add an input loop: if new text arrives while the task is still running, call task.cancel() and catch the resulting CancelledError. <span class="step-minutes meta-mono">(6 min)</span></li>
+<li>On cancel, print how much of the reply had already streamed before you cut it off, then immediately kick off a new streaming task for the new input. <span class="step-minutes meta-mono">(6 min)</span></li>
+<li>Test twice: once letting a reply finish untouched, once typing a second question mid-stream and watching the first one actually stop. <span class="step-minutes meta-mono">(4 min)</span></li>
+</ol>
+<p class="done-looks-like"><strong>Done looks like:</strong> A terminal demo where a normal question streams to completion, but typing a second question while the first is still generating visibly cuts the first reply short (e.g. prints &#x27;[interrupted after ~40 tokens]&#x27;) and starts fresh on the new input — the same mechanism GPT-Live-1 is doing with audio, done in plain text.</p>
+<p class="stretch-goal"><strong>Stretch goal:</strong> Track total tokens generated vs. tokens actually shown per turn, and print a running ‘tokens wasted to interruptions’ counter — the same cost trade-off OpenAI&#x27;s duplex pipeline is optimizing away.</p>
+<p class="tools"><strong>Tools:</strong> Anthropic Python SDK (anthropic), Python asyncio, Claude streaming API</p>
 </section>
 </section>
 <details class="archive-root"><summary>Archive</summary><div class="archive-body">
 <details class="archive-year"><summary>2026</summary>
 <details class="archive-month"><summary>September</summary>
-<details class="archive-week"><summary>Week of Sep 7 – Sep 13</summary>
+<details class="archive-week"><summary>Week of Sep 7 – 13</summary>
 <details class="archive-day"><summary>Fri, Sep 11</summary><div class="day-content">
 <p class="intro">Been quiet on these — shorter list today. Top 3: Anthropic published a warts-and-all report on eight months of Claude misuse — including rival Chinese labs quietly distilling and reselling it as their own — OpenAI opened up the agent harness behind Codex as a public API, and Cognition shipped a coding model that undercuts the frontier on price. Newsletters covering today: TLDR AI and The Rundown.</p>
 <p class="meta-line">🧠 Must-read AI today — ~15 min · Ranked most important first.</p>
@@ -1891,6 +1904,7 @@ a { color: var(--accent); }
 </details>
 </details>
 </div></details>
+
 </div>
 </body>
 </html>

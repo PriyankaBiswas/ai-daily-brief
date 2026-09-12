@@ -1627,6 +1627,39 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Simulate GPT-Live-1's ‘interrupt while thinking’ trick — build a chat loop where a new message can barge in and cancel the model's reply mid-stream.",
+      "category": "agent/tool-building",
+      "why": "Riffs on today's GPT-Live-1 launch: its headline trick is handling interruptions by running a lightweight audio layer alongside a separate reasoning backend, so talking over it doesn't mean restarting from scratch. You'll fake that same architecture in text — a background task generating tokens, and a foreground listener that can cancel it — and feel exactly what ‘handles interruptions’ costs to actually build.",
+      "plan": [
+        {
+          "step": "Write a plain async function that streams a Claude response for a given prompt, printing tokens as they arrive.",
+          "minutes": 6
+        },
+        {
+          "step": "Wrap that call in an asyncio.Task so it runs in the background while your main loop keeps listening for input.",
+          "minutes": 5
+        },
+        {
+          "step": "Add an input loop: if new text arrives while the task is still running, call task.cancel() and catch the resulting CancelledError.",
+          "minutes": 6
+        },
+        {
+          "step": "On cancel, print how much of the reply had already streamed before you cut it off, then immediately kick off a new streaming task for the new input.",
+          "minutes": 6
+        },
+        {
+          "step": "Test twice: once letting a reply finish untouched, once typing a second question mid-stream and watching the first one actually stop.",
+          "minutes": 4
+        }
+      ],
+      "done_looks_like": "A terminal demo where a normal question streams to completion, but typing a second question while the first is still generating visibly cuts the first reply short (e.g. prints '[interrupted after ~40 tokens]') and starts fresh on the new input — the same mechanism GPT-Live-1 is doing with audio, done in plain text.",
+      "stretch_goal": "Track total tokens generated vs. tokens actually shown per turn, and print a running ‘tokens wasted to interruptions’ counter — the same cost trade-off OpenAI's duplex pipeline is optimizing away.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "Python asyncio",
+        "Claude streaming API"
+      ]
+    }
   }
 ]
