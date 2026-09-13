@@ -1661,5 +1661,92 @@
         "Claude streaming API"
       ]
     }
+  },
+  {
+    "date": "2026-09-13",
+    "reading": {
+      "intro": "Been quiet on these — shorter list today. Top 3: Anthropic CEO Dario Amodei published a formal essay calling on AI labs to deliberately slow frontier development — and Sam Altman publicly agreed within hours; a Russian-linked threat actor used swarms of autonomous AI coding agents to breach 400+ organizations in a single campaign; and security researchers revealed month-long patch gaps in the sandboxes protecting Claude Code, Codex, and Cursor. Newsletters covering today: Latent Space AI News; web search filled the rest since inbox volume was light.",
+      "items": [
+        {
+          "title": "Dario Amodei publishes “Pace the Frontier” essay — Sam Altman publicly agrees within hours",
+          "url": "https://www.cnn.com/2026/09/12/tech/anthropic-ceo-essay-ai",
+          "source": "CNN Business (also Axios, Forbes, NBC News)",
+          "why": "Amodei's ~3,800-word essay argues labs should deliberately slow how fast they improve model capabilities — not pause training, but take more time to align and safety-test, with third-party evaluators confirming it. The sharpest claim: a swarm of rogue AI agents could be capable of taking over the internet with a persistent botnet within 6–12 months, causing potentially hundreds of billions in damage. He proposes a concrete three-step framework (embedded evaluators with employee-level access, capability-based checkpoints, a four-tier ladder of global agreements). Altman replied publicly the same day: “I agree with Dario that we need to pace the frontier,” and committed OpenAI to the same evaluator-access idea. This is the formal, public escalation of the safety debate that's been building all week (Coxon's resignation, Hubinger's >10% extinction odds) — now it's the two biggest labs' CEOs on record agreeing to something concrete.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Russian-linked hackers used hundreds of AI agents to breach 400+ organizations in one campaign",
+          "url": "https://thehackernews.com/2026/09/papercut-attacker-uses-hundreds-of-ai.html",
+          "source": "The Hacker News (also Help Net Security, Cybersecurity News)",
+          "why": "A suspected Russian-speaking threat actor weaponized two PaperCut print-server flaws (CVE-2026-81578, CVE-2026-82078), using hundreds of autonomous AI agents — built on OpenAI's Codex harness paired with a DeepSeek model — to scan for and exploit vulnerable servers at machine speed. Result: at least 395–440 organizations compromised across 48 countries (concentrated in U.S. education), remote code execution in under 4 hours, domain admin in 6, and 11 organizations breached in 26 seconds once the campaign launched. The agents were deliberately steered to skip Russia, China, and over 20 other countries. One of the clearest examples yet of AI agents doing offensive-security work at a scale and speed no human team could match.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Startup discloses leaky sandboxes in Claude Code, Codex, and Cursor — patch times ranged from a week to 50 days",
+          "url": "https://thehackernews.com/2026/09/malicious-git-configs-can-make-claude.html",
+          "source": "The Hacker News (also Upstarts Media)",
+          "why": "Stealth startup Accomplish found that a legitimate Git setting (core.fsmonitor, read straight from a repo's .git/config) lets a malicious repo run attacker commands with the user's privileges, outside the AI agent's sandbox, with no approval prompt — the agent itself follows every rule, but writes a file a trusted tool later executes unsandboxed. Cursor and OpenAI patched in about a week (Cursor: CVE-2026-48124; Codex CLI got a bounty payout); Anthropic took roughly 50 days and 30 releases. Accomplish's CTO: “There's a lot of talk about security now. It doesn't really reflect in how they actually build products.” Worth knowing if you run any of these tools on untrusted repos; skip if you don't touch AI coding agents.",
+          "minutes": 4,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who wrote the essay “We Must Pace the Frontier”?",
+          "a": "Dario Amodei, Anthropic's CEO"
+        },
+        {
+          "q": "True or false: Sam Altman publicly agreed with Amodei's call to slow down, the same day the essay was published.",
+          "a": "True"
+        },
+        {
+          "q": "Which specific safeguard did Altman say OpenAI would also adopt, matching Amodei's proposal?",
+          "a": "Giving independent/third-party evaluators employee-level access inside the company"
+        },
+        {
+          "q": "Per Amodei's essay, how soon could a swarm of rogue AI agents be capable of taking over the internet with a persistent botnet?",
+          "choices": [
+            "6–12 months",
+            "2–3 years",
+            "5 years",
+            "It's already happened"
+          ],
+          "a": "6–12 months"
+        },
+        {
+          "q": "Amodei's proposal is a ___-step framework for pacing AI development.",
+          "a": "Three"
+        },
+        {
+          "q": "Roughly how many organizations were compromised in the AI-agent-powered PaperCut hacking campaign?",
+          "choices": [
+            "~40",
+            "~150",
+            "~400",
+            "1000+"
+          ],
+          "a": "~400 (395–440, across 48 countries)"
+        },
+        {
+          "q": "What two AI systems did the PaperCut attacker combine to power its hundreds of autonomous hacking agents?",
+          "a": "OpenAI's Codex harness and a DeepSeek model"
+        },
+        {
+          "q": "True or false: the PaperCut attacker specifically avoided targeting organizations in Russia and China.",
+          "a": "True"
+        },
+        {
+          "q": "What Git configuration setting did the Accomplish-disclosed vulnerability abuse to escape AI coding agent sandboxes?",
+          "a": "core.fsmonitor"
+        },
+        {
+          "q": "Of Anthropic, Cursor, and OpenAI, which vendor took the longest to patch the sandbox-escape vulnerability once notified?",
+          "a": "Anthropic (~50 days and 30 releases)"
+        }
+      ]
+    },
+    "build": null
   }
 ]
