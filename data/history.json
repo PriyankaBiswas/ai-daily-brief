@@ -1747,6 +1747,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Write a 30-second tripwire that catches the exact git-config trick just used to escape Claude Code, Codex, and Cursor's sandboxes.",
+      "category": "infra/deployment",
+      "why": "core.fsmonitor is exactly the setting Accomplish's disclosure (today's reading item 3) showed can run attacker commands outside your AI agent's sandbox with zero approval prompt — writing your own tripwire for it (and its cousins) turns a scary headline into a script you actually understand and can reuse before opening any repo you didn't write yourself.",
+      "plan": [
+        {
+          "step": "Skim the disclosure again and note the exact attack shape: a value sitting in .git/config that a trusted tool reads and executes, unsandboxed, with no prompt.",
+          "minutes": 5
+        },
+        {
+          "step": "Write git_config_tripwire.py: parse a target repo's .git/config with configparser, flag a small deny-list (core.fsmonitor, core.hooksPath, core.pager, core.editor, credential.helper) and print a clear ✅/🚩 line per finding.",
+          "minutes": 10
+        },
+        {
+          "step": "Test it twice — against this real repo (should come back all-clean) and against a scratch repo where you hand-add `core.fsmonitor = calc.exe` to .git/config (should flag red immediately).",
+          "minutes": 8
+        },
+        {
+          "step": "Jot one line on whether you'd actually run this before cloning a random repo into Claude Code or Cursor — and where in your workflow it would slot in.",
+          "minutes": 2
+        }
+      ],
+      "done_looks_like": "A single script that takes a repo path, reads .git/config, and prints a pass/fail line per risky setting — clean on your own repos, and it turns red the moment you plant a fake core.fsmonitor entry in a test repo.",
+      "stretch_goal": "Wire it into a shell alias or a pre-checkout git hook so it runs automatically on every fresh clone, or extend the deny-list to the other keys Accomplish's disclosure mentions (includeIf tricks, hooksPath).",
+      "tools": [
+        "Python (configparser)",
+        "git",
+        "Claude Code / Cursor (the tool you're protecting)"
+      ]
+    }
   }
 ]
