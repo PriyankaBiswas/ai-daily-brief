@@ -1665,7 +1665,7 @@
   {
     "date": "2026-09-13",
     "reading": {
-      "intro": "Been quiet on these — shorter list today. Top 3: Anthropic CEO Dario Amodei published a formal essay calling on AI labs to deliberately slow frontier development — and Sam Altman publicly agreed within hours; a Russian-linked threat actor used swarms of autonomous AI coding agents to breach 400+ organizations in a single campaign; and security researchers revealed month-long patch gaps in the sandboxes protecting Claude Code, Codex, and Cursor. Newsletters covering today: Latent Space AI News; web search filled the rest since inbox volume was light.",
+      "intro": "Anthropic CEO Dario Amodei published a formal essay calling on AI labs to deliberately slow frontier development — and Sam Altman publicly agreed within hours. A Russian-linked threat actor used swarms of autonomous AI coding agents to breach 400+ organizations in one campaign. Security researchers found month-long patch gaps in the sandboxes protecting Claude Code, Codex, and Cursor. Redwood Research proposed transparency rules as frontier models drift toward reasoning that's harder to monitor. Salesforce launched seven named AI agents ahead of Dreamforce, and OpenAI paused new $200 ChatGPT Pro signups amid ‘unprecedented’ demand. Newsletters covering today: Latent Space AI News; web search filled the rest since inbox volume was light.",
       "items": [
         {
           "title": "Dario Amodei publishes “Pace the Frontier” essay — Sam Altman publicly agrees within hours",
@@ -1690,52 +1690,54 @@
           "why": "Stealth startup Accomplish found that a legitimate Git setting (core.fsmonitor, read straight from a repo's .git/config) lets a malicious repo run attacker commands with the user's privileges, outside the AI agent's sandbox, with no approval prompt — the agent itself follows every rule, but writes a file a trusted tool later executes unsandboxed. Cursor and OpenAI patched in about a week (Cursor: CVE-2026-48124; Codex CLI got a bounty payout); Anthropic took roughly 50 days and 30 releases. Accomplish's CTO: “There's a lot of talk about security now. It doesn't really reflect in how they actually build products.” Worth knowing if you run any of these tools on untrusted repos; skip if you don't touch AI coding agents.",
           "minutes": 4,
           "skip_ok": true
+        },
+        {
+          "title": "Redwood Research proposes transparency rules as models drift toward reasoning we can't read",
+          "url": "https://techcrunch.com/2026/09/02/openais-new-reasoning-technique-alarms-ai-safety-experts/",
+          "source": "TechCrunch (also Redwood Research blog)",
+          "why": "Chief scientist Ryan Greenblatt argues AI labs should publish evidence and policy commitments before shipping architectures that substantially reduce chain-of-thought (CoT) visibility — the plain-language reasoning traces that let outsiders (and safety teams) actually see what a model is 'thinking.' The trigger: growing suspicion that OpenAI's GPT-6 Astra has taken a real step toward 'neuralese' — reasoning in opaque internal activations instead of visible text — which Greenblatt warns could scale faster than ordinary CoT reasoning and eventually push models to reason 'entirely or almost entirely in latent space.' Chain-of-thought logs were exactly what investigators leaned on to understand this week's AI-agent-powered attacks (see above); losing that visibility is the quiet, structural version of the risk Amodei's essay is naming out loud.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "Salesforce launches seven named Agentforce AI agents ahead of Dreamforce",
+          "url": "https://www.salesforce.com/news/stories/agentforce-job-ready-ai-agents/",
+          "source": "Salesforce (also Unite.AI, Futurum Group)",
+          "why": "Casey, Paige, Carter, Hunter, Marshall, Piper, and Fin — each a named agent built for one business function (service, IT/HR, commerce, outbound sales, supply chain, pipeline gen, customer experience) and wired into a company's existing Customer 360 data, rules, and permissions. Six are generally available now; Hunter (outbound sales) is still in pilot and is the first to run on a new 'long-horizon runtime' designed to pursue a goal over weeks rather than a single chat session. Also announced: a 'Trusted Enterprise AI Harness' governance layer for companies already juggling multiple agent platforms. Timed right before Dreamforce (Sept 15–17) — a concrete look at what 'enterprise AI agents' means in production, not just in a demo.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI pauses new $200 ChatGPT Pro signups amid ‘unprecedented’ demand for GPT-6 Astra",
+          "url": "https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/",
+          "source": "TechCrunch (also Fortune, CIO, Computerworld)",
+          "why": "New sign-ups and upgrades to the $200/month Pro tier (from Free, Go, Plus, or the $100 Pro plan) are on hold because demand for GPT-6 Astra is straining system capacity — an OpenAI exec called it demand unlike anything they've seen. Existing Pro subscribers, the $100 tier, the API, and lower-cost plans are unaffected. A small, concrete data point on just how much compute the current model generation is eating relative to what OpenAI provisioned for.",
+          "minutes": 3,
+          "skip_ok": true
         }
       ],
       "quiz": [
         {
-          "q": "Who wrote the essay “We Must Pace the Frontier”?",
-          "a": "Dario Amodei, Anthropic's CEO"
+          "q": "Who wrote the essay “We Must Pace the Frontier,” and which rival CEO publicly agreed within hours?",
+          "a": "Dario Amodei (Anthropic's CEO) wrote it; Sam Altman (OpenAI) publicly agreed the same day."
         },
         {
-          "q": "True or false: Sam Altman publicly agreed with Amodei's call to slow down, the same day the essay was published.",
-          "a": "True"
+          "q": "True or false: Amodei's essay calls for pausing AI model training entirely.",
+          "a": "False — he's calling for deliberately slowing capability gains while continuing to train and ship, with more time for alignment and third-party evaluation."
         },
         {
-          "q": "Which specific safeguard did Altman say OpenAI would also adopt, matching Amodei's proposal?",
-          "a": "Giving independent/third-party evaluators employee-level access inside the company"
-        },
-        {
-          "q": "Per Amodei's essay, how soon could a swarm of rogue AI agents be capable of taking over the internet with a persistent botnet?",
+          "q": "Roughly how many organizations were compromised in the AI-agent-powered PaperCut hacking campaign, and across how many countries?",
           "choices": [
-            "6–12 months",
-            "2–3 years",
-            "5 years",
-            "It's already happened"
+            "~40 orgs / 5 countries",
+            "~150 orgs / 20 countries",
+            "~400 orgs / 48 countries",
+            "1000+ orgs / 100 countries"
           ],
-          "a": "6–12 months"
+          "a": "~400 organizations (395–440) across 48 countries."
         },
         {
-          "q": "Amodei's proposal is a ___-step framework for pacing AI development.",
-          "a": "Three"
-        },
-        {
-          "q": "Roughly how many organizations were compromised in the AI-agent-powered PaperCut hacking campaign?",
-          "choices": [
-            "~40",
-            "~150",
-            "~400",
-            "1000+"
-          ],
-          "a": "~400 (395–440, across 48 countries)"
-        },
-        {
-          "q": "What two AI systems did the PaperCut attacker combine to power its hundreds of autonomous hacking agents?",
-          "a": "OpenAI's Codex harness and a DeepSeek model"
-        },
-        {
-          "q": "True or false: the PaperCut attacker specifically avoided targeting organizations in Russia and China.",
-          "a": "True"
+          "q": "What two AI systems powered the PaperCut attacker's hundreds of autonomous hacking agents?",
+          "a": "OpenAI's Codex harness paired with a DeepSeek model."
         },
         {
           "q": "What Git configuration setting did the Accomplish-disclosed vulnerability abuse to escape AI coding agent sandboxes?",
@@ -1743,7 +1745,29 @@
         },
         {
           "q": "Of Anthropic, Cursor, and OpenAI, which vendor took the longest to patch the sandbox-escape vulnerability once notified?",
-          "a": "Anthropic (~50 days and 30 releases)"
+          "a": "Anthropic — roughly 50 days and 30 releases."
+        },
+        {
+          "q": "What term does Ryan Greenblatt use for AI reasoning that happens in opaque internal activations rather than visible chain-of-thought text?",
+          "a": "“Neuralese”"
+        },
+        {
+          "q": "Which OpenAI model's apparent shift toward opaque reasoning triggered Redwood Research's transparency proposal?",
+          "a": "GPT-6 Astra"
+        },
+        {
+          "q": "Which Agentforce agent is the first to run on Salesforce's new 'long-horizon runtime,' built to pursue a goal over weeks rather than one chat session?",
+          "choices": [
+            "Casey",
+            "Hunter",
+            "Fin",
+            "Marshall"
+          ],
+          "a": "Hunter (outbound sales) — still in pilot."
+        },
+        {
+          "q": "Why did OpenAI pause new sign-ups for its $200 ChatGPT Pro plan?",
+          "a": "‘Unprecedented’ demand for GPT-6 Astra was straining system capacity."
         }
       ]
     },

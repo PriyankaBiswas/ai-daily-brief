@@ -405,8 +405,8 @@ a { color: var(--accent); }
 
 <section class="today-section">
 <h2 class="today-date-heading">Sunday, September 13, 2026</h2>
-<p class="intro">Been quiet on these — shorter list today. Top 3: Anthropic CEO Dario Amodei published a formal essay calling on AI labs to deliberately slow frontier development — and Sam Altman publicly agreed within hours; a Russian-linked threat actor used swarms of autonomous AI coding agents to breach 400+ organizations in a single campaign; and security researchers revealed month-long patch gaps in the sandboxes protecting Claude Code, Codex, and Cursor. Newsletters covering today: Latent Space AI News; web search filled the rest since inbox volume was light.</p>
-<p class="meta-line">🧠 Must-read AI today — ~14 min · Ranked most important first.</p>
+<p class="intro">Anthropic CEO Dario Amodei published a formal essay calling on AI labs to deliberately slow frontier development — and Sam Altman publicly agreed within hours. A Russian-linked threat actor used swarms of autonomous AI coding agents to breach 400+ organizations in one campaign. Security researchers found month-long patch gaps in the sandboxes protecting Claude Code, Codex, and Cursor. Redwood Research proposed transparency rules as frontier models drift toward reasoning that&#x27;s harder to monitor. Salesforce launched seven named AI agents ahead of Dreamforce, and OpenAI paused new $200 ChatGPT Pro signups amid ‘unprecedented’ demand. Newsletters covering today: Latent Space AI News; web search filled the rest since inbox volume was light.</p>
+<p class="meta-line">🧠 Must-read AI today — ~26 min · Ranked most important first.</p>
 <ol class="reading-list">
 <li class="reading-item">
       <h3><a href="https://www.cnn.com/2026/09/12/tech/anthropic-ceo-essay-ai" target="_blank" rel="noopener">Dario Amodei publishes “Pace the Frontier” essay — Sam Altman publicly agrees within hours</a></h3>
@@ -435,47 +435,82 @@ a { color: var(--accent); }
       </div>
       <p class="why">Stealth startup Accomplish found that a legitimate Git setting (core.fsmonitor, read straight from a repo&#x27;s .git/config) lets a malicious repo run attacker commands with the user&#x27;s privileges, outside the AI agent&#x27;s sandbox, with no approval prompt — the agent itself follows every rule, but writes a file a trusted tool later executes unsandboxed. Cursor and OpenAI patched in about a week (Cursor: CVE-2026-48124; Codex CLI got a bounty payout); Anthropic took roughly 50 days and 30 releases. Accomplish&#x27;s CTO: “There&#x27;s a lot of talk about security now. It doesn&#x27;t really reflect in how they actually build products.” Worth knowing if you run any of these tools on untrusted repos; skip if you don&#x27;t touch AI coding agents.</p>
     </li>
+<li class="reading-item">
+      <h3><a href="https://techcrunch.com/2026/09/02/openais-new-reasoning-technique-alarms-ai-safety-experts/" target="_blank" rel="noopener">Redwood Research proposes transparency rules as models drift toward reasoning we can&#x27;t read</a></h3>
+      <div class="item-meta">
+        <span class="meta-source">TechCrunch (also Redwood Research blog)</span>
+        <span class="meta-minutes">⏱ 4 min</span>
+        <span class="badge badge-core">core</span>
+      </div>
+      <p class="why">Chief scientist Ryan Greenblatt argues AI labs should publish evidence and policy commitments before shipping architectures that substantially reduce chain-of-thought (CoT) visibility — the plain-language reasoning traces that let outsiders (and safety teams) actually see what a model is &#x27;thinking.&#x27; The trigger: growing suspicion that OpenAI&#x27;s GPT-6 Astra has taken a real step toward &#x27;neuralese&#x27; — reasoning in opaque internal activations instead of visible text — which Greenblatt warns could scale faster than ordinary CoT reasoning and eventually push models to reason &#x27;entirely or almost entirely in latent space.&#x27; Chain-of-thought logs were exactly what investigators leaned on to understand this week&#x27;s AI-agent-powered attacks (see above); losing that visibility is the quiet, structural version of the risk Amodei&#x27;s essay is naming out loud.</p>
+    </li>
+<li class="reading-item">
+      <h3><a href="https://www.salesforce.com/news/stories/agentforce-job-ready-ai-agents/" target="_blank" rel="noopener">Salesforce launches seven named Agentforce AI agents ahead of Dreamforce</a></h3>
+      <div class="item-meta">
+        <span class="meta-source">Salesforce (also Unite.AI, Futurum Group)</span>
+        <span class="meta-minutes">⏱ 5 min</span>
+        <span class="badge badge-skip">skip-friendly</span>
+      </div>
+      <p class="why">Casey, Paige, Carter, Hunter, Marshall, Piper, and Fin — each a named agent built for one business function (service, IT/HR, commerce, outbound sales, supply chain, pipeline gen, customer experience) and wired into a company&#x27;s existing Customer 360 data, rules, and permissions. Six are generally available now; Hunter (outbound sales) is still in pilot and is the first to run on a new &#x27;long-horizon runtime&#x27; designed to pursue a goal over weeks rather than a single chat session. Also announced: a &#x27;Trusted Enterprise AI Harness&#x27; governance layer for companies already juggling multiple agent platforms. Timed right before Dreamforce (Sept 15–17) — a concrete look at what &#x27;enterprise AI agents&#x27; means in production, not just in a demo.</p>
+    </li>
+<li class="reading-item">
+      <h3><a href="https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/" target="_blank" rel="noopener">OpenAI pauses new $200 ChatGPT Pro signups amid ‘unprecedented’ demand for GPT-6 Astra</a></h3>
+      <div class="item-meta">
+        <span class="meta-source">TechCrunch (also Fortune, CIO, Computerworld)</span>
+        <span class="meta-minutes">⏱ 3 min</span>
+        <span class="badge badge-skip">skip-friendly</span>
+      </div>
+      <p class="why">New sign-ups and upgrades to the $200/month Pro tier (from Free, Go, Plus, or the $100 Pro plan) are on hold because demand for GPT-6 Astra is straining system capacity — an OpenAI exec called it demand unlike anything they&#x27;ve seen. Existing Pro subscribers, the $100 tier, the API, and lower-cost plans are unaffected. A small, concrete data point on just how much compute the current model generation is eating relative to what OpenAI provisioned for.</p>
+    </li>
 </ol>
 <section class="quiz-section">
 <h3 class="section-heading">🧠 Recall Quiz</h3>
 <ol class="quiz-list">
-<li class="quiz-item"><p class="quiz-q">Who wrote the essay “We Must Pace the Frontier”?</p></li>
-<li class="quiz-item"><p class="quiz-q">True or false: Sam Altman publicly agreed with Amodei&#x27;s call to slow down, the same day the essay was published.</p></li>
-<li class="quiz-item"><p class="quiz-q">Which specific safeguard did Altman say OpenAI would also adopt, matching Amodei&#x27;s proposal?</p></li>
-<li class="quiz-item"><p class="quiz-q">Per Amodei&#x27;s essay, how soon could a swarm of rogue AI agents be capable of taking over the internet with a persistent botnet?</p>
+<li class="quiz-item"><p class="quiz-q">Who wrote the essay “We Must Pace the Frontier,” and which rival CEO publicly agreed within hours?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">True or false: Amodei&#x27;s essay calls for pausing AI model training entirely.</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Roughly how many organizations were compromised in the AI-agent-powered PaperCut hacking campaign, and across how many countries?</p>
 <ul class="quiz-choices">
-<li>6–12 months</li>
-<li>2–3 years</li>
-<li>5 years</li>
-<li>It&#x27;s already happened</li>
+<li>~40 orgs / 5 countries</li>
+<li>~150 orgs / 20 countries</li>
+<li>~400 orgs / 48 countries</li>
+<li>1000+ orgs / 100 countries</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">Amodei&#x27;s proposal is a ___-step framework for pacing AI development.</p></li>
-<li class="quiz-item"><p class="quiz-q">Roughly how many organizations were compromised in the AI-agent-powered PaperCut hacking campaign?</p>
+<li class="quiz-item"><p class="quiz-q">What two AI systems powered the PaperCut attacker&#x27;s hundreds of autonomous hacking agents?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">What Git configuration setting did the Accomplish-disclosed vulnerability abuse to escape AI coding agent sandboxes?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Of Anthropic, Cursor, and OpenAI, which vendor took the longest to patch the sandbox-escape vulnerability once notified?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">What term does Ryan Greenblatt use for AI reasoning that happens in opaque internal activations rather than visible chain-of-thought text?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which OpenAI model&#x27;s apparent shift toward opaque reasoning triggered Redwood Research&#x27;s transparency proposal?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which Agentforce agent is the first to run on Salesforce&#x27;s new &#x27;long-horizon runtime,&#x27; built to pursue a goal over weeks rather than one chat session?</p>
 <ul class="quiz-choices">
-<li>~40</li>
-<li>~150</li>
-<li>~400</li>
-<li>1000+</li>
+<li>Casey</li>
+<li>Hunter</li>
+<li>Fin</li>
+<li>Marshall</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What two AI systems did the PaperCut attacker combine to power its hundreds of autonomous hacking agents?</p></li>
-<li class="quiz-item"><p class="quiz-q">True or false: the PaperCut attacker specifically avoided targeting organizations in Russia and China.</p></li>
-<li class="quiz-item"><p class="quiz-q">What Git configuration setting did the Accomplish-disclosed vulnerability abuse to escape AI coding agent sandboxes?</p></li>
-<li class="quiz-item"><p class="quiz-q">Of Anthropic, Cursor, and OpenAI, which vendor took the longest to patch the sandbox-escape vulnerability once notified?</p></li>
+<li class="quiz-item"><p class="quiz-q">Why did OpenAI pause new sign-ups for its $200 ChatGPT Pro plan?</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
-<li>Dario Amodei, Anthropic&#x27;s CEO</li>
-<li>True</li>
-<li>Giving independent/third-party evaluators employee-level access inside the company</li>
-<li>6–12 months</li>
-<li>Three</li>
-<li>~400 (395–440, across 48 countries)</li>
-<li>OpenAI&#x27;s Codex harness and a DeepSeek model</li>
-<li>True</li>
+<li>Dario Amodei (Anthropic&#x27;s CEO) wrote it; Sam Altman (OpenAI) publicly agreed the same day.</li>
+<li>False — he&#x27;s calling for deliberately slowing capability gains while continuing to train and ship, with more time for alignment and third-party evaluation.</li>
+<li>~400 organizations (395–440) across 48 countries.</li>
+<li>OpenAI&#x27;s Codex harness paired with a DeepSeek model.</li>
 <li>core.fsmonitor</li>
-<li>Anthropic (~50 days and 30 releases)</li>
+<li>Anthropic — roughly 50 days and 30 releases.</li>
+<li>“Neuralese”</li>
+<li>GPT-6 Astra</li>
+<li>Hunter (outbound sales) — still in pilot.</li>
+<li>‘Unprecedented’ demand for GPT-6 Astra was straining system capacity.</li>
 </ol></details>
 </section>
 <section class="build-section">
@@ -534,10 +569,14 @@ a { color: var(--accent); }
 <section class="quiz-section">
 <h3 class="section-heading">🧠 Recall Quiz</h3>
 <ol class="quiz-list">
-<li class="quiz-item"><p class="quiz-q">Who told OpenAI staff the company is open to slowing down cutting-edge AI development?</p></li>
-<li class="quiz-item"><p class="quiz-q">True or false: Altman said OpenAI would only slow down if every other AI lab agreed to do the same first.</p></li>
-<li class="quiz-item"><p class="quiz-q">Which OpenAI chief scientist wrote an essay calling for labs to “coordinate to slow down future development as needed”?</p></li>
-<li class="quiz-item"><p class="quiz-q">Which Anthropic researcher&#x27;s resignation, warning labs are “gambling with our lives,” kicked off this week&#x27;s safety debate?</p></li>
+<li class="quiz-item"><p class="quiz-q">Who told OpenAI staff the company is open to slowing down cutting-edge AI development?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">True or false: Altman said OpenAI would only slow down if every other AI lab agreed to do the same first.</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which OpenAI chief scientist wrote an essay calling for labs to “coordinate to slow down future development as needed”?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which Anthropic researcher&#x27;s resignation, warning labs are “gambling with our lives,” kicked off this week&#x27;s safety debate?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">Which AI lab is Andrew Tulloch leaving?</p>
 <ul class="quiz-choices">
 <li>Anthropic</li>
@@ -546,9 +585,12 @@ a { color: var(--accent); }
 <li>Thinking Machines</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">Roughly how large was the pay package Zuckerberg reportedly offered Tulloch to (re)join Meta?</p></li>
-<li class="quiz-item"><p class="quiz-q">What Meta product did Tulloch wait to see launch before announcing his departure?</p></li>
-<li class="quiz-item"><p class="quiz-q">What team is Tulloch joining at Anthropic?</p></li>
+<li class="quiz-item"><p class="quiz-q">Roughly how large was the pay package Zuckerberg reportedly offered Tulloch to (re)join Meta?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">What Meta product did Tulloch wait to see launch before announcing his departure?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">What team is Tulloch joining at Anthropic?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">How much does GPT-Live-1 cost per minute in the OpenAI API?</p>
 <ul class="quiz-choices">
 <li>$0.005</li>
@@ -557,7 +599,8 @@ a { color: var(--accent); }
 <li>$5.00</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">By about how much does OpenAI say GPT-Live-1 cuts the code needed to build a voice agent, versus the old cascaded pipeline?</p></li>
+<li class="quiz-item"><p class="quiz-q">By about how much does OpenAI say GPT-Live-1 cuts the code needed to build a voice agent, versus the old cascaded pipeline?</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
@@ -626,7 +669,8 @@ a { color: var(--accent); }
 <section class="quiz-section">
 <h3 class="section-heading">🧠 Recall Quiz</h3>
 <ol class="quiz-list">
-<li class="quiz-item"><p class="quiz-q">How many Chinese AI labs did Anthropic name in its threat report for allegedly distilling Claude via fraudulent accounts?</p></li>
+<li class="quiz-item"><p class="quiz-q">How many Chinese AI labs did Anthropic name in its threat report for allegedly distilling Claude via fraudulent accounts?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">Which two of the named labs allegedly went further and served Claude to their own customers as if it were their own model?</p>
 <ul class="quiz-choices">
 <li>Alibaba and Xiaomi</li>
@@ -635,10 +679,14 @@ a { color: var(--accent); }
 <li>MiniMax and Alibaba</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What country was home to the actor who used Claude Code to build rocket guidance software?</p></li>
-<li class="quiz-item"><p class="quiz-q">True or false: Anthropic said its five flagged biology cases definitely intended harm.</p></li>
-<li class="quiz-item"><p class="quiz-q">What time span does Anthropic&#x27;s threat report cover?</p></li>
-<li class="quiz-item"><p class="quiz-q">What existing OpenAI product/harness powers the new Agents API under the hood?</p></li>
+<li class="quiz-item"><p class="quiz-q">What country was home to the actor who used Claude Code to build rocket guidance software?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">True or false: Anthropic said its five flagged biology cases definitely intended harm.</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">What time span does Anthropic&#x27;s threat report cover?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">What existing OpenAI product/harness powers the new Agents API under the hood?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">Which of these was NOT among the capabilities OpenAI highlighted for the Agents API?</p>
 <ul class="quiz-choices">
 <li>Running code in sandboxed environments</li>
@@ -647,9 +695,12 @@ a { color: var(--accent); }
 <li>Tool search</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What base model did Cognition post-train to build SWE-2?</p></li>
-<li class="quiz-item"><p class="quiz-q">On FrontierCode 1.1 Main, SWE-2 lands within about a point of which model — at roughly 64% less cost?</p></li>
-<li class="quiz-item"><p class="quiz-q">About how much cheaper does SWE-2 run than its predecessor SWE-1.7 on average, per the turns/cost comparison?</p></li>
+<li class="quiz-item"><p class="quiz-q">What base model did Cognition post-train to build SWE-2?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">On FrontierCode 1.1 Main, SWE-2 lands within about a point of which model — at roughly 64% less cost?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">About how much cheaper does SWE-2 run than its predecessor SWE-1.7 on average, per the turns/cost comparison?</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
@@ -726,8 +777,10 @@ a { color: var(--accent); }
 <li>Sébastien Bubeck</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">True or false: Hubinger said today&#x27;s Anthropic models are high risk.</p></li>
-<li class="quiz-item"><p class="quiz-q">Who was the Anthropic researcher whose resignation kicked off this whole debate?</p></li>
+<li class="quiz-item"><p class="quiz-q">True or false: Hubinger said today&#x27;s Anthropic models are high risk.</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Who was the Anthropic researcher whose resignation kicked off this whole debate?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">What ships alongside iOS 27 on September 14?</p>
 <ul class="quiz-choices">
 <li>A finished, uncapped Siri AI</li>
@@ -736,9 +789,12 @@ a { color: var(--accent); }
 <li>Siri AI delayed again</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">How will Apple offer expanded Siri AI access in the future?</p></li>
-<li class="quiz-item"><p class="quiz-q">Fill in the blank: Apple is rolling out Siri AI access gradually to manage its available ___.</p></li>
-<li class="quiz-item"><p class="quiz-q">Which DeepSeek model does V4.1-Flash replace / get traffic rerouted from, starting September 14?</p></li>
+<li class="quiz-item"><p class="quiz-q">How will Apple offer expanded Siri AI access in the future?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Fill in the blank: Apple is rolling out Siri AI access gradually to manage its available ___.</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which DeepSeek model does V4.1-Flash replace / get traffic rerouted from, starting September 14?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">Roughly how many total parameters does DeepSeek-V4.1-Flash have?</p>
 <ul class="quiz-choices">
 <li>55 billion</li>
@@ -747,8 +803,10 @@ a { color: var(--accent); }
 <li>1.2 trillion</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What&#x27;s the new architecture behind V4.1-Flash&#x27;s efficiency gains?</p></li>
-<li class="quiz-item"><p class="quiz-q">Short answer: name one thing all three of today&#x27;s items have in common with each other (hint: think about who&#x27;s making them).</p></li>
+<li class="quiz-item"><p class="quiz-q">What&#x27;s the new architecture behind V4.1-Flash&#x27;s efficiency gains?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Short answer: name one thing all three of today&#x27;s items have in common with each other (hint: think about who&#x27;s making them).</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
@@ -870,8 +928,10 @@ a { color: var(--accent); }
 <li>The Poincaré Conjecture</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">True or false: OpenAI says it will claim the $1M Millennium Prize payout for the proof.</p></li>
-<li class="quiz-item"><p class="quiz-q">Which two mathematicians say they&#x27;d spent nearly a year chasing the same Navier-Stokes proof before OpenAI published?</p></li>
+<li class="quiz-item"><p class="quiz-q">True or false: OpenAI says it will claim the $1M Millennium Prize payout for the proof.</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which two mathematicians say they&#x27;d spent nearly a year chasing the same Navier-Stokes proof before OpenAI published?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">What is Meta&#x27;s new personal AI agent called, and what secure environment does it run in?</p>
 <ul class="quiz-choices">
 <li>Muse / Muse Secure VM</li>
@@ -880,9 +940,12 @@ a { color: var(--accent); }
 <li>Astra / Sentinel VM</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">Which Anthropic researcher resigned this week, warning AI labs are &quot;gambling with our lives&quot; on self-improving AI?</p></li>
-<li class="quiz-item"><p class="quiz-q">Which Anthropic alignment science lead agreed the company has no plan yet to solve alignment for superintelligence, even while pushing back on Coxon&#x27;s timeline?</p></li>
-<li class="quiz-item"><p class="quiz-q">Which two models inside ChatGPT Images 2.5 now rank first and second on Arena AI&#x27;s image leaderboards?</p></li>
+<li class="quiz-item"><p class="quiz-q">Which Anthropic researcher resigned this week, warning AI labs are &quot;gambling with our lives&quot; on self-improving AI?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which Anthropic alignment science lead agreed the company has no plan yet to solve alignment for superintelligence, even while pushing back on Coxon&#x27;s timeline?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which two models inside ChatGPT Images 2.5 now rank first and second on Arena AI&#x27;s image leaderboards?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">How many possible single-nucleotide variants does AlphaGenome Atlas cover?</p>
 <ul class="quiz-choices">
 <li>9 million</li>
@@ -891,7 +954,8 @@ a { color: var(--accent); }
 <li>9 billion</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">In the &quot;100 agents&quot; hacking experiment, how many accounts were compromised via software vulnerabilities versus password brute-forcing?</p></li>
+<li class="quiz-item"><p class="quiz-q">In the &quot;100 agents&quot; hacking experiment, how many accounts were compromised via software vulnerabilities versus password brute-forcing?</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
@@ -1003,7 +1067,8 @@ a { color: var(--accent); }
 <li>$1T</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">Which two cloud providers make up most of Anthropic&#x27;s compute leases?</p></li>
+<li class="quiz-item"><p class="quiz-q">Which two cloud providers make up most of Anthropic&#x27;s compute leases?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">How many workdays of research did OpenAI&#x27;s coding agents log for every one human workday, per its internal report?</p>
 <ul class="quiz-choices">
 <li>1.5</li>
@@ -1012,7 +1077,8 @@ a { color: var(--accent); }
 <li>10</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What milestone did OpenAI say it hit this month, per the timeline Sam Altman posted last October?</p></li>
+<li class="quiz-item"><p class="quiz-q">What milestone did OpenAI say it hit this month, per the timeline Sam Altman posted last October?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">By roughly what factor has OpenAI&#x27;s internal agent-token output grown since December?</p>
 <ul class="quiz-choices">
 <li>12x</li>
@@ -1021,8 +1087,10 @@ a { color: var(--accent); }
 <li>300x</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What disease does Insilico&#x27;s AI-designed drug rentosertib treat?</p></li>
-<li class="quiz-item"><p class="quiz-q">How many independent &quot;aging clock&quot; models rated treated patients as biologically younger?</p></li>
+<li class="quiz-item"><p class="quiz-q">What disease does Insilico&#x27;s AI-designed drug rentosertib treat?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">How many independent &quot;aging clock&quot; models rated treated patients as biologically younger?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">In the new NBC News poll, what share of Americans said they&#x27;re more worried than excited about AI?</p>
 <ul class="quiz-choices">
 <li>35%</li>
@@ -1031,8 +1099,10 @@ a { color: var(--accent); }
 <li>90%</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What product is OpenAI reportedly readying for DevDay 2026, modeled on a similar Anthropic offering?</p></li>
-<li class="quiz-item"><p class="quiz-q">Which two newspapers sued OpenAI and Microsoft over copyright this week?</p></li>
+<li class="quiz-item"><p class="quiz-q">What product is OpenAI reportedly readying for DevDay 2026, modeled on a similar Anthropic offering?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which two newspapers sued OpenAI and Microsoft over copyright this week?</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
@@ -1144,8 +1214,10 @@ a { color: var(--accent); }
 <li>90</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">Which proof assistant was used to formally verify Claude&#x27;s proof?</p></li>
-<li class="quiz-item"><p class="quiz-q">Roughly how many lines of code and intermediate theorems did the verified proof involve?</p></li>
+<li class="quiz-item"><p class="quiz-q">Which proof assistant was used to formally verify Claude&#x27;s proof?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Roughly how many lines of code and intermediate theorems did the verified proof involve?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">How many autonomous Gemini 3.1 Pro agents did DeepMind run in its math-swarm study?</p>
 <ul class="quiz-choices">
 <li>10</li>
@@ -1154,7 +1226,8 @@ a { color: var(--accent); }
 <li>500</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">How did the cheating exploit spread through DeepMind&#x27;s agent swarm?</p></li>
+<li class="quiz-item"><p class="quiz-q">How did the cheating exploit spread through DeepMind&#x27;s agent swarm?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">Roughly what share of agents became &#x27;whistleblowers&#x27; who refused to cheat and pushed back?</p>
 <ul class="quiz-choices">
 <li>5%</li>
@@ -1171,7 +1244,8 @@ a { color: var(--accent); }
 <li>&quot;Scaling Safely&quot;</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">Per Pachocki, why is OpenAI&#x27;s main safety tool — reading a model&#x27;s written-out reasoning — becoming less reliable?</p></li>
+<li class="quiz-item"><p class="quiz-q">Per Pachocki, why is OpenAI&#x27;s main safety tool — reading a model&#x27;s written-out reasoning — becoming less reliable?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">What score did GPT-6 Astra get on ARC-AGI-3&#x27;s standard harness, versus the touted 99.9% headline number?</p>
 <ul class="quiz-choices">
 <li>99.9% either way</li>
@@ -1180,7 +1254,8 @@ a { color: var(--accent); }
 <li>40.1%</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">In the robot-arm test, how many of 20 trials did Astra succeed at placing the block in the bowl?</p></li>
+<li class="quiz-item"><p class="quiz-q">In the robot-arm test, how many of 20 trials did Astra succeed at placing the block in the bowl?</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
@@ -1270,7 +1345,8 @@ a { color: var(--accent); }
 <section class="quiz-section">
 <h3 class="section-heading">🧠 Recall Quiz</h3>
 <ol class="quiz-list">
-<li class="quiz-item"><p class="quiz-q">How did OpenAI internally classify the wiki incident, and why does that classification matter?</p></li>
+<li class="quiz-item"><p class="quiz-q">How did OpenAI internally classify the wiki incident, and why does that classification matter?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">Roughly how many posts did OpenAI&#x27;s agents leave on the dormant wiki, and over what period?</p>
 <ul class="quiz-choices">
 <li>About 1,800 posts over a week</li>
@@ -1279,7 +1355,8 @@ a { color: var(--accent); }
 <li>About 18 posts over a year</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What did OpenAI&#x27;s agents reportedly use the wiki for?</p></li>
+<li class="quiz-item"><p class="quiz-q">What did OpenAI&#x27;s agents reportedly use the wiki for?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">What is the name of OpenAI&#x27;s new $1B initiative for critical-infrastructure defenders?</p>
 <ul class="quiz-choices">
 <li>Daybreak for Frontline Defenders</li>
@@ -1296,7 +1373,8 @@ a { color: var(--accent); }
 <li>Jais-3, 300B parameters</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What&#x27;s notable about the underlying architecture of humain-m3?</p></li>
+<li class="quiz-item"><p class="quiz-q">What&#x27;s notable about the underlying architecture of humain-m3?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">By when is Anthropic now expected to begin marketing its IPO, at the earliest?</p>
 <ul class="quiz-choices">
 <li>Late September</li>
@@ -1305,9 +1383,12 @@ a { color: var(--accent); }
 <li>Q1 2027</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What size credit facility is Anthropic separately securing as part of its IPO preparations?</p></li>
-<li class="quiz-item"><p class="quiz-q">What does AIR Security&#x27;s firewall product do?</p></li>
-<li class="quiz-item"><p class="quiz-q">How many public AI add-ons did AIR Security&#x27;s own research find relying on untrusted external instruction sources, and how many installs did they represent?</p></li>
+<li class="quiz-item"><p class="quiz-q">What size credit facility is Anthropic separately securing as part of its IPO preparations?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">What does AIR Security&#x27;s firewall product do?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">How many public AI add-ons did AIR Security&#x27;s own research find relying on untrusted external instruction sources, and how many installs did they represent?</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
@@ -1411,7 +1492,8 @@ a { color: var(--accent); }
 <li>a mainframe</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What&#x27;s the core structural difference between Grok Bot and OpenClaw, per that review?</p></li>
+<li class="quiz-item"><p class="quiz-q">What&#x27;s the core structural difference between Grok Bot and OpenClaw, per that review?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">What attack success rate did the cross-model jailbreak achieve on the 9 most vulnerable of 23 models tested?</p>
 <ul class="quiz-choices">
 <li>10-25%</li>
@@ -1420,7 +1502,8 @@ a { color: var(--accent); }
 <li>exactly 50%</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">Which two model families reportedly were never fully broken by that jailbreak?</p></li>
+<li class="quiz-item"><p class="quiz-q">Which two model families reportedly were never fully broken by that jailbreak?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">How much does Microsoft&#x27;s MAI-Transcribe-2 cost per hour of audio?</p>
 <ul class="quiz-choices">
 <li>1 cent</li>
@@ -1445,9 +1528,12 @@ a { color: var(--accent); }
 <li>$500M at a $5B valuation</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">Which quantitative trading firm signed a $13B, five-year GPU supply deal with Crusoe?</p></li>
-<li class="quiz-item"><p class="quiz-q">Per Benedict Evans&#x27;s essay, what&#x27;s the real bottleneck on AI-driven automation at most companies?</p></li>
-<li class="quiz-item"><p class="quiz-q">Per the Towards Data Science piece, what becomes the main way projects fail once agentic coding makes implementation nearly free?</p></li>
+<li class="quiz-item"><p class="quiz-q">Which quantitative trading firm signed a $13B, five-year GPU supply deal with Crusoe?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Per Benedict Evans&#x27;s essay, what&#x27;s the real bottleneck on AI-driven automation at most companies?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Per the Towards Data Science piece, what becomes the main way projects fail once agentic coding makes implementation nearly free?</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
@@ -1559,8 +1645,10 @@ a { color: var(--accent); }
 <li>66</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">Which four models does Astra trail on that Intelligence Index despite its middling score?</p></li>
-<li class="quiz-item"><p class="quiz-q">What score did Astra post on ARC-AGI-3 using the provider-adapter harness?</p></li>
+<li class="quiz-item"><p class="quiz-q">Which four models does Astra trail on that Intelligence Index despite its middling score?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">What score did Astra post on ARC-AGI-3 using the provider-adapter harness?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">Which risk threshold is GPT-6 Astra now formally confirmed as the first model to cross?</p>
 <ul class="quiz-choices">
 <li>High</li>
@@ -1569,7 +1657,8 @@ a { color: var(--accent); }
 <li>Catastrophic</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What did OpenAI president Greg Brockman say about whether Astra qualifies as AGI?</p></li>
+<li class="quiz-item"><p class="quiz-q">What did OpenAI president Greg Brockman say about whether Astra qualifies as AGI?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">How much did Nvidia pay to acquire Hugging Face?</p>
 <ul class="quiz-choices">
 <li>$6.9B</li>
@@ -1586,9 +1675,12 @@ a { color: var(--accent); }
 <li>Life</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What does Runway&#x27;s GWM Worlds 2 generate, and at what resolution/frame rate?</p></li>
-<li class="quiz-item"><p class="quiz-q">In roughly one day, the &#x27;bounded prime gap&#x27; record dropped from 212 to what number, and which AI system did it?</p></li>
-<li class="quiz-item"><p class="quiz-q">Which four major AI providers all experienced stability issues/outages on the same day this week?</p></li>
+<li class="quiz-item"><p class="quiz-q">What does Runway&#x27;s GWM Worlds 2 generate, and at what resolution/frame rate?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">In roughly one day, the &#x27;bounded prime gap&#x27; record dropped from 212 to what number, and which AI system did it?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which four major AI providers all experienced stability issues/outages on the same day this week?</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
@@ -1708,8 +1800,10 @@ a { color: var(--accent); }
 <li>66</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">Which two models does Spark 1.3 trail on the Intelligence Index?</p></li>
-<li class="quiz-item"><p class="quiz-q">What is the codename of the larger Meta model Zuckerberg previewed as coming next?</p></li>
+<li class="quiz-item"><p class="quiz-q">Which two models does Spark 1.3 trail on the Intelligence Index?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">What is the codename of the larger Meta model Zuckerberg previewed as coming next?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">Gemini 3.8 Flash keeps the same pricing as which prior model?</p>
 <ul class="quiz-choices">
 <li>Gemini 3.5 Flash</li>
@@ -1726,11 +1820,16 @@ a { color: var(--accent); }
 <li>Flash Shield</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What technique does OpenAI&#x27;s Astra reportedly use — looping the same transformer layers repeatedly instead of adding parameters?</p></li>
-<li class="quiz-item"><p class="quiz-q">Which organization is Anthropic bringing in-house to independently review its recent AI-agent security incidents?</p></li>
-<li class="quiz-item"><p class="quiz-q">True or false: Anthropic paused its highest-risk RL research even as it published research on intentionally creating a reward-seeking version of Claude.</p></li>
-<li class="quiz-item"><p class="quiz-q">Which Spanish startup launched Quasar 438B, and what Intelligence Index score did it post?</p></li>
-<li class="quiz-item"><p class="quiz-q">What are the two models inside Nvidia and CrowdStrike&#x27;s SafeMind system, and what does each do?</p></li>
+<li class="quiz-item"><p class="quiz-q">What technique does OpenAI&#x27;s Astra reportedly use — looping the same transformer layers repeatedly instead of adding parameters?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which organization is Anthropic bringing in-house to independently review its recent AI-agent security incidents?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">True or false: Anthropic paused its highest-risk RL research even as it published research on intentionally creating a reward-seeking version of Claude.</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Which Spanish startup launched Quasar 438B, and what Intelligence Index score did it post?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">What are the two models inside Nvidia and CrowdStrike&#x27;s SafeMind system, and what does each do?</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
@@ -1860,7 +1959,8 @@ a { color: var(--accent); }
 <li>75%</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What score did Fable 5.1 reach on Artificial Analysis&#x27;s Intelligence Index?</p></li>
+<li class="quiz-item"><p class="quiz-q">What score did Fable 5.1 reach on Artificial Analysis&#x27;s Intelligence Index?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">Which upcoming OpenAI model was the first to cross the company&#x27;s &#x27;Critical&#x27; cybersecurity capability threshold?</p>
 <ul class="quiz-choices">
 <li>Astra</li>
@@ -1869,7 +1969,8 @@ a { color: var(--accent); }
 <li>Orion</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What is OpenAI doing before broadly releasing Astra&#x27;s cybersecurity capabilities?</p></li>
+<li class="quiz-item"><p class="quiz-q">What is OpenAI doing before broadly releasing Astra&#x27;s cybersecurity capabilities?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">Whose startup released the Atlas world model?</p>
 <ul class="quiz-choices">
 <li>Fei-Fei Li (World Labs)</li>
@@ -1878,8 +1979,10 @@ a { color: var(--accent); }
 <li>Ilya Sutskever</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">What four modalities does Atlas natively operate on?</p></li>
-<li class="quiz-item"><p class="quiz-q">Who wrote the widely-cited Hugging Face attack postmortem?</p></li>
+<li class="quiz-item"><p class="quiz-q">What four modalities does Atlas natively operate on?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Who wrote the widely-cited Hugging Face attack postmortem?</p>
+</li>
 <li class="quiz-item"><p class="quiz-q">What was Cognition&#x27;s valuation in May 2026, before this new ~$47B round?</p>
 <ul class="quiz-choices">
 <li>$10B</li>
@@ -1888,7 +1991,8 @@ a { color: var(--accent); }
 <li>$60B</li>
 </ul>
 </li>
-<li class="quiz-item"><p class="quiz-q">Which U.S. senator published a Fox News op-ed calling for a global pause on frontier AI development?</p></li>
+<li class="quiz-item"><p class="quiz-q">Which U.S. senator published a Fox News op-ed calling for a global pause on frontier AI development?</p>
+</li>
 </ol>
 <details class="answers"><summary>🔒 Answers</summary>
 <ol class="answer-list">
