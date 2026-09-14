@@ -1801,5 +1801,98 @@
         "Claude Code / Cursor (the tool you're protecting)"
       ]
     }
+  },
+  {
+    "date": "2026-09-14",
+    "reading": {
+      "intro": "Been quiet on these — shorter list today. Top 3: two senior AI safety researchers quit Anthropic and Google DeepMind this week to join independent evaluator METR, Sam Altman says OpenAI won't IPO in 2026 citing safety concerns, and Cursor shipped Projects — a coordinator agent that can delegate work to thousands of subagents in the cloud. Newsletters covering today: TLDR AI and The Rundown.",
+      "items": [
+        {
+          "title": "Two senior AI safety researchers quit Anthropic and Google DeepMind to join METR",
+          "url": "https://www.nbcnews.com/tech/security/two-ai-researchers-leave-anthropic-google-safety-concerns-rcna597086",
+          "source": "NBC News (via The Rundown)",
+          "why": "Joe Benton, who led a safety research team at Anthropic, and Josh Engels, who worked on Google DeepMind's AGI safety team, both joined independent evaluator METR this week to focus on assessments of AI behavior and investigations of incidents where systems act outside human instructions. Benton told NBC News: “at the minute, basically all of the transparency about these risks that is coming from the companies is entirely voluntary” — part of a growing string of insiders (following Jacob Coxon's resignation and Evan Hubinger's public extinction-odds comments) choosing to push from outside the labs instead.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Sam Altman says OpenAI won't IPO in 2026, citing AI safety concerns",
+          "url": "https://www.axios.com/2026/09/12/openai-public-ipo-delay-sam-altman",
+          "source": "Axios (via TLDR AI, The Rundown); also Fortune",
+          "why": "Altman told Fortune “right now would be an ill-advised moment to go public,” pointing to unfinished safety and alignment work and how governments and industry coordinate on it, and said staying private gives OpenAI more room to navigate near-term risk. It lands the same week Anthropic pushed its own IPO marketing to mid-October for similar reasons (covered here Sept. 6) — both frontier labs now naming safety, not the market, as the reason to stay private.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "Cursor ships Projects — a coordinator agent that delegates work to thousands of subagents",
+          "url": "https://cursor.com/blog/projects",
+          "source": "Cursor (via TLDR AI)",
+          "why": "Projects hands off a larger body of work — a feature, a migration, a full app — to a coordinator agent that doesn't write code itself: it plans, delegates to subagents running in parallel in the cloud (closing your laptop doesn't stop it), and brings finished work back for review. It can also act without being prompted — watching a Slack channel, running on a schedule, following your PRs. Cursor says new users merge about 30% more PRs with it; in beta, rolling out to all users now.",
+          "minutes": 5,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which two AI safety researchers left Anthropic and Google DeepMind this week to join METR?",
+          "a": "Joe Benton (from Anthropic) and Josh Engels (from Google DeepMind)"
+        },
+        {
+          "q": "What will Benton and Engels focus on at METR?",
+          "a": "Independent assessments of AI behavior and investigations of incidents where AI systems act outside human instructions"
+        },
+        {
+          "q": "What did Joe Benton say motivated his move to METR?",
+          "choices": [
+            "All corporate safety transparency right now is entirely voluntary",
+            "He was fired from Anthropic",
+            "METR offered a much higher salary",
+            "He disagreed with Anthropic's research direction"
+          ],
+          "a": "All corporate safety transparency right now is entirely voluntary"
+        },
+        {
+          "q": "True or false: These departures follow earlier resignations from researchers like Jacob Coxon, part of a growing string of insiders leaving to work on AI safety from outside the labs.",
+          "a": "True"
+        },
+        {
+          "q": "What did Sam Altman say about OpenAI going public in 2026?",
+          "choices": [
+            "It would be an ‘ill-advised moment’ given safety concerns",
+            "OpenAI will IPO by year end",
+            "OpenAI has no plans to ever go public",
+            "OpenAI already filed confidentially and will list in November"
+          ],
+          "a": "It would be an ‘ill-advised moment’ given safety concerns"
+        },
+        {
+          "q": "Which outlet did Altman make that 'ill-advised moment' comment to?",
+          "a": "Fortune"
+        },
+        {
+          "q": "Which other frontier lab already delayed its own IPO for similar (safety-related) reasons earlier this month?",
+          "a": "Anthropic (pushed its IPO marketing to mid-October)"
+        },
+        {
+          "q": "What is Cursor's new “Projects” feature primarily designed to do?",
+          "choices": [
+            "Let a coordinator agent delegate a larger body of work to thousands of subagents over months",
+            "Auto-format code on save",
+            "Replace autocomplete with a faster model",
+            "Generate unit tests only"
+          ],
+          "a": "Let a coordinator agent delegate a larger body of work to thousands of subagents over months"
+        },
+        {
+          "q": "True or false: A Cursor Project runs on your own laptop, so closing it stops the work.",
+          "a": "False — it runs on its own computer in the cloud, so closing your laptop doesn't stop it"
+        },
+        {
+          "q": "By roughly how much does Cursor say new Projects users merge more PRs?",
+          "a": "About 30% more"
+        }
+      ]
+    },
+    "build": null
   }
 ]
