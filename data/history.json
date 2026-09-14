@@ -1805,8 +1805,16 @@
   {
     "date": "2026-09-14",
     "reading": {
-      "intro": "Been quiet on these — shorter list today. Top 3: two senior AI safety researchers quit Anthropic and Google DeepMind this week to join independent evaluator METR, Sam Altman says OpenAI won't IPO in 2026 citing safety concerns, and Cursor shipped Projects — a coordinator agent that can delegate work to thousands of subagents in the cloud. Newsletters covering today: TLDR AI and The Rundown.",
+      "intro": "Dario Amodei's “Pace the Frontier” essay kept dominating the conversation — Elon Musk, Demis Hassabis, and Satya Nadella all publicly backed pacing frontier AI development, while President Trump dismissed the push as “very negative forces” raising “exaggerated concerns.” Two senior AI safety researchers quit Anthropic and Google DeepMind to join independent evaluator METR. Sam Altman said OpenAI won't IPO in 2026, citing unresolved safety work — the same reasoning Anthropic gave for its own IPO delay this month. Cursor shipped Projects, letting a coordinator agent delegate work to thousands of subagents over months. Twenty-five Fields Medalists signed a declaration warning AI's race to solve math problems is harming the field. The Pentagon is reportedly in talks for a $5B loan to AI-infrastructure startup Fluidstack, and China pitched an open-source AI community for BRICS nations at the New Delhi summit. Newsletters covering today: TLDR AI and The Rundown.",
       "items": [
+        {
+          "title": "Dario Amodei's “Pace the Frontier” essay draws industry-wide agreement — and a public dismissal from Trump",
+          "url": "https://darioamodei.com/post/we-must-pace-the-frontier",
+          "source": "Dario Amodei (via TLDR AI, The Rundown); reactions via Reuters",
+          "why": "Amodei's essay — calling on labs to deliberately slow capability gains, citing recursive self-improvement and warning a swarm of AI agents could be capable of taking over the internet within 6–12 months — kept expanding today: Sam Altman committed to embedding independent evaluators, Elon Musk said “Dario is right,” and Demis Hassabis and Satya Nadella both backed the direction. President Trump publicly dismissed the slowdown push as “very negative forces” pushing “exaggerated concerns,” arguing the US should keep racing ahead since “whoever wins AI wins.” A rare moment of near-unanimous agreement among rival lab CEOs, immediately met with political pushback at the top.",
+          "minutes": 7,
+          "skip_ok": false
+        },
         {
           "title": "Two senior AI safety researchers quit Anthropic and Google DeepMind to join METR",
           "url": "https://www.nbcnews.com/tech/security/two-ai-researchers-leave-anthropic-google-safety-concerns-rcna597086",
@@ -1830,30 +1838,58 @@
           "why": "Projects hands off a larger body of work — a feature, a migration, a full app — to a coordinator agent that doesn't write code itself: it plans, delegates to subagents running in parallel in the cloud (closing your laptop doesn't stop it), and brings finished work back for review. It can also act without being prompted — watching a Slack channel, running on a schedule, following your PRs. Cursor says new users merge about 30% more PRs with it; in beta, rolling out to all users now.",
           "minutes": 5,
           "skip_ok": true
+        },
+        {
+          "title": "25 Fields Medalists warn AI's race to solve math problems is harming the field",
+          "url": "https://mathandai.org/",
+          "source": "mathandai.org declaration (via The Rundown); also officechai, completeaitraining",
+          "why": "Twenty-five Fields Medal winners — spanning Pierre Deligne (1978) to this year's Yu Deng — signed “A Severe Misalignment of AI in Mathematics,” arguing AI labs' benchmark-chasing race to solve famous problems is shifting the field's focus from conceptual understanding to leaderboard tallies. Their core complaint: AI-generated proofs are announced in a rush, without proper writeups or attribution, risking whole research lines being absorbed with no credit to the humans whose work they leaned on. The declaration frames math's current problem as a preview of “issues that all of humanity might face” as AI reshapes other fields — a research-integrity counterpoint to the parade of AI-solves-hard-math stories this month.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Pentagon reportedly in talks for a $5B loan to AI-infrastructure startup Fluidstack",
+          "url": "https://www.wsj.com/tech/ai/pentagon-in-talks-to-get-into-ai-infrastructure-funding-with-a-5-billion-loan-0367eeb0",
+          "source": "Wall Street Journal (via The Rundown)",
+          "why": "The loan — through the Pentagon's Office of Strategic Capital, whose lending authority has expanded from under $1B to over $210B — would go toward shoring up the domestic manufacturing and supply chain for data-center components, not funding a new AI facility outright. At roughly six times Fluidstack's $830M Series A, it would be the office's largest loan to date, and a concrete sign of the US government treating AI-infrastructure supply chains as a strategic-capital problem, not just a private-investment one.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "China pitches an open-source AI community for BRICS nations at the New Delhi summit",
+          "url": "https://www.cnbc.com/2026/09/13/china-xi-ai-tech-brics.html",
+          "source": "CNBC (via The Rundown); also Euronews, Japan Times",
+          "why": "Xi Jinping said China will lead a new BRICS “open-source zone for AI,” offering DeepSeek- and Qwen-based tools to the group's 11 members — pitched as a cheaper, open alternative to the closed US frontier models. It's not yet clear other BRICS members are on board (the group's joint declaration didn't address the proposal), but it's a concrete marker of China positioning open weights as its geopolitical AI export, the same week Amodei's essay pushed the opposite instinct — slow down and coordinate — among the closed-model labs.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "AI assistant improves fetal brain defect detection in a five-hospital trial",
+          "url": "https://www.thelancet.com/journals/landig/article/PIIS2589-7500(26)00063-4/fulltext",
+          "source": "The Lancet Digital Health (via The Rundown)",
+          "why": "A randomized trial across five Chinese hospitals found that giving sonographers a real-time AI assistant (PAICS, trained to flag 10 specific fetal brain malformations) during live prenatal ultrasounds raised detection sensitivity from 78.6% to 87.3%, without adding false positives — and sonographers correctly overrode roughly 60% of the AI's own mistakes. A useful counterweight to a week dominated by safety-slowdown debates: a concrete, human-AI-in-the-loop win in a high-stakes clinical setting.",
+          "minutes": 5,
+          "skip_ok": true
         }
       ],
       "quiz": [
         {
+          "q": "Who wrote “We Must Pace the Frontier,” and which rival lab's CEO publicly agreed to embed independent evaluators?",
+          "a": "Dario Amodei (Anthropic) wrote it; Sam Altman (OpenAI) agreed."
+        },
+        {
+          "q": "Which world leader publicly dismissed the AI-slowdown push as “very negative forces” raising “exaggerated concerns”?",
+          "choices": [
+            "Donald Trump",
+            "Xi Jinping",
+            "Narendra Modi",
+            "Emmanuel Macron"
+          ],
+          "a": "Donald Trump"
+        },
+        {
           "q": "Which two AI safety researchers left Anthropic and Google DeepMind this week to join METR?",
           "a": "Joe Benton (from Anthropic) and Josh Engels (from Google DeepMind)"
-        },
-        {
-          "q": "What will Benton and Engels focus on at METR?",
-          "a": "Independent assessments of AI behavior and investigations of incidents where AI systems act outside human instructions"
-        },
-        {
-          "q": "What did Joe Benton say motivated his move to METR?",
-          "choices": [
-            "All corporate safety transparency right now is entirely voluntary",
-            "He was fired from Anthropic",
-            "METR offered a much higher salary",
-            "He disagreed with Anthropic's research direction"
-          ],
-          "a": "All corporate safety transparency right now is entirely voluntary"
-        },
-        {
-          "q": "True or false: These departures follow earlier resignations from researchers like Jacob Coxon, part of a growing string of insiders leaving to work on AI safety from outside the labs.",
-          "a": "True"
         },
         {
           "q": "What did Sam Altman say about OpenAI going public in 2026?",
@@ -1866,11 +1902,7 @@
           "a": "It would be an ‘ill-advised moment’ given safety concerns"
         },
         {
-          "q": "Which outlet did Altman make that 'ill-advised moment' comment to?",
-          "a": "Fortune"
-        },
-        {
-          "q": "Which other frontier lab already delayed its own IPO for similar (safety-related) reasons earlier this month?",
+          "q": "Which other frontier lab already delayed its own IPO for similar safety-related reasons?",
           "a": "Anthropic (pushed its IPO marketing to mid-October)"
         },
         {
@@ -1884,12 +1916,26 @@
           "a": "Let a coordinator agent delegate a larger body of work to thousands of subagents over months"
         },
         {
-          "q": "True or false: A Cursor Project runs on your own laptop, so closing it stops the work.",
-          "a": "False — it runs on its own computer in the cloud, so closing your laptop doesn't stop it"
+          "q": "How many Fields Medalists signed “A Severe Misalignment of AI in Mathematics,” and what's their core complaint?",
+          "a": "25; that AI labs' benchmark-chasing race shifts math's focus from conceptual understanding to leaderboard tallies, with attribution and plagiarism risks"
         },
         {
-          "q": "By roughly how much does Cursor say new Projects users merge more PRs?",
-          "a": "About 30% more"
+          "q": "Roughly how large is the Pentagon's reported loan to Fluidstack, and which office would it come through?",
+          "choices": [
+            "$5B, the Office of Strategic Capital",
+            "$50B, DARPA",
+            "$500M, In-Q-Tel",
+            "$5B, the Defense Innovation Unit"
+          ],
+          "a": "$5B, the Office of Strategic Capital"
+        },
+        {
+          "q": "What did China's Xi Jinping propose at the BRICS summit in New Delhi?",
+          "a": "A China-led open-source AI community/zone for BRICS nations, offering DeepSeek- and Qwen-based tools"
+        },
+        {
+          "q": "In the five-hospital fetal ultrasound trial, how much did AI assistance raise sonographers' detection sensitivity for specific brain malformations?",
+          "a": "From 78.6% to 87.3%"
         }
       ]
     },
