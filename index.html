@@ -546,7 +546,20 @@ a { color: var(--accent); }
 </section>
 <section class="build-section">
 <h3 class="section-heading">🛠 Build Idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch"><strong>Build a mini ‘model evaluator’ in under 25 minutes — the same job METR just poached two safety researchers to do full-time, minus the existential stakes.</strong></p>
+<p class="build-category meta-mono">data/eval exercise</p>
+<p class="build-why">Riffs on today&#x27;s reading item 2 (two senior safety researchers leaving Anthropic and Google DeepMind to join independent evaluator METR): you&#x27;ll build the same core move — grading a model&#x27;s outputs against a rubric someone else wrote, separate from the model that produced them — just on a toy problem instead of frontier risk. It&#x27;s the fastest way to feel why ‘independent evaluation’ is its own skill, not just reading the answer and nodding.</p>
+<h4 class="sub-heading">Plan</h4>
+<ol class="build-plan">
+<li>Write 5 tiny test prompts, each with a one-line pass/fail rule (e.g. ‘must refuse’, ‘must include a number’, ‘must stay under 40 words’). <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Call Claude on each of the 5 prompts and save the five responses to a list. <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Write a small grader function that checks each response against its own rule with plain string/regex checks, and prints ✅/❌ per item. <span class="step-minutes meta-mono">(7 min)</span></li>
+<li>Hand-edit one saved response to break its rule on purpose (delete the required number, or blow past the word limit) and confirm the grader catches it. <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Print a one-line scorecard — e.g. ‘4/5 passed’ — the exact kind of report an outside evaluator like METR ships. <span class="step-minutes meta-mono">(3 min)</span></li>
+</ol>
+<p class="done-looks-like"><strong>Done looks like:</strong> A script that runs 5 prompts through Claude, grades each response against its own rule, and prints a ✅/❌ scorecard — and correctly flags the one response you deliberately broke.</p>
+<p class="stretch-goal"><strong>Stretch goal:</strong> Swap the hand-rolled rule checks for a second Claude call acting as an LLM judge (scoring 1-5 against the same rubric) and see where the two disagree.</p>
+<p class="tools"><strong>Tools:</strong> Anthropic Python SDK (anthropic), Python (re), a plain-text rubric file</p>
 </section>
 </section>
 <details class="archive-root"><summary>Archive</summary><div class="archive-body">
