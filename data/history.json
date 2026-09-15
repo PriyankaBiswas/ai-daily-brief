@@ -2105,6 +2105,38 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Rebuild Siri's leaked 'Model Delegation' trick — same answer format, a different Claude model quietly working underneath.",
+      "category": "API-exploration",
+      "why": "Riffs on today's reading item 2 — the leaked iOS 27 'Model Delegation' hook that could let Claude or GPT-5.6 answer a request while Siri keeps its own UI and voice. You'll fake the same illusion: one consistent output format on top, while a cheap heuristic silently decides whether Haiku or Sonnet actually generates the answer underneath.",
+      "plan": [
+        {
+          "step": "Write 5 test prompts spanning trivial to complex (e.g. 'what's 2+2' to 'explain the CAP theorem with an example').",
+          "minutes": 3
+        },
+        {
+          "step": "Write a one-line complexity heuristic (word count + question-word check) that scores each prompt 'simple' or 'complex'.",
+          "minutes": 5
+        },
+        {
+          "step": "Route: call Claude Haiku for prompts scored simple, Claude Sonnet for prompts scored complex, using the identical system prompt for both so the voice stays consistent.",
+          "minutes": 8
+        },
+        {
+          "step": "Print every answer in one identical format — no model name shown — the exact illusion Siri's UI would need to keep.",
+          "minutes": 4
+        },
+        {
+          "step": "Print a separate delegation log line under each answer revealing which model actually handled it.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A script that takes 5 prompts, routes each one to Haiku or Sonnet using a one-line complexity heuristic, prints every answer in one identical format with no model name visible, then reveals a separate delegation log showing exactly which model handled which prompt.",
+      "stretch_goal": "Add an escalation path: if Haiku's answer is under N words or contains 'I don't know', automatically re-run the same prompt on Sonnet and log it as an escalation — the same kind of fallback Apple's leaked framework hints at.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "Python"
+      ]
+    }
   }
 ]
