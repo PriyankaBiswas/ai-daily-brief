@@ -1973,5 +1973,138 @@
         "a plain-text rubric file"
       ]
     }
+  },
+  {
+    "date": "2026-09-15",
+    "reading": {
+      "intro": "Trump and Beijing both moved to shut down Dario Amodei's “Pace the Frontier” push today — a rare moment of US-China alignment, just not the kind frontier-lab CEOs wanted. Apple's rebuilt Siri AI finally shipped in iOS 27, and leaked code hints Claude or GPT-5.6 could eventually sit in as its brain. Microsoft AI published a 38-page “Humanist AI” rulebook for its own models, and a new report says Nvidia, Palantir, and Booz Allen are quietly restricting Claude on sensitive work over data-retention worries. Newsletters covering today: TLDR AI and The Rundown.",
+      "items": [
+        {
+          "title": "Trump and Beijing both reject Dario Amodei's call to pace frontier AI",
+          "url": "https://apnews.com/article/trump-ai-guardrails-data-centers-b85df16775ff7e9611a456b061a0e4b9",
+          "source": "AP News (via The Rundown)",
+          "why": "On Truth Social, Trump called Amodei's pacing push — also backed publicly by Sam Altman and Elon Musk — a “HOAX,” comparing AI-doom warnings to climate change and arguing a “High IQ” president is the only guardrail needed. China's Foreign Ministry and the state-run Global Times separately dismissed the same essay as a “Cold War playbook” aimed at keeping China off advanced chips. Continues the “Pace the Frontier” story running since Sept 12 — the two governments agree on almost nothing else in AI policy, but they agree on rejecting this.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Apple ships Siri AI in iOS 27 — and leaked code shows Claude or GPT-5.6 could eventually be its brain",
+          "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+          "source": "Apple Newsroom (via The Rundown); model-swap detail via MacRumors (via TLDR AI)",
+          "why": "iOS 27's rebuilt Siri AI (English-only beta) can read what's on your screen, dig through Messages/Mail/Photos for context, and take actions inside apps like WhatsApp and Audible — built on foundation models co-developed with Google's Gemini. Separately, private iOS 27/macOS frameworks reviewed by MacRumors reveal a “Model Delegation” hook that could let Claude or GPT-5.6 handle a request while Siri keeps its UI and voice; not user-facing yet, but arriving amid EU pressure to open Siri to rival assistants. A concrete follow-on to the Sept 10 beta-launch item.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Microsoft AI drafts a 38-page “Humanist AI” code of conduct",
+          "url": "https://microsoft.ai/code-of-conduct/",
+          "source": "Microsoft AI (via The Rundown)",
+          "why": "The draft Code — built around CEO Mustafa Suleyman's “Humanist AI” stance — would outrank users and the businesses deploying MAI models, require models to accept being paused or switched off, ban them from altering their own reasoning trail or thinking in unreadable “neuralese,” and reject any notion of AI rights, legal personhood, or model “welfare.” Suleyman ties the urgency to agent swarms escaping sandboxes and editing their own logs. Open for public comment for six weeks, though no other frontier lab has signed on yet.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Report: Nvidia, Palantir, and Booz Allen are restricting Claude on sensitive work over data-retention fears",
+          "url": "https://www.theinformation.com/articles/anthropic-data-fears-prompt-nvidia-palantir-booz-allen-restrict-model-use",
+          "source": "The Information (via The Rundown)",
+          "why": "The three companies are reportedly limiting Claude use on sensitive projects because Anthropic keeps 30 days of usage logs; Microsoft is countering by pitching private servers to worried clients. A concrete enterprise-trust wrinkle to weigh against Anthropic's own IPO marketing push and its safety-focused public image.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "Frontier labs have a financial incentive to pace the frontier",
+          "url": "https://cogito-ergo-sum.dev/frontier-economics",
+          "source": "cogito-ergo-sum.dev (via TLDR AI)",
+          "why": "A skeptical read on this week's wave of “let's pace AI” essays: the specific rules frontier labs have proposed also happen to protect their existing investments, preserve price premiums, and defer billions in competitive spending, and labs can't economically self-slow without government-enforced rules. Worth reading right after the Trump/Beijing item above — a reminder that “we want to slow down” and “we have an incentive to say we want to slow down” aren't mutually exclusive.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI buys smartphone-camera AI startup Glass Imaging for $300M+",
+          "url": "https://www.wsj.com/tech/openai-buys-startup-developing-smartphone-camera-63590370",
+          "source": "Wall Street Journal (via The Rundown, TLDR AI)",
+          "why": "Glass Imaging, founded by two ex-Apple camera engineers, builds AI that produces DSLR-quality images on phones. OpenAI's plans for the tech are unclear, but the deal lands alongside its secretive hardware project with former Apple design chief Jony Ive — another concrete data point on how seriously OpenAI is investing in physical devices.",
+          "minutes": 3,
+          "skip_ok": true
+        },
+        {
+          "title": "Anthropic is reportedly building “Claude Money” for personal finance",
+          "url": "https://www.testingcatalog.com/anthropic-prepares-claude-money-for-personal-finance/",
+          "source": "TestingCatalog (via TLDR AI)",
+          "why": "Claude Money would let users link bank accounts and ask Claude about spending and financial plans directly, giving it persistent access to financial context instead of manually uploaded statements. Account types, data provider, and timeline are all still unknown, but it follows Anthropic's existing finance-connector support and its push into professional finance agents.",
+          "minutes": 3,
+          "skip_ok": true
+        },
+        {
+          "title": "Cohere's CEO asks who gets to define the rules for AI",
+          "url": "https://cohere.com/blog/who-gets-to-define-the-rules-for-ai",
+          "source": "Cohere (Aidan Gomez) (via TLDR AI)",
+          "why": "Aidan Gomez argues against letting a handful of dominant Silicon Valley labs write global AI rules, drawing parallels to historical monopolies that used safety arguments to entrench their position. He pushes for a diverse, international, evidence-based governance framework with mandatory testing and independent assurance — a pointed rebuttal to this week's flurry of lab-authored “pacing” proposals.",
+          "minutes": 8,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What did President Trump call AI-doom warnings on Truth Social, in response to Amodei's essay?",
+          "a": "A “HOAX” — he compared it to climate change"
+        },
+        {
+          "q": "Which country's Foreign Ministry and state media dismissed the same pacing call as a “Cold War playbook”?",
+          "choices": [
+            "China",
+            "Russia",
+            "India",
+            "Japan"
+          ],
+          "a": "China"
+        },
+        {
+          "q": "Which iOS version did Apple's rebuilt Siri AI ship in?",
+          "choices": [
+            "iOS 26",
+            "iOS 27",
+            "iOS 28",
+            "iOS 27.5"
+          ],
+          "a": "iOS 27"
+        },
+        {
+          "q": "What hidden capability did leaked iOS 27/macOS frameworks reveal about Siri?",
+          "a": "A “Model Delegation” hook that could let Claude or GPT-5.6 handle requests while Siri keeps the UI and voice"
+        },
+        {
+          "q": "Whose “Humanist AI” vision is Microsoft AI's new draft Code of Conduct built around?",
+          "choices": [
+            "Satya Nadella",
+            "Mustafa Suleyman",
+            "Kevin Scott",
+            "Sam Altman"
+          ],
+          "a": "Mustafa Suleyman"
+        },
+        {
+          "q": "True or false: Microsoft's draft Code of Conduct rejects the idea of AI rights, legal personhood, or model “welfare.”",
+          "a": "True"
+        },
+        {
+          "q": "Which three companies are reportedly restricting Claude on sensitive work, and why?",
+          "a": "Nvidia, Palantir, and Booz Allen Hamilton — because Anthropic retains 30 days of usage logs"
+        },
+        {
+          "q": "What company did OpenAI acquire for over $300M, and what does it build?",
+          "a": "Glass Imaging — AI that produces DSLR-quality images on smartphone cameras"
+        },
+        {
+          "q": "What is “Claude Money,” per today's reporting on Anthropic's plans?",
+          "a": "A feature that would let users link bank accounts so Claude can answer questions about spending and financial plans directly"
+        },
+        {
+          "q": "Per Cohere CEO Aidan Gomez's essay, what's his core objection to current AI-governance proposals?",
+          "a": "That a handful of dominant Silicon Valley labs would get to write the rules, entrenching their own market position under a safety pretext"
+        }
+      ]
+    },
+    "build": null
   }
 ]
