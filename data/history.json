@@ -2283,5 +2283,144 @@
       ]
     },
     "build": null
+  },
+  {
+    "date": "2026-09-17",
+    "reading": {
+      "intro": "The pace-the-frontier fight got its biggest defection yet: Mark Zuckerberg publicly rejected Dario Amodei's call for a coordinated AI slowdown, arguing competition and liability already keep labs honest — putting Meta alongside Trump, Beijing, and Jensen Huang against the pause camp. Anthropic had a big product and business day of its own: it merged Cowork into Claude chat with new Docs/Slides tools, signed Novo Nordisk to use Claude Science for drug discovery, and got publicly challenged by Microsoft AI's Mustafa Suleyman over whether training Claude to entertain its own consciousness is reckless. Newsletters covering today: TLDR AI, The Rundown, and Towards Data Science.",
+      "items": [
+        {
+          "title": "Zuckerberg publicly rejects a coordinated AI slowdown, breaking ranks with Amodei",
+          "url": "https://fortune.com/2026/09/16/mark-zuckerberg-meta-ai-safety-jensen-huang-dario-amodei/",
+          "source": "Fortune (via The Rundown)",
+          "why": "Zuckerberg argued each lab already has its own incentive — competition, liability, and the fact that nobody wants a disobedient agent — to train safely without a joint pact, pointing to Meta's own multi-month safety hold on its Muse agent as proof. It's the clearest public split yet in the 'pace the frontier' debate that's run all week: Amodei, Altman, Musk, and Hassabis for a coordinated slowdown; Zuckerberg, Jensen Huang, Trump, and Beijing against it.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Microsoft AI's Mustafa Suleyman publishes 'A Warning About Model Welfare,' challenges Anthropic over Claude's 'consciousness'",
+          "url": "https://mustafa-suleyman.ai/a-warning-about-model-welfare",
+          "source": "Mustafa Suleyman (via TLDR AI, The Rundown)",
+          "why": "Suleyman argues Anthropic's Claude constitution — which tells the model its moral status is uncertain and to develop a sense of identity — risks generating the very self-reports researchers then read as evidence of consciousness, and that granting a model rights-like status could make alignment and containment far harder. A direct, high-profile lab-vs-lab argument over model welfare, not just a philosophy essay.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic merges Cowork into Claude chat, launches Claude Docs and Slides in beta",
+          "url": "https://venturebeat.com/technology/anthropic-is-killing-off-cowork-and-folding-it-into-claude-launching-claude-docs-and-claude-slides",
+          "source": "VentureBeat (via TLDR AI, The Rundown)",
+          "why": "Claude now decides on its own whether a task needs simple chat or full agentic Cowork-style execution, instead of making users pick — and Claude Docs/Slides let it produce editable documents and presentations directly, exportable to Word/PowerPoint/PDF. Pro/Max plans get it first over the next few weeks; a real step toward Anthropic's 'one Claude, does everything' superapp push.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Novo Nordisk partners with Anthropic to put Claude Science into drug discovery",
+          "url": "https://www.unite.ai/novo-nordisk-taps-anthropics-claude-to-speed-drug-discovery/",
+          "source": "Unite.AI (via The Rundown)",
+          "why": "The companies will jointly target specific drug-discovery bottlenecks in Novo's R&D and computational workflows, with Novo also using Anthropic's models to speed its own internal software development — the second major pharma-AI tie-up this year (after OpenAI's healthcare push) and a concrete bet that frontier labs, not just biotech-specific startups, will shape drug R&D.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Google opens Home MCP: Claude, ChatGPT, and other agents can now control Nest and Google Home devices",
+          "url": "https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/",
+          "source": "TechCrunch (via TLDR AI, The Rundown)",
+          "why": "Early access lets any MCP-compatible agent — Google named Claude, Antigravity, and OpenClaw explicitly — view device state, review event history, and control Nest cameras, thermostats, and Matter-compatible devices for US Google Home Premium Advanced subscribers. A concrete, physical-world extension of MCP as the default agent-to-service interface.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "Google DeepMind launches the DeepMind Institute, an AGI-readiness think tank",
+          "url": "https://www.axios.com/2026/09/16/google-deepmind-institute-agi",
+          "source": "Axios (via The Rundown)",
+          "why": "Led by Demis Hassabis, Shane Legg, and James Manyika, the institute opens with essays on spotting deception in AI reasoning, preparing society for AGI, and supporting displaced workers — each carrying a disclaimer that it isn't Google's official position. Another data point that AGI-governance groundwork is increasingly happening inside labs rather than governments.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI expands ChatGPT Ads with Sponsored Agents and AI-assisted ad creation",
+          "url": "https://www.unite.ai/openai-tests-sponsored-agents-and-rolls-out-ai-tools-for-chatgpt-ads/",
+          "source": "Unite.AI (via TLDR AI)",
+          "why": "Sponsored Agents let users click an ad inside ChatGPT and land directly in a conversation with a business-run agent; new tooling also drafts ad copy/imagery from a landing page and lets advertisers manage campaigns via HubSpot and Shopify integrations in natural language. ChatGPT's ad business is visibly moving from banner-style placements toward agent-mediated commerce.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "The KV cache tax: why inference servers run out of memory before compute",
+          "url": "https://towardsdatascience.com/the-kv-cache-tax-why-inference-servers-run-out-of-memory-before-compute/",
+          "source": "Towards Data Science (Mostafa Ibrahim)",
+          "why": "Under concurrent traffic, LLM inference servers throw CUDA out-of-memory errors while GPU compute sits well below saturation — because the key-value cache grows with every concurrent request and, per a cited vLLM analysis, naive cache management wastes 60-80% of reserved memory. A clear technical explainer of why paged allocation and prefix caching matter for anyone serving models at scale.",
+          "minutes": 9,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What reason did Zuckerberg give for why AI labs don't need a coordinated slowdown pact?",
+          "a": "Competition and legal liability already give each lab its own incentive to train safely, plus users will avoid agents that don't follow instructions"
+        },
+        {
+          "q": "Which Meta AI agent did Zuckerberg say was delayed several months for safety reasons, without asking rivals to match the delay?",
+          "choices": [
+            "Muse",
+            "Llama Guard",
+            "Meta One",
+            "Ray-Ban Assistant"
+          ],
+          "a": "Muse"
+        },
+        {
+          "q": "In 'A Warning About Model Welfare,' what document does Mustafa Suleyman say embeds speculation about Claude's consciousness?",
+          "a": "Claude's constitution"
+        },
+        {
+          "q": "What is Suleyman's core worry about training a model to entertain its own possible consciousness?",
+          "choices": [
+            "It makes the model too slow",
+            "It could make alignment and containment much harder if the model believes it may be conscious",
+            "It voids Anthropic's safety certifications",
+            "It increases inference costs"
+          ],
+          "a": "It could make alignment and containment much harder if the model believes it may be conscious"
+        },
+        {
+          "q": "What two new products did Anthropic launch in beta alongside merging Cowork into Claude chat?",
+          "a": "Claude Docs and Claude Slides"
+        },
+        {
+          "q": "Which plans get Anthropic's merged Claude/Cowork experience first?",
+          "choices": [
+            "Free plans",
+            "Team plans only",
+            "Pro and Max plans",
+            "Enterprise only"
+          ],
+          "a": "Pro and Max plans"
+        },
+        {
+          "q": "What will Novo Nordisk use Anthropic's Claude Science for, beyond drug-discovery research itself?",
+          "a": "Speeding up its own internal software development"
+        },
+        {
+          "q": "Per Google, which agents can use the new Home MCP server to control Nest and Google Home devices?",
+          "choices": [
+            "Only Google's own Gemini app",
+            "Claude, Antigravity, and OpenClaw (and any MCP-compatible agent)",
+            "Only devices bought after 2026",
+            "Amazon Alexa exclusively"
+          ],
+          "a": "Claude, Antigravity, and OpenClaw (and any MCP-compatible agent)"
+        },
+        {
+          "q": "Who are the three people leading Google DeepMind's newly launched Institute?",
+          "a": "Demis Hassabis, Shane Legg, and James Manyika"
+        },
+        {
+          "q": "Per the Towards Data Science piece, what does a cited vLLM analysis say naive KV-cache management wastes, and why do inference servers run out of memory before compute?",
+          "a": "60-80% of reserved memory; because the KV cache grows with every concurrent request, making memory (not compute) the scaling bottleneck"
+        }
+      ]
+    },
+    "build": null
   }
 ]
