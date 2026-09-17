@@ -2138,5 +2138,150 @@
         "Python"
       ]
     }
+  },
+  {
+    "date": "2026-09-16",
+    "reading": {
+      "intro": "TypeSafe's Diogo Almeida — a ChatGPT co-creator — left stealth today with Jev, a model that refuses to generate free text at all, while a very different kind of AI infrastructure got real money: AIUC raised $40M to build an insurance-backed audit standard for agentic AI, with Cursor, Harvey, Lovable, and ElevenLabs already signed on. Meanwhile 404 Media's investigation into OpenAI's “Project Lily” shows hundreds of contractors quietly reading real ChatGPT conversations, Meta rolled paid AI tiers across all its apps into “Meta One,” and a leak suggests Meta is building camera-free smart glasses after backlash over covert recording. Newsletters covering today: TLDR AI, The Rundown, and Latent Space.",
+      "items": [
+        {
+          "title": "AIUC raises $40M to build an insurance-backed safety standard for AI agents",
+          "url": "https://www.securityweek.com/aiuc-raises-40-million-to-certify-enterprise-ai-agents/",
+          "source": "SecurityWeek (via TLDR)",
+          "why": "Rune Kvist — Anthropic's first product hire — argues trust, not capability, is now the real ceiling on AI agent adoption. AIUC audits agents against its own SOC 2-style standard, AIUC-1, and Lloyd's of London backs real payouts for hallucination and data-leak losses; ElevenLabs already holds a $50M policy. Customers include Cursor, Harvey, and Lovable — this is “who pays when the agent screws up” turning into actual infrastructure, not a thought experiment. Deep dive: Rune's full Latent Space interview covers the $20-subscription/$200M-plane-crash liability question in detail, if you want more.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Inside “Project Lily”: hundreds of contractors are reading real ChatGPT conversations",
+          "url": "https://www.404media.co/inside-project-lily-the-humans-reading-your-chatgpt-chats/",
+          "source": "404 Media (via TLDR)",
+          "why": "Internal docs obtained by 404 Media show OpenAI pays hundreds of contractors $50+/hr to read, summarize, and score real user chats to improve ChatGPT — and a source involved says most users have no idea it happens. OpenAI strips names and runs automated filters, but personal context still slips through. Anthropic told 404 Media it does similar review, but only for users who've opted in through a dedicated setting — worth knowing which bucket you're in.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "ChatGPT co-creator launches Jev, an AI model that never generates text",
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "source": "TypeSafe / The Rundown (also TLDR)",
+          "why": "Diogo Almeida's TypeSafe left stealth with a “System One Model”: instead of writing free text, Jev only returns one of a pre-set list of typed answers plus a confidence score, which the company says makes it structurally unable to hallucinate. It's built to sit inside software making routing or scoring calls — the pitch is closer to “a database than a coworker,” not a chat replacement.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Meta launches “Meta One,” bundling paid AI features across Instagram, Facebook, and WhatsApp",
+          "url": "https://about.fb.com/news/2026/09/introducing-meta-one-subscription-service-more-features-ai/",
+          "source": "Meta Newsroom (via TLDR, The Rundown)",
+          "why": "Meta's per-app add-ons (Instagram Plus, WhatsApp Plus, Facebook Plus, ~$3-4/mo each) now roll up into $7.99 and $19.99 bundles buying more Meta AI image/video generation and in-app tools like Restyle. Meta says it's already at 15M+ subscriptions and trials — a real data point on what people will actually pay for in consumer AI, not just a pricing-page reshuffle.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "Meta reportedly plans camera-free “Luna” smart glasses after “perv glasses” backlash",
+          "url": "https://techcrunch.com/2026/09/16/after-accusations-of-selling-perv-glasses-meta-prepares-to-sell-a-pair-without-a-camera/",
+          "source": "TechCrunch (via Morning Brew)",
+          "why": "After reports of people using Ray-Ban Meta glasses for covert recording, Meta is said to be building a camera-less model — six mics, no lens — aimed mainly at talking to its AI assistant, possibly unveiled at its Sept 23-24 Connect conference. A concrete case of a privacy backlash reshaping an AI-hardware product line in real time, not just a policy statement.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Salesforce trains its own in-house reasoning model, Koa, to cut reliance on outside AI labs",
+          "url": "https://www.salesforce.com/agentforce/koa",
+          "source": "The Rundown",
+          "why": "Built on Nvidia's open Nemotron 3 Super and trained entirely on synthetic personas (irate callers, closing reps), Koa reportedly makes 3x fewer errors than top models on Salesforce's internal CRM benchmark while keeping customer data off outside providers. Notable mainly because Salesforce is simultaneously a huge customer, distributor, and now competitor to the frontier labs it also resells (ClaudeForce included).",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "A materials-science model just beat GPT-6 Astra and Claude Fable 5.1 on a chemistry benchmark",
+          "url": "https://periodic.com/news/nature-is-our-learning-environment",
+          "source": "TLDR",
+          "why": "Periodic's “Neon” model is now deployed in labs analyzing experiments for better superconductors and magnets, beating general frontier models on the FrontierXRD eval at a lower cost per analysis. Another data point for the “narrow-but-tuned beats general-but-huge” argument in science-specific AI.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "Chinese researchers publish “The Last AI Built by Humans,” a 5-level roadmap to self-redesigning AI",
+          "url": "https://arxiv.org/pdf/2609.11873",
+          "source": "arXiv (via The Rundown)",
+          "why": "30+ authors from ByteDance, Tsinghua, and Shanghai AI Lab sort 491 existing papers onto a 5-level ladder toward full recursive self-improvement, with coding seen as the clearest path since fixes can be tested instantly. Under 6% of surveyed work reaches the top level — but the framing is the real story: Western labs list this exact capability as a top safety risk in their own frameworks, while these authors treat it as a milestone.",
+          "minutes": 8,
+          "skip_ok": false
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is AIUC's $40M Series A actually funding?",
+          "choices": [
+            "A new frontier language model",
+            "An audit/certification standard plus real insurance for AI agents",
+            "A chatbot built for legal contracts",
+            "A new line of AI training chips"
+          ],
+          "a": "An audit/certification standard plus real insurance for AI agents"
+        },
+        {
+          "q": "Who led AIUC's Series A round?",
+          "a": "Ribbit Capital (with First Harmonic)"
+        },
+        {
+          "q": "Under OpenAI's “Project Lily,” what do the contractors actually do?",
+          "choices": [
+            "Train new models from scratch",
+            "Read, summarize, and score real ChatGPT conversations",
+            "Only moderate flagged NSFW content",
+            "Write ChatGPT's system prompts"
+          ],
+          "a": "Read, summarize, and score real ChatGPT conversations"
+        },
+        {
+          "q": "How does Anthropic's chat-review practice reportedly differ from OpenAI's Project Lily, per 404 Media?",
+          "a": "Anthropic's human review applies only to users who've opted in through a dedicated setting"
+        },
+        {
+          "q": "What makes TypeSafe's Jev structurally different from a typical chat LLM?",
+          "choices": [
+            "It's simply a much larger model",
+            "It only outputs a pre-set typed answer plus a confidence score, never free text",
+            "It's fully open source",
+            "It only runs on-device on iPhones"
+          ],
+          "a": "It only outputs a pre-set typed answer plus a confidence score, never free text"
+        },
+        {
+          "q": "What are Meta One's two bundled subscription tiers called?",
+          "choices": [
+            "Basic and Pro",
+            "Core and Premium",
+            "Lite and Max",
+            "Starter and Elite"
+          ],
+          "a": "Core ($7.99/mo) and Premium ($19.99/mo)"
+        },
+        {
+          "q": "Why is Meta reportedly building camera-free “Luna” smart glasses?",
+          "a": "Backlash/accusations over people using Ray-Ban Meta glasses for covert recording (“perv glasses”)"
+        },
+        {
+          "q": "Salesforce's new reasoning model, Koa, is built on top of which base model?",
+          "choices": [
+            "GPT-6 Astra",
+            "Nvidia's open Nemotron 3 Super",
+            "Claude Opus 5",
+            "A from-scratch Salesforce architecture"
+          ],
+          "a": "Nvidia's open Nemotron 3 Super"
+        },
+        {
+          "q": "What field is Periodic's “Neon” model deployed in, and which two frontier models does it reportedly beat on FrontierXRD?",
+          "a": "Materials science (analyzing experiments for superconductors and magnets); beats GPT-6 Astra and Claude Fable 5.1"
+        },
+        {
+          "q": "In “The Last AI Built by Humans,” what fraction of the 491 surveyed papers reached the top rung (Level 5) of recursive self-improvement?",
+          "a": "Under 6%"
+        }
+      ]
+    },
+    "build": null
   }
 ]

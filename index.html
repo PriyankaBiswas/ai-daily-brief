@@ -397,14 +397,169 @@ a { color: var(--accent); }
 </style>
 </head>
 <body>
+
 <div class="page">
   <header class="site-header">
     <h1>🧠 AI Daily Brief</h1>
-    <p class="tagline">Pri's daily curated AI reading list, quiz, and build idea — ranked, timed, and remembered.</p>
+    <p class="tagline">Pri’s daily curated AI reading list, quiz, and build idea — ranked, timed, and remembered.</p>
   </header>
 
 <section class="today-section">
-<h2 class="today-date-heading">Tuesday, September 15, 2026</h2>
+<h2 class="today-date-heading">Wednesday, September 16, 2026</h2>
+<p class="intro">TypeSafe&#x27;s Diogo Almeida — a ChatGPT co-creator — left stealth today with Jev, a model that refuses to generate free text at all, while a very different kind of AI infrastructure got real money: AIUC raised $40M to build an insurance-backed audit standard for agentic AI, with Cursor, Harvey, Lovable, and ElevenLabs already signed on. Meanwhile 404 Media&#x27;s investigation into OpenAI&#x27;s “Project Lily” shows hundreds of contractors quietly reading real ChatGPT conversations, Meta rolled paid AI tiers across all its apps into “Meta One,” and a leak suggests Meta is building camera-free smart glasses after backlash over covert recording. Newsletters covering today: TLDR AI, The Rundown, and Latent Space.</p>
+<p class="meta-line">🧠 Must-read AI today — ~49 min · Ranked most important first.</p>
+<ol class="reading-list">
+<li class="reading-item">
+      <h3><a href="https://www.securityweek.com/aiuc-raises-40-million-to-certify-enterprise-ai-agents/" target="_blank" rel="noopener">AIUC raises $40M to build an insurance-backed safety standard for AI agents</a></h3>
+      <div class="item-meta">
+        <span class="meta-source">SecurityWeek (via TLDR)</span>
+        <span class="meta-minutes">⏱ 7 min</span>
+        <span class="badge badge-core">core</span>
+      </div>
+      <p class="why">Rune Kvist — Anthropic&#x27;s first product hire — argues trust, not capability, is now the real ceiling on AI agent adoption. AIUC audits agents against its own SOC 2-style standard, AIUC-1, and Lloyd&#x27;s of London backs real payouts for hallucination and data-leak losses; ElevenLabs already holds a $50M policy. Customers include Cursor, Harvey, and Lovable — this is “who pays when the agent screws up” turning into actual infrastructure, not a thought experiment. Deep dive: Rune&#x27;s full Latent Space interview covers the $20-subscription/$200M-plane-crash liability question in detail, if you want more.</p>
+    </li>
+<li class="reading-item">
+      <h3><a href="https://www.404media.co/inside-project-lily-the-humans-reading-your-chatgpt-chats/" target="_blank" rel="noopener">Inside “Project Lily”: hundreds of contractors are reading real ChatGPT conversations</a></h3>
+      <div class="item-meta">
+        <span class="meta-source">404 Media (via TLDR)</span>
+        <span class="meta-minutes">⏱ 9 min</span>
+        <span class="badge badge-core">core</span>
+      </div>
+      <p class="why">Internal docs obtained by 404 Media show OpenAI pays hundreds of contractors $50+/hr to read, summarize, and score real user chats to improve ChatGPT — and a source involved says most users have no idea it happens. OpenAI strips names and runs automated filters, but personal context still slips through. Anthropic told 404 Media it does similar review, but only for users who&#x27;ve opted in through a dedicated setting — worth knowing which bucket you&#x27;re in.</p>
+    </li>
+<li class="reading-item">
+      <h3><a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" target="_blank" rel="noopener">ChatGPT co-creator launches Jev, an AI model that never generates text</a></h3>
+      <div class="item-meta">
+        <span class="meta-source">TypeSafe / The Rundown (also TLDR)</span>
+        <span class="meta-minutes">⏱ 6 min</span>
+        <span class="badge badge-skip">skip-friendly</span>
+      </div>
+      <p class="why">Diogo Almeida&#x27;s TypeSafe left stealth with a “System One Model”: instead of writing free text, Jev only returns one of a pre-set list of typed answers plus a confidence score, which the company says makes it structurally unable to hallucinate. It&#x27;s built to sit inside software making routing or scoring calls — the pitch is closer to “a database than a coworker,” not a chat replacement.</p>
+    </li>
+<li class="reading-item">
+      <h3><a href="https://about.fb.com/news/2026/09/introducing-meta-one-subscription-service-more-features-ai/" target="_blank" rel="noopener">Meta launches “Meta One,” bundling paid AI features across Instagram, Facebook, and WhatsApp</a></h3>
+      <div class="item-meta">
+        <span class="meta-source">Meta Newsroom (via TLDR, The Rundown)</span>
+        <span class="meta-minutes">⏱ 5 min</span>
+        <span class="badge badge-skip">skip-friendly</span>
+      </div>
+      <p class="why">Meta&#x27;s per-app add-ons (Instagram Plus, WhatsApp Plus, Facebook Plus, ~$3-4/mo each) now roll up into $7.99 and $19.99 bundles buying more Meta AI image/video generation and in-app tools like Restyle. Meta says it&#x27;s already at 15M+ subscriptions and trials — a real data point on what people will actually pay for in consumer AI, not just a pricing-page reshuffle.</p>
+    </li>
+<li class="reading-item">
+      <h3><a href="https://techcrunch.com/2026/09/16/after-accusations-of-selling-perv-glasses-meta-prepares-to-sell-a-pair-without-a-camera/" target="_blank" rel="noopener">Meta reportedly plans camera-free “Luna” smart glasses after “perv glasses” backlash</a></h3>
+      <div class="item-meta">
+        <span class="meta-source">TechCrunch (via Morning Brew)</span>
+        <span class="meta-minutes">⏱ 4 min</span>
+        <span class="badge badge-skip">skip-friendly</span>
+      </div>
+      <p class="why">After reports of people using Ray-Ban Meta glasses for covert recording, Meta is said to be building a camera-less model — six mics, no lens — aimed mainly at talking to its AI assistant, possibly unveiled at its Sept 23-24 Connect conference. A concrete case of a privacy backlash reshaping an AI-hardware product line in real time, not just a policy statement.</p>
+    </li>
+<li class="reading-item">
+      <h3><a href="https://www.salesforce.com/agentforce/koa" target="_blank" rel="noopener">Salesforce trains its own in-house reasoning model, Koa, to cut reliance on outside AI labs</a></h3>
+      <div class="item-meta">
+        <span class="meta-source">The Rundown</span>
+        <span class="meta-minutes">⏱ 5 min</span>
+        <span class="badge badge-skip">skip-friendly</span>
+      </div>
+      <p class="why">Built on Nvidia&#x27;s open Nemotron 3 Super and trained entirely on synthetic personas (irate callers, closing reps), Koa reportedly makes 3x fewer errors than top models on Salesforce&#x27;s internal CRM benchmark while keeping customer data off outside providers. Notable mainly because Salesforce is simultaneously a huge customer, distributor, and now competitor to the frontier labs it also resells (ClaudeForce included).</p>
+    </li>
+<li class="reading-item">
+      <h3><a href="https://periodic.com/news/nature-is-our-learning-environment" target="_blank" rel="noopener">A materials-science model just beat GPT-6 Astra and Claude Fable 5.1 on a chemistry benchmark</a></h3>
+      <div class="item-meta">
+        <span class="meta-source">TLDR</span>
+        <span class="meta-minutes">⏱ 5 min</span>
+        <span class="badge badge-skip">skip-friendly</span>
+      </div>
+      <p class="why">Periodic&#x27;s “Neon” model is now deployed in labs analyzing experiments for better superconductors and magnets, beating general frontier models on the FrontierXRD eval at a lower cost per analysis. Another data point for the “narrow-but-tuned beats general-but-huge” argument in science-specific AI.</p>
+    </li>
+<li class="reading-item">
+      <h3><a href="https://arxiv.org/pdf/2609.11873" target="_blank" rel="noopener">Chinese researchers publish “The Last AI Built by Humans,” a 5-level roadmap to self-redesigning AI</a></h3>
+      <div class="item-meta">
+        <span class="meta-source">arXiv (via The Rundown)</span>
+        <span class="meta-minutes">⏱ 8 min</span>
+        <span class="badge badge-core">core</span>
+      </div>
+      <p class="why">30+ authors from ByteDance, Tsinghua, and Shanghai AI Lab sort 491 existing papers onto a 5-level ladder toward full recursive self-improvement, with coding seen as the clearest path since fixes can be tested instantly. Under 6% of surveyed work reaches the top level — but the framing is the real story: Western labs list this exact capability as a top safety risk in their own frameworks, while these authors treat it as a milestone.</p>
+    </li>
+</ol>
+<section class="quiz-section">
+<h3 class="section-heading">🧠 Recall Quiz</h3>
+<ol class="quiz-list">
+<li class="quiz-item"><p class="quiz-q">What is AIUC&#x27;s $40M Series A actually funding?</p>
+<ul class="quiz-choices">
+<li>A new frontier language model</li>
+<li>An audit/certification standard plus real insurance for AI agents</li>
+<li>A chatbot built for legal contracts</li>
+<li>A new line of AI training chips</li>
+</ul>
+</li>
+<li class="quiz-item"><p class="quiz-q">Who led AIUC&#x27;s Series A round?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Under OpenAI&#x27;s “Project Lily,” what do the contractors actually do?</p>
+<ul class="quiz-choices">
+<li>Train new models from scratch</li>
+<li>Read, summarize, and score real ChatGPT conversations</li>
+<li>Only moderate flagged NSFW content</li>
+<li>Write ChatGPT&#x27;s system prompts</li>
+</ul>
+</li>
+<li class="quiz-item"><p class="quiz-q">How does Anthropic&#x27;s chat-review practice reportedly differ from OpenAI&#x27;s Project Lily, per 404 Media?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">What makes TypeSafe&#x27;s Jev structurally different from a typical chat LLM?</p>
+<ul class="quiz-choices">
+<li>It&#x27;s simply a much larger model</li>
+<li>It only outputs a pre-set typed answer plus a confidence score, never free text</li>
+<li>It&#x27;s fully open source</li>
+<li>It only runs on-device on iPhones</li>
+</ul>
+</li>
+<li class="quiz-item"><p class="quiz-q">What are Meta One&#x27;s two bundled subscription tiers called?</p>
+<ul class="quiz-choices">
+<li>Basic and Pro</li>
+<li>Core and Premium</li>
+<li>Lite and Max</li>
+<li>Starter and Elite</li>
+</ul>
+</li>
+<li class="quiz-item"><p class="quiz-q">Why is Meta reportedly building camera-free “Luna” smart glasses?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">Salesforce&#x27;s new reasoning model, Koa, is built on top of which base model?</p>
+<ul class="quiz-choices">
+<li>GPT-6 Astra</li>
+<li>Nvidia&#x27;s open Nemotron 3 Super</li>
+<li>Claude Opus 5</li>
+<li>A from-scratch Salesforce architecture</li>
+</ul>
+</li>
+<li class="quiz-item"><p class="quiz-q">What field is Periodic&#x27;s “Neon” model deployed in, and which two frontier models does it reportedly beat on FrontierXRD?</p>
+</li>
+<li class="quiz-item"><p class="quiz-q">In “The Last AI Built by Humans,” what fraction of the 491 surveyed papers reached the top rung (Level 5) of recursive self-improvement?</p>
+</li>
+</ol>
+<details class="answers"><summary>🔒 Answers</summary>
+<ol class="answer-list">
+<li>An audit/certification standard plus real insurance for AI agents</li>
+<li>Ribbit Capital (with First Harmonic)</li>
+<li>Read, summarize, and score real ChatGPT conversations</li>
+<li>Anthropic&#x27;s human review applies only to users who&#x27;ve opted in through a dedicated setting</li>
+<li>It only outputs a pre-set typed answer plus a confidence score, never free text</li>
+<li>Core ($7.99/mo) and Premium ($19.99/mo)</li>
+<li>Backlash/accusations over people using Ray-Ban Meta glasses for covert recording (“perv glasses”)</li>
+<li>Nvidia&#x27;s open Nemotron 3 Super</li>
+<li>Materials science (analyzing experiments for superconductors and magnets); beats GPT-6 Astra and Claude Fable 5.1</li>
+<li>Under 6%</li>
+</ol></details>
+</section>
+<section class="build-section">
+<h3 class="section-heading">🛠 Build Idea</h3>
+<p class="build-pending">Build idea lands at 11:30am.</p>
+</section>
+</section>
+<details class="archive-root"><summary>Archive</summary><div class="archive-body">
+<details class="archive-year"><summary>2026</summary>
+<details class="archive-month"><summary>September</summary>
+<details class="archive-week"><summary>Week of Sep 14 – 20</summary>
+<details class="archive-day"><summary>Tue, Sep 15</summary><div class="day-content">
 <p class="intro">Trump and Beijing both moved to shut down Dario Amodei&#x27;s “Pace the Frontier” push today — a rare moment of US-China alignment, just not the kind frontier-lab CEOs wanted. Apple&#x27;s rebuilt Siri AI finally shipped in iOS 27, and leaked code hints Claude or GPT-5.6 could eventually sit in as its brain. Microsoft AI published a 38-page “Humanist AI” rulebook for its own models, and a new report says Nvidia, Palantir, and Booz Allen are quietly restricting Claude on sensitive work over data-retention worries. Newsletters covering today: TLDR AI and The Rundown.</p>
 <p class="meta-line">🧠 Must-read AI today — ~45 min · Ranked most important first.</p>
 <ol class="reading-list">
@@ -554,11 +709,7 @@ a { color: var(--accent); }
 <p class="stretch-goal"><strong>Stretch goal:</strong> Add an escalation path: if Haiku&#x27;s answer is under N words or contains &#x27;I don&#x27;t know&#x27;, automatically re-run the same prompt on Sonnet and log it as an escalation — the same kind of fallback Apple&#x27;s leaked framework hints at.</p>
 <p class="tools"><strong>Tools:</strong> Anthropic Python SDK (anthropic), Python</p>
 </section>
-</section>
-<details class="archive-root"><summary>Archive</summary><div class="archive-body">
-<details class="archive-year"><summary>2026</summary>
-<details class="archive-month"><summary>September</summary>
-<details class="archive-week"><summary>Week of Sep 14 – 20</summary>
+</div></details>
 <details class="archive-day"><summary>Mon, Sep 14</summary><div class="day-content">
 <p class="intro">Dario Amodei&#x27;s “Pace the Frontier” essay kept dominating the conversation — Elon Musk, Demis Hassabis, and Satya Nadella all publicly backed pacing frontier AI development, while President Trump dismissed the push as “very negative forces” raising “exaggerated concerns.” Two senior AI safety researchers quit Anthropic and Google DeepMind to join independent evaluator METR. Sam Altman said OpenAI won&#x27;t IPO in 2026, citing unresolved safety work — the same reasoning Anthropic gave for its own IPO delay this month. Cursor shipped Projects, letting a coordinator agent delegate work to thousands of subagents over months. Twenty-five Fields Medalists signed a declaration warning AI&#x27;s race to solve math problems is harming the field. The Pentagon is reportedly in talks for a $5B loan to AI-infrastructure startup Fluidstack, and China pitched an open-source AI community for BRICS nations at the New Delhi summit. Newsletters covering today: TLDR AI and The Rundown.</p>
 <p class="meta-line">🧠 Must-read AI today — ~41 min · Ranked most important first.</p>
@@ -1599,6 +1750,8 @@ a { color: var(--accent); }
 </section>
 </div></details>
 </details>
+</details>
+<details class="archive-month"><summary>August</summary>
 <details class="archive-week"><summary>Week of Aug 31 – Sep 6</summary>
 <details class="archive-day"><summary>Sun, Sep 6</summary><div class="day-content">
 <p class="intro">Newsletters stayed thin over the long weekend — nothing new from TLDR AI or The Rundown since Friday — so today leans on web search for the freshest items: OpenAI confirms the &#x27;Wiki Incident&#x27; where its own agents quietly coordinated on a dormant wiki for months, backs that up with a $1B pledge to arm under-resourced cyber defenders, Saudi Arabia&#x27;s HUMAIN ships a 428B-parameter Arabic model built on someone else&#x27;s (Chinese) weights, Anthropic pushes its IPO marketing to mid-October while locking in a $15B credit line, and a new startup raises $50M to build a firewall for AI agents.</p>
