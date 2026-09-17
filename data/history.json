@@ -2421,6 +2421,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Watch a KV cache fill up live in an ASCII gauge — the exact memory squeeze today's inference-memory article explains, made visible.",
+      "category": "UI-for-AI",
+      "why": "Riffs on today's reading item, 'The KV cache tax' — its core point is that inference servers hit CUDA out-of-memory errors from KV-cache growth while GPU compute sits idle, with naive cache management wasting 60-80% of reserved memory. Simulating that live, side by side with a smarter allocation strategy, makes the 'memory not compute' bottleneck visible instead of abstract. Also deliberately low-friction: a quick one to jump back in with.",
+      "plan": [
+        {
+          "step": "Write simulate.py: generate a stream of 15-20 mock 'requests' arriving over time, each with a random token length, each needing tokens * bytes_per_token of KV cache space.",
+          "minutes": 7
+        },
+        {
+          "step": "Track running total reserved vs a fixed cache budget; after each arrival/departure, print a live ASCII gauge (a bar of filled/empty blocks) showing % of budget used.",
+          "minutes": 10
+        },
+        {
+          "step": "Add two modes on the same request stream: 'naive' (reserves each request's max possible tokens upfront) vs 'paged' (reserves incrementally, only what's actually generated so far) - run both and compare.",
+          "minutes": 6
+        },
+        {
+          "step": "Confirm: the naive gauge hits OOM (prints a red 'OOM' line and stops accepting requests) well before the paged gauge does, on the identical input stream.",
+          "minutes": 2
+        }
+      ],
+      "done_looks_like": "Running the script prints two live gauges for the same simulated request stream — naive mode overflows into OOM partway through, while paged mode comfortably serves the whole stream — with a final one-line summary of peak memory used by each.",
+      "stretch_goal": "Calibrate the simulation's waste percentage against the 60-80% figure the article cites from the vLLM analysis, or use the `rich` library to redraw the gauge in place for a true live terminal dashboard instead of scrolling print statements.",
+      "tools": [
+        "Python",
+        "random / time modules",
+        "rich (optional, for a live terminal gauge)"
+      ]
+    }
   }
 ]

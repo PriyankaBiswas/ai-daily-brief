@@ -546,7 +546,19 @@ a { color: var(--accent); }
 </section>
 <section class="build-section">
 <h3 class="section-heading">🛠 Build Idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch"><strong>Watch a KV cache fill up live in an ASCII gauge — the exact memory squeeze today&#x27;s inference-memory article explains, made visible.</strong></p>
+<p class="build-category meta-mono">UI-for-AI</p>
+<p class="build-why">Riffs on today&#x27;s reading item, &#x27;The KV cache tax&#x27; — its core point is that inference servers hit CUDA out-of-memory errors from KV-cache growth while GPU compute sits idle, with naive cache management wasting 60-80% of reserved memory. Simulating that live, side by side with a smarter allocation strategy, makes the &#x27;memory not compute&#x27; bottleneck visible instead of abstract. Also deliberately low-friction: a quick one to jump back in with.</p>
+<h4 class="sub-heading">Plan</h4>
+<ol class="build-plan">
+<li>Write simulate.py: generate a stream of 15-20 mock &#x27;requests&#x27; arriving over time, each with a random token length, each needing tokens * bytes_per_token of KV cache space. <span class="step-minutes meta-mono">(7 min)</span></li>
+<li>Track running total reserved vs a fixed cache budget; after each arrival/departure, print a live ASCII gauge (a bar of filled/empty blocks) showing % of budget used. <span class="step-minutes meta-mono">(10 min)</span></li>
+<li>Add two modes on the same request stream: &#x27;naive&#x27; (reserves each request&#x27;s max possible tokens upfront) vs &#x27;paged&#x27; (reserves incrementally, only what&#x27;s actually generated so far) - run both and compare. <span class="step-minutes meta-mono">(6 min)</span></li>
+<li>Confirm: the naive gauge hits OOM (prints a red &#x27;OOM&#x27; line and stops accepting requests) well before the paged gauge does, on the identical input stream. <span class="step-minutes meta-mono">(2 min)</span></li>
+</ol>
+<p class="done-looks-like"><strong>Done looks like:</strong> Running the script prints two live gauges for the same simulated request stream — naive mode overflows into OOM partway through, while paged mode comfortably serves the whole stream — with a final one-line summary of peak memory used by each.</p>
+<p class="stretch-goal"><strong>Stretch goal:</strong> Calibrate the simulation&#x27;s waste percentage against the 60-80% figure the article cites from the vLLM analysis, or use the `rich` library to redraw the gauge in place for a true live terminal dashboard instead of scrolling print statements.</p>
+<p class="tools"><strong>Tools:</strong> Python, random / time modules, rich (optional, for a live terminal gauge)</p>
 </section>
 </section>
 <details class="archive-root"><summary>Archive</summary><div class="archive-body">
