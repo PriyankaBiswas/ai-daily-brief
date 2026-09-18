@@ -2589,6 +2589,39 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Split one goal into two parallel Claude workers and watch them race instead of queue.",
+      "category": "agent/tool-building",
+      "why": "Riffs on today's item on the redesigned Claude Code Projects, which now splits one goal across several parallel cloud sessions with automated delegation and merging. This build shrinks that same split-dispatch-merge pattern into 3 plain API calls you can run locally and watch finish in real time, no cloud session required. Also deliberately small: a quick one to jump back in with after a quiet stretch.",
+      "plan": [
+        {
+          "step": "Set up: anthropic client, pick one goal that cleanly splits into two independent parts (e.g. 'write a haiku about the ocean, and draft a 5-item camping checklist').",
+          "minutes": 3
+        },
+        {
+          "step": "Coordinator call: ask Claude to split the goal into exactly 2 independent subtask strings, returned as a JSON list.",
+          "minutes": 5
+        },
+        {
+          "step": "Fire both subtask prompts as separate Claude calls concurrently with asyncio.gather, timestamping when each starts and finishes.",
+          "minutes": 10
+        },
+        {
+          "step": "Merge call: send both subtask results to Claude in one final call asking it to combine them into a single reply.",
+          "minutes": 5
+        },
+        {
+          "step": "Print total wall-clock time next to the sum of each call's individual time, to confirm the two subtasks actually overlapped.",
+          "minutes": 2
+        }
+      ],
+      "done_looks_like": "Running the script prints both subtasks' start/end timestamps overlapping in time, followed by one merged final answer, with total wall-clock time close to the slower single call rather than the sum of both.",
+      "stretch_goal": "Scale to 3-4 subtasks with a semaphore capping concurrency, or add a lightweight supervisor step that re-dispatches any subtask whose result looks too short or incomplete.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "Python asyncio",
+        "Python time module"
+      ]
+    }
   }
 ]

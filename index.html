@@ -546,7 +546,20 @@ a { color: var(--accent); }
 </section>
 <section class="build-section">
 <h3 class="section-heading">🛠 Build Idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch"><strong>Split one goal into two parallel Claude workers and watch them race instead of queue.</strong></p>
+<p class="build-category meta-mono">agent/tool-building</p>
+<p class="build-why">Riffs on today&#x27;s item on the redesigned Claude Code Projects, which now splits one goal across several parallel cloud sessions with automated delegation and merging. This build shrinks that same split-dispatch-merge pattern into 3 plain API calls you can run locally and watch finish in real time, no cloud session required. Also deliberately small: a quick one to jump back in with after a quiet stretch.</p>
+<h4 class="sub-heading">Plan</h4>
+<ol class="build-plan">
+<li>Set up: anthropic client, pick one goal that cleanly splits into two independent parts (e.g. &#x27;write a haiku about the ocean, and draft a 5-item camping checklist&#x27;). <span class="step-minutes meta-mono">(3 min)</span></li>
+<li>Coordinator call: ask Claude to split the goal into exactly 2 independent subtask strings, returned as a JSON list. <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Fire both subtask prompts as separate Claude calls concurrently with asyncio.gather, timestamping when each starts and finishes. <span class="step-minutes meta-mono">(10 min)</span></li>
+<li>Merge call: send both subtask results to Claude in one final call asking it to combine them into a single reply. <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Print total wall-clock time next to the sum of each call&#x27;s individual time, to confirm the two subtasks actually overlapped. <span class="step-minutes meta-mono">(2 min)</span></li>
+</ol>
+<p class="done-looks-like"><strong>Done looks like:</strong> Running the script prints both subtasks&#x27; start/end timestamps overlapping in time, followed by one merged final answer, with total wall-clock time close to the slower single call rather than the sum of both.</p>
+<p class="stretch-goal"><strong>Stretch goal:</strong> Scale to 3-4 subtasks with a semaphore capping concurrency, or add a lightweight supervisor step that re-dispatches any subtask whose result looks too short or incomplete.</p>
+<p class="tools"><strong>Tools:</strong> Anthropic Python SDK (anthropic), Python asyncio, Python time module</p>
 </section>
 </section>
 <details class="archive-root"><summary>Archive</summary><div class="archive-body">
