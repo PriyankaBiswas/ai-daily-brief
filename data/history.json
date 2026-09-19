@@ -2731,6 +2731,38 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Give your pinned Claude model a fallback partner, so a provider deprecation doesn't take your script down with it.",
+      "category": "API-exploration",
+      "why": "Riffs on today's reading item on the team whose pinned model version got deprecated anyway, breaking on the provider's timeline instead of theirs. This build makes that failure mode concrete: a tiny client that tries a pinned model first and falls back to the next one in line the moment the API rejects it, instead of crashing. Also deliberately low-friction: three build emails in a row have gone unanswered, so today's is a quick one to jump back in with.",
+      "plan": [
+        {
+          "step": "Set up: anthropic client, plus a FALLBACK_MODELS list with a deliberately bad/old model string first, then a real current one.",
+          "minutes": 4
+        },
+        {
+          "step": "Write call_with_fallback(prompt) that tries each model in order, catching the API's not-found/bad-request error and moving to the next one instead of raising.",
+          "minutes": 8
+        },
+        {
+          "step": "Print one log line per attempt ('trying claude-old-fake... failed, falling back to claude-sonnet-5... ok') so the recovery is visible, not silent.",
+          "minutes": 6
+        },
+        {
+          "step": "Run it on 2-3 different prompts and confirm every single one finishes successfully despite the broken model at the top of the list.",
+          "minutes": 5
+        },
+        {
+          "step": "Add a one-line summary counter: how many calls needed a fallback out of the total.",
+          "minutes": 3
+        }
+      ],
+      "done_looks_like": "Running the script against 2-3 prompts prints a 'failed, falling back to...' line for each one, then a successful answer every time, ending with a summary like '3/3 calls needed a fallback, 0 crashes' — the opposite of what the pinned team in today's article experienced.",
+      "stretch_goal": "Move the fallback list into a small JSON/YAML config you could hot-swap without touching code, or add exponential backoff between fallback attempts to distinguish a real deprecation from a transient rate limit.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "Python"
+      ]
+    }
   }
 ]

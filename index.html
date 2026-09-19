@@ -513,7 +513,20 @@ a { color: var(--accent); }
 </section>
 <section class="build-section">
 <h3 class="section-heading">🛠 Build Idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch"><strong>Give your pinned Claude model a fallback partner, so a provider deprecation doesn&#x27;t take your script down with it.</strong></p>
+<p class="build-category meta-mono">API-exploration</p>
+<p class="build-why">Riffs on today&#x27;s reading item on the team whose pinned model version got deprecated anyway, breaking on the provider&#x27;s timeline instead of theirs. This build makes that failure mode concrete: a tiny client that tries a pinned model first and falls back to the next one in line the moment the API rejects it, instead of crashing. Also deliberately low-friction: three build emails in a row have gone unanswered, so today&#x27;s is a quick one to jump back in with.</p>
+<h4 class="sub-heading">Plan</h4>
+<ol class="build-plan">
+<li>Set up: anthropic client, plus a FALLBACK_MODELS list with a deliberately bad/old model string first, then a real current one. <span class="step-minutes meta-mono">(4 min)</span></li>
+<li>Write call_with_fallback(prompt) that tries each model in order, catching the API&#x27;s not-found/bad-request error and moving to the next one instead of raising. <span class="step-minutes meta-mono">(8 min)</span></li>
+<li>Print one log line per attempt (&#x27;trying claude-old-fake... failed, falling back to claude-sonnet-5... ok&#x27;) so the recovery is visible, not silent. <span class="step-minutes meta-mono">(6 min)</span></li>
+<li>Run it on 2-3 different prompts and confirm every single one finishes successfully despite the broken model at the top of the list. <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Add a one-line summary counter: how many calls needed a fallback out of the total. <span class="step-minutes meta-mono">(3 min)</span></li>
+</ol>
+<p class="done-looks-like"><strong>Done looks like:</strong> Running the script against 2-3 prompts prints a &#x27;failed, falling back to...&#x27; line for each one, then a successful answer every time, ending with a summary like &#x27;3/3 calls needed a fallback, 0 crashes&#x27; — the opposite of what the pinned team in today&#x27;s article experienced.</p>
+<p class="stretch-goal"><strong>Stretch goal:</strong> Move the fallback list into a small JSON/YAML config you could hot-swap without touching code, or add exponential backoff between fallback attempts to distinguish a real deprecation from a transient rate limit.</p>
+<p class="tools"><strong>Tools:</strong> Anthropic Python SDK (anthropic), Python</p>
 </section>
 </section>
 <details class="archive-root"><summary>Archive</summary><div class="archive-body">
