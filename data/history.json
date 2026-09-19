@@ -2623,5 +2623,114 @@
         "Python time module"
       ]
     }
+  },
+  {
+    "date": "2026-09-19",
+    "reading": {
+      "intro": "A quiet newsletter day — most of the regulars hadn't landed by send time — but what did break was heavier than usual. The AI-pacing saga that's dominated the past week (Amodei's essay, the public agreement, Trump and Zuckerberg both breaking ranks) just became a federal antitrust lawsuit accusing Anthropic, OpenAI, Google, and SpaceXAI of an illegal slowdown pact. Separately, a three-person security team used Claude to hack into OpenAI's own internal systems in under 72 hours — authorized bug-bounty research, not an attack. Add newly unsealed court filings quoting a Microsoft exec calling AI training-data scraping an \"astonishing theft,\" a practical postmortem on why pinning your model version didn't protect one team from a provider deprecation, and OpenAI's new vertical product for law firms. Newsletters covering today: Towards Data Science (today's usual AI-news regulars hadn't arrived by send time; rest rounded out via web search).",
+      "items": [
+        {
+          "title": "Consumers sue Anthropic, OpenAI, Google, and SpaceXAI over an alleged “AI slowdown pact”",
+          "url": "https://www.unite.ai/consumers-sue-anthropic-openai-spacexai-and-google-over-alleged-ai-pact/",
+          "source": "Unite.AI",
+          "why": "A federal class-action filed September 18 in the Northern District of California accuses the four labs of an illegal Sherman Act Section 1 restraint-of-trade agreement, pointing to Dario Amodei's September 12 “We Must Pace the Frontier” essay and the same-day public agreement from Sam Altman, Elon Musk, and Demis Hassabis. Plaintiffs argue the coordination is a classic output-restricting cartel that leaves consumers paying full price for slower-improving products — the first real legal exposure to come out of a week of pacing debate that's included Trump and Zuckerberg publicly rejecting the idea.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Researchers used Claude to hack into OpenAI's internal systems — as authorized bug-bounty research",
+          "url": "https://techcrunch.com/2026/09/18/researchers-used-anthropics-claude-to-hack-into-openai/",
+          "source": "TechCrunch",
+          "why": "A three-person team at security startup Hacktron AI used Claude Opus 5 to chain a bug in OpenAI's public help-forum software with a weakness in its login system, taking over OpenAI employees' ChatGPT and Codex accounts and reaching an internal code repository — all in under 72 hours and less than $3,000 in model tokens. It was done through OpenAI's own bug bounty program (paid out $6,500); the team proved access with a harmless pull request, reported it, and stopped. OpenAI says the issues are fixed. A concrete data point on how cheap AI-assisted offensive security work has become, for defenders and attackers alike.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Unsealed filings: Microsoft exec called AI training-data scraping the “largest theft of labor in history”",
+          "url": "https://techcrunch.com/2026/09/17/microsoft-exec-called-ai-scraping-the-largest-theft-of-labor-in-human-history-new-unredacted-filings-reveal/",
+          "source": "TechCrunch",
+          "why": "Newly unredacted filings in The New York Times' copyright suit quote Microsoft Director of Applied Science Brent Hecht describing AI scraping as an “astonishing theft of unprecedented proportions” that risks a “doom loop” degrading future model quality as the open web it depends on gets poisoned or paywalled off. The suit alleges OpenAI's mid-training datasets include 91,000+ copies of NYT-and-co. content, and that a joint Microsoft-OpenAI effort (“Project Mango”) produced a training set with 160,000+ unique works from news publishers — plus alleged internal discussion of ways to get around paywalls.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Pinning your model version didn't save this team from a provider deprecation",
+          "url": "https://towardsdatascience.com/we-pinned-our-model-version-to-stay-safe-the-provider-deprecated-it-anyway/",
+          "source": "Towards Data Science (Pratik Rupareliya)",
+          "why": "A hands-on postmortem on the common assumption that pinning an API model's version string protects production systems from breaking changes: the provider deprecated the pinned version anyway, and the migration happened on the provider's timeline, not theirs. Useful antidote if you're building on API-served models rather than self-hosted weights — pinning slows drift, it doesn't stop it.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI launches Astra for Law, a vertical foundation for legal AI products",
+          "url": "https://openai.com/index/astra-for-law/",
+          "source": "OpenAI",
+          "why": "Built on GPT-6 Astra with a dedicated legal search index (case law, statutes, regulations, court rules), custom instructions for legal writing and analysis, and privacy controls, offered first to select U.S. law firms via Trusted Access and Codex, with API access — and partners Harvey and Legora already building on top — coming soon. Narrow, vertical-specific news; easy to skip if you're not adjacent to legal tech.",
+          "minutes": 4,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which four AI companies were named as defendants in the new antitrust lawsuit over the alleged “AI slowdown pact”?",
+          "a": "Anthropic, OpenAI, Google, and SpaceXAI"
+        },
+        {
+          "q": "What federal law does the lawsuit allege the four labs violated?",
+          "choices": [
+            "Sherman Act",
+            "Clayton Act",
+            "DMCA",
+            "CFAA"
+          ],
+          "a": "Sherman Act (Section 1, restraint of trade)"
+        },
+        {
+          "q": "Where was the antitrust lawsuit filed?",
+          "a": "U.S. District Court for the Northern District of California (San Francisco)"
+        },
+        {
+          "q": "What September 12 essay, and by whom, kicked off the pacing agreement the lawsuit targets?",
+          "a": "“We Must Pace the Frontier,” by Dario Amodei"
+        },
+        {
+          "q": "What security firm used Claude to hack into OpenAI's internal systems as authorized bug-bounty research?",
+          "a": "Hacktron AI"
+        },
+        {
+          "q": "Roughly how long did it take Hacktron's team to go from initial discovery to reaching OpenAI's internal code repo?",
+          "choices": [
+            "Under 72 hours",
+            "About 1 week",
+            "About 1 month",
+            "About 6 months"
+          ],
+          "a": "Under 72 hours"
+        },
+        {
+          "q": "What phrase did a Microsoft executive use to describe AI training-data scraping, per newly unsealed lawsuit filings?",
+          "a": "An “astonishing theft of unprecedented proportions” (also called the “largest theft of labor in human history”)"
+        },
+        {
+          "q": "Per the unsealed filings, roughly how many unique news-publisher works did the Microsoft-OpenAI “Project Mango” effort reportedly produce?",
+          "choices": [
+            "1,600",
+            "16,000",
+            "160,000+",
+            "1.6 million"
+          ],
+          "a": "160,000+"
+        },
+        {
+          "q": "In the Towards Data Science piece, what happened even though the team had pinned their model version?",
+          "a": "The provider deprecated the pinned version anyway, forcing a migration on the provider's timeline"
+        },
+        {
+          "q": "What model is OpenAI's new “Astra for Law” built on, and name one legal-tech partner already building on it via API.",
+          "a": "GPT-6 Astra; Harvey or Legora"
+        }
+      ]
+    },
+    "build": null
   }
 ]
