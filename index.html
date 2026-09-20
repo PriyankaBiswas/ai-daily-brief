@@ -524,7 +524,20 @@ a { color: var(--accent); }
 </section>
 <section class="build-section">
 <h3 class="section-heading">🛠 Build Idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch"><strong>Recreate the harness-design study&#x27;s headline claim in miniature — does telling Claude to ‘plan first’ actually help, or just cost more tokens?</strong></p>
+<p class="build-category meta-mono">prompt-engineering</p>
+<p class="build-why">Riffs on today&#x27;s reading item on the new coding-agent harness study, which found that planning helps weaker models most and saves cost for stronger ones — but that there&#x27;s no universal best setup. This build tests that specific claim directly on Claude: run the same small, checkable task once with a ‘write your plan first’ instruction and once without, then compare pass rate and response length side by side. Also deliberately low-friction: these build emails have gone unanswered for weeks now, so today&#x27;s is a small, no-stakes one to jump back in with.</p>
+<h4 class="sub-heading">Plan</h4>
+<ol class="build-plan">
+<li>Set up: anthropic client, plus one tiny objectively-checkable task (e.g. ‘fix the off-by-one bug in this 8-line Python function’) with 2-3 test inputs/expected outputs you can eyeball. <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Variant A — direct: send the task once at temperature 0, asking for only the corrected function, no explanation. <span class="step-minutes meta-mono">(3 min)</span></li>
+<li>Variant B — plan-first: same task, but instruct it to write a numbered 2-3 step plan before the final corrected function. <span class="step-minutes meta-mono">(3 min)</span></li>
+<li>Run each variant 3 times, collect all 6 outputs, and score each one pass/fail against your test cases. <span class="step-minutes meta-mono">(9 min)</span></li>
+<li>Print a 2-row summary: pass rate out of 3 and average response length (characters) for each variant. <span class="step-minutes meta-mono">(5 min)</span></li>
+</ol>
+<p class="done-looks-like"><strong>Done looks like:</strong> A printed two-row table (direct vs. plan-first) showing pass rate out of 3 and average response length for each — one concrete data point on whether the harness study&#x27;s planning claim holds for this task on Claude.</p>
+<p class="stretch-goal"><strong>Stretch goal:</strong> Re-run on a harder task where planning would plausibly matter more (e.g. a 3-step data-transformation script) and see if the gap between variants widens, or add a third variant that plans inside a hidden scratchpad your grading script strips before scoring.</p>
+<p class="tools"><strong>Tools:</strong> Anthropic Python SDK (anthropic), Python</p>
 </section>
 </section>
 <details class="archive-root"><summary>Archive</summary><div class="archive-body">

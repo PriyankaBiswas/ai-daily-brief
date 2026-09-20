@@ -2882,6 +2882,38 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Recreate the harness-design study's headline claim in miniature — does telling Claude to ‘plan first’ actually help, or just cost more tokens?",
+      "category": "prompt-engineering",
+      "why": "Riffs on today's reading item on the new coding-agent harness study, which found that planning helps weaker models most and saves cost for stronger ones — but that there's no universal best setup. This build tests that specific claim directly on Claude: run the same small, checkable task once with a ‘write your plan first’ instruction and once without, then compare pass rate and response length side by side. Also deliberately low-friction: these build emails have gone unanswered for weeks now, so today's is a small, no-stakes one to jump back in with.",
+      "plan": [
+        {
+          "step": "Set up: anthropic client, plus one tiny objectively-checkable task (e.g. ‘fix the off-by-one bug in this 8-line Python function’) with 2-3 test inputs/expected outputs you can eyeball.",
+          "minutes": 5
+        },
+        {
+          "step": "Variant A — direct: send the task once at temperature 0, asking for only the corrected function, no explanation.",
+          "minutes": 3
+        },
+        {
+          "step": "Variant B — plan-first: same task, but instruct it to write a numbered 2-3 step plan before the final corrected function.",
+          "minutes": 3
+        },
+        {
+          "step": "Run each variant 3 times, collect all 6 outputs, and score each one pass/fail against your test cases.",
+          "minutes": 9
+        },
+        {
+          "step": "Print a 2-row summary: pass rate out of 3 and average response length (characters) for each variant.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A printed two-row table (direct vs. plan-first) showing pass rate out of 3 and average response length for each — one concrete data point on whether the harness study's planning claim holds for this task on Claude.",
+      "stretch_goal": "Re-run on a harder task where planning would plausibly matter more (e.g. a 3-step data-transformation script) and see if the gap between variants widens, or add a third variant that plans inside a hidden scratchpad your grading script strips before scoring.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "Python"
+      ]
+    }
   }
 ]
