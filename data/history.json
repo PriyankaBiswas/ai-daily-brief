@@ -2915,5 +2915,110 @@
         "Python"
       ]
     }
+  },
+  {
+    "date": "2026-09-21",
+    "reading": {
+      "intro": "Three of the usual newsletters landed today — TLDR AI, Import AI, and The Rundown — with Towards Data Science, The New Stack, DeepLearning.AI, and Latent Space's AINews quiet since earlier in the week. Two of today's lead stories turned out to be re-reports of things already covered here: The Rundown's ‘OpenAI hacked by three guys with Claude’ is the same Hacktron bug-bounty story from Sept 19, and TLDR's ‘$856B compute bill’ figure was already cited inside Sept 20's OpenAI cash-burn item — both dropped rather than repeated. What survives is meatier than the headlines suggested: RAND's new strategy paper on navigating the path to superintelligence, Anthropic quietly standing up a real biology wet lab, the first real research agenda for turning ‘pace the frontier’ into an actual discipline, and a paper mapping the sprawling ecosystem of guardrail-stripped open-weight models. Newsletters covering today: TLDR AI, Import AI, The Rundown.",
+      "items": [
+        {
+          "title": "RAND pitches a ‘Freedom of Action’ strategy for the US on the path to superintelligence",
+          "url": "https://www.rand.org/pubs/perspectives/PEA5105-1.html",
+          "source": "RAND (via Import AI)",
+          "why": "A new RAND Perspective argues that because so much about the next phase of AI progress is unknowable, the US's best move is to preserve optionality rather than commit early to one of seven archetypal strategies — spanning full-speed ‘Acceleration,’ a negotiated ‘Co-Development’ with China, or a verifiable global ‘Moratorium.’ Its four-part ‘Freedom of Action’ framework (build a human-AI ecosystem, an AI-security architecture, adapted national-security institutions, and citizen/firm/government response capacity) is essentially a hedge against five specific uncertainties — how close real danger is, whether human-AI coexistence is even feasible, and whether restraint or suppression are enforceable at all. Import AI's own read: current US policy looks a lot more like pure ‘Acceleration’ than anything RAND actually recommends.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic quietly sets up a physical biology lab to ramp its AI drug-discovery push",
+          "url": "https://www.reuters.com/world/anthropic-quietly-sets-up-biology-lab-it-ramps-ai-drug-program-2026-09-18/",
+          "source": "Reuters (via The Rundown)",
+          "why": "Reuters reports Anthropic has built out a Bay Area wet lab where it wants Claude steering robotic equipment through real biology experiments with minimal human help — a physical follow-through on the 4x biomolecular-modeling speedup it open-sourced last week (Sept 18's list). The company says drug discovery isn't the lab's explicit purpose and it's deliberately holding off on human trials so as not to compete with its own pharma clients, but in tests Claude reportedly designed proteins for about $150 in chips and usage versus runs that normally cost up to $10K per target elsewhere. Also builds on the recent Model Hardware Standard giving Claude direct control over microscopes and robotic arms — frontier model, machine control, and now a real lab all in place at once.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "A new multi-institution research agenda for how to actually pace AI progress",
+          "url": "https://pacing.tech/",
+          "source": "pacing.tech (via Import AI)",
+          "why": "Nine research groups — ACS Research, University of Toronto, Harvard, Cambridge, Wharton, and others — have published the first real attempt to turn ‘pacing AI’ from a slogan into a research field: cataloguing what can actually be paced (compute, algorithmic R&D, model weights, deployment), which of those are controllable ‘rival goods’ versus impossible-to-contain ‘non-rival’ ones, and a full checklist of questions to ask before, during, and after any pacing intervention. It's a direct sequel to the Amodei essay and public pacing agreement that dominated the Sept 14-15 lists — this is the technical-governance homework that debate implicitly assumed someone would eventually do.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "Mapping the ‘uncensored’ open-weight AI model ecosystem — 3,471 models on HuggingFace",
+          "url": "https://arxiv.org/abs/2609.05241",
+          "source": "arXiv / 10a Labs (via Import AI)",
+          "why": "A new paper tracks the community that strips safety guardrails from open-weight models (via techniques like activation-space ‘abliteration’ and malicious fine-tuning), finding 3,471 original uncensored repos on HuggingFace as of March, each redistributed 2.4 times on average, with just three actors accounting for over half of all 8,164 redistributions. Chinese-origin models' share of new uncensored releases jumped from 1% in Q1 2024 to 55% by Q2 2025, tracking closely with Ollama's rise as a distribution layer. The authors frame it as a preview of how autonomous AI systems might someday modify each other's weights off-distribution — worth reading purely as a map of a persistence layer that's hard to shut down once quantized and mirrored.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Geoffrey Hinton and 100+ AI experts call for embedded safety evaluators inside AI labs",
+          "url": "https://aievaluatorforum.org/initiatives/embedded-evaluation-letter",
+          "source": "AI Evaluator Forum (via The Rundown)",
+          "why": "The letter asks labs to give independent safety testers staff-level internal access and protection from retaliation — a notably more aggressive version of the arms-length, contracted-out model Anthropic and Accenture set up this week (Sept 20's list) with their $1B-apiece evaluation pledge. Same underlying goal, real adversarial testing before deployment, but from a broader and more senior signatory list pushing for a stronger form of it.",
+          "minutes": 3,
+          "skip_ok": true
+        },
+        {
+          "title": "Meta ships SAM 3.1, its latest segment-anything model, on the Meta Model API",
+          "url": "https://developer.meta.com/ai/models/sam-3-1/",
+          "source": "Meta (via TLDR AI)",
+          "why": "SAM 3.1 detects, segments, and tracks objects in images and video from plain text prompts, served on inference tuned specifically for its architecture, priced at $2.50 per 1,000 images or $0.20 per 1,000 video frames. Straightforward product news — useful if you're already building anything computer-vision-adjacent, easy to skip otherwise.",
+          "minutes": 3,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What organization published the new ‘Freedom of Action’ strategy paper on how the US should navigate the path to superintelligence?",
+          "a": "RAND"
+        },
+        {
+          "q": "RAND's report groups possible AI strategies into three families: Coexistence, Denial, and which other one?",
+          "choices": [
+            "Acceleration",
+            "Deterrence",
+            "Moratorium",
+            "Containment"
+          ],
+          "a": "Acceleration"
+        },
+        {
+          "q": "Name one of RAND's five key uncertainties that determine which strategy makes sense.",
+          "a": "Any one of: danger proximity, coexistence feasibility, restraint feasibility, decisive strategic advantage, or suppression feasibility"
+        },
+        {
+          "q": "Where did Anthropic reportedly build its new physical biology lab?",
+          "a": "The Bay Area"
+        },
+        {
+          "q": "Per Anthropic's own research, about how much did it cost Claude to design proteins matching results that normally cost up to $10K per target?",
+          "a": "About $150 in chips and AI usage"
+        },
+        {
+          "q": "The new ‘Pacing the Frontier’ research agenda distinguishes ‘rival goods’ like compute from what other category of resource that's extremely hard to control once created?",
+          "a": "‘Non-rival goods’ — things like model weights and training algorithms that can be copied and shared at low cost"
+        },
+        {
+          "q": "How many original ‘uncensored’ model repositories did the 10a Labs paper find on HuggingFace, and how many times is each redistributed on average?",
+          "a": "3,471 repositories, redistributed about 2.4 times on average"
+        },
+        {
+          "q": "True or False: the Hinton-signed letter calls for safety evaluators to get the same arms-length, contracted access that Anthropic and Accenture's new arrangement provides.",
+          "a": "False — it calls for staff-level internal access, a more aggressive version than the Accenture arrangement"
+        },
+        {
+          "q": "What can Meta's SAM 3.1 model do, and roughly what does it cost per 1,000 images?",
+          "a": "Detects, segments, and tracks objects in images and video from text prompts; about $2.50 per 1,000 images"
+        },
+        {
+          "q": "Why were the Hacktron/OpenAI hacking story and the ‘$856B compute bill’ figure left out of today's list even though two different newsletters led with them?",
+          "a": "Both are re-reports of stories already covered here — the Hacktron hack on Sept 19, and the $856B compute figure inside Sept 20's OpenAI cash-burn item"
+        }
+      ]
+    },
+    "build": null
   }
 ]
