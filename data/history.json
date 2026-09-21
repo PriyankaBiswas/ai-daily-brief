@@ -3019,6 +3019,39 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Query HuggingFace's live API yourself and count how many 'abliterated'/uncensored models exist right now — a 25-minute rerun of today's census paper.",
+      "category": "paper-reimplementation",
+      "why": "Riffs directly on today's reading item mapping the uncensored open-weight model ecosystem (3,471 repos as of March, via activation-space 'abliteration'). Rather than just reading the paper's static count, this hits the HuggingFace Hub search API yourself and pulls a live number — a tiny, concrete taste of how that kind of census actually gets built, and a chance to see how much the number has grown since March. Also deliberately small: these build emails have gone unanswered for a while now, so today stays tiny and single-win rather than ambitious.",
+      "plan": [
+        {
+          "step": "Set up: pip install huggingface_hub (or just use requests), no auth needed for public search.",
+          "minutes": 5
+        },
+        {
+          "step": "Hit the Hub search API for models matching 'abliterated' (e.g. api.list_models(search='abliterated') or GET https://huggingface.co/api/models?search=abliterated), and print the total count returned.",
+          "minutes": 7
+        },
+        {
+          "step": "Sort by downloads and print the top 10 model names — eyeball which base models (Llama, Qwen, Mistral) show up most.",
+          "minutes": 7
+        },
+        {
+          "step": "Print one summary line comparing your live count to the paper's reported 3,471-repo figure from March.",
+          "minutes": 4
+        },
+        {
+          "step": "Try a second keyword ('uncensored') and print that count too — does it roughly agree with 'abliterated', or diverge?",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A printed live count of 'abliterated'-tagged models on the Hub right now, a top-10-by-downloads list, and a one-line comparison to the paper's March figure — your own real-time data point sitting next to the paper's snapshot.",
+      "stretch_goal": "Pull each result's createdAt date and bucket counts by month to sketch your own mini version of the paper's growth curve, or repeat the query tomorrow and diff the counts to see how fast the number is actually moving.",
+      "tools": [
+        "huggingface_hub (Python)",
+        "HuggingFace Hub API",
+        "Python"
+      ]
+    }
   }
 ]

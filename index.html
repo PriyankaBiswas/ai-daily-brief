@@ -509,7 +509,20 @@ a { color: var(--accent); }
 </section>
 <section class="build-section">
 <h3 class="section-heading">🛠 Build Idea</h3>
-<p class="build-pending">Build idea lands at 11:30am</p>
+<p class="build-pitch"><strong>Query HuggingFace&#x27;s live API yourself and count how many &#x27;abliterated&#x27;/uncensored models exist right now — a 25-minute rerun of today&#x27;s census paper.</strong></p>
+<p class="build-category meta-mono">paper-reimplementation</p>
+<p class="build-why">Riffs directly on today&#x27;s reading item mapping the uncensored open-weight model ecosystem (3,471 repos as of March, via activation-space &#x27;abliteration&#x27;). Rather than just reading the paper&#x27;s static count, this hits the HuggingFace Hub search API yourself and pulls a live number — a tiny, concrete taste of how that kind of census actually gets built, and a chance to see how much the number has grown since March. Also deliberately small: these build emails have gone unanswered for a while now, so today stays tiny and single-win rather than ambitious.</p>
+<h4 class="sub-heading">Plan</h4>
+<ol class="build-plan">
+<li>Set up: pip install huggingface_hub (or just use requests), no auth needed for public search. <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Hit the Hub search API for models matching &#x27;abliterated&#x27; (e.g. api.list_models(search=&#x27;abliterated&#x27;) or GET https://huggingface.co/api/models?search=abliterated), and print the total count returned. <span class="step-minutes meta-mono">(7 min)</span></li>
+<li>Sort by downloads and print the top 10 model names — eyeball which base models (Llama, Qwen, Mistral) show up most. <span class="step-minutes meta-mono">(7 min)</span></li>
+<li>Print one summary line comparing your live count to the paper&#x27;s reported 3,471-repo figure from March. <span class="step-minutes meta-mono">(4 min)</span></li>
+<li>Try a second keyword (&#x27;uncensored&#x27;) and print that count too — does it roughly agree with &#x27;abliterated&#x27;, or diverge? <span class="step-minutes meta-mono">(5 min)</span></li>
+</ol>
+<p class="done-looks-like"><strong>Done looks like:</strong> A printed live count of &#x27;abliterated&#x27;-tagged models on the Hub right now, a top-10-by-downloads list, and a one-line comparison to the paper&#x27;s March figure — your own real-time data point sitting next to the paper&#x27;s snapshot.</p>
+<p class="stretch-goal"><strong>Stretch goal:</strong> Pull each result&#x27;s createdAt date and bucket counts by month to sketch your own mini version of the paper&#x27;s growth curve, or repeat the query tomorrow and diff the counts to see how fast the number is actually moving.</p>
+<p class="tools"><strong>Tools:</strong> [&#x27;huggingface_hub (Python)&#x27;, &#x27;HuggingFace Hub API&#x27;, &#x27;Python&#x27;]</p>
 </section>
 </section>
 <details class="archive-root"><summary>Archive</summary><div class="archive-body">
