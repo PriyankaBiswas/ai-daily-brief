@@ -539,7 +539,20 @@ a { color: var(--accent); }
 </section>
 <section class="build-section">
 <h3 class="section-heading">🛠 Build Idea</h3>
-<p class="build-pending">Build idea lands at 11:30am</p>
+<p class="build-pitch"><strong>Build a live &#x27;Agent ID Badge&#x27; that shows, in real time, whether your AI shopping agent would pass or fail Amazon&#x27;s exact rules against Muse.</strong></p>
+<p class="build-category meta-mono">UI-for-AI</p>
+<p class="build-why">Riffs on today&#x27;s lead story: Amazon blocked Meta&#x27;s Muse over three alleged violations — no self-identification, unannounced browsing, and storing logins. This build turns those three rules into a tiny interactive checklist so you can see, live, exactly what &#x27;agent compliance&#x27; looks like from the merchant&#x27;s side, and why an agent that fails even one toggle gets locked out. Also deliberately zero-setup: the last three build emails went unanswered, so today trades API keys and installs for a single HTML file you just open.</p>
+<h4 class="sub-heading">Plan</h4>
+<ol class="build-plan">
+<li>Set up: create index.html locally — no installs, no API key, just a text editor and a browser. <span class="step-minutes meta-mono">(3 min)</span></li>
+<li>Hard-code Amazon&#x27;s 3 stated Muse complaints as a checklist array: self-identifies, doesn&#x27;t browse unannounced, doesn&#x27;t store logins. <span class="step-minutes meta-mono">(5 min)</span></li>
+<li>Add 3 toggle switches (checkboxes) representing whether your hypothetical agent satisfies each requirement. <span class="step-minutes meta-mono">(6 min)</span></li>
+<li>Wire up a live status badge: green &#x27;Compliant&#x27; only when all 3 are checked, red &#x27;Blocked&#x27; otherwise — mirroring the real block. <span class="step-minutes meta-mono">(6 min)</span></li>
+<li>Add a one-line log (&#x27;last agent action&#x27;) that updates when you flip a toggle, so it feels like a real trust indicator, not just checkboxes. <span class="step-minutes meta-mono">(5 min)</span></li>
+</ol>
+<p class="done-looks-like"><strong>Done looks like:</strong> Opening index.html in your browser, flipping the 3 toggles, and watching the badge flip live between green &#x27;Compliant&#x27; and red &#x27;Blocked&#x27; — the same binary Amazon just applied to Muse.</p>
+<p class="stretch-goal"><strong>Stretch goal:</strong> Add a 4th slider for &#x27;unannounced browsing frequency&#x27; that degrades the badge past a threshold, or persist toggle state to localStorage so the badge remembers your last simulated agent between reloads.</p>
+<p class="tools"><strong>Tools:</strong> HTML, CSS, vanilla JavaScript (no dependencies)</p>
 </section>
 </section>
 <details class="archive-root"><summary>Archive</summary><div class="archive-body">

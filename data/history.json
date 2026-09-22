@@ -3185,6 +3185,39 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a live 'Agent ID Badge' that shows, in real time, whether your AI shopping agent would pass or fail Amazon's exact rules against Muse.",
+      "category": "UI-for-AI",
+      "why": "Riffs on today's lead story: Amazon blocked Meta's Muse over three alleged violations — no self-identification, unannounced browsing, and storing logins. This build turns those three rules into a tiny interactive checklist so you can see, live, exactly what 'agent compliance' looks like from the merchant's side, and why an agent that fails even one toggle gets locked out. Also deliberately zero-setup: the last three build emails went unanswered, so today trades API keys and installs for a single HTML file you just open.",
+      "plan": [
+        {
+          "step": "Set up: create index.html locally — no installs, no API key, just a text editor and a browser.",
+          "minutes": 3
+        },
+        {
+          "step": "Hard-code Amazon's 3 stated Muse complaints as a checklist array: self-identifies, doesn't browse unannounced, doesn't store logins.",
+          "minutes": 5
+        },
+        {
+          "step": "Add 3 toggle switches (checkboxes) representing whether your hypothetical agent satisfies each requirement.",
+          "minutes": 6
+        },
+        {
+          "step": "Wire up a live status badge: green 'Compliant' only when all 3 are checked, red 'Blocked' otherwise — mirroring the real block.",
+          "minutes": 6
+        },
+        {
+          "step": "Add a one-line log ('last agent action') that updates when you flip a toggle, so it feels like a real trust indicator, not just checkboxes.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "Opening index.html in your browser, flipping the 3 toggles, and watching the badge flip live between green 'Compliant' and red 'Blocked' — the same binary Amazon just applied to Muse.",
+      "stretch_goal": "Add a 4th slider for 'unannounced browsing frequency' that degrades the badge past a threshold, or persist toggle state to localStorage so the badge remembers your last simulated agent between reloads.",
+      "tools": [
+        "HTML",
+        "CSS",
+        "vanilla JavaScript (no dependencies)"
+      ]
+    }
   }
 ]
