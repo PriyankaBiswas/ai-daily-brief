@@ -3219,5 +3219,144 @@
         "vanilla JavaScript (no dependencies)"
       ]
     }
+  },
+  {
+    "date": "2026-09-23",
+    "reading": {
+      "intro": "Anthropic and OpenAI shipped within 90 minutes of each other — Claude Opus 5.5 topping the leaderboards, GPT-6 Sol and Luna cutting prices roughly in half — while the geopolitics track kept moving in parallel: British Columbia sued OpenAI over a school shooter's ChatGPT use, twenty countries plus the EU called for tighter global AI oversight, and Altman and Amodei are set to address the UN Security Council. Newsletters covering today: TLDR AI, The Rundown, and Latent Space; Towards Data Science, Morning Brew's Tech Brew, and The New Stack sent only promotional or already-covered material, and Import AI/DeepLearning.AI stayed quiet.",
+      "items": [
+        {
+          "title": "Anthropic ships Claude Opus 5.5, its best-yet on alignment benchmarking",
+          "url": "https://www.anthropic.com/claude-opus-5-5",
+          "source": "Anthropic (via TLDR AI, The Rundown)",
+          "why": "Opus 5.5 takes the top spot on Artificial Analysis's Intelligence Index at 58, ahead of Fable 5.1 and GPT-6 Astra (both 53), while costing about 40% less to run than Opus 5. Anthropic says it also fixed some of the much-criticized 'Claudish' writing style and posted its best-ever score on internal alignment/behavioral auditing — notable as the first release since Anthropic started talking publicly about 'pacing.'",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI answers with GPT-6 Sol and Luna, priced about 50% lower",
+          "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+          "source": "OpenAI (via TLDR AI, The Rundown)",
+          "why": "Sol and Luna are cheaper, faster siblings of GPT-6 Astra — Luna at $0.10/$0.50 per million input/output tokens, Sol at $2/$10 — with modest score gains over their 5.6-generation predecessors at roughly half the price. Landing within 90 minutes of Opus 5.5, it's the clearest sign yet that 'pacing' talk from both labs hasn't slowed the release cadence, just shifted some of the competition to price.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "British Columbia sues OpenAI and Sam Altman over a school shooting",
+          "url": "https://www.theguardian.com/technology/2026/sep/22/british-columbia-sues-openai-sam-altman-tumbler-ridge-school-shooting",
+          "source": "The Guardian (via The Rundown)",
+          "why": "The province alleges OpenAI's systems flagged the Tumbler Ridge shooter's ChatGPT conversations but the company failed to alert police before the attack. It's a sharper, more consequential version of the accountability question that's been building all month around AI-agent safety incidents and disclosure practices.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Altman and Amodei expected to address the UN Security Council on AI safety",
+          "url": "https://www.cnbc.com/2026/09/22/altman-amodei-unga-ai-safety.html",
+          "source": "CNBC (via TLDR AI)",
+          "why": "Both CEOs are slated to speak to the Security Council amid mounting international concern about AI risk — a rare joint appearance by the two biggest frontier labs' leaders before a global governance body, landing the same week as a formal multi-country oversight push (next item).",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "Twenty countries and the EU call for stronger global AI oversight",
+          "url": "https://www.regjeringen.no/en/whats-new/international-call-for-enhanced-control-of-ai-development/id3173324/",
+          "source": "Government of Norway (via The Rundown)",
+          "why": "A joint statement urges transparent company safety protocols and coordinated government standards for advanced AI — a concrete multilateral step beyond the individual-country proposals (Sanders' bill, Newsom's kill-switch order) that have dominated the domestic conversation this month.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "SWE-Bench Pro V2 arrives, and frontier models get humbled",
+          "url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2",
+          "source": "Scale AI (via TLDR AI)",
+          "why": "The corrected, harder benchmark — 642 tasks across 11 repositories — drops OpenAI's GPT-5 and Claude Opus 4.1 to roughly 23% on the public set, versus their much higher scores on the original SWE-Bench Verified. A concrete data point on how much of the old benchmark's headroom was measuring benchmark familiarity rather than real coding capability.",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "Bio-security is an AI arms race, and defense is losing",
+          "url": "https://www.latent.space/p/bio-security-is-an-ai-arms-race-eric",
+          "source": "Latent Space, interview with Eric Nguyen (Radical Numerics)",
+          "why": "The Evo/Evo-2 co-creator argues genomic language models are unlocking the same kind of capability jump long-context and chain-of-thought gave text LLMs — and that biodefense currently can't keep pace with attack capability, so his answer is to push the defensive frontier harder rather than slow down. Useful, sobering companion piece to this month's recurring bio-risk thread (the Hugging Face breach, the 'uncensored model' mapping paper).",
+          "minutes": 11,
+          "skip_ok": true
+        },
+        {
+          "title": "Alibaba unveils a new AI chip, plans 20GW of data centers by 2032",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-22/alibaba-unveils-ai-chip-to-drive-20gw-of-data-centers-by-2032",
+          "source": "Bloomberg (via The Rundown)",
+          "why": "The chip delivers roughly 3x the performance of its predecessor, alongside plans for a 5-10 trillion-parameter model — a concrete marker of how much compute China's largest cloud provider is committing to, independent of whatever export-control regime is in place by then.",
+          "minutes": 5,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What score did Claude Opus 5.5 post on Artificial Analysis's Intelligence Index, and how does it compare to Fable 5.1 and GPT-6 Astra?",
+          "a": "58 — ahead of both Fable 5.1 and GPT-6 Astra, which scored 53"
+        },
+        {
+          "q": "Roughly how much cheaper is Opus 5.5 to run than Opus 5?",
+          "choices": [
+            "10%",
+            "25%",
+            "40%",
+            "60%"
+          ],
+          "a": "40%"
+        },
+        {
+          "q": "What are the names of OpenAI's new, cheaper GPT-6 counterparts to Astra?",
+          "choices": [
+            "Sol and Luna",
+            "Nova and Vega",
+            "Orion and Atlas",
+            "Sky and Terra"
+          ],
+          "a": "Sol and Luna"
+        },
+        {
+          "q": "Roughly how much cheaper are Sol and Luna than the 5.6-generation models they replace?",
+          "a": "About 50% cheaper"
+        },
+        {
+          "q": "What does British Columbia's lawsuit against OpenAI and Sam Altman allege?",
+          "a": "That OpenAI's systems flagged the Tumbler Ridge school shooter's ChatGPT conversations but the company failed to alert police before the attack"
+        },
+        {
+          "q": "Which two AI-lab CEOs are expected to address the UN Security Council on AI safety?",
+          "choices": [
+            "Sam Altman and Dario Amodei",
+            "Sundar Pichai and Satya Nadella",
+            "Elon Musk and Mark Zuckerberg",
+            "Demis Hassabis and Jensen Huang"
+          ],
+          "a": "Sam Altman and Dario Amodei"
+        },
+        {
+          "q": "How many countries (plus the EU) signed the joint call for stronger global AI oversight?",
+          "a": "Twenty countries, plus the EU"
+        },
+        {
+          "q": "On SWE-Bench Pro V2's public set, roughly what score did OpenAI's GPT-5 and Claude Opus 4.1 get, and what does that reveal?",
+          "a": "Roughly 23% — showing the new, corrected benchmark is far more realistic and challenging than SWE-Bench Verified"
+        },
+        {
+          "q": "According to Radical Numerics co-founder Eric Nguyen, who is currently ahead in the bio-security 'arms race' — offense or defense?",
+          "choices": [
+            "Offense",
+            "Defense",
+            "They're evenly matched",
+            "Neither has meaningfully advanced"
+          ],
+          "a": "Offense — defense is currently losing, per Nguyen"
+        },
+        {
+          "q": "What is Alibaba's newly unveiled AI chip meant to support, per its stated data-center plans?",
+          "a": "20GW of data-center capacity by 2032, alongside a planned 5-10 trillion-parameter model"
+        }
+      ]
+    },
+    "build": null
   }
 ]
