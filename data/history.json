@@ -3357,6 +3357,39 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a one-page ‘price vs. brains’ scorer using today’s exact launch numbers — Opus 5.5, GPT-6 Sol, and GPT-6 Luna — to see which model actually wins on value, not just benchmark score.",
+      "category": "data/eval exercise",
+      "why": "Today's reading has two numbers everyone will quote loosely: Opus 5.5 scoring 58 on the Intelligence Index at ~40% less cost than Opus 5, and Sol/Luna undercutting their predecessors by ~50%. Plugging in the real prices (Luna at $0.10/$0.50 per million input/output tokens, Sol at $2/$10) against benchmark scores turns 'cheaper AND better' marketing into one comparable number — good practice for reading any future model launch skeptically. Also zero-setup: the last several build emails have gone unanswered, so today trades API keys and installs for a single HTML file you just open.",
+      "plan": [
+        {
+          "step": "Set up: create index.html locally — no installs, no API key, just a text editor and a browser.",
+          "minutes": 2
+        },
+        {
+          "step": "Hard-code a models array with name, Intelligence Index score, and input/output price per million tokens for Opus 5.5, GPT-6 Sol, and GPT-6 Luna, using today's exact numbers.",
+          "minutes": 5
+        },
+        {
+          "step": "Compute a 'value score' = intelligence score ÷ estimated cost for a fixed workload (e.g. 100k input / 20k output tokens).",
+          "minutes": 7
+        },
+        {
+          "step": "Render the models as a table sorted by value score, highest first.",
+          "minutes": 6
+        },
+        {
+          "step": "Add a toggle that swaps the workload ratio (input-heavy vs output-heavy task) and watch the ranking reorder live.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A single HTML page showing Opus 5.5, GPT-6 Sol, and GPT-6 Luna sorted by value score for a fixed workload, and the ranking visibly reorders when you flip the input/output-heavy toggle.",
+      "stretch_goal": "Add GPT-6 Astra and Claude Opus 5 as baseline rows so you can see exactly how much the 40%/50% price cuts moved the value ranking, or persist your custom workload ratio to localStorage.",
+      "tools": [
+        "HTML",
+        "CSS",
+        "vanilla JavaScript (no dependencies)"
+      ]
+    }
   }
 ]

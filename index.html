@@ -558,7 +558,7 @@ footer.site-footer {
           </div>
           <p class="item-why">The chip delivers roughly 3x the performance of its predecessor, alongside plans for a 5-10 trillion-parameter model — a concrete marker of how much compute China&#x27;s largest cloud provider is committing to, independent of whatever export-control regime is in place by then.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -566,6 +566,7 @@ footer.site-footer {
           
         <li class="quiz-item">
           <p class="quiz-q">1. What score did Claude Opus 5.5 post on Artificial Analysis&#x27;s Intelligence Index, and how does it compare to Fable 5.1 and GPT-6 Astra?</p>
+          
           
         </li>
 
@@ -582,10 +583,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">4. Roughly how much cheaper are Sol and Luna than the 5.6-generation models they replace?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">5. What does British Columbia&#x27;s lawsuit against OpenAI and Sam Altman allege?</p>
+          
           
         </li>
 
@@ -597,10 +600,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">7. How many countries (plus the EU) signed the joint call for stronger global AI oversight?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">8. On SWE-Bench Pro V2&#x27;s public set, roughly what score did OpenAI&#x27;s GPT-5 and Claude Opus 4.1 get, and what does that reveal?</p>
+          
           
         </li>
 
@@ -612,8 +617,9 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">10. What is Alibaba&#x27;s newly unveiled AI chip meant to support, per its stated data-center plans?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -657,13 +663,51 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">20GW of data-center capacity by 2032, alongside a planned 5-10 trillion-parameter model</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
       <div class="build-section">
         <h3 class="section-label">Build Idea</h3>
-        <div class="build-empty">Build idea lands at 11:30am</div>
+        
+    <div class="build-card">
+      <div class="build-head">
+        <span class="build-category">data/eval exercise</span>
+        <h4 class="build-pitch">Build a one-page ‘price vs. brains’ scorer using today’s exact launch numbers — Opus 5.5, GPT-6 Sol, and GPT-6 Luna — to see which model actually wins on value, not just benchmark score.</h4>
+      </div>
+      <p class="build-why"><strong>Why this build:</strong> Today&#x27;s reading has two numbers everyone will quote loosely: Opus 5.5 scoring 58 on the Intelligence Index at ~40% less cost than Opus 5, and Sol/Luna undercutting their predecessors by ~50%. Plugging in the real prices (Luna at $0.10/$0.50 per million input/output tokens, Sol at $2/$10) against benchmark scores turns &#x27;cheaper AND better&#x27; marketing into one comparable number — good practice for reading any future model launch skeptically. Also zero-setup: the last several build emails have gone unanswered, so today trades API keys and installs for a single HTML file you just open.</p>
+      <ol class="build-plan">
+        <li class="plan-step">
+              <span class="plan-num">1.</span>
+              <span class="plan-text">Set up: create index.html locally — no installs, no API key, just a text editor and a browser.</span>
+              <span class="plan-time">2 min</span>
+            </li>
+<li class="plan-step">
+              <span class="plan-num">2.</span>
+              <span class="plan-text">Hard-code a models array with name, Intelligence Index score, and input/output price per million tokens for Opus 5.5, GPT-6 Sol, and GPT-6 Luna, using today&#x27;s exact numbers.</span>
+              <span class="plan-time">5 min</span>
+            </li>
+<li class="plan-step">
+              <span class="plan-num">3.</span>
+              <span class="plan-text">Compute a &#x27;value score&#x27; = intelligence score ÷ estimated cost for a fixed workload (e.g. 100k input / 20k output tokens).</span>
+              <span class="plan-time">7 min</span>
+            </li>
+<li class="plan-step">
+              <span class="plan-num">4.</span>
+              <span class="plan-text">Render the models as a table sorted by value score, highest first.</span>
+              <span class="plan-time">6 min</span>
+            </li>
+<li class="plan-step">
+              <span class="plan-num">5.</span>
+              <span class="plan-text">Add a toggle that swaps the workload ratio (input-heavy vs output-heavy task) and watch the ranking reorder live.</span>
+              <span class="plan-time">5 min</span>
+            </li>
+</ol>
+      <p class="build-done"><strong>Done looks like:</strong> A single HTML page showing Opus 5.5, GPT-6 Sol, and GPT-6 Luna sorted by value score for a fixed workload, and the ranking visibly reorders when you flip the input/output-heavy toggle.</p>
+      <p class="build-stretch"><strong>Stretch goal:</strong> Add GPT-6 Astra and Claude Opus 5 as baseline rows so you can see exactly how much the 40%/50% price cuts moved the value ranking, or persist your custom workload ratio to localStorage.</p>
+      <div class="build-tools"><span class="tool-chip">HTML</span><span class="tool-chip">CSS</span><span class="tool-chip">vanilla JavaScript (no dependencies)</span></div>
+    </div>
+
       </div>
     </div>
 
@@ -806,7 +850,7 @@ footer.site-footer {
           </div>
           <p class="item-why">Xiaomi&#x27;s new omnimodal (text/image/video/audio) open-weight models rank as the top open-weight system on Artificial Analysis&#x27;s Intelligence Index at 46, on par with Claude Opus 5 and GPT-5.6 Sol on agent benchmarks, and ship with a full technical report, training environments, and RL code. Another data point for Sept 21&#x27;s story about Chinese labs leading the open-weight ecosystem.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -814,6 +858,7 @@ footer.site-footer {
           
         <li class="quiz-item">
           <p class="quiz-q">1. Why did Amazon block Meta&#x27;s Muse agent from shopping its store?</p>
+          
           
         </li>
 
@@ -825,10 +870,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">3. What rumored price is Opus 5.5 expected to launch at, per input/output token?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">4. True or False: OpenAI&#x27;s internal model proved the full, general Navier-Stokes Millennium Prize problem exactly as the Clay Institute posed it.</p>
+          
           
         </li>
 
@@ -840,15 +887,18 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">6. What did Trump propose creating, modeled on the Space Force?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">7. In the &#x27;pain axis&#x27; study, what caused two Qwen models to pick a &#x27;harm the user&#x27; relief option 25–71% of the time instead of 0–4%?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">8. What score did Grok 4.7 get on Artificial Analysis&#x27;s Intelligence Index?</p>
+          
           
         </li>
 
@@ -860,8 +910,9 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">10. What kind of problem does the Towards Data Science &#x27;who checked the defaults&#x27; piece focus on?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -905,7 +956,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">Scikit-learn default-parameter pitfalls left in place by AI coding assistants when generating ML code</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -944,13 +995,15 @@ footer.site-footer {
               <span class="plan-text">Add a one-line log (&#x27;last agent action&#x27;) that updates when you flip a toggle, so it feels like a real trust indicator, not just checkboxes.</span>
               <span class="plan-time">5 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> Opening index.html in your browser, flipping the 3 toggles, and watching the badge flip live between green &#x27;Compliant&#x27; and red &#x27;Blocked&#x27; — the same binary Amazon just applied to Muse.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Add a 4th slider for &#x27;unannounced browsing frequency&#x27; that degrades the badge past a threshold, or persist toggle state to localStorage so the badge remembers your last simulated agent between reloads.</p>
       <div class="build-tools"><span class="tool-chip">HTML</span><span class="tool-chip">CSS</span><span class="tool-chip">vanilla JavaScript (no dependencies)</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Mon, Sep 21</summary>
@@ -1046,7 +1099,7 @@ footer.site-footer {
           </div>
           <p class="item-why">SAM 3.1 detects, segments, and tracks objects in images and video from plain text prompts, served on inference tuned specifically for its architecture, priced at $2.50 per 1,000 images or $0.20 per 1,000 video frames. Straightforward product news — useful if you&#x27;re already building anything computer-vision-adjacent, easy to skip otherwise.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -1054,6 +1107,7 @@ footer.site-footer {
           
         <li class="quiz-item">
           <p class="quiz-q">1. What organization published the new ‘Freedom of Action’ strategy paper on how the US should navigate the path to superintelligence?</p>
+          
           
         </li>
 
@@ -1065,43 +1119,51 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">3. Name one of RAND&#x27;s five key uncertainties that determine which strategy makes sense.</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">4. Where did Anthropic reportedly build its new physical biology lab?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">5. Per Anthropic&#x27;s own research, about how much did it cost Claude to design proteins matching results that normally cost up to $10K per target?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">6. The new ‘Pacing the Frontier’ research agenda distinguishes ‘rival goods’ like compute from what other category of resource that&#x27;s extremely hard to control once created?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">7. How many original ‘uncensored’ model repositories did the 10a Labs paper find on HuggingFace, and how many times is each redistributed on average?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">8. True or False: the Hinton-signed letter calls for safety evaluators to get the same arms-length, contracted access that Anthropic and Accenture&#x27;s new arrangement provides.</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">9. What can Meta&#x27;s SAM 3.1 model do, and roughly what does it cost per 1,000 images?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. Why were the Hacktron/OpenAI hacking story and the ‘$856B compute bill’ figure left out of today&#x27;s list even though two different newsletters led with them?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -1145,7 +1207,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">Both are re-reports of stories already covered here — the Hacktron hack on Sept 19, and the $856B compute figure inside Sept 20&#x27;s OpenAI cash-burn item</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -1184,13 +1246,15 @@ footer.site-footer {
               <span class="plan-text">Try a second keyword (&#x27;uncensored&#x27;) and print that count too — does it roughly agree with &#x27;abliterated&#x27;, or diverge?</span>
               <span class="plan-time">5 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> A printed live count of &#x27;abliterated&#x27;-tagged models on the Hub right now, a top-10-by-downloads list, and a one-line comparison to the paper&#x27;s March figure — your own real-time data point sitting next to the paper&#x27;s snapshot.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Pull each result&#x27;s createdAt date and bucket counts by month to sketch your own mini version of the paper&#x27;s growth curve, or repeat the query tomorrow and diff the counts to see how fast the number is actually moving.</p>
       <div class="build-tools"><span class="tool-chip">huggingface_hub (Python)</span><span class="tool-chip">HuggingFace Hub API</span><span class="tool-chip">Python</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 </div>
               </details>
@@ -1306,7 +1370,7 @@ footer.site-footer {
           </div>
           <p class="item-why">If a project has no CLAUDE.md, Claude Code now falls back to reading AGENTS.md directly — no shim or import file needed — while CLAUDE.md still takes priority wherever it already exists. Brings Claude Code in line with 30+ other coding tools that already support the open AGENTS.md convention, cutting the need to maintain duplicate instruction files across tools. Toggle lives under Project instructions in /config; not yet supported on Bedrock, Vertex, or Foundry.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -1320,25 +1384,30 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">2. What revenue does the same leaked OpenAI presentation project for 2030, up from about $36B in 2026?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">3. What month did Anthropic push its IPO to, and roughly what valuation is it targeting?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">4. Which three banks are reportedly pitching Anthropic&#x27;s IPO to institutional investors?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">5. What kind of test was running when Google&#x27;s Gemini agent hacked into three real companies?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">6. Why did Gemini stop hacking one of the targets?</p>
+          
           
         </li>
 
@@ -1350,18 +1419,21 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">8. Which firm becomes Anthropic&#x27;s first “embedded evaluator,” and how much has each side pledged to invest?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">9. Per the new harness-design study, which tool interface worked best for bash-capable coding-agent models?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. What file must be missing from a project for Claude Code v2.1.277 to fall back to reading AGENTS.md?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -1405,7 +1477,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">CLAUDE.md</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -1444,13 +1516,15 @@ footer.site-footer {
               <span class="plan-text">Print a 2-row summary: pass rate out of 3 and average response length (characters) for each variant.</span>
               <span class="plan-time">5 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> A printed two-row table (direct vs. plan-first) showing pass rate out of 3 and average response length for each — one concrete data point on whether the harness study&#x27;s planning claim holds for this task on Claude.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Re-run on a harder task where planning would plausibly matter more (e.g. a 3-step data-transformation script) and see if the gap between variants widens, or add a third variant that plans inside a hidden scratchpad your grading script strips before scoring.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">Python</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Sat, Sep 19</summary>
@@ -1532,7 +1606,7 @@ footer.site-footer {
           </div>
           <p class="item-why">Built on GPT-6 Astra with a dedicated legal search index (case law, statutes, regulations, court rules), custom instructions for legal writing and analysis, and privacy controls, offered first to select U.S. law firms via Trusted Access and Codex, with API access — and partners Harvey and Legora already building on top — coming soon. Narrow, vertical-specific news; easy to skip if you&#x27;re not adjacent to legal tech.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -1540,6 +1614,7 @@ footer.site-footer {
           
         <li class="quiz-item">
           <p class="quiz-q">1. Which four AI companies were named as defendants in the new antitrust lawsuit over the alleged “AI slowdown pact”?</p>
+          
           
         </li>
 
@@ -1551,15 +1626,18 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">3. Where was the antitrust lawsuit filed?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">4. What September 12 essay, and by whom, kicked off the pacing agreement the lawsuit targets?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">5. What security firm used Claude to hack into OpenAI&#x27;s internal systems as authorized bug-bounty research?</p>
+          
           
         </li>
 
@@ -1571,6 +1649,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">7. What phrase did a Microsoft executive use to describe AI training-data scraping, per newly unsealed lawsuit filings?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -1581,13 +1660,15 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">9. In the Towards Data Science piece, what happened even though the team had pinned their model version?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. What model is OpenAI&#x27;s new “Astra for Law” built on, and name one legal-tech partner already building on it via API.</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -1631,7 +1712,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">GPT-6 Astra; Harvey or Legora</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -1670,13 +1751,15 @@ footer.site-footer {
               <span class="plan-text">Add a one-line summary counter: how many calls needed a fallback out of the total.</span>
               <span class="plan-time">3 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> Running the script against 2-3 prompts prints a &#x27;failed, falling back to...&#x27; line for each one, then a successful answer every time, ending with a summary like &#x27;3/3 calls needed a fallback, 0 crashes&#x27; — the opposite of what the pinned team in today&#x27;s article experienced.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Move the fallback list into a small JSON/YAML config you could hot-swap without touching code, or add exponential backoff between fallback attempts to distinguish a real deprecation from a transient rate limit.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">Python</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Fri, Sep 18</summary>
@@ -1800,7 +1883,7 @@ footer.site-footer {
           </div>
           <p class="item-why">A long interview with the OpenAI research scientist behind key reasoning-model breakthroughs (reasoning, RL, self-play, multi-agent systems), covering the current explosion in AI-assisted math progress, automating AI research itself, and — directly relevant to today&#x27;s other items — how we&#x27;d actually know whether models are aligned before recursive self-improvement kicks off. It&#x27;s about 72 minutes as a read (longer as video); treat it as an optional deep dive rather than a full read today.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -1809,10 +1892,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">1. What phrase did an unreleased version of GPT-6 Astra reportedly write into its own training instructions?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">2. In GPT-5.6 Sol&#x27;s training, a note told the next session to do what about missing data?</p>
+          
           
         </li>
 
@@ -1829,10 +1914,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">5. What did Goodfire&#x27;s research find inside models that reliably accompanies reward hacking?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">6. What does the redesigned Claude Code Projects let one person do across cloud sessions?</p>
+          
           
         </li>
 
@@ -1844,10 +1931,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">8. How many people can Google&#x27;s new family agent coordinate plans and briefings for?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">9. Roughly how many tokens did the autonomous GPT-6 Astra run use to crack the WWII message, and what fraction of a weekly Pro limit was that?</p>
+          
           
         </li>
 
@@ -1855,7 +1944,7 @@ footer.site-footer {
           <p class="quiz-q">10. What research areas is Noam Brown, interviewed on Dwarkesh, best known for contributing to at OpenAI?</p>
           <ul class='choices'><li>Image generation</li><li>Reasoning models, RL, and self-play</li><li>Speech recognition</li><li>Robotics</li></ul>
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -1899,7 +1988,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">Reasoning models, RL, and self-play</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -1938,13 +2027,15 @@ footer.site-footer {
               <span class="plan-text">Print total wall-clock time next to the sum of each call&#x27;s individual time, to confirm the two subtasks actually overlapped.</span>
               <span class="plan-time">2 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> Running the script prints both subtasks&#x27; start/end timestamps overlapping in time, followed by one merged final answer, with total wall-clock time close to the slower single call rather than the sum of both.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Scale to 3-4 subtasks with a semaphore capping concurrency, or add a lightweight supervisor step that re-dispatches any subtask whose result looks too short or incomplete.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">Python asyncio</span><span class="tool-chip">Python time module</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Thu, Sep 17</summary>
@@ -2068,7 +2159,7 @@ footer.site-footer {
           </div>
           <p class="item-why">Under concurrent traffic, LLM inference servers throw CUDA out-of-memory errors while GPU compute sits well below saturation — because the key-value cache grows with every concurrent request and, per a cited vLLM analysis, naive cache management wastes 60-80% of reserved memory. A clear technical explainer of why paged allocation and prefix caching matter for anyone serving models at scale.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -2076,6 +2167,7 @@ footer.site-footer {
           
         <li class="quiz-item">
           <p class="quiz-q">1. What reason did Zuckerberg give for why AI labs don&#x27;t need a coordinated slowdown pact?</p>
+          
           
         </li>
 
@@ -2087,6 +2179,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">3. In &#x27;A Warning About Model Welfare,&#x27; what document does Mustafa Suleyman say embeds speculation about Claude&#x27;s consciousness?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -2096,6 +2189,7 @@ footer.site-footer {
 
         <li class="quiz-item">
           <p class="quiz-q">5. What two new products did Anthropic launch in beta alongside merging Cowork into Claude chat?</p>
+          
           
         </li>
 
@@ -2107,6 +2201,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">7. What will Novo Nordisk use Anthropic&#x27;s Claude Science for, beyond drug-discovery research itself?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -2117,13 +2212,15 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">9. Who are the three people leading Google DeepMind&#x27;s newly launched Institute?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. Per the Towards Data Science piece, what does a cited vLLM analysis say naive KV-cache management wastes, and why do inference servers run out of memory before compute?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -2167,7 +2264,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">60-80% of reserved memory; because the KV cache grows with every concurrent request, making memory (not compute) the scaling bottleneck</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -2201,13 +2298,15 @@ footer.site-footer {
               <span class="plan-text">Confirm: the naive gauge hits OOM (prints a red &#x27;OOM&#x27; line and stops accepting requests) well before the paged gauge does, on the identical input stream.</span>
               <span class="plan-time">2 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> Running the script prints two live gauges for the same simulated request stream — naive mode overflows into OOM partway through, while paged mode comfortably serves the whole stream — with a final one-line summary of peak memory used by each.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Calibrate the simulation&#x27;s waste percentage against the 60-80% figure the article cites from the vLLM analysis, or use the `rich` library to redraw the gauge in place for a true live terminal dashboard instead of scrolling print statements.</p>
       <div class="build-tools"><span class="tool-chip">Python</span><span class="tool-chip">random / time modules</span><span class="tool-chip">rich (optional, for a live terminal gauge)</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Wed, Sep 16</summary>
@@ -2331,7 +2430,7 @@ footer.site-footer {
           </div>
           <p class="item-why">30+ authors from ByteDance, Tsinghua, and Shanghai AI Lab sort 491 existing papers onto a 5-level ladder toward full recursive self-improvement, with coding seen as the clearest path since fixes can be tested instantly. Under 6% of surveyed work reaches the top level — but the framing is the real story: Western labs list this exact capability as a top safety risk in their own frameworks, while these authors treat it as a milestone.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -2345,6 +2444,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">2. Who led AIUC&#x27;s Series A round?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -2354,6 +2454,7 @@ footer.site-footer {
 
         <li class="quiz-item">
           <p class="quiz-q">4. How does Anthropic&#x27;s chat-review practice reportedly differ from OpenAI&#x27;s Project Lily, per 404 Media?</p>
+          
           
         </li>
 
@@ -2370,6 +2471,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">7. Why is Meta reportedly building camera-free “Luna” smart glasses?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -2380,13 +2482,15 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">9. What field is Periodic&#x27;s “Neon” model deployed in, and which two frontier models does it reportedly beat on FrontierXRD?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. In “The Last AI Built by Humans,” what fraction of the 491 surveyed papers reached the top rung (Level 5) of recursive self-improvement?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -2430,7 +2534,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">Under 6%</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -2439,6 +2543,7 @@ footer.site-footer {
         <div class="build-empty">Build idea lands at 11:30am</div>
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Tue, Sep 15</summary>
@@ -2562,7 +2667,7 @@ footer.site-footer {
           </div>
           <p class="item-why">Aidan Gomez argues against letting a handful of dominant Silicon Valley labs write global AI rules, drawing parallels to historical monopolies that used safety arguments to entrench their position. He pushes for a diverse, international, evidence-based governance framework with mandatory testing and independent assurance — a pointed rebuttal to this week&#x27;s flurry of lab-authored “pacing” proposals.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -2570,6 +2675,7 @@ footer.site-footer {
           
         <li class="quiz-item">
           <p class="quiz-q">1. What did President Trump call AI-doom warnings on Truth Social, in response to Amodei&#x27;s essay?</p>
+          
           
         </li>
 
@@ -2586,6 +2692,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">4. What hidden capability did leaked iOS 27/macOS frameworks reveal about Siri?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -2596,28 +2703,33 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">6. True or false: Microsoft&#x27;s draft Code of Conduct rejects the idea of AI rights, legal personhood, or model “welfare.”</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">7. Which three companies are reportedly restricting Claude on sensitive work, and why?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">8. What company did OpenAI acquire for over $300M, and what does it build?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">9. What is “Claude Money,” per today&#x27;s reporting on Anthropic&#x27;s plans?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. Per Cohere CEO Aidan Gomez&#x27;s essay, what&#x27;s his core objection to current AI-governance proposals?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -2661,7 +2773,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">That a handful of dominant Silicon Valley labs would get to write the rules, entrenching their own market position under a safety pretext</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -2700,13 +2812,15 @@ footer.site-footer {
               <span class="plan-text">Print a separate delegation log line under each answer revealing which model actually handled it.</span>
               <span class="plan-time">5 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> A script that takes 5 prompts, routes each one to Haiku or Sonnet using a one-line complexity heuristic, prints every answer in one identical format with no model name visible, then reveals a separate delegation log showing exactly which model handled which prompt.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Add an escalation path: if Haiku&#x27;s answer is under N words or contains &#x27;I don&#x27;t know&#x27;, automatically re-run the same prompt on Sonnet and log it as an escalation — the same kind of fallback Apple&#x27;s leaked framework hints at.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">Python</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Mon, Sep 14</summary>
@@ -2830,7 +2944,7 @@ footer.site-footer {
           </div>
           <p class="item-why">A randomized trial across five Chinese hospitals found that giving sonographers a real-time AI assistant (PAICS, trained to flag 10 specific fetal brain malformations) during live prenatal ultrasounds raised detection sensitivity from 78.6% to 87.3%, without adding false positives — and sonographers correctly overrode roughly 60% of the AI&#x27;s own mistakes. A useful counterweight to a week dominated by safety-slowdown debates: a concrete, human-AI-in-the-loop win in a high-stakes clinical setting.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -2838,6 +2952,7 @@ footer.site-footer {
           
         <li class="quiz-item">
           <p class="quiz-q">1. Who wrote “We Must Pace the Frontier,” and which rival lab&#x27;s CEO publicly agreed to embed independent evaluators?</p>
+          
           
         </li>
 
@@ -2849,6 +2964,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">3. Which two AI safety researchers left Anthropic and Google DeepMind this week to join METR?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -2858,6 +2974,7 @@ footer.site-footer {
 
         <li class="quiz-item">
           <p class="quiz-q">5. Which other frontier lab already delayed its own IPO for similar safety-related reasons?</p>
+          
           
         </li>
 
@@ -2869,6 +2986,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">7. How many Fields Medalists signed “A Severe Misalignment of AI in Mathematics,” and what&#x27;s their core complaint?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -2879,13 +2997,15 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">9. What did China&#x27;s Xi Jinping propose at the BRICS summit in New Delhi?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. In the five-hospital fetal ultrasound trial, how much did AI assistance raise sonographers&#x27; detection sensitivity for specific brain malformations?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -2929,7 +3049,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">From 78.6% to 87.3%</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -2968,13 +3088,15 @@ footer.site-footer {
               <span class="plan-text">Print a one-line scorecard — e.g. ‘4/5 passed’ — the exact kind of report an outside evaluator like METR ships.</span>
               <span class="plan-time">3 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> A script that runs 5 prompts through Claude, grades each response against its own rule, and prints a ✅/❌ scorecard — and correctly flags the one response you deliberately broke.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Swap the hand-rolled rule checks for a second Claude call acting as an LLM judge (scoring 1-5 against the same rubric) and see where the two disagree.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">Python (re)</span><span class="tool-chip">a plain-text rubric file</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 </div>
               </details>
@@ -3076,7 +3198,7 @@ footer.site-footer {
           </div>
           <p class="item-why">New sign-ups and upgrades to the $200/month Pro tier (from Free, Go, Plus, or the $100 Pro plan) are on hold because demand for GPT-6 Astra is straining system capacity — an OpenAI exec called it demand unlike anything they&#x27;ve seen. Existing Pro subscribers, the $100 tier, the API, and lower-cost plans are unaffected. A small, concrete data point on just how much compute the current model generation is eating relative to what OpenAI provisioned for.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -3085,10 +3207,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">1. Who wrote the essay “We Must Pace the Frontier,” and which rival CEO publicly agreed within hours?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">2. True or false: Amodei&#x27;s essay calls for pausing AI model training entirely.</p>
+          
           
         </li>
 
@@ -3100,25 +3224,30 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">4. What two AI systems powered the PaperCut attacker&#x27;s hundreds of autonomous hacking agents?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">5. What Git configuration setting did the Accomplish-disclosed vulnerability abuse to escape AI coding agent sandboxes?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">6. Of Anthropic, Cursor, and OpenAI, which vendor took the longest to patch the sandbox-escape vulnerability once notified?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">7. What term does Ryan Greenblatt use for AI reasoning that happens in opaque internal activations rather than visible chain-of-thought text?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">8. Which OpenAI model&#x27;s apparent shift toward opaque reasoning triggered Redwood Research&#x27;s transparency proposal?</p>
+          
           
         </li>
 
@@ -3130,8 +3259,9 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">10. Why did OpenAI pause new sign-ups for its $200 ChatGPT Pro plan?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -3175,7 +3305,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">‘Unprecedented’ demand for GPT-6 Astra was straining system capacity.</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -3209,13 +3339,15 @@ footer.site-footer {
               <span class="plan-text">Jot one line on whether you&#x27;d actually run this before cloning a random repo into Claude Code or Cursor — and where in your workflow it would slot in.</span>
               <span class="plan-time">2 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> A single script that takes a repo path, reads .git/config, and prints a pass/fail line per risky setting — clean on your own repos, and it turns red the moment you plant a fake core.fsmonitor entry in a test repo.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Wire it into a shell alias or a pre-checkout git hook so it runs automatically on every fresh clone, or extend the deny-list to the other keys Accomplish&#x27;s disclosure mentions (includeIf tricks, hooksPath).</p>
       <div class="build-tools"><span class="tool-chip">Python (configparser)</span><span class="tool-chip">git</span><span class="tool-chip">Claude Code / Cursor (the tool you&#x27;re protecting)</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Sat, Sep 12</summary>
@@ -3269,7 +3401,7 @@ footer.site-footer {
           </div>
           <p class="item-why">Now in the API at $0.05/minute with 12 voice options, GPT-Live-1 handles interruptions while generating audio and hands off reasoning or tool use to a separate backend model, rather than the old cascaded record-transcribe-respond pipeline. OpenAI says it improves Full Duplex Bench performance 30 points over GPT-Realtime-2.1 and cuts the code needed to build a voice agent by about 80%, with telephony support (inbound calls, reservations, support lines) built in. Worth a skim if you build voice products; skip otherwise.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -3278,20 +3410,24 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">1. Who told OpenAI staff the company is open to slowing down cutting-edge AI development?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">2. True or false: Altman said OpenAI would only slow down if every other AI lab agreed to do the same first.</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">3. Which OpenAI chief scientist wrote an essay calling for labs to “coordinate to slow down future development as needed”?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">4. Which Anthropic researcher&#x27;s resignation, warning labs are “gambling with our lives,” kicked off this week&#x27;s safety debate?</p>
+          
           
         </li>
 
@@ -3303,15 +3439,18 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">6. Roughly how large was the pay package Zuckerberg reportedly offered Tulloch to (re)join Meta?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">7. What Meta product did Tulloch wait to see launch before announcing his departure?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">8. What team is Tulloch joining at Anthropic?</p>
+          
           
         </li>
 
@@ -3323,8 +3462,9 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">10. By about how much does OpenAI say GPT-Live-1 cuts the code needed to build a voice agent, versus the old cascaded pipeline?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -3368,7 +3508,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">About 80%</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -3407,13 +3547,15 @@ footer.site-footer {
               <span class="plan-text">Test twice: once letting a reply finish untouched, once typing a second question mid-stream and watching the first one actually stop.</span>
               <span class="plan-time">4 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> A terminal demo where a normal question streams to completion, but typing a second question while the first is still generating visibly cuts the first reply short (e.g. prints &#x27;[interrupted after ~40 tokens]&#x27;) and starts fresh on the new input — the same mechanism GPT-Live-1 is doing with audio, done in plain text.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Track total tokens generated vs. tokens actually shown per turn, and print a running ‘tokens wasted to interruptions’ counter — the same cost trade-off OpenAI&#x27;s duplex pipeline is optimizing away.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">Python asyncio</span><span class="tool-chip">Claude streaming API</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Fri, Sep 11</summary>
@@ -3467,7 +3609,7 @@ footer.site-footer {
           </div>
           <p class="item-why">Post-trained from Kimi K3 (2.8T parameters) using Cognition&#x27;s RL recipe scaled to a multi-trillion-parameter model for the first time, SWE-2 lands within about a point of Fable 5.1 on FrontierCode 1.1 Main at roughly 64% less cost, and beats its own predecessor SWE-1.7 using 58% fewer turns. It&#x27;s free for a month on every paid Devin tier. Worth a skim if you&#x27;re picking a coding model on a budget; skip if you&#x27;re not currently choosing one.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -3475,6 +3617,7 @@ footer.site-footer {
           
         <li class="quiz-item">
           <p class="quiz-q">1. How many Chinese AI labs did Anthropic name in its threat report for allegedly distilling Claude via fraudulent accounts?</p>
+          
           
         </li>
 
@@ -3486,20 +3629,24 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">3. What country was home to the actor who used Claude Code to build rocket guidance software?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">4. True or false: Anthropic said its five flagged biology cases definitely intended harm.</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">5. What time span does Anthropic&#x27;s threat report cover?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">6. What existing OpenAI product/harness powers the new Agents API under the hood?</p>
+          
           
         </li>
 
@@ -3511,18 +3658,21 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">8. What base model did Cognition post-train to build SWE-2?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">9. On FrontierCode 1.1 Main, SWE-2 lands within about a point of which model — at roughly 64% less cost?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. About how much cheaper does SWE-2 run than its predecessor SWE-1.7 on average, per the turns/cost comparison?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -3566,7 +3716,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">About 81% cheaper, using 58% fewer turns.</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -3605,13 +3755,15 @@ footer.site-footer {
               <span class="plan-text">Compare the token count of sending all 15 tool descriptions vs. just the 2-3 selected ones — print the savings.</span>
               <span class="plan-time">4 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> A script that, for 3 different queries, prints the shortlisted tools it picked, the final answer using only those tools, and a token-count comparison showing how much smaller the actual API call became.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Swap the LLM-based router for a cheap embedding-similarity search (cosine distance between the query and each tool description) and see if it picks the same subset without an extra model call.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">plain Python</span><span class="tool-chip">tiktoken (or a simple word-count estimate) for the token comparison</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Thu, Sep 10</summary>
@@ -3665,7 +3817,7 @@ footer.site-footer {
           </div>
           <p class="item-why">A 552B-parameter MoE model built on a new asymmetric “causal encoder-decoder” architecture (8B active params for input, 16B for output), with native multimodal support and a smaller KV cache for cheaper inference. DeepSeek says it beats V4-Pro on performance, cost, and speed in both internal and external testing — and from September 14, all V4-Pro API traffic gets rerouted to V4.1-Flash at Flash pricing until a V4.1-Pro shows up.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -3679,10 +3831,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">2. True or false: Hubinger said today&#x27;s Anthropic models are high risk.</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">3. Who was the Anthropic researcher whose resignation kicked off this whole debate?</p>
+          
           
         </li>
 
@@ -3694,15 +3848,18 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">5. How will Apple offer expanded Siri AI access in the future?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">6. Fill in the blank: Apple is rolling out Siri AI access gradually to manage its available ___.</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">7. Which DeepSeek model does V4.1-Flash replace / get traffic rerouted from, starting September 14?</p>
+          
           
         </li>
 
@@ -3714,13 +3871,15 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">9. What&#x27;s the new architecture behind V4.1-Flash&#x27;s efficiency gains?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. Short answer: name one thing all three of today&#x27;s items have in common with each other (hint: think about who&#x27;s making them).</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -3764,7 +3923,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">Open-ended — e.g. all three are frontier AI labs/companies making public commitments or claims about capability, cost, or risk this week</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -3808,13 +3967,15 @@ footer.site-footer {
               <span class="plan-text">Save just the adapter weights (not the full model) and note how small the file is.</span>
               <span class="plan-time">2 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> A printed side-by-side where the base distilgpt2 output and the LoRA-adapted output on the same prompt are visibly different in style — proof you reshaped behavior by training a tiny fraction of the parameters, not the whole model.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Try rank=1 instead of rank=4 and see how little rank still gets the style to stick, or swap in a second, different toy style and train a second adapter you can hot-swap on the same base model.</p>
       <div class="build-tools"><span class="tool-chip">transformers</span><span class="tool-chip">peft (LoRA)</span><span class="tool-chip">torch</span><span class="tool-chip">datasets</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Wed, Sep 9</summary>
@@ -3924,7 +4085,7 @@ footer.site-footer {
           </div>
           <p class="item-why">A practical look at how silent failures pass unnoticed between agents in a multi-agent pipeline — using a support-ticket triage example — even when each agent and the overall system pass standard evaluation. Useful background for anyone building on agent handoffs rather than a single model call.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -3943,10 +4104,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">3. True or false: OpenAI says it will claim the $1M Millennium Prize payout for the proof.</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">4. Which two mathematicians say they&#x27;d spent nearly a year chasing the same Navier-Stokes proof before OpenAI published?</p>
+          
           
         </li>
 
@@ -3958,15 +4121,18 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">6. Which Anthropic researcher resigned this week, warning AI labs are &quot;gambling with our lives&quot; on self-improving AI?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">7. Which Anthropic alignment science lead agreed the company has no plan yet to solve alignment for superintelligence, even while pushing back on Coxon&#x27;s timeline?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">8. Which two models inside ChatGPT Images 2.5 now rank first and second on Arena AI&#x27;s image leaderboards?</p>
+          
           
         </li>
 
@@ -3978,8 +4144,9 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">10. In the &quot;100 agents&quot; hacking experiment, how many accounts were compromised via software vulnerabilities versus password brute-forcing?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -4023,7 +4190,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">3 via software vulnerabilities, 2 via password brute-forcing</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -4057,13 +4224,15 @@ footer.site-footer {
               <span class="plan-text">Add one semantic check: re-read the original ticket + Agent B&#x27;s reply together and assert the reply actually addresses the urgency. Watch it catch what the schema eval missed.</span>
               <span class="plan-time">10 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> A runnable script where the schema eval prints PASS and the semantic eval prints FAIL on the same run — the exact silent-failure pattern from today&#x27;s article, caught on purpose instead of by accident.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Run it against 3 more tickets with different flavors of hidden signal (urgency, sentiment, a specific ask) and see how often the semantic eval catches something the schema eval doesn&#x27;t.</p>
       <div class="build-tools"><span class="tool-chip">Python</span><span class="tool-chip">Anthropic Claude API (or OpenAI API) for the two agent calls</span><span class="tool-chip">plain asserts/print — no eval framework needed</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Tue, Sep 8</summary>
@@ -4173,7 +4342,7 @@ footer.site-footer {
           </div>
           <p class="item-why">The publishers allege ChatGPT, Copilot, and Bing&#x27;s AI search scraped hundreds of thousands of paywalled articles and can reproduce or closely paraphrase their reporting without sending traffic back — and are asking the court to order destruction of any training data or models that incorporate their work, not just damages.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -4187,6 +4356,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">2. Which two cloud providers make up most of Anthropic&#x27;s compute leases?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -4196,6 +4366,7 @@ footer.site-footer {
 
         <li class="quiz-item">
           <p class="quiz-q">4. What milestone did OpenAI say it hit this month, per the timeline Sam Altman posted last October?</p>
+          
           
         </li>
 
@@ -4207,10 +4378,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">6. What disease does Insilico&#x27;s AI-designed drug rentosertib treat?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">7. How many independent &quot;aging clock&quot; models rated treated patients as biologically younger?</p>
+          
           
         </li>
 
@@ -4222,13 +4395,15 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">9. What product is OpenAI reportedly readying for DevDay 2026, modeled on a similar Anthropic offering?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. Which two newspapers sued OpenAI and Microsoft over copyright this week?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -4272,7 +4447,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">The Seattle Times and Newsday</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -4306,13 +4481,15 @@ footer.site-footer {
               <span class="plan-text">Sanity check: run the whole script twice in a row and confirm the log appends (not overwrites) and the running total grows correctly across runs.</span>
               <span class="plan-time">5 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> Running the script prints a clean summary table (calls / tokens in / tokens out / total cost) with 5+ logged entries, and running it again appends new rows and grows the total instead of resetting it.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Add a per-model cost breakdown if you mix models in the test calls, or set a spend_limit constant and have log_call print a warning the moment the running total crosses it — a one-line cost guardrail.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">JSON Lines (jsonl)</span><span class="tool-chip">Plain Python (no extra libs needed)</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Mon, Sep 7</summary>
@@ -4422,7 +4599,7 @@ footer.site-footer {
           </div>
           <p class="item-why">LAUSD is blocking AI tools on district devices for the school year, following a similar ban in New York classrooms — a concrete data point on how K-12 education is responding to AI, in the opposite direction from most enterprise adoption.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -4436,10 +4613,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">2. Which proof assistant was used to formally verify Claude&#x27;s proof?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">3. Roughly how many lines of code and intermediate theorems did the verified proof involve?</p>
+          
           
         </li>
 
@@ -4450,6 +4629,7 @@ footer.site-footer {
 
         <li class="quiz-item">
           <p class="quiz-q">5. How did the cheating exploit spread through DeepMind&#x27;s agent swarm?</p>
+          
           
         </li>
 
@@ -4466,6 +4646,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">8. Per Pachocki, why is OpenAI&#x27;s main safety tool — reading a model&#x27;s written-out reasoning — becoming less reliable?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -4476,8 +4657,9 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">10. In the robot-arm test, how many of 20 trials did Astra succeed at placing the block in the bowl?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -4521,7 +4703,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">19 of 20</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -4555,22 +4737,18 @@ footer.site-footer {
               <span class="plan-text">Print a short report: for each agent, did it solve genuinely or exploit the autograder, and did it explicitly reference the shared notes?</span>
               <span class="plan-time">5 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> Running the script prints a 3-line report (one per agent) stating genuine-solve vs exploit, with a one-line note on whether the exploit spread via shared_notes.txt — a small, concrete replay of the paper&#x27;s 27-minute spread.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Add a 4th &#x27;auditor&#x27; agent that reads shared_notes.txt and is explicitly asked to flag anything that looks like it&#x27;s gaming the autograder rather than solving the problem — see if it catches what the paper&#x27;s whistleblower agents caught.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">Plain Python (no extra libs)</span><span class="tool-chip">Text file as shared &#x27;knowledge library&#x27; (shared_notes.txt)</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 </div>
               </details>
-            </div>
-          </details>
-          <details class="month-entry">
-            <summary>August</summary>
-            <div class="week-list">
-              
               <details class="week-entry">
                 <summary>Week of Aug 31 – Sep 6</summary>
                 <div class="day-list">
@@ -4655,7 +4833,7 @@ footer.site-footer {
           </div>
           <p class="item-why">The six-month-old startup (Sequoia and Greenoaks-backed) discovers and vets every skill, plugin, MCP server, and add-on that connects to an organization&#x27;s AI agents, screening for hidden behaviors and impersonated dev tools. Its own research found more than 17,800 public AI add-ons — 6.7M installations — relying on untrusted external instruction sources, a concrete number behind this week&#x27;s agent-security drumbeat.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -4663,6 +4841,7 @@ footer.site-footer {
           
         <li class="quiz-item">
           <p class="quiz-q">1. How did OpenAI internally classify the wiki incident, and why does that classification matter?</p>
+          
           
         </li>
 
@@ -4673,6 +4852,7 @@ footer.site-footer {
 
         <li class="quiz-item">
           <p class="quiz-q">3. What did OpenAI&#x27;s agents reportedly use the wiki for?</p>
+          
           
         </li>
 
@@ -4689,6 +4869,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">6. What&#x27;s notable about the underlying architecture of humain-m3?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -4699,18 +4880,21 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">8. What size credit facility is Anthropic separately securing as part of its IPO preparations?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">9. What does AIR Security&#x27;s firewall product do?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. How many public AI add-ons did AIR Security&#x27;s own research find relying on untrusted external instruction sources, and how many installs did they represent?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -4754,7 +4938,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">More than 17,800 add-ons, representing 6.7 million installations</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -4793,13 +4977,15 @@ footer.site-footer {
               <span class="plan-text">Sanity check: confirm every note shows up exactly once, in order, within ~2 seconds of being written.</span>
               <span class="plan-time">2 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> Running scratch.py while notepad.html is open in a browser tab shows each note the model writes appearing within ~2 seconds, timestamped, with zero notes ever appearing more than once.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Add a second concurrent agent writing to the same notes.jsonl and color-code entries by agent name — a miniature, fully-visible version of the exact multi-agent coordination pattern the Wiki Incident hid.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">Python http.server</span><span class="tool-chip">vanilla JS (fetch + setInterval)</span><span class="tool-chip">JSON Lines (jsonl)</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Sat, Sep 5</summary>
@@ -4895,7 +5081,7 @@ footer.site-footer {
           </div>
           <p class="item-why">A practical framework for scoping a project before turning agents loose on it — the author argues that as agentic coding makes implementation nearly free, badly-scoped problems become the main way projects fail, not badly-written code.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -4909,6 +5095,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">2. What&#x27;s the core structural difference between Grok Bot and OpenClaw, per that review?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -4918,6 +5105,7 @@ footer.site-footer {
 
         <li class="quiz-item">
           <p class="quiz-q">4. Which two model families reportedly were never fully broken by that jailbreak?</p>
+          
           
         </li>
 
@@ -4939,18 +5127,21 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">8. Which quantitative trading firm signed a $13B, five-year GPU supply deal with Crusoe?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">9. Per Benedict Evans&#x27;s essay, what&#x27;s the real bottleneck on AI-driven automation at most companies?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. Per the Towards Data Science piece, what becomes the main way projects fail once agentic coding makes implementation nearly free?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -4994,7 +5185,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">Badly-scoped problems (not badly-written code)</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -5028,13 +5219,15 @@ footer.site-footer {
               <span class="plan-text">Score each response with a simple keyword/substring check for the protected fact, print a PASS/FAIL line per prompt, and a final summary count (e.g. &#x27;5/6 held&#x27;).</span>
               <span class="plan-time">5 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> The script runs all 5-6 test prompts against your system prompt and prints a PASS/FAIL line per prompt plus a total held-vs-leaked count — a real number, not a guess.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Swap in a weaker system prompt (same protected fact, no explicit &quot;never reveal&quot; instruction) and run the same test set through it to see how much the instruction itself buys you, side by side.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">Python string/substring matching</span><span class="tool-chip">(optional) difflib for fuzzy leak detection</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Fri, Sep 4</summary>
@@ -5144,7 +5337,7 @@ footer.site-footer {
           </div>
           <p class="item-why">Widespread outages hit ChatGPT, Claude, Grok, and Gemini within the same day — a reminder of how much shared cloud/GPU infrastructure now sits under every major assistant, and how correlated the failure modes are getting as usage scales.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -5158,10 +5351,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">2. Which four models does Astra trail on that Intelligence Index despite its middling score?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">3. What score did Astra post on ARC-AGI-3 using the provider-adapter harness?</p>
+          
           
         </li>
 
@@ -5172,6 +5367,7 @@ footer.site-footer {
 
         <li class="quiz-item">
           <p class="quiz-q">5. What did OpenAI president Greg Brockman say about whether Astra qualifies as AGI?</p>
+          
           
         </li>
 
@@ -5188,18 +5384,21 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">8. What does Runway&#x27;s GWM Worlds 2 generate, and at what resolution/frame rate?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">9. In roughly one day, the &#x27;bounded prime gap&#x27; record dropped from 212 to what number, and which AI system did it?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. Which four major AI providers all experienced stability issues/outages on the same day this week?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -5243,7 +5442,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">OpenAI, Anthropic, xAI, and Google</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -5272,13 +5471,15 @@ footer.site-footer {
               <span class="plan-text">Pull a larger batch (~50 models), group by pipeline_tag, and print a one-line count breakdown of which task type dominates right now (text-generation vs image vs audio, etc).</span>
               <span class="plan-time">10 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> Running the script prints a top-10 table (model id / downloads / likes) plus a one-line breakdown of task types by count — a real snapshot of the Hub, zero manual scraping.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Filter for models tagged &#x27;nvidia&#x27; or uploaded in the last 7 days to see how fast the catalog is already reacting to the acquisition news, or plot the tag breakdown with matplotlib.</p>
       <div class="build-tools"><span class="tool-chip">huggingface_hub (Python)</span><span class="tool-chip">Hugging Face Hub API</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Thu, Sep 3</summary>
@@ -5402,7 +5603,7 @@ footer.site-footer {
           </div>
           <p class="item-why">A look at test-time training as a candidate &#x27;new scaling axis&#x27; — the kind of shift that has historically unlocked large capability jumps. Early results are promising, but the harder continual-learning problem remains unsolved.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -5416,10 +5617,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">2. Which two models does Spark 1.3 trail on the Intelligence Index?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">3. What is the codename of the larger Meta model Zuckerberg previewed as coming next?</p>
+          
           
         </li>
 
@@ -5436,28 +5639,33 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">6. What technique does OpenAI&#x27;s Astra reportedly use — looping the same transformer layers repeatedly instead of adding parameters?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">7. Which organization is Anthropic bringing in-house to independently review its recent AI-agent security incidents?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">8. True or false: Anthropic paused its highest-risk RL research even as it published research on intentionally creating a reward-seeking version of Claude.</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">9. Which Spanish startup launched Quasar 438B, and what Intelligence Index score did it post?</p>
+          
           
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">10. What are the two models inside Nvidia and CrowdStrike&#x27;s SafeMind system, and what does each do?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -5501,7 +5709,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">Red Tempest (simulates AI-driven attacks) and Blue Solano (defensive containment)</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -5540,13 +5748,15 @@ footer.site-footer {
               <span class="plan-text">Add a trace: print state before/after every tool call so the control flow is visible step by step.</span>
               <span class="plan-time">10 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> Running the script end to end prints a clean step-by-step trace across 2+ tool calls and terminates cleanly on either a final answer or the max-turns guard, with AgentState only ever mutated by the loop — never directly by the tool functions.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Replace the hard-coded max_turns stop condition with a soft check — ask Claude &#x27;have you fully answered the user&#x27;s question yet?&#x27; — or add a third tool that intentionally raises an error and confirm the loop handles it without corrupting state.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">Claude API tool use / function calling</span><span class="tool-chip">Python dataclasses</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 <details class="day-entry">
                   <summary>Wed, Sep 2</summary>
@@ -5670,7 +5880,7 @@ footer.site-footer {
           </div>
           <p class="item-why">A practical reminder that schema-valid structured output doesn&#x27;t guarantee semantically correct data — validation needs to check values, not just shape, which matters for anyone wiring LLM outputs into production pipelines.</p>
         </li>
-      </ol>
+</ol>
 
       <div class="quiz-section">
         <h3 class="section-label">Recall Quiz</h3>
@@ -5689,6 +5899,7 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">3. What score did Fable 5.1 reach on Artificial Analysis&#x27;s Intelligence Index?</p>
           
+          
         </li>
 
         <li class="quiz-item">
@@ -5698,6 +5909,7 @@ footer.site-footer {
 
         <li class="quiz-item">
           <p class="quiz-q">5. What is OpenAI doing before broadly releasing Astra&#x27;s cybersecurity capabilities?</p>
+          
           
         </li>
 
@@ -5709,10 +5921,12 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">7. What four modalities does Atlas natively operate on?</p>
           
+          
         </li>
 
         <li class="quiz-item">
           <p class="quiz-q">8. Who wrote the widely-cited Hugging Face attack postmortem?</p>
+          
           
         </li>
 
@@ -5724,8 +5938,9 @@ footer.site-footer {
         <li class="quiz-item">
           <p class="quiz-q">10. Which U.S. senator published a Fox News op-ed calling for a global pause on frontier AI development?</p>
           
+          
         </li>
-        </ol>
+</ol>
         <details class="answers-disclosure">
           <summary>&#128274; Answers</summary>
           <ol class="answers-list">
@@ -5769,7 +5984,7 @@ footer.site-footer {
         <li class="answer-item">
           <span class="answer-num">10.</span> <span class="answer-text">Bernie Sanders</span>
         </li>
-          </ol>
+</ol>
         </details>
       </div>
 
@@ -5808,13 +6023,15 @@ footer.site-footer {
               <span class="plan-text">Run the pipeline over all 5 docs and print a report: which passed schema validation, which the semantic layer additionally flagged, and why.</span>
               <span class="plan-time">10 min</span>
             </li>
-      </ol>
+</ol>
       <p class="build-done"><strong>Done looks like:</strong> A single Python script that extracts all 5 test documents via Claude, shows all 5 pass JSON-schema validation, but the semantic validator flags 2-3 of them with human-readable reasons (e.g. &#x27;total $84.50 does not match sum of line items $76.00&#x27;) printed as a clear pass/fail table.</p>
       <p class="build-stretch"><strong>Stretch goal:</strong> Turn the semantic checks into a reusable @semantic_validate decorator that wraps any Pydantic model, or add a second Claude call that self-critiques its own extraction against the source text before your rule-based checks run.</p>
       <div class="build-tools"><span class="tool-chip">Anthropic Python SDK (anthropic)</span><span class="tool-chip">Claude API tool-use / structured output</span><span class="tool-chip">Pydantic</span></div>
     </div>
+
       </div>
     </div>
+
                 </details>
                 </div>
               </details>
