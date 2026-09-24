@@ -3535,6 +3535,38 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a mini code sandbox with an allowlist, then try to break out of it yourself — the same cat-and-mouse from today's SPACE benchmark story, in under 30 minutes.",
+      "category": "infra/deployment",
+      "why": "Riffs on today's reading item on Perplexity's ‘Escaping SPACE’ tests, which ran 108 trials trying to break AI agents out of sandboxed VMs (zero full breakouts, per today's quiz). Writing your own tiny allowlist-based sandbox — and then trying to escape it yourself — makes concrete exactly what that kind of agent-security testing is actually checking for, and why closing every hole is harder than it looks. Also deliberately small: still no replies on the last several build emails, so today stays zero-setup and single-file rather than ambitious.",
+      "plan": [
+        {
+          "step": "Set up: create sandbox.py locally — no installs, stdlib only.",
+          "minutes": 2
+        },
+        {
+          "step": "Write a run_untrusted(code) function that execs code with a stripped-down __builtins__ allowlist (just a handful of safe functions like abs, len, str).",
+          "minutes": 7
+        },
+        {
+          "step": "Try 3 escape attempts through it — import os, reading a file with open(), and reaching outer scope via ().__class__.__base__.__subclasses__() — and log which ones get through.",
+          "minutes": 8
+        },
+        {
+          "step": "Patch the sandbox after each successful escape (strip dangerous builtins, block dunder attribute access) until all three are blocked.",
+          "minutes": 6
+        },
+        {
+          "step": "Print a short report: which escapes worked before your fix, and which are still blocked after.",
+          "minutes": 2
+        }
+      ],
+      "done_looks_like": "Running python sandbox.py prints a report showing all 3 escape attempts flagged ‘BLOCKED’ — each one only after you patched the sandbox in response to it getting through.",
+      "stretch_goal": "Add a 4th escape attempt using nested exec() or ctypes, or look up how real Python sandboxes (RestrictedPython) close these same holes and compare notes with your patches.",
+      "tools": [
+        "Python (stdlib only)",
+        "exec/eval with restricted __builtins__"
+      ]
+    }
   }
 ]
