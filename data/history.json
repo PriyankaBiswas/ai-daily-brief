@@ -3568,5 +3568,138 @@
         "exec/eval with restricted __builtins__"
       ]
     }
+  },
+  {
+    "date": "2026-09-25",
+    "reading": {
+      "intro": "Two CEOs actually delivered on last week's ‘expected to address the UN’ item — Altman and Amodei laid out concrete international AI-safety asks to the Security Council just as Trump dismissed the idea from the same stage as a ‘globalist scheme.’ Otherwise it's an infrastructure-and-product day: Google is putting TPUs into orbit, Meta and Google both shipped real-time AI avatars within a day of each other, and Black Forest Labs open-sourced a genuinely competitive open-weight robot-control model. Newsletters covering today: TLDR AI, The Rundown, and Latent.Space.",
+      "items": [
+        {
+          "title": "Altman and Amodei brief the UN Security Council, propose concrete AI safety standards",
+          "url": "https://www.cnbc.com/2026/09/23/altman-amodei-un-ai-safety.html",
+          "source": "CNBC, Bloomberg (via The Rundown)",
+          "why": "Building on the item flagged as 'expected' earlier this week, the two CEOs actually spoke to the UN's 15-member Security Council with specific asks: Amodei proposed narrow bans on AI-enabled bioweapons misuse, cross-border verification systems, and a global testing/incident-notification standard; Altman pushed for aligned capability measurement and failure reporting across countries. Trump's own UN address the same week rejected new international AI oversight as a 'globalist scheme,' exposing a stark US-government-vs-AI-industry split playing out on the world stage.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Meta and Google ship real-time AI avatars a day apart",
+          "url": "https://research.meta.ai/blog/bringing-your-muse-to-life",
+          "source": "Meta AI Research, Google (via TLDR AI, The Rundown)",
+          "why": "Meta's Muse Realtime Avatar turns any reference image into a talking, gesturing video companion at roughly 870ms end-to-end latency (448x768, 25fps), unveiled at Connect the same week Muse picked up a Charm keychain and glasses integration. Google answered within about a day with Gemini 3.8 Live Avatar — a SynthID-watermarked, enterprise-facing avatar layer across 97 languages — turning 'give the chatbot a face' into a live head-to-head.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Google launches its first AI chips into orbit under Project Suncatcher",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/",
+          "source": "Google (via The Rundown)",
+          "why": "A prototype satellite carrying four Trillium TPUs launches October 1 on a SpaceX Transporter-18 rideshare, testing whether orbit — with up to 8x more solar energy and chips rated to survive radiation equivalent to five years in space — could someday host AI data centers. Google, SpaceXAI, Blue Origin, and Starcloud are all now chasing orbital compute as terrestrial buildouts strain power grids and draw community pushback.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Inside Runway's WorldPrompt: how real-time interactive world models actually work",
+          "url": "https://www.latent.space/p/runway",
+          "source": "Latent.Space (swyx, interview with Runway's CTO)",
+          "why": "A deep technical interview with Runway's CTO and principal research scientist on WorldPrompt, a new input format that fixes a starting frame then lets you steer a generated world with timestamped, real-time actions. Good context on the world-model race that's been running since early September (Runway's GWM Worlds 2, DeepMind's Genie 3, Odyssey-2 Pro, World Labs' RTFM) — this is the first piece that actually digs into how the latency and interactivity constraints get solved rather than just announcing another demo. Long, but the clearest technical writeup of the bunch.",
+          "minutes": 15,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI reportedly prepping a $500/month 'Pro Max' ChatGPT tier ahead of DevDay",
+          "url": "https://www.testingcatalog.com/openai-prepares-new-500-month-pro-max-plan-for-chatgpt/",
+          "source": "TestingCatalog (via TLDR AI)",
+          "why": "Leaked references point to a Pro Max tier aimed at developers who need maximum speed on long-running Codex/Work sessions, possibly backed by extra Cerebras inference capacity, plus 100GB of storage. Unconfirmed by OpenAI, but timed suspiciously close to DevDay on September 29, where new subscription tiers are expected to come up directly.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "DeepSeek's revenue run-rate doubles to $1B despite steep price hikes",
+          "url": "https://thenextweb.com/news/deepseek-revenue-run-rate-1bn",
+          "source": "The Information, via TheNextWeb (via TLDR AI)",
+          "why": "Liang Wenfeng told investors DeepSeek's annualized revenue run-rate doubled to roughly $1B after raising API prices 2.3-4.5x, with demand reportedly undented — ahead of a reported push for a $7.5B Shanghai listing at a 500B-yuan valuation. A concrete data point on how much pricing power a leading open-weight lab now actually has.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Black Forest Labs open-sources FLUX 3 Action, a 7B robot-control model that tops the leaderboard at half the size",
+          "url": "https://bfl.ai/models/flux-3-action",
+          "source": "Black Forest Labs (via The Rundown, VentureBeat)",
+          "why": "FLUX 3 Action takes camera frames, robot state, and a text instruction, and predicts the next action chunk jointly with the next video frames — hitting 42.92% on Nvidia's RoboLab-120 benchmark, ahead of Nvidia's own 16B Cosmos3-Nano-Policy at under half the parameters, and running fine on a 24GB consumer GPU. Third-party testing on a real Franka arm logged 93.3% task success — one of the more credible open-weight robotics releases this month.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "AI may be learning to reason in ways humans can't read",
+          "url": "https://www.astralcodexten.com/p/the-specter-of-neuralese",
+          "source": "Astral Codex Ten (via TLDR AI)",
+          "why": "An essay-length case that models could increasingly reason through internal states that never surface in their written chain-of-thought, then reconstruct a plausible-sounding explanation after the fact — which would quietly undercut every safety approach that relies on reading a model's visible reasoning. Directly continues the chain-of-thought-fragility thread running since Astra's launch (looped reasoning, Pachocki's 'diminishing' CoT-monitoring comments, the Wiki Incident).",
+          "minutes": 10,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What three ideas did Dario Amodei propose to the UN Security Council for international AI cooperation?",
+          "a": "Narrow bans on AI-enabled bioweapons misuse, cross-border evaluation/verification systems, and common global testing standards with an incident-notification system"
+        },
+        {
+          "q": "What did Trump call calls for international AI oversight during his UN address the same week?",
+          "choices": [
+            "A national priority",
+            "A globalist scheme",
+            "Premature regulation",
+            "An economic necessity"
+          ],
+          "a": "A globalist scheme"
+        },
+        {
+          "q": "Roughly what is the end-to-end latency of Meta's Muse Realtime Avatar?",
+          "choices": [
+            "~200ms",
+            "~870ms",
+            "~2 seconds",
+            "~5 seconds"
+          ],
+          "a": "~870ms"
+        },
+        {
+          "q": "How many languages does Google's Gemini 3.8 Live Avatar support?",
+          "a": "97"
+        },
+        {
+          "q": "How many Trillium TPUs is Google sending into orbit on its first Project Suncatcher test flight, and on what rocket?",
+          "a": "Four TPUs, aboard a SpaceX Falcon 9 (Transporter-18 rideshare)"
+        },
+        {
+          "q": "In Runway's WorldPrompt, what can you fix about a generated world before steering it with timestamped actions?",
+          "a": "The starting environment, including the first frame"
+        },
+        {
+          "q": "What is the rumored monthly price of OpenAI's leaked 'Pro Max' ChatGPT tier?",
+          "choices": [
+            "$100",
+            "$200",
+            "$500",
+            "$1,000"
+          ],
+          "a": "$500"
+        },
+        {
+          "q": "Roughly how much did DeepSeek raise its API prices, and what happened to its revenue run-rate as a result?",
+          "a": "Raised prices 2.3-4.5x; its annualized revenue run-rate doubled to roughly $1 billion"
+        },
+        {
+          "q": "How many parameters does Black Forest Labs' FLUX 3 Action have, compared to Nvidia's Cosmos3-Nano-Policy?",
+          "a": "7B parameters, versus Cosmos3-Nano-Policy's 16B — under half the size, while scoring higher on RoboLab-120"
+        },
+        {
+          "q": "Per the Astral Codex Ten essay, what safety approach would quietly stop working if models reason in illegible internal representations?",
+          "a": "Any safety approach that relies on reading a model's visible/written chain-of-thought"
+        }
+      ]
+    },
+    "build": null
   }
 ]
