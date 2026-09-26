@@ -3871,6 +3871,33 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Simulate Anthropic's book-haggling agents in miniature — two rule-based traders with hidden preferences, bargaining to a deal or a clean no-deal.",
+      "category": "agent/tool-building",
+      "why": "Riffs on today's Project Swap piece: Anthropic's Claude agents matched their humans' book rankings on 61% of pairs after a five-minute briefing, but the real finding was structural — delegated bargaining needs explicit preference capture, negotiation limits, and clear authority. This rebuilds that mechanism in miniature and rule-based, so you can see exactly where a haggling agent can go wrong before ever wiring up a real model.",
+      "plan": [
+        {
+          "step": "Define two toy traders with hidden, randomized valuations for 5 items each (a mini book-trading setup, Project-Swap style).",
+          "minutes": 5
+        },
+        {
+          "step": "Write a haggle loop: each agent proposes a trade, the other accepts, rejects, or counters — capped at 6 rounds.",
+          "minutes": 10
+        },
+        {
+          "step": "Run it and print the negotiation transcript: every offer, counter, and the final trade (or a clean 'no deal').",
+          "minutes": 5
+        },
+        {
+          "step": "Score the outcome: compare the total surplus the trade actually captured against the best possible trade, to see how good the haggling really was.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A printed transcript of two agents proposing and countering trades over a few rounds, ending in either a closed deal (with the swapped items and each side's gain) or an honest 'no deal' — plus a surplus score showing how close it got to the optimal trade.",
+      "stretch_goal": "Swap one agent's strategy from 'always counter' to 'accept the first trade with positive surplus' and see how much value it leaves on the table — or replace one agent's decision logic with a real Claude API call and compare.",
+      "tools": [
+        "Python (stdlib only: dataclasses, random)"
+      ]
+    }
   }
 ]
