@@ -3733,5 +3733,144 @@
         "a plain text file for logging results"
       ]
     }
+  },
+  {
+    "date": "2026-09-26",
+    "reading": {
+      "intro": "A quieter day after last week's model-launch sprint, with attention shifting to money and culture: a Brookings study says the US AI buildout could cost $10.3 trillion by 2032 — a bigger bite of GDP than the interstate system or the railroads — while Nvidia's Jensen Huang spent the week waving off 'doomsday' AI talk and shrugging off basic math skills as obsolete. On the research side, Anthropic ran Claude agents through a bargaining experiment on people's behalf, and a new open model class claims a big latency win over frontier agents. Newsletters covering today: Towards Data Science, TLDR AI, The Rundown, Tech Brew, and Latent.Space.",
+      "items": [
+        {
+          "title": "Nvidia's Jensen Huang dismisses AI 'doomsday' talk, says basic math skills 'don't matter' anymore",
+          "url": "https://americanbazaaronline.com/2026/09/25/nvidia-ceo-huang-says-basic-math-skills-dont-matter-in-ai-era-488861/",
+          "source": "American Bazaar, Axios (via Tech Brew)",
+          "why": "In a run of interviews this week, Huang told CBS News there's '0% chance' AI ends in doomsday and dismissed slowdown warnings as 'enough predictions,' then said he doesn't think basic math skills matter in the AI era — adding he doesn't know his own address, ZIP code, or phone number. It's a pointed contrast to the RAND 'Freedom of Action' and AI-pacing threads from earlier this month arguing for more caution, not less.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic's Claude agents haggle on people's behalf in a 201-person book-trading experiment",
+          "url": "https://www.anthropic.com/research/project-swap",
+          "source": "Anthropic",
+          "why": "In 'Project Swap,' Anthropic gave 201 participants across six offices a five-minute chat about their reading tastes, then sent a Claude-powered agent to pitch, haggle, and trade books for them on an open floor. The agents' book rankings matched their humans' on 61% of pairs — solid for a five-minute briefing — but the real finding is structural: delegated commerce needs explicit preference capture, bargaining limits, and clear authority, not just checkout access.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "A new study says the US AI buildout could cost $10.3 trillion by 2032 — bigger than the interstate system",
+          "url": "https://www.wsj.com/economy/the-ai-build-out-is-becoming-the-biggest-economic-bet-in-u-s-history-c60716dd",
+          "source": "Wall Street Journal, Brookings (via The Rundown)",
+          "why": "A Brookings study (Columbia's Stijn van Nieuwerburgh) projects $10.3 trillion in US data-center and AI infrastructure spend through 2032, about 3.6% of GDP a year — a bigger share of the economy than the railroads, interstate highways, or the original internet buildout. The paper's real warning is about financing: risk is migrating from transparent, on-balance-sheet corporate spending to opaque off-balance-sheet vehicles, exactly the kind of thing that's hard to see coming until it isn't.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "A new open model class claims 9x lower latency than frontier agents at computer-use and tool-calling",
+          "url": "https://contrastive-lm.notion.site/",
+          "source": "via TLDR AI",
+          "why": "Contrastive Language Models (CLMs) are trained with a contrastive objective connecting states and actions rather than next-token prediction; the 8B version reportedly matches Jev's performance on computer-use, gaming, and tool-calling while running up to 9x faster, and sets a new mark on agentic coding benchmarks. Pre-trained on 60M Nemotron Q&A pairs, mid-trained on 30M synthetic hard negatives, then post-trained on agentic trajectories — worth a skim if you're tracking where agent latency actually comes from.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Research: modern LLMs may carry tiny self-models of LLMs hidden inside them",
+          "url": "https://invertedpassion.substack.com/p/modern-llms-have-tiny-gpts-hidden",
+          "source": "Inverted Passion (via TLDR AI)",
+          "why": "The argument: predicting the next token another LLM would generate is a common enough task that models may have quietly learned compressed self-models of 'how an LLM thinks' to do it better — which, if true, opens the door to real metacognitive abilities, similar to the self-model humans use to reason about their own thinking. Speculative, but a genuinely different angle on what's actually inside these models than the usual scaling-law takes.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "Why the best AI clouds don't run on flash storage alone",
+          "url": "https://www.backblaze.com/blog/why-the-best-ai-clouds-dont-run-on-flash-alone/",
+          "source": "Backblaze (via TLDR AI)",
+          "why": "Flash is fast and reliable, but a lot of the storage sitting around active training doesn't need flash-grade speed or price — so neoclouds increasingly point that overflow to hyperscaler object storage instead of building it themselves. The catch: the more data that ends up parked there, the harder it gets to leave, so the neocloud keeps collecting the GPU revenue while the hyperscaler quietly locks in the account underneath it.",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "Beyond RAGs: building AI harnesses that are actually truthful, not just plausible",
+          "url": "https://towardsdatascience.com/beyond-rags-building-actually-truthful-ai-harnesses/",
+          "source": "Towards Data Science",
+          "why": "A useful corrective to treating retrieval-augmented generation as an automatic truth machine: a retrieved passage can be stale, incomplete, topically similar but non-entailing, contradicted by other sources, untrusted, or even maliciously injected — and RAG alone won't tell you which. The piece argues for harnesses that verify entailment and provenance explicitly, rather than assuming 'we retrieved a document' is the same as 'we retrieved evidence.'",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "Latent Space: OpenRouter's founder on going from a 'just a wrapper' Discord bot to a $7B Stripe acquisition",
+          "url": "https://www.latent.space/p/openrouter",
+          "source": "Latent.Space (swyx, with OpenRouter's Alex Atallah & AMP's Anjney Midha)",
+          "why": "An 81-minute origin-story interview: OpenRouter grew out of early Llama/Alpaca/Mistral chaos into a neutral inference marketplace now routing 10+ trillion tokens/day for over 10 million developers, dismissed early on by VCs as 'just a wrapper.' The back half gets into why Stripe actually wanted it — framed less around routing convenience and more around fraud infrastructure, as token-based fraud and autonomous-agent attacks become a real cost center for the AI economy.",
+          "minutes": 6,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Anthropic's Project Swap, what percentage of book-preference pairs did a Claude agent's ranking match its human principal's, after just a five-minute chat?",
+          "choices": [
+            "41%",
+            "61%",
+            "79%",
+            "93%"
+          ],
+          "a": "61%"
+        },
+        {
+          "q": "How many participants, and across how many offices, did Project Swap run?",
+          "a": "201 participants across six offices"
+        },
+        {
+          "q": "Per the Brookings study cited by WSJ/The Rundown, roughly how much could the US AI buildout cost through 2032?",
+          "choices": [
+            "$2.3 trillion",
+            "$5 trillion",
+            "$10.3 trillion",
+            "$20 trillion"
+          ],
+          "a": "$10.3 trillion"
+        },
+        {
+          "q": "Name one past US infrastructure project the buildout study compares today's AI spending to.",
+          "a": "The railroads, the interstate highway system, or the original internet buildout (any one)"
+        },
+        {
+          "q": "Contrastive Language Models (CLM-8B) reportedly match Jev's performance on computer-use, gaming, and tool-calling tasks while achieving roughly what speed improvement?",
+          "choices": [
+            "2x lower latency",
+            "9x lower latency",
+            "20x lower latency",
+            "No improvement"
+          ],
+          "a": "Up to 9x lower latency"
+        },
+        {
+          "q": "Per the Backblaze piece, why do 'neoclouds' often point non-flash-grade storage needs to hyperscaler object storage instead of building it themselves?",
+          "a": "That storage doesn't need flash-grade speed or price — and once a customer's data is parked there, it's hard to leave, so the hyperscaler quietly locks in the account"
+        },
+        {
+          "q": "Per the 'tiny GPTs hidden inside LLMs' piece, why might an LLM benefit from having a compressed self-model of 'how an LLM thinks'?",
+          "a": "It helps the model predict the next token another LLM would generate, and could open the door to real metacognitive abilities, similar to a human self-model"
+        },
+        {
+          "q": "Name one reason the Towards Data Science 'Beyond RAGs' piece gives for why a retrieved passage doesn't prove it supports a claim.",
+          "a": "It could be stale, incomplete, topically similar but non-entailing, contradicted by other sources, untrusted, or maliciously injected (any one)"
+        },
+        {
+          "q": "What company acquired OpenRouter, and for roughly how much?",
+          "a": "Stripe, for a bit over $7 billion"
+        },
+        {
+          "q": "What does Jensen Huang say he personally doesn't know, as an example of a skill 'not mattering' in the AI era?",
+          "choices": [
+            "His own phone number",
+            "His own address, ZIP code, and phone number",
+            "How to code",
+            "His company's stock price"
+          ],
+          "a": "His own address, ZIP code, and phone number"
+        }
+      ]
+    },
+    "build": null
   }
 ]
