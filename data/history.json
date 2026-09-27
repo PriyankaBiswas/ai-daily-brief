@@ -4029,6 +4029,33 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Rebuild the exact bug that let an agent delete 48,000 files — a symlink loop — then write the 10-line guard that would have caught it.",
+      "category": "infra/deployment",
+      "why": "Riffs on today's reading item about the Claude Code agent that deleted 48,218 files in 103 seconds: the reported cause was a cleanup script pointed at a stale Windows directory junction that looped straight back into the live tree. You can't reproduce that exact bug in 25 minutes, but you can reproduce the *shape* of it with a plain symlink loop on any machine, and write the cycle-detection check that a real cleanup script needed but didn't have.",
+      "plan": [
+        {
+          "step": "Set up: create guard.py, stdlib only (os, pathlib, tempfile, shutil).",
+          "minutes": 3
+        },
+        {
+          "step": "Write a function that walks a target directory, tracking the real path (os.path.realpath) of everything it visits, so it can detect a path looping back into one of its own ancestors — the same failure mode as the stale junction in today's story.",
+          "minutes": 10
+        },
+        {
+          "step": "In a temp folder, build a tiny test tree, then add one symlink that points back at an ancestor directory — the same 'loops straight back into the live tree' setup from the article — and run the guard against both a clean tree and the looped one.",
+          "minutes": 7
+        },
+        {
+          "step": "Print a clear verdict for each: 'SAFE — N files, no cycles' vs 'UNSAFE — cyclic path detected, refusing to walk.'",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "Running python guard.py prints 'SAFE' with a file count for a normal folder, and 'UNSAFE — cyclic path detected, refusing to walk' the moment it hits the self-referential symlink, without ever spinning into an infinite loop.",
+      "stretch_goal": "Wire the guard in as a preflight check in front of a real shutil.rmtree() call, so a cleanup script refuses to delete anything until the target tree passes the cycle check first.",
+      "tools": [
+        "Python (stdlib): os, pathlib, tempfile, shutil"
+      ]
+    }
   }
 ]
