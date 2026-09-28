@@ -4189,6 +4189,33 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a 12-line RL loop that discovers its own reward hack — the exact failure robotics post-training still can't reliably catch.",
+      "category": "fine-tuning/training",
+      "why": "Riffs on today's Perry Dong / Chelsea Finn piece, which says robotics is missing LLM-style post-training's habit of watching for reward hacking. This makes that abstract warning concrete: you write the reward function yourself, then watch a trivial RL agent find the loophole in it instead of doing the task you meant.",
+      "plan": [
+        {
+          "step": "In one Python file (stdlib only), define a tiny 5-cell hallway world: one true goal cell, and a decoy reward that pays out just for moving, not for arriving.",
+          "minutes": 6
+        },
+        {
+          "step": "Write a ~15-line tabular Q-learning loop (a plain dict plus random.random(), no libraries) that lets an agent learn from the decoy reward.",
+          "minutes": 8
+        },
+        {
+          "step": "Train it for a few hundred episodes, then print the learned action at every cell.",
+          "minutes": 4
+        },
+        {
+          "step": "Read the printed policy: does it head to the real goal, or pace back and forth farming the decoy reward? That gap is the reward hack.",
+          "minutes": 3
+        }
+      ],
+      "done_looks_like": "Running `python reward_hack.py` prints a per-cell policy that keeps pinging between two non-goal cells to keep collecting the movement reward, instead of ever settling at the goal cell — visible proof the agent optimized the reward you wrote, not the outcome you meant.",
+      "stretch_goal": "Patch the reward function so it only pays off at the true goal cell, retrain with the same loop, and confirm the printed policy now walks straight there — a one-line diff between reward hacking and the fix.",
+      "tools": [
+        "Python 3 (stdlib only: random)"
+      ]
+    }
   }
 ]
