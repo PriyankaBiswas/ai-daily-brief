@@ -4361,6 +4361,33 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Write a 3-signal slop detector and run it on real text — see if it actually catches today's own AI-generated paragraph.",
+      "category": "data/eval exercise",
+      "why": "Riffs on today's Towards Data Science piece on catching AI slop in training data, which lists three concrete heuristics and warns that naive filtering can misfire on genuine human writing. This turns that into a runnable check you can point at any block of text yourself.",
+      "plan": [
+        {
+          "step": "Set up: create slop_detector.py, stdlib only (re, statistics).",
+          "minutes": 3
+        },
+        {
+          "step": "Implement three heuristic signals from the article: stock AI phrases ('delve into', 'in today's fast-paced world', 'moreover'), unnaturally uniform sentence length, and em-dash/list-heavy formatting.",
+          "minutes": 10
+        },
+        {
+          "step": "Score a handful of text samples — one paragraph you write yourself, one pulled from today's reading-list write-ups above, and one you ask Claude to generate — printing a per-signal breakdown plus a composite 0–3 score for each.",
+          "minutes": 8
+        },
+        {
+          "step": "Compare the scores: does the detector actually separate the AI sample from the human ones, or does it false-positive on your own careful writing?",
+          "minutes": 4
+        }
+      ],
+      "done_looks_like": "Running `python slop_detector.py` prints a per-signal breakdown and a 0–3 composite score for each sample, with the AI-generated sample scoring visibly higher than the ones you wrote yourself.",
+      "stretch_goal": "Feed it today's actual reading-list write-ups (the ‘why’ blurbs above) and see how they score — a sanity check on whether the tool that writes your own daily brief would flag itself.",
+      "tools": [
+        "Python 3 (stdlib only: re, statistics)"
+      ]
+    }
   }
 ]
