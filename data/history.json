@@ -4533,6 +4533,37 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a tiny ‘Jev-style’ decision model — one forward pass, no chain-of-thought — and watch it actually decide something in under 25 minutes.",
+      "category": "paper-reimplementation",
+      "why": "Riffs on today's item on single-forward-pass 'Jev-style' decision models, which swap a chatbot's language head for a typed decision head that answers in one pass instead of generating tokens step by step. Writing your own tiny version — a fixed weighted-sum scorer — makes concrete what 'one forward pass, no iteration' actually means, and why it can be faster and more predictable than asking a chatbot to reason its way to a decision.",
+      "plan": [
+        {
+          "step": "Set up: create decide.py, stdlib only, nothing to install.",
+          "minutes": 3
+        },
+        {
+          "step": "Write 5 toy ‘should I deploy this?’ cases as dicts of 3 signals (tests_passing: 0/1, lines_changed: int, reviewer_approvals: int), plus your own gut-call label (deploy/hold) for each.",
+          "minutes": 8
+        },
+        {
+          "step": "Write one function that multiplies each signal by a fixed weight, sums them, and compares the total to a threshold — a single pass, no loop, no retries, no chain-of-thought.",
+          "minutes": 7
+        },
+        {
+          "step": "Run it against all 5 cases and print the model's call next to your own label for each.",
+          "minutes": 4
+        },
+        {
+          "step": "Flip one weight and rerun — watch a decision flip in real time, the exact ‘one forward pass’ behavior the article describes.",
+          "minutes": 3
+        }
+      ],
+      "done_looks_like": "Running `python decide.py` prints a decision (deploy/hold) for each of your 5 toy cases in one pass — no loops, no retries — matching your own gut call on at least 4 of them.",
+      "stretch_goal": "Add a 6th case where your signals conflict with your gut feeling, and see where the simple weighted-sum model disagrees with you — that gap is exactly what real Jev-style decision models are trained to close.",
+      "tools": [
+        "Python 3 (stdlib only, no installs)"
+      ]
+    }
   }
 ]
