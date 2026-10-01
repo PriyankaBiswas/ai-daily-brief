@@ -4565,5 +4565,150 @@
         "Python 3 (stdlib only, no installs)"
       ]
     }
+  },
+  {
+    "date": "2026-10-01",
+    "reading": {
+      "intro": "Google finally has its comeback story: Gemini 4 Argon lands claiming better scores than GPT-6 Astra and Claude Opus 5.5 on Google's own benchmarks, though it's gated to vetted cybersecurity teams for now. The policy story got its sequel too — OpenAI, Google, Anthropic, Meta, Nvidia, and xAI signed a voluntary ‘Superintelligence’ safety accord at the White House, right as Claude for Government went GA for federal and state agencies. Infrastructure and research filled out the rest: a rare detailed look inside OpenAI's own Jalapeño inference chip, Goodfire's case that alignment is an engineering problem interpretability can actually solve, DeepSeek's push to make Chinese AI workloads portable off Nvidia, Nvidia's own open-source tool for sandboxing autonomous agents, and Runway's open-weight Praxis-1 robot-control model. Newsletters covering today's stories: TLDR AI and The Rundown.",
+      "items": [
+        {
+          "title": "Gemini 4 Argon: Google's bid to return to the AI frontier",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+          "source": "Google (via The Rundown, TLDR AI)",
+          "why": "Google's first real frontier model since the scrapped Gemini 3.5 Pro — it tops GPT-6 Astra and Claude Opus 5.5 on 13 of 19 of Google's own benchmarks and leads on real-world coding, but it's rolling out only to select vetted cybersecurity teams for now, so the wider release is the real test of whether this is a comeback.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Trump and six AI labs sign the White House 'Superintelligence' safety accord",
+          "url": "https://www.axios.com/2026/10/01/superintelligence-si-ai-trump",
+          "source": "Axios (via The Rundown)",
+          "why": "OpenAI, Google, Anthropic, Meta, Nvidia, and xAI committed to internal safety controls, outside auditors, and board-level review committees — voluntary and penalty-free, but the first time all six have put their names on the same safety document.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Claude for Government is now generally available",
+          "url": "https://claude.com/blog/claude-for-government-is-now-generally-available",
+          "source": "Anthropic (via TLDR AI)",
+          "why": "FedRAMP High authorized coding and agent capabilities for federal and state agencies, with early access for Claude Code CLI and Claude for Microsoft 365 — a concrete marker of how fast frontier models are clearing government procurement bars.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Inside OpenAI's custom Jalapeño inference chip",
+          "url": "https://morethanmoore.substack.com/p/interview-with-richard-ho-openai",
+          "source": "More Than Moore / interview with Richard Ho (via TLDR AI)",
+          "why": "A rare, detailed look at OpenAI's own silicon — 216 GiB of HBM4 paired with a custom compute die and I/O chiplet — and the clearest sign yet of why every frontier lab wants to stop renting all of its compute from Nvidia.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "'We Can and Must Solve Alignment'",
+          "url": "https://www.goodfire.com/blog/we-can-and-must-solve-alignment",
+          "source": "Goodfire (via TLDR AI)",
+          "why": "An interpretability-focused case that alignment is a solvable engineering problem — understanding and controlling what models actually learn and generalize — not a philosophical dead end. A useful counterweight to the gloomier takes that tend to dominate the feed.",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "DeepSeek starts building for Huawei's Ascend chips",
+          "url": "https://www.geopolitechs.org/p/deepseek-builds-for-huawei-ascend",
+          "source": "Geopolitechs (via TLDR AI)",
+          "why": "DeepSeek is trying to build a hardware-abstraction layer so Chinese AI workloads can run on Nvidia GPUs or Huawei Ascend chips interchangeably — the clearest sign yet that China's chip-independence push is becoming as much a software project as a fab project.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Nvidia open-sources OpenShell to lock down autonomous agents",
+          "url": "https://github.com/NVIDIA/OpenShell",
+          "source": "Nvidia / GitHub (via TLDR AI)",
+          "why": "A policy-controlled runtime that enforces file, syscall, network, and credential access at the kernel level and formally verifies risky permissions before they're applied — relevant after a steady run of sandbox-escape and rogue-agent stories this past month.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Runway's Praxis-1: an open-weight model that turns video pretraining into robot control",
+          "url": "https://runway.com/research/introducing-praxis-1",
+          "source": "Runway (via TLDR AI)",
+          "why": "Early partners are already running it on their own hardware, with a public release coming in the next few months — another concrete data point for the 'robotics is having its LLM moment' thread that's been running through recent issues.",
+          "minutes": 7,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "1. On how many of 19 benchmarks did Gemini 4 Argon beat GPT-6 Astra and Claude Opus 5.5, in Google's own testing?",
+          "choices": [
+            "7",
+            "10",
+            "13",
+            "19"
+          ],
+          "a": "13"
+        },
+        {
+          "q": "2. Gemini 4 Argon's wider rollout is currently limited to which group?",
+          "a": "Select, vetted cybersecurity teams"
+        },
+        {
+          "q": "3. Which six companies signed the White House's 'Superintelligence' safety accord?",
+          "choices": [
+            "OpenAI, Google, Anthropic, Meta, Nvidia, xAI",
+            "OpenAI, Microsoft, Google, Amazon, Meta, Apple",
+            "Anthropic, OpenAI, Mistral, Cohere, xAI, Nvidia",
+            "Google, Meta, Nvidia, Intel, AMD, Qualcomm"
+          ],
+          "a": "OpenAI, Google, Anthropic, Meta, Nvidia, xAI"
+        },
+        {
+          "q": "4. Is the Superintelligence accord legally binding, with penalties for non-compliance?",
+          "a": "No — it's voluntary, with no penalties specified"
+        },
+        {
+          "q": "5. What authorization level does Claude for Government carry?",
+          "choices": [
+            "SOC 2",
+            "FedRAMP High",
+            "ISO 27001",
+            "HIPAA"
+          ],
+          "a": "FedRAMP High"
+        },
+        {
+          "q": "6. How much HBM4 memory is paired with the compute die in OpenAI's Jalapeño inference chip?",
+          "a": "216 GiB"
+        },
+        {
+          "q": "7. According to Goodfire, what's the main lever that makes AI alignment a solvable engineering problem?",
+          "a": "Interpretability — understanding and controlling what models actually learn and generalize"
+        },
+        {
+          "q": "8. What hardware is DeepSeek trying to build a software-abstraction layer for, so AI workloads become portable off Nvidia?",
+          "choices": [
+            "Huawei Ascend chips",
+            "Apple Silicon",
+            "AMD Instinct chips",
+            "Google TPUs"
+          ],
+          "a": "Huawei Ascend chips"
+        },
+        {
+          "q": "9. At what level does Nvidia's OpenShell enforce access controls for autonomous agents?",
+          "choices": [
+            "Application-level only",
+            "Browser sandbox",
+            "Kernel level (file, syscall, network, credential access)",
+            "Cloud IAM policies only"
+          ],
+          "a": "Kernel level (file, syscall, network, credential access)"
+        },
+        {
+          "q": "10. What is Runway's Praxis-1 built from?",
+          "a": "Runway's own video pretraining, turned into control signals for real robots"
+        }
+      ]
+    },
+    "build": null
   }
 ]
