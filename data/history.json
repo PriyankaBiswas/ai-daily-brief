@@ -4709,6 +4709,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Pull live GitHub stats for Nvidia's brand-new agent-sandboxing tool — one script, the public API, nothing to install.",
+      "category": "API-exploration",
+      "why": "Riffs on today's reading item on Nvidia's OpenShell (open-sourced this week to lock down autonomous agents at the kernel level) — instead of just reading about it, you hit its live repo data yourself and see how a few-day-old release is actually trending.",
+      "plan": [
+        {
+          "step": "Open a new file, openshell_watch.py. No pip installs — just urllib.request and json from the standard library.",
+          "minutes": 3
+        },
+        {
+          "step": "Write a ~15-line function that GETs https://api.github.com/repos/NVIDIA/OpenShell (public, unauthenticated, no token needed) and prints stars, forks, open issues, and the latest commit timestamp.",
+          "minutes": 10
+        },
+        {
+          "step": "Run it. Then point the same function at one more repo from this week's reading (e.g. a model or tool you've seen mentioned) and print both side by side.",
+          "minutes": 8
+        },
+        {
+          "step": "Note the rate limit (60 req/hr unauthenticated) and what you'd need to add to poll it safely on a timer.",
+          "minutes": 4
+        }
+      ],
+      "done_looks_like": "Running `python openshell_watch.py` prints OpenShell's current star count, open issue count, and most recent commit time, pulled live from GitHub — no account, no API key, no installs.",
+      "stretch_goal": "Wrap the GET in a loop that re-checks every 60 seconds and only prints a line when a number changes, so you've got a tiny live 'repo trending' monitor.",
+      "tools": [
+        "Python 3 standard library (urllib.request, json)",
+        "GitHub REST API (public, unauthenticated)"
+      ]
+    }
   }
 ]
