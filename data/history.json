@@ -4874,6 +4874,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a single HTML slider toy that scores any team against Airbnb's own ‘AI-native’ numbers.",
+      "category": "UI-for-AI",
+      "why": "Riffs on today's Latent Space piece on Airbnb (60% AI-authored code, roughly half of support tickets AI-resolved, every engineer still accountable for any AI-written PR) — instead of just reading the numbers, you build a tiny interactive scorer that turns them into a benchmark you can drag sliders against.",
+      "plan": [
+        {
+          "step": "Sketch the three inputs you'll turn into sliders: % AI-authored code, % support tickets AI-resolved, and % of engineers who can explain any AI-written PR.",
+          "minutes": 5
+        },
+        {
+          "step": "Build one HTML file: a card with three <input type=\"range\"> sliders, each with a live number readout next to it.",
+          "minutes": 10
+        },
+        {
+          "step": "Write one small JS function that averages the three sliders into a 0-100 'AI-native score' and updates it on every input event — no page reload.",
+          "minutes": 7
+        },
+        {
+          "step": "Add a 'Load Airbnb's numbers' button that snaps the sliders to 60/50/100 and re-renders the score, so you can see exactly where they land versus your own team.",
+          "minutes": 3
+        }
+      ],
+      "done_looks_like": "Opening the file in a browser shows three sliders and a big score number that updates live as you drag them; clicking the Airbnb button jumps the sliders to 60/50/100 and the score updates to match.",
+      "stretch_goal": "Save whatever you last dragged to localStorage so the page remembers your team's numbers the next time you open it.",
+      "tools": [
+        "Plain HTML/CSS/JS (no frameworks)",
+        "Browser only — open the file directly, no server needed"
+      ]
+    }
   }
 ]
