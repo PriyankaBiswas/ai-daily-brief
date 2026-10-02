@@ -4738,5 +4738,142 @@
         "GitHub REST API (public, unauthenticated)"
       ]
     }
+  },
+  {
+    "date": "2026-10-02",
+    "reading": {
+      "intro": "OpenAI's safety story has a new wrinkle: it fired three researchers for leaking to an outside safety group, and separately disclosed a large-scale attempt — traced to accounts linked to Moonshot AI — to extract its models' hidden reasoning without ever breaking the encryption protecting it. On the 'AI-native company' beat, Airbnb's CTO (fresh off running Llama at Meta) laid out concrete numbers: 60% AI-authored code, roughly half of support tickets resolved by agents, and a hard rule that every engineer must still be able to explain any AI-written PR. Anthropic published its own 'Claude-shaped science' case study, and the open-source 'decision model' category suddenly got crowded — Cloudflare, Amazon, and Perplexity all shipped lightweight classify-and-act models built to the same API in the same week. Rounding it out: Google's AIM agent tries to automate the research loop itself, and DeepMind extended its SynthID watermarking into synthetic biology. Newsletters covering today's stories: TLDR AI and Latent Space.",
+      "items": [
+        {
+          "title": "OpenAI cuts ties with three safety researchers, WSJ reports",
+          "url": "https://techcrunch.com/2026/10/01/openai-cuts-ties-with-three-safety-researchers-wsj-reports/",
+          "source": "TechCrunch (via TLDR AI)",
+          "why": "OpenAI fired three safety staffers for sharing confidential material with an outside AI-safety nonprofit — another data point in the friction between OpenAI's internal safety org and leadership, on the heels of the shelved GPT-6.1 Astra launch.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Inside-Out AI: Rebuilding Airbnb Behind the Scenes and Across the Guest Experience",
+          "url": "https://www.latent.space/p/airbnb",
+          "source": "Latent Space",
+          "why": "A rare numbers-heavy look at what 'AI-native' actually means inside a $93B public company: 60% of Airbnb's code is now AI-authored, support tickets are roughly half AI-resolved, and its CTO (ex-Meta Llama lead) explains why junior engineers still have to be able to explain every AI-written PR.",
+          "minutes": 12,
+          "skip_ok": false
+        },
+        {
+          "title": "Claude-shaped science",
+          "url": "https://www.anthropic.com/research/claude-shaped-science",
+          "source": "Anthropic (via TLDR AI)",
+          "why": "Anthropic's own case study in using Claude for 'Claude-shaped' science — the resulting BootLoops toolkit got ecology and population-genetics calculations technically right fast, but still needed domain experts to make the results actually matter.",
+          "minutes": 14,
+          "skip_ok": false
+        },
+        {
+          "title": "Introducing Clef: open-source decision models, and a new RL fine-tuning platform",
+          "url": "https://blog.cloudflare.com/clef-decision-models/",
+          "source": "Cloudflare (via TLDR AI)",
+          "why": "Four different decision-model releases — Cloudflare's Clef, the independent Kev family, Amazon's Strands Decider, and Perplexity's pplx-decider — landed in the same week, all compatible with the same 'Jev' API: a commodity classify-and-act layer is forming fast for agents that just need a cheap decision step.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Google researchers built an agent for automated research",
+          "url": "https://imhgchoi.github.io/agentic-idea-manager/",
+          "source": "Google Research (via TLDR AI)",
+          "why": "AIM organizes its own research ideas, picks which directions to pursue, audits whether its implementations actually match those ideas, and allocates compute across search branches — a glimpse at automating the research loop itself.",
+          "minutes": 9,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI says it disrupted a reasoning-extraction campaign linked to Moonshot AI",
+          "url": "https://cyberscoop.com/openai-moonshot-ai-model-distillation-attack/",
+          "source": "OpenAI (via CyberScoop)",
+          "why": "OpenAI's own account of catching a large-scale attempt — traced to accounts linked to Moonshot AI — to copy its models' hidden reasoning by relaying encrypted chain-of-thought between sessions, without ever breaking the encryption itself.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "SynthID Bio: watermarking methods for synthetic biology",
+          "url": "https://deepmind.google/blog/introducing-synthid-bio/",
+          "source": "DeepMind (via TLDR AI)",
+          "why": "DeepMind extends its SynthID watermarking approach from images and text into synthetic biology, embedding a traceable signature into AI-generated protein sequences without breaking their function.",
+          "minutes": 7,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "1. How many safety researchers did OpenAI dismiss for sharing confidential information with a third-party AI safety group?",
+          "choices": [
+            "1",
+            "2",
+            "3",
+            "5"
+          ],
+          "a": "3"
+        },
+        {
+          "q": "2. What publication first reported OpenAI's dismissal of the three safety researchers?",
+          "a": "The Wall Street Journal (WSJ)"
+        },
+        {
+          "q": "3. What percentage of Airbnb's code is now AI-authored, according to CTO Ahmad Al-Dahle?",
+          "choices": [
+            "25%",
+            "40%",
+            "60%",
+            "80%"
+          ],
+          "a": "60%"
+        },
+        {
+          "q": "4. What company did Ahmad Al-Dahle lead generative-AI work at before joining Airbnb as CTO?",
+          "a": "Meta (he led the Llama models)"
+        },
+        {
+          "q": "5. What is the name of Airbnb's internal organizational context graph that helped it ship its grocery-delivery and airport-pickup features quickly?",
+          "a": "Everest"
+        },
+        {
+          "q": "6. What did Anthropic's 'BootLoops' toolkit (built using Claude) help scientists do?",
+          "choices": [
+            "Train new LLMs from scratch",
+            "Run quantitative calculations across fields like ecology and population genetics",
+            "Generate synthetic training data",
+            "Detect AI-generated text"
+          ],
+          "a": "Run quantitative calculations across fields like ecology and population genetics"
+        },
+        {
+          "q": "7. Name two of the four companies/projects that shipped open-source 'decision models' compatible with the same Jev API in the same week.",
+          "a": "Any two of: Cloudflare (Clef), Kev, Amazon (Strands Decider), Perplexity (pplx-decider)"
+        },
+        {
+          "q": "8. What does Google's AIM agent do?",
+          "choices": [
+            "Writes marketing copy",
+            "Organizes research ideas, picks directions, and audits its own implementations",
+            "Trades stocks autonomously",
+            "Moderates social media content"
+          ],
+          "a": "Organizes research ideas, picks directions, and audits its own implementations"
+        },
+        {
+          "q": "9. Which group did OpenAI say was behind the core cluster of its disrupted reasoning-extraction campaign?",
+          "a": "Moonshot AI (maker of the Kimi model)"
+        },
+        {
+          "q": "10. What did DeepMind's SynthID Bio add a traceable signature to?",
+          "choices": [
+            "Chatbot responses",
+            "AI-generated images",
+            "AI-generated protein/biological sequences",
+            "Audio deepfakes"
+          ],
+          "a": "AI-generated protein/biological sequences"
+        }
+      ]
+    },
+    "build": null
   }
 ]
