@@ -5047,6 +5047,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a 12-line 'toll booth' tracker that watches your own toy agent rack up token costs step by step — and catches exactly where the bill explodes.",
+      "category": "agent/tool-building",
+      "why": "Riffs on today's Towards Data Science piece (item 8) on why agentic workloads make your AI bill look like a toll booth — instead of just reading the claim, you watch it happen in your own terminal: it's the repeated context and tool-call overhead stacking up, not the model itself, that blows the budget.",
+      "plan": [
+        {
+          "step": "Write a toy agent loop with 3 fake tool calls (search, read_file, write_file), each returning a canned string of different length — no API key needed.",
+          "minutes": 5
+        },
+        {
+          "step": "Add a simple token estimator (len(text.split()) * 1.3) and call it on every tool input and output, logging a running total.",
+          "minutes": 8
+        },
+        {
+          "step": "Print a per-step 'toll' line as the loop runs, then a grand total at the end.",
+          "minutes": 5
+        },
+        {
+          "step": "Compare that total to what a single plain chat reply covering the same task would cost — same estimator, one call — and see the gap.",
+          "minutes": 7
+        }
+      ],
+      "done_looks_like": "A terminal printout with 3-4 'toll' lines (one per tool call) and a final total that's visibly bigger than the single-chat-reply number you compute alongside it — the toll booth made visible in your own numbers.",
+      "stretch_goal": "Swap the word-count heuristic for real counts with tiktoken (pip install tiktoken) and see how far off the estimate was.",
+      "tools": [
+        "Python (stdlib only)",
+        "tiktoken (optional, for the stretch goal)"
+      ]
+    }
   }
 ]
