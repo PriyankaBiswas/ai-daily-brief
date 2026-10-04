@@ -5076,5 +5076,136 @@
         "tiktoken (optional, for the stretch goal)"
       ]
     }
+  },
+  {
+    "date": "2026-10-04",
+    "reading": {
+      "intro": "No qualifying newsletters landed in the last day or so — the usual round of Towards Data Science, TLDR, Morning Brew and friends has gone quiet since Thursday — so today's list is built entirely from direct research. The biggest story is also the most uncomfortable one: an Arizona appeals court vacated a 10.5-year manslaughter sentence because the judge was swayed by an AI-generated video in which the dead victim appeared to forgive his killer, likely a first for a US court and a preview of how synthetic media will complicate sentencing law. Separately, Kim Jong Un oversaw a North Korean missile test state media says can adjust its flight path using AI to evade interception — Seoul disputes the 'unavoidable' framing, but the trajectory-correction claim is still a new wrinkle in the AI arms race. On the security front, Salt Labs disclosed (and Manus has since fixed) a flaw where a single malicious email could hijack the Manus AI agent and reach a user's connected accounts with no click required, while Anthropic's bug-hunting model Mythos found a different real flaw — in the Rejetto HTTP File Server — that attackers were actively exploiting within a day of disclosure. On campus, students are increasingly lawyering up to fight AI-cheating accusations as detector false-positive rates keep climbing, and in the lab, Meta says its Muse Spark model helped mathematicians crack five previously open problems. Rounding it out: an independent benchmark pokes a hole in TypeSafe's 'frontier' marketing for its Jev decision model. No newsletters to credit today — everything below came from direct research and web search.",
+      "items": [
+        {
+          "title": "An Arizona appeals court vacates a manslaughter sentence over an AI-generated 'victim speaks' video",
+          "url": "https://www.azfamily.com/2026/10/01/court-appeals-vacates-chandler-road-rage-sentence-due-ai-victim-video/",
+          "source": "AZFamily (3TV/CBS 5)",
+          "why": "The panel ruled an AI-animated recreation of the dead victim 'forgiving' his killer — built by the victim's sister from a script and a photo — lacked the reliability to inform a sentence; likely the first time AI-generated 'testimony' has gotten a US sentence thrown out, with the underlying conviction untouched.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "North Korea's Kim Jong Un oversees a missile launch state media says used AI to adjust its flight path",
+          "url": "https://www.koreaherald.com/article/10892762",
+          "source": "The Korea Herald",
+          "why": "Pyongyang claims the hypersonic-capable missile can correct its own trajectory at low altitude to evade interception; Seoul's military disputes that it would be 'unavoidable,' but the AI-guidance claim itself marks a new front in how adversaries frame autonomous weapons.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Salt Labs: a single malicious email could hijack the Manus AI agent and reach your connected accounts",
+          "url": "https://www.prnewswire.com/news-releases/salt-labs-research-a-single-email-could-hijack-an-ai-agent-and-reach-a-users-connected-accounts-302895317.html",
+          "source": "PR Newswire (Salt Labs)",
+          "why": "No click, no password, no attachment needed — just asking Manus to check your inbox was enough to trigger obfuscated JavaScript hidden in an email and execute it, with the security warning only appearing after the code had already run. Manus has since fixed it, but the attack chain is a clean case study in why agentic email access is dangerous by default.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic's bug-hunting model Mythos found a file-server flaw attackers started exploiting within a day",
+          "url": "https://www.theregister.com/security/2026/10/03/anthropics-super-bug-hunting-model-mythos-is-hardcore-good-at-math-as-latest-vuln-under-attack-shows/5300933",
+          "source": "The Register",
+          "why": "Mythos traced Rejetto HTTP File Server's session-cookie signing key back to a reversible pseudorandom generator, then spotted that the app separately leaked the exact outputs needed to reconstruct it — chaining two weak signals into a working authentication bypass, now tracked as CVE-2026-61500 and under active attack from China-based IPs.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "Students are hiring lawyers to fight false AI-cheating accusations as detector error rates climb",
+          "url": "https://wdcnews6.com/ai-cheating-accusations-the-students-hiring-lawyers-to-defend-themselves/",
+          "source": "Financial Times (via WDC News 6)",
+          "why": "One UK student spent over £3,000 clearing her name after a detector flagged her essay; US data shows AI-related student appeals up 45% this year, with roughly 30% now involving outside legal counsel — due process catching up to tools that can't reliably tell AI text from human text.",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "Meta says its Muse Spark model helped mathematicians solve five previously open problems",
+          "url": "https://research.meta.ai/blog/solving-open-research-problems-together",
+          "source": "Meta AI",
+          "why": "Working mathematicians used Muse Spark through Meta.ai's plain chat interface — not a custom research tool — to generate search code and draft proof steps across probability, group theory, and four other fields; a second team of mathematicians independently verified the results before publication.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "An independent benchmark says TypeSafe's Jev is a useful decision model, not the 'frontier' reasoner it's marketed as",
+          "url": "https://www.remio.ai/post/jev-benchmark-finds-a-useful-decision-model-not-a-frontier-reasoner",
+          "source": "Remio AI",
+          "why": "Reverse-engineering suggests Jev runs on a quantized 4-9B-parameter model; it edges out frontier models on narrow, typed decisions (98.5% vs 99.0% accuracy, 5x faster), but the analysis argues that's a case for specialized infrastructure, not evidence it belongs in the same tier as general-reasoning frontier models.",
+          "minutes": 7,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "1. What did the Arizona Court of Appeals rule was unreliable for sentencing purposes?",
+          "choices": [
+            "A written victim impact statement",
+            "An AI-generated video of the deceased victim 'speaking'",
+            "A probation officer's report",
+            "DNA evidence"
+          ],
+          "a": "An AI-generated video of the deceased victim 'speaking'"
+        },
+        {
+          "q": "2. How long was the original manslaughter sentence that got vacated?",
+          "a": "10.5 years"
+        },
+        {
+          "q": "3. What does North Korea claim its new missile can do using AI?",
+          "choices": [
+            "Launch itself without human input",
+            "Adjust its flight path at low altitude to evade interception",
+            "Select its own target automatically",
+            "Refuel mid-flight"
+          ],
+          "a": "Adjust its flight path at low altitude to evade interception"
+        },
+        {
+          "q": "4. True or false: Seoul's military agreed the missile would have been impossible to intercept.",
+          "a": "False — Seoul disputed that claim, saying it could have been intercepted"
+        },
+        {
+          "q": "5. Name two things an attacker did NOT need in order to hijack the Manus AI agent, per Salt Labs.",
+          "a": "Any two of: a clicked link, a stolen password, an opened attachment — just asking Manus to check email was enough"
+        },
+        {
+          "q": "6. What vulnerability did Anthropic's Mythos model find in the Rejetto HTTP File Server?",
+          "choices": [
+            "A SQL injection flaw",
+            "A session-cookie signing key derived from a reversible pseudorandom generator",
+            "A hardcoded admin password",
+            "A buffer overflow in file uploads"
+          ],
+          "a": "A session-cookie signing key derived from a reversible pseudorandom generator"
+        },
+        {
+          "q": "7. What CVE number was assigned to the Rejetto HFS flaw?",
+          "a": "CVE-2026-61500"
+        },
+        {
+          "q": "8. Roughly how much did one UK student reportedly spend on legal fees to clear her name of an AI-cheating accusation?",
+          "a": "Over £3,000"
+        },
+        {
+          "q": "9. How many of Meta's six new math papers co-authored with Muse Spark answered previously open problems?",
+          "choices": [
+            "Two",
+            "Three",
+            "Five",
+            "All six"
+          ],
+          "a": "Five"
+        },
+        {
+          "q": "10. Per the independent benchmark, how does TypeSafe's Jev compare to frontier models on narrow, typed decisions?",
+          "a": "Roughly as accurate (98.5% vs 99.0%) and about 5x faster — strong as specialized infrastructure, not as a general frontier reasoner"
+        }
+      ]
+    },
+    "build": null
   }
 ]
