@@ -5239,5 +5239,150 @@
         "Python (stdlib only otherwise)"
       ]
     }
+  },
+  {
+    "date": "2026-10-05",
+    "reading": {
+      "intro": "Lighter newsletter day: only TLDR AI and Import AI landed in the usual 24-36h window, and three of their biggest items (Google DeepMind's SynthID Bio, Anthropic's $100M Frontier Academy, and Meta's Muse Spark solving open math problems) were already covered earlier this week, so they're cut here. What's left, plus a bit of extra digging, still adds up to a full list: an agent-swarm scaling analysis with intelligence-explosion implications, a new benchmark for AI running a real physical lab, a public-opinion read on AI self-governance, and a DeepMind proposal for a literal market in scientific ideas.",
+      "items": [
+        {
+          "title": "Toby Ord: AI agent swarms are a new form of inference-scaling — and bad news for intelligence-explosion odds",
+          "url": "https://www.tobyord.com/writing/swarm-scaling",
+          "source": "Toby Ord, via Import AI 475",
+          "why": "Swarms trade extra tokens for less wall-clock time, but Ord's 'stepping on toes' analysis (λ≈0.57) shows the returns fall off fast as swarms grow — and he says the number came out worse, not better, for odds of an AI intelligence explosion. Follows directly from last week's Hinton/Bengio explosion warning.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Claude leads the first real-world benchmark for AI running a physical lab",
+          "url": "https://glitchwire.com/news/c5r-built-a-research-lab-run-by-ai-in-12-weeks-the-sciuniverse-benchmark-shows-w/",
+          "source": "Glitchwire, via Import AI 475",
+          "why": "SciUniverse's 92 tasks across 17 families (NMR structure assignment, cell-free protein expression, pressing ceramic pellets) test whether models can actually operate lab instruments, not just reason about chemistry on paper. Claude Fable 5.1 tops it at a 45.3% pass rate.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Poll: 61% of Americans say AI companies' voluntary safety pledges aren't enough",
+          "url": "https://www.courthousenews.com/most-americans-dont-trust-ai-companies-to-regulate-themselves/",
+          "source": "Courthouse News, via Import AI 475",
+          "why": "Lands right after the White House 'Superintelligence' accord and Amodei's open letter asking for binding rules — this poll shows public opinion (including a majority of Trump voters) running well ahead of what Washington and the labs have actually committed to.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "DeepMind proposes a literal market for AI scientists: 'Agentic Economies for Autonomous Scientific Discovery'",
+          "url": "https://arxiv.org/abs/2609.31562",
+          "source": "arXiv (Google DeepMind), via Import AI 475",
+          "why": "Argues the real bottleneck on automated science is physical lab access and validation, not idea generation — and sketches a four-part market (proof-of-ideation, ex-ante pricing, brokerage, validation payouts) to allocate scarce experiments among AI and human scientists.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Epoch AI: chips shipping through 2027 could run hundreds of millions of concurrent AI agents",
+          "url": "https://epoch.ai/publications/estimating-the-agent-population",
+          "source": "Epoch AI, via TLDR AI",
+          "why": "Puts a number on how much 'agent labor' is about to hit the market — equivalent to 140-720 million full-time employees — and what it would take in demand to actually use it (an estimated $2.6-5.3 trillion/year in API-equivalent spending at just 20% utilization).",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "World ID lets people delegate 'Proof of Human' to their AI agents",
+          "url": "https://world.org/blog/announcements/muse-dots-instinct",
+          "source": "World.org, via TLDR AI",
+          "why": "As personal agents like Meta's Muse, OpenAI's Dots, and others start acting on your behalf, this is one of the first concrete answers to 'how does a website know a real person authorized this agent to act.'",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Aleph Alpha releases Kolibri, an open-weight 78B model with 1M-token context",
+          "url": "https://www.testingcatalog.com/aleph-alpha-releases-open-weight-kolibri-with-1m-context/",
+          "source": "TestingCatalog, via TLDR AI",
+          "why": "A sovereign-AI play aimed at government and regulated industries — notable as one of the few open-weight models at this context length coming out of Europe rather than the US or China.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Whistle: an open speech-to-text model that fits in 16.9MB",
+          "url": "https://cactuscompute.com/blog/whistle",
+          "source": "Cactus Compute, via TLDR AI",
+          "why": "Small enough to run on a wearable, robot, or microcontroller — a reminder that the 'edge AI' trend is still quietly compounding alongside the frontier-model race.",
+          "minutes": 4,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does Toby Ord's 'stepping on toes' parameter (λ) describe?",
+          "choices": [
+            "How much faster a swarm runs than a single agent",
+            "The diminishing returns from adding more agents to a swarm, similar to diseconomies of scale in human teams",
+            "The dollar cost of running a swarm",
+            "The number of tokens one agent uses"
+          ],
+          "a": "The diminishing returns from adding more agents to a swarm, similar to diseconomies of scale in human teams"
+        },
+        {
+          "q": "Did Ord's swarm-scaling analysis make him more or less worried about an AI intelligence explosion, and why?",
+          "a": "More worried — he'd hoped λ would come out lower (which would've made an explosion less likely), but it didn't."
+        },
+        {
+          "q": "In the SciUniverse benchmark, which model had the highest pass rate on real lab tasks?",
+          "choices": [
+            "GPT-5 Astra",
+            "Claude Opus 5",
+            "Claude Fable 5.1",
+            "Gemini 4 Argon"
+          ],
+          "a": "Claude Fable 5.1"
+        },
+        {
+          "q": "Roughly how many task families does the SciUniverse benchmark span, and how many total tasks?",
+          "a": "17 task families, 92 tasks total."
+        },
+        {
+          "q": "What percentage of Americans polled by CSAIP said voluntary industry self-policing on AI is 'not enough'?",
+          "choices": [
+            "38%",
+            "48%",
+            "61%",
+            "74%"
+          ],
+          "a": "61%"
+        },
+        {
+          "q": "What four components does DeepMind's proposed scientific-idea market include?",
+          "a": "Proof of ideation, ex-ante evaluation, brokerage & trade, and validation payout."
+        },
+        {
+          "q": "According to the DeepMind paper, what's the real bottleneck on automated science — compute, generating good ideas, or physical resources/validation?",
+          "a": "Physical resources and empirical validation, not the ability to produce plausible research ideas."
+        },
+        {
+          "q": "Epoch AI estimates the chips shipping through 2027 could support agent labor equivalent to how many full-time employees?",
+          "choices": [
+            "1-5 million",
+            "140-720 million",
+            "2-3 billion",
+            "about 10,000"
+          ],
+          "a": "140-720 million"
+        },
+        {
+          "q": "Besides being open-weight, what's distinctive about Aleph Alpha's Kolibri model?",
+          "a": "It's a 78.1B-parameter English-German MoE model with up to a 1-million-token context window, aimed at sovereign/government use."
+        },
+        {
+          "q": "What does World ID's 'Proof of Human' delegation let a website or service verify?",
+          "choices": [
+            "That an AI agent is acting on behalf of a real, specific person, without revealing personal data",
+            "That an agent has enough compute budget",
+            "That two agents are using encrypted messages",
+            "That a model was trained on verified data"
+          ],
+          "a": "That an AI agent is acting on behalf of a real, specific person, without revealing personal data"
+        }
+      ]
+    },
+    "build": null
   }
 ]
