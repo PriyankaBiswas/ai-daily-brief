@@ -378,7 +378,7 @@ footer.site-footer {
   </header>
 
   <section class="today-section">
-    <h2 class="day-date">October 5, 2026</h2>
+<h2 class="day-date">October 5, 2026</h2>
 <div class="intro"><p>Lighter newsletter day: only TLDR AI and Import AI landed in the usual 24-36h window, and three of their biggest items (Google DeepMind&#x27;s SynthID Bio, Anthropic&#x27;s $100M Frontier Academy, and Meta&#x27;s Muse Spark solving open math problems) were already covered earlier this week, so they&#x27;re cut here. What&#x27;s left, plus a bit of extra digging, still adds up to a full list: an agent-swarm scaling analysis with intelligence-explosion implications, a new benchmark for AI running a real physical lab, a public-opinion read on AI self-governance, and a DeepMind proposal for a literal market in scientific ideas.</p></div>
 <ol class="reading-list">
 <li class="reading-item">
@@ -552,7 +552,36 @@ footer.site-footer {
 </div>
 <div class="build-block">
 <h3 class="build-heading">Build idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch">Rebuild Toby Ord&#x27;s ‘stepping on toes’ formula yourself and watch a 30-agent swarm&#x27;s speedup flatten out in real numbers.</p>
+<div class="build-meta">
+  <span class="badge badge-category">paper-reimplementation</span>
+</div>
+<p class="build-why"><strong>Why:</strong> Directly reimplements today&#x27;s #1 reading item — Toby Ord&#x27;s swarm-scaling analysis. His ‘stepping on toes’ parameter (λ≈0.57) is the entire reason he says bigger agent swarms give worse intelligence-explosion odds, not better; turning that one Greek letter into a printed curve makes the claim concrete instead of abstract.</p>
+<ol class="build-plan">
+  <li class="build-step">
+    <span class="step-text">Write the core formula as a one-liner: speedup(n, lam) = n ** (1 - lam) — this is the &#x27;stepping on toes&#x27; model where each extra agent gets less marginal value as the swarm grows.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Loop n from 1 to 30 and print a 3-column table: swarm size, naive speedup (just n), and real speedup (n ** (1 - 0.57)).</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Find the first n where adding one more agent gives under 5% extra speedup — that&#x27;s the practical &#x27;stop adding agents here&#x27; point.</span>
+    <span class="step-minutes">7 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Re-run with lam = 0 (no diminishing returns) as a baseline and compare the gap between the two curves at n = 30.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Write a 2-3 sentence comment in the script: why this numeric gap is what made Ord more, not less, worried about an intelligence explosion.</span>
+    <span class="step-minutes">3 min</span>
+  </li>
+</ol>
+<p class="build-done"><strong>Done looks like:</strong> A printed table showing swarm size vs. both speedup curves, with the real-speedup column visibly flattening by n=20-30, plus one printed line naming the exact n where another agent stops being worth it.</p>
+<p class="build-stretch"><strong>Stretch goal:</strong> Sweep lambda across 0.3, 0.57, and 0.8 and print where the flattening point lands for each — turns Ord&#x27;s &#x27;this could&#x27;ve gone better or worse&#x27; framing into three concrete numbers.</p>
+<p class="build-tools"><strong>Tools:</strong> Python 3 (stdlib only — no installs needed), optional: matplotlib if you want a quick plot instead of a printed table</p>
 </div>
   </section>
 

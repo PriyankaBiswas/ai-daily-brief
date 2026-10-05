@@ -5383,6 +5383,38 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Rebuild Toby Ord's ‘stepping on toes’ formula yourself and watch a 30-agent swarm's speedup flatten out in real numbers.",
+      "category": "paper-reimplementation",
+      "why": "Directly reimplements today's #1 reading item — Toby Ord's swarm-scaling analysis. His ‘stepping on toes’ parameter (λ≈0.57) is the entire reason he says bigger agent swarms give worse intelligence-explosion odds, not better; turning that one Greek letter into a printed curve makes the claim concrete instead of abstract.",
+      "plan": [
+        {
+          "step": "Write the core formula as a one-liner: speedup(n, lam) = n ** (1 - lam) — this is the 'stepping on toes' model where each extra agent gets less marginal value as the swarm grows.",
+          "minutes": 5
+        },
+        {
+          "step": "Loop n from 1 to 30 and print a 3-column table: swarm size, naive speedup (just n), and real speedup (n ** (1 - 0.57)).",
+          "minutes": 5
+        },
+        {
+          "step": "Find the first n where adding one more agent gives under 5% extra speedup — that's the practical 'stop adding agents here' point.",
+          "minutes": 7
+        },
+        {
+          "step": "Re-run with lam = 0 (no diminishing returns) as a baseline and compare the gap between the two curves at n = 30.",
+          "minutes": 5
+        },
+        {
+          "step": "Write a 2-3 sentence comment in the script: why this numeric gap is what made Ord more, not less, worried about an intelligence explosion.",
+          "minutes": 3
+        }
+      ],
+      "done_looks_like": "A printed table showing swarm size vs. both speedup curves, with the real-speedup column visibly flattening by n=20-30, plus one printed line naming the exact n where another agent stops being worth it.",
+      "stretch_goal": "Sweep lambda across 0.3, 0.57, and 0.8 and print where the flattening point lands for each — turns Ord's 'this could've gone better or worse' framing into three concrete numbers.",
+      "tools": [
+        "Python 3 (stdlib only — no installs needed)",
+        "optional: matplotlib if you want a quick plot instead of a printed table"
+      ]
+    }
   }
 ]
