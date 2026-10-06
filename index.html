@@ -554,7 +554,32 @@ footer.site-footer {
 </div>
 <div class="build-block">
 <h3 class="build-heading">Build idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch">Catch the Reversal Curse in the act: tell an LLM ‘A is B,’ then ask ‘who is B,’ and watch it miss.</p>
+<div class="build-meta">
+  <span class="badge badge-category">API-exploration</span>
+</div>
+<p class="build-why"><strong>Why:</strong> Today&#x27;s reading item on the Reversal Curse explains that a model trained on &#x27;A is B&#x27; usually can&#x27;t reliably answer &#x27;who is B&#x27; — instead of taking that on faith, hit a real model API with a handful of invented facts and watch the forward/reverse accuracy gap show up live in your own terminal.</p>
+<ol class="build-plan">
+  <li class="build-step">
+    <span class="step-text">Invent 5 fake &#x27;A is B&#x27; facts the model can&#x27;t have seen before (made-up names/relations, e.g. &#x27;Quorven is the capital of Blyndor&#x27;), so any gap you see is really the Reversal Curse and not memorized trivia.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Write a short script that calls an LLM API (Claude or GPT) once per fact: give it the fact in context, then ask the forward question (&#x27;What is the capital of Blyndor?&#x27;).</span>
+    <span class="step-minutes">8 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">In a fresh call that does not restate the fact, ask the reverse question (&#x27;What is Quorven the capital of?&#x27;) and log whether it answers correctly.</span>
+    <span class="step-minutes">7 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Tally forward vs. reverse accuracy across all 5 facts and print a simple scoreboard.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+</ol>
+<p class="build-done"><strong>Done looks like:</strong> A printed scoreboard showing something like 5/5 correct on the forward questions but only 1-2/5 correct on the reverse ones — the Reversal Curse caught live in your own numbers.</p>
+<p class="build-stretch"><strong>Stretch goal:</strong> Re-run the reverse question, but this time state the fact both directions in the same prompt (&#x27;Quorven is the capital of Blyndor, and Blyndor&#x27;s capital is Quorven&#x27;) before asking — see if in-context bidirectional phrasing closes the gap.</p>
+<p class="build-tools"><strong>Tools:</strong> Anthropic Python SDK (anthropic) or OpenAI SDK, Claude API or GPT-4o-mini, Python (stdlib only otherwise)</p>
 </div>
 </section>
 

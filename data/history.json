@@ -5560,6 +5560,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Catch the Reversal Curse in the act: tell an LLM ‘A is B,’ then ask ‘who is B,’ and watch it miss.",
+      "category": "API-exploration",
+      "why": "Today's reading item on the Reversal Curse explains that a model trained on 'A is B' usually can't reliably answer 'who is B' — instead of taking that on faith, hit a real model API with a handful of invented facts and watch the forward/reverse accuracy gap show up live in your own terminal.",
+      "plan": [
+        {
+          "step": "Invent 5 fake 'A is B' facts the model can't have seen before (made-up names/relations, e.g. 'Quorven is the capital of Blyndor'), so any gap you see is really the Reversal Curse and not memorized trivia.",
+          "minutes": 5
+        },
+        {
+          "step": "Write a short script that calls an LLM API (Claude or GPT) once per fact: give it the fact in context, then ask the forward question ('What is the capital of Blyndor?').",
+          "minutes": 8
+        },
+        {
+          "step": "In a fresh call that does not restate the fact, ask the reverse question ('What is Quorven the capital of?') and log whether it answers correctly.",
+          "minutes": 7
+        },
+        {
+          "step": "Tally forward vs. reverse accuracy across all 5 facts and print a simple scoreboard.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A printed scoreboard showing something like 5/5 correct on the forward questions but only 1-2/5 correct on the reverse ones — the Reversal Curse caught live in your own numbers.",
+      "stretch_goal": "Re-run the reverse question, but this time state the fact both directions in the same prompt ('Quorven is the capital of Blyndor, and Blyndor's capital is Quorven') before asking — see if in-context bidirectional phrasing closes the gap.",
+      "tools": [
+        "Anthropic Python SDK (anthropic) or OpenAI SDK",
+        "Claude API or GPT-4o-mini",
+        "Python (stdlib only otherwise)"
+      ]
+    }
   }
 ]
