@@ -5590,5 +5590,150 @@
         "Python (stdlib only otherwise)"
       ]
     }
+  },
+  {
+    "date": "2026-10-07",
+    "reading": {
+      "intro": "Three newsletters landed in the window: today's TLDR AI, a Latent Space deep-dive on cloud-native agent harnesses, and Towards Data Science — though TDS's only other email today was a pure webinar promo (skipped), and its 'Which AI fell for it?' digest links its articles through tracking redirects that didn't resolve to stable canonical URLs, so those are left out rather than linked to a dead end. What's left, mostly from TLDR AI: Mistral's trillion-parameter Large 4 as a European alternative to the usual players, two Kubernetes co-creators making a cloud-native bet on agent harnesses, a sharp essay on why the open-weight cyber-risk debate keeps talking past itself, Meta and Sierra's attempt at a shared protocol for personal agents, DeepSeek closing in on a $12B raise, Claude's new native editing inside Google Docs/Sheets/Slides, a small on-device multimodal embedding model from Google, and OpenAI's Decisions API leaving beta.",
+      "items": [
+        {
+          "title": "Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?",
+          "url": "https://www.latent.space/p/stacklok",
+          "source": "Latent Space",
+          "why": "Kubernetes co-creators Craig McLuckie and Joe Beda are betting that coding-agent harnesses need the same rethink containers got in the 2010s: Stacklok's Mecatl keeps the agent loop, tool execution, and session state as separable, centrally-managed services instead of one process glued to a desktop — aimed at enterprises that don't want agent context (and IP) living only on employee laptops.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "Mistral Large 4",
+          "url": "https://mistral.ai/news/mistral-large-4/",
+          "source": "Mistral AI, via TLDR AI",
+          "why": "A one-trillion-parameter multimodal model pitched explicitly as a European alternative to the leading closed and open US/Chinese systems — worth watching as a data point on whether sovereign-AI ambitions can produce something people actually choose to use, not just a flag-planting release.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "The cyber risk discourse is broken",
+          "url": "https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken",
+          "source": "Interconnects, via TLDR AI",
+          "why": "Argues that years of abstract debate about open-weight cyber risk are about to get a real test now that GLM-5.3 has crossed a capability threshold with little public evidence anything has actually changed — a useful corrective for anyone (on either side) who's been arguing this issue mostly in hypotheticals.",
+          "minutes": 11,
+          "skip_ok": false
+        },
+        {
+          "title": "Introducing Personal Agent Protocol",
+          "url": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+          "source": "Sierra, via TLDR AI",
+          "why": "Meta and Sierra are developing an open standard for how personal AI agents authenticate and act on a consumer's behalf — letting people decide what access to grant their agents while giving companies visibility into what those agents actually do against their sites and APIs. Worth watching as an early bid to avoid every vendor building its own incompatible agent-identity scheme.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "A $12 billion DeepSeek raise is reportedly close, with Tencent and CATL among backers",
+          "url": "https://yellow.com/news/deepseek-12b-raise-close-tencent-catl",
+          "source": "Yellow, via TLDR AI",
+          "why": "DeepSeek is reportedly closing in on a $12B raise — well past its initial 50B-yuan target — while also lining up CITIC Securities for a possible Shanghai STAR Market IPO. A concrete marker of how much capital is chasing China's open-weight leader right as its models keep topping agentic-coding benchmarks.",
+          "minutes": 3,
+          "skip_ok": true
+        },
+        {
+          "title": "Claude now works with Google Docs, Sheets, and Slides",
+          "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+          "source": "Claude, via TLDR AI",
+          "why": "Direct editing inside Docs, Sheets, and Slides is now available on all paid Claude plans — a practical workflow change if you're already doing drafting or analysis work in Google Workspace rather than copy-pasting in and out of a chat window.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "EmbeddingGemma 2",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+          "source": "Google, via TLDR AI",
+          "why": "A 740M-parameter model mapping text, code, images, audio, and video into a shared embedding space, built for on-device inference under Apache 2.0 — useful if you want multimodal search/retrieval without sending anything to the cloud.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI's Decisions API is now available in public beta",
+          "url": "https://community.openai.com/t/decisions-api-is-now-available-in-public-beta/1403877",
+          "source": "OpenAI, via TLDR AI",
+          "why": "A Responses-API-based endpoint for fast structured decisions (predicates, choices, or scores from text/image input), priced at $0.10 per 1M input tokens with no cache or output charges — built for high-volume decision workloads where you don't want full chat-completion overhead.",
+          "minutes": 1,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is Stacklok's cloud-native agent harness called, and what does the name actually mean?",
+          "a": "Mecatl — pronounced ‘MEH-kah-tl,’ an Aztec word meaning a cord or rope."
+        },
+        {
+          "q": "Which two Kubernetes co-creators are behind Stacklok's bet on cloud-native agent harnesses?",
+          "choices": [
+            "Craig McLuckie and Joe Beda",
+            "Kelsey Hightower and Brendan Burns",
+            "Solomon Hykes and Shaun Reigan",
+            "Joe Beda and Tim Hockin"
+          ],
+          "a": "Craig McLuckie and Joe Beda"
+        },
+        {
+          "q": "According to Beda, what's the core architectural problem with most existing agent harnesses when it comes to running in the cloud?",
+          "a": "They're built as one process (or a tightly coupled set of processes) designed to run on the desktop — the agent loop, local execution, and session state all live together, which makes lifecycle management and safely pausing (‘quiescing’) an agent difficult."
+        },
+        {
+          "q": "How many parameters does Mistral Large 4 have, and what kind of model is it?",
+          "choices": [
+            "1B dense, text-only",
+            "One trillion parameters, multimodal",
+            "100B dense, multimodal",
+            "10B mixture-of-experts, text-only"
+          ],
+          "a": "One trillion parameters, multimodal"
+        },
+        {
+          "q": "What capability threshold does 'The cyber risk discourse is broken' say is forcing a real test of the open-weight cyber-risk debate?",
+          "choices": [
+            "A new US GPU export ban",
+            "GLM-5.3 crossing a capability threshold",
+            "A new EU AI Act cyber clause",
+            "Anthropic launching a bug-bounty program"
+          ],
+          "a": "GLM-5.3 crossing a capability threshold"
+        },
+        {
+          "q": "What is the Personal Agent Protocol, and which two companies are developing it?",
+          "a": "An open standard covering authentication and access control for personal AI agents — letting consumers decide what access to grant their agents and giving companies visibility into what those agents do — being developed by Meta and Sierra with other industry partners."
+        },
+        {
+          "q": "Roughly how large is DeepSeek's reported new funding round, and name one of its backers.",
+          "choices": [
+            "$12B; backers include Tencent and CATL",
+            "$30B; backers include BlackRock and UAE funds",
+            "$5B; backers include SoftBank and Temasek",
+            "$8B; backers include Sequoia and a16z"
+          ],
+          "a": "$12B; backers include Tencent and CATL"
+        },
+        {
+          "q": "Which three Google Workspace apps can Claude now edit directly inside, on all paid plans?",
+          "a": "Google Docs, Sheets, and Slides."
+        },
+        {
+          "q": "What is EmbeddingGemma 2, and roughly how many parameters does it have?",
+          "choices": [
+            "A 740M-parameter multimodal embedding model built for on-device use",
+            "A 1T-parameter multimodal chat model",
+            "A 70B-parameter coding model",
+            "A 23B-parameter mixture-of-experts reasoning model"
+          ],
+          "a": "A 740M-parameter multimodal embedding model built for on-device use"
+        },
+        {
+          "q": "What does OpenAI's Decisions API do, and what three output types does it support?",
+          "a": "It returns fast structured decisions from text/image input via the Responses API (OpenAI says up to 10x faster than GPT-6 Luna); it supports predicates, choices, and scores as outputs."
+        }
+      ]
+    },
+    "build": null
   }
 ]
