@@ -5590,5 +5590,301 @@
         "Python (stdlib only otherwise)"
       ]
     }
+  },
+  {
+    "date": "2026-10-07",
+    "reading": {
+      "intro": "Three newsletters landed in the window: today's TLDR AI, a Latent Space deep-dive on cloud-native agent harnesses, and Towards Data Science — though TDS's only other email today was a pure webinar promo (skipped), and its \"Which AI fell for it?\" digest links its articles through tracking redirects that didn't resolve to stable canonical URLs, so those are left out rather than linked to a dead end. What's left, mostly from TLDR AI: Mistral's trillion-parameter Large 4 as a European alternative to the usual players, two Kubernetes co-creators making a cloud-native bet on agent harnesses, a sharp essay on why the open-weight cyber-risk debate keeps talking past itself, Meta and Sierra's attempt at a shared protocol for personal agents, DeepSeek closing in on a $12B raise, Claude's new native editing inside Google Docs/Sheets/Slides, a small on-device multimodal embedding model from Google, and OpenAI's Decisions API leaving beta.",
+      "items": [
+        {
+          "title": "Can a Cloud-Native Harness Make Agents Reliable Beyond the Desktop?",
+          "url": "https://www.latent.space/p/stacklok",
+          "source": "Latent Space",
+          "why": "Kubernetes co-creators Craig McLuckie and Joe Beda are betting that coding-agent harnesses need the same rethink containers got in the 2010s: Stacklok's Mecatl keeps the agent loop, tool execution, and session state as separable, centrally-managed services instead of one process glued to a desktop — aimed at enterprises that don't want agent context (and IP) living only on employee laptops.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "Mistral Large 4",
+          "url": "https://mistral.ai/news/mistral-large-4/",
+          "source": "Mistral AI, via TLDR AI",
+          "why": "A one-trillion-parameter multimodal model pitched explicitly as a European alternative to the leading closed and open US/Chinese systems — worth watching as a data point on whether sovereign-AI ambitions can produce something people actually choose to use, not just a flag-planting release.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "The cyber risk discourse is broken",
+          "url": "https://www.interconnects.ai/p/the-cyber-risk-discourse-is-broken",
+          "source": "Interconnects, via TLDR AI",
+          "why": "Argues that years of abstract debate about open-weight cyber risk are about to get a real test now that GLM-5.3 has crossed a capability threshold with little public evidence anything has actually changed — a useful corrective for anyone (on either side) who's been arguing this issue mostly in hypotheticals.",
+          "minutes": 11,
+          "skip_ok": false
+        },
+        {
+          "title": "Introducing Personal Agent Protocol",
+          "url": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+          "source": "Sierra, via TLDR AI",
+          "why": "Meta and Sierra are developing an open standard for how personal AI agents authenticate and act on a consumer's behalf — letting people decide what access to grant their agents while giving companies visibility into what those agents actually do against their sites and APIs. Worth watching as an early bid to avoid every vendor building its own incompatible agent-identity scheme.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "A $12 billion DeepSeek raise is reportedly close, with Tencent and CATL among backers",
+          "url": "https://yellow.com/news/deepseek-12b-raise-close-tencent-catl",
+          "source": "Yellow, via TLDR AI",
+          "why": "DeepSeek is reportedly closing in on a $12B raise — well past its initial 50B-yuan target — while also lining up CITIC Securities for a possible Shanghai STAR Market IPO. A concrete marker of how much capital is chasing China's open-weight leader right as its models keep topping agentic-coding benchmarks.",
+          "minutes": 3,
+          "skip_ok": true
+        },
+        {
+          "title": "Claude now works with Google Docs, Sheets, and Slides",
+          "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides",
+          "source": "Claude, via TLDR AI",
+          "why": "Direct editing inside Docs, Sheets, and Slides is now available on all paid Claude plans — a practical workflow change if you're already doing drafting or analysis work in Google Workspace rather than copy-pasting in and out of a chat window.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "EmbeddingGemma 2",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+          "source": "Google, via TLDR AI",
+          "why": "A 740M-parameter model mapping text, code, images, audio, and video into a shared embedding space, built for on-device inference under Apache 2.0 — useful if you want multimodal search/retrieval without sending anything to the cloud.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI's Decisions API is now available in public beta",
+          "url": "https://community.openai.com/t/decisions-api-is-now-available-in-public-beta/1403877",
+          "source": "OpenAI, via TLDR AI",
+          "why": "A Responses-API-based endpoint for fast structured decisions (predicates, choices, or scores from text/image input), priced at $0.10 per 1M input tokens with no cache or output charges — built for high-volume decision workloads where you don't want full chat-completion overhead.",
+          "minutes": 1,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is Stacklok's cloud-native agent harness called, and what does the name actually mean?",
+          "a": "Mecatl — pronounced \"MEH-kah-tl,\" an Aztec word meaning a cord or rope."
+        },
+        {
+          "q": "Which two Kubernetes co-creators are behind Stacklok's bet on cloud-native agent harnesses?",
+          "choices": [
+            "Craig McLuckie and Joe Beda",
+            "Kelsey Hightower and Brendan Burns",
+            "Solomon Hykes and Shaun Reigan",
+            "Joe Beda and Tim Hockin"
+          ],
+          "a": "Craig McLuckie and Joe Beda"
+        },
+        {
+          "q": "According to Beda, what's the core architectural problem with most existing agent harnesses when it comes to running in the cloud?",
+          "a": "They're built as one process (or a tightly coupled set of processes) designed to run on the desktop — the agent loop, local execution, and session state all live together, which makes lifecycle management and safely pausing (\"quiescing\") an agent difficult."
+        },
+        {
+          "q": "How many parameters does Mistral Large 4 have, and what kind of model is it?",
+          "choices": [
+            "1B dense, text-only",
+            "One trillion parameters, multimodal",
+            "100B dense, multimodal",
+            "10B mixture-of-experts, text-only"
+          ],
+          "a": "One trillion parameters, multimodal"
+        },
+        {
+          "q": "What capability threshold does \"The cyber risk discourse is broken\" say is forcing a real test of the open-weight cyber-risk debate?",
+          "choices": [
+            "A new US GPU export ban",
+            "GLM-5.3 crossing a capability threshold",
+            "A new EU AI Act cyber clause",
+            "Anthropic launching a bug-bounty program"
+          ],
+          "a": "GLM-5.3 crossing a capability threshold"
+        },
+        {
+          "q": "What is the Personal Agent Protocol, and which two companies are developing it?",
+          "a": "An open standard covering authentication and access control for personal AI agents — letting consumers decide what access to grant their agents and giving companies visibility into what those agents do — being developed by Meta and Sierra with other industry partners."
+        },
+        {
+          "q": "Roughly how large is DeepSeek's reported new funding round, and name one of its backers.",
+          "choices": [
+            "$12B; Tencent and CATL",
+            "$30B; BlackRock and UAE funds",
+            "$5B; SoftBank and Temasek",
+            "$8B; Sequoia and a16z"
+          ],
+          "a": "$12B; backers include Tencent and CATL"
+        },
+        {
+          "q": "Which three Google Workspace apps can Claude now edit directly inside, on all paid plans?",
+          "a": "Google Docs, Sheets, and Slides."
+        },
+        {
+          "q": "What is EmbeddingGemma 2, and roughly how many parameters does it have?",
+          "choices": [
+            "A 740M-parameter multimodal embedding model built for on-device use",
+            "A 1T-parameter multimodal chat model",
+            "A 70B-parameter coding model",
+            "A 23B-parameter mixture-of-experts reasoning model"
+          ],
+          "a": "A 740M-parameter multimodal embedding model built for on-device use"
+        },
+        {
+          "q": "What does OpenAI's Decisions API do, and what three output types does it support?",
+          "a": "It returns fast structured decisions from text/image input via the Responses API; it supports predicates, choices, and scores as outputs."
+        }
+      ]
+    },
+    "build": null
+  },
+  {
+    "date": "2026-10-08",
+    "reading": {
+      "intro": "Four items landed in the window: TLDR AI's Wednesday edition, a Latent Space deep-dive (Periodic Labs on AI-for-science), a Towards Data Science digest, and a The New Stack email that turned out to be a pure workshop promo (skipped — not content). TDS's \"Reliable or just lucky?\" digest links its articles through the same kind of tracking redirects that've broken before and didn't resolve to stable canonical URLs, so those are left out. Two other TLDR items — a claimed \"fired OpenAI researchers\" chain-of-thought story and an Oracle/Broadcom/SpaceX chip-financing deal — didn't check out against independent search (nothing matched the specifics), so they're left out rather than risk passing along something inaccurate. What's left, split between TLDR AI and Latent Space: OpenAI's GPT-6 rollout with a new \"Intelligent UI,\" Claude Haiku 5.5, Perplexity's multi-vector multimodal embeddings, a deep dive on Anthropic's corporate structure, Periodic Labs' pitch for AI-driven materials science, Liquid AI's edge decision models, Tony Fadell on why AI gadgets have mostly failed, and Grok Bot going multi-model.",
+      "items": [
+        {
+          "title": "GPT-6 and Intelligent UI for everyone",
+          "url": "https://openai.com/index/gpt-6-for-everyone/",
+          "source": "OpenAI",
+          "why": "OpenAI is rolling GPT-6 out to its roughly 1.2 billion weekly ChatGPT users alongside \"Intelligent UI\" — the model now picks its own response format (a side-by-side comparison, an interactive diagram, a savings calculator, a map) instead of always answering in plain text. A real signal that chat interfaces are drifting toward generated UI, not just generated text.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Introducing Claude Haiku 5.5",
+          "url": "https://www.anthropic.com/claude-haiku-5-5",
+          "source": "Anthropic, via TLDR AI",
+          "why": "Haiku 5.5 is tuned for high-volume, cost-sensitive work — 75% cheaper than Haiku 4.5 for prompts up to 100K tokens, with upgraded safety/cybersecurity guardrails and broader cloud availability. The \"which model for which job\" math keeps shifting underneath anything built on it.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "Multimodal embeddings beyond a single vector",
+          "url": "https://www.perplexity.ai/hub/blog/multimodal-embeddings-beyond-a-single-vector",
+          "source": "Perplexity, via TLDR AI",
+          "why": "Perplexity's PPLX-EMBED-V2-LATE keeps multiple token-level vectors instead of collapsing everything to one, improving multimodal text+image retrieval on benchmarks like ViDoRe(V3) — relevant if you're building search/RAG and have hit the ceiling of single-vector embeddings.",
+          "minutes": 17,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic's corporate structure",
+          "url": "https://www.lesswrong.com/posts/Hb5aCFtLuHc5uvAgX/anthropic-s-corporate-structure",
+          "source": "LessWrong, via TLDR AI",
+          "why": "A close look at what's publicly known about who actually controls and governs Anthropic — useful background given how often \"who governs the labs building increasingly capable models\" comes up without much public clarity to back it.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Synthesis Superintelligence: from Semiconductors to Superconductors",
+          "url": "https://www.latent.space/p/periodic",
+          "source": "Latent Space",
+          "why": "Periodic Labs' Liam Fedus and Ekin Doğuş Çubuk make the case that the next jump in AI-for-science comes from grounding models in real physical experiments, not more internet data — autonomous labs, AI-run materials characterization, and why even frontier models will still need to touch reality. Dense, but one of the sharper arguments for where \"AI scientist\" claims actually go next.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Open D1: edge decision models for text, vision, and audio",
+          "url": "https://www.liquid.ai/blog/d1-open",
+          "source": "Liquid AI, via TLDR AI",
+          "why": "Two new open-weight decision models (d1-3B and d1-OMNI-600M) built to run at the edge, released on Hugging Face — useful if you need classification/decision tasks without a cloud round-trip.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Tony Fadell on why the first wave of AI gadgets failed — and what comes next",
+          "url": "https://techcrunch.com/2026/10/07/tony-fadell-on-why-the-first-wave-of-ai-gadgets-failed-and-what-comes-next/",
+          "source": "TechCrunch, via TLDR AI",
+          "why": "The iPod/Nest veteran's take on why devices like the Rabbit R1 flopped and Meta's Muse hit security trouble: AI assistants need to run on-device for privacy and trust, which he argues plays to Apple's hardware and consumer-trust advantage despite its model being behind.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Grok Bot will use Claude Opus 5.5, Midjourney, and Suno, says Musk",
+          "url": "https://thenextweb.com/news/grok-bot-claude-opus-midjourney-suno-musk",
+          "source": "The Next Web, via TLDR AI",
+          "why": "Grok Bot is folding in Anthropic's Claude Opus 5.5 plus Midjourney and Suno rather than relying only on xAI's own models — a small data point on how even model-vendor-aligned agents are becoming multi-model by default.",
+          "minutes": 2,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What new capability does OpenAI's \"Intelligent UI\" add to GPT-6 in ChatGPT?",
+          "choices": [
+            "It always responds in plain text for consistency",
+            "It lets the model choose its own response format — tables, interactive diagrams, calculators, maps",
+            "It removes the chat interface entirely",
+            "It only works in the API, not ChatGPT"
+          ],
+          "a": "It lets the model choose its own response format — tables, interactive diagrams, calculators, maps"
+        },
+        {
+          "q": "Roughly how many weekly ChatGPT users does OpenAI say GPT-6 is rolling out to?",
+          "a": "About 1.2 billion."
+        },
+        {
+          "q": "How much cheaper is Claude Haiku 5.5 than Haiku 4.5 for prompts up to 100,000 tokens?",
+          "choices": [
+            "25%",
+            "50%",
+            "75%",
+            "90%"
+          ],
+          "a": "75%"
+        },
+        {
+          "q": "What's distinctive about Perplexity's PPLX-EMBED-V2-LATE compared to a typical embedding model?",
+          "a": "It keeps multiple token-level vectors (multi-vector) instead of collapsing everything into a single vector, for richer multimodal retrieval."
+        },
+        {
+          "q": "What two sizes does Perplexity offer PPLX-EMBED-V2-LATE in?",
+          "choices": [
+            "0.6B and 9B",
+            "1B and 7B",
+            "3B and 13B",
+            "100M and 1B"
+          ],
+          "a": "0.6B and 9B"
+        },
+        {
+          "q": "Why does the LessWrong piece on Anthropic's corporate structure matter, according to today's list?",
+          "a": "Because it's in the public interest to understand who controls and governs a company building increasingly capable AI models, and Anthropic isn't very transparent about that structure."
+        },
+        {
+          "q": "According to Periodic Labs' Liam Fedus and Ekin Doğuş Çubuk, why isn't intelligence alone enough for scientific discovery?",
+          "choices": [
+            "Because physical experiments are the ultimate ground truth needed to confirm ideas against reality",
+            "Because scientific papers already contain all the compute needed",
+            "Because models can't read lab equipment manuals",
+            "Because physics is already fully solved"
+          ],
+          "a": "Because physical experiments are the ultimate ground truth needed to confirm ideas against reality"
+        },
+        {
+          "q": "What are Liquid AI's two new open-weight decision models called?",
+          "choices": [
+            "d1-3B and d1-OMNI-600M",
+            "l1-7B and l1-mini",
+            "e1-1B and e1-XL",
+            "q1-3B and q1-OMNI-1B"
+          ],
+          "a": "d1-3B and d1-OMNI-600M"
+        },
+        {
+          "q": "What does Tony Fadell argue is required for AI assistants/gadgets to succeed, after pointing to failures like the Rabbit R1?",
+          "a": "Running on-device for privacy and trust — he argues this plays to Apple's hardware and consumer-trust advantage despite it lacking a proprietary frontier model."
+        },
+        {
+          "q": "Which three things is Grok Bot adding, according to Musk, beyond xAI's own models?",
+          "choices": [
+            "Claude Opus 5.5, Midjourney, and Suno",
+            "Gemini, DALL-E, and ElevenLabs",
+            "Llama, Stable Diffusion, and Bark",
+            "GPT-6, Sora, and Udio"
+          ],
+          "a": "Claude Opus 5.5, Midjourney, and Suno"
+        }
+      ]
+    },
+    "build": null
   }
 ]
