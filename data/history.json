@@ -5885,6 +5885,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a 4-way ‘Intelligent UI’ router — one question in, model picks the shape of the answer.",
+      "category": "UI-for-AI",
+      "why": "Today's top reading item is GPT-6's ‘Intelligent UI’ — the model now picks its own response format (table, diagram, calculator, map) instead of always answering in plain text. Building a tiny 4-format version of that router is the fastest way to feel why format-selection is a different problem than text generation: the model has to commit to a shape before it has the content.",
+      "plan": [
+        {
+          "step": "Write a short system prompt telling the model: given a question, reply with ONLY JSON like {\"format\": \"text|table|chart|calculator\", \"data\": ...} — no prose.",
+          "minutes": 5
+        },
+        {
+          "step": "Pick 3 test questions on purpose: one that wants a table (compare 3 things), one that wants a chart (some numbers over time), one that wants a calculator (a math word problem). Send each to Claude Haiku 5.5 via the Messages API.",
+          "minutes": 10
+        },
+        {
+          "step": "Write ~15 lines of plain Python (stdlib json only) that reads the returned format field and renders each one differently: table → padded columns, chart → ASCII bars from the numbers, calculator → an 'a op b = result' line, text → just print it.",
+          "minutes": 7
+        },
+        {
+          "step": "Throw one deliberately ambiguous question at it (not obviously table/chart/calculator) and see which format it picks — note whether that choice seems reasonable.",
+          "minutes": 3
+        }
+      ],
+      "done_looks_like": "Running your script on the 3 test questions prints 3 visibly different renders — a table, an ASCII bar chart, and a calculator line — without you touching the render code between runs. The model chose the shape, not you.",
+      "stretch_goal": "Add a 5th format, 'map', and ask a geography question — see what data shape the model guesses for a map reply when you haven't told it what a map response should contain.",
+      "tools": [
+        "Claude API (claude-haiku-5-5, Messages API)",
+        "curl or the anthropic Python SDK",
+        "Python 3 (stdlib json only)"
+      ]
+    }
   }
 ]
