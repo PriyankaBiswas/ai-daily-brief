@@ -554,7 +554,32 @@ footer.site-footer {
 </div>
 <div class="build-block">
 <h3 class="build-heading">Build idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch">Build a 5-question &#x27;golden answer&#x27; eval and score how often the model actually gets them right — ATLAS&#x27;s grading method, shrunk to one file.</p>
+<div class="build-meta">
+  <span class="badge badge-category">data/eval exercise</span>
+</div>
+<p class="build-why"><strong>Why:</strong> Riffs on today&#x27;s ATLAS benchmark item (search agents missing the &#x27;golden&#x27; answer on real tasks) — strip away the web-search part and you&#x27;re left with the core eval pattern underneath: a fixed answer key plus a scorer that decides hit or miss. Building that pattern yourself is the fastest way to feel how much of &#x27;evaluating an agent&#x27; is really about writing a good answer key.</p>
+<ol class="build-plan">
+  <li class="build-step">
+    <span class="step-text">Write 5 trivia-style questions with known, unambiguous short answers (facts, not opinions or anything web-search-dependent) — your answer key.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Send each question to Claude Haiku 5.5 via the Messages API, one at a time, collecting the plain-text responses.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Write a ~10-line scorer: normalize case/whitespace, check exact match plus a looser &#x27;does the golden answer appear in the response&#x27; check, mark each question hit or miss.</span>
+    <span class="step-minutes">10 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Print a scorecard — each question with its hit/miss, and a final &#x27;X/5&#x27; — and eyeball any miss: was the model actually wrong, or was your question ambiguous?</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+</ol>
+<p class="build-done"><strong>Done looks like:</strong> Running the script prints 5 rows, each marked hit or miss, plus a final score like &#x27;4/5&#x27; — and for any miss you can tell from the printed answer whether the model got it wrong or your question was the problem.</p>
+<p class="build-stretch"><strong>Stretch goal:</strong> Add a second, harder question set that needs a bit of multi-step reasoning instead of pure recall, and compare hit rates between the two sets — a toy version of ATLAS&#x27;s difficulty tiers.</p>
+<p class="build-tools"><strong>Tools:</strong> Claude API (claude-haiku-5-5, Messages API), Python 3 (stdlib only)</p>
 </div>
   </section>
 

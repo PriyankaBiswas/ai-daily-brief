@@ -6059,6 +6059,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a 5-question 'golden answer' eval and score how often the model actually gets them right — ATLAS's grading method, shrunk to one file.",
+      "category": "data/eval exercise",
+      "why": "Riffs on today's ATLAS benchmark item (search agents missing the 'golden' answer on real tasks) — strip away the web-search part and you're left with the core eval pattern underneath: a fixed answer key plus a scorer that decides hit or miss. Building that pattern yourself is the fastest way to feel how much of 'evaluating an agent' is really about writing a good answer key.",
+      "plan": [
+        {
+          "step": "Write 5 trivia-style questions with known, unambiguous short answers (facts, not opinions or anything web-search-dependent) — your answer key.",
+          "minutes": 5
+        },
+        {
+          "step": "Send each question to Claude Haiku 5.5 via the Messages API, one at a time, collecting the plain-text responses.",
+          "minutes": 5
+        },
+        {
+          "step": "Write a ~10-line scorer: normalize case/whitespace, check exact match plus a looser 'does the golden answer appear in the response' check, mark each question hit or miss.",
+          "minutes": 10
+        },
+        {
+          "step": "Print a scorecard — each question with its hit/miss, and a final 'X/5' — and eyeball any miss: was the model actually wrong, or was your question ambiguous?",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "Running the script prints 5 rows, each marked hit or miss, plus a final score like '4/5' — and for any miss you can tell from the printed answer whether the model got it wrong or your question was the problem.",
+      "stretch_goal": "Add a second, harder question set that needs a bit of multi-step reasoning instead of pure recall, and compare hit rates between the two sets — a toy version of ATLAS's difficulty tiers.",
+      "tools": [
+        "Claude API (claude-haiku-5-5, Messages API)",
+        "Python 3 (stdlib only)"
+      ]
+    }
   }
 ]
