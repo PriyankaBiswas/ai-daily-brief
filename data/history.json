@@ -5915,5 +5915,150 @@
         "Python 3 (stdlib json only)"
       ]
     }
+  },
+  {
+    "date": "2026-10-09",
+    "reading": {
+      "intro": "Another single-newsletter day: only TLDR AI's Thursday edition landed in the usual 24–36h window. Morning Brew's email arrived as a dead redirect stub with no real body text, The New Stack was pure workshop promo, Towards Data Science's latest digest predates the window with no fresh AI-specific stories, and Latent Space didn't publish anything new today. What's left, all from TLDR AI: OpenAI's new ‘Ultrafast’ speed tier for GPT-6.1 Sol, Google's pitch for a single universal Gemini agent, a correction to OpenAI's reported revenue, three former OpenAI safety researchers going public about what their firing means for oversight, Anthropic's new Cyber Defense Initiative, a quiet price cut on Claude Sonnet 5.5's cache reads, a tougher benchmark for search agents, and Epoch turning its own benchmarking lens on whether AI could automate its own research process.",
+      "items": [
+        {
+          "title": "Ultrafast is rolling out today for GPT-6.1 Sol in the API, Codex, and ChatGPT Work",
+          "url": "https://threadreaderapp.com/thread/2108262812489531498.html",
+          "source": "OpenAI, via TLDR AI",
+          "why": "A new speed tier — up to 8x faster than Sol Standard at near-Astra-level intelligence — built specifically for latency-sensitive agent work. API pricing is $12/M input and $60/M output tokens, worth knowing before you pick a model tier for anything real-time.",
+          "minutes": 2,
+          "skip_ok": false
+        },
+        {
+          "title": "Gemini agent",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026",
+          "source": "Google Cloud, via TLDR AI",
+          "why": "Google's pitch for one universal agent spanning knowledge work, media creation, coding, and multi-step workflows across Workspace and other enterprise tools — with persistent context, multi-agent orchestration, model routing, governance, and cost controls bundled in. A direct challenge to the ‘swarm of specialized agents’ framing elsewhere in AI-agent coverage.",
+          "minutes": 15,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI's revenue is reportedly $20 billion less than previously projected",
+          "url": "https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/",
+          "source": "TechCrunch, via TLDR AI",
+          "why": "OpenAI now tells investors its annualized revenue is approaching $50B, $20B below a figure reported barely a week ago — the gap traces back to OpenAI and Anthropic counting cloud-partner sales differently. Useful corrective if you've been tracking the ‘who's really bigger’ narrative.",
+          "minutes": 3,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI cannot make AI safe on its own",
+          "url": "https://mikitabalesni.com/letter/letter.pdf",
+          "source": "open letter, via TLDR AI",
+          "why": "Three former OpenAI safety researchers go public, arguing their dismissals risk chilling internal dissent and external collaboration, and urging OpenAI to preserve independent evaluator access, protect chain-of-thought monitorability, and clarify rules for talking to outside safety orgs — the clearest public statement yet of what's at stake in that fight.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic Cyber Defense Initiative",
+          "url": "https://www.anthropic.com/news/anthropic-cyber-mission",
+          "source": "Anthropic, via TLDR AI",
+          "why": "Anthropic's Cyber Mission commits frontier models, engineering support, and funding to critical-infrastructure and open-source security — its biggest security-specific commitment yet, and a bet that defense, not just red-teaming, is where frontier models should be pointed.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic cuts the price of Sonnet 5.5 cache reads in half",
+          "url": "https://siliconangle.com/2026/10/07/anthropic-releases-claude-haiku-5-5-small-model-and-halves-sonnet-5-5-cache-read-prices/",
+          "source": "SiliconANGLE, via TLDR AI",
+          "why": "Cache-read pricing on Sonnet 5.5 dropped from $0.20 to $0.10 per million tokens, which Anthropic says cuts the cost of most agentic work by about 20% since cache reads dominate token usage. A quiet but real number if you're running anything cache-heavy on Sonnet 5.5.",
+          "minutes": 1,
+          "skip_ok": true
+        },
+        {
+          "title": "ATLAS: evaluating agents on search-intensive tasks",
+          "url": "https://exa.ai/blog/atlas-benchmark",
+          "source": "Exa, via TLDR AI",
+          "why": "A new benchmark for search agents on real-world, non-memorized tasks requiring extensive multi-domain web search — even high-effort agents miss a meaningful share of the 'golden' answers, a useful reality check on how far agentic search still has to go.",
+          "minutes": 9,
+          "skip_ok": true
+        },
+        {
+          "title": "Can AI automate Epoch?",
+          "url": "https://epoch.ai/publications/can-ai-automate-epoch",
+          "source": "Epoch AI, via TLDR AI",
+          "why": "Epoch turns its own benchmarking lens on itself: frontier models handle well-defined tasks reliably but can't yet produce Epoch-quality research unsupervised, lacking the judgment to follow through on open-ended work even with ample reference material — a grounded data point in the 'when do agents replace analysts' debate.",
+          "minutes": 15,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What speed multiplier does OpenAI's new Ultrafast mode offer over GPT-6.1 Sol Standard?",
+          "choices": [
+            "2x",
+            "4x",
+            "8x",
+            "16x"
+          ],
+          "a": "8x"
+        },
+        {
+          "q": "What is Ultrafast's API pricing for GPT-6.1 Sol, per million tokens?",
+          "a": "$12 input / $60 output"
+        },
+        {
+          "q": "Which of these is NOT something Google's new universal Gemini agent bundles in?",
+          "choices": [
+            "Persistent context",
+            "Multi-agent orchestration",
+            "Model routing",
+            "A built-in web browser extension"
+          ],
+          "a": "A built-in web browser extension"
+        },
+        {
+          "q": "By how much is OpenAI's newly reported annualized revenue lower than the figure reported about a week earlier?",
+          "choices": [
+            "$5B",
+            "$10B",
+            "$20B",
+            "$35B"
+          ],
+          "a": "$20B"
+        },
+        {
+          "q": "How many former OpenAI safety researchers signed the 'OpenAI cannot make AI safe on its own' letter?",
+          "a": "Three"
+        },
+        {
+          "q": "Besides critical infrastructure, what else does Anthropic's new Cyber Defense Initiative target?",
+          "a": "Open-source security"
+        },
+        {
+          "q": "How much did Anthropic cut Sonnet 5.5's cache-read price, and to what new rate per million tokens?",
+          "choices": [
+            "25%, to $0.15",
+            "50%, to $0.10",
+            "75%, to $0.05",
+            "90%, to $0.02"
+          ],
+          "a": "50%, to $0.10"
+        },
+        {
+          "q": "What kind of agent tasks does the ATLAS benchmark evaluate?",
+          "a": "Search-intensive, real-world web-search tasks"
+        },
+        {
+          "q": "According to Epoch's own Automation Reports, where do frontier models struggle most?",
+          "choices": [
+            "Well-defined tasks with clear instructions",
+            "Open-ended aspects requiring judgment",
+            "Basic arithmetic",
+            "Following a fixed template"
+          ],
+          "a": "Open-ended aspects requiring judgment"
+        },
+        {
+          "q": "Which single newsletter was the source for every item in today's list?",
+          "a": "TLDR AI"
+        }
+      ]
+    },
+    "build": null
   }
 ]
