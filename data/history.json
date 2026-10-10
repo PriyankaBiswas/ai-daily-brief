@@ -6088,5 +6088,139 @@
         "Python 3 (stdlib only)"
       ]
     }
+  },
+  {
+    "date": "2026-10-10",
+    "reading": {
+      "intro": "Latent Space was the busy one today — three separate posts landed in the window: two long-form interviews (industrial robotics, AI-for-biology) plus the AINews digest recapping the last 24h of AI Twitter/X. Towards Data Science's regular digest also had one fresh piece worth pulling out. TLDR AI's usual morning edition hadn't landed yet as of brief time, and Morning Brew, The New Stack, Rundown, DeepLearning.AI, and Import AI were all stale or off-topic for the window. The AINews digest is Twitter-recap style — short claims attributed to named accounts rather than full articles — so a few items below carry a couldn't-independently-verify-the-exact-numbers caveat; treat those as directional, not gospel.",
+      "items": [
+        {
+          "title": "Inside Standard Bots' AI stack: pretrained models, zero-shot perception, and why targeted data beats big data",
+          "url": "https://www.latent.space/p/standard-bots",
+          "source": "Latent Space",
+          "why": "America's largest AI-native industrial robot manufacturer (NASA, Amazon, and Lockheed Martin are customers) explains its actual production stack: a shared base model adapted per customer through demonstrations, a zero-shot perception model trained on a billion+ images, motion handled by conventional code, training in the cloud but inference always local. The 'co-optimize model and hardware' and 'targeted data beats bigger data' arguments apply just as well to software agents.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Why AlphaFold Didn't Solve Protein Folding",
+          "url": "https://www.latent.space/p/biohub-deepmind",
+          "source": "Latent Space",
+          "why": "Google DeepMind's Pushmeet Kohli (AlphaFold) and Biohub's Sal Candido on what the 'protein folding is solved' headline glosses over: AlphaFold reproduces a static structure deposited in the PDB, not the real distribution of shapes a protein can take, and dynamics, disorder, and design are still wide open. A concrete case study in the 'bitter lesson for data' — sometimes the right move is more data, sometimes more inductive bias, and knowing which is the actual skill.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Decision models become a product category overnight",
+          "url": "https://www.latent.space/p/ainews-typesafejev-at-100m-arr-75b",
+          "source": "Latent Space (AINews digest)",
+          "why": "In the space of one day, OpenAI (Decisions API), Microsoft (Decision-1), Perplexity (pplx-decider-v1.1), Cloudflare (clef), and Liquid (d1) all shipped models that return a typed answer — a probability, a pick from a list, a score — in one forward pass instead of free text. The pitch: most agent steps are a yes/no or a pick-one, not a generation, so a dedicated 'decision' call is faster and cheaper than a full chat completion. LangChain says routing to the cheapest adequate model this way cut median cost per coding task by 64%.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Do multi-agent 'teams' actually pay off? A coding benchmark says mostly no",
+          "url": "https://www.latent.space/p/ainews-typesafejev-at-100m-arr-75b",
+          "source": "Latent Space (AINews digest, citing a Vals AI study)",
+          "why": "Vals AI reportedly ran GPT-6 Sol and Claude Opus 5.5 solo versus as agent 'teams' on a coding benchmark: teams cost 1.8–5.1x more in tokens, and only one configuration (Sol at medium reasoning effort) improved meaningfully. Opus ran roughly 6.8 subagents and ~1,140 subagent tool calls per app at max effort for no measurable gain. We couldn't find Vals' own report to confirm the exact figures independently — treat the numbers as reported, not verified — but the shape of the finding (coordination overhead often outweighing parallelism) matches other recent multi-agent benchmarking.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Claude agents can now fan out into 1,000-agent workflows",
+          "url": "https://www.latent.space/p/ainews-typesafejev-at-100m-arr-75b",
+          "source": "Latent Space (AINews digest)",
+          "why": "A newly flagged capability on Claude's managed-agents stack: a lead agent writes a phased plan, fans it out to up to 1,000 subagents per run, then merges the results, enabled via a new API header. Anthropic's own guidance warns to start with narrowly scoped tasks since token use (and cost) scales fast. Worth reading next to the item above — raw fan-out capacity and 'does it actually help' are two very different questions right now.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Gemini 4 Argon reportedly beats Opus 5.5 on a coding benchmark — but almost nobody can use it yet",
+          "url": "https://hackernoon.com/gemini-4-argon-how-does-it-do-against-gpt-6-astra-and-claude",
+          "source": "HackerNoon, via Latent Space AINews",
+          "why": "Google says Argon scores 77.9% on DeepSWE v1.1 versus Opus 5.5's 74.2% (Opus still wins Terminal-bench 4.0). The catch: Argon ships first to roughly 650 government, cloud, and cybersecurity 'Fairwind Program' partners, not the general API or app — so for most people this is a benchmark screenshot, not a model you can touch yet.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "Prime Intellect's open-source, self-improving coding agent keeps leveling up",
+          "url": "https://www.opensourceforu.com/2026/08/prime-intellect-open-sources-prime-agent-self-improving-ai-coding-harness/",
+          "source": "Open Source For You, via Latent Space AINews",
+          "why": "Prime Agent, Prime Intellect's MIT-licensed coding harness, can inspect its own execution history and patch its prompts, subagents, and memory via a /refine command (its core system prompt stays fixed). It already scores 95.5% on ARC-AGI-3 paired with Opus 5, edging the reported 95.4% human-expert baseline. Today's AINews digest references further swarm-scale Rust work we couldn't independently verify — worth watching for a primary write-up before taking that number at face value.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Stop Using AI. Start Hiring It.",
+          "url": "https://newsletter.towardsdatascience.com/e3t/Ctc/L2+113/d5qLSh04/VWBdgh8nrfqCW1V_3W560vWJWW805GfB5VYq3nN56dXhW3gP0xW7Y8-PT6lZ3pYN5jQn5zD_TSXW4t36DZ82KKN0W6xvklv1dVW3wV1JCBQ5YdrwfW1KJ2hr4SMXWRW501Mq01HRGDdW10GpkD8gM2mjW5B94815G2h3SW7Y9Jyr5S694DW3blNhv6p2sFNN5wTZt0XxWkqN73jmhTmw6mXW2pT0V05h9HkMN5QFLjMmz74tN38mzJ2qSdpRW51NlwW3Fm6X6N57p74pyL4z1W6Fsp5M5Njcy5W3Xt1SP4lv79cW6Glg2V78gTs0V9TqgQ4FXF9qVv1dF-3ZXBd9F3dQw18xq_1W12F-RS6tYJsMW7W67r73HfVF9W2FRWpD22k6J1f4b12l-04",
+          "source": "Towards Data Science",
+          "why": "Gursimar Singh's framing: the mistake isn't using AI, it's using it like a loose tool instead of managing it like hired help — with onboarding, scoped responsibility, and performance review. Simple reframe, but a decent gut-check if your own AI workflows are all ad hoc prompts with no structure around them.",
+          "minutes": 5,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What two aerospace/defense customers does Standard Bots cite for its industrial robots?",
+          "a": "NASA and Lockheed Martin (also Amazon)"
+        },
+        {
+          "q": "According to Pushmeet Kohli, does AlphaFold reproduce the true distribution of a protein's possible shapes, or a single structure deposited in the PDB?",
+          "a": "A single structure deposited in the PDB"
+        },
+        {
+          "q": "Name two of the five companies that shipped 'decision models' in the same ~24-hour window.",
+          "choices": null,
+          "a": "Any two of: OpenAI, Microsoft, Perplexity, Cloudflare, Liquid"
+        },
+        {
+          "q": "By how much did LangChain say routing to the cheapest adequate model cut median cost per coding task?",
+          "choices": [
+            "24%",
+            "44%",
+            "64%",
+            "84%"
+          ],
+          "a": "64%"
+        },
+        {
+          "q": "In the Vals AI agent-teams study, roughly how much more did 'teams' cost in tokens versus solo agents?",
+          "choices": [
+            "1.8–5.1x",
+            "10–20x",
+            "about the same",
+            "half the cost"
+          ],
+          "a": "1.8–5.1x"
+        },
+        {
+          "q": "At most how many subagents can Claude's new managed-agents fan-out workflow spin up per run?",
+          "choices": [
+            "10",
+            "100",
+            "1,000",
+            "10,000"
+          ],
+          "a": "1,000"
+        },
+        {
+          "q": "What benchmark does Gemini 4 Argon reportedly beat Opus 5.5 on?",
+          "a": "DeepSWE v1.1"
+        },
+        {
+          "q": "True or false: Gemini 4 Argon is broadly available via the general Gemini API today.",
+          "a": "False — it's limited to roughly 650 Fairwind Program partners"
+        },
+        {
+          "q": "What command lets Prime Agent patch its own prompts, subagents, and memory from its execution history?",
+          "a": "/refine"
+        },
+        {
+          "q": "What's the core reframe in the Towards Data Science piece 'Stop Using AI. Start Hiring It.'?",
+          "a": "Treat AI like hired staff — onboarding, scoped responsibility, performance review — rather than a loose tool used ad hoc"
+        }
+      ]
+    },
+    "build": null
   }
 ]
