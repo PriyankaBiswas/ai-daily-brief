@@ -543,7 +543,32 @@ footer.site-footer {
 </div>
 <div class="build-block">
 <h3 class="build-heading">Build idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch">Build a tiny 'decision vs. chat' harness and watch how much parsing it takes just to turn free text into a yes/no.</p>
+<div class="build-meta">
+  <span class="badge badge-category">prompt-engineering</span>
+</div>
+<p class="build-why"><strong>Why:</strong> Riffs on today's 'decision models become a product category overnight' item — the whole pitch for a dedicated decision call (OpenAI, Microsoft, Perplexity, Cloudflare, Liquid all shipped one on the same day) is that most agent steps are a yes/no or pick-one, not a generation. Simulating both paths yourself with canned text makes the parsing tax that free-text answers carry concrete instead of abstract.</p>
+<ol class="build-plan">
+  <li class="build-step">
+    <span class="step-text">Write 5 yes/no questions and, for each, a canned 'free-text' answer in a different phrasing ('Yeah, I'd say so.', 'Not really, no.', 'Hard to say, but leaning yes...') — no API key needed.</span>
+    <span class="step-minutes">7 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Write a naive parser that tries to extract yes/no from each free-text answer with simple string checks (startswith, 'yes' in text.lower(), etc.), logging which ones it gets wrong or can't decide.</span>
+    <span class="step-minutes">8 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Write the 'decision mode' equivalent: the same 5 questions, but each answer is just a typed field from a fixed {YES, NO} enum — no parsing step at all.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Print a scoreboard: how many of the 5 free-text answers needed coercion or were ambiguous, versus 0 for decision mode.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+</ol>
+<p class="build-done"><strong>Done looks like:</strong> A printed scoreboard showing your naive parser failing or guessing wrong on 1-2 of the 5 free-text answers, while the decision-mode column shows a clean 5/5 — the parsing tax made visible in your own numbers.</p>
+<p class="build-stretch"><strong>Stretch goal:</strong> Swap the canned free-text answers for 5 real calls to an LLM API (Claude or GPT) asked the same questions in plain chat mode, and see if the same parsing brittleness shows up live instead of in canned text.</p>
+<p class="build-tools"><strong>Tools:</strong> Python 3 (stdlib only), optional: Anthropic or OpenAI API for the stretch goal</p>
 </div>
   </section>
 
