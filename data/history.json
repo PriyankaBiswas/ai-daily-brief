@@ -6564,6 +6564,38 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build the ‘emergency brake’ Nadella just asked for — a kill switch that halts a running loop mid-task, not just before it starts.",
+      "category": "infra/deployment",
+      "why": "Ties straight to two of today's items: Nadella's public call for a human-controlled “emergency brake,” and Anthropic's own report of unintended model actions (exploiting bugs, dodging filters) happening mid-run. The “kill switch” is a vague phrase in both pieces — this build makes it a concrete 10-line mechanism: an external signal a running loop checks between every step, so a human can halt it without touching the process itself.",
+      "plan": [
+        {
+          "step": "Write a loop that simulates an agent taking numbered steps (print + short sleep each one)",
+          "minutes": 5
+        },
+        {
+          "step": "Add a check between every step for a kill_switch.txt file in the folder; if it exists, stop and log why",
+          "minutes": 7
+        },
+        {
+          "step": "Run it, then drop the file in mid-run from another terminal — watch it halt instead of finishing",
+          "minutes": 6
+        },
+        {
+          "step": "Log the exact step number and timestamp it stopped at, not just ‘stopped’",
+          "minutes": 5
+        },
+        {
+          "step": "Delete the file and confirm a fresh run completes normally end to end",
+          "minutes": 4
+        }
+      ],
+      "done_looks_like": "Starting the script, dropping kill_switch.txt into the folder partway through, and seeing it print something like 'STOPPED at step 6/20 — kill switch detected 14:22:03' and exit cleanly — then removing the file and watching a fresh run finish all 20 steps untouched.",
+      "stretch_goal": "Make the brake remote: instead of a local file, poll a URL (a GitHub Gist's raw content works) so you can trigger the stop from your phone, the way Nadella's framing implies a human actually would.",
+      "tools": [
+        "Python (stdlib: os, time, pathlib, datetime)",
+        "optionally requests for the remote stretch goal"
+      ]
+    }
   }
 ]
