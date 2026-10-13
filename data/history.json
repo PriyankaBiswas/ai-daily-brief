@@ -6597,5 +6597,142 @@
         "optionally requests for the remote stretch goal"
       ]
     }
+  },
+  {
+    "date": "2026-10-13",
+    "reading": {
+      "intro": "Tuesday, and three sources actually landed in the window: TLDR AI's Monday and Tuesday editions plus a Latent Space recap of an Anthropic session at AI Engineer New York. The Rundown again sent only a re-engagement nudge (\"Are you still reading?\"), not content; Morning Brew/Tech Brew, Towards Data Science, The New Stack, and DeepLearning.AI didn't send anything in the window, and Import AI's latest issue was already covered Monday. Two stories held back yesterday as too murky to print now have clearer sourcing: the FT confirms Nvidia is weighing an acqui-hire of Reflection AI (to dodge antitrust review) on top of an existing ~$800M stake, and the WSJ confirms it's Amazon, not Anthropic, at the table for a ~$7B Decart deal — Anthropic reportedly passed after due diligence. Rounding out the list: Meta's first frontier-class model line, a conference recap of Anthropic's new agent-orchestration \"flows,\" Microsoft's third-gen AI chip, and Anthropic's own test of how close models are to self-replicating.",
+      "items": [
+        {
+          "title": "Meta ships Muse Wonder, its first frontier-class models",
+          "url": "https://research.meta.ai/blog/muse-wonder",
+          "source": "Meta AI (via TLDR AI)",
+          "why": "Meta's first frontier-class model line, with stronger coding, benchmark performance, and an active-memory feature for retaining user context — a marker of where Meta sits in the race.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "How close are AI models to self-replication?",
+          "url": "https://www.anthropic.com/research/self-replicating-ai",
+          "source": "Anthropic (via TLDR AI)",
+          "why": "Anthropic tested whether current models can autonomously copy themselves across consumer hardware, from individual steps to full end-to-end runs — a core AI-safety benchmark, not a hypothetical.",
+          "minutes": 28,
+          "skip_ok": true
+        },
+        {
+          "title": "Inside Anthropic's new \"dynamic workflows\" for orchestrating Claude agents",
+          "url": "https://www.latent.space/p/claude-dynamic-workflows",
+          "source": "Latent Space",
+          "why": "Conference recap of a brand-new Claude feature where the lead agent designs its own multi-agent topology instead of a developer configuring a fixed roster — directly relevant to how agent-built tools (like this one) get assembled.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Microsoft unveils Maia 300, its third-generation AI chip",
+          "url": "https://news.microsoft.com/maia-2026/",
+          "source": "Microsoft (via TLDR AI)",
+          "why": "A concrete step in Big Tech's push off Nvidia: 40% better performance per megawatt, with large-scale deployment planned for 2027.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "Nvidia in early talks to acquire or invest further in Reflection AI",
+          "url": "https://siliconangle.com/2026/10/11/nvidia-reportedly-in-early-talks-to-buy-acqui-hire-or-invest-more-in-reflection-ai/",
+          "source": "SiliconANGLE",
+          "why": "Follow-up on Reflection's Beam open-weight model from early October — Nvidia is reportedly weighing an acqui-hire specifically to sidestep a lengthy antitrust review, on top of an $800M stake it already holds.",
+          "minutes": 3,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI disputes departed safety researchers' account of their firing",
+          "url": "https://www.fastcompany.com/91621657/openai-chatgpt-ai-artificial-intelligence-safety",
+          "source": "Fast Company (via TLDR AI)",
+          "why": "OpenAI says the three researchers broke information-sharing rules, not that they were punished for raising safety concerns; the researchers say the firings chill internal dissent — both sides' framing matters here.",
+          "minutes": 3,
+          "skip_ok": false
+        },
+        {
+          "title": "Amazon reportedly in talks to buy chip-switching startup Decart for ~$7B",
+          "url": "https://runtimewire.com/article/amazon-decart-acquisition-talks-7-billion-ai-chip-software",
+          "source": "RuntimeWire",
+          "why": "Decart's software lets models run across Nvidia, Google TPU, and Amazon Trainium chips — Amazon buying it would be a bet on owning that cross-chip abstraction layer, after Anthropic reportedly passed.",
+          "minutes": 4,
+          "skip_ok": false
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does Meta call its first frontier-class model, announced this week?",
+          "choices": [
+            "Muse Wonder",
+            "Llama Prime",
+            "Meta Atlas",
+            "Ray-Ban Neural"
+          ],
+          "a": "Muse Wonder"
+        },
+        {
+          "q": "Besides stronger coding and benchmark performance, what capability does Meta highlight for Muse Wonder?",
+          "a": "Active memory — retaining and synthesizing user-provided information"
+        },
+        {
+          "q": "Microsoft's Maia 300 claims roughly what efficiency gain over its predecessor?",
+          "choices": [
+            "10% better perf/watt",
+            "25% better perf/watt",
+            "40% better perf/megawatt",
+            "75% better perf/megawatt"
+          ],
+          "a": "40% better performance per megawatt"
+        },
+        {
+          "q": "When does Microsoft plan to begin large-scale deployment of Maia 300?",
+          "a": "Beginning in 2027"
+        },
+        {
+          "q": "Anthropic's self-replication research tested whether models could do what?",
+          "choices": [
+            "Write their own training code",
+            "Autonomously copy themselves across consumer hardware",
+            "Pass a Turing test",
+            "Negotiate with other AI models"
+          ],
+          "a": "Autonomously copy themselves across consumer hardware"
+        },
+        {
+          "q": "In the Latent Space recap, which two historical software projects did Anthropic's presenters invoke as an analogy for organizing agents?",
+          "a": "Unix (Ken Thompson) and Linux (Linus Torvalds)"
+        },
+        {
+          "q": "What is Anthropic's new feature called, where the lead agent designs its own multi-agent topology instead of a developer configuring a fixed roster?",
+          "choices": [
+            "Agent Rosters",
+            "Dynamic Workflows (\"flows\")",
+            "Managed Swarms",
+            "AutoAgent"
+          ],
+          "a": "Dynamic Workflows, also called \"flows\""
+        },
+        {
+          "q": "Roughly how much has Nvidia already invested in Reflection AI, and what deal structure might let it dodge a lengthy antitrust review?",
+          "a": "About $800 million so far; an acqui-hire structure"
+        },
+        {
+          "q": "Which company reportedly looked at acquiring Decart and passed after due diligence, before Amazon's ~$7B talks emerged?",
+          "choices": [
+            "Google",
+            "Microsoft",
+            "Anthropic",
+            "Nvidia"
+          ],
+          "a": "Anthropic"
+        },
+        {
+          "q": "Why does OpenAI say it fired safety researchers Korbak, Wang, and Balesni?",
+          "a": "For violating sensitive-information-sharing policies — not, per OpenAI, for raising safety concerns"
+        }
+      ]
+    },
+    "build": null
   }
 ]
