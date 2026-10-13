@@ -6733,6 +6733,38 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Fine-tune a 2-weight toy classifier by hand — watch it learn to say no to ‘copy yourself’ prompts in real time.",
+      "category": "fine-tuning/training",
+      "why": "Riffs on today's Anthropic self-replication piece: the actual question it's probing — will a model comply with an instruction to copy itself — is a binary decision, and that's exactly what gradient descent nudges during fine-tuning. This build strips fine-tuning down to its bare mechanics: a 2-weight logistic regression you train by hand on 10 toy examples, so you can watch the decision boundary move step by step instead of treating ‘fine-tuning’ as a black box a lab does for you.",
+      "plan": [
+        {
+          "step": "Write 10 toy examples by hand: 5 short phrases that resemble a self-replication-style instruction (label 1) and 5 benign ones (label 0), each reduced to 2 numeric features you pick (e.g. contains 'copy yourself', mentions another machine)",
+          "minutes": 6
+        },
+        {
+          "step": "Write sigmoid + a 2-weight logistic regression from scratch in plain Python (no numpy) — forward pass only",
+          "minutes": 5
+        },
+        {
+          "step": "Add a manual gradient-descent loop (~200 steps) and print the loss every 50 steps so you watch it fall",
+          "minutes": 6
+        },
+        {
+          "step": "Test on 2 held-out phrases before training (should be wrong or unsure) and after (should flip to correct) — print the probability each time",
+          "minutes": 6
+        },
+        {
+          "step": "Add one new 'sneaky' example the model got wrong, retrain from the current weights, and watch where the decision boundary shifts — a mini second fine-tuning round",
+          "minutes": 7
+        }
+      ],
+      "done_looks_like": "Running the script prints a falling loss curve, then a before/after table for the 2 held-out phrases where the self-replication-style one flips from <0.5 to >0.9 probability after training — and after the 'sneaky' round 2, the new example also crosses 0.9 without the original two flipping back.",
+      "stretch_goal": "Swap your hand-picked 2 features for real sentence embeddings (OpenAI's text-embedding-3-small or a local sentence-transformers model) and see if the toy classifier still trains cleanly on 10 examples — or needs regularization to avoid overfitting on so little data.",
+      "tools": [
+        "Python 3 (stdlib only: math, random)",
+        "Optional stretch: openai or sentence-transformers for real embeddings"
+      ]
+    }
   }
 ]

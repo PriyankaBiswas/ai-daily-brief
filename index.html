@@ -543,7 +543,36 @@ footer.site-footer {
 </div>
 <div class="build-block">
 <h3 class="build-heading">Build idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch">Fine-tune a 2-weight toy classifier by hand — watch it learn to say no to ‘copy yourself’ prompts in real time.</p>
+<div class="build-meta">
+  <span class="badge badge-category">fine-tuning/training</span>
+</div>
+<p class="build-why"><strong>Why:</strong> Riffs on today&#x27;s Anthropic self-replication piece: the actual question it&#x27;s probing — will a model comply with an instruction to copy itself — is a binary decision, and that&#x27;s exactly what gradient descent nudges during fine-tuning. This build strips fine-tuning down to its bare mechanics: a 2-weight logistic regression you train by hand on 10 toy examples, so you can watch the decision boundary move step by step instead of treating ‘fine-tuning’ as a black box a lab does for you.</p>
+<ol class="build-plan">
+  <li class="build-step">
+    <span class="step-text">Write 10 toy examples by hand: 5 short phrases that resemble a self-replication-style instruction (label 1) and 5 benign ones (label 0), each reduced to 2 numeric features you pick (e.g. contains &#x27;copy yourself&#x27;, mentions another machine)</span>
+    <span class="step-minutes">6 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Write sigmoid + a 2-weight logistic regression from scratch in plain Python (no numpy) — forward pass only</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Add a manual gradient-descent loop (~200 steps) and print the loss every 50 steps so you watch it fall</span>
+    <span class="step-minutes">6 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Test on 2 held-out phrases before training (should be wrong or unsure) and after (should flip to correct) — print the probability each time</span>
+    <span class="step-minutes">6 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Add one new &#x27;sneaky&#x27; example the model got wrong, retrain from the current weights, and watch where the decision boundary shifts — a mini second fine-tuning round</span>
+    <span class="step-minutes">7 min</span>
+  </li>
+</ol>
+<p class="build-done"><strong>Done looks like:</strong> Running the script prints a falling loss curve, then a before/after table for the 2 held-out phrases where the self-replication-style one flips from &lt;0.5 to &gt;0.9 probability after training — and after the &#x27;sneaky&#x27; round 2, the new example also crosses 0.9 without the original two flipping back.</p>
+<p class="build-stretch"><strong>Stretch goal:</strong> Swap your hand-picked 2 features for real sentence embeddings (OpenAI&#x27;s text-embedding-3-small or a local sentence-transformers model) and see if the toy classifier still trains cleanly on 10 examples — or needs regularization to avoid overfitting on so little data.</p>
+<p class="build-tools"><strong>Tools:</strong> Python 3 (stdlib only: math, random), Optional stretch: openai or sentence-transformers for real embeddings</p>
 </div>
   </section>
 <section class="archive-wrapper">
