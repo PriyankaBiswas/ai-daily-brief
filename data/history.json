@@ -6766,5 +6766,144 @@
         "Optional stretch: openai or sentence-transformers for real embeddings"
       ]
     }
+  },
+  {
+    "date": "2026-10-14",
+    "reading": {
+      "intro": "Wednesday, and the window actually had content: TLDR AI's Wednesday edition, a Latent Space interview with Dyna Robotics, and Towards Data Science's Tuesday digest (titles only — its links route through a tracking redirect that wouldn't resolve, so two of its pieces got left off rather than guessed at). Morning Brew/Tech Brew sent an email with a broken, unreadable body and nothing else to go on, so it's skipped. The Rundown, The New Stack, and DeepLearning.AI didn't send anything new in the window.",
+      "items": [
+        {
+          "title": "OpenAI employee arrested over hidden recording device",
+          "url": "https://links.tldrnewsletter.com/mVx0nP",
+          "source": "TLDR AI",
+          "why": "OpenAI said it alerted the FBI after finding a hidden recording device in an executive conference room; the employee was fired and arrested, though OpenAI says no model weights, source code, or customer data were accessed — a corporate-security story playing out at a frontier lab.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "Character.ai files for Chapter 11 bankruptcy",
+          "url": "https://blog.character.ai/an-update-on-character-ai/",
+          "source": "Character.AI (via TLDR AI)",
+          "why": "The companion-chatbot pioneer filed for a court-supervised sale after mounting legal, regulatory, and operational pressure — the platform could keep running under a successful bid, or wind down entirely if no viable buyer emerges.",
+          "minutes": 2,
+          "skip_ok": false
+        },
+        {
+          "title": "Gemini 4 Argon lands on Google Cloud",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/gemini-4-argon-available-on-google-cloud",
+          "source": "Google Cloud (via TLDR AI)",
+          "why": "Google positions its newest frontier model for long, multi-step enterprise work — software development, finance, legal, cybersecurity — rather than consumer chat, a signal of where it thinks the real revenue sits.",
+          "minutes": 3,
+          "skip_ok": false
+        },
+        {
+          "title": "Dyna-2: general-purpose physical agents with hour-long autonomy",
+          "url": "https://www.latent.space/p/dyna",
+          "source": "Latent Space",
+          "why": "Dyna Robotics' chief scientist walks through Dyna-2, a world-action model pretrained on over a million hours of human video, now folding restaurant napkins at a reported 99.4% success rate for 24 hours straight at real customer sites — a concrete data point on how close 'general-purpose robotics' actually is.",
+          "minutes": 15,
+          "skip_ok": true
+        },
+        {
+          "title": "Frontier models for every robot",
+          "url": "https://www.pi.website/blog/api-beta",
+          "source": "Physical Intelligence (via TLDR AI)",
+          "why": "Physical Intelligence opened a Pi API beta letting developers fine-tune and run its robotic foundation models without managing their own ML infrastructure — upload data, get a robot policy back — the managed-service end of the same problem Dyna is attacking end-to-end.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "NVIDIA Run:ai is now open source",
+          "url": "https://developer.nvidia.com/blog/nvidia-runai-is-now-open-source-as-part-of-nvidia-dsx-ai-factory-platform",
+          "source": "NVIDIA Developer Blog (via TLDR AI)",
+          "why": "Nvidia open-sourced its GPU scheduling and workload-management platform — KAI Scheduler, GPU Fractioning Operator and all — so any DSX ecosystem partner can run shared AI infrastructure more efficiently, a notable move from a company that usually sells the stack rather than gives it away.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenCode 2.0",
+          "url": "https://anoma.ly/notes/opencode-2-0/",
+          "source": "TLDR AI",
+          "why": "The open coding-agent harness now runs its server as a single background process with client autodiscovery, and ships as a library via an SDK package — small but telling signs of a tool maturing from script to platform.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Arguments about AI consciousness remain highly motivated and at best overconfident",
+          "url": "https://thezvi.wordpress.com/2026/10/13/arguments-about-ai-consciousness-remain-highly-motivated-and-at-best-overconfident/",
+          "source": "The Zvi (via TLDR AI)",
+          "why": "A skeptical survey of the AI-consciousness debate, made newly concrete by Anthropic's own policy now classifying abusive behavior toward Claude as a terms violation — the philosophical question has started shaping actual product policy, whichever side turns out to be right.",
+          "minutes": 12,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What kind of device did OpenAI say it found in an executive conference room, triggering the FBI alert?",
+          "choices": [
+            "A USB keylogger",
+            "A hidden recording device",
+            "A rogue API key",
+            "An unauthorized laptop"
+          ],
+          "a": "A hidden recording device"
+        },
+        {
+          "q": "According to OpenAI, what three categories of data showed no evidence of being accessed in the breach?",
+          "a": "Model weights, source code, and customer data"
+        },
+        {
+          "q": "What bankruptcy chapter did Character.ai file under?",
+          "choices": [
+            "Chapter 7",
+            "Chapter 11",
+            "Chapter 13",
+            "Chapter 15"
+          ],
+          "a": "Chapter 11"
+        },
+        {
+          "q": "What happens to Character.ai if no viable buyer emerges from its court-supervised sale process?",
+          "a": "It may be wound down"
+        },
+        {
+          "q": "Google positions Gemini 4 Argon for which kind of work?",
+          "choices": [
+            "Short casual chat",
+            "Long, multi-step enterprise work",
+            "Only image generation",
+            "Offline, on-device use only"
+          ],
+          "a": "Long, multi-step enterprise work"
+        },
+        {
+          "q": "Roughly how many hours of human video was Dyna-2's world-action model pretrained on?",
+          "a": "Over one million hours"
+        },
+        {
+          "q": "What success rate did Dyna's robots reportedly hit folding restaurant napkins continuously for 24 hours?",
+          "a": "99.4%"
+        },
+        {
+          "q": "Physical Intelligence's Pi API beta is built to let developers do what?",
+          "choices": [
+            "Write robot firmware from scratch",
+            "Fine-tune and run robotic foundation models without managing their own ML infrastructure",
+            "Only simulate robots, never deploy them",
+            "License Boston Dynamics hardware directly"
+          ],
+          "a": "Fine-tune and run robotic foundation models without managing their own ML infrastructure"
+        },
+        {
+          "q": "Name one concrete change shipped in OpenCode 2.0.",
+          "a": "The server now runs as a single background process with client autodiscovery (it can also be used as a library via an SDK package)"
+        },
+        {
+          "q": "What recent Anthropic policy change does the Zvi piece connect to the AI-consciousness debate?",
+          "a": "Anthropic's usage policy now classifies abusive behavior toward Claude as a violation of its terms"
+        }
+      ]
+    },
+    "build": null
   }
 ]
