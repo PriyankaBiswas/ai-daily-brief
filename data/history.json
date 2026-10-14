@@ -6904,6 +6904,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Fact-check the 99.4% napkin-folding stat with ten lines of statistics.",
+      "category": "data/eval exercise",
+      "why": "Today's Dyna-2 piece touts a 99.4% success rate over 24 hours straight — a headline number with no sample size attached. This builds a tiny Wilson-interval checker so you can tell, in general, when an AI performance claim is actually well-supported versus just a nice-sounding percentage.",
+      "plan": [
+        {
+          "step": "Reread the Dyna-2 claim and jot down every number given (99.4%, 24 hours, napkin folding) and what's missing (trial count n)",
+          "minutes": 3
+        },
+        {
+          "step": "Write a short Python function wilson_ci(successes, n, z=1.96) using only the stdlib math module — no installs",
+          "minutes": 10
+        },
+        {
+          "step": "Run it at a few plausible trial counts (n=50, n=500, n=5000) for a 99.4% observed rate and watch the interval tighten",
+          "minutes": 7
+        },
+        {
+          "step": "Write a 2-3 sentence verdict: what's the minimum n where '99.4%' stops being noise, and does the claim give you enough to know if they cleared that bar",
+          "minutes": 7
+        }
+      ],
+      "done_looks_like": "A ~20-line script that takes (successes, n) and prints a 95% confidence interval, plus your one-paragraph verdict on whether the Dyna-2 claim is well-supported as stated.",
+      "stretch_goal": "Run the same checker against OpenAI's 'no evidence model weights, source code, or customer data were accessed' line from today's first story — what sample size would make 'no evidence' actually reassuring?",
+      "tools": [
+        "Python 3 stdlib (math module)",
+        "optional: scipy.stats.binomtest to cross-check your own math"
+      ]
+    }
   }
 ]
