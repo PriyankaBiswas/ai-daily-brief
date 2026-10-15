@@ -7065,6 +7065,30 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a toy Harness² — a loop that rewrites its own prompt between tasks instead of retraining anything.",
+      "category": "paper-reimplementation",
+      "why": "Reimplements the core mechanic behind today's Harness² story — an agent that carries lessons forward by editing its own prompt between tasks, with zero weight updates. Turning 'rewrites its prompts and carries lessons forward' into actual code makes it concrete instead of a one-line repo blurb.",
+      "plan": [
+        {
+          "step": "Write one tiny 'task' function that takes a prompt string and returns pass/fail based on whether the prompt contains a required keyword — a stand-in for a real agent call, this is your toy environment.",
+          "minutes": 6
+        },
+        {
+          "step": "Write the harness loop: run the task, and on fail, append one new 'lesson' sentence to the prompt string before the next attempt — no model weights change, only the prompt.",
+          "minutes": 10
+        },
+        {
+          "step": "Run 5-8 iterations and print the prompt's growth and the pass/fail history side by side, so you can see the exact moment the accumulated lessons flip a failing run into a passing one.",
+          "minutes": 9
+        }
+      ],
+      "done_looks_like": "A printed run log showing the prompt string getting longer each failed attempt, and a clear line marking the lesson that is the one that makes the next run pass — all driven by string edits, never a weight update.",
+      "stretch_goal": "Swap the stand-in task function for a real Claude API call (anthropic SDK) that must satisfy some rubric, and watch the harness write its own system-prompt fixes against a real model's mistakes.",
+      "tools": [
+        "Python 3 stdlib only (no installs)",
+        "optional: anthropic Python SDK for the real-call stretch goal"
+      ]
+    }
   }
 ]

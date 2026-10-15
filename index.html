@@ -542,7 +542,28 @@ footer.site-footer {
 </div>
 <div class="build-block">
 <h3 class="build-heading">Build idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch">Build a toy Harness² — a loop that rewrites its own prompt between tasks instead of retraining anything.</p>
+<div class="build-meta">
+  <span class="badge badge-category">paper-reimplementation</span>
+</div>
+<p class="build-why"><strong>Why:</strong> Reimplements the core mechanic behind today&#x27;s Harness² story — an agent that carries lessons forward by editing its own prompt between tasks, with zero weight updates. Turning &#x27;rewrites its prompts and carries lessons forward&#x27; into actual code makes it concrete instead of a one-line repo blurb.</p>
+<ol class="build-plan">
+  <li class="build-step">
+    <span class="step-text">Write one tiny &#x27;task&#x27; function that takes a prompt string and returns pass/fail based on whether the prompt contains a required keyword — a stand-in for a real agent call, this is your toy environment.</span>
+    <span class="step-minutes">6 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Write the harness loop: run the task, and on fail, append one new &#x27;lesson&#x27; sentence to the prompt string before the next attempt — no model weights change, only the prompt.</span>
+    <span class="step-minutes">10 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Run 5-8 iterations and print the prompt&#x27;s growth and the pass/fail history side by side, so you can see the exact moment the accumulated lessons flip a failing run into a passing one.</span>
+    <span class="step-minutes">9 min</span>
+  </li>
+</ol>
+<p class="build-done"><strong>Done looks like:</strong> A printed run log showing the prompt string getting longer each failed attempt, and a clear line marking the lesson that is the one that makes the next run pass — all driven by string edits, never a weight update.</p>
+<p class="build-stretch"><strong>Stretch goal:</strong> Swap the stand-in task function for a real Claude API call (anthropic SDK) that must satisfy some rubric, and watch the harness write its own system-prompt fixes against a real model&#x27;s mistakes.</p>
+<p class="build-tools"><strong>Tools:</strong> Python 3 stdlib only (no installs), optional: anthropic Python SDK for the real-call stretch goal</p>
 </div>
   </section>
 <section class="archive-wrapper">
