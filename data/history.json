@@ -6933,5 +6933,138 @@
         "optional: scipy.stats.binomtest to cross-check your own math"
       ]
     }
+  },
+  {
+    "date": "2026-10-15",
+    "reading": {
+      "intro": "Thursday, and TLDR AI's new edition anchored the day alongside two Latent Space posts out of this week's AI Engineer New York conference. Towards Data Science's Wednesday digest added a complementary piece on agent design (its other pieces were tutorial-grade, not news, and left off). The Rundown's only email in the window was a \"we miss you\" win-back nudge, not content — skipped. Tech Brew's body came through scrambled again, same as yesterday, with nothing else to go on — skipped. The New Stack, DeepLearning.AI, and Import AI didn't send anything new in the window.",
+      "items": [
+        {
+          "title": "Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents",
+          "url": "https://www.latent.space/p/crossing-the-threshold",
+          "source": "Latent Space",
+          "why": "Three different takes on the same problem — letting agents act with real autonomy in finance without losing control — compared side by side (OpenAI, Anthropic, Two Sigma, Bloomberg) from this week's AI Engineer NY conference; the clearest throughline is that safety comes from where you put controls, not how many you impose.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Agent observability on the Claude platform",
+          "url": "https://claude.com/resources/articles/agent-observability-on-the-claude-platform",
+          "source": "Anthropic (via TLDR AI)",
+          "why": "Anthropic wired OpenTelemetry into Claude Managed Agents, the Messages API, and the SDKs — a concrete step toward agents whose production behavior is debuggable in the same dashboards as everything else, rather than a black box.",
+          "minutes": 3,
+          "skip_ok": false
+        },
+        {
+          "title": "Your Agent Doesn't Need More Freedom",
+          "url": "https://towardsdatascience.com/your-agent-doesnt-need-more-freedom/",
+          "source": "Towards Data Science",
+          "why": "A pointed counter to the instinct to just give agents more autonomy — pairs directly with the finance-agent piece above, which reaches the same conclusion (controls and structure, not freedom) from the enterprise side.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Google Harness² for recursive self-improvement",
+          "url": "https://github.com/google-research/harness2",
+          "source": "Google Research (via TLDR AI)",
+          "why": "Instead of retraining the model, Harness² lets an agent rewrite its own prompts, tools, memory, and orchestration between tasks and carry the lessons forward — a cheap, weight-free form of self-improvement worth watching as RSI research heats up.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "More Agents, Same Mythical Month",
+          "url": "https://links.tldrnewsletter.com/caghQc",
+          "source": "TLDR AI",
+          "why": "AI has made producing code cheap, which just moves software delivery's bottleneck to deciding, verifying, and coordinating — adding more agents won't fix weak coordination any more than adding more developers ever did.",
+          "minutes": 15,
+          "skip_ok": true
+        },
+        {
+          "title": "Grok Voice 3.0",
+          "url": "https://x.ai/news/grok-voice-3",
+          "source": "xAI",
+          "why": "xAI's newest speech-to-speech model claims sub-second latency and is already fielding roughly 20,000 Starlink support calls a day — a real-world scale test for voice agents, even if the benchmark numbers are self-reported.",
+          "minutes": 3,
+          "skip_ok": false
+        },
+        {
+          "title": "Analyzing technical documents with Deep Review",
+          "url": "https://research.google/blog/analyzing-technical-documents-with-deep-review/",
+          "source": "Google (via TLDR AI)",
+          "why": "Google's agent for rigorous document critique started with CS papers and is expanding into other domains — one more sign that \"AI reviewer\" is becoming its own product category rather than a research demo.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "Lab-in-the-Loop at Compute Speed — Ian Quigley, Leash Bio",
+          "url": "https://www.latent.space/p/lab-in-the-loop-at-compute-speed",
+          "source": "Latent Space",
+          "why": "Leash Bio turned years of painstakingly cleaned DNA-encoded-library data into Minos, a sandbox where agents do verifiable scientific reasoning — a concrete, already-released (preprint, blog, open dataset) example of AI-for-bio rather than another promise.",
+          "minutes": 10,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "At AI Engineer New York, what phrase did OpenAI's Joseph Kim use for the point where a model becomes capable and reliable enough to save you time?",
+          "a": "The \"threshold of usefulness\""
+        },
+        {
+          "q": "According to Two Sigma's John Feminella, what's the risk of \"approval fatigue\"?",
+          "choices": [
+            "It speeds up every decision",
+            "A person approving everything can both slow innovation down and miss important risks, since they're not fully attending to every call",
+            "It has no real downside",
+            "It only ever affects junior staff"
+          ],
+          "a": "A person approving everything can both slow innovation down and miss important risks, since they're not fully attending to every call"
+        },
+        {
+          "q": "Name the three steps in Anthropic's \"trust layer\" for financial agents, as Keon Shahab described them.",
+          "a": "An identity & permissions layer (who the agent is acting as), a sandbox/approval layer (someone signs off before it acts), and ongoing verification that it still works as variables change over time."
+        },
+        {
+          "q": "What new capability did Claude Managed Agents, the Messages API, and the Claude SDKs gain, per today's agent-observability item?",
+          "a": "The ability to send OpenTelemetry (OTel) traces to any standard OTel/OTLP-compatible tool."
+        },
+        {
+          "q": "Google's Harness² lets an agent iteratively improve its prompts, tools, memory, and orchestration — without doing what?",
+          "choices": [
+            "Without any human ever reviewing it",
+            "Without changing the model's weights",
+            "Without using version control",
+            "Without logging any of its actions"
+          ],
+          "a": "Without changing the model's weights"
+        },
+        {
+          "q": "Per \"More Agents, Same Mythical Month,\" AI making code cheap to produce just shifts software delivery's bottleneck to what?",
+          "a": "Deciding, verifying, and coordinating — not writing the code itself."
+        },
+        {
+          "q": "What is Grok Voice 3.0 mainly being pitched for, and what's its headline latency claim?",
+          "a": "Customer-support voice agents; xAI claims sub-second (under one second) response latency."
+        },
+        {
+          "q": "Google's Deep Review agent was originally built to analyze what kind of documents, before expanding into other domains?",
+          "a": "Computer science academic papers."
+        },
+        {
+          "q": "The Towards Data Science piece argues agents get better mainly from more of what, not more freedom?",
+          "choices": [
+            "More autonomy",
+            "More structure and well-designed constraints",
+            "More parameters",
+            "A bigger context window"
+          ],
+          "a": "More structure and well-designed constraints"
+        },
+        {
+          "q": "What is Minos, the project teased in the Leash Bio interview, and in what form was it released?",
+          "a": "An AI sandbox where agents do verifiable scientific reasoning over Leash's DNA-encoded-library data (a \"lab-in-the-loop\" RL setup); released today as a preprint, a blog post, and an open dataset."
+        }
+      ]
+    },
+    "build": null
   }
 ]
