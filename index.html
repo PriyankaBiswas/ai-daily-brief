@@ -541,9 +541,34 @@ footer.site-footer {
 </div>
 <div class="build-block">
 <h3 class="build-heading">Build idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch">Pull real neuron activations from Neuronpedia&#x27;s public API and decide for yourself: clean like Cammarata says, or messy like Nanda says?</p>
+<div class="build-meta">
+  <span class="badge badge-category">API-exploration</span>
 </div>
-  </section>
+<p class="build-why"><strong>Why:</strong> Today&#x27;s top reading item is the &#x27;Neural Networks Are Already Clean&#x27; essay and Neel Nanda&#x27;s immediate pushback on it — instead of taking either side&#x27;s word for it, you pull a handful of real GPT-2 neuron activation records from Neuronpedia&#x27;s API and look at the actual text snippets that fire them, then make your own call on which neurons read as one clean concept versus a polysemantic grab-bag.</p>
+<ol class="build-plan">
+  <li class="build-step">
+    <span class="step-text">Skim Neuronpedia&#x27;s API docs (api.neuronpedia.org) for the GET endpoint that returns a feature/neuron&#x27;s top-activating text examples — no auth needed for read lookups.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Pick 4-5 neuron/feature IDs from GPT-2-small (any layer) and fetch each one&#x27;s top-activating examples with a couple lines of `requests`.</span>
+    <span class="step-minutes">10 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Read through the activating snippets for each neuron. For each, call it: one clean concept, or a grab-bag of unrelated triggers.</span>
+    <span class="step-minutes">10 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Tally your clean-vs-messy count and compare it against Cammarata&#x27;s &#x27;mostly legible&#x27; claim and Nanda&#x27;s &#x27;still expect superposition&#x27; pushback.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+</ol>
+<p class="build-done"><strong>Done looks like:</strong> A short script (or notebook cell) that prints 4-5 neurons each with their top 3-5 activating text snippets, plus your one-line verdict per neuron (clean / messy) and a final tally.</p>
+<p class="build-stretch"><strong>Stretch goal:</strong> Pick one neuron you called &#x27;clean&#x27; and try to write an adversarial prompt that makes it fire for a completely unrelated concept — see if you can falsify your own monosemantic call.</p>
+<p class="build-tools"><strong>Tools:</strong> Python, requests, Neuronpedia API (api.neuronpedia.org), GPT-2-small</p>
+</div>
+</section>
 <section class="archive-wrapper">
 <details class="archive-root">
 <summary class="archive-toggle-label">Archive</summary>
