@@ -7090,5 +7090,138 @@
         "optional: anthropic Python SDK for the real-call stretch goal"
       ]
     }
+  },
+  {
+    "date": "2026-10-16",
+    "reading": {
+      "intro": "Friday, and TLDR AI's new edition and the AI News digest (both from the Latent Space/swyx circle) covered a lot of the same ground — a Meta open-weight release, a notable interpretability essay, and Microsoft's pre-training stack — so the overlap got collapsed into single entries citing whichever source had more depth. Tech Brew's body came through scrambled again, same pattern as the last two days, with nothing else to go on — skipped. The Rundown, Towards Data Science, The New Stack, DeepLearning.AI, and Import AI didn't send anything new in the window. No reply landed on yesterday's email, so no recap to carry forward.",
+      "items": [
+        {
+          "title": "Meta releases Muse Spark Open, its top-scoring US open-weight model",
+          "url": "https://research.meta.ai/blog/muse-spark-open",
+          "source": "Meta (via TLDR AI / AI News)",
+          "why": "An 816B-parameter, 42B-active MoE with a 1M-token context window that runs locally on two Mac Studios — scores below China's top open models on agentic tasks but Lambert says it halves the US-China open-weight gap, and the restrictive custom license is already drawing criticism.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "\"Neural Networks Are Already Clean\": a major interpretability essay, and the pushback it drew",
+          "url": "https://already-clean.goodfire.com/",
+          "source": "Goodfire / Nick Cammarata (via AI News / TLDR AI)",
+          "why": "Cammarata argues most neurons in models up to trillion-scale are legible and that famous polysemanticity examples were misread — a big deal if it holds, since it would mean networks can be studied directly instead of untangled first; Neel Nanda and others immediately pushed back, so treat it as contested rather than settled.",
+          "minutes": 15,
+          "skip_ok": false
+        },
+        {
+          "title": "Inside Microsoft's frontier pre-training stack (MAI-Base-2)",
+          "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/",
+          "source": "Microsoft AI (via TLDR AI)",
+          "why": "A rare deep dive into a lab's actual pre-training stack — data strategy, compute efficiency, infrastructure — for a ~3T-parameter base model Microsoft claims matches DeepSeek-V4-Pro-Base on code with 12x less training compute (a claim others note uses Microsoft's own validation data).",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic gives METR independent, employee-like access to its safety work",
+          "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+          "source": "Anthropic (via TLDR AI)",
+          "why": "A concrete step toward outside verification of frontier-lab safety claims — METR gets access to models, training info, and safeguards to independently assess and publish risk findings, rather than relying on Anthropic's own self-reporting.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "Open-weight models now take 71.5% of AI Gateway tokens and 23% of spend",
+          "url": "https://vercel.com/blog/ai-gateway-production-index-october-2026",
+          "source": "Vercel (via TLDR AI)",
+          "why": "Open-weight's share of spend has more than quadrupled since June and almost one in three teams switched their most-used lab in September — real production-traffic evidence that the open-vs-closed gap is closing faster than model-release headlines alone suggest.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Perplexity open-sources SPACE, its agent sandbox",
+          "url": "https://www.perplexity.ai/hub/blog/open-sourcing-space",
+          "source": "Perplexity (via TLDR AI / AI News)",
+          "why": "An Apache-2.0 sandbox that runs each agent task in its own Firecracker microVM with credentials and egress controlled from outside the VM — in 108 logged escape attempts by models with root inside the VM, none reached the host, a useful concrete reference point for anyone building agent sandboxes.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "\"Mo' Turns, Mo' Problems\": why agentic RL is harder than it sounds",
+          "url": "https://ianbarber.blog/2026/10/15/mo-turns-mo-problems/",
+          "source": "TLDR AI",
+          "why": "The core RL loop (set up a harness, let the model call tools, score it, update weights) is simple in principle, but subagents, parallel tool calls, and context compaction quietly push real agentic trajectories off-policy — a clear explanation of a problem that's easy to hand-wave past.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "How Codex happened",
+          "url": "https://every.to/p/how-codex-happened",
+          "source": "Every (via TLDR AI)",
+          "why": "The inside story of how OpenAI's Codex went from a failed cloud launch to a 40-million-weekly-user product — a useful case study in how coding-agent products actually find their footing versus how they're pitched at launch.",
+          "minutes": 10,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "How many total and active parameters does Meta's Muse Spark Open have?",
+          "a": "816B total parameters, 42B active (it's a mixture-of-experts model)."
+        },
+        {
+          "q": "What does Nathan Lambert say Muse Spark Open's release does to the US-China open-weight model gap?",
+          "a": "Roughly cuts it in half."
+        },
+        {
+          "q": "What is Nick Cammarata's central claim in \"Neural Networks Are Already Clean\"?",
+          "choices": [
+            "Most neurons are fundamentally unknowable",
+            "Most neurons in models up to trillion-scale are legible, and many famous polysemanticity examples were misread",
+            "Interpretability research should stop entirely",
+            "Only small models can be interpreted"
+          ],
+          "a": "Most neurons in models up to trillion-scale are legible, and many famous polysemanticity examples were misread"
+        },
+        {
+          "q": "Who pushed back on that essay, and what's his core objection?",
+          "a": "Neel Nanda — he says it doesn't change his cruxes; he still expects representational superposition and believes weak activations carry memorized facts."
+        },
+        {
+          "q": "What compute-efficiency claim does Microsoft make about MAI-Base-2, and what caveat do outside observers attach to it?",
+          "a": "Microsoft claims it matches DeepSeek-V4-Pro-Base on held-out code with 12x less training compute; observers note the bits-per-byte comparison uses Microsoft's own validation data."
+        },
+        {
+          "q": "What kind of access did Anthropic give METR, per today's item?",
+          "choices": [
+            "Read-only access to published papers",
+            "Employee-like access to models, training information, and safeguards",
+            "Access only to marketing materials",
+            "No access, just a promise"
+          ],
+          "a": "Employee-like access to models, training information, and safeguards, to independently assess and publish risk findings."
+        },
+        {
+          "q": "Per Vercel's AI Gateway data, what share of gateway tokens and of spend do open-weight models now account for?",
+          "a": "71.5% of tokens and about 23% of spend."
+        },
+        {
+          "q": "What isolation technology does Perplexity's SPACE sandbox use to run each agent task, and what was the result of its escape testing?",
+          "a": "Firecracker microVMs; in 108 escape attempts by models with root access inside the VM, none reached the host."
+        },
+        {
+          "q": "According to \"Mo' Turns, Mo' Problems,\" what agent behaviors can quietly push trajectories off-policy even when the harness itself is consistent?",
+          "choices": [
+            "Slower GPUs",
+            "Subagent spawning, parallel tool calls, and context compaction",
+            "Using a different programming language",
+            "Smaller batch sizes"
+          ],
+          "a": "Subagent spawning, parallel tool calls, and context compaction"
+        },
+        {
+          "q": "Roughly how many weekly users had OpenAI's Codex gained, per \"How Codex Happened\"?",
+          "a": "Over 40 million weekly users."
+        }
+      ]
+    },
+    "build": null
   }
 ]
