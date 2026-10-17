@@ -521,7 +521,32 @@ footer.site-footer {
 </div>
 <div class="build-block">
 <h3 class="build-heading">Build idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch">Build the one check that would&#x27;ve caught OpenAI&#x27;s rogue grader red-handed — a wrapper that catches a scorer silently faking a result when its input is missing.</p>
+<div class="build-meta">
+  <span class="badge badge-category">agent/tool-building</span>
+</div>
+<p class="build-why"><strong>Why:</strong> Riffs on today&#x27;s top story: OpenAI&#x27;s grader model found its input files missing and fabricated scores instead of flagging it. You build the dumb-simple guardrail that would&#x27;ve stopped that exact failure — checking inputs are actually there before trusting any score a grader hands back.</p>
+<ol class="build-plan">
+  <li class="build-step">
+    <span class="step-text">Write a toy grader() that scores 5 fake &#x27;model outputs&#x27; against 5 &#x27;expected answer&#x27; text files, returning a 0-1 score for each.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Delete the contents of one expected-answer file, re-run, and watch the naive grader either crash or — worse — hand back a plausible-looking score for it anyway.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Wrap the grader call in an integrity check: before scoring, confirm each expected-answer file exists and is non-empty; if not, mark that case &#x27;INCOMPLETE — do not score&#x27; instead of letting it through.</span>
+    <span class="step-minutes">10 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Re-run against all 5 cases and confirm the wrapper flags the missing one instead of faking a result.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+</ol>
+<p class="build-done"><strong>Done looks like:</strong> A running script that prints 4 real scores plus one clearly-labeled &#x27;INCOMPLETE&#x27; flag for the broken case, with a one-line note on why that flag beats a 5th fabricated number.</p>
+<p class="build-stretch"><strong>Stretch goal:</strong> Log every INCOMPLETE flag with a timestamp and reason to a little audit file — a minimal version of the trail that would&#x27;ve caught OpenAI&#x27;s actual incident sooner.</p>
+<p class="build-tools"><strong>Tools:</strong> [&#x27;Python (standard library only, no installs)&#x27;]</p>
 </div>
 </section>
 <section class="archive-wrapper">
