@@ -7529,6 +7529,33 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Reimplement the 25-year crypto mystery Anthropic just cracked — recreate NIST's P-256 seed with nothing but glibc's lrand48 and a 1997 Unix timestamp.",
+      "category": "paper-reimplementation",
+      "why": "Riffs on today's top story: Anthropic's Frontier Red Team traced NIST's elliptic-curve seeds to lrand48 (glibc's RNG), seeded with a Unix timestamp, not a hash. You rebuild the actual mechanism — a 48-bit linear congruential generator — and run it forward from that same clock reading, so you see exactly how a 'random-looking' constant falls out of a timestamp and a loop counter.",
+      "plan": [
+        {
+          "step": "Look up glibc's lrand48 spec: a 48-bit LCG with multiplier 0x5DEECE66D and increment 0xB, seeded by srand48(seed) which places the seed in the top 32 bits.",
+          "minutes": 5
+        },
+        {
+          "step": "Implement srand48() and lrand48() from scratch in ~15 lines of pure Python (no libraries), and sanity-check the sequence against the well-documented seed=1 output.",
+          "minutes": 10
+        },
+        {
+          "step": "Compute the Unix timestamp for Aug 16, 1997, 01:52:34 with Python's datetime, seed your generator with it, run it forward 1,842 iterations like the article describes, and print the hex value at each step.",
+          "minutes": 7
+        },
+        {
+          "step": "Write one comment line: why a 'random-looking' 1990s cryptographic constant turning out to be clock-seeded LCG output is reassuring (less likely a hidden backdoor) but not proof of anything.",
+          "minutes": 3
+        }
+      ],
+      "done_looks_like": "A runnable lrand48_demo.py that reimplements glibc's lrand48 from scratch, seeds it with the real Aug 16 1997, 01:52:34 timestamp, and prints the hex output at iteration 1,842 — matching the shape of what Anthropic's Frontier Red Team found (exact-bit match would also need the historical glibc build, so don't chase that).",
+      "stretch_goal": "Brute-force a window of nearby timestamps (±1 hour) and iteration counts (1–5,000), and print every seed/iteration pair whose output starts with the same leading byte as a real published P-256 seed value — a tiny taste of the search space Anthropic's model had to narrow down.",
+      "tools": [
+        "Python 3 standard library only (datetime) — nothing to install"
+      ]
+    }
   }
 ]

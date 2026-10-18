@@ -368,7 +368,6 @@ footer.site-footer {
     font-size: 1.9rem;
   }
 }
-
 </style>
 </head>
 <body>
@@ -532,7 +531,32 @@ footer.site-footer {
 </div>
 <div class="build-block">
 <h3 class="build-heading">Build idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch">Reimplement the 25-year crypto mystery Anthropic just cracked — recreate NIST&#x27;s P-256 seed with nothing but glibc&#x27;s lrand48 and a 1997 Unix timestamp.</p>
+<div class="build-meta">
+  <span class="badge badge-category">paper-reimplementation</span>
+</div>
+<p class="build-why"><strong>Why:</strong> Riffs on today&#x27;s top story: Anthropic&#x27;s Frontier Red Team traced NIST&#x27;s elliptic-curve seeds to lrand48 (glibc&#x27;s RNG), seeded with a Unix timestamp, not a hash. You rebuild the actual mechanism — a 48-bit linear congruential generator — and run it forward from that same clock reading, so you see exactly how a &#x27;random-looking&#x27; constant falls out of a timestamp and a loop counter.</p>
+<ol class="build-plan">
+  <li class="build-step">
+    <span class="step-text">Look up glibc&#x27;s lrand48 spec: a 48-bit LCG with multiplier 0x5DEECE66D and increment 0xB, seeded by srand48(seed) which places the seed in the top 32 bits.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Implement srand48() and lrand48() from scratch in ~15 lines of pure Python (no libraries), and sanity-check the sequence against the well-documented seed=1 output.</span>
+    <span class="step-minutes">10 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Compute the Unix timestamp for Aug 16, 1997, 01:52:34 with Python&#x27;s datetime, seed your generator with it, run it forward 1,842 iterations like the article describes, and print the hex value at each step.</span>
+    <span class="step-minutes">7 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Write one comment line: why a &#x27;random-looking&#x27; 1990s cryptographic constant turning out to be clock-seeded LCG output is reassuring (less likely a hidden backdoor) but not proof of anything.</span>
+    <span class="step-minutes">3 min</span>
+  </li>
+</ol>
+<p class="build-done"><strong>Done looks like:</strong> A runnable lrand48_demo.py that reimplements glibc&#x27;s lrand48 from scratch, seeds it with the real Aug 16 1997, 01:52:34 timestamp, and prints the hex output at iteration 1,842 — matching the shape of what Anthropic&#x27;s Frontier Red Team found (exact-bit match would also need the historical glibc build, so don&#x27;t chase that).</p>
+<p class="build-stretch"><strong>Stretch goal:</strong> Brute-force a window of nearby timestamps (±1 hour) and iteration counts (1–5,000), and print every seed/iteration pair whose output starts with the same leading byte as a real published P-256 seed value — a tiny taste of the search space Anthropic&#x27;s model had to narrow down.</p>
+<p class="build-tools"><strong>Tools:</strong> Python 3 standard library only (datetime) — nothing to install</p>
 </div>
 </section>
 <section class="archive-wrapper">
