@@ -7401,5 +7401,134 @@
         "Python (standard library only, no installs)"
       ]
     }
+  },
+  {
+    "date": "2026-10-18",
+    "reading": {
+      "intro": "A five-day gap in the published site (Oct 13–17 had been generated but never made it to origin/main — a stuck push from an earlier run) is now closed; that backlog is live on the site as of today. On the news side, the newsletter drought continues: TLDR AI and Morning Brew still haven't sent anything usable in the last two days, so today's list leans entirely on Latent Space/swyx's AINews digest (covering Oct 15–17), checked against web search for anything it got wrong. No reply landed on yesterday's email, so no recap line today.",
+      "items": [
+        {
+          "title": "Four Gemini 4 Argon coding agents reportedly beat Minecraft's Ender Dragon, unaided, in 27 hours",
+          "url": "https://digg.com/tech/e8zpw5f2",
+          "source": "Digg, citing a Hugging Face write-up (via Latent Space/AINews)",
+          "why": "Four general-purpose coding agents, coordinating only through in-game chat and shared memory, allegedly wrote 2,783 programs and died 605 times before killing the dragon from a random spawn — with researchers watching but not steering. Flagging the caveat up front: this is aggregator coverage of a claimed Hugging Face post, not a DeepMind press release, and the \"Gemini 4 Argon\" name doesn't show up anywhere else independently verifiable. Fun if true, unconfirmed either way.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "China drafts export controls covering 23 AI technologies, from large models to agents",
+          "url": "https://www.itv.com/news/2026-10-16/china-moves-to-curb-tech-exports-including-for-ai-and-solar",
+          "source": "AP, via ITV News",
+          "why": "MOFCOM and MOST's draft catalogue would restrict exporting core tech for large models trained on sensitive national data, plus agents built for defense or critical infrastructure; models above roughly 2 trillion parameters could also face limits. An export-registration requirement already took effect immediately, while the restricted-technology list itself stays open for public comment until Nov 15. Already-open-sourced tech is exempted — worth watching for what it signals about future Chinese open-weight releases.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Claude Mythos 5 designs quantum circuits with up to 17x fewer gates than the best published versions",
+          "url": "https://interestingengineering.com/ai-robotics/claude-quantum-circuit-design",
+          "source": "Anthropic (STEM Fellows Program), via Interesting Engineering",
+          "why": "Working mostly on its own in a closed loop with an automated evaluator, Claude Mythos 5 beat the best previously published circuit designs on 7 of 8 computational primitives (chemistry, optimization, number theory, and more) — one design trades 12% more qubits for a 17x cut in gate count, and a decoder redesign cuts gates 12x versus Google's prior construction. It's a preprint (arXiv 2610.22367) with baselines from the paper's own tables, so treat the magnitude as Anthropic's own claim pending independent reproduction.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Investors reportedly cut Anthropic's IPO valuation target to ~$1.5T, down from ~$2T",
+          "url": "https://aiweekly.co/alerts/reuters-anthropic-ipo-investors-push-valuation-down-to-15t-from-2t-over-q3",
+          "source": "Reuters, via AI Weekly",
+          "why": "Investors at Anthropic's SF investor day are reportedly discussing $1.5T for the November share sale, a 25% haircut from the ~$2T figure the FT had floated for an October listing. Anthropic's Q3 revenue hit $16.8B (up 45% quarter-over-quarter) but growth slowed sharply after revenue more than doubled in Q2 — coverage ties the markdown to that deceleration plus rising AI-infrastructure costs. Anthropic is reportedly aiming to go public as soon as mid-November.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Claude traced NIST's 1990s elliptic-curve seeds to a timestamp-seeded RNG, not a hash",
+          "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+          "source": "Anthropic Frontier Red Team",
+          "why": "A 25-year-old open question in cryptography: where did NIST's P-192 through P-521 curve seeds actually come from? Anthropic's Frontier Red Team says an internal research model traced them to lrand48 (the C library's RNG) seeded with a Unix timestamp — for P-256, that's 1,842 iterations starting from a clock reading of Aug 16, 1997, 01:52:34. Anthropic is explicit this isn't a cryptographic break and doesn't rule out a backdoor, just makes one less plausible. The $36,864 bounty is going to the Internet Security Research Group.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "CoreWeave shares plunge as credit markets price in rising default risk",
+          "url": "https://letsdatascience.com/news/coreweave-slump-exposes-ai-infrastructure-debt-risks-2691f237",
+          "source": "Reuters/Bloomberg data, via Let's Data Science",
+          "why": "CoreWeave lost roughly a quarter of its value over the past week as its five-year credit-default-swap-implied odds climbed to around 60% (up from ~30% a year ago) and unsecured 2032 bonds traded below 80 cents on the dollar. It's the clearest market signal yet of unease over debt-funded AI-infrastructure buildouts. CEO Mike Intrator says the selloff misreads a company sitting on a $104B revenue backlog — worth watching whether that backlog actually converts to cash fast enough to matter to bondholders.",
+          "minutes": 6,
+          "skip_ok": false
+        }
+      ],
+      "quiz": [
+        {
+          "q": "How many hours did it reportedly take four Gemini 4 Argon coding agents to defeat Minecraft's Ender Dragon from a random spawn?",
+          "choices": [
+            "9h",
+            "18h",
+            "27h",
+            "40h"
+          ],
+          "a": "27h (27h14m)"
+        },
+        {
+          "q": "How many individual programs did the Minecraft agents reportedly write during the run?",
+          "a": "2,783"
+        },
+        {
+          "q": "How many AI-related technologies are included in China's draft export-control catalogue?",
+          "choices": [
+            "9",
+            "14",
+            "23",
+            "40"
+          ],
+          "a": "23 (out of 40 total technologies across AI, biomedicine, and photovoltaics)"
+        },
+        {
+          "q": "What is the deadline for public comment on China's draft export-control catalogue?",
+          "a": "November 15, 2026"
+        },
+        {
+          "q": "By what factor did Claude Mythos 5's best quantum-circuit redesign cut gate count versus the previous best published design?",
+          "choices": [
+            "2x",
+            "5x",
+            "12x",
+            "17x"
+          ],
+          "a": "17x (trading 12% more qubits for it)"
+        },
+        {
+          "q": "What Anthropic program did Andi Gu work through to lead the quantum-circuit research?",
+          "a": "Anthropic's STEM Fellows Program"
+        },
+        {
+          "q": "What valuation are some investors reportedly now considering for Anthropic's IPO, down from an earlier ~$2T expectation?",
+          "choices": [
+            "$500B",
+            "$965B",
+            "$1.5T",
+            "$1.8T"
+          ],
+          "a": "$1.5T"
+        },
+        {
+          "q": "What random-number generator did Claude trace the NIST elliptic-curve seeds back to?",
+          "a": "lrand48 (the C library's RNG), seeded with a Unix timestamp"
+        },
+        {
+          "q": "Roughly what five-year default probability have credit markets priced into CoreWeave's debt?",
+          "choices": [
+            "10%",
+            "30%",
+            "60%",
+            "90%"
+          ],
+          "a": "~60%"
+        },
+        {
+          "q": "What did CoreWeave's CEO point to as evidence the market is misreading the company's risk?",
+          "a": "Its $104 billion revenue backlog"
+        }
+      ]
+    },
+    "build": null
   }
 ]
