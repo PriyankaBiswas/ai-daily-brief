@@ -7702,6 +7702,38 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Hand an LLM a physics solution with one deliberately broken step and see if it catches the mistake — like Amodei's benchmark story, but in your own chat window.",
+      "category": "prompt-engineering",
+      "why": "Riffs on today's Import AI item: Amodei told the IMF that on a physics benchmark, a model's \"wrong\" answers turned out to be catching real errors in the human experts' own calculations. You'll test two prompt framings on the same flawed solution — an open \"is this right?\" vs. a structured step-by-step grading prompt — and see which one actually catches the error. It's a hands-on way to feel why prompt framing changes whether a model plays along with a mistake or flags it.",
+      "plan": [
+        {
+          "step": "Pick a simple calc (projectile motion, unit conversion, compound interest) and solve it correctly by hand or with a calculator.",
+          "minutes": 5
+        },
+        {
+          "step": "Rewrite it with one deliberate error buried in a middle step (a sign flip, a skipped squaring, a wrong unit conversion) — keep the final answer looking plausible.",
+          "minutes": 5
+        },
+        {
+          "step": "Prompt A: paste problem + flawed solution, ask only \"is this correct?\" Note whether it catches the error.",
+          "minutes": 5
+        },
+        {
+          "step": "Prompt B: same flawed solution, but ask it to grade step-by-step and name the exact line if something's wrong. Compare catch rate against Prompt A.",
+          "minutes": 10
+        },
+        {
+          "step": "Write 2-3 sentences on which framing caught the error more reliably, and why you think that framing wins.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "Two prompts run against the same flawed solution, with a clear verdict on which framing — open \"is this right?\" vs. structured step-by-step grading — actually caught the embedded error.",
+      "stretch_goal": "Repeat with 2-3 different error types (arithmetic slip, wrong formula, wrong units) and see whether the winning framing holds up across all of them, or flips.",
+      "tools": [
+        "Claude.ai or ChatGPT (any chat UI, no API needed)",
+        "calculator or pen/paper to build the flawed solution"
+      ]
+    }
   }
 ]
