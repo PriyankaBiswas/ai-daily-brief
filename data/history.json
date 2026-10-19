@@ -7557,5 +7557,151 @@
         "Python 3 standard library only (datetime) — nothing to install"
       ]
     }
+  },
+  {
+    "date": "2026-10-19",
+    "reading": {
+      "intro": "Thin newsletter day: of the usual seven sources, only TLDR AI and Import AI had sent anything new in the last 24–36h — Towards Data Science, Morning Brew, The New Stack, The Rundown, deeplearning.ai, and Latent Space were all quiet (The Rundown is still just sending unsubscribe nags). That was still enough material for a full ranked list; no web-search gap-filling was needed today. No reply landed on yesterday's email, so no recap line.",
+      "items": [
+        {
+          "title": "Dario Amodei tells the IMF the singularity has begun",
+          "url": "https://importai.substack.com/p/import-ai-477-in-which-i-tell-the",
+          "source": "Import AI 477 (Jack Clark), publishing Amodei's Oct 17 IMF speech",
+          "why": "Amodei's case, in full: AI-driven science is already landing real breakthroughs (Navier–Stokes, open Erdős problems, AI-designed drugs in trials), Humanity's Last Exam went from an 8% top score in Jan 2025 to 67.7% now, and Anthropic's own modeling puts US GDP at $44T by 2030 under fast-diffusion assumptions. The sharpest anecdote: on a physics benchmark built from unpublished problems, the model's \"wrong\" answers turned out to be catching real errors buried in the human experts' own calculations.",
+          "source_short": "Import AI",
+          "minutes": 12,
+          "skip_ok": false
+        },
+        {
+          "title": "How AI is reshaping Anthropic's own workforce",
+          "url": "https://www.anthropic.com/research/employment-at-anthropic",
+          "source": "Anthropic research (via TLDR AI)",
+          "why": "Anthropic's internal numbers: entry-level hires fell from 27% to 9% of technical hiring since early 2025, even as staff report real productivity gains from Claude. The candid part is that the gains shifted work toward supervising agents, making human attention — not headcount — the new bottleneck. Worth reading next to the IMF speech above.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Replit drops Anthropic as its default AI provider, switches to OpenAI",
+          "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
+          "source": "TechCrunch (via TLDR AI)",
+          "why": "CEO Amjad Masad frames it as cost, performance, and partnership terms rather than a falling-out, and says Claude is still selectable in Replit Agent. Small data point, but notable given how tightly Replit Agent and Claude had been associated.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic commits an initial 5% of its equity to a new Public Benefit Fund",
+          "url": "https://www.anthropic.com/news/public-benefit-fund",
+          "source": "Anthropic (via TLDR AI)",
+          "why": "Further contributions scale with valuation growth; the fund targets AI's economic and labor impacts — the same tension the workforce story above documents in Anthropic's own hiring data.",
+          "minutes": 3,
+          "skip_ok": false
+        },
+        {
+          "title": "How the Claude Code team restructured code review to handle more volume",
+          "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+          "source": "Anthropic engineering blog (via TLDR AI)",
+          "why": "Continuous review, automated verification passes, and a tiered risk system that only escalates to a human reviewer past a threshold. A practical read if you're thinking about how review processes hold up once an agent is generating most of the diff.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "DeepSeek ships V4.1-Flash plus Search and Fetch APIs for agents",
+          "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+          "source": "Hugging Face + DeepSeek API docs (via TLDR AI)",
+          "why": "The new Flash model pairs cross-layer KV-cache reuse with FP4 caching to cut its per-token KV footprint to 890 bytes — about 1/8 of the prior Flash — while improving reasoning, coding, and agentic scores. Alongside it, new raw-JSON Search and Fetch APIs (live web results; single-page-to-Markdown) aimed squarely at RAG and agent builders.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI is reportedly testing a new \"Aurora\" image model in blind arena tests",
+          "url": "https://www.testingcatalog.com/openai-possibly-testing-gpt-image-3/",
+          "source": "TestingCatalog (via TLDR AI)",
+          "why": "Three model refs — aurora-red/green/blue-alpha — briefly surfaced in OpenAI's API and arena tests over the weekend, possibly GPT Image 3. Early read: the faster variant is lower quality and the slower one looks better, the usual speed/quality tradeoff these lab leaks tend to show.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "A \"Benchmark Map\" finds 90% of American work hours aren't covered by any AI benchmark",
+          "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
+          "source": "Mercor Labor Index (via TLDR AI)",
+          "why": "An attempt to map AI capability benchmarks against how Americans actually spend their working hours — and the gap is the finding: the vast majority of real work has little or no benchmark coverage, a useful caution against reading leaderboard scores as a proxy for real-world economic impact.",
+          "minutes": 12,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Amodei's IMF speech, what was the top score on Humanity's Last Exam when it launched in January 2025?",
+          "choices": [
+            "2%",
+            "8%",
+            "23%",
+            "45%"
+          ],
+          "a": "8%"
+        },
+        {
+          "q": "What physics benchmark did Amodei cite, where the AI model ended up with a higher score because it caught errors in the human experts' own calculations?",
+          "a": "TheoPhysEval"
+        },
+        {
+          "q": "Under the \"singularity-esque\" assumptions Anthropic modeled, what US GDP figure does Amodei cite for 2030?",
+          "choices": [
+            "$22T",
+            "$30T",
+            "$44T",
+            "$60T"
+          ],
+          "a": "$44 trillion"
+        },
+        {
+          "q": "According to Anthropic's own workforce research, what did entry-level hiring fall from and to, as a share of technical hires, since early 2025?",
+          "a": "From 27% to 9%"
+        },
+        {
+          "q": "Why did Replit's CEO say the company switched its default AI provider away from Anthropic?",
+          "choices": [
+            "A legal dispute",
+            "Cost, performance, and partnership considerations",
+            "Anthropic discontinued the API",
+            "A security incident"
+          ],
+          "a": "Cost, performance, and partnership considerations"
+        },
+        {
+          "q": "What did Anthropic commit an initial 5% of to its new Public Benefit Fund?",
+          "a": "Its equity"
+        },
+        {
+          "q": "DeepSeek-V4.1-Flash's new caching approach cuts its persistent KV-cache footprint to roughly what fraction of the prior DeepSeek-V4-Flash?",
+          "choices": [
+            "1/2",
+            "1/4",
+            "1/8",
+            "1/16"
+          ],
+          "a": "1/8"
+        },
+        {
+          "q": "What are the names of the two new raw-JSON APIs DeepSeek shipped for agents and RAG applications?",
+          "a": "Search API and Fetch API"
+        },
+        {
+          "q": "What is the rumored codename for the OpenAI image model spotted in blind arena tests this weekend?",
+          "choices": [
+            "Aurora",
+            "Eclipse",
+            "Nova",
+            "Helios"
+          ],
+          "a": "Aurora"
+        },
+        {
+          "q": "Per the Benchmark Map project, roughly what share of American working hours are spent on tasks with little or no AI-benchmark coverage?",
+          "a": "~90%"
+        }
+      ]
+    },
+    "build": null
   }
 ]
