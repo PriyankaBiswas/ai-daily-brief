@@ -554,7 +554,32 @@ footer.site-footer {
 </div>
 <div class="build-block">
 <h3 class="build-heading">Build idea</h3>
-<p class="build-pending">Build idea lands at 11:30am.</p>
+<p class="build-pitch">Build the two-panel demo that makes Clairic&#x27;s &#x27;can&#x27;t hallucinate a plausible sentence&#x27; claim visible — confident extraction vs. plausible-sounding guesswork, side by side.</p>
+<div class="build-meta">
+  <span class="badge badge-category">UI-for-AI</span>
+</div>
+<p class="build-why"><strong>Why:</strong> Riffs on today&#x27;s Cloudflare/Clairic item: an &#x27;extraction model&#x27; returns calibrated values with a confidence score instead of generating tokens, so it can still be wrong but can&#x27;t dress a wrong answer up as a plausible sentence. You&#x27;ll build a tiny static page that puts both failure modes side by side on the same five inputs, so the asymmetry Cloudflare describes stops being an abstract claim and becomes something you can click through.</p>
+<ol class="build-plan">
+  <li class="build-step">
+    <span class="step-text">Write 5 short unstructured snippets (a receipt, a shipping confirmation, a support email, etc.) each with one true value you want pulled out (a total, a date, a tracking number).</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Build the static HTML page: a dropdown to pick a snippet, and two panels — &#x27;Generated answer&#x27; (a plausible-sounding guess) and &#x27;Extracted value&#x27; (the real value plus a hand-set confidence score 0-100%).</span>
+    <span class="step-minutes">8 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">For 2 of the 5 snippets, deliberately make the &#x27;generated answer&#x27; confidently wrong while the &#x27;extracted value&#x27; panel shows a low confidence score flagging the same uncertainty.</span>
+    <span class="step-minutes">7 min</span>
+  </li>
+  <li class="build-step">
+    <span class="step-text">Wire up the dropdown with plain JS so switching snippets swaps both panels, and add a color-coded bar (green/yellow/red) for the confidence score.</span>
+    <span class="step-minutes">5 min</span>
+  </li>
+</ol>
+<p class="build-done"><strong>Done looks like:</strong> Clicking through all 5 snippets, the two wrong cases show a generated answer that still reads fine on its own, right next to a confidence score low enough that you&#x27;d know to double-check it — the exact asymmetry Cloudflare&#x27;s post is describing, made visible instead of described.</p>
+<p class="build-stretch"><strong>Stretch goal:</strong> Swap the hand-set confidence score on one snippet for a real heuristic (e.g. regex-match strength, or a one-line check like &#x27;does this parse as a date/number at all&#x27;) so that one score is computed, not eyeballed.</p>
+<p class="build-tools"><strong>Tools:</strong> plain HTML/CSS/JS (no build step, no API key), Python&#x27;s re module (stretch goal only)</p>
 </div>
 </section>
 <section class="archive-wrapper">
@@ -9784,6 +9809,7 @@ footer.site-footer {
 </div>
 </details>
 </section>
+
 <footer class="site-footer">Generated daily &middot; <a href="https://github.com/PriyankaBiswas/ai-daily-brief" style="color:inherit;">source</a></footer>
 </div>
 </body>

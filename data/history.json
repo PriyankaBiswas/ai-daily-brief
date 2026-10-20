@@ -7879,6 +7879,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build the two-panel demo that makes Clairic's 'can't hallucinate a plausible sentence' claim visible — confident extraction vs. plausible-sounding guesswork, side by side.",
+      "category": "UI-for-AI",
+      "why": "Riffs on today's Cloudflare/Clairic item: an 'extraction model' returns calibrated values with a confidence score instead of generating tokens, so it can still be wrong but can't dress a wrong answer up as a plausible sentence. You'll build a tiny static page that puts both failure modes side by side on the same five inputs, so the asymmetry Cloudflare describes stops being an abstract claim and becomes something you can click through.",
+      "plan": [
+        {
+          "step": "Write 5 short unstructured snippets (a receipt, a shipping confirmation, a support email, etc.) each with one true value you want pulled out (a total, a date, a tracking number).",
+          "minutes": 5
+        },
+        {
+          "step": "Build the static HTML page: a dropdown to pick a snippet, and two panels — 'Generated answer' (a plausible-sounding guess) and 'Extracted value' (the real value plus a hand-set confidence score 0-100%).",
+          "minutes": 8
+        },
+        {
+          "step": "For 2 of the 5 snippets, deliberately make the 'generated answer' confidently wrong while the 'extracted value' panel shows a low confidence score flagging the same uncertainty.",
+          "minutes": 7
+        },
+        {
+          "step": "Wire up the dropdown with plain JS so switching snippets swaps both panels, and add a color-coded bar (green/yellow/red) for the confidence score.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "Clicking through all 5 snippets, the two wrong cases show a generated answer that still reads fine on its own, right next to a confidence score low enough that you'd know to double-check it — the exact asymmetry Cloudflare's post is describing, made visible instead of described.",
+      "stretch_goal": "Swap the hand-set confidence score on one snippet for a real heuristic (e.g. regex-match strength, or a one-line check like 'does this parse as a date/number at all') so that one score is computed, not eyeballed.",
+      "tools": [
+        "plain HTML/CSS/JS (no build step, no API key)",
+        "Python's re module (stretch goal only)"
+      ]
+    }
   }
 ]
