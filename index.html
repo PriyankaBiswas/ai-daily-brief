@@ -380,7 +380,197 @@ footer.site-footer {
   </header>
 
 <section class="today-section">
-<h2 class="day-date">October 19, 2026</h2>
+<h2 class="day-date">October 20, 2026</h2>
+<div class="intro"><p>Thin pickings from the usual seven sources, but two deliveries landed after yesterday&#x27;s send went out: TLDR AI&#x27;s Tuesday edition and a trailing Monday-night Towards Data Science issue. The common thread is models getting weirder, not just bigger — Gemini 4 Argon&#x27;s output ceiling jumping to 1M tokens, a diffusion model (Mercury 3) beating autoregressive rivals on speed and quality, and Cloudflare&#x27;s Clairic skipping token generation entirely in favor of calibrated extracted values. Underneath it, the buildout keeps compounding: Meta&#x27;s gigawatt-scale Prometheus cluster and another $45B Anthropic/Nscale compute deal stacked on top of last month&#x27;s $45B one. Newsletters covering today&#x27;s items: TLDR AI, Towards Data Science. No reply landed on yesterday&#x27;s email, so no recap line.</p></div>
+<ol class="reading-list">
+<li class="reading-item">
+  <div class="item-head">
+    <a class="item-title" href="https://ai.google.dev/gemini-api/docs/models/gemini-4-argon" target="_blank" rel="noopener">Gemini 4 Argon&#x27;s output ceiling jumps to 1M tokens</a>
+    <div class="item-badges">
+<span class="badge badge-source">Google AI docs (via Towards Data Science)</span>
+<span class="badge badge-minutes">5 min</span>
+<span class="badge badge-core">core</span>
+    </div>
+  </div>
+  <p class="item-why">Argon&#x27;s max output length rises to roughly 1,048,576 tokens, up from the 64K ceiling on earlier Gemini models and well past the 128K output caps most frontier labs ship with. The jump matters less for chat and more for anything that needs a single unbroken generation — a full codebase refactor, a book-length document, a huge structured extraction — without stitching together multiple calls.</p>
+</li>
+<li class="reading-item">
+  <div class="item-head">
+    <a class="item-title" href="https://www.inceptionlabs.ai/blog/introducing-mercury-3" target="_blank" rel="noopener">Mercury 3: Inception Labs&#x27; diffusion model claims to beat GPT-6 Luna and Claude Haiku 5.5</a>
+    <div class="item-badges">
+<span class="badge badge-source">Inception Labs (via TLDR AI)</span>
+<span class="badge badge-minutes">6 min</span>
+<span class="badge badge-core">core</span>
+    </div>
+  </div>
+  <p class="item-why">Mercury 3 generates by iteratively refining the whole output in parallel (diffusion) rather than token-by-token (autoregressive), and Inception reports it beating both named rivals on multiple benchmarks while producing over 1,000 tokens/second. If the quality claim holds up independently, it&#x27;s a signal that diffusion LMs are closing the quality gap with autoregressive models, not just winning on raw speed.</p>
+</li>
+<li class="reading-item">
+  <div class="item-head">
+    <a class="item-title" href="https://blog.cloudflare.com/clairic-extraction-model" target="_blank" rel="noopener">Introducing Clairic, a new class of &#x27;extraction model&#x27;</a>
+    <div class="item-badges">
+<span class="badge badge-source">Cloudflare (via TLDR AI)</span>
+<span class="badge badge-minutes">8 min</span>
+<span class="badge badge-core">core</span>
+    </div>
+  </div>
+  <p class="item-why">Clairic doesn&#x27;t generate tokens at all — it extracts, computes, estimates, or forecasts values directly from unstructured input and returns them with a confidence score. Positioned as a different failure mode than an LLM: it can still be wrong, but it can&#x27;t hallucinate a plausible-sounding sentence the way a token-generating model can, which makes the confidence score a more honest signal of when to double-check it.</p>
+</li>
+<li class="reading-item">
+  <div class="item-head">
+    <a class="item-title" href="https://www.minimax.io/blog/minimax-m31f" target="_blank" rel="noopener">MiniMax M3.1 Flash: redefining agent performance and cost</a>
+    <div class="item-badges">
+<span class="badge badge-source">MiniMax (via TLDR AI)</span>
+<span class="badge badge-minutes">5 min</span>
+<span class="badge badge-skip">skip ok</span>
+    </div>
+  </div>
+  <p class="item-why">MiniMax reports roughly 3x faster online inference and a 70% cost cut versus its predecessor on agentic tasks, coding, Computer Use, and cybersecurity benchmarks — available now via the MiniMax API, M Plan, and MiniMax Code, with open weights to follow later. Another data point in the broader &#x27;agentic coding models are getting both faster and cheaper&#x27; trend this month.</p>
+</li>
+<li class="reading-item">
+  <div class="item-head">
+    <a class="item-title" href="https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/" target="_blank" rel="noopener">Inside Meta&#x27;s gigawatt-scale AI supercluster</a>
+    <div class="item-badges">
+<span class="badge badge-source">Meta Engineering (via TLDR AI)</span>
+<span class="badge badge-minutes">10 min</span>
+<span class="badge badge-skip">skip ok</span>
+    </div>
+  </div>
+  <p class="item-why">A detailed look at Prometheus, the gigawatt-scale cluster behind Meta&#x27;s Muse model family: infrastructure design, a stated roadmap toward roughly one million GPUs, and closed-loop liquid cooling. Useful as a concrete sense of what &#x27;the buildout&#x27; actually looks like in physical infrastructure terms, beyond the usual headline compute-deal dollar figures.</p>
+</li>
+<li class="reading-item">
+  <div class="item-head">
+    <a class="item-title" href="https://research.contrary.com/report/ai-benchmarks-climbing-the-wrong-hills" target="_blank" rel="noopener">AI benchmarks: climbing the wrong hills</a>
+    <div class="item-badges">
+<span class="badge badge-source">Contrary Research (via TLDR AI)</span>
+<span class="badge badge-minutes">14 min</span>
+<span class="badge badge-core">core</span>
+    </div>
+  </div>
+  <p class="item-why">An analysis of how benchmarks now shape not just how models are evaluated but how they&#x27;re trained — meaning a poorly constructed benchmark can actively steer the industry toward the wrong capabilities. The piece argues &#x27;benchmaxxing&#x27; is already widespread and that building benchmarks resistant to it requires real expertise in measuring what you actually want, not just what&#x27;s easy to score. Good context for reading any single benchmark claim (including several in today&#x27;s list) with appropriate skepticism.</p>
+</li>
+<li class="reading-item">
+  <div class="item-head">
+    <a class="item-title" href="https://exa.ai/blog/exa-3" target="_blank" rel="noopener">Introducing Exa 3.0</a>
+    <div class="item-badges">
+<span class="badge badge-source">Exa (via TLDR AI)</span>
+<span class="badge badge-minutes">4 min</span>
+<span class="badge badge-skip">skip ok</span>
+    </div>
+  </div>
+  <p class="item-why">Exa&#x27;s own crawler/index now tracks over 2 trillion URLs and serves 100B+ pages, with a new Exa Lite search tier at $4 per 1,000 requests. Exa 3.0 leads its own evaluations on coding, finance, deep research, and company-intelligence search — relevant if you&#x27;re building anything that needs a search backend rather than relying on a general web-search API.</p>
+</li>
+<li class="reading-item">
+  <div class="item-head">
+    <a class="item-title" href="https://techcrunch.com/2026/10/19/nscale-and-anthropic-are-reportedly-in-talks-for-yet-another-45-billion-compute-deal/" target="_blank" rel="noopener">Nscale and Anthropic reportedly in talks for yet another $45B compute deal</a>
+    <div class="item-badges">
+<span class="badge badge-source">TechCrunch (via TLDR AI)</span>
+<span class="badge badge-minutes">3 min</span>
+<span class="badge badge-skip">skip ok</span>
+    </div>
+  </div>
+  <p class="item-why">This would stack on top of the $45B compute deal the two companies announced barely a month ago, even as Nscale faces investor pushback over its own $30B valuation ask and both companies pursue IPOs. Worth tracking as one more data point on how much capital is flowing into compute commitments relative to anything resembling near-term revenue.</p>
+</li>
+</ol>
+<div class="quiz-block">
+<h3 class="quiz-heading">Recall quiz</h3>
+<ol class="quiz-list">
+<li class="quiz-item">
+  <p class="quiz-q">What capability jump does Gemini 4 Argon introduce?</p>
+  <ul class="quiz-choices">
+<li>A 1M-token output ceiling</li>
+<li>Real-time voice conversation</li>
+<li>A permanently free API tier</li>
+<li>Fully open model weights</li>
+  </ul>
+</li>
+<li class="quiz-item">
+  <p class="quiz-q">What two named rivals does Inception Labs say Mercury 3 beats on multiple benchmarks?</p>
+</li>
+<li class="quiz-item">
+  <p class="quiz-q">What generation approach does Mercury 3 use instead of token-by-token autoregression?</p>
+  <ul class="quiz-choices">
+<li>Diffusion</li>
+<li>Mixture-of-experts routing</li>
+<li>Recurrent state-space modeling</li>
+<li>Retrieval-augmented decoding</li>
+  </ul>
+</li>
+<li class="quiz-item">
+  <p class="quiz-q">What makes Cloudflare&#x27;s Clairic fundamentally different from a typical LLM, per today&#x27;s item?</p>
+  <ul class="quiz-choices">
+<li>It generates no tokens, returning extracted/computed values with a confidence score</li>
+<li>It only runs on-device with no API</li>
+<li>It is trained exclusively on code</li>
+<li>It requires no inference hardware</li>
+  </ul>
+</li>
+<li class="quiz-item">
+  <p class="quiz-q">Roughly how much faster and cheaper does MiniMax say M3.1 Flash is than its predecessor on agentic tasks?</p>
+</li>
+<li class="quiz-item">
+  <p class="quiz-q">What is the name of Meta&#x27;s gigawatt-scale AI supercluster detailed today, and what model family does it support?</p>
+</li>
+<li class="quiz-item">
+  <p class="quiz-q">Meta&#x27;s Prometheus writeup states a roadmap toward roughly how many GPUs?</p>
+  <ul class="quiz-choices">
+<li>100,000</li>
+<li>500,000</li>
+<li>1 million</li>
+<li>10 million</li>
+  </ul>
+</li>
+<li class="quiz-item">
+  <p class="quiz-q">According to the &#x27;Climbing the Wrong Hills&#x27; piece, what&#x27;s the core risk of a poorly constructed AI benchmark?</p>
+</li>
+<li class="quiz-item">
+  <p class="quiz-q">What&#x27;s new in Exa 3.0&#x27;s product lineup, and what does it cost?</p>
+  <ul class="quiz-choices">
+<li>Exa Lite, a cheaper search tier at $4 per 1,000 requests</li>
+<li>A free unlimited search tier</li>
+<li>A built-in chat UI</li>
+<li>An image-generation endpoint</li>
+  </ul>
+</li>
+<li class="quiz-item">
+  <p class="quiz-q">The newly reported Nscale/Anthropic compute deal is worth roughly how much, and how does it relate to their prior deal?</p>
+</li>
+</ol>
+<details class="answers">
+<summary>🔒 Answers</summary>
+<ol class="answer-key">
+  <li>A 1M-token output ceiling</li>
+  <li>GPT-6 Luna and Claude Haiku 5.5</li>
+  <li>Diffusion</li>
+  <li>It generates no tokens, returning extracted/computed values with a confidence score</li>
+  <li>About 3x faster online inference and 70% lower cost</li>
+  <li>Prometheus, supporting the Muse model family</li>
+  <li>1 million</li>
+  <li>It can steer model training/development toward the wrong capabilities (&#x27;benchmaxxing&#x27;) rather than real progress</li>
+  <li>Exa Lite, a cheaper search tier at $4 per 1,000 requests</li>
+  <li>About $45B, stacked on top of a $45B deal the two companies announced about a month earlier</li>
+</ol>
+</details>
+</div>
+<div class="build-block">
+<h3 class="build-heading">Build idea</h3>
+<p class="build-pending">Build idea lands at 11:30am.</p>
+</div>
+</section>
+<section class="archive-wrapper">
+<details class="archive-root">
+<summary class="archive-toggle-label">Archive</summary>
+<div class="archive-root-content">
+<details class="archive-year">
+<summary>2026</summary>
+<details class="archive-month">
+<summary>October</summary>
+<details class="archive-week">
+<summary>Week of Oct 19 – 25</summary>
+<details class="archive-day">
+<summary>Mon, Oct 19</summary>
+<div class="archive-day-content">
+<h4 class="day-date">October 19, 2026</h4>
 <div class="intro"><p>Thin newsletter day: of the usual seven sources, only TLDR AI and Import AI had sent anything new in the last 24–36h — Towards Data Science, Morning Brew, The New Stack, The Rundown, deeplearning.ai, and Latent Space were all quiet (The Rundown is still just sending unsubscribe nags). That was still enough material for a full ranked list; no web-search gap-filling was needed today. No reply landed on yesterday&#x27;s email, so no recap line.</p></div>
 <ol class="reading-list">
 <li class="reading-item">
@@ -585,15 +775,9 @@ footer.site-footer {
 <p class="build-stretch"><strong>Stretch goal:</strong> Repeat with 2-3 different error types (arithmetic slip, wrong formula, wrong units) and see whether the winning framing holds up across all of them, or flips.</p>
 <p class="build-tools"><strong>Tools:</strong> Claude.ai or ChatGPT (any chat UI, no API needed), calculator or pen/paper to build the flawed solution</p>
 </div>
-</section>
-<section class="archive-wrapper">
-<details class="archive-root">
-<summary class="archive-toggle-label">Archive</summary>
-<div class="archive-root-content">
-<details class="archive-year">
-<summary>2026</summary>
-<details class="archive-month">
-<summary>October</summary>
+</div>
+</details>
+</details>
 <details class="archive-week">
 <summary>Week of Oct 12 – 18</summary>
 <details class="archive-day">
