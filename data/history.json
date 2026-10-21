@@ -8038,6 +8038,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build the 'You Should Know' mod in miniature — one Claude call that decides whether a wall of text hides something you'd want flagged.",
+      "category": "API-exploration",
+      "why": "Reimplements the core move in today's top story, the Claude Mods piece: an \"Attention Interface\" that decides what gets surfaced to you and when. Instead of reading about the built-in 'You Should Know' mod, you build the smallest possible version of it — a single API call that reads a tool-output-shaped blob of text and either stays silent or flags the one fact worth your attention.",
+      "plan": [
+        {
+          "step": "pip install anthropic, grab your API key, and write 4 short sample 'tool outputs' as plain strings: one with an irreversible action buried in it (e.g. a force-push or a payment), one with a cost/deadline, one that's just noisy log output, one that's genuinely boring.",
+          "minutes": 8
+        },
+        {
+          "step": "Write a one-line system prompt: 'Given this tool output, is there one fact the user would be upset to learn about later if nobody told them? Reply with just that fact, or the single word NONE.'",
+          "minutes": 5
+        },
+        {
+          "step": "Loop over the 4 samples, call client.messages.create() once per sample, print each result under its input.",
+          "minutes": 7
+        },
+        {
+          "step": "Check the results: does it flag the force-push and the cost/deadline, and correctly say NONE for the boring and noisy ones? Tweak the prompt once if it over- or under-flags.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A ~20-line Python script that prints 4 inputs each followed by either a flagged one-liner or NONE — and gets all 4 right on your own test cases.",
+      "stretch_goal": "Wire it into an actual Claude Code PreToolUse hook so it runs on real tool_use blocks before they execute, not just your canned samples.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "Claude Messages API"
+      ]
+    }
   }
 ]

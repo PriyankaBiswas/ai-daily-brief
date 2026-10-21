@@ -563,7 +563,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The part of the harness that decides what the agent shows you and when</li><li><span class="quiz-q-num">2.</span> You Should Know</li><li><span class="quiz-q-num">3.</span> The open-sourced inference framework powering DeepSeek&#x27;s own production services</li><li><span class="quiz-q-num">4.</span> NVIDIA SM100 GPUs or Huawei Ascend 950 NPUs</li><li><span class="quiz-q-num">5.</span> Native eager execution and torch.compile support for Google&#x27;s TPUs</li><li><span class="quiz-q-num">6.</span> Physical settlement</li><li><span class="quiz-q-num">7.</span> They have too much of their own cloud/inference business at stake — they wouldn&#x27;t be independent enough for others to trust and trade on</li><li><span class="quiz-q-num">8.</span> Likely true, but mainly due to limited model capability rather than strong safeguards — and current evals may miss rising risk</li><li><span class="quiz-q-num">9.</span> Story points / paying for delivered work rather than hours worked</li><li><span class="quiz-q-num">10.</span> Laminar, built in about six weeks</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">API-exploration</span>
+      </div>
+      <p class="build-pitch">Build the &#x27;You Should Know&#x27; mod in miniature — one Claude call that decides whether a wall of text hides something you&#x27;d want flagged.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Reimplements the core move in today&#x27;s top story, the Claude Mods piece: an &quot;Attention Interface&quot; that decides what gets surfaced to you and when. Instead of reading about the built-in &#x27;You Should Know&#x27; mod, you build the smallest possible version of it — a single API call that reads a tool-output-shaped blob of text and either stays silent or flags the one fact worth your attention.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">pip install anthropic, grab your API key, and write 4 short sample &#x27;tool outputs&#x27; as plain strings: one with an irreversible action buried in it (e.g. a force-push or a payment), one with a cost/deadline, one that&#x27;s just noisy log output, one that&#x27;s genuinely boring.</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Write a one-line system prompt: &#x27;Given this tool output, is there one fact the user would be upset to learn about later if nobody told them? Reply with just that fact, or the single word NONE.&#x27;</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Loop over the 4 samples, call client.messages.create() once per sample, print each result under its input.</span>
+            <span class="badge badge-mono">7 min</span></li><li><span class="plan-step">Check the results: does it flag the force-push and the cost/deadline, and correctly say NONE for the boring and noisy ones? Tweak the prompt once if it over- or under-flags.</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A ~20-line Python script that prints 4 inputs each followed by either a flagged one-liner or NONE — and gets all 4 right on your own test cases.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Wire it into an actual Claude Code PreToolUse hook so it runs on real tool_use blocks before they execute, not just your canned samples.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Anthropic Python SDK (anthropic)</li><li>Claude Messages API</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
