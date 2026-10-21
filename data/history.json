@@ -7908,5 +7908,136 @@
         "Python's re module (stretch goal only)"
       ]
     }
+  },
+  {
+    "date": "2026-10-21",
+    "reading": {
+      "intro": "Latent Space dominates today — three separate posts out of swyx's AI Engineer New York coverage, plus a harness-design essay — alongside TLDR AI's usual grab bag. Two threads tie it together: the agent harness is quietly becoming a platform (Claude Mods let you program how Claude pays attention to you; Ramp built its own in-house agent harness, Laminar, in six weeks), while the physical and financial plumbing under AI keeps getting built out (SF Compute's nascent GPU futures market; DeepSeek open-sourcing the inference stack behind its own production service). METR's review of Anthropic's own risk report is the one item worth reading slowly. Newsletters covering today's items: TLDR AI, Latent Space.",
+      "items": [
+        {
+          "title": "Claude Mods: Flipping the Harness Inside Out",
+          "url": "https://www.latent.space/p/claude-mods",
+          "source": "Latent Space (swyx)",
+          "why": "Argues the Claude Code harness is splitting in two: the part facing the machine (tool calls, file edits) and a new part facing the human — the \"Attention Interface\" that decides what you get shown and when. Claude Mods are small JS/TS plugins (some, like \"You Should Know,\" already built into Claude Code and off by default) that let you program that second part yourself, including having Claude write the mod for you. Direct, practical read on where the tool you're using every day is headed.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "DeepSeek open-sources DeepInfer, the inference framework behind its own production service",
+          "url": "https://github.com/deepseek-ai/DeepInfer",
+          "source": "GitHub (via TLDR AI)",
+          "why": "This is the engine DeepSeek itself runs in production — not a new model, but the serving stack underneath V4.1-Flash, released as an offline-inference version that runs on NVIDIA SM100 GPUs or Huawei Ascend 950 NPUs. A companion deep-dive (linked in TLDR) claims the full stack processes 155 trillion tokens/day per cluster at $38 revenue per GPU-hour — a rare look at the economics behind a frontier lab's own inference bill.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Google and Meta bring native PyTorch support to TPUs",
+          "url": "https://pytorch.org/blog/introducing-torchtpu/",
+          "source": "PyTorch blog (via TLDR AI)",
+          "why": "TorchTPU is a new open-source PyTorch backend for Google's TPUs, with optimized eager execution, torch.compile integration, and native hardware acceleration for both training and inference. Matters mainly if you're on PyTorch and have been locked into CUDA/GPU-only workflows — it's a real crack in that wall.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "The Programmable Data Center — Evan Conrad, SF Compute",
+          "url": "https://www.latent.space/p/sfcompute2",
+          "source": "Latent Space (swyx, podcast + transcript)",
+          "why": "A genuinely detailed look at what it takes to make GPU compute a tradeable commodity: SF Compute's core bet is \"physical settlement\" (buyers get usable compute, not a cash-settled index number), and Conrad walks through why nobody with an existing cloud or inference business — not NVIDIA, not the hyperscalers — can build a neutral exchange without killing their own margins. The hotel-operator analogy for how compute resale forces you into running a full cloud stack is the clearest explanation of this space I've read.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "METR's review of Anthropic's \"Misalignment in High-Stakes Settings\" risk report",
+          "url": "https://metr.org/blog/2026-10-20-misalignment-risk-report-august-2026-review/",
+          "source": "METR (via TLDR AI)",
+          "why": "METR, acting as an independent evaluator, largely agrees current models' misalignment risk is low — but attributes that to limited capability rather than robust safeguards, and flags that existing evals may not catch rising risk or a model's ability to deceive Anthropic's own monitoring. Cites real incidents of undetected misalignment as evidence the current risk framework has gaps. The most substantive safety read of the week.",
+          "minutes": 12,
+          "skip_ok": false
+        },
+        {
+          "title": "Building Laminar: Ramp's in-house managed agents platform",
+          "url": "https://builders.ramp.com/post/building-laminar",
+          "source": "Ramp Builders blog (via TLDR AI)",
+          "why": "Ramp's write-up on Laminar, the agent harness it built for its own agentic products: conversation history storage, session compaction, subagents, multiplayer chat, observability — built in six weeks by a small team, with its code generated almost entirely by the agents it now runs. Useful as a concrete \"what does a serious in-house agent harness actually contain\" reference.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "AI for the Fortune 2000: How Tenex Builds an AI-Native SDLC",
+          "url": "https://www.latent.space/p/tenex",
+          "source": "Latent Space (swyx, podcast + transcript)",
+          "why": "Tenex pays engineers for delivered work rather than hours — betting that as AI makes coding faster, hourly billing actively punishes speed. The harder problem they're wrestling with: how to compensate work that doesn't fit a ticket (understanding the customer's problem, architecture decisions), which is where their \"MetaHarness\" (plans and decisions checked into git alongside code) comes in.",
+          "minutes": 7,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the \"Attention Interface\" that Claude Mods let you program?",
+          "choices": [
+            "The model's training data pipeline",
+            "The part of the harness that decides what the agent shows you and when",
+            "The GPU allocation scheduler",
+            "Claude's pricing tier"
+          ],
+          "a": "The part of the harness that decides what the agent shows you and when"
+        },
+        {
+          "q": "Name the built-in Claude Code mod, off by default, that flags information you're likely to miss.",
+          "a": "You Should Know"
+        },
+        {
+          "q": "What is DeepInfer?",
+          "choices": [
+            "A new DeepSeek foundation model",
+            "The open-sourced inference framework powering DeepSeek's own production services",
+            "A GPU chip design from DeepSeek",
+            "A compute marketplace"
+          ],
+          "a": "The open-sourced inference framework powering DeepSeek's own production services"
+        },
+        {
+          "q": "What hardware does DeepInfer support for running DeepSeek-V4.1-Flash?",
+          "a": "NVIDIA SM100 GPUs or Huawei Ascend 950 NPUs"
+        },
+        {
+          "q": "What does TorchTPU add to the PyTorch ecosystem?",
+          "choices": [
+            "Native eager execution and torch.compile support for Google's TPUs",
+            "A new tokenizer format",
+            "Official AMD GPU support",
+            "A built-in RL library"
+          ],
+          "a": "Native eager execution and torch.compile support for Google's TPUs"
+        },
+        {
+          "q": "What term does SF Compute's Evan Conrad use for ensuring a buyer actually receives usable compute, rather than just a cash payment against an index?",
+          "a": "Physical settlement"
+        },
+        {
+          "q": "Per Conrad, why can't NVIDIA or the hyperscalers build a neutral GPU compute exchange themselves?",
+          "a": "They have too much of their own cloud/inference business at stake — they wouldn't be independent enough for others to trust and trade on"
+        },
+        {
+          "q": "What did METR conclude about Anthropic's claim that current misalignment risk is low?",
+          "choices": [
+            "It's correct and robustly demonstrated by safeguards",
+            "Likely true, but mainly due to limited model capability rather than strong safeguards — and current evals may miss rising risk",
+            "METR says the claim is definitely wrong",
+            "METR declined to review the report"
+          ],
+          "a": "Likely true, but mainly due to limited model capability rather than strong safeguards — and current evals may miss rising risk"
+        },
+        {
+          "q": "What compensation mechanism does Tenex still rely on for engineers, even as AI makes coding faster?",
+          "a": "Story points / paying for delivered work rather than hours worked"
+        },
+        {
+          "q": "What is Ramp's in-house agent harness called, and roughly how long did its first version take to build?",
+          "a": "Laminar, built in about six weeks"
+        }
+      ]
+    },
+    "build": null
   }
 ]
