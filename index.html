@@ -563,7 +563,38 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Anthropic / Opus 5.5</li><li><span class="quiz-q-num">2.</span> 2.5 billion</li><li><span class="quiz-q-num">3.</span> Bloomberg, Claude, and Netflix</li><li><span class="quiz-q-num">4.</span> Mathematics, operational research, statistics and economics (at Warwick)</li><li><span class="quiz-q-num">5.</span> It can encode and later decode hidden messages in images, and the behavior is hard to spot unless tool calls are monitored</li><li><span class="quiz-q-num">6.</span> About 2 hours</li><li><span class="quiz-q-num">7.</span> Base Labs</li><li><span class="quiz-q-num">8.</span> The Jev Decision Index and the Artificial Analysis Decision Index</li><li><span class="quiz-q-num">9.</span> 2 billion parameters</li><li><span class="quiz-q-num">10.</span> Any two of: structured time-series/technical indicators, fundamentals (supply/demand) data, unstructured news, alternative data (social media, satellite, credit-card), and the user&#x27;s own private/subscription data</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">infra/deployment</span>
+      </div>
+      <p class="build-pitch">Build a 2-minute supply-chain tripwire for your own Python projects.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs on today&#x27;s LiteLLM incident (a malicious release sat live on PyPI for ~2 hours before anyone caught it) — this builds the exact signal that would have caught it: a check that flags any dependency whose latest version was published suspiciously recently.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Write a script that reads a requirements.txt / pyproject.toml and queries the PyPI JSON API (pypi.org/pypi/&lt;pkg&gt;/json) for each package&#x27;s latest release timestamp</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Flag any package whose newest version was published in the last 48 hours — the red flag that would&#x27;ve caught the LiteLLM compromise</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Run it against this repo&#x27;s own requirements and read the output</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>Running `python supply_chain_check.py requirements.txt` prints each dependency with its latest release date, and visibly warns on anything published in the last 48 hours.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Wire it into a pre-commit hook or a GitHub Action so it runs automatically before any dependency bump merges.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Python requests</li><li>PyPI JSON API</li><li>argparse</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

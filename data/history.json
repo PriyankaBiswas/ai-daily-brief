@@ -8203,6 +8203,31 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a 2-minute supply-chain tripwire for your own Python projects.",
+      "category": "infra/deployment",
+      "why": "Riffs on today's LiteLLM incident (a malicious release sat live on PyPI for ~2 hours before anyone caught it) — this builds the exact signal that would have caught it: a check that flags any dependency whose latest version was published suspiciously recently.",
+      "plan": [
+        {
+          "step": "Write a script that reads a requirements.txt / pyproject.toml and queries the PyPI JSON API (pypi.org/pypi/<pkg>/json) for each package's latest release timestamp",
+          "minutes": 10
+        },
+        {
+          "step": "Flag any package whose newest version was published in the last 48 hours — the red flag that would've caught the LiteLLM compromise",
+          "minutes": 8
+        },
+        {
+          "step": "Run it against this repo's own requirements and read the output",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "Running `python supply_chain_check.py requirements.txt` prints each dependency with its latest release date, and visibly warns on anything published in the last 48 hours.",
+      "stretch_goal": "Wire it into a pre-commit hook or a GitHub Action so it runs automatically before any dependency bump merges.",
+      "tools": [
+        "Python requests",
+        "PyPI JSON API",
+        "argparse"
+      ]
+    }
   }
 ]
