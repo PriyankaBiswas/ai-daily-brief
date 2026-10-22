@@ -8067,5 +8067,142 @@
         "Claude Messages API"
       ]
     }
+  },
+  {
+    "date": "2026-10-22",
+    "reading": {
+      "intro": "TLDR AI anchors today with Claude Duet — Anthropic's first proactive, always-on agent — plus a cluster of smaller launches: a from-scratch local coding model, a supply-chain scare in LiteLLM that got contained fast, two new decision-model benchmarks, and a 2-billion-parameter model that operates Android apps directly. Latent Space adds a fintech deep-dive on building AI for commodity traders, and a LessWrong post on models hiding messages inside images rounds out the research side.",
+      "items": [
+        {
+          "title": "Claude Duet",
+          "url": "https://claude.com/resources/articles/claude-duet",
+          "source": "TLDR AI",
+          "why": "Anthropic's first proactive agent: it monitors your connected apps, prioritizes what needs attention, and works autonomously while still asking approval before certain actions — a meaningfully different interaction model than chat-and-respond Claude.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Introducing Flint",
+          "url": "https://recursive.com/updates/introducing-recursive-flint",
+          "source": "TLDR AI",
+          "why": "A 40B-parameter MoE (2.5B active) built by a small team in under four months, tuned for fast agentic coding entirely on local hardware — worth seeing as a data point on how cheap a capable local coding model has gotten to build.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "The Recommendation Engine for Commodity Traders — Anekha Sokhal, Moshi",
+          "url": "https://www.latent.space/p/the-recommendation-engine-for-commodity",
+          "source": "Latent Space",
+          "why": "A former JPMorgan energy derivatives trader explains Moshi, her \"Bloomberg + Claude + Netflix\" recommendation engine for traders — a concrete look at how recommendation systems and trusted-source scoring get built for a high-stakes, data-flooded workflow.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "How does Fable 5.1 hide messages in images?",
+          "url": "https://www.lesswrong.com/posts/WHEQps5PK8LrrcTAb/how-does-fable-5-1-hide-messages-in-images",
+          "source": "LessWrong (via TLDR AI)",
+          "why": "Fable 5.1 can encode messages into images and decode them later with no information about the encoding passed back in — and the behavior is only obvious if you're watching tool calls. An early, concrete steganography-in-images capability worth knowing about.",
+          "minutes": 15,
+          "skip_ok": true
+        },
+        {
+          "title": "CONTAINED: Oct 21, 2026 LiteLLM release v1.107.0 compromised",
+          "url": "https://docs.litellm.ai/blog/security-incident-oct-21-2026",
+          "source": "LiteLLM (via TLDR AI)",
+          "why": "A malicious LiteLLM package sat live on PyPI for roughly two hours before being pulled. If you depend on LiteLLM anywhere, worth five minutes to confirm you're not on the affected version.",
+          "minutes": 11,
+          "skip_ok": false
+        },
+        {
+          "title": "Mammoth-1 and Elephant-1: Frontier Decision Models",
+          "url": "https://labs.baseten.co/articles/mammoth-1-and-elephant-1-frontier-decision-models",
+          "source": "Baseten Labs (via TLDR AI)",
+          "why": "Base Labs' two new decision models top the Jev Decision Index and Artificial Analysis Decision Index — a different benchmark axis (decision quality, not just reasoning/coding) that's getting its own model category.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "Computer use on the phone itself: a 2B model that operates Android apps",
+          "url": "https://getopposable.com/blog/computer-use-on-the-phone",
+          "source": "Opposable (via TLDR AI)",
+          "why": "GUI-Owl 1.5 is a 2B-parameter screen model that reads an Android screen through the accessibility service and taps/types in any app — computer-use shrunk small enough to run on-device rather than in the cloud.",
+          "minutes": 4,
+          "skip_ok": false
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What company released Claude Duet, and what underlying model powers it?",
+          "choices": [
+            "Anthropic / Opus 5.5",
+            "OpenAI / GPT-5.6 Sol",
+            "Google / Gemini 4 Argon",
+            "Recursive / Flint"
+          ],
+          "a": "Anthropic / Opus 5.5"
+        },
+        {
+          "q": "Recursive Flint has 40 billion total parameters. How many does it activate per token?",
+          "a": "2.5 billion"
+        },
+        {
+          "q": "In the Latent Space interview, Anekha Sokhal describes Moshi as what three companies' baby?",
+          "choices": [
+            "Bloomberg, Claude, and Netflix",
+            "Reuters, OpenAI, and Spotify",
+            "JPMorgan, Google, and TikTok",
+            "Bloomberg, Codex, and Instagram"
+          ],
+          "a": "Bloomberg, Claude, and Netflix"
+        },
+        {
+          "q": "What was Anekha Sokhal's academic background before she traded energy derivatives at JPMorgan?",
+          "a": "Mathematics, operational research, statistics and economics (at Warwick)"
+        },
+        {
+          "q": "What does the LessWrong post report about Fable 5.1 and images?",
+          "choices": [
+            "It can encode and later decode hidden messages in images, and the behavior is hard to spot unless tool calls are monitored",
+            "It refuses to process any image-based tasks",
+            "It cannot generate or read images at all",
+            "It leaks raw training data whenever shown an image"
+          ],
+          "a": "It can encode and later decode hidden messages in images, and the behavior is hard to spot unless tool calls are monitored"
+        },
+        {
+          "q": "How long was the malicious LiteLLM v1.107.0 package live on PyPI before it was pulled?",
+          "a": "About 2 hours"
+        },
+        {
+          "q": "Which company released the Mammoth-1 and Elephant-1 decision models?",
+          "choices": [
+            "Base Labs",
+            "Baseten",
+            "DeepSeek",
+            "Recursive"
+          ],
+          "a": "Base Labs"
+        },
+        {
+          "q": "What two benchmarks do Mammoth-1 and Elephant-1 reportedly top?",
+          "a": "The Jev Decision Index and the Artificial Analysis Decision Index"
+        },
+        {
+          "q": "GUI-Owl 1.5 operates Android apps directly on a phone. How large is the model?",
+          "choices": [
+            "2 billion parameters",
+            "40 billion parameters",
+            "175 billion parameters",
+            "7 billion parameters"
+          ],
+          "a": "2 billion parameters"
+        },
+        {
+          "q": "Name two of the data types Moshi's recommendation engine processes for a trader's portfolio.",
+          "a": "Any two of: structured time-series/technical indicators, fundamentals (supply/demand) data, unstructured news, alternative data (social media, satellite, credit-card), and the user's own private/subscription data"
+        }
+      ]
+    },
+    "build": null
   }
 ]

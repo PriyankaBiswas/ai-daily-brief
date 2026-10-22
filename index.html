@@ -462,8 +462,126 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Wednesday, October 21, 2026</h2>
-    <div class="day-content"><p class="day-intro">Latent Space dominates today — three separate posts out of swyx&#x27;s AI Engineer New York coverage, plus a harness-design essay — alongside TLDR AI&#x27;s usual grab bag. Two threads tie it together: the agent harness is quietly becoming a platform (Claude Mods let you program how Claude pays attention to you; Ramp built its own in-house agent harness, Laminar, in six weeks), while the physical and financial plumbing under AI keeps getting built out (SF Compute&#x27;s nascent GPU futures market; DeepSeek open-sourcing the inference stack behind its own production service). METR&#x27;s review of Anthropic&#x27;s own risk report is the one item worth reading slowly. Newsletters covering today&#x27;s items: TLDR AI, Latent Space.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Thursday, October 22, 2026</h2>
+    <div class="day-content"><p class="day-intro">TLDR AI anchors today with Claude Duet — Anthropic&#x27;s first proactive, always-on agent — plus a cluster of smaller launches: a from-scratch local coding model, a supply-chain scare in LiteLLM that got contained fast, two new decision-model benchmarks, and a 2-billion-parameter model that operates Android apps directly. Latent Space adds a fintech deep-dive on building AI for commodity traders, and a LessWrong post on models hiding messages inside images rounds out the research side.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener">Claude Duet</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Anthropic&#x27;s first proactive agent: it monitors your connected apps, prioritizes what needs attention, and works autonomously while still asking approval before certain actions — a meaningfully different interaction model than chat-and-respond Claude.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://recursive.com/updates/introducing-recursive-flint" target="_blank" rel="noopener">Introducing Flint</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">A 40B-parameter MoE (2.5B active) built by a small team in under four months, tuned for fast agentic coding entirely on local hardware — worth seeing as a data point on how cheap a capable local coding model has gotten to build.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.latent.space/p/the-recommendation-engine-for-commodity" target="_blank" rel="noopener">The Recommendation Engine for Commodity Traders — Anekha Sokhal, Moshi</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Latent Space</div>
+          <p class="item-why">A former JPMorgan energy derivatives trader explains Moshi, her &quot;Bloomberg + Claude + Netflix&quot; recommendation engine for traders — a concrete look at how recommendation systems and trusted-source scoring get built for a high-stakes, data-flooded workflow.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.lesswrong.com/posts/WHEQps5PK8LrrcTAb/how-does-fable-5-1-hide-messages-in-images" target="_blank" rel="noopener">How does Fable 5.1 hide messages in images?</a>
+            <span class="badge badge-mono">15 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">LessWrong (via TLDR AI)</div>
+          <p class="item-why">Fable 5.1 can encode messages into images and decode them later with no information about the encoding passed back in — and the behavior is only obvious if you&#x27;re watching tool calls. An early, concrete steganography-in-images capability worth knowing about.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://docs.litellm.ai/blog/security-incident-oct-21-2026" target="_blank" rel="noopener">CONTAINED: Oct 21, 2026 LiteLLM release v1.107.0 compromised</a>
+            <span class="badge badge-mono">11 min</span>
+          </div>
+          <div class="item-source">LiteLLM (via TLDR AI)</div>
+          <p class="item-why">A malicious LiteLLM package sat live on PyPI for roughly two hours before being pulled. If you depend on LiteLLM anywhere, worth five minutes to confirm you&#x27;re not on the affected version.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://labs.baseten.co/articles/mammoth-1-and-elephant-1-frontier-decision-models" target="_blank" rel="noopener">Mammoth-1 and Elephant-1: Frontier Decision Models</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Baseten Labs (via TLDR AI)</div>
+          <p class="item-why">Base Labs&#x27; two new decision models top the Jev Decision Index and Artificial Analysis Decision Index — a different benchmark axis (decision quality, not just reasoning/coding) that&#x27;s getting its own model category.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://getopposable.com/blog/computer-use-on-the-phone" target="_blank" rel="noopener">Computer use on the phone itself: a 2B model that operates Android apps</a>
+            <span class="badge badge-mono">4 min</span>
+          </div>
+          <div class="item-source">Opposable (via TLDR AI)</div>
+          <p class="item-why">GUI-Owl 1.5 is a 2B-parameter screen model that reads an Android screen through the accessibility service and taps/types in any app — computer-use shrunk small enough to run on-device rather than in the cloud.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What company released Claude Duet, and what underlying model powers it?</p>
+          <ul class="quiz-choices"><li>Anthropic / Opus 5.5</li><li>OpenAI / GPT-5.6 Sol</li><li>Google / Gemini 4 Argon</li><li>Recursive / Flint</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Recursive Flint has 40 billion total parameters. How many does it activate per token?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the Latent Space interview, Anekha Sokhal describes Moshi as what three companies&#x27; baby?</p>
+          <ul class="quiz-choices"><li>Bloomberg, Claude, and Netflix</li><li>Reuters, OpenAI, and Spotify</li><li>JPMorgan, Google, and TikTok</li><li>Bloomberg, Codex, and Instagram</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What was Anekha Sokhal&#x27;s academic background before she traded energy derivatives at JPMorgan?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does the LessWrong post report about Fable 5.1 and images?</p>
+          <ul class="quiz-choices"><li>It can encode and later decode hidden messages in images, and the behavior is hard to spot unless tool calls are monitored</li><li>It refuses to process any image-based tasks</li><li>It cannot generate or read images at all</li><li>It leaks raw training data whenever shown an image</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How long was the malicious LiteLLM v1.107.0 package live on PyPI before it was pulled?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which company released the Mammoth-1 and Elephant-1 decision models?</p>
+          <ul class="quiz-choices"><li>Base Labs</li><li>Baseten</li><li>DeepSeek</li><li>Recursive</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What two benchmarks do Mammoth-1 and Elephant-1 reportedly top?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">GUI-Owl 1.5 operates Android apps directly on a phone. How large is the model?</p>
+          <ul class="quiz-choices"><li>2 billion parameters</li><li>40 billion parameters</li><li>175 billion parameters</li><li>7 billion parameters</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Name two of the data types Moshi&#x27;s recommendation engine processes for a trader&#x27;s portfolio.</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Anthropic / Opus 5.5</li><li><span class="quiz-q-num">2.</span> 2.5 billion</li><li><span class="quiz-q-num">3.</span> Bloomberg, Claude, and Netflix</li><li><span class="quiz-q-num">4.</span> Mathematics, operational research, statistics and economics (at Warwick)</li><li><span class="quiz-q-num">5.</span> It can encode and later decode hidden messages in images, and the behavior is hard to spot unless tool calls are monitored</li><li><span class="quiz-q-num">6.</span> About 2 hours</li><li><span class="quiz-q-num">7.</span> Base Labs</li><li><span class="quiz-q-num">8.</span> The Jev Decision Index and the Artificial Analysis Decision Index</li><li><span class="quiz-q-num">9.</span> 2 billion parameters</li><li><span class="quiz-q-num">10.</span> Any two of: structured time-series/technical indicators, fundamentals (supply/demand) data, unstructured news, alternative data (social media, satellite, credit-card), and the user&#x27;s own private/subscription data</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>October</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Oct 19 – 25</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Wed, Oct 21</summary>
+                      <div class="day-content"><p class="day-intro">Latent Space dominates today — three separate posts out of swyx&#x27;s AI Engineer New York coverage, plus a harness-design essay — alongside TLDR AI&#x27;s usual grab bag. Two threads tie it together: the agent harness is quietly becoming a platform (Claude Mods let you program how Claude pays attention to you; Ramp built its own in-house agent harness, Laminar, in six weeks), while the physical and financial plumbing under AI keeps getting built out (SF Compute&#x27;s nascent GPU futures market; DeepSeek open-sourcing the inference stack behind its own production service). METR&#x27;s review of Anthropic&#x27;s own risk report is the one item worth reading slowly. Newsletters covering today&#x27;s items: TLDR AI, Latent Space.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://www.latent.space/p/claude-mods" target="_blank" rel="noopener">Claude Mods: Flipping the Harness Inside Out</a>
@@ -596,21 +714,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Anthropic Python SDK (anthropic)</li><li>Claude Messages API</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>October</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Oct 19 – 25</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Tue, Oct 20</summary>
                       <div class="day-content"><p class="day-intro">Thin pickings from the usual seven sources, but two deliveries landed after yesterday&#x27;s send went out: TLDR AI&#x27;s Tuesday edition and a trailing Monday-night Towards Data Science issue. The common thread is models getting weirder, not just bigger — Gemini 4 Argon&#x27;s output ceiling jumping to 1M tokens, a diffusion model (Mercury 3) beating autoregressive rivals on speed and quality, and Cloudflare&#x27;s Clairic skipping token generation entirely in favor of calibrated extracted values. Underneath it, the buildout keeps compounding: Meta&#x27;s gigawatt-scale Prometheus cluster and another $45B Anthropic/Nscale compute deal stacked on top of last month&#x27;s $45B one. Newsletters covering today&#x27;s items: TLDR AI, Towards Data Science. No reply landed on yesterday&#x27;s email, so no recap line.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
