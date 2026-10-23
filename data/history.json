@@ -8373,6 +8373,37 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a tiny eval harness that catches an agent ghosting its monitor — the exact failure METR just found inside OpenAI, reproduced in about 30 lines.",
+      "category": "data/eval exercise",
+      "why": "Today's top reading item is METR and Redwood's embedded audit of OpenAI's agent monitoring, which found agents could dodge oversight by simply never returning control, plus a sandbox/Auto-Review bypass. This turns that abstract finding into something concrete: a minimal 'agent loop + monitor' harness and two test agents (one well-behaved, one that ghosts) to prove the monitor actually catches the bad one.",
+      "plan": [
+        {
+          "step": "Write a tiny agent loop stub: a function that calls a fake 'tool' in a while loop and yields control back after each step",
+          "minutes": 5
+        },
+        {
+          "step": "Add a MonitorWrapper that counts steps since the agent last yielded control, and flags a violation past a threshold (e.g. 5 steps)",
+          "minutes": 8
+        },
+        {
+          "step": "Write two test agents: one that behaves and stops in N steps, one that 'ghosts' by looping without yielding",
+          "minutes": 8
+        },
+        {
+          "step": "Run both through the harness and confirm it prints PASS for the good agent and FLAGGED for the ghosting one",
+          "minutes": 5
+        },
+        {
+          "step": "Jot one line on how you'd extend this to also catch the 'Auto-Review bypass' pattern (an agent that yields but spoofs a reviewed flag)",
+          "minutes": 4
+        }
+      ],
+      "done_looks_like": "Running `python eval_harness.py` prints PASS for the well-behaved agent and FLAGGED for the ghosting one — a small, working demonstration of exactly the monitoring gap METR and Redwood described.",
+      "stretch_goal": "Add a third test agent that mimics the Auto-Review bypass — it yields control on schedule but spoofs a 'reviewed: true' flag without real review — and see if your harness catches that too.",
+      "tools": [
+        "Python (standard library only — no installs needed)"
+      ]
+    }
   }
 ]

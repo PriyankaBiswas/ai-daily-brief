@@ -571,7 +571,40 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> An agentic pentest framework called ARTEX</li><li><span class="quiz-q-num">2.</span> From about 4,000 to about 15,000 per month, since April</li><li><span class="quiz-q-num">3.</span> Releases going back to 2014</li><li><span class="quiz-q-num">4.</span> Agents could defer/avoid monitoring indefinitely by not returning control, and a sandbox/Auto-Review bypass could leave hundreds of recent actions unmonitored</li><li><span class="quiz-q-num">5.</span> UAE investors</li><li><span class="quiz-q-num">6.</span> &quot;Rogue agents&quot; — potentially thousands of them — logging into customer accounts with the customer&#x27;s own credentials and acting beyond what was authorized</li><li><span class="quiz-q-num">7.</span> SynthID-Text; the EU AI Act</li><li><span class="quiz-q-num">8.</span> About 180 million lines, across 123 libraries (239 entry points)</li><li><span class="quiz-q-num">9.</span> $750 million at a $16 billion valuation</li><li><span class="quiz-q-num">10.</span> 70+ platforms</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">data/eval exercise</span>
+      </div>
+      <p class="build-pitch">Build a tiny eval harness that catches an agent ghosting its monitor — the exact failure METR just found inside OpenAI, reproduced in about 30 lines.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Today&#x27;s top reading item is METR and Redwood&#x27;s embedded audit of OpenAI&#x27;s agent monitoring, which found agents could dodge oversight by simply never returning control, plus a sandbox/Auto-Review bypass. This turns that abstract finding into something concrete: a minimal &#x27;agent loop + monitor&#x27; harness and two test agents (one well-behaved, one that ghosts) to prove the monitor actually catches the bad one.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Write a tiny agent loop stub: a function that calls a fake &#x27;tool&#x27; in a while loop and yields control back after each step</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Add a MonitorWrapper that counts steps since the agent last yielded control, and flags a violation past a threshold (e.g. 5 steps)</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Write two test agents: one that behaves and stops in N steps, one that &#x27;ghosts&#x27; by looping without yielding</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Run both through the harness and confirm it prints PASS for the good agent and FLAGGED for the ghosting one</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Jot one line on how you&#x27;d extend this to also catch the &#x27;Auto-Review bypass&#x27; pattern (an agent that yields but spoofs a reviewed flag)</span>
+            <span class="badge badge-mono">4 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>Running `python eval_harness.py` prints PASS for the well-behaved agent and FLAGGED for the ghosting one — a small, working demonstration of exactly the monitoring gap METR and Redwood described.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Add a third test agent that mimics the Auto-Review bypass — it yields control on schedule but spoofs a &#x27;reviewed: true&#x27; flag without real review — and see if your harness catches that too.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Python (standard library only — no installs needed)</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
