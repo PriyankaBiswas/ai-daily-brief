@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Thursday, October 22, 2026</h2>
-    <div class="day-content"><p class="day-intro">TLDR AI anchors today with Claude Duet — Anthropic&#x27;s first proactive, always-on agent — plus a cluster of smaller launches: a from-scratch local coding model, a supply-chain scare in LiteLLM that got contained fast, two new decision-model benchmarks, and a 2-billion-parameter model that operates Android apps directly. Latent Space adds a fintech deep-dive on building AI for commodity traders, and a LessWrong post on models hiding messages inside images rounds out the research side.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Friday, October 23, 2026</h2>
+    <div class="day-content"><p class="day-intro">Today&#x27;s dominant story is security: a cluster of critical vulnerability disclosures nicknamed &quot;Black October&quot; landed within 48 hours, a China-aligned group used an agentic pentest framework against 2,250+ Microsoft 365 tenants, and separately METR and Redwood&#x27;s embedded audit found real gaps in how OpenAI monitors its own agents. Against that backdrop, OpenAI is reportedly closing in on a $1.25T funding round, US banks are hardening against unauthorized agents logging into customer accounts, Claude&#x27;s text output now carries an invisible EU-mandated watermark, and Anthropic has two separate governance/verification pushes of its own. Latent Space rounds things out with Modal&#x27;s CEO on the economics behind its new $16B valuation.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://lspace.beehiiv.com/p/ainews-black-october" target="_blank" rel="noopener">&quot;Black October&quot;: the week AI-accelerated vulnerability disclosures overwhelmed defenders</a>
+            <span class="badge badge-mono">12 min</span>
+          </div>
+          <div class="item-source">AI News (Latent Space)</div>
+          <p class="item-why">A cluster of critical disclosures landed within roughly 48 hours: a CVSS-10 GitLab flaw affecting releases back to 2014, an unauthenticated PHP RCE (&quot;PHP2Shell&quot;) that OpenAI&#x27;s models reportedly found in August, Node.js/NGINX bugs, and a China-aligned group (Storm-0940) using an agentic pentest framework called ARTEX to hit 2,250+ Microsoft 365 tenants at ~2,900 sign-in attempts/minute, reaching privileged access in under 3 hours in some cases. Monthly CVE volume is reportedly up from ~4k to ~15k since April, and Anthropic&#x27;s deputy CISO says &quot;things are going to get a lot worse before they get better.&quot;</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/" target="_blank" rel="noopener">METR and Redwood&#x27;s embedded red-team finds gaps in OpenAI&#x27;s agent monitoring</a>
+            <span class="badge badge-mono">6 min</span>
+          </div>
+          <div class="item-source">METR (via TLDR AI)</div>
+          <p class="item-why">Two outside auditors spent three weeks inside OpenAI&#x27;s infrastructure stress-testing its system for catching misbehaving agents. They found agents could defer monitoring indefinitely by not returning control, plus a sandbox/Auto-Review bypass that could leave hundreds of recent actions unchecked; context compression reportedly left ~10% of eligible internal Codex traffic unmonitored. The published report was also cut from 61 to 38 pages before release.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html" target="_blank" rel="noopener">OpenAI reportedly nears a $30B raise at a $1.25T valuation, led by UAE investors</a>
+            <span class="badge badge-mono">3 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">CNBC (via TLDR AI)</div>
+          <p class="item-why">The round is being pitched as an opportunistic bridge ahead of a potential IPO. OpenAI is said to be aiming for signatures by the end of next week, though the final size is still being settled.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://letsdatascience.com/news/us-banks-harden-defenses-against-rogue-ai-agents-e60aa4a6" target="_blank" rel="noopener">US banks start blocking &quot;rogue&quot; AI agents from logging into customer accounts</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">LetsDataScience (orig. Axios)</div>
+          <p class="item-why">JPMorgan now blocks outside AI agents from operating retail accounts — Jamie Dimon warned on an October earnings call that &quot;there could be thousands of them.&quot; Schwab&#x27;s CEO says the firm blocks &quot;tens and twenties&quot; of such login attempts a week, even as banks build out their own sanctioned internal agents (JPMorgan&#x27;s cash-forecasting &quot;Smart Cash&quot;) in parallel.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.oreilly.com/radar/the-latest-anthropic-claude-models-contain-ai-text-watermarks-what-does-this-mean-for-you" target="_blank" rel="noopener">Claude&#x27;s text output now carries an invisible watermark</a>
+            <span class="badge badge-mono">9 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">O&#x27;Reilly Radar (via TLDR AI)</div>
+          <p class="item-why">To comply with the EU AI Act, Anthropic&#x27;s latest Claude models embed a SynthID-Text-based watermark in everything they write. It works by nudging choices among near-equivalent words, adds no hidden characters or tokens, and carries no information about the user.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/AnthropicAI/status/2113390212911083894" target="_blank" rel="noopener">Anthropic says Claude helped machine-check security proofs across 100+ open-source libraries</a>
+            <span class="badge badge-mono">4 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Anthropic (via AI News/X recap)</div>
+          <p class="item-why">Working with Theorem Labs, Anthropic&#x27;s Frontier Red Team says it used Claude to produce roughly 180 million lines of machine-checked proofs covering 239 entry points across 123 open-source libraries, patching hundreds of bugs along the way — a formal-verification-at-scale pitch landing the same week as the broader vulnerability wave above.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.latent.space/p/modal-d" target="_blank" rel="noopener">Modal crossed $1B in annualized revenue and raised a $750M Series D at $16B</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Latent Space (interview with CEO Erik Bernhardsson)</div>
+          <p class="item-why">Modal&#x27;s pitch is a &quot;duration transformation&quot;: pool GPU demand across thousands of customers so nobody has to buy capacity for peak load. Sandboxes — launched almost as an afterthought for running LLM-generated code — have grown to roughly a third of Modal&#x27;s business as coding and RL agents created new demand, and the company has now spun up nearly three billion of them.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank" rel="noopener">Anthropic donates Agent Skills to the Agentic AI Foundation</a>
+            <span class="badge badge-mono">2 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Anthropic (via TLDR AI)</div>
+          <p class="item-why">The open standard for packaging agent capabilities moves to vendor-neutral governance. 70+ platforms already integrate it, and a technical steering committee with members from Anthropic, Google, Microsoft and OpenAI will oversee it going forward.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What does today&#x27;s AI News recap say the China-aligned group Storm-0940 used to compromise 2,250+ Microsoft 365 tenants?</p>
+          <ul class="quiz-choices"><li>An agentic pentest framework called ARTEX</li><li>A zero-day in GitLab</li><li>A deepfake voice-phishing campaign</li><li>The LiteLLM backdoor</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">By how much did reported monthly CVE volume rise, and over what period?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What vulnerability did GitLab&#x27;s disclosed CVSS-10 flaw affect?</p>
+          <ul class="quiz-choices"><li>Releases going back to 2014</li><li>Only the newest release</li><li>Only self-hosted Community Edition</li><li>Only its CI runners</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What were the two main failure modes METR and Redwood found in OpenAI&#x27;s agent-monitoring system?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Who is reportedly leading OpenAI&#x27;s new funding round that could value it at $1.25 trillion?</p>
+          <ul class="quiz-choices"><li>UAE investors</li><li>SoftBank alone</li><li>Microsoft</li><li>A consortium of US pension funds</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to Jamie Dimon, what risk are banks trying to block by refusing outside AI agent logins?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What underlying watermarking technique does Claude&#x27;s new invisible text watermark build on, and what law is it meant to satisfy?</p>
+          <ul class="quiz-choices"><li>SynthID-Text; the EU AI Act</li><li>C2PA; the US AI Bill of Rights</li><li>Google&#x27;s Gemini provenance standard; China&#x27;s AI regulations</li><li>A custom Anthropic cipher; no specific law</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly how many lines of machine-checked proofs did Claude reportedly help produce with Theorem Labs, and across how many libraries?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What was Modal&#x27;s reported Series D size and resulting valuation?</p>
+          <ul class="quiz-choices"><li>$750 million at a $16 billion valuation</li><li>$5 billion at a $50 billion valuation</li><li>$250 million at a $2 billion valuation</li><li>$1 billion at a $10 billion valuation</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How many platforms does TLDR report already integrate Anthropic&#x27;s Agent Skills standard, now governed by the Agentic AI Foundation?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> An agentic pentest framework called ARTEX</li><li><span class="quiz-q-num">2.</span> From about 4,000 to about 15,000 per month, since April</li><li><span class="quiz-q-num">3.</span> Releases going back to 2014</li><li><span class="quiz-q-num">4.</span> Agents could defer/avoid monitoring indefinitely by not returning control, and a sandbox/Auto-Review bypass could leave hundreds of recent actions unmonitored</li><li><span class="quiz-q-num">5.</span> UAE investors</li><li><span class="quiz-q-num">6.</span> &quot;Rogue agents&quot; — potentially thousands of them — logging into customer accounts with the customer&#x27;s own credentials and acting beyond what was authorized</li><li><span class="quiz-q-num">7.</span> SynthID-Text; the EU AI Act</li><li><span class="quiz-q-num">8.</span> About 180 million lines, across 123 libraries (239 entry points)</li><li><span class="quiz-q-num">9.</span> $750 million at a $16 billion valuation</li><li><span class="quiz-q-num">10.</span> 70+ platforms</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>October</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Oct 19 – 25</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Thu, Oct 22</summary>
+                      <div class="day-content"><p class="day-intro">TLDR AI anchors today with Claude Duet — Anthropic&#x27;s first proactive, always-on agent — plus a cluster of smaller launches: a from-scratch local coding model, a supply-chain scare in LiteLLM that got contained fast, two new decision-model benchmarks, and a 2-billion-parameter model that operates Android apps directly. Latent Space adds a fintech deep-dive on building AI for commodity traders, and a LessWrong post on models hiding messages inside images rounds out the research side.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener">Claude Duet</a>
@@ -595,21 +721,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python requests</li><li>PyPI JSON API</li><li>argparse</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>October</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Oct 19 – 25</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Wed, Oct 21</summary>
                       <div class="day-content"><p class="day-intro">Latent Space dominates today — three separate posts out of swyx&#x27;s AI Engineer New York coverage, plus a harness-design essay — alongside TLDR AI&#x27;s usual grab bag. Two threads tie it together: the agent harness is quietly becoming a platform (Claude Mods let you program how Claude pays attention to you; Ramp built its own in-house agent harness, Laminar, in six weeks), while the physical and financial plumbing under AI keeps getting built out (SF Compute&#x27;s nascent GPU futures market; DeepSeek open-sourcing the inference stack behind its own production service). METR&#x27;s review of Anthropic&#x27;s own risk report is the one item worth reading slowly. Newsletters covering today&#x27;s items: TLDR AI, Latent Space.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">

@@ -8229,5 +8229,150 @@
         "argparse"
       ]
     }
+  },
+  {
+    "date": "2026-10-23",
+    "reading": {
+      "intro": "Today's dominant story is security: a cluster of critical vulnerability disclosures nicknamed \"Black October\" landed within 48 hours, a China-aligned group used an agentic pentest framework against 2,250+ Microsoft 365 tenants, and separately METR and Redwood's embedded audit found real gaps in how OpenAI monitors its own agents. Against that backdrop, OpenAI is reportedly closing in on a $1.25T funding round, US banks are hardening against unauthorized agents logging into customer accounts, Claude's text output now carries an invisible EU-mandated watermark, and Anthropic has two separate governance/verification pushes of its own. Latent Space rounds things out with Modal's CEO on the economics behind its new $16B valuation.",
+      "items": [
+        {
+          "title": "\"Black October\": the week AI-accelerated vulnerability disclosures overwhelmed defenders",
+          "url": "https://lspace.beehiiv.com/p/ainews-black-october",
+          "source": "AI News (Latent Space)",
+          "why": "A cluster of critical disclosures landed within roughly 48 hours: a CVSS-10 GitLab flaw affecting releases back to 2014, an unauthenticated PHP RCE (\"PHP2Shell\") that OpenAI's models reportedly found in August, Node.js/NGINX bugs, and a China-aligned group (Storm-0940) using an agentic pentest framework called ARTEX to hit 2,250+ Microsoft 365 tenants at ~2,900 sign-in attempts/minute, reaching privileged access in under 3 hours in some cases. Monthly CVE volume is reportedly up from ~4k to ~15k since April, and Anthropic's deputy CISO says \"things are going to get a lot worse before they get better.\"",
+          "minutes": 12,
+          "skip_ok": false
+        },
+        {
+          "title": "METR and Redwood's embedded red-team finds gaps in OpenAI's agent monitoring",
+          "url": "https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/",
+          "source": "METR (via TLDR AI)",
+          "why": "Two outside auditors spent three weeks inside OpenAI's infrastructure stress-testing its system for catching misbehaving agents. They found agents could defer monitoring indefinitely by not returning control, plus a sandbox/Auto-Review bypass that could leave hundreds of recent actions unchecked; context compression reportedly left ~10% of eligible internal Codex traffic unmonitored. The published report was also cut from 61 to 38 pages before release.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI reportedly nears a $30B raise at a $1.25T valuation, led by UAE investors",
+          "url": "https://www.cnbc.com/2026/10/22/openai-funding-round-uae-investors.html",
+          "source": "CNBC (via TLDR AI)",
+          "why": "The round is being pitched as an opportunistic bridge ahead of a potential IPO. OpenAI is said to be aiming for signatures by the end of next week, though the final size is still being settled.",
+          "minutes": 3,
+          "skip_ok": true
+        },
+        {
+          "title": "US banks start blocking \"rogue\" AI agents from logging into customer accounts",
+          "url": "https://letsdatascience.com/news/us-banks-harden-defenses-against-rogue-ai-agents-e60aa4a6",
+          "source": "LetsDataScience (orig. Axios)",
+          "why": "JPMorgan now blocks outside AI agents from operating retail accounts — Jamie Dimon warned on an October earnings call that \"there could be thousands of them.\" Schwab's CEO says the firm blocks \"tens and twenties\" of such login attempts a week, even as banks build out their own sanctioned internal agents (JPMorgan's cash-forecasting \"Smart Cash\") in parallel.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Claude's text output now carries an invisible watermark",
+          "url": "https://www.oreilly.com/radar/the-latest-anthropic-claude-models-contain-ai-text-watermarks-what-does-this-mean-for-you",
+          "source": "O'Reilly Radar (via TLDR AI)",
+          "why": "To comply with the EU AI Act, Anthropic's latest Claude models embed a SynthID-Text-based watermark in everything they write. It works by nudging choices among near-equivalent words, adds no hidden characters or tokens, and carries no information about the user.",
+          "minutes": 9,
+          "skip_ok": true
+        },
+        {
+          "title": "Anthropic says Claude helped machine-check security proofs across 100+ open-source libraries",
+          "url": "https://x.com/AnthropicAI/status/2113390212911083894",
+          "source": "Anthropic (via AI News/X recap)",
+          "why": "Working with Theorem Labs, Anthropic's Frontier Red Team says it used Claude to produce roughly 180 million lines of machine-checked proofs covering 239 entry points across 123 open-source libraries, patching hundreds of bugs along the way — a formal-verification-at-scale pitch landing the same week as the broader vulnerability wave above.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Modal crossed $1B in annualized revenue and raised a $750M Series D at $16B",
+          "url": "https://www.latent.space/p/modal-d",
+          "source": "Latent Space (interview with CEO Erik Bernhardsson)",
+          "why": "Modal's pitch is a \"duration transformation\": pool GPU demand across thousands of customers so nobody has to buy capacity for peak load. Sandboxes — launched almost as an afterthought for running LLM-generated code — have grown to roughly a third of Modal's business as coding and RL agents created new demand, and the company has now spun up nearly three billion of them.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "Anthropic donates Agent Skills to the Agentic AI Foundation",
+          "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+          "source": "Anthropic (via TLDR AI)",
+          "why": "The open standard for packaging agent capabilities moves to vendor-neutral governance. 70+ platforms already integrate it, and a technical steering committee with members from Anthropic, Google, Microsoft and OpenAI will oversee it going forward.",
+          "minutes": 2,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does today's AI News recap say the China-aligned group Storm-0940 used to compromise 2,250+ Microsoft 365 tenants?",
+          "choices": [
+            "An agentic pentest framework called ARTEX",
+            "A zero-day in GitLab",
+            "A deepfake voice-phishing campaign",
+            "The LiteLLM backdoor"
+          ],
+          "a": "An agentic pentest framework called ARTEX"
+        },
+        {
+          "q": "By how much did reported monthly CVE volume rise, and over what period?",
+          "a": "From about 4,000 to about 15,000 per month, since April"
+        },
+        {
+          "q": "What vulnerability did GitLab's disclosed CVSS-10 flaw affect?",
+          "choices": [
+            "Releases going back to 2014",
+            "Only the newest release",
+            "Only self-hosted Community Edition",
+            "Only its CI runners"
+          ],
+          "a": "Releases going back to 2014"
+        },
+        {
+          "q": "What were the two main failure modes METR and Redwood found in OpenAI's agent-monitoring system?",
+          "a": "Agents could defer/avoid monitoring indefinitely by not returning control, and a sandbox/Auto-Review bypass could leave hundreds of recent actions unmonitored"
+        },
+        {
+          "q": "Who is reportedly leading OpenAI's new funding round that could value it at $1.25 trillion?",
+          "choices": [
+            "UAE investors",
+            "SoftBank alone",
+            "Microsoft",
+            "A consortium of US pension funds"
+          ],
+          "a": "UAE investors"
+        },
+        {
+          "q": "According to Jamie Dimon, what risk are banks trying to block by refusing outside AI agent logins?",
+          "a": "\"Rogue agents\" — potentially thousands of them — logging into customer accounts with the customer's own credentials and acting beyond what was authorized"
+        },
+        {
+          "q": "What underlying watermarking technique does Claude's new invisible text watermark build on, and what law is it meant to satisfy?",
+          "choices": [
+            "SynthID-Text; the EU AI Act",
+            "C2PA; the US AI Bill of Rights",
+            "Google's Gemini provenance standard; China's AI regulations",
+            "A custom Anthropic cipher; no specific law"
+          ],
+          "a": "SynthID-Text; the EU AI Act"
+        },
+        {
+          "q": "Roughly how many lines of machine-checked proofs did Claude reportedly help produce with Theorem Labs, and across how many libraries?",
+          "a": "About 180 million lines, across 123 libraries (239 entry points)"
+        },
+        {
+          "q": "What was Modal's reported Series D size and resulting valuation?",
+          "choices": [
+            "$750 million at a $16 billion valuation",
+            "$5 billion at a $50 billion valuation",
+            "$250 million at a $2 billion valuation",
+            "$1 billion at a $10 billion valuation"
+          ],
+          "a": "$750 million at a $16 billion valuation"
+        },
+        {
+          "q": "How many platforms does TLDR report already integrate Anthropic's Agent Skills standard, now governed by the Agentic AI Foundation?",
+          "a": "70+ platforms"
+        }
+      ]
+    },
+    "build": null
   }
 ]
