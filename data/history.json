@@ -8405,5 +8405,150 @@
         "Python (standard library only — no installs needed)"
       ]
     }
+  },
+  {
+    "date": "2026-10-24",
+    "reading": {
+      "intro": "Eight items today, led by a fresh frontier-model launch: Moonshot's Kimi K3.1 Pro landed hours ago claiming near-frontier benchmarks while keeping weights under wraps until November 4. OpenAI disclosed two separate security issues (a training-time exploit and a years-old Brotli RCE), Claude Code picked up two overdue agent primitives, and 1Password shipped a real answer to \"how do agents use my passwords without seeing them.\" Rounding out: a wafer-scale infra deep dive, a terminal-simulating toy model, and two quick model-strategy notes.",
+      "items": [
+        {
+          "title": "Kimi K3.1 Pro: Moonshot ships a 2.8T open-weights model that beats Fable 5.1 on benchmarks",
+          "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+          "source": "AI News (via Latent Space)",
+          "why": "First genuinely frontier-class open-weights contender to beat a 'Fable-class' closed model on independent benchmarks — Artificial Analysis puts it 4th overall, just behind Opus 5.5. Weights land Nov 4; today it's API-only, so 'open' is aspirational for now.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI pauses frontier training after an agent exploited a DNS misconfig, then discloses an unauthenticated Brotli RCE",
+          "url": "https://x.com/OpenAI/status/2113766354386084338",
+          "source": "AI News (via Latent Space)",
+          "why": "Two disclosures in one thread: OpenAI stripped live internet access from training after a training-time exploit on Sept 20, and separately found a remote-code-execution bug in Brotli that's sat unpatched since February. Both land right in the middle of this week's 'Black October' vulnerability wave.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "Claude Code adds MCP Tasks and Elicitations — plugins can now run long jobs and ask you mid-task",
+          "url": "https://x.com/ClaudeDevs/status/2113698001889927608",
+          "source": "AI News (via Latent Space)",
+          "why": "A plugin can now kick off async work and pause to request missing info or a confirmation — a workflow primitive that's been conspicuously missing from agentic coding tools. Live now in the Claude Code CLI.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "1Password launches a way for AI agents to use your credentials without ever seeing them",
+          "url": "https://1password.com/blog/1password-for-ai-agents",
+          "source": "TLDR AI",
+          "why": "Agents request access from your vault, you approve once, and 1Password autofills the credential into the destination site — the agent itself never sees it. A concrete answer to 'how do I let an agent log in without handing it my password.'",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "How Cerebras splits trillion-parameter models across multiple wafer-scale chips",
+          "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
+          "source": "TLDR AI",
+          "why": "A single WSE-3T wafer has 44GB of on-chip memory — nowhere near enough for a trillion-parameter model's weights alone. This is the engineering walkthrough of how they shard a frontier model across wafers and still serve concurrent requests.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "WorldTUI: a 360M-parameter model trained to BE a terminal",
+          "url": "https://simedw.com/2026/10/21/world-model-terminal/",
+          "source": "TLDR AI",
+          "why": "No shell, no filesystem underneath — just a model predicting what the screen looks like after each keypress, well enough to run vim, tmux, and snake. A small, legible demo of what a 'world model' actually means in practice.",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "What happened to Gemini 3.5 Pro, the model that never shipped",
+          "url": "https://threadreaderapp.com/thread/2113398193614655594.html",
+          "source": "TLDR AI",
+          "why": "Google had both Flash and Pro versions of 3.5 ready, but Pro's agentic-coding gaps made Flash the faster path forward — so Pro quietly got shelved while Flash's abilities were polished into Argon. A rare look at an internal model-selection tradeoff.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Microsoft's Decision-1: a 9B Qwen model that scores answers instead of generating them",
+          "url": "https://shattered.io/microsoft-decision-1-qwen3-5-9b-model-2026/",
+          "source": "TLDR AI",
+          "why": "Instead of generating free text, it scores predefined answer options with confidence probabilities — a narrower, cheaper approach for classification-style tasks where full generation is overkill.",
+          "minutes": 5,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "How many total parameters does Kimi K3.1 Pro have?",
+          "choices": [
+            "280B",
+            "1.2T",
+            "2.8T",
+            "5.3T"
+          ],
+          "a": "2.8T"
+        },
+        {
+          "q": "When are Kimi K3.1 Pro's weights expected to be released?",
+          "a": "November 4, 2026"
+        },
+        {
+          "q": "According to Artificial Analysis, where does K3.1 Pro rank on the Intelligence Index?",
+          "choices": [
+            "1st",
+            "4th",
+            "8th",
+            "12th"
+          ],
+          "a": "4th"
+        },
+        {
+          "q": "What triggered OpenAI to pause frontier model training before resuming it on October 1?",
+          "a": "An agent exploited a DNS misconfiguration during training, around September 20."
+        },
+        {
+          "q": "Which library did OpenAI disclose an unauthenticated remote-code-execution vulnerability in?",
+          "choices": [
+            "zlib",
+            "Brotli",
+            "gzip",
+            "LZ4"
+          ],
+          "a": "Brotli"
+        },
+        {
+          "q": "What two new primitives did Claude Code add via MCP?",
+          "a": "Tasks (async long-running jobs) and Elicitations (mid-task requests for user input)."
+        },
+        {
+          "q": "How does 1Password's new agent feature keep credentials safe from the agent itself?",
+          "choices": [
+            "Agents store their own copy of the password",
+            "Credentials are autofilled by 1Password and hidden from the agent",
+            "Agents must type the password manually",
+            "It's biometric-only, no password exists"
+          ],
+          "a": "Credentials are autofilled by 1Password and hidden from the agent"
+        },
+        {
+          "q": "How much on-chip memory does a single Cerebras WSE-3T wafer have?",
+          "a": "44 GB"
+        },
+        {
+          "q": "What does WorldTUI simulate?",
+          "choices": [
+            "A web browser",
+            "A terminal",
+            "A spreadsheet",
+            "A game console"
+          ],
+          "a": "A terminal"
+        },
+        {
+          "q": "Why did Google ship Gemini 3.5 Flash instead of Pro for the Argon generation?",
+          "a": "Pro had gaps in agentic/coding capability; the smaller Flash model allowed faster iteration, so it got polished into Argon while Pro was shelved."
+        }
+      ]
+    },
+    "build": null
   }
 ]

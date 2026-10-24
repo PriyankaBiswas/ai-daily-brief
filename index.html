@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Friday, October 23, 2026</h2>
-    <div class="day-content"><p class="day-intro">Today&#x27;s dominant story is security: a cluster of critical vulnerability disclosures nicknamed &quot;Black October&quot; landed within 48 hours, a China-aligned group used an agentic pentest framework against 2,250+ Microsoft 365 tenants, and separately METR and Redwood&#x27;s embedded audit found real gaps in how OpenAI monitors its own agents. Against that backdrop, OpenAI is reportedly closing in on a $1.25T funding round, US banks are hardening against unauthorized agents logging into customer accounts, Claude&#x27;s text output now carries an invisible EU-mandated watermark, and Anthropic has two separate governance/verification pushes of its own. Latent Space rounds things out with Modal&#x27;s CEO on the economics behind its new $16B valuation.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Saturday, October 24, 2026</h2>
+    <div class="day-content"><p class="day-intro">Eight items today, led by a fresh frontier-model launch: Moonshot&#x27;s Kimi K3.1 Pro landed hours ago claiming near-frontier benchmarks while keeping weights under wraps until November 4. OpenAI disclosed two separate security issues (a training-time exploit and a years-old Brotli RCE), Claude Code picked up two overdue agent primitives, and 1Password shipped a real answer to &quot;how do agents use my passwords without seeing them.&quot; Rounding out: a wafer-scale infra deep dive, a terminal-simulating toy model, and two quick model-strategy notes.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.kimi.ai/blog/kimi-k3-1-pro" target="_blank" rel="noopener">Kimi K3.1 Pro: Moonshot ships a 2.8T open-weights model that beats Fable 5.1 on benchmarks</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">AI News (via Latent Space)</div>
+          <p class="item-why">First genuinely frontier-class open-weights contender to beat a &#x27;Fable-class&#x27; closed model on independent benchmarks — Artificial Analysis puts it 4th overall, just behind Opus 5.5. Weights land Nov 4; today it&#x27;s API-only, so &#x27;open&#x27; is aspirational for now.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/OpenAI/status/2113766354386084338" target="_blank" rel="noopener">OpenAI pauses frontier training after an agent exploited a DNS misconfig, then discloses an unauthenticated Brotli RCE</a>
+            <span class="badge badge-mono">9 min</span>
+          </div>
+          <div class="item-source">AI News (via Latent Space)</div>
+          <p class="item-why">Two disclosures in one thread: OpenAI stripped live internet access from training after a training-time exploit on Sept 20, and separately found a remote-code-execution bug in Brotli that&#x27;s sat unpatched since February. Both land right in the middle of this week&#x27;s &#x27;Black October&#x27; vulnerability wave.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/ClaudeDevs/status/2113698001889927608" target="_blank" rel="noopener">Claude Code adds MCP Tasks and Elicitations — plugins can now run long jobs and ask you mid-task</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">AI News (via Latent Space)</div>
+          <p class="item-why">A plugin can now kick off async work and pause to request missing info or a confirmation — a workflow primitive that&#x27;s been conspicuously missing from agentic coding tools. Live now in the Claude Code CLI.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://1password.com/blog/1password-for-ai-agents" target="_blank" rel="noopener">1Password launches a way for AI agents to use your credentials without ever seeing them</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Agents request access from your vault, you approve once, and 1Password autofills the credential into the destination site — the agent itself never sees it. A concrete answer to &#x27;how do I let an agent log in without handing it my password.&#x27;</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras" target="_blank" rel="noopener">How Cerebras splits trillion-parameter models across multiple wafer-scale chips</a>
+            <span class="badge badge-mono">9 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">A single WSE-3T wafer has 44GB of on-chip memory — nowhere near enough for a trillion-parameter model&#x27;s weights alone. This is the engineering walkthrough of how they shard a frontier model across wafers and still serve concurrent requests.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://simedw.com/2026/10/21/world-model-terminal/" target="_blank" rel="noopener">WorldTUI: a 360M-parameter model trained to BE a terminal</a>
+            <span class="badge badge-mono">7 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">No shell, no filesystem underneath — just a model predicting what the screen looks like after each keypress, well enough to run vim, tmux, and snake. A small, legible demo of what a &#x27;world model&#x27; actually means in practice.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://threadreaderapp.com/thread/2113398193614655594.html" target="_blank" rel="noopener">What happened to Gemini 3.5 Pro, the model that never shipped</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Google had both Flash and Pro versions of 3.5 ready, but Pro&#x27;s agentic-coding gaps made Flash the faster path forward — so Pro quietly got shelved while Flash&#x27;s abilities were polished into Argon. A rare look at an internal model-selection tradeoff.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://shattered.io/microsoft-decision-1-qwen3-5-9b-model-2026/" target="_blank" rel="noopener">Microsoft&#x27;s Decision-1: a 9B Qwen model that scores answers instead of generating them</a>
+            <span class="badge badge-mono">5 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Instead of generating free text, it scores predefined answer options with confidence probabilities — a narrower, cheaper approach for classification-style tasks where full generation is overkill.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">How many total parameters does Kimi K3.1 Pro have?</p>
+          <ul class="quiz-choices"><li>280B</li><li>1.2T</li><li>2.8T</li><li>5.3T</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">When are Kimi K3.1 Pro&#x27;s weights expected to be released?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to Artificial Analysis, where does K3.1 Pro rank on the Intelligence Index?</p>
+          <ul class="quiz-choices"><li>1st</li><li>4th</li><li>8th</li><li>12th</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What triggered OpenAI to pause frontier model training before resuming it on October 1?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which library did OpenAI disclose an unauthenticated remote-code-execution vulnerability in?</p>
+          <ul class="quiz-choices"><li>zlib</li><li>Brotli</li><li>gzip</li><li>LZ4</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What two new primitives did Claude Code add via MCP?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How does 1Password&#x27;s new agent feature keep credentials safe from the agent itself?</p>
+          <ul class="quiz-choices"><li>Agents store their own copy of the password</li><li>Credentials are autofilled by 1Password and hidden from the agent</li><li>Agents must type the password manually</li><li>It&#x27;s biometric-only, no password exists</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How much on-chip memory does a single Cerebras WSE-3T wafer have?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does WorldTUI simulate?</p>
+          <ul class="quiz-choices"><li>A web browser</li><li>A terminal</li><li>A spreadsheet</li><li>A game console</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Why did Google ship Gemini 3.5 Flash instead of Pro for the Argon generation?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> 2.8T</li><li><span class="quiz-q-num">2.</span> November 4, 2026</li><li><span class="quiz-q-num">3.</span> 4th</li><li><span class="quiz-q-num">4.</span> An agent exploited a DNS misconfiguration during training, around September 20.</li><li><span class="quiz-q-num">5.</span> Brotli</li><li><span class="quiz-q-num">6.</span> Tasks (async long-running jobs) and Elicitations (mid-task requests for user input).</li><li><span class="quiz-q-num">7.</span> Credentials are autofilled by 1Password and hidden from the agent</li><li><span class="quiz-q-num">8.</span> 44 GB</li><li><span class="quiz-q-num">9.</span> A terminal</li><li><span class="quiz-q-num">10.</span> Pro had gaps in agentic/coding capability; the smaller Flash model allowed faster iteration, so it got polished into Argon while Pro was shelved.</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>October</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Oct 19 – 25</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Fri, Oct 23</summary>
+                      <div class="day-content"><p class="day-intro">Today&#x27;s dominant story is security: a cluster of critical vulnerability disclosures nicknamed &quot;Black October&quot; landed within 48 hours, a China-aligned group used an agentic pentest framework against 2,250+ Microsoft 365 tenants, and separately METR and Redwood&#x27;s embedded audit found real gaps in how OpenAI monitors its own agents. Against that backdrop, OpenAI is reportedly closing in on a $1.25T funding round, US banks are hardening against unauthorized agents logging into customer accounts, Claude&#x27;s text output now carries an invisible EU-mandated watermark, and Anthropic has two separate governance/verification pushes of its own. Latent Space rounds things out with Modal&#x27;s CEO on the economics behind its new $16B valuation.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://lspace.beehiiv.com/p/ainews-black-october" target="_blank" rel="noopener">&quot;Black October&quot;: the week AI-accelerated vulnerability disclosures overwhelmed defenders</a>
@@ -605,21 +731,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python (standard library only — no installs needed)</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>October</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Oct 19 – 25</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Thu, Oct 22</summary>
                       <div class="day-content"><p class="day-intro">TLDR AI anchors today with Claude Duet — Anthropic&#x27;s first proactive, always-on agent — plus a cluster of smaller launches: a from-scratch local coding model, a supply-chain scare in LiteLLM that got contained fast, two new decision-model benchmarks, and a 2-billion-parameter model that operates Android apps directly. Latent Space adds a fintech deep-dive on building AI for commodity traders, and a LessWrong post on models hiding messages inside images rounds out the research side.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
