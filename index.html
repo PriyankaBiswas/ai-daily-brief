@@ -571,7 +571,40 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> 2.8T</li><li><span class="quiz-q-num">2.</span> November 4, 2026</li><li><span class="quiz-q-num">3.</span> 4th</li><li><span class="quiz-q-num">4.</span> An agent exploited a DNS misconfiguration during training, around September 20.</li><li><span class="quiz-q-num">5.</span> Brotli</li><li><span class="quiz-q-num">6.</span> Tasks (async long-running jobs) and Elicitations (mid-task requests for user input).</li><li><span class="quiz-q-num">7.</span> Credentials are autofilled by 1Password and hidden from the agent</li><li><span class="quiz-q-num">8.</span> 44 GB</li><li><span class="quiz-q-num">9.</span> A terminal</li><li><span class="quiz-q-num">10.</span> Pro had gaps in agentic/coding capability; the smaller Flash model allowed faster iteration, so it got polished into Argon while Pro was shelved.</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">prompt-engineering</span>
+      </div>
+      <p class="build-pitch">Turn a generator into a scorer: rank answer options by likelihood instead of letting the model free-type its answer</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs on today&#x27;s Decision-1 item — a 9B model that scores predefined answers instead of generating free text. You&#x27;ll feel the difference yourself: free generation can drift into the wrong format or hallucinate a label, while scoring predefined options never can.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Pick a tiny classification task you already have a feel for (ticket urgency, email intent, sentiment) with 4-5 fixed label options</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write a &#x27;generate&#x27; prompt: give the model the input and ask it to just answer with a label, in plain English</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write a &#x27;score&#x27; prompt: give the model the input plus all label options and have it pick/rank by requesting logprobs (OpenAI API logprobs=true) or by asking for a single constrained token per option</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Run both approaches on the same 5 example inputs and print the outputs side by side</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Note every spot where the generate approach drifted (wrong format, extra words, a hallucinated label) versus the score approach, which is always a valid option</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A short script or notebook with 5 test inputs where you&#x27;ve printed the free-generated label next to the scored label, plus one written line on which approach broke format and which didn&#x27;t.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Scale to 20 examples and compute agreement/accuracy for each approach, then try it on a task with 10+ labels to see if scoring&#x27;s edge grows as the option space gets bigger.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>OpenAI API (logprobs param) or Anthropic API</li><li>Python</li><li>tiktoken (optional, for inspecting tokenization)</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
