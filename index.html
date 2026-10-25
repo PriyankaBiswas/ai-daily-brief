@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Saturday, October 24, 2026</h2>
-    <div class="day-content"><p class="day-intro">Eight items today, led by a fresh frontier-model launch: Moonshot&#x27;s Kimi K3.1 Pro landed hours ago claiming near-frontier benchmarks while keeping weights under wraps until November 4. OpenAI disclosed two separate security issues (a training-time exploit and a years-old Brotli RCE), Claude Code picked up two overdue agent primitives, and 1Password shipped a real answer to &quot;how do agents use my passwords without seeing them.&quot; Rounding out: a wafer-scale infra deep dive, a terminal-simulating toy model, and two quick model-strategy notes.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Sunday, October 25, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply landed on yesterday&#x27;s email, so no quiz score or feedback to fold in today — list length and mix are unaffected either way. Newsletter yield was thin overnight (most of what came in was already covered this week), so today leans more on deep-dive reads than fresh headlines: Anthropic quietly tightening Claude&#x27;s usage economics, a big clinical-AI result from Microsoft, a security acquisition in the open-source-vuln aftermath, and a rare detailed look inside OpenAI&#x27;s own inference chip.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/SemiAnalysis_/status/2113383965784502444" target="_blank" rel="noopener">Anthropic reportedly A/B tests lowering Claude&#x27;s usage value ~20% while raising 5-hour limits</a>
+            <span class="badge badge-mono">3 min</span>
+          </div>
+          <div class="item-source">SemiAnalysis</div>
+          <p class="item-why">Directly affects how far your Claude usage goes day to day — worth knowing before you hit a wall and assume it&#x27;s a bug.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/mustafasuleyman/status/2113332931423039945" target="_blank" rel="noopener">Microsoft&#x27;s MAI-DxO beats physicians on emergency-department diagnosis, published in Science (80.3% vs 46.8%)</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">Mustafa Suleyman / Microsoft AI</div>
+          <p class="item-why">A peer-reviewed result this lopsided is rare — worth seeing what the panel-of-virtual-clinicians method actually does differently.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/validapau/status/2113322020897431679" target="_blank" rel="noopener">Datadog reportedly offers ~$4B to acquire Israeli cybersecurity startup Upwind Security</a>
+            <span class="badge badge-mono">3 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">The Information (via AI News)</div>
+          <p class="item-why">Lands right after this week&#x27;s &#x27;Black October&#x27; vulnerability wave — a sign security spend is following the AI-accelerated-disclosure story.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://taekim.substack.com/p/an-interview-with-openais-richard" target="_blank" rel="noopener">Inside OpenAI&#x27;s Jalapeño inference chip: an interview with hardware lead Richard Ho</a>
+            <span class="badge badge-mono">22 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Tae Kim</div>
+          <p class="item-why">A genuinely technical, unusually candid look at why OpenAI&#x27;s own chip reportedly leads on perf-per-watt — the best single infra read this week.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/kevinweil/status/2113294657673466060" target="_blank" rel="noopener">Kevin Weil&#x27;s AI-plus-robotic-lab drug discovery startup, Warp Sciences, raises $215M Series A</a>
+            <span class="badge badge-mono">3 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Kevin Weil</div>
+          <p class="item-why">Another ex-OpenAI exec betting on autonomous physical labs for science — worth tracking against Periodic Labs and Lila Sciences.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.perplexity.ai/hub/blog/a-good-teacher-meets-the-student-where-they-are" target="_blank" rel="noopener">Perplexity&#x27;s JOLT: a self-distillation method that boosts reasoning, coding, and agentic performance</a>
+            <span class="badge badge-mono">7 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Perplexity</div>
+          <p class="item-why">A model training itself as both teacher and student, adapting to its own weak spots — a clean idea if you like post-training methods.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://research.nvidia.com/labs/par/projects/jca/" target="_blank" rel="noopener">NVIDIA&#x27;s Joints, Camera, Action! (JCA) generates video with matching 3D character motion</a>
+            <span class="badge badge-mono">4 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">NVIDIA Research</div>
+          <p class="item-why">Text-to-video that also hands you usable 3D rig animation out the other side — notable if you touch any graphics/animation pipeline.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/canva/status/2113348707223753165" target="_blank" rel="noopener">Canva Craft, Canva&#x27;s first in-house image model, debuts at #4 on DesignArena</a>
+            <span class="badge badge-mono">4 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Canva / DesignArena</div>
+          <p class="item-why">Makes Canva the #2 image lab after OpenAI by that ranking — a quick signal of how fast design tools are internalizing model-building.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">According to SemiAnalysis, what did Anthropic reportedly do with Claude&#x27;s usage limits?</p>
+          <ul class="quiz-choices"><li>Removed all limits</li><li>A/B tested lowering ~20% of monthly API-equivalent value while raising 5-hour limits</li><li>Doubled every tier&#x27;s limits permanently</li><li>Introduced a new $500/mo plan</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What was MAI-DxO&#x27;s diagnostic accuracy on emergency-department cases versus physicians&#x27;, per Microsoft&#x27;s Science paper?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which company is Datadog reportedly in talks to acquire for roughly $4B?</p>
+          <ul class="quiz-choices"><li>Wiz</li><li>Upwind Security</li><li>CrowdStrike</li><li>Snyk</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What is the name of OpenAI&#x27;s custom inference chip discussed in Richard Ho&#x27;s interview?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What is Kevin Weil&#x27;s new startup, Warp Sciences, focused on?</p>
+          <ul class="quiz-choices"><li>Social media moderation</li><li>AI-plus-robotic-lab drug discovery</li><li>Self-driving cars</li><li>Climate modeling</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How much did Warp Sciences raise in its Series A, and who led it?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In one sentence, what does Perplexity&#x27;s JOLT method do?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does NVIDIA&#x27;s &#x27;Joints, Camera, Action!&#x27; (JCA) system generate?</p>
+          <ul class="quiz-choices"><li>Only still images</li><li>Videos with synchronized 3D character motion for arbitrary rigs</li><li>Audio soundtracks only</li><li>3D-printed models</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Where did Canva Craft rank on DesignArena, and what does that make Canva?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which of today&#x27;s stories ties most directly into this week&#x27;s &#x27;Black October&#x27; vulnerability-disclosure wave?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> A/B tested lowering ~20% of monthly API-equivalent value while raising 5-hour limits</li><li><span class="quiz-q-num">2.</span> 80.3% for MAI-DxO vs. 46.8% for physicians</li><li><span class="quiz-q-num">3.</span> Upwind Security</li><li><span class="quiz-q-num">4.</span> Jalapeño</li><li><span class="quiz-q-num">5.</span> AI-plus-robotic-lab drug discovery</li><li><span class="quiz-q-num">6.</span> $215M, led by Lightspeed</li><li><span class="quiz-q-num">7.</span> A self-distillation method that jointly trains a model as both teacher and student, improving reasoning/coding/agentic performance and training efficiency.</li><li><span class="quiz-q-num">8.</span> Videos with synchronized 3D character motion for arbitrary rigs</li><li><span class="quiz-q-num">9.</span> #4 overall, making Canva the #2 image lab after OpenAI</li><li><span class="quiz-q-num">10.</span> Datadog&#x27;s reported ~$4B offer for Upwind Security</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>October</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Oct 19 – 25</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Sat, Oct 24</summary>
+                      <div class="day-content"><p class="day-intro">Eight items today, led by a fresh frontier-model launch: Moonshot&#x27;s Kimi K3.1 Pro landed hours ago claiming near-frontier benchmarks while keeping weights under wraps until November 4. OpenAI disclosed two separate security issues (a training-time exploit and a years-old Brotli RCE), Claude Code picked up two overdue agent primitives, and 1Password shipped a real answer to &quot;how do agents use my passwords without seeing them.&quot; Rounding out: a wafer-scale infra deep dive, a terminal-simulating toy model, and two quick model-strategy notes.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://www.kimi.ai/blog/kimi-k3-1-pro" target="_blank" rel="noopener">Kimi K3.1 Pro: Moonshot ships a 2.8T open-weights model that beats Fable 5.1 on benchmarks</a>
@@ -605,21 +731,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>OpenAI API (logprobs param) or Anthropic API</li><li>Python</li><li>tiktoken (optional, for inspecting tokenization)</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>October</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Oct 19 – 25</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Fri, Oct 23</summary>
                       <div class="day-content"><p class="day-intro">Today&#x27;s dominant story is security: a cluster of critical vulnerability disclosures nicknamed &quot;Black October&quot; landed within 48 hours, a China-aligned group used an agentic pentest framework against 2,250+ Microsoft 365 tenants, and separately METR and Redwood&#x27;s embedded audit found real gaps in how OpenAI monitors its own agents. Against that backdrop, OpenAI is reportedly closing in on a $1.25T funding round, US banks are hardening against unauthorized agents logging into customer accounts, Claude&#x27;s text output now carries an invisible EU-mandated watermark, and Anthropic has two separate governance/verification pushes of its own. Latent Space rounds things out with Modal&#x27;s CEO on the economics behind its new $16B valuation.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
