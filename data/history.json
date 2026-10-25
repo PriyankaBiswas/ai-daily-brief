@@ -8721,6 +8721,38 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Train a model using nothing but another copy of itself's guesses — no labels, no API key, just numpy.",
+      "category": "fine-tuning/training",
+      "why": "Perplexity's JOLT (today's reading list) trains a model as both teacher and student on its own outputs instead of needing a separate reward model. This recreates that core self-distillation mechanic in about 20 lines of numpy — the student never sees a ground-truth label, only the teacher's soft probabilities — so you see directly why training on your own guesses can still work.",
+      "plan": [
+        {
+          "step": "Generate a tiny synthetic 2-class dataset by hand (two Gaussian blobs, ~200 points) with numpy — no sklearn needed",
+          "minutes": 5
+        },
+        {
+          "step": "Train a 'teacher' logistic-regression model from scratch with a manual gradient-descent loop on the true labels",
+          "minutes": 5
+        },
+        {
+          "step": "Have the teacher produce soft probability predictions on the same inputs — these become the only labels the next model will ever see",
+          "minutes": 3
+        },
+        {
+          "step": "Train a 'student' model from scratch, from random weights, using nothing but the teacher's soft probabilities as targets (no ground truth)",
+          "minutes": 7
+        },
+        {
+          "step": "Evaluate both teacher and student on a fresh held-out test set and print their accuracies side by side",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A printed accuracy comparison showing the student — trained with zero ground-truth labels, only the teacher's own soft probability guesses — matches or comes close to the teacher's accuracy on held-out data.",
+      "stretch_goal": "Make the student the new teacher and repeat for 2-3 more rounds — see whether accuracy keeps climbing, plateaus, or degrades, which is the actual multi-round claim behind JOLT.",
+      "tools": [
+        "numpy",
+        "Python (no API key, no installs beyond numpy)"
+      ]
+    }
   }
 ]

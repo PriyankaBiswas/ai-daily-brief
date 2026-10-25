@@ -571,13 +571,45 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> A/B tested lowering ~20% of monthly API-equivalent value while raising 5-hour limits</li><li><span class="quiz-q-num">2.</span> 80.3% for MAI-DxO vs. 46.8% for physicians</li><li><span class="quiz-q-num">3.</span> Upwind Security</li><li><span class="quiz-q-num">4.</span> Jalapeño</li><li><span class="quiz-q-num">5.</span> AI-plus-robotic-lab drug discovery</li><li><span class="quiz-q-num">6.</span> $215M, led by Lightspeed</li><li><span class="quiz-q-num">7.</span> A self-distillation method that jointly trains a model as both teacher and student, improving reasoning/coding/agentic performance and training efficiency.</li><li><span class="quiz-q-num">8.</span> Videos with synchronized 3D character motion for arbitrary rigs</li><li><span class="quiz-q-num">9.</span> #4 overall, making Canva the #2 image lab after OpenAI</li><li><span class="quiz-q-num">10.</span> Datadog&#x27;s reported ~$4B offer for Upwind Security</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">fine-tuning/training</span>
+      </div>
+      <p class="build-pitch">Train a model using nothing but another copy of itself&#x27;s guesses — no labels, no API key, just numpy.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Perplexity&#x27;s JOLT (today&#x27;s reading list) trains a model as both teacher and student on its own outputs instead of needing a separate reward model. This recreates that core self-distillation mechanic in about 20 lines of numpy — the student never sees a ground-truth label, only the teacher&#x27;s soft probabilities — so you see directly why training on your own guesses can still work.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Generate a tiny synthetic 2-class dataset by hand (two Gaussian blobs, ~200 points) with numpy — no sklearn needed</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Train a &#x27;teacher&#x27; logistic-regression model from scratch with a manual gradient-descent loop on the true labels</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Have the teacher produce soft probability predictions on the same inputs — these become the only labels the next model will ever see</span>
+            <span class="badge badge-mono">3 min</span></li><li><span class="plan-step">Train a &#x27;student&#x27; model from scratch, from random weights, using nothing but the teacher&#x27;s soft probabilities as targets (no ground truth)</span>
+            <span class="badge badge-mono">7 min</span></li><li><span class="plan-step">Evaluate both teacher and student on a fresh held-out test set and print their accuracies side by side</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A printed accuracy comparison showing the student — trained with zero ground-truth labels, only the teacher&#x27;s own soft probability guesses — matches or comes close to the teacher&#x27;s accuracy on held-out data.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Make the student the new teacher and repeat for 2-3 more rounds — see whether accuracy keeps climbing, plateaus, or degrades, which is the actual multi-round claim behind JOLT.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>numpy</li><li>Python (no API key, no installs beyond numpy)</li></ul>
+        </div>
+    </div></div>
   </section>
 
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
+  <details class="archive-root">
+    <summary>Archive</summary>
+    <div class="archive-tree">
         <details class="year-entry">
           <summary>2026</summary>
           
@@ -7863,8 +7895,9 @@ details[open] > summary::before {
                     </details>
                 </details>
             </details>
-        </details></div>
-    </details>
+        </details>
+    </div>
+  </details>
 </div>
 </body>
 </html>
