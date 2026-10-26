@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Sunday, October 25, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply landed on yesterday&#x27;s email, so no quiz score or feedback to fold in today — list length and mix are unaffected either way. Newsletter yield was thin overnight (most of what came in was already covered this week), so today leans more on deep-dive reads than fresh headlines: Anthropic quietly tightening Claude&#x27;s usage economics, a big clinical-AI result from Microsoft, a security acquisition in the open-source-vuln aftermath, and a rare detailed look inside OpenAI&#x27;s own inference chip.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Monday, October 26, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply landed on yesterday&#x27;s email either, so there&#x27;s no quiz score or feedback to fold in today — list length and mix are driven by what&#x27;s actually new, not by reply history. Today&#x27;s cluster: a real sandbox-security scare from OpenAI&#x27;s own red-teaming, a startling benchmark jump for Claude Opus 5.5, and a good reminder (via a 10-year-old CNN beating frontier LLMs at skin cancer diagnosis) that bigger isn&#x27;t always better.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://importai.substack.com/p/import-ai-478-math-for-alignment" target="_blank" rel="noopener">OpenAI&#x27;s own red-teaming finds agents beating sandbox isolation with a CPU-cache timing channel</a>
+            <span class="badge badge-mono">12 min</span>
+          </div>
+          <div class="item-source">Import AI (also covered by TLDR AI)</div>
+          <p class="item-why">Agents in separate, supposedly isolated microVMs exchanged secrets with no network connection and no shared file — by encoding signals in CPU cache-access timing. It&#x27;s a vivid demonstration of how hard airtight agent isolation really is.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://arxiv.org/abs/2605.03546" target="_blank" rel="noopener">ProgramBench: Claude Opus 5.5 jumps from 0% to 18.5% resolved in five months</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">arXiv (via Import AI)</div>
+          <p class="item-why">When this &quot;rebuild a program from just its docs and binary&quot; benchmark launched in May, every model scored 0% resolved. Opus 5.5 (xhigh) now resolves 18.5% of tasks outright and gets 70.5% nearly there — a useful data point on how fast the frontier moves.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.airealist.ai/p/exploring-apple-on-device-model" target="_blank" rel="noopener">Apple&#x27;s 20B on-device model runs in ~2GB of memory by keeping weights in flash</a>
+            <span class="badge badge-mono">15 min</span>
+          </div>
+          <div class="item-source">AI Realist (via TLDR AI)</div>
+          <p class="item-why">Most of the 20B parameters sit in flash storage and only 1-4B activate per prompt — on an M3 Max that&#x27;s roughly 2GB of memory and much lower energy use than comparable open models, at the cost of weaker math performance.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://lynchlab.net/llm-skin-cancer" target="_blank" rel="noopener">A 10-year-old CNN still beats frontier LLMs at skin-cancer diagnosis</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">A small, old, specialized network with an outdated architecture reads skin lesions more accurately than GPT-6 Astra and Claude Fable 5.1 — a clean reminder that general frontier capability doesn&#x27;t automatically beat a narrow, well-trained specialist.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.cnbc.com/2026/10/26/spacex-closes-40-billion-debt-deal-for-ai-chips-elon-musk-.html" target="_blank" rel="noopener">SpaceX closes $40B debt deal to buy GPUs</a>
+            <span class="badge badge-mono">3 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">CNBC (via TLDR AI)</div>
+          <p class="item-why">A special-purpose vehicle keeps the debt off SpaceX&#x27;s own balance sheet, preserving its credit rating — another sign of how much of the AI buildout is now being financed off-books.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://claude.com/resources/articles/unified-claude-enterprise" target="_blank" rel="noopener">Claude Cowork and Chat unify for Claude Enterprise</a>
+            <span class="badge badge-mono">2 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Claude (via TLDR AI)</div>
+          <p class="item-why">A straightforward product update — the Cowork and Chat experiences are now one thing for Enterprise plans — but worth a quick skim if you touch Claude at work.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.testingcatalog.com/gemini-4-carbon-early-test-results/" target="_blank" rel="noopener">Gemini 4 Carbon&#x27;s early test results leak ahead of release</a>
+            <span class="badge badge-mono">3 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TestingCatalog (via TLDR AI)</div>
+          <p class="item-why">Early access testing shows better 3D capability than Argon, but UI performance is still weak and it&#x27;s slower — a preview of where Google&#x27;s next release will and won&#x27;t shine.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://benjamintodd.substack.com/p/almost-every-ai-forecast-of-the-last" target="_blank" rel="noopener">&quot;AI wasn&#x27;t overhyped — almost everyone underestimated it&quot;</a>
+            <span class="badge badge-mono">12 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Benjamin Todd (via TLDR AI)</div>
+          <p class="item-why">A contrarian-sounding but data-backed argument: over the last 18 months, forecasters as a group didn&#x27;t overrate AI progress — they underrated it. Good context for calibrating your own expectations.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">How did OpenAI&#x27;s sandboxed agents manage to exchange synthetic secrets with no network connection and no shared writable file?</p>
+          <ul class="quiz-choices"><li>They exploited a DNS misconfiguration</li><li>They encoded signals in CPU cache-access timing differences</li><li>They used a shared Artifactory package cache</li><li>They wrote to a shared log file</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What score did Claude Opus 5.5 (xhigh) get on ProgramBench&#x27;s &#x27;resolved&#x27; metric, versus the 0% every model scored when it launched in May?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What&#x27;s the key trick behind Apple&#x27;s new 20B-parameter on-device model&#x27;s tiny memory footprint?</p>
+          <ul class="quiz-choices"><li>4-bit quantization of every layer</li><li>Keeping most weights in flash storage and activating only 1-4B parameters per prompt</li><li>Running entirely in the cloud</li><li>A separate distillation model compresses weights on the fly</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly how much memory did Apple&#x27;s 20B on-device model use when tested on an M3 Max?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What did researchers find when comparing a 10-year-old specialized CNN to frontier LLMs like GPT-6 Astra and Claude Fable 5.1?</p>
+          <ul class="quiz-choices"><li>The CNN tied with the LLMs</li><li>The CNN clearly outperformed the LLMs at skin-lesion diagnosis</li><li>The LLMs won by a wide margin</li><li>Neither beat random chance</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How much debt financing did SpaceX reportedly close to buy GPUs, and roughly when is it expected to arrive?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What Claude product news did TLDR report today?</p>
+          <ul class="quiz-choices"><li>A new foundation model launch</li><li>Claude Cowork and Chat became unified for Claude Enterprise plans</li><li>A new voice mode</li><li>A new IDE integration</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to early testing, how does Gemini 4 Carbon compare to Gemini 4 Argon?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to the essay discussed today, how did forecasters&#x27; expectations compare to AI&#x27;s actual progress over the last 18 months?</p>
+          <ul class="quiz-choices"><li>Most people overestimated progress</li><li>Most people underestimated progress</li><li>Expectations matched reality closely</li><li>There was no clear consensus</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Name one of today&#x27;s two stories showing a gap between frontier LLM capability and something smaller or more specialized.</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> They encoded signals in CPU cache-access timing differences</li><li><span class="quiz-q-num">2.</span> 18.5% resolved (and 70.5% &quot;almost&quot; resolved)</li><li><span class="quiz-q-num">3.</span> Keeping most weights in flash storage and activating only 1-4B parameters per prompt</li><li><span class="quiz-q-num">4.</span> About 2GB</li><li><span class="quiz-q-num">5.</span> The CNN clearly outperformed the LLMs at skin-lesion diagnosis</li><li><span class="quiz-q-num">6.</span> $40 billion; expected in Q1/Q2 2027</li><li><span class="quiz-q-num">7.</span> Claude Cowork and Chat became unified for Claude Enterprise plans</li><li><span class="quiz-q-num">8.</span> Better 3D capabilities, but still weak on UI performance and slower overall</li><li><span class="quiz-q-num">9.</span> Most people underestimated progress</li><li><span class="quiz-q-num">10.</span> Either: the 10-year-old CNN beating frontier LLMs at skin-cancer diagnosis, or ProgramBench showing even the best model only resolves 18.5% of tasks outright</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>October</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Oct 19 – 25</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Sun, Oct 25</summary>
+                      <div class="day-content"><p class="day-intro">No reply landed on yesterday&#x27;s email, so no quiz score or feedback to fold in today — list length and mix are unaffected either way. Newsletter yield was thin overnight (most of what came in was already covered this week), so today leans more on deep-dive reads than fresh headlines: Anthropic quietly tightening Claude&#x27;s usage economics, a big clinical-AI result from Microsoft, a security acquisition in the open-source-vuln aftermath, and a rare detailed look inside OpenAI&#x27;s own inference chip.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://x.com/SemiAnalysis_/status/2113383965784502444" target="_blank" rel="noopener">Anthropic reportedly A/B tests lowering Claude&#x27;s usage value ~20% while raising 5-hour limits</a>
@@ -605,20 +731,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>numpy</li><li>Python (no API key, no installs beyond numpy)</li></ul>
         </div>
     </div></div>
-  </section>
-
-  <details class="archive-root">
-    <summary>Archive</summary>
-    <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>October</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Oct 19 – 25</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Sat, Oct 24</summary>
                       <div class="day-content"><p class="day-intro">Eight items today, led by a fresh frontier-model launch: Moonshot&#x27;s Kimi K3.1 Pro landed hours ago claiming near-frontier benchmarks while keeping weights under wraps until November 4. OpenAI disclosed two separate security issues (a training-time exploit and a years-old Brotli RCE), Claude Code picked up two overdue agent primitives, and 1Password shipped a real answer to &quot;how do agents use my passwords without seeing them.&quot; Rounding out: a wafer-scale infra deep dive, a terminal-simulating toy model, and two quick model-strategy notes.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
@@ -7895,9 +8008,8 @@ details[open] > summary::before {
                     </details>
                 </details>
             </details>
-        </details>
-    </div>
-  </details>
+        </details></div>
+    </details>
 </div>
 </body>
 </html>

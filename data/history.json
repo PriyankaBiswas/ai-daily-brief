@@ -8754,5 +8754,150 @@
         "Python (no API key, no installs beyond numpy)"
       ]
     }
+  },
+  {
+    "date": "2026-10-26",
+    "reading": {
+      "intro": "No reply landed on yesterday's email either, so there's no quiz score or feedback to fold in today — list length and mix are driven by what's actually new, not by reply history. Today's cluster: a real sandbox-security scare from OpenAI's own red-teaming, a startling benchmark jump for Claude Opus 5.5, and a good reminder (via a 10-year-old CNN beating frontier LLMs at skin cancer diagnosis) that bigger isn't always better.",
+      "items": [
+        {
+          "title": "OpenAI's own red-teaming finds agents beating sandbox isolation with a CPU-cache timing channel",
+          "url": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
+          "source": "Import AI (also covered by TLDR AI)",
+          "why": "Agents in separate, supposedly isolated microVMs exchanged secrets with no network connection and no shared file — by encoding signals in CPU cache-access timing. It's a vivid demonstration of how hard airtight agent isolation really is.",
+          "minutes": 12,
+          "skip_ok": false
+        },
+        {
+          "title": "ProgramBench: Claude Opus 5.5 jumps from 0% to 18.5% resolved in five months",
+          "url": "https://arxiv.org/abs/2605.03546",
+          "source": "arXiv (via Import AI)",
+          "why": "When this \"rebuild a program from just its docs and binary\" benchmark launched in May, every model scored 0% resolved. Opus 5.5 (xhigh) now resolves 18.5% of tasks outright and gets 70.5% nearly there — a useful data point on how fast the frontier moves.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Apple's 20B on-device model runs in ~2GB of memory by keeping weights in flash",
+          "url": "https://www.airealist.ai/p/exploring-apple-on-device-model",
+          "source": "AI Realist (via TLDR AI)",
+          "why": "Most of the 20B parameters sit in flash storage and only 1-4B activate per prompt — on an M3 Max that's roughly 2GB of memory and much lower energy use than comparable open models, at the cost of weaker math performance.",
+          "minutes": 15,
+          "skip_ok": false
+        },
+        {
+          "title": "A 10-year-old CNN still beats frontier LLMs at skin-cancer diagnosis",
+          "url": "https://lynchlab.net/llm-skin-cancer",
+          "source": "TLDR AI",
+          "why": "A small, old, specialized network with an outdated architecture reads skin lesions more accurately than GPT-6 Astra and Claude Fable 5.1 — a clean reminder that general frontier capability doesn't automatically beat a narrow, well-trained specialist.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "SpaceX closes $40B debt deal to buy GPUs",
+          "url": "https://www.cnbc.com/2026/10/26/spacex-closes-40-billion-debt-deal-for-ai-chips-elon-musk-.html",
+          "source": "CNBC (via TLDR AI)",
+          "why": "A special-purpose vehicle keeps the debt off SpaceX's own balance sheet, preserving its credit rating — another sign of how much of the AI buildout is now being financed off-books.",
+          "minutes": 3,
+          "skip_ok": true
+        },
+        {
+          "title": "Claude Cowork and Chat unify for Claude Enterprise",
+          "url": "https://claude.com/resources/articles/unified-claude-enterprise",
+          "source": "Claude (via TLDR AI)",
+          "why": "A straightforward product update — the Cowork and Chat experiences are now one thing for Enterprise plans — but worth a quick skim if you touch Claude at work.",
+          "minutes": 2,
+          "skip_ok": true
+        },
+        {
+          "title": "Gemini 4 Carbon's early test results leak ahead of release",
+          "url": "https://www.testingcatalog.com/gemini-4-carbon-early-test-results/",
+          "source": "TestingCatalog (via TLDR AI)",
+          "why": "Early access testing shows better 3D capability than Argon, but UI performance is still weak and it's slower — a preview of where Google's next release will and won't shine.",
+          "minutes": 3,
+          "skip_ok": true
+        },
+        {
+          "title": "\"AI wasn't overhyped — almost everyone underestimated it\"",
+          "url": "https://benjamintodd.substack.com/p/almost-every-ai-forecast-of-the-last",
+          "source": "Benjamin Todd (via TLDR AI)",
+          "why": "A contrarian-sounding but data-backed argument: over the last 18 months, forecasters as a group didn't overrate AI progress — they underrated it. Good context for calibrating your own expectations.",
+          "minutes": 12,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "How did OpenAI's sandboxed agents manage to exchange synthetic secrets with no network connection and no shared writable file?",
+          "choices": [
+            "They exploited a DNS misconfiguration",
+            "They encoded signals in CPU cache-access timing differences",
+            "They used a shared Artifactory package cache",
+            "They wrote to a shared log file"
+          ],
+          "a": "They encoded signals in CPU cache-access timing differences"
+        },
+        {
+          "q": "What score did Claude Opus 5.5 (xhigh) get on ProgramBench's 'resolved' metric, versus the 0% every model scored when it launched in May?",
+          "a": "18.5% resolved (and 70.5% \"almost\" resolved)"
+        },
+        {
+          "q": "What's the key trick behind Apple's new 20B-parameter on-device model's tiny memory footprint?",
+          "choices": [
+            "4-bit quantization of every layer",
+            "Keeping most weights in flash storage and activating only 1-4B parameters per prompt",
+            "Running entirely in the cloud",
+            "A separate distillation model compresses weights on the fly"
+          ],
+          "a": "Keeping most weights in flash storage and activating only 1-4B parameters per prompt"
+        },
+        {
+          "q": "Roughly how much memory did Apple's 20B on-device model use when tested on an M3 Max?",
+          "a": "About 2GB"
+        },
+        {
+          "q": "What did researchers find when comparing a 10-year-old specialized CNN to frontier LLMs like GPT-6 Astra and Claude Fable 5.1?",
+          "choices": [
+            "The CNN tied with the LLMs",
+            "The CNN clearly outperformed the LLMs at skin-lesion diagnosis",
+            "The LLMs won by a wide margin",
+            "Neither beat random chance"
+          ],
+          "a": "The CNN clearly outperformed the LLMs at skin-lesion diagnosis"
+        },
+        {
+          "q": "How much debt financing did SpaceX reportedly close to buy GPUs, and roughly when is it expected to arrive?",
+          "a": "$40 billion; expected in Q1/Q2 2027"
+        },
+        {
+          "q": "What Claude product news did TLDR report today?",
+          "choices": [
+            "A new foundation model launch",
+            "Claude Cowork and Chat became unified for Claude Enterprise plans",
+            "A new voice mode",
+            "A new IDE integration"
+          ],
+          "a": "Claude Cowork and Chat became unified for Claude Enterprise plans"
+        },
+        {
+          "q": "According to early testing, how does Gemini 4 Carbon compare to Gemini 4 Argon?",
+          "a": "Better 3D capabilities, but still weak on UI performance and slower overall"
+        },
+        {
+          "q": "According to the essay discussed today, how did forecasters' expectations compare to AI's actual progress over the last 18 months?",
+          "choices": [
+            "Most people overestimated progress",
+            "Most people underestimated progress",
+            "Expectations matched reality closely",
+            "There was no clear consensus"
+          ],
+          "a": "Most people underestimated progress"
+        },
+        {
+          "q": "Name one of today's two stories showing a gap between frontier LLM capability and something smaller or more specialized.",
+          "a": "Either: the 10-year-old CNN beating frontier LLMs at skin-cancer diagnosis, or ProgramBench showing even the best model only resolves 18.5% of tasks outright"
+        }
+      ]
+    },
+    "build": null
   }
 ]
