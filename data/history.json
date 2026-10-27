@@ -9076,6 +9076,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Been quiet on these — here's a quick one to jump back in with: turn the '54-day doubling' robot-control stat into a single animated HTML file.",
+      "category": "UI-for-AI",
+      "why": "Riffs on today's LessWrong item (via TLDR AI) on frontier models' real-robot-arm control capability doubling every 54 days. Teaches basic canvas animation and exponential-growth math with zero frameworks — just one HTML file you open in a browser.",
+      "plan": [
+        {
+          "step": "Create a single index.html with a <canvas> element and minimal CSS",
+          "minutes": 5
+        },
+        {
+          "step": "Write a JS function capability(t) = baseline * 2^(t/54) and draw it as a growing curve on the canvas, redrawing per frame",
+          "minutes": 10
+        },
+        {
+          "step": "Add a date-range slider that scrubs along the curve and shows a live readout of the projected date + capability value",
+          "minutes": 7
+        },
+        {
+          "step": "Label the axes and add a one-line readout like 'At this rate, robots hit 100x today's capability by <date>'",
+          "minutes": 3
+        }
+      ],
+      "done_looks_like": "Opening index.html directly in a browser (no server, no npm install) shows a smooth exponential curve starting from today, with a slider that updates a live date/capability readout as you drag it.",
+      "stretch_goal": "Overlay a second curve using an 18-24 month doubling period (classic Moore's-law pace) so you can visually see robots improving roughly 15x faster than chips used to.",
+      "tools": [
+        "Vanilla HTML/CSS/JS",
+        "Canvas API",
+        "no build step / no npm"
+      ]
+    }
   }
 ]

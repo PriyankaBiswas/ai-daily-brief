@@ -571,7 +571,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> ANT</li><li><span class="quiz-q-num">2.</span> Virtual Collaborators</li><li><span class="quiz-q-num">3.</span> Visual reasoning and computer use</li><li><span class="quiz-q-num">4.</span> Cohere</li><li><span class="quiz-q-num">5.</span> Beijing</li><li><span class="quiz-q-num">6.</span> The Exponential Time Hypothesis (ETH)</li><li><span class="quiz-q-num">7.</span> Every 54 days</li><li><span class="quiz-q-num">8.</span> $95 billion</li><li><span class="quiz-q-num">9.</span> Ollama</li><li><span class="quiz-q-num">10.</span> Their own questions and reasoning traces, guided only by a topic description</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">UI-for-AI</span>
+      </div>
+      <p class="build-pitch">Been quiet on these — here&#x27;s a quick one to jump back in with: turn the &#x27;54-day doubling&#x27; robot-control stat into a single animated HTML file.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs on today&#x27;s LessWrong item (via TLDR AI) on frontier models&#x27; real-robot-arm control capability doubling every 54 days. Teaches basic canvas animation and exponential-growth math with zero frameworks — just one HTML file you open in a browser.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Create a single index.html with a &lt;canvas&gt; element and minimal CSS</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write a JS function capability(t) = baseline * 2^(t/54) and draw it as a growing curve on the canvas, redrawing per frame</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Add a date-range slider that scrubs along the curve and shows a live readout of the projected date + capability value</span>
+            <span class="badge badge-mono">7 min</span></li><li><span class="plan-step">Label the axes and add a one-line readout like &#x27;At this rate, robots hit 100x today&#x27;s capability by &lt;date&gt;&#x27;</span>
+            <span class="badge badge-mono">3 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>Opening index.html directly in a browser (no server, no npm install) shows a smooth exponential curve starting from today, with a slider that updates a live date/capability readout as you drag it.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Overlay a second curve using an 18-24 month doubling period (classic Moore&#x27;s-law pace) so you can visually see robots improving roughly 15x faster than chips used to.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Vanilla HTML/CSS/JS</li><li>Canvas API</li><li>no build step / no npm</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
