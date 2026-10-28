@@ -563,7 +563,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The Classification of Finite Simple Groups (CFSG) — roughly 15,000 pages across 500+ articles by about 100 mathematicians.</li><li><span class="quiz-q-num">2.</span> Dozens of agents, over 24 days.</li><li><span class="quiz-q-num">3.</span> OpenAI&#x27;s; Anthropic&#x27;s Claude result landed hours later with its own independent Lean formalization.</li><li><span class="quiz-q-num">4.</span> ETH underpins many complexity-theory hardness results; a verified disproof would imply 3-SAT is solvable in subexponential time.</li><li><span class="quiz-q-num">5.</span> &quot;Hunger beats tenure.&quot;</li><li><span class="quiz-q-num">6.</span> Business impact — pick a radical idea that would dramatically improve the organization&#x27;s chances of hitting its goals, then build it fast.</li><li><span class="quiz-q-num">7.</span> The persistent session/harness (the &quot;brain&quot;) from the disposable sandbox execution environment (the &quot;hands&quot;) — a failed sandbox doesn&#x27;t kill the agent session, and the sandbox never holds a service credential.</li><li><span class="quiz-q-num">8.</span> Up to two minutes — double Genie 3&#x27;s duration.</li><li><span class="quiz-q-num">9.</span> Active interaction and offline memory consolidation.</li><li><span class="quiz-q-num">10.</span> It beats the larger predecessor with 35% fewer parameters, fits in about 1GB at 4-bit precision, and supports a 256K context window.</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">infra/deployment</span>
+      </div>
+      <p class="build-pitch">Still quiet on these — no worries, here&#x27;s another easy one: prove your agent&#x27;s ‘hands’ never sees the credential its ‘brain’ holds.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Today&#x27;s Latent Space piece on Anthropic&#x27;s Managed Agents explains the core trick: the harness (&quot;brain&quot;) persists and holds credentials, while the disposable sandbox (&quot;hands&quot;) that runs generated code never gets them — so a compromised or buggy sandbox can&#x27;t leak a secret it was never given. You&#x27;ll build a toy version of that boundary yourself and watch it hold.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Store a fake API key as an env var only the parent process holds — this is your &#x27;brain&#x27;.</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Spawn a subprocess (&#x27;the sandbox&#x27;) with a stripped environment and have it try to read that key — confirm it gets nothing back.</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Have the sandbox return its (keyless) result to the parent, and have the parent do the one privileged step itself using the real key.</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Print a side-by-side dump of the sandbox&#x27;s os.environ vs. the parent&#x27;s, plus a line confirming the privileged action still completed.</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A terminal printout with two environment dumps side by side — the sandbox&#x27;s (no key present) and the parent&#x27;s (key present) — followed by a line showing the privileged action completed anyway, because the parent did it, not the sandbox.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Swap the subprocess for `docker run --rm --env MY_KEY=` (unset) to make the isolation real instead of simulated, or have the sandbox actively try and fail to read a mounted secrets file.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Python subprocess module</li><li>os.environ</li><li>optional: Docker CLI</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
