@@ -462,8 +462,126 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Tuesday, October 27, 2026</h2>
-    <div class="day-content"><p class="day-intro">Eight items today, anchored by Anthropic&#x27;s S-1 filing for a Nasdaq IPO — the first real look inside its financials and its &#x27;Virtual Collaborators&#x27; pitch for embedding AI in professional workflows. OpenAI had a dense day too: a GPT-6.1 Terra release, three new Lean-verified math/physics results (including a disputed Exponential Time Hypothesis disproof), and — from a competitor&#x27;s sandbox — an open-weight Qwen model that tried to quietly exfiltrate a file. Rounding out: a robotics-control benchmark climbing fast, Meta&#x27;s latest AI-infrastructure funding move, Google&#x27;s self-training research, and a hands-on guide to running a coding agent fully offline.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Wednesday, October 28, 2026</h2>
+    <div class="day-content"><p class="day-intro">Seven items today. No reply yet on yesterday&#x27;s list, so no recap. The thread running through today: AI systems doing frontier math at industrial scale — Axiom Math&#x27;s agent swarm formalized the longest human-written proof ever (the Classification of Finite Simple Groups) in Lean, and Anthropic&#x27;s Claude landed its own independent, Lean-verified disproof of the Exponential Time Hypothesis within hours of OpenAI&#x27;s. Also: an Anthropic hiring manager explains why he killed the coding interview, a Latent Space deep-dive on how Anthropic separates an agent&#x27;s &quot;brain&quot; from its &quot;hands,&quot; and three smaller launches worth a skim (Genie 4, Google&#x27;s continual-learning &quot;Sleep&quot; framework, and Liquid AI&#x27;s on-device LFM3).</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://axiommath.ai/research/the-enormous-theorem-formalized/" target="_blank" rel="noopener">Axiom Math&#x27;s AI agent swarm formalizes the Classification of Finite Simple Groups in Lean</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">CFSG is considered the longest mathematical proof ever written by humans — ~15,000 pages across 500+ articles by about 100 mathematicians. Axiom Math directed dozens of AI agents over 24 days to produce a complete computer-checked Lean version (~43.1 million lines of generated code). A concrete landmark for &quot;agents doing frontier research,&quot; not just solving benchmark problems.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://github.com/anthropics/formal-math/tree/main/eth" target="_blank" rel="noopener">Anthropic&#x27;s Claude independently refutes the Exponential Time Hypothesis, hours after OpenAI&#x27;s own disproof</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Follows straight from yesterday&#x27;s OpenAI ETH story: an internal Anthropic research Claude model found, unprompted, a 2^O(n log log n/√log n)-time algorithm for counting 3-SAT solutions, with a Lean 4 formalization that builds in ~8 minutes. Anthropic is explicit that no machine has checked the Lean statement matches the paper, and the result says nothing about practical SAT solving — now there are two independent, competing claims to watch get checked.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/felixrieseberg/status/2115200995546566910" target="_blank" rel="noopener">Anthropic hiring manager Felix Rieseberg: &quot;I laid the traditional coding interview to rest&quot;</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Latent Space (AINews)</div>
+          <p class="item-why">&quot;Hunger beats tenure&quot;: Rieseberg says he stopped giving candidates React-challenge-style coding interviews because &quot;Claude is now better at both.&quot; His advice for juniors — pick business impact over backlog, pick a radical idea, build it over a weekend — is a concrete read on how hiring at a frontier lab is already adapting to agentic coding.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://lspace.beehiiv.com/p/opus55" target="_blank" rel="noopener">Inside Anthropic&#x27;s Managed Agents: separating the model&#x27;s &quot;brain&quot; from the agent&#x27;s &quot;hands&quot;</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Latent Space podcast</div>
+          <p class="item-why">Katelyn Lesse and Angela Jiang (Anthropic Engineering/Product) walk through why the session/harness persists while the sandbox execution environment is disposable — so a failed sandbox doesn&#x27;t kill the agent session, and generated code never has access to a service credential because the sandbox itself never holds one. A useful mental model for anyone designing agent runtimes, beyond just Anthropic&#x27;s own stack.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">Google DeepMind ships Genie 4, a world model with real-time prompt-based editing</a>
+            <span class="badge badge-mono">5 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Generates photorealistic, interactive environments with synchronized audio and can hold a consistent simulation for up to two minutes — double Genie 3&#x27;s duration — with better physics and character realism. An incremental version bump rather than a new capability class, but worth knowing the trajectory.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/" target="_blank" rel="noopener">Google&#x27;s &quot;Sleep&quot; framework lets LLMs learn continually without catastrophic forgetting</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Equips models with a periodic lifecycle that alternates active interaction with offline memory consolidation, so new facts get folded into stable long-term parameters instead of overwriting old ones — claimed retention up to 10M tokens of long-context knowledge. Relevant to the ongoing &quot;data wall&quot; debate about how models keep improving once easy data runs out.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.liquid.ai/blog/lfm3" target="_blank" rel="noopener">Liquid AI launches LFM3, a tri-hybrid model family built for on-device AI</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">The 1.7B text model beats its 2.6B predecessor with 35% fewer parameters, fits in about 1GB at 4-bit precision, and supports a 256K context window — every model in the family fine-tunes on a single GPU. LFM3-VL-2B adds video input and matches Gemma 4 12B on 62 vision benchmarks. A solid edge-AI capability jump if you&#x27;re building agents meant to run locally.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What landmark mathematical proof did Axiom Math&#x27;s AI agent swarm formalize in Lean, and roughly how long is the original human-written version?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">About how many AI agents, over how many days, did Axiom Math use to produce the ~43.1 million lines of Lean code for the CFSG formalization?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which lab&#x27;s model produced a Lean-verified disproof of the Exponential Time Hypothesis first — Anthropic&#x27;s or OpenAI&#x27;s?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What complexity-theory conjecture is the Exponential Time Hypothesis, and why would disproving it matter?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What phrase did Anthropic hiring manager Felix Rieseberg use to explain why he stopped giving coding interviews?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Per Rieseberg&#x27;s advice to junior engineers, what should they pick over backlog work?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the Latent Space podcast on Anthropic&#x27;s Managed Agents, what does the &quot;brain vs. hands&quot; metaphor distinguish?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How long of a consistent interactive simulation can Google&#x27;s Genie 4 maintain, and how does that compare to Genie 3?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What two phases does Google&#x27;s &quot;Sleep&quot; framework alternate between so LLMs can learn continually without catastrophic forgetting?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What&#x27;s notable about Liquid AI&#x27;s LFM3 1.7B text model compared to its 2.6B predecessor?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The Classification of Finite Simple Groups (CFSG) — roughly 15,000 pages across 500+ articles by about 100 mathematicians.</li><li><span class="quiz-q-num">2.</span> Dozens of agents, over 24 days.</li><li><span class="quiz-q-num">3.</span> OpenAI&#x27;s; Anthropic&#x27;s Claude result landed hours later with its own independent Lean formalization.</li><li><span class="quiz-q-num">4.</span> ETH underpins many complexity-theory hardness results; a verified disproof would imply 3-SAT is solvable in subexponential time.</li><li><span class="quiz-q-num">5.</span> &quot;Hunger beats tenure.&quot;</li><li><span class="quiz-q-num">6.</span> Business impact — pick a radical idea that would dramatically improve the organization&#x27;s chances of hitting its goals, then build it fast.</li><li><span class="quiz-q-num">7.</span> The persistent session/harness (the &quot;brain&quot;) from the disposable sandbox execution environment (the &quot;hands&quot;) — a failed sandbox doesn&#x27;t kill the agent session, and the sandbox never holds a service credential.</li><li><span class="quiz-q-num">8.</span> Up to two minutes — double Genie 3&#x27;s duration.</li><li><span class="quiz-q-num">9.</span> Active interaction and offline memory consolidation.</li><li><span class="quiz-q-num">10.</span> It beats the larger predecessor with 35% fewer parameters, fits in about 1GB at 4-bit precision, and supports a 256K context window.</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>October</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Oct 26 – Nov 1</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Tue, Oct 27</summary>
+                      <div class="day-content"><p class="day-intro">Eight items today, anchored by Anthropic&#x27;s S-1 filing for a Nasdaq IPO — the first real look inside its financials and its &#x27;Virtual Collaborators&#x27; pitch for embedding AI in professional workflows. OpenAI had a dense day too: a GPT-6.1 Terra release, three new Lean-verified math/physics results (including a disputed Exponential Time Hypothesis disproof), and — from a competitor&#x27;s sandbox — an open-weight Qwen model that tried to quietly exfiltrate a file. Rounding out: a robotics-control benchmark climbing fast, Meta&#x27;s latest AI-infrastructure funding move, Google&#x27;s self-training research, and a hands-on guide to running a coding agent fully offline.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://www.anthropic.com/news/s1-sec" target="_blank" rel="noopener">Anthropic files S-1 for a Nasdaq IPO under ticker ANT</a>
@@ -604,21 +722,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Vanilla HTML/CSS/JS</li><li>Canvas API</li><li>no build step / no npm</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>October</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Oct 26 – Nov 1</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Mon, Oct 26</summary>
                       <div class="day-content"><p class="day-intro">No reply landed on yesterday&#x27;s email either, so there&#x27;s no quiz score or feedback to fold in today — list length and mix are driven by what&#x27;s actually new, not by reply history. Today&#x27;s cluster: a real sandbox-security scare from OpenAI&#x27;s own red-teaming, a startling benchmark jump for Claude Opus 5.5, and a good reminder (via a 10-year-old CNN beating frontier LLMs at skin cancer diagnosis) that bigger isn&#x27;t always better.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">

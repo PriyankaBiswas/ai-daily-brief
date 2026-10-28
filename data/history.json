@@ -9106,5 +9106,112 @@
         "no build step / no npm"
       ]
     }
+  },
+  {
+    "date": "2026-10-28",
+    "reading": {
+      "intro": "Seven items today. No reply yet on yesterday's list, so no recap. The thread running through today: AI systems doing frontier math at industrial scale — Axiom Math's agent swarm formalized the longest human-written proof ever (the Classification of Finite Simple Groups) in Lean, and Anthropic's Claude landed its own independent, Lean-verified disproof of the Exponential Time Hypothesis within hours of OpenAI's. Also: an Anthropic hiring manager explains why he killed the coding interview, a Latent Space deep-dive on how Anthropic separates an agent's \"brain\" from its \"hands,\" and three smaller launches worth a skim (Genie 4, Google's continual-learning \"Sleep\" framework, and Liquid AI's on-device LFM3).",
+      "items": [
+        {
+          "title": "Axiom Math's AI agent swarm formalizes the Classification of Finite Simple Groups in Lean",
+          "url": "https://axiommath.ai/research/the-enormous-theorem-formalized/",
+          "source": "TLDR AI",
+          "why": "CFSG is considered the longest mathematical proof ever written by humans — ~15,000 pages across 500+ articles by about 100 mathematicians. Axiom Math directed dozens of AI agents over 24 days to produce a complete computer-checked Lean version (~43.1 million lines of generated code). A concrete landmark for \"agents doing frontier research,\" not just solving benchmark problems.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic's Claude independently refutes the Exponential Time Hypothesis, hours after OpenAI's own disproof",
+          "url": "https://github.com/anthropics/formal-math/tree/main/eth",
+          "source": "TLDR AI",
+          "why": "Follows straight from yesterday's OpenAI ETH story: an internal Anthropic research Claude model found, unprompted, a 2^O(n log log n/√log n)-time algorithm for counting 3-SAT solutions, with a Lean 4 formalization that builds in ~8 minutes. Anthropic is explicit that no machine has checked the Lean statement matches the paper, and the result says nothing about practical SAT solving — now there are two independent, competing claims to watch get checked.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic hiring manager Felix Rieseberg: \"I laid the traditional coding interview to rest\"",
+          "url": "https://x.com/felixrieseberg/status/2115200995546566910",
+          "source": "Latent Space (AINews)",
+          "why": "\"Hunger beats tenure\": Rieseberg says he stopped giving candidates React-challenge-style coding interviews because \"Claude is now better at both.\" His advice for juniors — pick business impact over backlog, pick a radical idea, build it over a weekend — is a concrete read on how hiring at a frontier lab is already adapting to agentic coding.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Inside Anthropic's Managed Agents: separating the model's \"brain\" from the agent's \"hands\"",
+          "url": "https://lspace.beehiiv.com/p/opus55",
+          "source": "Latent Space podcast",
+          "why": "Katelyn Lesse and Angela Jiang (Anthropic Engineering/Product) walk through why the session/harness persists while the sandbox execution environment is disposable — so a failed sandbox doesn't kill the agent session, and generated code never has access to a service credential because the sandbox itself never holds one. A useful mental model for anyone designing agent runtimes, beyond just Anthropic's own stack.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "Google DeepMind ships Genie 4, a world model with real-time prompt-based editing",
+          "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+          "source": "TLDR AI",
+          "why": "Generates photorealistic, interactive environments with synchronized audio and can hold a consistent simulation for up to two minutes — double Genie 3's duration — with better physics and character realism. An incremental version bump rather than a new capability class, but worth knowing the trajectory.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "Google's \"Sleep\" framework lets LLMs learn continually without catastrophic forgetting",
+          "url": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+          "source": "TLDR AI",
+          "why": "Equips models with a periodic lifecycle that alternates active interaction with offline memory consolidation, so new facts get folded into stable long-term parameters instead of overwriting old ones — claimed retention up to 10M tokens of long-context knowledge. Relevant to the ongoing \"data wall\" debate about how models keep improving once easy data runs out.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Liquid AI launches LFM3, a tri-hybrid model family built for on-device AI",
+          "url": "https://www.liquid.ai/blog/lfm3",
+          "source": "TLDR AI",
+          "why": "The 1.7B text model beats its 2.6B predecessor with 35% fewer parameters, fits in about 1GB at 4-bit precision, and supports a 256K context window — every model in the family fine-tunes on a single GPU. LFM3-VL-2B adds video input and matches Gemma 4 12B on 62 vision benchmarks. A solid edge-AI capability jump if you're building agents meant to run locally.",
+          "minutes": 6,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What landmark mathematical proof did Axiom Math's AI agent swarm formalize in Lean, and roughly how long is the original human-written version?",
+          "a": "The Classification of Finite Simple Groups (CFSG) — roughly 15,000 pages across 500+ articles by about 100 mathematicians."
+        },
+        {
+          "q": "About how many AI agents, over how many days, did Axiom Math use to produce the ~43.1 million lines of Lean code for the CFSG formalization?",
+          "a": "Dozens of agents, over 24 days."
+        },
+        {
+          "q": "Which lab's model produced a Lean-verified disproof of the Exponential Time Hypothesis first — Anthropic's or OpenAI's?",
+          "a": "OpenAI's; Anthropic's Claude result landed hours later with its own independent Lean formalization."
+        },
+        {
+          "q": "What complexity-theory conjecture is the Exponential Time Hypothesis, and why would disproving it matter?",
+          "a": "ETH underpins many complexity-theory hardness results; a verified disproof would imply 3-SAT is solvable in subexponential time."
+        },
+        {
+          "q": "What phrase did Anthropic hiring manager Felix Rieseberg use to explain why he stopped giving coding interviews?",
+          "a": "\"Hunger beats tenure.\""
+        },
+        {
+          "q": "Per Rieseberg's advice to junior engineers, what should they pick over backlog work?",
+          "a": "Business impact — pick a radical idea that would dramatically improve the organization's chances of hitting its goals, then build it fast."
+        },
+        {
+          "q": "In the Latent Space podcast on Anthropic's Managed Agents, what does the \"brain vs. hands\" metaphor distinguish?",
+          "a": "The persistent session/harness (the \"brain\") from the disposable sandbox execution environment (the \"hands\") — a failed sandbox doesn't kill the agent session, and the sandbox never holds a service credential."
+        },
+        {
+          "q": "How long of a consistent interactive simulation can Google's Genie 4 maintain, and how does that compare to Genie 3?",
+          "a": "Up to two minutes — double Genie 3's duration."
+        },
+        {
+          "q": "What two phases does Google's \"Sleep\" framework alternate between so LLMs can learn continually without catastrophic forgetting?",
+          "a": "Active interaction and offline memory consolidation."
+        },
+        {
+          "q": "What's notable about Liquid AI's LFM3 1.7B text model compared to its 2.6B predecessor?",
+          "a": "It beats the larger predecessor with 35% fewer parameters, fits in about 1GB at 4-bit precision, and supports a 256K context window."
+        }
+      ]
+    },
+    "build": null
   }
 ]
