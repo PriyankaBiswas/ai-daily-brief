@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Wednesday, October 28, 2026</h2>
-    <div class="day-content"><p class="day-intro">Seven items today. No reply yet on yesterday&#x27;s list, so no recap. The thread running through today: AI systems doing frontier math at industrial scale — Axiom Math&#x27;s agent swarm formalized the longest human-written proof ever (the Classification of Finite Simple Groups) in Lean, and Anthropic&#x27;s Claude landed its own independent, Lean-verified disproof of the Exponential Time Hypothesis within hours of OpenAI&#x27;s. Also: an Anthropic hiring manager explains why he killed the coding interview, a Latent Space deep-dive on how Anthropic separates an agent&#x27;s &quot;brain&quot; from its &quot;hands,&quot; and three smaller launches worth a skim (Genie 4, Google&#x27;s continual-learning &quot;Sleep&quot; framework, and Liquid AI&#x27;s on-device LFM3).</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Thursday, October 29, 2026</h2>
+    <div class="day-content"><p class="day-intro">Eight items today. Still no reply on the last two lists, so no recap. Three stories today are, in different ways, about where models&#x27; confident competence quietly breaks down: Anthropic&#x27;s GRAFT technique tries to stop models from learning to game weak safety monitors, Elorian&#x27;s new DecoyCount benchmark shows every frontier model (Claude included) fails basic visual counting, and a byte-level tokenizer redesign (H-Net v2) suggests some of that fragility starts at the tokenization layer. Also today: Gemini 4 Carbon&#x27;s actual launch (after Monday&#x27;s leak), GitHub and Microsoft both shipping multi-model orchestration layers for Copilot, and someone embedding a working CPU inside a language model&#x27;s weights because they could.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">Google ships Gemini 4 Carbon, with cyber defenders first in line</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">TLDR AI / Latent Space (AINews)</div>
+          <p class="item-why">The real launch, two weeks after Argon, following Monday&#x27;s leaked test results. Google claims #1 on Artificial Analysis&#x27;s Intelligence Index v5 (59, edging out Opus 5.5&#x27;s 58) and leads on cyber benchmarks like SEC-bench Pro (88.2%), but access starts narrow — cyber defenders only, via the Fairwind Program, with general availability only promised &quot;as soon as possible.&quot; Independent coding benchmarks (FrontierSWE, FrontierCode) still put it slightly behind Opus 5.5 and GPT-6 Astra.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://alignment.anthropic.com/2026/graft/" target="_blank" rel="noopener">Anthropic&#x27;s GRAFT keeps models from learning to exploit their own safety monitors</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Anthropic Alignment Science</div>
+          <p class="item-why">GRAFT (Gradient Routing Adapter Fine-Tuning) routes the learning updates triggered by a detected reward hack into a separate, removable set of parameters that get deleted after training — so the model benefits from the correction without ever permanently internalizing the hack, and crucially, without learning to route around a monitor it knows is weak. Tested on Qwen3-8B (arithmetic) and Qwen3-32B (agentic coding). The limitation flagged on LessWrong: it can&#x27;t remove hacking tendencies baked in before GRAFT is applied.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://lspace.beehiiv.com/p/elorian" target="_blank" rel="noopener">Elorian&#x27;s Glimpse and the DecoyCount benchmark: every frontier model struggles to actually count</a>
+            <span class="badge badge-mono">9 min</span>
+          </div>
+          <div class="item-source">Latent Space</div>
+          <p class="item-why">DecoyCount is built to separate two failure modes that normal benchmarks conflate: not seeing an object correctly (vision) versus seeing it fine but reasoning about it wrong (judgment) — e.g., counting an apple&#x27;s mirror reflection as a second apple. Every frontier model scored under 50% except Elorian&#x27;s own Glimpse (50.48%); GPT-6 Astra was next-closest at 43.17%, and Claude-Fable-5.1 came in at 25.22%. Worth reading for the benchmark design as much as the result — it&#x27;s a genuinely different way to probe multimodal reasoning.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/_albertgu/status/2115502110578290900" target="_blank" rel="noopener">H-Net v2: ditching fixed tokenization matches an 11T-token model with ~10x less data</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">Latent Space (AINews)</div>
+          <p class="item-why">Controlled scaling experiments show 3-5x efficiency gains over a standard tokenizer at matched compute; at larger scale, the byte-level, dynamically-chunked approach reportedly matches an open model trained on 11T tokens using roughly 10x less data and compute. If it holds up outside the demo setting, it&#x27;s a real argument against fixed-vocabulary tokenization as the default.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/" target="_blank" rel="noopener">GitHub Copilot Fusion lets Copilot pick and mix models per task</a>
+            <span class="badge badge-mono">7 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Routes and orchestrates across model families at runtime rather than locking into one, building on Microsoft&#x27;s &quot;Project HydraFusion&quot; orchestration work and Copilot&#x27;s existing auto model selection. GitHub claims up to 77% lower cost and 40% faster runs versus a fixed single-model setup — independent numbers (via Artificial Analysis) put it about 2 points behind Opus 5.5 in Claude Code on the Coding Agent Index, at roughly half the per-task cost.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://huggingface.co/blog/nvidia/nemotron-transcribe-granary" target="_blank" rel="noopener">NVIDIA&#x27;s open-weight Nemotron 3.5 Transcribe tops multilingual transcription leaderboards</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Handles transcription, translation, speaker attribution, and audio Q&amp;A across 40 languages, ranking #1 on several independent transcription and speaker-attribution leaderboards. Paired with Granary v2&#x27;s reusable data pipelines for fine-tuning on specialized vocabularies — a solid pickup for anyone building multilingual voice products on open weights.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/" target="_blank" rel="noopener">Anthropic launches spend-visibility tools for enterprise Claude customers</a>
+            <span class="badge badge-mono">5 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Reporting tools that break down productivity, cost, and optimization recommendations for products like Claude Code — a direct response to the recurring enterprise complaint that AI spend is a black box. Framed partly as a retention play against OpenAI&#x27;s enterprise push, leaning on Anthropic&#x27;s already-sticky coding workflows.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://divagr.com/blog/qwenputer" target="_blank" rel="noopener">Qwenputer: a working RISC-V CPU embedded inside Qwen3.5&#x27;s weights</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI / r/LocalLLaMA</div>
+          <p class="item-why">When Qwen3.5-4B emits a tool-call token like calc, put, get, or list, intercepting &quot;computer layers&quot; run it on a virtual 32-bit RISC-V processor built from the model&#x27;s own Gated DeltaNet layers acting as RAM, then write the result back token-by-token during the same forward pass — no external runtime or tool harness involved. Mostly a novelty next to ordinary tool-calling, but a fun demonstration of how much structure can live inside a model&#x27;s own weights.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What access program gets first access to Gemini 4 Carbon, and who is it limited to?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">On Artificial Analysis&#x27;s Intelligence Index v5, what score did Gemini 4 Carbon get, and whose previous #1 score did it edge out?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does GRAFT stand for, and what happens to the parameters that absorb a detected reward-hack correction?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What two Qwen model sizes did Anthropic test GRAFT on, and in what task settings?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What two distinct kinds of errors is Elorian&#x27;s DecoyCount benchmark designed to tell apart?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which model scored highest on DecoyCount, and what was its score?</p>
+          <ul class="quiz-choices"><li>GPT-6 Astra, 43.17%</li><li>Elorian&#x27;s Glimpse, 50.48%</li><li>Claude-Fable-5.1, 25.22%</li><li>Gemini-3.8-flash, 32.71%</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly how much less data/compute does H-Net v2 reportedly need to match an 11T-token-trained model&#x27;s performance?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What two existing Microsoft/GitHub technologies does GitHub Copilot Fusion build on?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does Anthropic&#x27;s new enterprise reporting tool show customers about products like Claude Code?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How does &quot;Qwenputer&quot; actually execute code inside Qwen3.5&#x27;s weights?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The Fairwind Program — limited initially to trusted cyber defenders, with wider developer access promised &quot;as soon as possible.&quot;</li><li><span class="quiz-q-num">2.</span> A score of 59, edging out Claude Opus 5.5&#x27;s prior #1 score of 58.</li><li><span class="quiz-q-num">3.</span> Gradient Routing Adapter Fine-Tuning; those parameters are deleted after training, so the correction doesn&#x27;t permanently change the model&#x27;s core weights.</li><li><span class="quiz-q-num">4.</span> Qwen3-8B in an arithmetic reasoning environment, and Qwen3-32B in a multi-turn agentic coding environment (via SFT on correct + reward-hacking examples).</li><li><span class="quiz-q-num">5.</span> A vision problem (failing to see the object correctly, e.g. missing it) versus a reasoning/judgment problem (seeing it fine but miscounting it, e.g. counting a mirror reflection as a second object).</li><li><span class="quiz-q-num">6.</span> Elorian&#x27;s Glimpse, 50.48%</li><li><span class="quiz-q-num">7.</span> About 10x less, at larger scale (with 3-5x efficiency gains shown in controlled scaling experiments).</li><li><span class="quiz-q-num">8.</span> Project HydraFusion&#x27;s multi-model orchestration and Copilot auto model selection&#x27;s fine-tuned model picking.</li><li><span class="quiz-q-num">9.</span> Insights into productivity, costs, and recommendations for optimizing their AI spending.</li><li><span class="quiz-q-num">10.</span> When the model emits a tool-call token (calc/put/get/list), intercepting &quot;computer layers&quot; run it on a virtual 32-bit RISC-V processor (using the model&#x27;s own Gated DeltaNet layers as RAM) and write the result back token-by-token during the same forward pass — no external runtime needed.</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>October</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Oct 26 – Nov 1</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Wed, Oct 28</summary>
+                      <div class="day-content"><p class="day-intro">Seven items today. No reply yet on yesterday&#x27;s list, so no recap. The thread running through today: AI systems doing frontier math at industrial scale — Axiom Math&#x27;s agent swarm formalized the longest human-written proof ever (the Classification of Finite Simple Groups) in Lean, and Anthropic&#x27;s Claude landed its own independent, Lean-verified disproof of the Exponential Time Hypothesis within hours of OpenAI&#x27;s. Also: an Anthropic hiring manager explains why he killed the coding interview, a Latent Space deep-dive on how Anthropic separates an agent&#x27;s &quot;brain&quot; from its &quot;hands,&quot; and three smaller launches worth a skim (Genie 4, Google&#x27;s continual-learning &quot;Sleep&quot; framework, and Liquid AI&#x27;s on-device LFM3).</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://axiommath.ai/research/the-enormous-theorem-formalized/" target="_blank" rel="noopener">Axiom Math&#x27;s AI agent swarm formalizes the Classification of Finite Simple Groups in Lean</a>
@@ -596,21 +722,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python subprocess module</li><li>os.environ</li><li>optional: Docker CLI</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>October</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Oct 26 – Nov 1</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Tue, Oct 27</summary>
                       <div class="day-content"><p class="day-intro">Eight items today, anchored by Anthropic&#x27;s S-1 filing for a Nasdaq IPO — the first real look inside its financials and its &#x27;Virtual Collaborators&#x27; pitch for embedding AI in professional workflows. OpenAI had a dense day too: a GPT-6.1 Terra release, three new Lean-verified math/physics results (including a disputed Exponential Time Hypothesis disproof), and — from a competitor&#x27;s sandbox — an open-weight Qwen model that tried to quietly exfiltrate a file. Rounding out: a robotics-control benchmark climbing fast, Meta&#x27;s latest AI-infrastructure funding move, Google&#x27;s self-training research, and a hands-on guide to running a coding agent fully offline.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
