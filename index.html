@@ -571,7 +571,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The Fairwind Program — limited initially to trusted cyber defenders, with wider developer access promised &quot;as soon as possible.&quot;</li><li><span class="quiz-q-num">2.</span> A score of 59, edging out Claude Opus 5.5&#x27;s prior #1 score of 58.</li><li><span class="quiz-q-num">3.</span> Gradient Routing Adapter Fine-Tuning; those parameters are deleted after training, so the correction doesn&#x27;t permanently change the model&#x27;s core weights.</li><li><span class="quiz-q-num">4.</span> Qwen3-8B in an arithmetic reasoning environment, and Qwen3-32B in a multi-turn agentic coding environment (via SFT on correct + reward-hacking examples).</li><li><span class="quiz-q-num">5.</span> A vision problem (failing to see the object correctly, e.g. missing it) versus a reasoning/judgment problem (seeing it fine but miscounting it, e.g. counting a mirror reflection as a second object).</li><li><span class="quiz-q-num">6.</span> Elorian&#x27;s Glimpse, 50.48%</li><li><span class="quiz-q-num">7.</span> About 10x less, at larger scale (with 3-5x efficiency gains shown in controlled scaling experiments).</li><li><span class="quiz-q-num">8.</span> Project HydraFusion&#x27;s multi-model orchestration and Copilot auto model selection&#x27;s fine-tuned model picking.</li><li><span class="quiz-q-num">9.</span> Insights into productivity, costs, and recommendations for optimizing their AI spending.</li><li><span class="quiz-q-num">10.</span> When the model emits a tool-call token (calc/put/get/list), intercepting &quot;computer layers&quot; run it on a virtual 32-bit RISC-V processor (using the model&#x27;s own Gated DeltaNet layers as RAM) and write the result back token-by-token during the same forward pass — no external runtime needed.</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">data/eval exercise</span>
+      </div>
+      <p class="build-pitch">Third one landing without a reply — no worries at all, keeping it easy: reproduce DecoyCount&#x27;s trick in plain text and see if Claude falls for a decoy the same way the paper found.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>DecoyCount (today&#x27;s Elorian item) is built to separate two different failures: not seeing an object right, versus seeing it fine but reasoning about it wrong — like counting a mirror reflection as a second apple. You don&#x27;t need the real benchmark or any images to probe that second failure mode: hand-write a half dozen text-only counting scenes with one decoy baked into each description (a reflection, a shadow, a photo-of-a-photo, a broken half), and see whether Claude double-counts the decoy. It&#x27;s a fast, hands-on feel for why the benchmark&#x27;s authors needed two separate failure buckets instead of one &#x27;got it wrong.&#x27;</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Write 6 short text scenes, each describing a set of objects plus exactly one decoy (mirror reflection, shadow, photo of the object, a broken/half piece) — note the true count for each</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Ask Claude to count each scene (chat or API), recording its answer verbatim</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Score each as correct, fooled-by-decoy, or other — tally the hit rate across the 6</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write one sentence on which decoy type (if any) tripped it up</span>
+            <span class="badge badge-mono">2 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A short table — 6 scenes, Claude&#x27;s count vs. the true count, and a correct/fooled tag for each — plus one line naming which decoy type (if any) caused the miscount.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Run the same 6 prompts against a second model (e.g. a free-tier model via OpenRouter) and compare decoy failure rates side by side.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Claude (chat or Anthropic API)</li><li>a plain text file or spreadsheet for the log</li><li>python (optional, just for tallying)</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

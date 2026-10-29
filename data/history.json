@@ -9362,6 +9362,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Third one landing without a reply \u2014 no worries at all, keeping it easy: reproduce DecoyCount's trick in plain text and see if Claude falls for a decoy the same way the paper found.",
+      "category": "data/eval exercise",
+      "why": "DecoyCount (today's Elorian item) is built to separate two different failures: not seeing an object right, versus seeing it fine but reasoning about it wrong \u2014 like counting a mirror reflection as a second apple. You don't need the real benchmark or any images to probe that second failure mode: hand-write a half dozen text-only counting scenes with one decoy baked into each description (a reflection, a shadow, a photo-of-a-photo, a broken half), and see whether Claude double-counts the decoy. It's a fast, hands-on feel for why the benchmark's authors needed two separate failure buckets instead of one 'got it wrong.'",
+      "plan": [
+        {
+          "step": "Write 6 short text scenes, each describing a set of objects plus exactly one decoy (mirror reflection, shadow, photo of the object, a broken/half piece) \u2014 note the true count for each",
+          "minutes": 10
+        },
+        {
+          "step": "Ask Claude to count each scene (chat or API), recording its answer verbatim",
+          "minutes": 8
+        },
+        {
+          "step": "Score each as correct, fooled-by-decoy, or other \u2014 tally the hit rate across the 6",
+          "minutes": 5
+        },
+        {
+          "step": "Write one sentence on which decoy type (if any) tripped it up",
+          "minutes": 2
+        }
+      ],
+      "done_looks_like": "A short table \u2014 6 scenes, Claude's count vs. the true count, and a correct/fooled tag for each \u2014 plus one line naming which decoy type (if any) caused the miscount.",
+      "stretch_goal": "Run the same 6 prompts against a second model (e.g. a free-tier model via OpenRouter) and compare decoy failure rates side by side.",
+      "tools": [
+        "Claude (chat or Anthropic API)",
+        "a plain text file or spreadsheet for the log",
+        "python (optional, just for tallying)"
+      ]
+    }
   }
 ]
