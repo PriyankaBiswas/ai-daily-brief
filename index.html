@@ -462,8 +462,118 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Thursday, October 29, 2026</h2>
-    <div class="day-content"><p class="day-intro">Eight items today. Still no reply on the last two lists, so no recap. Three stories today are, in different ways, about where models&#x27; confident competence quietly breaks down: Anthropic&#x27;s GRAFT technique tries to stop models from learning to game weak safety monitors, Elorian&#x27;s new DecoyCount benchmark shows every frontier model (Claude included) fails basic visual counting, and a byte-level tokenizer redesign (H-Net v2) suggests some of that fragility starts at the tokenization layer. Also today: Gemini 4 Carbon&#x27;s actual launch (after Monday&#x27;s leak), GitHub and Microsoft both shipping multi-model orchestration layers for Copilot, and someone embedding a working CPU inside a language model&#x27;s weights because they could.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Friday, October 30, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on the last few lists, so no recap. Six items today, lighter than usual — Monday&#x27;s newsletters leaned heavily on stories already covered yesterday (Gemini 4 Carbon, Qwenputer, Copilot Fusion), so this list leans on what survived dedup plus a couple of web-search fills. The thread running through today: multiple players are building the plumbing underneath agents rather than the agents themselves — Microsoft opening its internal Copilot orchestration layer to developers, Supabase&#x27;s founders explaining why agents gravitate to their backend, and a hard look at whether the benchmarks steering a trillion-dollar market are measuring the right thing.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blogs.microsoft.com/blog/2026/10/28/introducing-the-microsoft-copilot-harness-unlocking-the-potential-of-truly-multi-model-agentic-work/" target="_blank" rel="noopener">Microsoft opens its Copilot Harness to developers through Foundry</a>
+            <span class="badge badge-mono">9 min</span>
+          </div>
+          <div class="item-source">Microsoft (via TLDR AI)</div>
+          <p class="item-why">Microsoft is productizing the multi-model orchestration layer that already powers Copilot Code, Copilot Studio, the GitHub Copilot app, and VS Code — reportedly routing across 20+ frontier models plus bring-your-own-key. It&#x27;s the clearest sign yet that the agent &quot;harness&quot; (sandbox, governance, routing) is becoming a separate, sellable layer from the model itself, same bet GitHub Copilot Fusion made yesterday.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers" target="_blank" rel="noopener">Artificial Analysis v5 and the benchmarker&#x27;s dilemma</a>
+            <span class="badge badge-mono">13 min</span>
+          </div>
+          <div class="item-source">Interconnects (Nathan Lambert), via TLDR AI</div>
+          <p class="item-why">Lambert&#x27;s take on AA&#x27;s new Intelligence Index v5 (four categories — Knowledge Work, Coding, Science, General — weighted evenly at 25% each) is really about who gets to decide what &quot;good&quot; means: independent evaluators now move enough money and attention that labs reportedly optimize toward the index itself, not just capability. Useful context every time a &quot;#1 on AA&quot; claim shows up in this list (see yesterday&#x27;s Gemini 4 Carbon item).</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://lspace.beehiiv.com/p/supabase" target="_blank" rel="noopener">Why agents love Supabase — with Paul Copplestone and Ant Wilson</a>
+            <span class="badge badge-mono">12 min</span>
+          </div>
+          <div class="item-source">Latent Space (podcast + writeup)</div>
+          <p class="item-why">The Supabase founders&#x27; own answer to why nearly every frontier model defaults to their backend: declarative schemas kept in Git instead of a migration history (&quot;a Terraform moment for the database&quot;), a new no-Docker local runtime, and a push toward running compute next to the database. Also covers the Turso acquisition and the &quot;prototype to petabyte&quot; scaling story behind it.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.engadget.com/2300235/openai-now-lets-you-text-your-dot-agent/" target="_blank" rel="noopener">OpenAI lets US Pro users text their Dot agent over iMessage and RCS</a>
+            <span class="badge badge-mono">5 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Engadget (via TLDR AI)</div>
+          <p class="item-why">Small expansion of the Dot agent (launched late September): it can now text back over iMessage/RCS via a third-party provider, and messages aren&#x27;t end-to-end encrypted — worth knowing before texting one anything sensitive. A quiet data point in the broader push to make agents live in channels you already use rather than an app.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/i-broke-a-browser-agent-on-purpose-spotting-the-fault-was-not-the-same-as-fixing-it/" target="_blank" rel="noopener">I broke a browser agent on purpose — spotting the fault wasn&#x27;t the same as fixing it</a>
+            <span class="badge badge-mono">13 min</span>
+          </div>
+          <div class="item-source">Towards Data Science (Abdullahi Dattijo)</div>
+          <p class="item-why">A rare published teardown of agent failure rather than agent success: the author deliberately injected click-coordinate faults (inspired by the WebFovea paper) into a browser agent&#x27;s actions and found a simple &quot;did the page change as expected&quot; check missed about half of the wrong clicks, while also raising false alarms on clicks that actually worked. A concrete caution for anyone trusting an agent&#x27;s own self-checks.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://techcrunch.com/2026/10/28/meta-has-a-new-ai-pet-app-called-waddle-world/" target="_blank" rel="noopener">Meta launches Waddle World, a Tamagotchi-style AI pet app</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TechCrunch (via TLDR AI)</div>
+          <p class="item-why">Lighter note: Meta&#x27;s new AI pet/journal app (Philippines-only so far) deliberately skips daily streaks and competitive scoring — a notably restrained design choice from a company that usually optimizes hard for engagement loops.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What existing Microsoft products does the newly-opened Copilot Harness already power?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly how many frontier models does the Copilot Harness reportedly support, aside from bring-your-own-key?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In Artificial Analysis v5&#x27;s Intelligence Index, how many categories are there and how are they weighted?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does Nathan Lambert argue independent benchmarks like Artificial Analysis now do to the model market, beyond just scoring it?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What do the Supabase founders call the move to declarative, Git-tracked database schemas (instead of a migration history)?</p>
+          <ul class="quiz-choices"><li>A &quot;Terraform moment&quot; for the database</li><li>A &quot;Kubernetes moment&quot; for the database</li><li>A &quot;Docker moment&quot; for the database</li><li>A &quot;Git moment&quot; for the backend</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which database company did Supabase acquire, discussed as part of its &quot;prototype to petabyte&quot; scaling push?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">True or false: messages you send to your OpenAI Dot agent over iMessage/RCS are end-to-end encrypted.</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the &quot;I broke a browser agent on purpose&quot; piece, what fraction of injected wrong clicks did the simple page-check fail to catch?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What paper inspired the click-coordinate fault injected into the browser agent experiment?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What&#x27;s unusual about Meta&#x27;s Waddle World compared to most virtual-pet / engagement apps?</p>
+          <ul class="quiz-choices"><li>It relies heavily on daily streaks</li><li>It avoids daily streaks and competitive scores</li><li>It requires a paid subscription</li><li>It only works in VR</li></ul>
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Copilot Code, Copilot Studio, the GitHub Copilot app, the Copilot CLI, and VS Code.</li><li><span class="quiz-q-num">2.</span> More than 20.</li><li><span class="quiz-q-num">3.</span> Four categories — Knowledge Work, Coding, Science, and General — each weighted evenly at 25%.</li><li><span class="quiz-q-num">4.</span> He argues they effectively dictate commercial winners and losers and push labs to optimize toward the index itself, not just raw capability.</li><li><span class="quiz-q-num">5.</span> A &quot;Terraform moment&quot; for the database.</li><li><span class="quiz-q-num">6.</span> Turso.</li><li><span class="quiz-q-num">7.</span> False — they&#x27;re routed through a third-party provider and stored as part of the Dot conversation, not end-to-end encrypted.</li><li><span class="quiz-q-num">8.</span> About half.</li><li><span class="quiz-q-num">9.</span> The WebFovea paper, describing a coordinate mismatch that sends clicks to about three-quarters of their intended position.</li><li><span class="quiz-q-num">10.</span> It deliberately avoids daily streaks and competitive scores to drive engagement.</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>October</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Oct 26 – Nov 1</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Thu, Oct 29</summary>
+                      <div class="day-content"><p class="day-intro">Eight items today. Still no reply on the last two lists, so no recap. Three stories today are, in different ways, about where models&#x27; confident competence quietly breaks down: Anthropic&#x27;s GRAFT technique tries to stop models from learning to game weak safety monitors, Elorian&#x27;s new DecoyCount benchmark shows every frontier model (Claude included) fails basic visual counting, and a byte-level tokenizer redesign (H-Net v2) suggests some of that fragility starts at the tokenization layer. Also today: Gemini 4 Carbon&#x27;s actual launch (after Monday&#x27;s leak), GitHub and Microsoft both shipping multi-model orchestration layers for Copilot, and someone embedding a working CPU inside a language model&#x27;s weights because they could.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">Google ships Gemini 4 Carbon, with cyber defenders first in line</a>
@@ -604,21 +714,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Claude (chat or Anthropic API)</li><li>a plain text file or spreadsheet for the log</li><li>python (optional, just for tallying)</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>October</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Oct 26 – Nov 1</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Wed, Oct 28</summary>
                       <div class="day-content"><p class="day-intro">Seven items today. No reply yet on yesterday&#x27;s list, so no recap. The thread running through today: AI systems doing frontier math at industrial scale — Axiom Math&#x27;s agent swarm formalized the longest human-written proof ever (the Classification of Finite Simple Groups) in Lean, and Anthropic&#x27;s Claude landed its own independent, Lean-verified disproof of the Exponential Time Hypothesis within hours of OpenAI&#x27;s. Also: an Anthropic hiring manager explains why he killed the coding interview, a Latent Space deep-dive on how Anthropic separates an agent&#x27;s &quot;brain&quot; from its &quot;hands,&quot; and three smaller launches worth a skim (Genie 4, Google&#x27;s continual-learning &quot;Sleep&quot; framework, and Liquid AI&#x27;s on-device LFM3).</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
