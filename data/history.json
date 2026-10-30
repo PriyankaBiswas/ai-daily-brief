@@ -9502,6 +9502,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a tiny two-model benchmark and watch the “winner” flip depending on how you weight the categories.",
+      "category": "API-exploration",
+      "why": "Been quiet on the last few builds, so today's a quick one. It riffs on today's “Artificial Analysis v5 and the benchmarker's dilemma” piece — Lambert's point is that weighting categories differently can crown different winners. Instead of reading about that effect, you reproduce it yourself in ~25 minutes using two models you already have API access to.",
+      "plan": [
+        {
+          "step": "Pick 2 models you already have API keys for (e.g. two Claude models, or Claude + GPT) and write 4 short prompts across 2 categories — 2 coding, 2 general-knowledge.",
+          "minutes": 5
+        },
+        {
+          "step": "Write a short script that sends all 4 prompts to both models and prints the 8 responses side by side.",
+          "minutes": 10
+        },
+        {
+          "step": "Score each of the 8 responses 1-5 by eye for quality.",
+          "minutes": 5
+        },
+        {
+          "step": "Compute two weighted averages per model — one weighting coding 70%, one weighting knowledge 70% — and check whether the top-scoring model changes.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A small table: 2 models × 2 categories × 2 weighting schemes, with the “winner” named under each scheme — ideally showing the ranking flip Lambert describes.",
+      "stretch_goal": "Swap your own eyeballing for an LLM-as-judge — have a third model score the 8 responses instead of you, and see if its scores change the flip.",
+      "tools": [
+        "Python",
+        "anthropic SDK or openai SDK (whichever you already have a key for)"
+      ]
+    }
   }
 ]
