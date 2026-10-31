@@ -9675,6 +9675,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a tiny scanner that catches a backdoor the way today's VS Code story should have been caught.",
+      "category": "agent/tool-building",
+      "why": "Riffs on today's item about the VS Code extension that briefly shipped an SSH backdoor targeting Claude Code users. You'll write a small diff-scanner that flags suspicious tokens (ssh, exec, base64, curl, child_process) introduced between two versions of a file — a toy version of the kind of check that could have caught that update before anyone pulled it.",
+      "plan": [
+        {
+          "step": "Create two small text files simulating a before and after version of a script, with one suspicious line (e.g. an ssh/exec/base64 call) added in the after version.",
+          "minutes": 5
+        },
+        {
+          "step": "Write a short Python script using difflib to diff the two files and flag any added line containing a suspicious token list (ssh, exec, subprocess, base64, curl, child_process, authorized_keys, eval).",
+          "minutes": 10
+        },
+        {
+          "step": "Run it on your before/after pair and confirm it flags exactly the injected line.",
+          "minutes": 5
+        },
+        {
+          "step": "Write one sentence noting a realistic false-positive case (e.g. legitimate code that calls exec or curl) and how you'd reduce noise.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "Running the script on your before/after pair prints the single injected line, tagged as suspicious, with the matched keyword named — plus your one-line note on a false-positive scenario.",
+      "stretch_goal": "Point the same script at a real diff from a small open-source repo (git show <commit> or git log -p) to see how often it fires on ordinary code, and tune the token list down to reduce the noise.",
+      "tools": [
+        "Python",
+        "difflib (stdlib)",
+        "optional: git diff / git show"
+      ]
+    }
   }
 ]
