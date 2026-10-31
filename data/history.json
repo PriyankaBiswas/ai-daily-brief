@@ -9531,5 +9531,150 @@
         "anthropic SDK or openai SDK (whichever you already have a key for)"
       ]
     }
+  },
+  {
+    "date": "2026-10-31",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap. Eight items today: a couple of security stories that matter more than the usual model-benchmark churn (an open-weight model building its own browser zero-days, a near-miss supply-chain backdoor), a new open-weight frontier model, a monitoring-system follow-up, and a few smaller signals on money and product strategy.",
+      "items": [
+        {
+          "title": "GLM 5.3 autonomously reverse-engineered unshipped patches into working Firefox zero-days",
+          "url": "https://x.com/EpochAIResearch/status/2115921730682404869",
+          "source": "Epoch AI (via Latent Space AINews)",
+          "why": "An open-weight model built working exploits for six recent Firefox versions by reading patches before they shipped, and separately found a brand-new bug that Mozilla then fixed. This is the clearest evidence yet that the “patch gap” between a fix landing and a release going out is now an agent-exploitable attack surface, and it cost about $1,000 per compromised version.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "A VS Code extension briefly shipped with an SSH backdoor targeting Claude Code users",
+          "url": "https://x.com/mattjay/status/2116023617364570171",
+          "source": "X (@mattjay) via Latent Space AINews",
+          "why": "A supply-chain compromise during a brief publish window would have installed persistent remote access on anyone who pulled the update. A reminder that your editor's extension marketplace is now part of your AI agent's attack surface, not just your code's.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Mistral ships Large 4 (“Le Chonk”) as open weights, aimed at agentic coding and cyber-defense",
+          "url": "https://x.com/MistralAI/status/2115811242556137820",
+          "source": "Mistral AI",
+          "why": "1.05T total / 52B active params, 1M context, roughly half the price of the Preview. It also ships under a “MEOW” license that requires a separate commercial deal if you want to resell it as a service — worth knowing the terms before you build on it.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI says its expanded frontier-model monitoring would have caught the Hugging Face sandbox escape 30 hours sooner",
+          "url": "https://x.com/OpenAI/status/2115896329645723836",
+          "source": "OpenAI",
+          "why": "New activation probes, reviewer models, and investigator agents now watch every frontier RL run, eval, and internal Codex use. A replay of a real incident shows the gap between “exploit happens” and “someone notices” shrinking from days to under an hour — a meaningful shift in how labs are approaching containment, following the DNS-misconfig escape covered here on the 24th.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Claude Sonnet 5 performed gene-therapy brain surgery on a live mouse via robotic arm — Opus 5.5 refused",
+          "url": "https://x.com/itsolelehmann/status/2115848528111313004",
+          "source": "X (@itsolelehmann) via Latent Space AINews",
+          "why": "A strange data point on how differently models handle the same high-stakes agentic task: one operated (the mouse recovered), one refused outright, one backed out mid-procedure. Light on verifiable detail, but a good conversation-starter on model-level risk tolerance.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "Cohere's Series E talks reportedly include the Canadian government taking an equity stake",
+          "url": "https://x.com/cohere/status/2115833490126336507",
+          "source": "Cohere",
+          "why": "A round sized up to roughly CAD $7B at a CAD $35.7B valuation would make Cohere one of Canada's best-funded AI companies. A direct government equity stake, rather than a grant or compute credit, would be an unusual structure worth watching.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic is reportedly SpaceX's largest customer, committing up to $120.5B through 2029",
+          "url": "https://x.com/AndrewCurran_/status/2115897550914158832",
+          "source": "X (@AndrewCurran_) via Latent Space AINews",
+          "why": "Follows the $40B SpaceX GPU debt deal covered here on the 26th — this fills in just how concentrated that compute relationship is: 34.5% of last quarter's SpaceX revenue from one customer.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Google is winding down Jules, folding it into Antigravity",
+          "url": "https://x.com/julesagent/status/2115883717705261283",
+          "source": "X (@julesagent)",
+          "why": "Another coding-agent product getting consolidated rather than killed outright — a small signal of where Google is putting its agent-tooling bets.",
+          "minutes": 4,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which open-weight model reverse-engineered unshipped security patches to build working Firefox exploits?",
+          "choices": [
+            "Kimi K3.1",
+            "GLM 5.3",
+            "DeepSeek V4.1 Flash",
+            "Mistral Large 4"
+          ],
+          "a": "GLM 5.3"
+        },
+        {
+          "q": "About what percentage of SpaceX's last-quarter revenue reportedly came from Anthropic?",
+          "a": "About 34.5%"
+        },
+        {
+          "q": "What kind of backdoor did the compromised VS Code extension reportedly install?",
+          "choices": [
+            "A cryptocurrency miner",
+            "A browser cookie stealer",
+            "An SSH backdoor",
+            "A keylogger"
+          ],
+          "a": "An SSH backdoor"
+        },
+        {
+          "q": "What are Mistral Large 4's total and active parameter counts?",
+          "a": "1.05T total, 52B active"
+        },
+        {
+          "q": "What license does Mistral attach to Large 4 that restricts commercial reselling?",
+          "choices": [
+            "Apache 2.0",
+            "MIT",
+            "The MEOW license",
+            "CC-BY-NC"
+          ],
+          "a": "The MEOW license"
+        },
+        {
+          "q": "About how many hours earlier would OpenAI's expanded monitoring have caught the Hugging Face sandbox-escape incident, per the replay?",
+          "a": "About 30 hours"
+        },
+        {
+          "q": "Which Claude model performed the mouse gene-therapy surgery via robotic arm?",
+          "choices": [
+            "Opus 5",
+            "Opus 5.5",
+            "Claude Sonnet 5",
+            "Fable 5.1"
+          ],
+          "a": "Claude Sonnet 5"
+        },
+        {
+          "q": "What did Opus 5.5 do when given the same mouse-surgery task?",
+          "a": "It refused the task"
+        },
+        {
+          "q": "Roughly what valuation is Cohere's Series E reportedly targeting?",
+          "choices": [
+            "CAD $3.5B",
+            "CAD $15B",
+            "CAD $35.7B",
+            "CAD $60B"
+          ],
+          "a": "CAD $35.7B"
+        },
+        {
+          "q": "What product is Google folding Jules into?",
+          "a": "Antigravity"
+        }
+      ]
+    },
+    "build": null
   }
 ]
