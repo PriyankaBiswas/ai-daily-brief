@@ -547,7 +547,40 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> £100M</li><li><span class="quiz-q-num">2.</span> OpenAI and Anthropic</li><li><span class="quiz-q-num">3.</span> 93</li><li><span class="quiz-q-num">4.</span> Blackmail</li><li><span class="quiz-q-num">5.</span> ANT</li><li><span class="quiz-q-num">6.</span> Nov. 9</li><li><span class="quiz-q-num">7.</span> Google, Microsoft, Anthropic, and OpenAI</li><li><span class="quiz-q-num">8.</span> robots.txt</li><li><span class="quiz-q-num">9.</span> Alibaba</li><li><span class="quiz-q-num">10.</span> 1M</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">prompt-engineering</span>
+      </div>
+      <p class="build-pitch">A 25-minute &#x27;needle in the haystack&#x27; test: plant one fact in a wall of filler text and see how far you can push the context before a model stops finding it.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Today&#x27;s list flags Qwen4&#x27;s rumored 1M-token context window, but a context-window number on its own doesn&#x27;t tell you much — this gives you a hands-on feel for what &#x27;long context&#x27; is actually testing, and roughly where retrieval starts to degrade for a real model you can hit right now.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Get an Anthropic API key set up and `pip install anthropic`</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write a script that builds filler text (e.g. repeated unrelated paragraphs) and inserts one unique, made-up fact at a random position</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Send the stuffed prompt to claude-haiku-4-5 asking it to state the planted fact and nothing else</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Re-run at a few increasing lengths (e.g. 2k, 20k, 100k, 180k tokens) and note where it starts missing or hallucinating the fact</span>
+            <span class="badge badge-mono">7 min</span></li><li><span class="plan-step">Jot down the breaking point and whether the fact&#x27;s position (start/middle/end) mattered</span>
+            <span class="badge badge-mono">3 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>One script that reliably retrieves a planted fact at a small context size, run again at larger sizes with a one-line note on where (if anywhere) it started to fail.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Automate the sweep across 6-8 context lengths and positions, and plot retrieval accuracy vs. length to see the actual &#x27;haystack&#x27; curve for this model.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Anthropic Python SDK (anthropic)</li><li>Claude API (claude-haiku-4-5)</li><li>Python</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

@@ -9813,6 +9813,39 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "A 25-minute 'needle in the haystack' test: plant one fact in a wall of filler text and see how far you can push the context before a model stops finding it.",
+      "category": "prompt-engineering",
+      "why": "Today's list flags Qwen4's rumored 1M-token context window, but a context-window number on its own doesn't tell you much — this gives you a hands-on feel for what 'long context' is actually testing, and roughly where retrieval starts to degrade for a real model you can hit right now.",
+      "plan": [
+        {
+          "step": "Get an Anthropic API key set up and `pip install anthropic`",
+          "minutes": 5
+        },
+        {
+          "step": "Write a script that builds filler text (e.g. repeated unrelated paragraphs) and inserts one unique, made-up fact at a random position",
+          "minutes": 5
+        },
+        {
+          "step": "Send the stuffed prompt to claude-haiku-4-5 asking it to state the planted fact and nothing else",
+          "minutes": 5
+        },
+        {
+          "step": "Re-run at a few increasing lengths (e.g. 2k, 20k, 100k, 180k tokens) and note where it starts missing or hallucinating the fact",
+          "minutes": 7
+        },
+        {
+          "step": "Jot down the breaking point and whether the fact's position (start/middle/end) mattered",
+          "minutes": 3
+        }
+      ],
+      "done_looks_like": "One script that reliably retrieves a planted fact at a small context size, run again at larger sizes with a one-line note on where (if anywhere) it started to fail.",
+      "stretch_goal": "Automate the sweep across 6-8 context lengths and positions, and plot retrieval accuracy vs. length to see the actual 'haystack' curve for this model.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "Claude API (claude-haiku-4-5)",
+        "Python"
+      ]
+    }
   }
 ]
