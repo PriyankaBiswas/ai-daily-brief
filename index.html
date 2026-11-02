@@ -571,7 +571,38 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> 0.1%</li><li><span class="quiz-q-num">2.</span> About 92%</li><li><span class="quiz-q-num">3.</span> Anthropic, UC Berkeley, and UIUC</li><li><span class="quiz-q-num">4.</span> High (Biological and Chemical domain)</li><li><span class="quiz-q-num">5.</span> GPT-6 Astra</li><li><span class="quiz-q-num">6.</span> Harmless fiction and roleplay examples</li><li><span class="quiz-q-num">7.</span> 11</li><li><span class="quiz-q-num">8.</span> 36%</li><li><span class="quiz-q-num">9.</span> A haiku</li><li><span class="quiz-q-num">10.</span> &quot;Several hundred&quot;</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">paper-reimplementation</span>
+      </div>
+      <p class="build-pitch">Recreate Realtime-Bench&#x27;s headline finding in miniature: give an LLM a hard deadline on a few tiny tasks and watch accuracy fall off a cliff.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs on today&#x27;s Realtime-Bench item (best models solve real-time tasks only ~36% of the time under a true wall-clock deadline, vs 70-80% with the clock paused). Building a toy version of that harness teaches you the actual mechanics of &#x27;wall clock&#x27; benchmarking — hard timeouts, forced early answers, scoring a rushed response — instead of just reading the number.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Write 4-5 tiny tasks an LLM can usually solve but that take a beat of reasoning (e.g. a short riddle, a multi-step arithmetic word problem, a small logic puzzle).</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Call the Anthropic API on each task twice: once with no constraint, once wrapped in a hard timeout (via concurrent.futures, e.g. 3 seconds) that forces whatever partial output exists at cutoff to count as the answer.</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Score both runs and print a small table: task, untimed correct?, timed correct?, and the overall accuracy gap.</span>
+            <span class="badge badge-mono">7 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A printed table showing the same small task set scored twice — untimed vs hard-deadline — with a visible accuracy drop under time pressure, even at this tiny scale.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Sweep the timeout (1s, 3s, 5s, unlimited) and plot accuracy vs deadline to see your own mini version of Realtime-Bench&#x27;s curve.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Anthropic Python SDK (anthropic)</li><li>concurrent.futures</li><li>time</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

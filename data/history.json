@@ -9979,6 +9979,31 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Recreate Realtime-Bench's headline finding in miniature: give an LLM a hard deadline on a few tiny tasks and watch accuracy fall off a cliff.",
+      "category": "paper-reimplementation",
+      "why": "Riffs on today's Realtime-Bench item (best models solve real-time tasks only ~36% of the time under a true wall-clock deadline, vs 70-80% with the clock paused). Building a toy version of that harness teaches you the actual mechanics of 'wall clock' benchmarking — hard timeouts, forced early answers, scoring a rushed response — instead of just reading the number.",
+      "plan": [
+        {
+          "step": "Write 4-5 tiny tasks an LLM can usually solve but that take a beat of reasoning (e.g. a short riddle, a multi-step arithmetic word problem, a small logic puzzle).",
+          "minutes": 8
+        },
+        {
+          "step": "Call the Anthropic API on each task twice: once with no constraint, once wrapped in a hard timeout (via concurrent.futures, e.g. 3 seconds) that forces whatever partial output exists at cutoff to count as the answer.",
+          "minutes": 10
+        },
+        {
+          "step": "Score both runs and print a small table: task, untimed correct?, timed correct?, and the overall accuracy gap.",
+          "minutes": 7
+        }
+      ],
+      "done_looks_like": "A printed table showing the same small task set scored twice — untimed vs hard-deadline — with a visible accuracy drop under time pressure, even at this tiny scale.",
+      "stretch_goal": "Sweep the timeout (1s, 3s, 5s, unlimited) and plot accuracy vs deadline to see your own mini version of Realtime-Bench's curve.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "concurrent.futures",
+        "time"
+      ]
+    }
   }
 ]
