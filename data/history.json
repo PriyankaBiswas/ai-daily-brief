@@ -10137,6 +10137,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Been quiet on these again — no worries, here’s a low-friction one to ease back in: build a one-page “resend-everything vs. append-only” latency toy for long chat threads.",
+      "category": "UI-for-AI",
+      "why": "Claude's new Message Threads feature (today's reading item #3) cuts median time-to-first-token ~35% on long contexts by sending only new messages instead of resending the full conversation every turn. This toy makes that mechanism visible instead of abstract: a fake chat where a toggle switches between the old way and the new way, and you watch a latency number behave completely differently as the thread grows.",
+      "plan": [
+        {
+          "step": "Scaffold a single HTML file: a scrolling fake chat log plus a text input and 'send' button",
+          "minutes": 6
+        },
+        {
+          "step": "Add a toggle: 'Resend full history' vs 'Append only' mode",
+          "minutes": 4
+        },
+        {
+          "step": "Fake-latency logic — resend mode's delay grows with total words sent so far; append mode's delay stays flat",
+          "minutes": 8
+        },
+        {
+          "step": "Show a live latency number/bar that updates after each message so the two modes visibly diverge",
+          "minutes": 7
+        }
+      ],
+      "done_looks_like": "Send ~10 fake messages with 'Resend' mode on and watch the latency number climb turn over turn; flip to 'Append' mode and watch it stay flat — no API key or real backend needed, it's all in one HTML file you can open directly in a browser.",
+      "stretch_goal": "Swap the fake linear formula for a real one: call the Anthropic Messages API's count_tokens endpoint on the growing transcript to drive the 'resend' delay from actual token counts instead of word counts.",
+      "tools": [
+        "plain HTML/CSS/JS (no framework, no build step)",
+        "optional: Anthropic Messages API count_tokens endpoint for the stretch goal"
+      ]
+    }
   }
 ]
