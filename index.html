@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Tuesday, November 3, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s run is dominated by Anthropic&#x27;s own IPO paperwork — fresh Q3 financials and a disclosure that it may be nearing a recursive-self-improvement threshold — alongside Claude&#x27;s new Message Threads latency feature, a GitHub security primitive for cross-repo agents, a spotted-in-the-wild GPT-6.2 Astra, and three shorter signal items. Eight items, about 58 min total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Wednesday, November 4, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s run leans on a correction cycle — the viral &quot;Astra edited another model&#x27;s weights&quot; claim from yesterday gets walked back — plus a geopolitical compute story, some evals-integrity and cost-engineering reads, and a scrappy budget build.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://honnibal.dev/blog/astra-read-write-misleading" target="_blank" rel="noopener">GPT-6 Astra&#x27;s “it edited Qwen&#x27;s weights” claim doesn&#x27;t hold up</a>
+            <span class="badge badge-mono">6 min</span>
+          </div>
+          <div class="item-source">Matthew Honnibal, via TLDR AI</div>
+          <p class="item-why">Direct follow-up to yesterday&#x27;s viral claim that Astra directly edited a smaller model&#x27;s weights to boost its math skills. Worth reading just to recalibrate before that story spreads further.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.geopolitechs.org/p/deepseek-plans-to-train-its-next" target="_blank" rel="noopener">DeepSeek plans to pretrain its next model on Huawei&#x27;s chips, not Nvidia&#x27;s</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">Geopolitechs, via TLDR AI</div>
+          <p class="item-why">Ascend chips have mostly done inference so far. A successful full pretraining run would be a real test of China&#x27;s hardware independence from Nvidia.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.anthropic.com/research/provable-inference" target="_blank" rel="noopener">Anthropic&#x27;s progress on cryptographically provable inference</a>
+            <span class="badge badge-mono">12 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Anthropic Research, via TLDR AI</div>
+          <p class="item-why">Tackles a real gap: it&#x27;s almost impossible today to verify which model actually produced a given output. zkSNARK-based proofs could underpin future compliance and audit requirements.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.vals.ai/blogs/reasoning-effort" target="_blank" rel="noopener">Lower reasoning effort barely dents quality but sharply cuts cost</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Vals AI, via TLDR AI</div>
+          <p class="item-why">A concrete, practical lever for anyone calling reasoning models in production — effort level matters more for your bill than for your output quality, and it&#x27;s task-dependent.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.baseten.co/blog/the-building-blocks-of-the-open-frontier" target="_blank" rel="noopener">Baseten ships Grid, Sandboxes, and serverless Loops</a>
+            <span class="badge badge-mono">5 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Baseten, via TLDR AI</div>
+          <p class="item-why">Model routing/governance, resumable VM-isolated agent execution, and serverless fine-tuning/RL — infra relevant to anyone building agents that need isolated, repeatable execution.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.primeintellect.ai/blog/auditing-public-evaluations" target="_blank" rel="noopener">What a year of auditing public LLM evals revealed about benchmark gaming</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Prime Intellect, via TLDR AI</div>
+          <p class="item-why">Before trusting the next benchmark chart: replacing ambiguous prose task descriptions with JSON schemas and adding multi-layered monitoring meaningfully changed scores.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.linum.ai/field-notes/pjit-21k" target="_blank" rel="noopener">How a two-person lab trained a text-to-image model for about $21K</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Linium, via TLDR AI</div>
+          <p class="item-why">Concrete numbers on how far a tiny team can push a pixel-space architecture (P-JiT) toward democratized generative video/image tooling.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://developer.apple.com/news/?id=gdk2umrf" target="_blank" rel="noopener">Apple opens Siri AI to all developers in the iOS 27.3 beta</a>
+            <span class="badge badge-mono">4 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Apple Developer News, via TLDR AI</div>
+          <p class="item-why">Quick one — third-party apps can now tap Siri&#x27;s NLP and personal-context features directly. Not available yet in the EU or for under-13 users.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What did Matthew Honnibal&#x27;s post argue about the “Astra edited Qwen&#x27;s weights” story?</p>
+          <ul class="quiz-choices"><li>It was accurate — Astra really did edit the weights</li><li>The claim is misleading; no genuine weight-editing occurred as described</li><li>Astra edited the weights but it didn&#x27;t help math scores</li><li>The story was actually about Gemini, not Astra</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which chipmaker does DeepSeek reportedly plan to use to pretrain its next-generation model, moving away from reliance on Nvidia?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to the Vals AI piece, what&#x27;s the main relationship between reasoning effort, cost, and quality?</p>
+          <ul class="quiz-choices"><li>Lower reasoning effort cuts cost far more than it hurts quality</li><li>Lower reasoning effort always tanks quality</li><li>Higher reasoning effort is always cheaper</li><li>Reasoning effort has no effect on cost</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What&#x27;s the name of the pixel-space architecture Linium used to train a text-to-image model for about $21K?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Besides Grid and serverless Loops, what did Baseten announce for isolated agent execution?</p>
+          <ul class="quiz-choices"><li>Sandboxes (resumable, VM-isolated execution)</li><li>Pipes</li><li>Threads</li><li>Forge</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does Baseten&#x27;s “Sandboxes” product provide for agents?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What did Prime Intellect&#x27;s evaluation-auditing post replace ambiguous prose task descriptions with, to improve grading accuracy?</p>
+          <ul class="quiz-choices"><li>JSON schemas</li><li>Video walkthroughs</li><li>Human graders only</li><li>Nothing — prose was fine as-is</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What developer-facing capability did Apple open up in the iOS 27.3 beta, and who can&#x27;t access it yet?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What is zkSNARK-based “provable inference” meant to let an AI provider do?</p>
+          <ul class="quiz-choices"><li>Cryptographically prove a specific output came from a specific model</li><li>Make inference run faster</li><li>Encrypt user prompts in transit</li><li>Train models without GPUs</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Today&#x27;s #1 item is a direct correction/follow-up to which story from yesterday&#x27;s (Nov 3) list?</p>
+          <ul class="quiz-choices"><li>GPT-6 Astra directly edited a small model&#x27;s weights to boost its math skills</li><li>Claude ships Message Threads</li><li>OpenAI merges Chat and Work tabs</li><li>GitHub&#x27;s Enclaves</li></ul>
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The claim is misleading; no genuine weight-editing occurred as described</li><li><span class="quiz-q-num">2.</span> Huawei (Ascend chips)</li><li><span class="quiz-q-num">3.</span> Lower reasoning effort cuts cost far more than it hurts quality</li><li><span class="quiz-q-num">4.</span> Pyramid-JiT (P-JiT)</li><li><span class="quiz-q-num">5.</span> Sandboxes (resumable, VM-isolated execution)</li><li><span class="quiz-q-num">6.</span> Resumable, VM-isolated execution environments for agent runs</li><li><span class="quiz-q-num">7.</span> JSON schemas</li><li><span class="quiz-q-num">8.</span> Siri AI for third-party apps; unavailable in the EU and for users under 13</li><li><span class="quiz-q-num">9.</span> Cryptographically prove a specific output came from a specific model</li><li><span class="quiz-q-num">10.</span> GPT-6 Astra directly edited a small model&#x27;s weights to boost its math skills</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 2 – 8</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Tue, Nov 3</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s run is dominated by Anthropic&#x27;s own IPO paperwork — fresh Q3 financials and a disclosure that it may be nearing a recursive-self-improvement threshold — alongside Claude&#x27;s new Message Threads latency feature, a GitHub security primitive for cross-repo agents, a spotted-in-the-wild GPT-6.2 Astra, and three shorter signal items. Eight items, about 58 min total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html" target="_blank" rel="noopener">Anthropic&#x27;s amended IPO prospectus shows a 1,200% revenue jump and a $104B net loss</a>
@@ -604,21 +730,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>plain HTML/CSS/JS (no framework, no build step)</li><li>optional: Anthropic Messages API count_tokens endpoint for the stretch goal</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 2 – 8</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Mon, Nov 2</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today leans heavily on two related research/security threads — a pretraining data-poisoning attack that backdoors coding agents, and a separate Anthropic effort to manufacture misaligned fine-tuning data that evades safety monitors — plus a notable capability rating on OpenAI&#x27;s new biology model, a red-team bypass of Codex&#x27;s auto-review, a new real-time-reasoning benchmark, Google&#x27;s first AI inference run in orbit, and two shorter signal items. Eight items, ~52 min total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">

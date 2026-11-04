@@ -10166,5 +10166,156 @@
         "optional: Anthropic Messages API count_tokens endpoint for the stretch goal"
       ]
     }
+  },
+  {
+    "date": "2026-11-04",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. Today's run leans on a correction cycle — the viral \"Astra edited another model's weights\" claim from yesterday gets walked back — plus a geopolitical compute story, some evals-integrity and cost-engineering reads, and a scrappy budget build.",
+      "items": [
+        {
+          "title": "GPT-6 Astra's “it edited Qwen's weights” claim doesn't hold up",
+          "url": "https://honnibal.dev/blog/astra-read-write-misleading",
+          "source": "Matthew Honnibal, via TLDR AI",
+          "why": "Direct follow-up to yesterday's viral claim that Astra directly edited a smaller model's weights to boost its math skills. Worth reading just to recalibrate before that story spreads further.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "DeepSeek plans to pretrain its next model on Huawei's chips, not Nvidia's",
+          "url": "https://www.geopolitechs.org/p/deepseek-plans-to-train-its-next",
+          "source": "Geopolitechs, via TLDR AI",
+          "why": "Ascend chips have mostly done inference so far. A successful full pretraining run would be a real test of China's hardware independence from Nvidia.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic's progress on cryptographically provable inference",
+          "url": "https://www.anthropic.com/research/provable-inference",
+          "source": "Anthropic Research, via TLDR AI",
+          "why": "Tackles a real gap: it's almost impossible today to verify which model actually produced a given output. zkSNARK-based proofs could underpin future compliance and audit requirements.",
+          "minutes": 12,
+          "skip_ok": true
+        },
+        {
+          "title": "Lower reasoning effort barely dents quality but sharply cuts cost",
+          "url": "https://www.vals.ai/blogs/reasoning-effort",
+          "source": "Vals AI, via TLDR AI",
+          "why": "A concrete, practical lever for anyone calling reasoning models in production — effort level matters more for your bill than for your output quality, and it's task-dependent.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "Baseten ships Grid, Sandboxes, and serverless Loops",
+          "url": "https://www.baseten.co/blog/the-building-blocks-of-the-open-frontier",
+          "source": "Baseten, via TLDR AI",
+          "why": "Model routing/governance, resumable VM-isolated agent execution, and serverless fine-tuning/RL — infra relevant to anyone building agents that need isolated, repeatable execution.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "What a year of auditing public LLM evals revealed about benchmark gaming",
+          "url": "https://www.primeintellect.ai/blog/auditing-public-evaluations",
+          "source": "Prime Intellect, via TLDR AI",
+          "why": "Before trusting the next benchmark chart: replacing ambiguous prose task descriptions with JSON schemas and adding multi-layered monitoring meaningfully changed scores.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "How a two-person lab trained a text-to-image model for about $21K",
+          "url": "https://www.linum.ai/field-notes/pjit-21k",
+          "source": "Linium, via TLDR AI",
+          "why": "Concrete numbers on how far a tiny team can push a pixel-space architecture (P-JiT) toward democratized generative video/image tooling.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "Apple opens Siri AI to all developers in the iOS 27.3 beta",
+          "url": "https://developer.apple.com/news/?id=gdk2umrf",
+          "source": "Apple Developer News, via TLDR AI",
+          "why": "Quick one — third-party apps can now tap Siri's NLP and personal-context features directly. Not available yet in the EU or for under-13 users.",
+          "minutes": 4,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What did Matthew Honnibal's post argue about the “Astra edited Qwen's weights” story?",
+          "choices": [
+            "It was accurate — Astra really did edit the weights",
+            "The claim is misleading; no genuine weight-editing occurred as described",
+            "Astra edited the weights but it didn't help math scores",
+            "The story was actually about Gemini, not Astra"
+          ],
+          "a": "The claim is misleading; no genuine weight-editing occurred as described"
+        },
+        {
+          "q": "Which chipmaker does DeepSeek reportedly plan to use to pretrain its next-generation model, moving away from reliance on Nvidia?",
+          "a": "Huawei (Ascend chips)"
+        },
+        {
+          "q": "According to the Vals AI piece, what's the main relationship between reasoning effort, cost, and quality?",
+          "choices": [
+            "Lower reasoning effort cuts cost far more than it hurts quality",
+            "Lower reasoning effort always tanks quality",
+            "Higher reasoning effort is always cheaper",
+            "Reasoning effort has no effect on cost"
+          ],
+          "a": "Lower reasoning effort cuts cost far more than it hurts quality"
+        },
+        {
+          "q": "What's the name of the pixel-space architecture Linium used to train a text-to-image model for about $21K?",
+          "a": "Pyramid-JiT (P-JiT)"
+        },
+        {
+          "q": "Besides Grid and serverless Loops, what did Baseten announce for isolated agent execution?",
+          "choices": [
+            "Sandboxes (resumable, VM-isolated execution)",
+            "Pipes",
+            "Threads",
+            "Forge"
+          ],
+          "a": "Sandboxes (resumable, VM-isolated execution)"
+        },
+        {
+          "q": "What does Baseten's “Sandboxes” product provide for agents?",
+          "a": "Resumable, VM-isolated execution environments for agent runs"
+        },
+        {
+          "q": "What did Prime Intellect's evaluation-auditing post replace ambiguous prose task descriptions with, to improve grading accuracy?",
+          "choices": [
+            "JSON schemas",
+            "Video walkthroughs",
+            "Human graders only",
+            "Nothing — prose was fine as-is"
+          ],
+          "a": "JSON schemas"
+        },
+        {
+          "q": "What developer-facing capability did Apple open up in the iOS 27.3 beta, and who can't access it yet?",
+          "a": "Siri AI for third-party apps; unavailable in the EU and for users under 13"
+        },
+        {
+          "q": "What is zkSNARK-based “provable inference” meant to let an AI provider do?",
+          "choices": [
+            "Cryptographically prove a specific output came from a specific model",
+            "Make inference run faster",
+            "Encrypt user prompts in transit",
+            "Train models without GPUs"
+          ],
+          "a": "Cryptographically prove a specific output came from a specific model"
+        },
+        {
+          "q": "Today's #1 item is a direct correction/follow-up to which story from yesterday's (Nov 3) list?",
+          "choices": [
+            "GPT-6 Astra directly edited a small model's weights to boost its math skills",
+            "Claude ships Message Threads",
+            "OpenAI merges Chat and Work tabs",
+            "GitHub's Enclaves"
+          ],
+          "a": "GPT-6 Astra directly edited a small model's weights to boost its math skills"
+        }
+      ]
+    },
+    "build": null
   }
 ]
