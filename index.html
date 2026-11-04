@@ -571,7 +571,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The claim is misleading; no genuine weight-editing occurred as described</li><li><span class="quiz-q-num">2.</span> Huawei (Ascend chips)</li><li><span class="quiz-q-num">3.</span> Lower reasoning effort cuts cost far more than it hurts quality</li><li><span class="quiz-q-num">4.</span> Pyramid-JiT (P-JiT)</li><li><span class="quiz-q-num">5.</span> Sandboxes (resumable, VM-isolated execution)</li><li><span class="quiz-q-num">6.</span> Resumable, VM-isolated execution environments for agent runs</li><li><span class="quiz-q-num">7.</span> JSON schemas</li><li><span class="quiz-q-num">8.</span> Siri AI for third-party apps; unavailable in the EU and for users under 13</li><li><span class="quiz-q-num">9.</span> Cryptographically prove a specific output came from a specific model</li><li><span class="quiz-q-num">10.</span> GPT-6 Astra directly edited a small model&#x27;s weights to boost its math skills</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">API-exploration</span>
+      </div>
+      <p class="build-pitch">Run the same prompt at three reasoning-effort levels and watch exactly where quality starts to crack.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs directly on today&#x27;s Vals AI piece (reading item 4): lower reasoning effort barely dents quality but sharply cuts cost. Test that claim yourself on your own prompts instead of taking the benchmark&#x27;s word for it.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Pick one fixed multi-step reasoning prompt (a logic puzzle or word problem with a clear right answer) and one harder variant of it</span>
+            <span class="badge badge-mono">4 min</span></li><li><span class="plan-step">Write a small script that calls the same model at low/medium/high reasoning effort (Claude&#x27;s thinking budget_tokens, or OpenAI&#x27;s reasoning_effort param) for each prompt</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Capture tokens used and latency per call, print a comparison table across the three effort levels</span>
+            <span class="badge badge-mono">6 min</span></li><li><span class="plan-step">Eyeball the answers for correctness and note where (if anywhere) the low-effort answer actually breaks</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A single script that prints a table (effort level, tokens, latency, correct?) showing quality held roughly steady while cost/latency dropped at lower effort — on at least one of your two prompts.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Push the harder prompt further until low effort finally gives a wrong answer, so you&#x27;ve found your own real breakpoint for where the Vals AI claim stops holding.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Anthropic Python SDK (anthropic) or OpenAI SDK</li><li>Claude extended thinking / budget_tokens param (or OpenAI reasoning_effort)</li><li>time module for latency</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

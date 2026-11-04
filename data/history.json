@@ -10316,6 +10316,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Run the same prompt at three reasoning-effort levels and watch exactly where quality starts to crack.",
+      "category": "API-exploration",
+      "why": "Riffs directly on today's Vals AI piece (reading item 4): lower reasoning effort barely dents quality but sharply cuts cost. Test that claim yourself on your own prompts instead of taking the benchmark's word for it.",
+      "plan": [
+        {
+          "step": "Pick one fixed multi-step reasoning prompt (a logic puzzle or word problem with a clear right answer) and one harder variant of it",
+          "minutes": 4
+        },
+        {
+          "step": "Write a small script that calls the same model at low/medium/high reasoning effort (Claude's thinking budget_tokens, or OpenAI's reasoning_effort param) for each prompt",
+          "minutes": 10
+        },
+        {
+          "step": "Capture tokens used and latency per call, print a comparison table across the three effort levels",
+          "minutes": 6
+        },
+        {
+          "step": "Eyeball the answers for correctness and note where (if anywhere) the low-effort answer actually breaks",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A single script that prints a table (effort level, tokens, latency, correct?) showing quality held roughly steady while cost/latency dropped at lower effort — on at least one of your two prompts.",
+      "stretch_goal": "Push the harder prompt further until low effort finally gives a wrong answer, so you've found your own real breakpoint for where the Vals AI claim stops holding.",
+      "tools": [
+        "Anthropic Python SDK (anthropic) or OpenAI SDK",
+        "Claude extended thinking / budget_tokens param (or OpenAI reasoning_effort)",
+        "time module for latency"
+      ]
+    }
   }
 ]
