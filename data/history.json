@@ -10346,5 +10346,142 @@
         "time module for latency"
       ]
     }
+  },
+  {
+    "date": "2026-11-05",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. Genuinely thin newsletter day — only Tech Brew and Towards Data Science landed anything new since yesterday's send, and Tech Brew's lead story didn't hold up to a second look, so this list leans on web search to fill out: a real infra launch, a notable open-weights release with a built-in safety trade-off, two practical agent-engineering reads, a token-economics piece, a minor API, and a think piece on automation. Seven items, about 57 minutes total.",
+      "items": [
+        {
+          "title": "Fireworks AI launches Forge: Nexus model routing, faster inference, and enterprise governance tools",
+          "url": "https://fireworks.ai/blog/fireworks-unveils-new-products-at-forge-to-help-companies-build-specialized-intelligence",
+          "source": "Fireworks AI, via TLDR AI",
+          "why": "At its first Forge conference, Fireworks unveiled Nexus — a layer that routes requests across open and closed models from inside the coding tools you already use — plus faster inference and enterprise-controlled infrastructure for model evaluation and fine-tuning. Relevant if you're picking inference infra or want cheaper multi-model routing without re-plumbing your stack.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Moonshot's Kimi K3.1 Pro open weights land, with cyberattack training data stripped out first",
+          "url": "https://www.vktr.com/ai-platforms/kimi-k31-pro-nears-top-proprietary-models-as-moonshot-limits-its-cyber-skills/",
+          "source": "VKTR / LetsDataScience, via web search",
+          "why": "Kimi K3.1 Pro's API shipped three weeks ago; the downloadable open weights were scheduled for yesterday. Moonshot says it deliberately removed cyberattack-related material from training before the open release, trading some capability for a narrower risk surface — a notable move from a lab shipping near-frontier open weights.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Your Agent Works in the Demo. Now Make It Survive Monday.",
+          "url": "https://towardsdatascience.com/your-agent-works-in-the-demo-now-make-it-survive-monday/",
+          "source": "Towards Data Science (Gursimar Singh)",
+          "why": "Argues agent reliability lives in the harness, not the model: enforce boundaries in code rather than prompts, grant autonomy in steps, and require a human to approve anything irreversible. Comes with a data-cleanup case study and a six-step checklist for designing the harness before you build the agent.",
+          "minutes": 11,
+          "skip_ok": false
+        },
+        {
+          "title": "Three Techniques to Understand Your Codebase When Coding Agents Write the Code",
+          "url": "https://towardsdatascience.com/three-techniques-to-understand-your-codebase-when-coding-agents-write-the-code/",
+          "source": "Towards Data Science (Eivind Kjosbakken)",
+          "why": "A practical playbook for staying oriented when an agent writes most of your code: have it draft feature memos before building, use it to review its own PRs, and have it build visual HTML explainers of what shipped — instead of reading every diff line by line.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "How much do AI tokens really cost?",
+          "url": "https://substack.hadley.nz/p/how-much-do-tokens-really-cost",
+          "source": "Hadley, via TLDR AI",
+          "why": "A grounded look at token economics: competition among providers is pushing prices down faster than most people's mental model of 'AI is expensive' has caught up with. Useful for anyone budgeting LLM spend on stale assumptions.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "Gemini Notebook API",
+          "url": "https://developers.google.com/notebook/docs",
+          "source": "Google, via TLDR AI",
+          "why": "A new REST interface for programmatically creating and managing NotebookLM-style notebooks from web pages, YouTube videos, or plain text/Markdown. Early-access public preview, personal Google accounts only for now.",
+          "minutes": 3,
+          "skip_ok": true
+        },
+        {
+          "title": "AI Will Do Your Job. That Should Be Good News.",
+          "url": "https://towardsdatascience.com/ai-will-do-your-job-that-should-be-good-news/",
+          "source": "Towards Data Science (James F. O'Brien)",
+          "why": "A UC Berkeley CS professor's reframe of the automation debate: if AI eventually outperforms humans at most economically useful work, the hard problem becomes distributing the surplus, not producing it. Proposes paid 'games' funded by that surplus as an alternative to needing a job to be rewarded for effort and skill. Long, but a genuine think piece rather than a hot take.",
+          "minutes": 13,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What product did Fireworks AI introduce at its first Forge conference that routes requests across open and closed models from inside existing coding tools?",
+          "a": "Nexus"
+        },
+        {
+          "q": "What did Fireworks say its new products connect, besides training and inference?",
+          "choices": [
+            "Execution",
+            "Billing only",
+            "Nothing else",
+            "Only customer support"
+          ],
+          "a": "Execution"
+        },
+        {
+          "q": "What did Moonshot reportedly strip out of Kimi K3.1 Pro's training data before releasing it as open weights?",
+          "choices": [
+            "Coding ability",
+            "Multilingual support",
+            "Cyberattack-related material",
+            "Multimodal/image support"
+          ],
+          "a": "Cyberattack-related material"
+        },
+        {
+          "q": "When were Kimi K3.1 Pro's open weights scheduled to be released?",
+          "a": "November 4, 2026 (the day before this list)"
+        },
+        {
+          "q": "According to \"Your Agent Works in the Demo. Now Make It Survive Monday,\" where should an agent's boundaries be enforced?",
+          "choices": [
+            "In the system prompt",
+            "In code, not prompts",
+            "In the training data",
+            "In the UI only"
+          ],
+          "a": "In code, not prompts"
+        },
+        {
+          "q": "What does that same piece say should happen before an agent is allowed to take an irreversible action?",
+          "a": "A human should approve it first"
+        },
+        {
+          "q": "Which of these is NOT one of the techniques from \"Three Techniques to Understand Your Codebase\"?",
+          "choices": [
+            "Drafting feature memos with the agent first",
+            "Having the agent review its own PRs",
+            "Building visual HTML explainers of what shipped",
+            "Manually reading every diff line by line"
+          ],
+          "a": "Manually reading every diff line by line"
+        },
+        {
+          "q": "According to \"How much do AI tokens really cost,\" what's driving token prices down faster than most people assume?",
+          "a": "Competition among model providers"
+        },
+        {
+          "q": "What does Google's new Gemini Notebook API let you do?",
+          "choices": [
+            "Train custom Gemini models",
+            "Programmatically create and manage notebooks from web pages, videos, and text",
+            "Replace NotebookLM entirely",
+            "Only works for Google Workspace accounts"
+          ],
+          "a": "Programmatically create and manage notebooks from web pages, videos, and text"
+        },
+        {
+          "q": "In James O'Brien's \"AI Will Do Your Job,\" what alternative to traditional jobs does he propose for distributing the rewards of automation?",
+          "a": "Paid \"games\" funded by the automation surplus, rewarding effort and skill rather than useful output"
+        }
+      ]
+    },
+    "build": null
   }
 ]
