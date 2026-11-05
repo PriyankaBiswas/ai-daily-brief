@@ -10482,6 +10482,40 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Train a tiny text classifier in under a minute, then figure out exactly how many LLM calls it takes before a trained model beats paying per-token for the same job.",
+      "category": "fine-tuning/training",
+      "why": "Riffs on today's 'How much do AI tokens really cost?' — it's easy to assume calling a big model is always the right default, but a 3-line scikit-learn classifier trained once can out-cost an LLM you're paying per-request. This build turns that break-even point into a real number instead of a vibe.",
+      "plan": [
+        {
+          "step": "Write 10 short labeled examples by hand (5 one label, 5 the other)",
+          "minutes": 5
+        },
+        {
+          "step": "Train a TfidfVectorizer + LogisticRegression on them with scikit-learn",
+          "minutes": 5
+        },
+        {
+          "step": "Test it on 5 new examples you make up and note the accuracy",
+          "minutes": 6
+        },
+        {
+          "step": "Using today's token-pricing numbers, estimate the cost of classifying those same 5 examples via an LLM API call each, vs. your now-free local model",
+          "minutes": 7
+        },
+        {
+          "step": "Write one line: at roughly what call volume does training the tiny model pay off?",
+          "minutes": 4
+        }
+      ],
+      "done_looks_like": "A trained scikit-learn classifier scoring at least 3/5 on your holdout examples, plus one written sentence giving the call-volume break-even point.",
+      "stretch_goal": "Swap TF-IDF for a tiny sentence-embedding model (e.g. all-MiniLM-L6-v2 via sentence-transformers) on the same 15 examples and see if accuracy improves.",
+      "tools": [
+        "scikit-learn",
+        "TfidfVectorizer",
+        "LogisticRegression",
+        "sentence-transformers (stretch)"
+      ]
+    }
   }
 ]
