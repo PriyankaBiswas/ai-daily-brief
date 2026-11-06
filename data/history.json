@@ -10517,5 +10517,144 @@
         "sentence-transformers (stretch)"
       ]
     }
+  },
+  {
+    "date": "2026-11-06",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. Quiet newsletter window again — only today's TLDR AI issue cleared dedup against the last 7 days, but it's a dense one, so no web-search filler was needed. Three threads stand out: a third-party (METR) measurement of how much AI is now accelerating Anthropic's own model-building, a big open-weights MoE release gated behind safety testing, and a benchmark that scores AI on lying and bluffing instead of coding or math. Eight items, about 58 minutes total.",
+      "items": [
+        {
+          "title": "Independent assessment of AI R&D acceleration at Anthropic in October 2026",
+          "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/",
+          "source": "METR, via TLDR AI",
+          "why": "An outside auditor, not Anthropic itself, measuring how much AI is already speeding up Anthropic's own model-building — roughly 2x the rate of 2024–2025, mostly from AI's growing role in R&D. Given how much of this list has been IPO- and RSI-adjacent Anthropic coverage lately, this is the first third-party attempt to actually quantify that self-improvement loop.",
+          "minutes": 12,
+          "skip_ok": false
+        },
+        {
+          "title": "Introducing Inkling 2 Small",
+          "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+          "source": "Thinking Machines, via TLDR AI",
+          "why": "A 594B-parameter MoE (17B active) with vision and agentic feedback loops for iteratively building websites, games, and 3D scenes — and full weights go Apache 2.0 next week once external safety testing and red-teaming wrap. Worth watching whether that gate actually holds the release to schedule.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "The benchmark where AIs have to lie to win",
+          "url": "https://www.dwarkesh.com/p/clocktower",
+          "source": "Dwarkesh Patel, via TLDR AI",
+          "why": "Blood on the Clocktower is a social deception game; watching models play it surfaces scheming, on-the-spot bluffing, and collective reasoning — a genuinely different axis than the coding/math evals everywhere else in this list, and a useful counterweight to raw capability scores.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Cloudflare's trust framework for AI agents",
+          "url": "https://blog.cloudflare.com/trusted-agent-delegation",
+          "source": "Cloudflare, via TLDR AI",
+          "why": "An infrastructure-level take on a problem that's been implicit in several recent items: as agents act on your behalf, websites increasingly can't verify who they're really talking to, assess trustworthiness, or assign accountability when something goes wrong.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "New NVIDIA Cosmos 3 open models for interactive world simulation",
+          "url": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
+          "source": "NVIDIA / Hugging Face, via TLDR AI",
+          "why": "Four open-weight 16B models for robotics and driving-scene simulation, with synchronized multi-sensor data generation. Relevant if you've been tracking the open-weights-vs-closed thread (Kimi K3.1, Mistral Large 4) running through this list all week.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "NVIDIA introduced VFlash",
+          "url": "https://research.nvidia.com/labs/lpr/vflash/",
+          "source": "NVIDIA, via TLDR AI",
+          "why": "Generates geometric predictions — robot trajectories, 3D motion — in parallel rather than token by token. A concrete case of non-autoregressive generation finding real traction outside language.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "Personal Finance in Claude",
+          "url": "https://claude.com/resources/articles/introducing-personal-finance-in-claude",
+          "source": "Anthropic, via TLDR AI",
+          "why": "Anthropic shipping a bank- and credit-card-connected feature in the middle of an IPO roadshow and its own RSI warnings — a small but telling data point on where consumer trust is being spent right now.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "Introducing Gemini Omni 1.2 Flash",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+          "source": "Google, via TLDR AI",
+          "why": "Routine speed, cost, and clip-length update — included mainly to keep the frontier-model scorecard current.",
+          "minutes": 4,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Per METR's independent assessment, roughly how much faster is Anthropic's AI R&D now accelerating model performance on well-defined tasks, compared to 2024–2025?",
+          "a": "Roughly 2x (about twice the rate)"
+        },
+        {
+          "q": "How many total parameters does Thinking Machines' Inkling 2 Small have?",
+          "choices": [
+            "17B",
+            "594B",
+            "1T",
+            "70B"
+          ],
+          "a": "594B"
+        },
+        {
+          "q": "How many of those parameters are active at once in Inkling 2 Small?",
+          "a": "17B"
+        },
+        {
+          "q": "Under what license will Inkling 2 Small's full weights be released next week?",
+          "a": "Apache 2.0"
+        },
+        {
+          "q": "What social deception game does the Dwarkesh Patel piece use as an AI benchmark?",
+          "choices": [
+            "Mafia",
+            "Werewolf",
+            "Blood on the Clocktower",
+            "Among Us"
+          ],
+          "a": "Blood on the Clocktower"
+        },
+        {
+          "q": "What problem is Cloudflare's new trust framework for AI agents meant to address?",
+          "a": "Verifying agent identity, trustworthiness, and accountability as agents increasingly act on behalf of users"
+        },
+        {
+          "q": "How many trainable parameters does each of NVIDIA Cosmos 3's four open models have?",
+          "choices": [
+            "1B",
+            "7B",
+            "16B",
+            "70B"
+          ],
+          "a": "16B"
+        },
+        {
+          "q": "What does NVIDIA VFlash generate in parallel rather than token-by-token?",
+          "a": "Geometric predictions like robot trajectories and 3D motion"
+        },
+        {
+          "q": "What two account types can users now securely connect in Personal Finance in Claude?",
+          "a": "Bank accounts and credit card accounts"
+        },
+        {
+          "q": "What does Gemini Omni 1.2 Flash primarily improve, per Google's announcement?",
+          "choices": [
+            "Only image generation",
+            "Speed, cost-efficiency, and clip length",
+            "Only voice features",
+            "Only coding benchmarks"
+          ],
+          "a": "Speed, cost-efficiency, and extended clip lengths"
+        }
+      ]
+    },
+    "build": null
   }
 ]

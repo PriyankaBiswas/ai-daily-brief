@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Thursday, November 5, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Genuinely thin newsletter day — only Tech Brew and Towards Data Science landed anything new since yesterday&#x27;s send, and Tech Brew&#x27;s lead story didn&#x27;t hold up to a second look, so this list leans on web search to fill out: a real infra launch, a notable open-weights release with a built-in safety trade-off, two practical agent-engineering reads, a token-economics piece, a minor API, and a think piece on automation. Seven items, about 57 minutes total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Friday, November 6, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Quiet newsletter window again — only today&#x27;s TLDR AI issue cleared dedup against the last 7 days, but it&#x27;s a dense one, so no web-search filler was needed. Three threads stand out: a third-party (METR) measurement of how much AI is now accelerating Anthropic&#x27;s own model-building, a big open-weights MoE release gated behind safety testing, and a benchmark that scores AI on lying and bluffing instead of coding or math. Eight items, about 58 minutes total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/" target="_blank" rel="noopener">Independent assessment of AI R&amp;D acceleration at Anthropic in October 2026</a>
+            <span class="badge badge-mono">12 min</span>
+          </div>
+          <div class="item-source">METR, via TLDR AI</div>
+          <p class="item-why">An outside auditor, not Anthropic itself, measuring how much AI is already speeding up Anthropic&#x27;s own model-building — roughly 2x the rate of 2024–2025, mostly from AI&#x27;s growing role in R&amp;D. Given how much of this list has been IPO- and RSI-adjacent Anthropic coverage lately, this is the first third-party attempt to actually quantify that self-improvement loop.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://thinkingmachines.ai/news/inkling-2-small/" target="_blank" rel="noopener">Introducing Inkling 2 Small</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">Thinking Machines, via TLDR AI</div>
+          <p class="item-why">A 594B-parameter MoE (17B active) with vision and agentic feedback loops for iteratively building websites, games, and 3D scenes — and full weights go Apache 2.0 next week once external safety testing and red-teaming wrap. Worth watching whether that gate actually holds the release to schedule.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.dwarkesh.com/p/clocktower" target="_blank" rel="noopener">The benchmark where AIs have to lie to win</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">Dwarkesh Patel, via TLDR AI</div>
+          <p class="item-why">Blood on the Clocktower is a social deception game; watching models play it surfaces scheming, on-the-spot bluffing, and collective reasoning — a genuinely different axis than the coding/math evals everywhere else in this list, and a useful counterweight to raw capability scores.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.cloudflare.com/trusted-agent-delegation" target="_blank" rel="noopener">Cloudflare&#x27;s trust framework for AI agents</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Cloudflare, via TLDR AI</div>
+          <p class="item-why">An infrastructure-level take on a problem that&#x27;s been implicit in several recent items: as agents act on your behalf, websites increasingly can&#x27;t verify who they&#x27;re really talking to, assess trustworthiness, or assign accountability when something goes wrong.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation" target="_blank" rel="noopener">New NVIDIA Cosmos 3 open models for interactive world simulation</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">NVIDIA / Hugging Face, via TLDR AI</div>
+          <p class="item-why">Four open-weight 16B models for robotics and driving-scene simulation, with synchronized multi-sensor data generation. Relevant if you&#x27;ve been tracking the open-weights-vs-closed thread (Kimi K3.1, Mistral Large 4) running through this list all week.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://research.nvidia.com/labs/lpr/vflash/" target="_blank" rel="noopener">NVIDIA introduced VFlash</a>
+            <span class="badge badge-mono">5 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">NVIDIA, via TLDR AI</div>
+          <p class="item-why">Generates geometric predictions — robot trajectories, 3D motion — in parallel rather than token by token. A concrete case of non-autoregressive generation finding real traction outside language.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://claude.com/resources/articles/introducing-personal-finance-in-claude" target="_blank" rel="noopener">Personal Finance in Claude</a>
+            <span class="badge badge-mono">5 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Anthropic, via TLDR AI</div>
+          <p class="item-why">Anthropic shipping a bank- and credit-card-connected feature in the middle of an IPO roadshow and its own RSI warnings — a small but telling data point on where consumer trust is being spent right now.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/" target="_blank" rel="noopener">Introducing Gemini Omni 1.2 Flash</a>
+            <span class="badge badge-mono">4 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Google, via TLDR AI</div>
+          <p class="item-why">Routine speed, cost, and clip-length update — included mainly to keep the frontier-model scorecard current.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">Per METR&#x27;s independent assessment, roughly how much faster is Anthropic&#x27;s AI R&amp;D now accelerating model performance on well-defined tasks, compared to 2024–2025?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How many total parameters does Thinking Machines&#x27; Inkling 2 Small have?</p>
+          <ul class="quiz-choices"><li>17B</li><li>594B</li><li>1T</li><li>70B</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How many of those parameters are active at once in Inkling 2 Small?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Under what license will Inkling 2 Small&#x27;s full weights be released next week?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What social deception game does the Dwarkesh Patel piece use as an AI benchmark?</p>
+          <ul class="quiz-choices"><li>Mafia</li><li>Werewolf</li><li>Blood on the Clocktower</li><li>Among Us</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What problem is Cloudflare&#x27;s new trust framework for AI agents meant to address?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How many trainable parameters does each of NVIDIA Cosmos 3&#x27;s four open models have?</p>
+          <ul class="quiz-choices"><li>1B</li><li>7B</li><li>16B</li><li>70B</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does NVIDIA VFlash generate in parallel rather than token-by-token?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What two account types can users now securely connect in Personal Finance in Claude?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does Gemini Omni 1.2 Flash primarily improve, per Google&#x27;s announcement?</p>
+          <ul class="quiz-choices"><li>Only image generation</li><li>Speed, cost-efficiency, and clip length</li><li>Only voice features</li><li>Only coding benchmarks</li></ul>
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Roughly 2x (about twice the rate)</li><li><span class="quiz-q-num">2.</span> 594B</li><li><span class="quiz-q-num">3.</span> 17B</li><li><span class="quiz-q-num">4.</span> Apache 2.0</li><li><span class="quiz-q-num">5.</span> Blood on the Clocktower</li><li><span class="quiz-q-num">6.</span> Verifying agent identity, trustworthiness, and accountability as agents increasingly act on behalf of users</li><li><span class="quiz-q-num">7.</span> 16B</li><li><span class="quiz-q-num">8.</span> Geometric predictions like robot trajectories and 3D motion</li><li><span class="quiz-q-num">9.</span> Bank accounts and credit card accounts</li><li><span class="quiz-q-num">10.</span> Speed, cost-efficiency, and extended clip lengths</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 2 – 8</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Thu, Nov 5</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Genuinely thin newsletter day — only Tech Brew and Towards Data Science landed anything new since yesterday&#x27;s send, and Tech Brew&#x27;s lead story didn&#x27;t hold up to a second look, so this list leans on web search to fill out: a real infra launch, a notable open-weights release with a built-in safety trade-off, two practical agent-engineering reads, a token-economics piece, a minor API, and a think piece on automation. Seven items, about 57 minutes total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://fireworks.ai/blog/fireworks-unveils-new-products-at-forge-to-help-companies-build-specialized-intelligence" target="_blank" rel="noopener">Fireworks AI launches Forge: Nexus model routing, faster inference, and enterprise governance tools</a>
@@ -597,21 +723,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>scikit-learn</li><li>TfidfVectorizer</li><li>LogisticRegression</li><li>sentence-transformers (stretch)</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 2 – 8</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Wed, Nov 4</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s run leans on a correction cycle — the viral &quot;Astra edited another model&#x27;s weights&quot; claim from yesterday gets walked back — plus a geopolitical compute story, some evals-integrity and cost-engineering reads, and a scrappy budget build.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
