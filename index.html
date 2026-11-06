@@ -571,7 +571,40 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Roughly 2x (about twice the rate)</li><li><span class="quiz-q-num">2.</span> 594B</li><li><span class="quiz-q-num">3.</span> 17B</li><li><span class="quiz-q-num">4.</span> Apache 2.0</li><li><span class="quiz-q-num">5.</span> Blood on the Clocktower</li><li><span class="quiz-q-num">6.</span> Verifying agent identity, trustworthiness, and accountability as agents increasingly act on behalf of users</li><li><span class="quiz-q-num">7.</span> 16B</li><li><span class="quiz-q-num">8.</span> Geometric predictions like robot trajectories and 3D motion</li><li><span class="quiz-q-num">9.</span> Bank accounts and credit card accounts</li><li><span class="quiz-q-num">10.</span> Speed, cost-efficiency, and extended clip lengths</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">infra/deployment</span>
+      </div>
+      <p class="build-pitch">Give a toy AI agent a signature it can&#x27;t fake — build the smallest possible version of Cloudflare&#x27;s agent-trust idea.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs on today&#x27;s Cloudflare piece on trusted agent delegation — the problem of a site not being able to verify which agent it&#x27;s really talking to, or hold it accountable. Building a minimal signed-request layer makes that &#x27;identity + accountability&#x27; problem concrete instead of abstract.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Spin up a one-file HTTP server with a single /tool endpoint (stdlib http.server, or Flask if you have it)</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write a sign() helper: HMAC-SHA256 over the request body + a shared secret, sent as an X-Agent-Signature header</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">On the server, recompute the signature and verify it before handling the request; return 401 on mismatch</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Test with curl: one call with a correct signature (expect 200), one with a tampered body or wrong secret (expect 401)</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">If time&#x27;s left: add a timestamp field and reject requests older than 60 seconds (basic replay protection)</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A local server that accepts a correctly-signed request and visibly rejects a tampered one with 401 — you&#x27;re watching trust get checked, not just reading about it.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Add key rotation: support two active shared secrets keyed by a key_id in the header, so you could rotate one without downtime.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Python stdlib (http.server, hmac, hashlib)</li><li>or Flask</li><li>curl</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

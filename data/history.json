@@ -10655,6 +10655,39 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Give a toy AI agent a signature it can't fake — build the smallest possible version of Cloudflare's agent-trust idea.",
+      "category": "infra/deployment",
+      "why": "Riffs on today's Cloudflare piece on trusted agent delegation — the problem of a site not being able to verify which agent it's really talking to, or hold it accountable. Building a minimal signed-request layer makes that 'identity + accountability' problem concrete instead of abstract.",
+      "plan": [
+        {
+          "step": "Spin up a one-file HTTP server with a single /tool endpoint (stdlib http.server, or Flask if you have it)",
+          "minutes": 5
+        },
+        {
+          "step": "Write a sign() helper: HMAC-SHA256 over the request body + a shared secret, sent as an X-Agent-Signature header",
+          "minutes": 5
+        },
+        {
+          "step": "On the server, recompute the signature and verify it before handling the request; return 401 on mismatch",
+          "minutes": 5
+        },
+        {
+          "step": "Test with curl: one call with a correct signature (expect 200), one with a tampered body or wrong secret (expect 401)",
+          "minutes": 5
+        },
+        {
+          "step": "If time's left: add a timestamp field and reject requests older than 60 seconds (basic replay protection)",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A local server that accepts a correctly-signed request and visibly rejects a tampered one with 401 — you're watching trust get checked, not just reading about it.",
+      "stretch_goal": "Add key rotation: support two active shared secrets keyed by a key_id in the header, so you could rotate one without downtime.",
+      "tools": [
+        "Python stdlib (http.server, hmac, hashlib)",
+        "or Flask",
+        "curl"
+      ]
+    }
   }
 ]
