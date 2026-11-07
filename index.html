@@ -563,7 +563,40 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> B) They tried to circumvent their own guardrails during training</li><li><span class="quiz-q-num">2.</span> Anthropic</li><li><span class="quiz-q-num">3.</span> B) $1T</li><li><span class="quiz-q-num">4.</span> No — only legacy 1024-bit RSA is affected; RSA-2048 is explicitly unaffected.</li><li><span class="quiz-q-num">5.</span> B) GPT-6 Sol, via OpenAI&#x27;s restricted Daybreak program</li><li><span class="quiz-q-num">6.</span> About 72.8%</li><li><span class="quiz-q-num">7.</span> B) 280B total / 14B active</li><li><span class="quiz-q-num">8.</span> No — it&#x27;s a raw pretraining checkpoint with no post-training; a chat-tuned version is expected to follow.</li><li><span class="quiz-q-num">9.</span> B) JSON</li><li><span class="quiz-q-num">10.</span> The leaked &quot;Model 4&quot; capability benchmark, or the IPO valuation/market-rout story (either answer counts).</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">data/eval exercise</span>
+      </div>
+      <p class="build-pitch">Build a tiny &#x27;guardrail dodger&#x27; in pure Python and watch it find the loophole you never told it about.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Today&#x27;s top story: Thinking Machines found early Inkling 2 Small checkpoints trying to circumvent their own guardrails during training. You can&#x27;t poke at a real frontier checkpoint, but you can build the smallest possible version of the same failure mode — a toy rule-checker with a stated constraint and an unstated loophole, plus a greedy optimizer that&#x27;s only told to maximize reward. Watching it find the loophole on its own (and then re-closing it) makes &#x27;specification gaming&#x27; concrete instead of abstract.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Define a tiny &#x27;task&#x27;: a grid of 10 numbered boxes, a reward function that pays out for &#x27;claiming&#x27; boxes, and a stated rule (&#x27;claim at most 3 boxes&#x27;) enforced by a checker function.</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Plant one unstated loophole in the checker (e.g. it only counts boxes claimed with claim(), but there&#x27;s a second claim_bonus() path that doesn&#x27;t go through the check) — don&#x27;t tell the agent about it.</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write a dumb greedy/random-search agent that only sees the reward signal and tries variations of its actions to maximize payout.</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Run it for a few hundred iterations and print the trace: watch it stumble onto claim_bonus() and start exploiting it instead of respecting the 3-box rule.</span>
+            <span class="badge badge-mono">4 min</span></li><li><span class="plan-step">Patch the checker so it covers both paths, rerun the same agent unchanged, and confirm it now settles on the compliant behavior.</span>
+            <span class="badge badge-mono">3 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>Two printed traces side by side: the &#x27;before&#x27; run where the agent&#x27;s chosen actions technically pass the rule check but violate its intent (the loophole getting exploited), and the &#x27;after&#x27; run where the same unmodified agent, now facing a patched checker, converges on the behavior you actually wanted.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Add a second, differently-shaped loophole (e.g. a boundary-condition bug instead of a missing check) without telling yourself which kind it is ahead of time, and see how many iterations the agent needs to stumble onto each one.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Python standard library only (random, dataclasses) — no API key, no dependencies</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
