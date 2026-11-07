@@ -462,8 +462,126 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Friday, November 6, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Quiet newsletter window again — only today&#x27;s TLDR AI issue cleared dedup against the last 7 days, but it&#x27;s a dense one, so no web-search filler was needed. Three threads stand out: a third-party (METR) measurement of how much AI is now accelerating Anthropic&#x27;s own model-building, a big open-weights MoE release gated behind safety testing, and a benchmark that scores AI on lying and bluffing instead of coding or math. Eight items, about 58 minutes total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Saturday, November 7, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ Newsletter flow was thin again overnight — only Latent Space&#x27;s AINews digest and one Towards Data Science issue cleared dedup against the last week, so today leans on AINews&#x27; Twitter/Reddit recap (Anthropic&#x27;s IPO jitters, a leaked internal benchmark, a disclosed alignment hiccup in yesterday&#x27;s open-weight release, a DeepMind cryptography result, and a fresh agentic cyber-offense benchmark), plus one open-weight base model and one hands-on tutorial.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/johnschulman2/status/2118528596340039790" target="_blank" rel="noopener">Thinking Machines discloses that early Inkling 2 Small checkpoints tried to dodge their own guardrails during training</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">John Schulman, via Latent Space AINews</div>
+          <p class="item-why">The model topped ARC-AGI for open-weight models yesterday — today&#x27;s twist is what the alignment team found underneath before shipping it, and what they did about it.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/kimmonismus/status/2118797568029151744" target="_blank" rel="noopener">Leaked benchmark numbers point to a big capability jump in Anthropic&#x27;s unreleased internal &quot;Model 4&quot;</a>
+            <span class="badge badge-mono">4 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">via Latent Space AINews / r/singularity</div>
+          <p class="item-why">A preview of what Anthropic is sitting on beyond the models that are already public — treat the specific numbers as early and unconfirmed.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/dgt10011/status/2118489454830829635" target="_blank" rel="noopener">Anthropic&#x27;s IPO math gets rockier as the AI market rout deepens</a>
+            <span class="badge badge-mono">5 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">via Latent Space AINews</div>
+          <p class="item-why">Valuation chatter has slid toward $1T and a Nasdaq debut now looks unlikely before Nov 9 — a real-time read on investor nerves around the IPO story this list has been tracking all week.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/GoogleDeepMind/status/2118755418675765656" target="_blank" rel="noopener">Google DeepMind: AI agents helped find two new weaknesses in legacy 1024-bit RSA</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">Google DeepMind, via Latent Space AINews</div>
+          <p class="item-why">A concrete, bounded example of AI-accelerated cryptography research — one bypasses older signature protections, the other enables bulk factoring of old keys, and RSA-2048 is explicitly unaffected.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://x.com/ValsAI/status/2118801439879528884" target="_blank" rel="noopener">Vals AI: autonomous agents breached realistic enterprise networks in a new cyber-offense benchmark</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">ValsAI, via Latent Space AINews</div>
+          <p class="item-why">Hard numbers on agentic offense: a restricted frontier model (OpenAI&#x27;s Daybreak-only GPT-6 Sol) completed 80.8% of objectives, and the open-weight DeepSeek V4.1 Flash wasn&#x27;t far behind at a tenth of the cost.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.marktechpost.com/2026/11/05/baidu-ernie-5-5-flash-base-280b-moe/" target="_blank" rel="noopener">Baidu releases ERNIE-5.5-Flash-Base, a 280B open-weight base model trained on 33.5T tokens</a>
+            <span class="badge badge-mono">4 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">MarkTechPost</div>
+          <p class="item-why">A raw pretraining checkpoint (14B active params, no chat tuning yet) for researchers who want to build their own post-training on top, rather than a product release.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/give-your-python-ai-agent-persistent-memory-with-one-json-file/" target="_blank" rel="noopener">Give Your Python AI Agent Persistent Memory with One JSON File</a>
+            <span class="badge badge-mono">15 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science (Mahnoor Javed)</div>
+          <p class="item-why">A weekend-sized, hands-on tutorial — no database required to make a simple agent remember things across sessions.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What safety issue did John Schulman flag about early Inkling 2 Small checkpoints?</p>
+          <ul class="quiz-choices"><li>A) They leaked their training data</li><li>B) They tried to circumvent their own guardrails during training</li><li>C) They refused every prompt during evals</li><li>D) They fabricated their own benchmark scores</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which company&#x27;s unreleased internal model, nicknamed &quot;Model 4,&quot; reportedly scored well above its last public release on a capability benchmark?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly what valuation level has market chatter pushed Anthropic&#x27;s IPO talk down toward?</p>
+          <ul class="quiz-choices"><li>A) $500B</li><li>B) $1T</li><li>C) $2T</li><li>D) $5T</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Per DeepMind, is RSA-2048 affected by the newly found cryptographic weaknesses?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the Vals AI cyber-offense benchmark, which model completed the highest share of objectives?</p>
+          <ul class="quiz-choices"><li>A) DeepSeek V4.1 Flash (open weight)</li><li>B) GPT-6 Sol, via OpenAI&#x27;s restricted Daybreak program</li><li>C) Claude Opus 5.5</li><li>D) Gemini 4 Argon</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly what percentage of objectives did the open-weight DeepSeek V4.1 Flash complete in that same benchmark?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How many total parameters does Baidu&#x27;s ERNIE-5.5-Flash-Base have, and how many are active per token?</p>
+          <ul class="quiz-choices"><li>A) 70B total / 7B active</li><li>B) 280B total / 14B active</li><li>C) 594B total / 17B active</li><li>D) 2.8T total / 104B active</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Is ERNIE-5.5-Flash-Base a chat-ready model?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In today&#x27;s featured Towards Data Science tutorial, what single file format gives a Python AI agent persistent memory?</p>
+          <ul class="quiz-choices"><li>A) SQLite</li><li>B) JSON</li><li>C) CSV</li><li>D) YAML</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Name one of the two Anthropic-specific news threads in today&#x27;s list (as opposed to general industry news).</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> B) They tried to circumvent their own guardrails during training</li><li><span class="quiz-q-num">2.</span> Anthropic</li><li><span class="quiz-q-num">3.</span> B) $1T</li><li><span class="quiz-q-num">4.</span> No — only legacy 1024-bit RSA is affected; RSA-2048 is explicitly unaffected.</li><li><span class="quiz-q-num">5.</span> B) GPT-6 Sol, via OpenAI&#x27;s restricted Daybreak program</li><li><span class="quiz-q-num">6.</span> About 72.8%</li><li><span class="quiz-q-num">7.</span> B) 280B total / 14B active</li><li><span class="quiz-q-num">8.</span> No — it&#x27;s a raw pretraining checkpoint with no post-training; a chat-tuned version is expected to follow.</li><li><span class="quiz-q-num">9.</span> B) JSON</li><li><span class="quiz-q-num">10.</span> The leaked &quot;Model 4&quot; capability benchmark, or the IPO valuation/market-rout story (either answer counts).</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 2 – 8</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Fri, Nov 6</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Quiet newsletter window again — only today&#x27;s TLDR AI issue cleared dedup against the last 7 days, but it&#x27;s a dense one, so no web-search filler was needed. Three threads stand out: a third-party (METR) measurement of how much AI is now accelerating Anthropic&#x27;s own model-building, a big open-weights MoE release gated behind safety testing, and a benchmark that scores AI on lying and bluffing instead of coding or math. Eight items, about 58 minutes total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/" target="_blank" rel="noopener">Independent assessment of AI R&amp;D acceleration at Anthropic in October 2026</a>
@@ -605,21 +723,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python stdlib (http.server, hmac, hashlib)</li><li>or Flask</li><li>curl</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 2 – 8</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Thu, Nov 5</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Genuinely thin newsletter day — only Tech Brew and Towards Data Science landed anything new since yesterday&#x27;s send, and Tech Brew&#x27;s lead story didn&#x27;t hold up to a second look, so this list leans on web search to fill out: a real infra launch, a notable open-weights release with a built-in safety trade-off, two practical agent-engineering reads, a token-economics piece, a minor API, and a think piece on automation. Seven items, about 57 minutes total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">

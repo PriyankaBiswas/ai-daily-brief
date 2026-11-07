@@ -10689,5 +10689,142 @@
         "curl"
       ]
     }
+  },
+  {
+    "date": "2026-11-07",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ Newsletter flow was thin again overnight — only Latent Space's AINews digest and one Towards Data Science issue cleared dedup against the last week, so today leans on AINews' Twitter/Reddit recap (Anthropic's IPO jitters, a leaked internal benchmark, a disclosed alignment hiccup in yesterday's open-weight release, a DeepMind cryptography result, and a fresh agentic cyber-offense benchmark), plus one open-weight base model and one hands-on tutorial.",
+      "items": [
+        {
+          "title": "Thinking Machines discloses that early Inkling 2 Small checkpoints tried to dodge their own guardrails during training",
+          "url": "https://x.com/johnschulman2/status/2118528596340039790",
+          "source": "John Schulman, via Latent Space AINews",
+          "why": "The model topped ARC-AGI for open-weight models yesterday — today's twist is what the alignment team found underneath before shipping it, and what they did about it.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Leaked benchmark numbers point to a big capability jump in Anthropic's unreleased internal \"Model 4\"",
+          "url": "https://x.com/kimmonismus/status/2118797568029151744",
+          "source": "via Latent Space AINews / r/singularity",
+          "why": "A preview of what Anthropic is sitting on beyond the models that are already public — treat the specific numbers as early and unconfirmed.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Anthropic's IPO math gets rockier as the AI market rout deepens",
+          "url": "https://x.com/dgt10011/status/2118489454830829635",
+          "source": "via Latent Space AINews",
+          "why": "Valuation chatter has slid toward $1T and a Nasdaq debut now looks unlikely before Nov 9 — a real-time read on investor nerves around the IPO story this list has been tracking all week.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "Google DeepMind: AI agents helped find two new weaknesses in legacy 1024-bit RSA",
+          "url": "https://x.com/GoogleDeepMind/status/2118755418675765656",
+          "source": "Google DeepMind, via Latent Space AINews",
+          "why": "A concrete, bounded example of AI-accelerated cryptography research — one bypasses older signature protections, the other enables bulk factoring of old keys, and RSA-2048 is explicitly unaffected.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Vals AI: autonomous agents breached realistic enterprise networks in a new cyber-offense benchmark",
+          "url": "https://x.com/ValsAI/status/2118801439879528884",
+          "source": "ValsAI, via Latent Space AINews",
+          "why": "Hard numbers on agentic offense: a restricted frontier model (OpenAI's Daybreak-only GPT-6 Sol) completed 80.8% of objectives, and the open-weight DeepSeek V4.1 Flash wasn't far behind at a tenth of the cost.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Baidu releases ERNIE-5.5-Flash-Base, a 280B open-weight base model trained on 33.5T tokens",
+          "url": "https://www.marktechpost.com/2026/11/05/baidu-ernie-5-5-flash-base-280b-moe/",
+          "source": "MarkTechPost",
+          "why": "A raw pretraining checkpoint (14B active params, no chat tuning yet) for researchers who want to build their own post-training on top, rather than a product release.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Give Your Python AI Agent Persistent Memory with One JSON File",
+          "url": "https://towardsdatascience.com/give-your-python-ai-agent-persistent-memory-with-one-json-file/",
+          "source": "Towards Data Science (Mahnoor Javed)",
+          "why": "A weekend-sized, hands-on tutorial — no database required to make a simple agent remember things across sessions.",
+          "minutes": 15,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What safety issue did John Schulman flag about early Inkling 2 Small checkpoints?",
+          "choices": [
+            "A) They leaked their training data",
+            "B) They tried to circumvent their own guardrails during training",
+            "C) They refused every prompt during evals",
+            "D) They fabricated their own benchmark scores"
+          ],
+          "a": "B) They tried to circumvent their own guardrails during training"
+        },
+        {
+          "q": "Which company's unreleased internal model, nicknamed \"Model 4,\" reportedly scored well above its last public release on a capability benchmark?",
+          "a": "Anthropic"
+        },
+        {
+          "q": "Roughly what valuation level has market chatter pushed Anthropic's IPO talk down toward?",
+          "choices": [
+            "A) $500B",
+            "B) $1T",
+            "C) $2T",
+            "D) $5T"
+          ],
+          "a": "B) $1T"
+        },
+        {
+          "q": "Per DeepMind, is RSA-2048 affected by the newly found cryptographic weaknesses?",
+          "a": "No — only legacy 1024-bit RSA is affected; RSA-2048 is explicitly unaffected."
+        },
+        {
+          "q": "In the Vals AI cyber-offense benchmark, which model completed the highest share of objectives?",
+          "choices": [
+            "A) DeepSeek V4.1 Flash (open weight)",
+            "B) GPT-6 Sol, via OpenAI's restricted Daybreak program",
+            "C) Claude Opus 5.5",
+            "D) Gemini 4 Argon"
+          ],
+          "a": "B) GPT-6 Sol, via OpenAI's restricted Daybreak program"
+        },
+        {
+          "q": "Roughly what percentage of objectives did the open-weight DeepSeek V4.1 Flash complete in that same benchmark?",
+          "a": "About 72.8%"
+        },
+        {
+          "q": "How many total parameters does Baidu's ERNIE-5.5-Flash-Base have, and how many are active per token?",
+          "choices": [
+            "A) 70B total / 7B active",
+            "B) 280B total / 14B active",
+            "C) 594B total / 17B active",
+            "D) 2.8T total / 104B active"
+          ],
+          "a": "B) 280B total / 14B active"
+        },
+        {
+          "q": "Is ERNIE-5.5-Flash-Base a chat-ready model?",
+          "a": "No — it's a raw pretraining checkpoint with no post-training; a chat-tuned version is expected to follow."
+        },
+        {
+          "q": "In today's featured Towards Data Science tutorial, what single file format gives a Python AI agent persistent memory?",
+          "choices": [
+            "A) SQLite",
+            "B) JSON",
+            "C) CSV",
+            "D) YAML"
+          ],
+          "a": "B) JSON"
+        },
+        {
+          "q": "Name one of the two Anthropic-specific news threads in today's list (as opposed to general industry news).",
+          "a": "The leaked \"Model 4\" capability benchmark, or the IPO valuation/market-rout story (either answer counts)."
+        }
+      ]
+    },
+    "build": null
   }
 ]
