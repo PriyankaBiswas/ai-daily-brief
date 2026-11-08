@@ -10857,5 +10857,122 @@
         "Python standard library only (random, dataclasses) — no API key, no dependencies"
       ]
     }
+  },
+  {
+    "date": "2026-11-08",
+    "reading": {
+      "intro": "Newsletter flow has been thin for four straight days now, but today's Towards Data Science digest (their Nov 7 issue, landed overnight) finally cleared dedup with a full slate of new pieces — no breaking model-drop news today, so this is a research-and-practice day: interpretability, an applied-ML case study, agent infra, and a couple of practical/business reads.",
+      "items": [
+        {
+          "title": "Why a Tiny GPT Can Know Two Facts and Still Not Connect Them",
+          "url": "https://towardsdatascience.com/why-a-tiny-gpt-can-know-two-facts-and-still-not-connect-them/",
+          "source": "Towards Data Science (Utkarsh Mangal)",
+          "why": "A from-scratch replication of the 'Two-Hop Curse' at toy scale: a tiny GPT memorizes two separate facts perfectly but can't chain them into a two-hop answer. The author tries a published one-line fix, finds it only partly works, and is upfront that the benefit fades with more training and nobody fully knows why — a good concrete anchor for why composition is still a real open problem, not just a benchmark quirk.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "How We Built NASA's Zero-Shot Detector for Gas Leaks from Space",
+          "url": "https://towardsdatascience.com/how-we-built-nasas-zero-shot-detector-for-gas-leaks-from-space/",
+          "source": "Towards Data Science (Vít Růžička)",
+          "why": "JPL's Daily Methane Digest pipeline (tied to the EMIT instrument) cuts alert times to about 24 hours and, notably, generalizes zero-shot to carbon monoxide, ammonia, and NO2 plumes without retraining. Published in Nature Scientific Reports with open-sourced code and weights — a rare case where you can actually go inspect the model.",
+          "minutes": 12,
+          "skip_ok": false
+        },
+        {
+          "title": "How GEO, WebMCP, and Bot Paywalls Are Building the AI-Native Internet",
+          "url": "https://towardsdatascience.com/how-geo-webmcp-and-bot-paywalls-are-building-the-ai-native-internet/",
+          "source": "Towards Data Science (Rodrigo Almeida)",
+          "why": "Ties together three threads that usually get covered separately: SEO giving way to GEO (optimizing for what generative systems ingest, not crawlers), WebMCP as a native way for agents to act on a site's behalf, and bot paywalls (TollBit, Cloudflare, AWS) as the emerging payment layer. Useful for seeing the shape of the agent-facing web as one system instead of three unrelated trends.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Build Your First Multi-Tool AI Agent with Ollama and Python",
+          "url": "https://towardsdatascience.com/build-your-first-multi-tool-ai-agent-with-ollama-and-python/",
+          "source": "Towards Data Science (Thomas Reid)",
+          "why": "A hands-on, fully local walkthrough — Ollama + Python, no API keys — building an agent with multiple real tool calls instead of the usual single-tool toy example. Worth doing if you want something to actually run rather than read; skippable if you just want the news.",
+          "minutes": 12,
+          "skip_ok": true
+        },
+        {
+          "title": "A New SaaS Paradigm: Building Systems Fully Customizable by the User",
+          "url": "https://towardsdatascience.com/customizable-saas/",
+          "source": "Towards Data Science (Christian Braz)",
+          "why": "A hotel property-management case study: a business agent answers questions from the docs/database, and a separate coding agent modifies the system live on request — pitched as a SaaS product whose feature set isn't fixed at ship time. A concrete example of 'agent edits the app for you' product thinking, not just a chatbot bolted onto existing SaaS.",
+          "minutes": 9,
+          "skip_ok": true
+        },
+        {
+          "title": "How to Measure AI Adoption, Performance, and ROI With 12 KPIs",
+          "url": "https://towardsdatascience.com/how-to-measure-ai-adoption-performance-and-roi-with-12-kpis/",
+          "source": "Towards Data Science (Weiwei Hu)",
+          "why": "A structured three-level framework — adoption/usage, operational performance, business value/ROI — with a worked payback example ($50K upfront, $60K/year operating cost, 50 users). Useful mainly if you ever have to justify an AI initiative to someone holding the budget; otherwise the most skippable item today.",
+          "minutes": 9,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The research replicated in the 'Tiny GPT' piece is nicknamed what?",
+          "choices": [
+            "The Reversal Curse",
+            "The Two-Hop Curse",
+            "The Compositionality Gap",
+            "The Latent Binding Problem"
+          ],
+          "a": "The Two-Hop Curse"
+        },
+        {
+          "q": "True or false: in that experiment, the one-line fix from the published paper fully solved the composition failure and stayed fixed with more training.",
+          "a": "False — it only partly worked, and the benefit faded with continued training"
+        },
+        {
+          "q": "What NASA instrument is the Daily Methane Digest pipeline tied to?",
+          "a": "EMIT (on the International Space Station)"
+        },
+        {
+          "q": "Roughly how fast does the JPL pipeline get a leak alert out, down from what used to take much longer?",
+          "a": "About 24 hours"
+        },
+        {
+          "q": "Besides methane, name two other gases the detector generalizes to without retraining.",
+          "choices": [
+            "Carbon monoxide and ammonia",
+            "Carbon dioxide and ozone",
+            "Hydrogen sulfide and sulfur dioxide",
+            "Nitrous oxide and chlorine"
+          ],
+          "a": "Carbon monoxide and ammonia (also nitrogen dioxide)"
+        },
+        {
+          "q": "In the 'AI-native internet' piece, what does GEO stand for in contrast to SEO?",
+          "a": "Generative Engine Optimization — optimizing content for generative/AI systems to ingest, not for crawlers/search rankings"
+        },
+        {
+          "q": "What is WebMCP described as doing for AI agents?",
+          "a": "Giving agents a native way to interact with / act on a site on the user's behalf"
+        },
+        {
+          "q": "Name one company mentioned as building bot-paywall infrastructure.",
+          "choices": [
+            "TollBit",
+            "Stripe",
+            "Shopify",
+            "Segment"
+          ],
+          "a": "TollBit (also Cloudflare and AWS)"
+        },
+        {
+          "q": "In the Ollama/Python agent tutorial, what's the key difference from the typical beginner agent tutorial?",
+          "a": "It uses multiple real tool calls instead of just one, and runs fully locally with no API keys"
+        },
+        {
+          "q": "In the SaaS-paradigm case study, what two kinds of agents does the hotel property-management system use?",
+          "a": "A business agent that answers questions from docs/database, and a coding agent that modifies the system live on request"
+        }
+      ]
+    },
+    "build": null
   }
 ]

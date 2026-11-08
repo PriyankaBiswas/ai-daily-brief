@@ -462,8 +462,118 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Saturday, November 7, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ Newsletter flow was thin again overnight — only Latent Space&#x27;s AINews digest and one Towards Data Science issue cleared dedup against the last week, so today leans on AINews&#x27; Twitter/Reddit recap (Anthropic&#x27;s IPO jitters, a leaked internal benchmark, a disclosed alignment hiccup in yesterday&#x27;s open-weight release, a DeepMind cryptography result, and a fresh agentic cyber-offense benchmark), plus one open-weight base model and one hands-on tutorial.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Sunday, November 8, 2026</h2>
+    <div class="day-content"><p class="day-intro">Newsletter flow has been thin for four straight days now, but today&#x27;s Towards Data Science digest (their Nov 7 issue, landed overnight) finally cleared dedup with a full slate of new pieces — no breaking model-drop news today, so this is a research-and-practice day: interpretability, an applied-ML case study, agent infra, and a couple of practical/business reads.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/why-a-tiny-gpt-can-know-two-facts-and-still-not-connect-them/" target="_blank" rel="noopener">Why a Tiny GPT Can Know Two Facts and Still Not Connect Them</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Towards Data Science (Utkarsh Mangal)</div>
+          <p class="item-why">A from-scratch replication of the &#x27;Two-Hop Curse&#x27; at toy scale: a tiny GPT memorizes two separate facts perfectly but can&#x27;t chain them into a two-hop answer. The author tries a published one-line fix, finds it only partly works, and is upfront that the benefit fades with more training and nobody fully knows why — a good concrete anchor for why composition is still a real open problem, not just a benchmark quirk.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/how-we-built-nasas-zero-shot-detector-for-gas-leaks-from-space/" target="_blank" rel="noopener">How We Built NASA&#x27;s Zero-Shot Detector for Gas Leaks from Space</a>
+            <span class="badge badge-mono">12 min</span>
+          </div>
+          <div class="item-source">Towards Data Science (Vít Růžička)</div>
+          <p class="item-why">JPL&#x27;s Daily Methane Digest pipeline (tied to the EMIT instrument) cuts alert times to about 24 hours and, notably, generalizes zero-shot to carbon monoxide, ammonia, and NO2 plumes without retraining. Published in Nature Scientific Reports with open-sourced code and weights — a rare case where you can actually go inspect the model.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/how-geo-webmcp-and-bot-paywalls-are-building-the-ai-native-internet/" target="_blank" rel="noopener">How GEO, WebMCP, and Bot Paywalls Are Building the AI-Native Internet</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">Towards Data Science (Rodrigo Almeida)</div>
+          <p class="item-why">Ties together three threads that usually get covered separately: SEO giving way to GEO (optimizing for what generative systems ingest, not crawlers), WebMCP as a native way for agents to act on a site&#x27;s behalf, and bot paywalls (TollBit, Cloudflare, AWS) as the emerging payment layer. Useful for seeing the shape of the agent-facing web as one system instead of three unrelated trends.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/build-your-first-multi-tool-ai-agent-with-ollama-and-python/" target="_blank" rel="noopener">Build Your First Multi-Tool AI Agent with Ollama and Python</a>
+            <span class="badge badge-mono">12 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science (Thomas Reid)</div>
+          <p class="item-why">A hands-on, fully local walkthrough — Ollama + Python, no API keys — building an agent with multiple real tool calls instead of the usual single-tool toy example. Worth doing if you want something to actually run rather than read; skippable if you just want the news.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/customizable-saas/" target="_blank" rel="noopener">A New SaaS Paradigm: Building Systems Fully Customizable by the User</a>
+            <span class="badge badge-mono">9 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science (Christian Braz)</div>
+          <p class="item-why">A hotel property-management case study: a business agent answers questions from the docs/database, and a separate coding agent modifies the system live on request — pitched as a SaaS product whose feature set isn&#x27;t fixed at ship time. A concrete example of &#x27;agent edits the app for you&#x27; product thinking, not just a chatbot bolted onto existing SaaS.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/how-to-measure-ai-adoption-performance-and-roi-with-12-kpis/" target="_blank" rel="noopener">How to Measure AI Adoption, Performance, and ROI With 12 KPIs</a>
+            <span class="badge badge-mono">9 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science (Weiwei Hu)</div>
+          <p class="item-why">A structured three-level framework — adoption/usage, operational performance, business value/ROI — with a worked payback example ($50K upfront, $60K/year operating cost, 50 users). Useful mainly if you ever have to justify an AI initiative to someone holding the budget; otherwise the most skippable item today.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">The research replicated in the &#x27;Tiny GPT&#x27; piece is nicknamed what?</p>
+          <ul class="quiz-choices"><li>The Reversal Curse</li><li>The Two-Hop Curse</li><li>The Compositionality Gap</li><li>The Latent Binding Problem</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">True or false: in that experiment, the one-line fix from the published paper fully solved the composition failure and stayed fixed with more training.</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What NASA instrument is the Daily Methane Digest pipeline tied to?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly how fast does the JPL pipeline get a leak alert out, down from what used to take much longer?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Besides methane, name two other gases the detector generalizes to without retraining.</p>
+          <ul class="quiz-choices"><li>Carbon monoxide and ammonia</li><li>Carbon dioxide and ozone</li><li>Hydrogen sulfide and sulfur dioxide</li><li>Nitrous oxide and chlorine</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the &#x27;AI-native internet&#x27; piece, what does GEO stand for in contrast to SEO?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What is WebMCP described as doing for AI agents?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Name one company mentioned as building bot-paywall infrastructure.</p>
+          <ul class="quiz-choices"><li>TollBit</li><li>Stripe</li><li>Shopify</li><li>Segment</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the Ollama/Python agent tutorial, what&#x27;s the key difference from the typical beginner agent tutorial?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the SaaS-paradigm case study, what two kinds of agents does the hotel property-management system use?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The Two-Hop Curse</li><li><span class="quiz-q-num">2.</span> False — it only partly worked, and the benefit faded with continued training</li><li><span class="quiz-q-num">3.</span> EMIT (on the International Space Station)</li><li><span class="quiz-q-num">4.</span> About 24 hours</li><li><span class="quiz-q-num">5.</span> Carbon monoxide and ammonia (also nitrogen dioxide)</li><li><span class="quiz-q-num">6.</span> Generative Engine Optimization — optimizing content for generative/AI systems to ingest, not for crawlers/search rankings</li><li><span class="quiz-q-num">7.</span> Giving agents a native way to interact with / act on a site on the user&#x27;s behalf</li><li><span class="quiz-q-num">8.</span> TollBit (also Cloudflare and AWS)</li><li><span class="quiz-q-num">9.</span> It uses multiple real tool calls instead of just one, and runs fully locally with no API keys</li><li><span class="quiz-q-num">10.</span> A business agent that answers questions from docs/database, and a coding agent that modifies the system live on request</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 2 – 8</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Sat, Nov 7</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ Newsletter flow was thin again overnight — only Latent Space&#x27;s AINews digest and one Towards Data Science issue cleared dedup against the last week, so today leans on AINews&#x27; Twitter/Reddit recap (Anthropic&#x27;s IPO jitters, a leaked internal benchmark, a disclosed alignment hiccup in yesterday&#x27;s open-weight release, a DeepMind cryptography result, and a fresh agentic cyber-offense benchmark), plus one open-weight base model and one hands-on tutorial.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://x.com/johnschulman2/status/2118528596340039790" target="_blank" rel="noopener">Thinking Machines discloses that early Inkling 2 Small checkpoints tried to dodge their own guardrails during training</a>
@@ -597,21 +707,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python standard library only (random, dataclasses) — no API key, no dependencies</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 2 – 8</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Fri, Nov 6</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Quiet newsletter window again — only today&#x27;s TLDR AI issue cleared dedup against the last 7 days, but it&#x27;s a dense one, so no web-search filler was needed. Three threads stand out: a third-party (METR) measurement of how much AI is now accelerating Anthropic&#x27;s own model-building, a big open-weights MoE release gated behind safety testing, and a benchmark that scores AI on lying and bluffing instead of coding or math. Eight items, about 58 minutes total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
