@@ -563,7 +563,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> B) A safety-framework threshold for &#x27;dramatically accelerated AI R&amp;D due to AI&#x27;</li><li><span class="quiz-q-num">2.</span> False — some researchers believe the company has already crossed it</li><li><span class="quiz-q-num">3.</span> The Aaronson-Ambainis conjecture (about when quantum computers can be exponentially faster than classical ones)</li><li><span class="quiz-q-num">4.</span> B) Lean</li><li><span class="quiz-q-num">5.</span> Reorganizing memory during idle periods, which the summary calls &quot;dreaming&quot;</li><li><span class="quiz-q-num">6.</span> C) 9,000 miles</li><li><span class="quiz-q-num">7.</span> B300 (US) and GB300 (Asia)</li><li><span class="quiz-q-num">8.</span> Hand-object occlusion, which normally degrades camera-based tracking during manipulation</li><li><span class="quiz-q-num">9.</span> C) $1.25T</li><li><span class="quiz-q-num">10.</span> Contributing real patches to open-source projects, reviewed by the project&#x27;s actual maintainer</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">agent/tool-building</span>
+      </div>
+      <p class="build-pitch">Give a toy agent a bedtime: build a capture-then-&#x27;dream&#x27; memory pipeline in under 30 minutes.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Today&#x27;s Anthropic piece splits agent memory into two separate jobs: capturing experience live, then reorganizing it during idle time (which the post nicknames &#x27;dreaming&#x27;). This build makes that split concrete with two different data structures instead of one growing log, so you can feel why raw capture and consolidated recall need to be separate steps.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Simulate a toy agent having 8-10 short &#x27;interactions&#x27; (dicts with a topic, what happened, outcome) and write a capture() that appends each one untouched to a raw log</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Write dream(): read the raw log, group entries by topic, and compress each group into one short consolidated note (keyword tally + most recent outcome, no LLM needed)</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Write answer(query, memory): look up a topic directly in the consolidated notes instead of re-scanning the raw log</span>
+            <span class="badge badge-mono">7 min</span></li><li><span class="plan-step">Run the same query against the raw log vs. the consolidated memory and print both answers side by side</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A single script that prints a messy raw log, then a short consolidated memory after dream() runs, then one query answered two ways — instantly from consolidated memory vs. scanning the raw log — making the &#x27;why reorganize at all&#x27; case visible.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Make dream() run automatically whenever capture() hasn&#x27;t been called for N seconds (an &#x27;idle&#x27; trigger), and have repeated dream cycles decay or merge stale notes instead of just appending to them.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>pure Python (stdlib only — no API key needed)</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

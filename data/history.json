@@ -11104,6 +11104,33 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Give a toy agent a bedtime: build a capture-then-'dream' memory pipeline in under 30 minutes.",
+      "category": "agent/tool-building",
+      "why": "Today's Anthropic piece splits agent memory into two separate jobs: capturing experience live, then reorganizing it during idle time (which the post nicknames 'dreaming'). This build makes that split concrete with two different data structures instead of one growing log, so you can feel why raw capture and consolidated recall need to be separate steps.",
+      "plan": [
+        {
+          "step": "Simulate a toy agent having 8-10 short 'interactions' (dicts with a topic, what happened, outcome) and write a capture() that appends each one untouched to a raw log",
+          "minutes": 8
+        },
+        {
+          "step": "Write dream(): read the raw log, group entries by topic, and compress each group into one short consolidated note (keyword tally + most recent outcome, no LLM needed)",
+          "minutes": 10
+        },
+        {
+          "step": "Write answer(query, memory): look up a topic directly in the consolidated notes instead of re-scanning the raw log",
+          "minutes": 7
+        },
+        {
+          "step": "Run the same query against the raw log vs. the consolidated memory and print both answers side by side",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A single script that prints a messy raw log, then a short consolidated memory after dream() runs, then one query answered two ways — instantly from consolidated memory vs. scanning the raw log — making the 'why reorganize at all' case visible.",
+      "stretch_goal": "Make dream() run automatically whenever capture() hasn't been called for N seconds (an 'idle' trigger), and have repeated dream cycles decay or merge stale notes instead of just appending to them.",
+      "tools": [
+        "pure Python (stdlib only — no API key needed)"
+      ]
+    }
   }
 ]
