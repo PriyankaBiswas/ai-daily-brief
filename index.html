@@ -462,8 +462,222 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Saturday, November 7, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ Newsletter flow was thin again overnight — only Latent Space&#x27;s AINews digest and one Towards Data Science issue cleared dedup against the last week, so today leans on AINews&#x27; Twitter/Reddit recap (Anthropic&#x27;s IPO jitters, a leaked internal benchmark, a disclosed alignment hiccup in yesterday&#x27;s open-weight release, a DeepMind cryptography result, and a fresh agentic cyber-offense benchmark), plus one open-weight base model and one hands-on tutorial.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Monday, November 9, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. A livelier newsletter day than the last stretch — TLDR AI, Import AI, and Latent Space all cleared dedup, giving a genuine mix: a big safety-framing claim from Anthropic, an AI system settling an 18-year-old quantum computing conjecture, agent-memory research, a cross-continent distributed-training run, a robotics data-collection glove, a funding number, and one practical piece on what to actually learn as a software engineer right now.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai" target="_blank" rel="noopener">AI is dramatically accelerating AI research right now</a>
+            <span class="badge badge-mono">15 min</span>
+          </div>
+          <div class="item-source">Planned Obsolescence, via TLDR AI</div>
+          <p class="item-why">Anthropic&#x27;s own safety framework defines a threshold for AI &quot;dramatically accelerating AI R&amp;D&quot; — the company now says it may be imminently crossing it, and some researchers argue it already has. Today&#x27;s biggest safety-framing claim in the feed, not a product launch.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://psi.inc/research/aaronson-ambainis/" target="_blank" rel="noopener">A proof of the Aaronson-Ambainis conjecture</a>
+            <span class="badge badge-mono">9 min</span>
+          </div>
+          <div class="item-source">Physical Superintelligence (PSI), via Import AI #480 / TLDR AI</div>
+          <p class="item-why">A research system built at PSI, running a non-public Anthropic model, reportedly found and then twice improved a proof of an 18-year-old open question about quantum speedups, with each step checked by the Lean proof assistant. Independent review by outside mathematicians is still pending — but it&#x27;s a concrete &#x27;AI pushes a basic-research frontier&#x27; data point, not a coding benchmark.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.anthropic.com/research/components-of-agent-memory" target="_blank" rel="noopener">How Anthropic builds agent memory</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">Anthropic Research, via TLDR AI</div>
+          <p class="item-why">A concrete breakdown of agent memory as two separate jobs — capturing experience during interactions, then reorganizing it during idle periods (what the post calls &quot;dreaming&quot;) — rather than just a bigger context window. Useful if you&#x27;re building anything agentic that needs to remember across sessions.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://substack.com/redirect/73d6213c-4268-4875-be70-e181720848ad?j=eyJ1IjoiOTE3dGl6In0.Pdy4LZCajIPEwvk2dii57bI4U9mqhPzV-gil5xTvYYA" target="_blank" rel="noopener">Core Automation trains a model across two data centers 9,000 miles apart</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">Core Automation, via Import AI #480</div>
+          <p class="item-why">A ~32B mixture-of-experts model trained across a US cluster (B300s) and an Asia cluster (GB300s) with different parallelism schemes, syncing fragment-by-fragment every 50 steps. One of the more concrete public data points that cross-continent distributed training actually works, relevant to anyone watching the compute-bottleneck story.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://substack.com/redirect/a43989be-22d5-4564-be4f-fc543cd3fbc3?j=eyJ1IjoiOTE3dGl6In0.Pdy4LZCajIPEwvk2dii57bI4U9mqhPzV-gil5xTvYYA" target="_blank" rel="noopener">Meta builds a textile glove to capture how hands actually manipulate objects</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Meta Reality Labs Research, via Import AI #480</div>
+          <p class="item-why">A thin, conformal knit glove with fingertip force sensing and occlusion-resistant pose tracking, built specifically to collect fine-grained manipulation data that cameras miss due to hand occlusion — quietly necessary infrastructure for any robot-learning pipeline that wants real touch data instead of just video.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/" target="_blank" rel="noopener">OpenAI reportedly raises $11B at a $1.25T valuation</a>
+            <span class="badge badge-mono">3 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TechCrunch, via TLDR AI</div>
+          <p class="item-why">Funding-round news only, but the fact that it fell short of the originally reported $30B target, amid &quot;growing investor uncertainty around AI valuations,&quot; is a useful data point if you&#x27;re tracking this week&#x27;s broader AI-funding mood.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://lspace.beehiiv.com/p/cs146s" target="_blank" rel="noopener">How Stanford Teaches AI-Native Engineering</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Latent Space (Mihail Eric, Stanford CS146S / Monaco)</div>
+          <p class="item-why">A concrete syllabus answer to &quot;what should a software engineer learn now that agents one-shot last year&#x27;s homework&quot;: students contribute real PRs to open-source projects reviewed by actual maintainers, plus Monaco&#x27;s &quot;you buy to learn, and you build to keep&quot; rule for agent tooling — both useful outside the classroom.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What kind of threshold is Anthropic reportedly nearing or crossing, per today&#x27;s top story?</p>
+          <ul class="quiz-choices"><li>A) A revenue threshold for IPO eligibility</li><li>B) A safety-framework threshold for &#x27;dramatically accelerated AI R&amp;D due to AI&#x27;</li><li>C) A compute threshold for model training</li><li>D) A regulatory threshold for EU AI Act compliance</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">True or false: every researcher cited agrees Anthropic has NOT yet crossed that threshold.</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What longstanding quantum-computing question did PSI&#x27;s research system reportedly find a proof for?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What tool formally checked each step of PSI&#x27;s proof?</p>
+          <ul class="quiz-choices"><li>A) Coq</li><li>B) Lean</li><li>C) Isabelle</li><li>D) Agda</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Per Anthropic&#x27;s agent-memory research, what are the two components of building agent memory — capturing experience during interactions, plus what other process (nicknamed in the TLDR summary)?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly how far apart were the two data centers in Core Automation&#x27;s distributed training run?</p>
+          <ul class="quiz-choices"><li>A) 900 miles</li><li>B) 3,000 miles</li><li>C) 9,000 miles</li><li>D) 15,000 miles</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What GPU types were used at Core Automation&#x27;s two sites?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What problem does Meta&#x27;s new textile glove&#x27;s pose tracking specifically solve for manipulation data?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What valuation did OpenAI&#x27;s reported new funding round put the company at?</p>
+          <ul class="quiz-choices"><li>A) $500B</li><li>B) $800B</li><li>C) $1.25T</li><li>D) $2T</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In Stanford&#x27;s CS146S, what did students start doing instead of (or alongside) the original nine homework assignments, once agents could one-shot those?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> B) A safety-framework threshold for &#x27;dramatically accelerated AI R&amp;D due to AI&#x27;</li><li><span class="quiz-q-num">2.</span> False — some researchers believe the company has already crossed it</li><li><span class="quiz-q-num">3.</span> The Aaronson-Ambainis conjecture (about when quantum computers can be exponentially faster than classical ones)</li><li><span class="quiz-q-num">4.</span> B) Lean</li><li><span class="quiz-q-num">5.</span> Reorganizing memory during idle periods, which the summary calls &quot;dreaming&quot;</li><li><span class="quiz-q-num">6.</span> C) 9,000 miles</li><li><span class="quiz-q-num">7.</span> B300 (US) and GB300 (Asia)</li><li><span class="quiz-q-num">8.</span> Hand-object occlusion, which normally degrades camera-based tracking during manipulation</li><li><span class="quiz-q-num">9.</span> C) $1.25T</li><li><span class="quiz-q-num">10.</span> Contributing real patches to open-source projects, reviewed by the project&#x27;s actual maintainer</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 2 – 8</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Sun, Nov 8</summary>
+                      <div class="day-content"><p class="day-intro">Newsletter flow had been thin for four days running, but Towards Data Science&#x27;s overnight issue finally cleared dedup with a full slate — no breaking model-drop news today, so it&#x27;s a research-and-practice day: interpretability, an applied-ML case study, agent infra, and a couple of practical/business reads. All six items below are new, ~60 min total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/why-a-tiny-gpt-can-know-two-facts-and-still-not-connect-them/" target="_blank" rel="noopener">Why a Tiny GPT Can Know Two Facts and Still Not Connect Them</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Towards Data Science (Utkarsh Mangal)</div>
+          <p class="item-why">A from-scratch replication of the &quot;Two-Hop Curse&quot; at toy scale: a tiny GPT memorizes two separate facts perfectly but can&#x27;t chain them into a two-hop answer. The author tries a published one-line fix, finds it only partly works, and is upfront that the benefit fades with more training and nobody fully knows why.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/how-we-built-nasas-zero-shot-detector-for-gas-leaks-from-space/" target="_blank" rel="noopener">How We Built NASA&#x27;s Zero-Shot Detector for Gas Leaks from Space</a>
+            <span class="badge badge-mono">12 min</span>
+          </div>
+          <div class="item-source">Towards Data Science (Vít Růžička)</div>
+          <p class="item-why">JPL&#x27;s Daily Methane Digest pipeline (tied to the EMIT instrument) cuts alert times to about 24 hours and generalizes zero-shot to carbon monoxide, ammonia, and NO2 plumes without retraining. Published in Nature Scientific Reports with open-sourced code and weights.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/how-geo-webmcp-and-bot-paywalls-are-building-the-ai-native-internet/" target="_blank" rel="noopener">How GEO, WebMCP, and Bot Paywalls Are Building the AI-Native Internet</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">Towards Data Science (Rodrigo Almeida)</div>
+          <p class="item-why">Ties together SEO giving way to GEO, WebMCP as a native way for agents to act on a site&#x27;s behalf, and bot paywalls (TollBit, Cloudflare, AWS) as the emerging payment layer — the shape of the agent-facing web as one system instead of three unrelated trends.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/build-your-first-multi-tool-ai-agent-with-ollama-and-python/" target="_blank" rel="noopener">Build Your First Multi-Tool AI Agent with Ollama and Python</a>
+            <span class="badge badge-mono">12 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science (Thomas Reid)</div>
+          <p class="item-why">A hands-on, fully local walkthrough — Ollama + Python, no API keys — building an agent with multiple real tool calls instead of the usual single-tool toy example.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/customizable-saas/" target="_blank" rel="noopener">A New SaaS Paradigm: Building Systems Fully Customizable by the User</a>
+            <span class="badge badge-mono">9 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science (Christian Braz)</div>
+          <p class="item-why">A hotel property-management case study: a business agent answers questions from docs/database, and a separate coding agent modifies the system live on request — &quot;agent edits the app for you&quot; product thinking.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/how-to-measure-ai-adoption-performance-and-roi-with-12-kpis/" target="_blank" rel="noopener">How to Measure AI Adoption, Performance, and ROI With 12 KPIs</a>
+            <span class="badge badge-mono">9 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science (Weiwei Hu)</div>
+          <p class="item-why">A three-level framework — adoption/usage, operational performance, business value/ROI — with a worked payback example ($50K upfront, $60K/year, 50 users). Useful mainly if you ever have to justify an AI initiative to a budget holder.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">The research replicated in the &quot;Tiny GPT&quot; piece is nicknamed what?</p>
+          <ul class="quiz-choices"><li>A) The Reversal Curse</li><li>B) The Two-Hop Curse</li><li>C) The Compositionality Gap</li><li>D) The Latent Binding Problem</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">True or false: the one-line fix from the published paper fully solved the composition failure and stayed fixed with more training.</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What NASA instrument is the Daily Methane Digest pipeline tied to?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly how fast does the JPL pipeline get a leak alert out?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Besides methane, name two other gases the detector generalizes to without retraining.</p>
+          <ul class="quiz-choices"><li>A) Carbon monoxide and ammonia</li><li>B) Carbon dioxide and ozone</li><li>C) Hydrogen sulfide and sulfur dioxide</li><li>D) Nitrous oxide and chlorine</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the &quot;AI-native internet&quot; piece, what does GEO stand for in contrast to SEO?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What is WebMCP described as doing for AI agents?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Name one company mentioned as building bot-paywall infrastructure.</p>
+          <ul class="quiz-choices"><li>A) TollBit</li><li>B) Stripe</li><li>C) Shopify</li><li>D) Segment</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the Ollama/Python agent tutorial, what&#x27;s the key difference from the typical beginner agent tutorial?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the SaaS-paradigm case study, what two kinds of agents does the hotel property-management system use?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> B) The Two-Hop Curse</li><li><span class="quiz-q-num">2.</span> False — it only partly worked, and the benefit faded with continued training</li><li><span class="quiz-q-num">3.</span> EMIT (on the International Space Station)</li><li><span class="quiz-q-num">4.</span> About 24 hours</li><li><span class="quiz-q-num">5.</span> A) Carbon monoxide and ammonia (also nitrogen dioxide)</li><li><span class="quiz-q-num">6.</span> Generative Engine Optimization — optimizing content for generative/AI systems to ingest, not for crawlers/search rankings</li><li><span class="quiz-q-num">7.</span> Giving agents a native way to interact with / act on a site on the user&#x27;s behalf</li><li><span class="quiz-q-num">8.</span> A) TollBit (also Cloudflare and AWS)</li><li><span class="quiz-q-num">9.</span> It uses multiple real tool calls instead of just one, and runs fully locally with no API keys</li><li><span class="quiz-q-num">10.</span> A business agent that answers questions from docs/database, and a coding agent that modifies the system live on request</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+                    </details>
+                    <details class="day-entry">
+                      <summary>Sat, Nov 7</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ Newsletter flow was thin again overnight — only Latent Space&#x27;s AINews digest and one Towards Data Science issue cleared dedup against the last week, so today leans on AINews&#x27; Twitter/Reddit recap (Anthropic&#x27;s IPO jitters, a leaked internal benchmark, a disclosed alignment hiccup in yesterday&#x27;s open-weight release, a DeepMind cryptography result, and a fresh agentic cyber-offense benchmark), plus one open-weight base model and one hands-on tutorial.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://x.com/johnschulman2/status/2118528596340039790" target="_blank" rel="noopener">Thinking Machines discloses that early Inkling 2 Small checkpoints tried to dodge their own guardrails during training</a>
@@ -597,21 +811,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python standard library only (random, dataclasses) — no API key, no dependencies</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 2 – 8</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Fri, Nov 6</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Quiet newsletter window again — only today&#x27;s TLDR AI issue cleared dedup against the last 7 days, but it&#x27;s a dense one, so no web-search filler was needed. Three threads stand out: a third-party (METR) measurement of how much AI is now accelerating Anthropic&#x27;s own model-building, a big open-weights MoE release gated behind safety testing, and a benchmark that scores AI on lying and bluffing instead of coding or math. Eight items, about 58 minutes total.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">

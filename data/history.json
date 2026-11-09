@@ -10857,5 +10857,253 @@
         "Python standard library only (random, dataclasses) — no API key, no dependencies"
       ]
     }
+  },
+  {
+    "date": "2026-11-08",
+    "reading": {
+      "intro": "Newsletter flow had been thin for four days running, but Towards Data Science's overnight issue finally cleared dedup with a full slate — no breaking model-drop news today, so it's a research-and-practice day: interpretability, an applied-ML case study, agent infra, and a couple of practical/business reads. All six items below are new, ~60 min total.",
+      "items": [
+        {
+          "title": "Why a Tiny GPT Can Know Two Facts and Still Not Connect Them",
+          "url": "https://towardsdatascience.com/why-a-tiny-gpt-can-know-two-facts-and-still-not-connect-them/",
+          "source": "Towards Data Science (Utkarsh Mangal)",
+          "why": "A from-scratch replication of the \"Two-Hop Curse\" at toy scale: a tiny GPT memorizes two separate facts perfectly but can't chain them into a two-hop answer. The author tries a published one-line fix, finds it only partly works, and is upfront that the benefit fades with more training and nobody fully knows why.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "How We Built NASA's Zero-Shot Detector for Gas Leaks from Space",
+          "url": "https://towardsdatascience.com/how-we-built-nasas-zero-shot-detector-for-gas-leaks-from-space/",
+          "source": "Towards Data Science (Vít Růžička)",
+          "why": "JPL's Daily Methane Digest pipeline (tied to the EMIT instrument) cuts alert times to about 24 hours and generalizes zero-shot to carbon monoxide, ammonia, and NO2 plumes without retraining. Published in Nature Scientific Reports with open-sourced code and weights.",
+          "minutes": 12,
+          "skip_ok": false
+        },
+        {
+          "title": "How GEO, WebMCP, and Bot Paywalls Are Building the AI-Native Internet",
+          "url": "https://towardsdatascience.com/how-geo-webmcp-and-bot-paywalls-are-building-the-ai-native-internet/",
+          "source": "Towards Data Science (Rodrigo Almeida)",
+          "why": "Ties together SEO giving way to GEO, WebMCP as a native way for agents to act on a site's behalf, and bot paywalls (TollBit, Cloudflare, AWS) as the emerging payment layer — the shape of the agent-facing web as one system instead of three unrelated trends.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Build Your First Multi-Tool AI Agent with Ollama and Python",
+          "url": "https://towardsdatascience.com/build-your-first-multi-tool-ai-agent-with-ollama-and-python/",
+          "source": "Towards Data Science (Thomas Reid)",
+          "why": "A hands-on, fully local walkthrough — Ollama + Python, no API keys — building an agent with multiple real tool calls instead of the usual single-tool toy example.",
+          "minutes": 12,
+          "skip_ok": true
+        },
+        {
+          "title": "A New SaaS Paradigm: Building Systems Fully Customizable by the User",
+          "url": "https://towardsdatascience.com/customizable-saas/",
+          "source": "Towards Data Science (Christian Braz)",
+          "why": "A hotel property-management case study: a business agent answers questions from docs/database, and a separate coding agent modifies the system live on request — \"agent edits the app for you\" product thinking.",
+          "minutes": 9,
+          "skip_ok": true
+        },
+        {
+          "title": "How to Measure AI Adoption, Performance, and ROI With 12 KPIs",
+          "url": "https://towardsdatascience.com/how-to-measure-ai-adoption-performance-and-roi-with-12-kpis/",
+          "source": "Towards Data Science (Weiwei Hu)",
+          "why": "A three-level framework — adoption/usage, operational performance, business value/ROI — with a worked payback example ($50K upfront, $60K/year, 50 users). Useful mainly if you ever have to justify an AI initiative to a budget holder.",
+          "minutes": 9,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "The research replicated in the \"Tiny GPT\" piece is nicknamed what?",
+          "choices": [
+            "A) The Reversal Curse",
+            "B) The Two-Hop Curse",
+            "C) The Compositionality Gap",
+            "D) The Latent Binding Problem"
+          ],
+          "a": "B) The Two-Hop Curse"
+        },
+        {
+          "q": "True or false: the one-line fix from the published paper fully solved the composition failure and stayed fixed with more training.",
+          "a": "False — it only partly worked, and the benefit faded with continued training"
+        },
+        {
+          "q": "What NASA instrument is the Daily Methane Digest pipeline tied to?",
+          "a": "EMIT (on the International Space Station)"
+        },
+        {
+          "q": "Roughly how fast does the JPL pipeline get a leak alert out?",
+          "a": "About 24 hours"
+        },
+        {
+          "q": "Besides methane, name two other gases the detector generalizes to without retraining.",
+          "choices": [
+            "A) Carbon monoxide and ammonia",
+            "B) Carbon dioxide and ozone",
+            "C) Hydrogen sulfide and sulfur dioxide",
+            "D) Nitrous oxide and chlorine"
+          ],
+          "a": "A) Carbon monoxide and ammonia (also nitrogen dioxide)"
+        },
+        {
+          "q": "In the \"AI-native internet\" piece, what does GEO stand for in contrast to SEO?",
+          "a": "Generative Engine Optimization — optimizing content for generative/AI systems to ingest, not for crawlers/search rankings"
+        },
+        {
+          "q": "What is WebMCP described as doing for AI agents?",
+          "a": "Giving agents a native way to interact with / act on a site on the user's behalf"
+        },
+        {
+          "q": "Name one company mentioned as building bot-paywall infrastructure.",
+          "choices": [
+            "A) TollBit",
+            "B) Stripe",
+            "C) Shopify",
+            "D) Segment"
+          ],
+          "a": "A) TollBit (also Cloudflare and AWS)"
+        },
+        {
+          "q": "In the Ollama/Python agent tutorial, what's the key difference from the typical beginner agent tutorial?",
+          "a": "It uses multiple real tool calls instead of just one, and runs fully locally with no API keys"
+        },
+        {
+          "q": "In the SaaS-paradigm case study, what two kinds of agents does the hotel property-management system use?",
+          "a": "A business agent that answers questions from docs/database, and a coding agent that modifies the system live on request"
+        }
+      ]
+    },
+    "build": null
+  },
+  {
+    "date": "2026-11-09",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. A livelier newsletter day than the last stretch — TLDR AI, Import AI, and Latent Space all cleared dedup, giving a genuine mix: a big safety-framing claim from Anthropic, an AI system settling an 18-year-old quantum computing conjecture, agent-memory research, a cross-continent distributed-training run, a robotics data-collection glove, a funding number, and one practical piece on what to actually learn as a software engineer right now.",
+      "items": [
+        {
+          "title": "AI is dramatically accelerating AI research right now",
+          "url": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+          "source": "Planned Obsolescence, via TLDR AI",
+          "why": "Anthropic's own safety framework defines a threshold for AI \"dramatically accelerating AI R&D\" — the company now says it may be imminently crossing it, and some researchers argue it already has. Today's biggest safety-framing claim in the feed, not a product launch.",
+          "minutes": 15,
+          "skip_ok": false
+        },
+        {
+          "title": "A proof of the Aaronson-Ambainis conjecture",
+          "url": "https://psi.inc/research/aaronson-ambainis/",
+          "source": "Physical Superintelligence (PSI), via Import AI #480 / TLDR AI",
+          "why": "A research system built at PSI, running a non-public Anthropic model, reportedly found and then twice improved a proof of an 18-year-old open question about quantum speedups, with each step checked by the Lean proof assistant. Independent review by outside mathematicians is still pending — but it's a concrete 'AI pushes a basic-research frontier' data point, not a coding benchmark.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "How Anthropic builds agent memory",
+          "url": "https://www.anthropic.com/research/components-of-agent-memory",
+          "source": "Anthropic Research, via TLDR AI",
+          "why": "A concrete breakdown of agent memory as two separate jobs — capturing experience during interactions, then reorganizing it during idle periods (what the post calls \"dreaming\") — rather than just a bigger context window. Useful if you're building anything agentic that needs to remember across sessions.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Core Automation trains a model across two data centers 9,000 miles apart",
+          "url": "https://substack.com/redirect/73d6213c-4268-4875-be70-e181720848ad?j=eyJ1IjoiOTE3dGl6In0.Pdy4LZCajIPEwvk2dii57bI4U9mqhPzV-gil5xTvYYA",
+          "source": "Core Automation, via Import AI #480",
+          "why": "A ~32B mixture-of-experts model trained across a US cluster (B300s) and an Asia cluster (GB300s) with different parallelism schemes, syncing fragment-by-fragment every 50 steps. One of the more concrete public data points that cross-continent distributed training actually works, relevant to anyone watching the compute-bottleneck story.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Meta builds a textile glove to capture how hands actually manipulate objects",
+          "url": "https://substack.com/redirect/a43989be-22d5-4564-be4f-fc543cd3fbc3?j=eyJ1IjoiOTE3dGl6In0.Pdy4LZCajIPEwvk2dii57bI4U9mqhPzV-gil5xTvYYA",
+          "source": "Meta Reality Labs Research, via Import AI #480",
+          "why": "A thin, conformal knit glove with fingertip force sensing and occlusion-resistant pose tracking, built specifically to collect fine-grained manipulation data that cameras miss due to hand occlusion — quietly necessary infrastructure for any robot-learning pipeline that wants real touch data instead of just video.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI reportedly raises $11B at a $1.25T valuation",
+          "url": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/",
+          "source": "TechCrunch, via TLDR AI",
+          "why": "Funding-round news only, but the fact that it fell short of the originally reported $30B target, amid \"growing investor uncertainty around AI valuations,\" is a useful data point if you're tracking this week's broader AI-funding mood.",
+          "minutes": 3,
+          "skip_ok": true
+        },
+        {
+          "title": "How Stanford Teaches AI-Native Engineering",
+          "url": "https://lspace.beehiiv.com/p/cs146s",
+          "source": "Latent Space (Mihail Eric, Stanford CS146S / Monaco)",
+          "why": "A concrete syllabus answer to \"what should a software engineer learn now that agents one-shot last year's homework\": students contribute real PRs to open-source projects reviewed by actual maintainers, plus Monaco's \"you buy to learn, and you build to keep\" rule for agent tooling — both useful outside the classroom.",
+          "minutes": 10,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What kind of threshold is Anthropic reportedly nearing or crossing, per today's top story?",
+          "choices": [
+            "A) A revenue threshold for IPO eligibility",
+            "B) A safety-framework threshold for 'dramatically accelerated AI R&D due to AI'",
+            "C) A compute threshold for model training",
+            "D) A regulatory threshold for EU AI Act compliance"
+          ],
+          "a": "B) A safety-framework threshold for 'dramatically accelerated AI R&D due to AI'"
+        },
+        {
+          "q": "True or false: every researcher cited agrees Anthropic has NOT yet crossed that threshold.",
+          "a": "False — some researchers believe the company has already crossed it"
+        },
+        {
+          "q": "What longstanding quantum-computing question did PSI's research system reportedly find a proof for?",
+          "a": "The Aaronson-Ambainis conjecture (about when quantum computers can be exponentially faster than classical ones)"
+        },
+        {
+          "q": "What tool formally checked each step of PSI's proof?",
+          "choices": [
+            "A) Coq",
+            "B) Lean",
+            "C) Isabelle",
+            "D) Agda"
+          ],
+          "a": "B) Lean"
+        },
+        {
+          "q": "Per Anthropic's agent-memory research, what are the two components of building agent memory — capturing experience during interactions, plus what other process (nicknamed in the TLDR summary)?",
+          "a": "Reorganizing memory during idle periods, which the summary calls \"dreaming\""
+        },
+        {
+          "q": "Roughly how far apart were the two data centers in Core Automation's distributed training run?",
+          "choices": [
+            "A) 900 miles",
+            "B) 3,000 miles",
+            "C) 9,000 miles",
+            "D) 15,000 miles"
+          ],
+          "a": "C) 9,000 miles"
+        },
+        {
+          "q": "What GPU types were used at Core Automation's two sites?",
+          "a": "B300 (US) and GB300 (Asia)"
+        },
+        {
+          "q": "What problem does Meta's new textile glove's pose tracking specifically solve for manipulation data?",
+          "a": "Hand-object occlusion, which normally degrades camera-based tracking during manipulation"
+        },
+        {
+          "q": "What valuation did OpenAI's reported new funding round put the company at?",
+          "choices": [
+            "A) $500B",
+            "B) $800B",
+            "C) $1.25T",
+            "D) $2T"
+          ],
+          "a": "C) $1.25T"
+        },
+        {
+          "q": "In Stanford's CS146S, what did students start doing instead of (or alongside) the original nine homework assignments, once agents could one-shot those?",
+          "a": "Contributing real patches to open-source projects, reviewed by the project's actual maintainer"
+        }
+      ]
+    },
+    "build": null
   }
 ]
