@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Monday, November 9, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. A livelier newsletter day than the last stretch — TLDR AI, Import AI, and Latent Space all cleared dedup, giving a genuine mix: a big safety-framing claim from Anthropic, an AI system settling an 18-year-old quantum computing conjecture, agent-memory research, a cross-continent distributed-training run, a robotics data-collection glove, a funding number, and one practical piece on what to actually learn as a software engineer right now.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Tuesday, November 10, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ Model-launch day: Anthropic and Meta both shipped new models within hours of each other, alongside the usual compute-infrastructure arms race and a couple of sharp, skeptical research reads.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener">Claude Fable 5.2 and Mythos 5.2 ship</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Anthropic (via TLDR AI)</div>
+          <p class="item-why">Two new Claude models sharing an architecture, with up to 30% faster output and lower pricing — worth knowing which one fits your current workloads before you default to the old ones.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://research.meta.ai/blog/muse-ember" target="_blank" rel="noopener">Meta&#x27;s Muse Ember: a small reasoning model built for agent tasks</a>
+            <span class="badge badge-mono">4 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Meta (via TLDR AI)</div>
+          <p class="item-why">Meta claims it matches Claude Haiku 5.5&#x27;s top reasoning score at roughly a third of the cost — a real data point if you&#x27;re picking a cheap model for tool-calling or document parsing.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/" target="_blank" rel="noopener">Google ships TPU 8i Max and TPU 8tx</a>
+            <span class="badge badge-mono">4 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Google (via TLDR AI)</div>
+          <p class="item-why">One chip aimed at massive-context inference, the other at confidential/secure workloads — useful if you&#x27;re evaluating TPU vs. GPU for anything context-heavy.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines/" target="_blank" rel="noopener">Anthropic buys $3.4B in gas generators as power becomes the bottleneck</a>
+            <span class="badge badge-mono">5 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TechCrunch (via TLDR AI)</div>
+          <p class="item-why">1.7 gigawatts of Caterpillar generators, taken over from a supplier&#x27;s existing orders — a concrete sign that grid queues, not chips, are now the constraint on scaling inference.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://arxiv.org/abs/2611.08290" target="_blank" rel="noopener">NVIDIA&#x27;s hardware-aware LLM compression shrinks a 120B model to 74B</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">NVIDIA / arXiv (via TLDR AI)</div>
+          <p class="item-why">AutoCompress prunes for actual hardware latency/throughput/memory rather than raw parameter count, and kept Nemotron 3.5 Super&#x27;s performance after cutting it nearly in half — relevant if you ever need to run a big model cheaper.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/change-one-monty-hall-rule-and-five-llms-still-say-switch/" target="_blank" rel="noopener">Change one Monty Hall rule and five LLMs still say &quot;switch&quot;</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">Tests five models on Monty Hall variants where switching is actually wrong — they still say switch, which is a clean, concrete demo of pattern-matching over reasoning that&#x27;s worth having in your back pocket for LLM-reliability conversations.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/how-to-build-multi-agent-systems-with-the-openai-agents-sdk/" target="_blank" rel="noopener">How to build multi-agent systems with the OpenAI Agents SDK</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">Walks through agent-as-a-tool and handoff patterns with a concrete EV-adviser/support-agent example — a solid reference if you&#x27;re structuring your own multi-agent orchestration instead of hand-rolling it.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://lspace.beehiiv.com/p/what-frontier-labs-buy-a-data-deep-dive-with-handshake-ai-garrett-lord-team" target="_blank" rel="noopener">What frontier labs buy: a data deep dive with Handshake AI</a>
+            <span class="badge badge-mono">12 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Latent Space (podcast)</div>
+          <p class="item-why">A startup that went from launch to $1B gross annualized revenue in a year selling RL environments and evals to labs — the live walkthroughs of a finance agent&#x27;s spreadsheet mistake and a vision model misreading brain-tissue slides are a good gut-check on where models still fail quietly.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What two models did Anthropic release together, sharing the same underlying architecture?</p>
+          <ul class="quiz-choices"><li>Claude Fable 5.2 and Mythos 5.2</li><li>Claude Opus 6 and Haiku 6</li><li>Claude Sonnet 5.5 and Haiku 5.5</li><li>Mythos 5.2 and Muse Ember</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What&#x27;s the headline claim about Meta&#x27;s Muse Ember?</p>
+          <ul class="quiz-choices"><li>It&#x27;s Meta&#x27;s largest frontier model yet</li><li>It reportedly matches Claude Haiku 5.5&#x27;s top reasoning score at about a third of the cost</li><li>It&#x27;s a new voice-synthesis model</li><li>It replaces Llama entirely</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Name Google&#x27;s two new TPU chips and what each is optimized for.</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How much did Anthropic reportedly spend on gas generators, and whose equipment orders did it take over?</p>
+          <ul class="quiz-choices"><li>$1.2B from GE</li><li>$3.4B worth of Caterpillar generators, taking over OnePWR&#x27;s orders</li><li>$500M from Siemens</li><li>$10B from Cummins</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What did NVIDIA&#x27;s AutoCompress framework optimize for, instead of just raw parameter count?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How much did AutoCompress shrink Nemotron 3.5 Super, in parameters?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the modified Monty Hall tests, what did most of the five LLMs do even on variants where switching was the wrong move?</p>
+          <ul class="quiz-choices"><li>All correctly recommended staying</li><li>They still recommended switching, out of pattern-matching rather than reasoning through the new rule</li><li>They refused to answer</li><li>Only the largest model got it right</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What are the two core building-block patterns the TDS piece uses to construct multi-agent systems with the OpenAI Agents SDK?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the Handshake AI finance demo, what mistake did the agent make while building its workbook?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly how fast did Handshake AI&#x27;s data-training business grow?</p>
+          <ul class="quiz-choices"><li>From $1M to $10M over two years</li><li>Launch to about $1B in gross annualized revenue in roughly a year</li><li>It has been running for a decade</li><li>It hasn&#x27;t launched commercially yet</li></ul>
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Claude Fable 5.2 and Mythos 5.2</li><li><span class="quiz-q-num">2.</span> It reportedly matches Claude Haiku 5.5&#x27;s top reasoning score at about a third of the cost</li><li><span class="quiz-q-num">3.</span> TPU 8i Max (massive context windows / higher compute density) and TPU 8tx (secure, confidential inference).</li><li><span class="quiz-q-num">4.</span> $3.4B worth of Caterpillar generators, taking over OnePWR&#x27;s orders</li><li><span class="quiz-q-num">5.</span> Hardware-specific latency, throughput, and memory constraints.</li><li><span class="quiz-q-num">6.</span> From 120B down to 74B, while retaining its performance.</li><li><span class="quiz-q-num">7.</span> They still recommended switching, out of pattern-matching rather than reasoning through the new rule</li><li><span class="quiz-q-num">8.</span> Agent-as-a-tool, and handoffs (a router agent passing requests to specialists).</li><li><span class="quiz-q-num">9.</span> It carried an incorrect goodwill figure from the client&#x27;s email into its Python calculation and subtracted it — even though it could correctly explain the tax treatment when asked directly.</li><li><span class="quiz-q-num">10.</span> Launch to about $1B in gross annualized revenue in roughly a year</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 9 – 15</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Mon, Nov 9</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. A livelier newsletter day than the last stretch — TLDR AI, Import AI, and Latent Space all cleared dedup, giving a genuine mix: a big safety-framing claim from Anthropic, an AI system settling an 18-year-old quantum computing conjecture, agent-memory research, a cross-continent distributed-training run, a robotics data-collection glove, a funding number, and one practical piece on what to actually learn as a software engineer right now.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai" target="_blank" rel="noopener">AI is dramatically accelerating AI research right now</a>
@@ -596,18 +722,8 @@ details[open] > summary::before {
           <ul class="tools-list"><li>pure Python (stdlib only — no API key needed)</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
+                    </details>
+                </details>
                 <details class="week-entry">
                   <summary>Week of Nov 2 – 8</summary>
                   

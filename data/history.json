@@ -11132,5 +11132,150 @@
         "pure Python (stdlib only — no API key needed)"
       ]
     }
+  },
+  {
+    "date": "2026-11-10",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ Model-launch day: Anthropic and Meta both shipped new models within hours of each other, alongside the usual compute-infrastructure arms race and a couple of sharp, skeptical research reads.",
+      "items": [
+        {
+          "title": "Claude Fable 5.2 and Mythos 5.2 ship",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+          "source": "Anthropic (via TLDR AI)",
+          "why": "Two new Claude models sharing an architecture, with up to 30% faster output and lower pricing — worth knowing which one fits your current workloads before you default to the old ones.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Meta's Muse Ember: a small reasoning model built for agent tasks",
+          "url": "https://research.meta.ai/blog/muse-ember",
+          "source": "Meta (via TLDR AI)",
+          "why": "Meta claims it matches Claude Haiku 5.5's top reasoning score at roughly a third of the cost — a real data point if you're picking a cheap model for tool-calling or document parsing.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Google ships TPU 8i Max and TPU 8tx",
+          "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/",
+          "source": "Google (via TLDR AI)",
+          "why": "One chip aimed at massive-context inference, the other at confidential/secure workloads — useful if you're evaluating TPU vs. GPU for anything context-heavy.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "Anthropic buys $3.4B in gas generators as power becomes the bottleneck",
+          "url": "https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines/",
+          "source": "TechCrunch (via TLDR AI)",
+          "why": "1.7 gigawatts of Caterpillar generators, taken over from a supplier's existing orders — a concrete sign that grid queues, not chips, are now the constraint on scaling inference.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "NVIDIA's hardware-aware LLM compression shrinks a 120B model to 74B",
+          "url": "https://arxiv.org/abs/2611.08290",
+          "source": "NVIDIA / arXiv (via TLDR AI)",
+          "why": "AutoCompress prunes for actual hardware latency/throughput/memory rather than raw parameter count, and kept Nemotron 3.5 Super's performance after cutting it nearly in half — relevant if you ever need to run a big model cheaper.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "Change one Monty Hall rule and five LLMs still say \"switch\"",
+          "url": "https://towardsdatascience.com/change-one-monty-hall-rule-and-five-llms-still-say-switch/",
+          "source": "Towards Data Science",
+          "why": "Tests five models on Monty Hall variants where switching is actually wrong — they still say switch, which is a clean, concrete demo of pattern-matching over reasoning that's worth having in your back pocket for LLM-reliability conversations.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "How to build multi-agent systems with the OpenAI Agents SDK",
+          "url": "https://towardsdatascience.com/how-to-build-multi-agent-systems-with-the-openai-agents-sdk/",
+          "source": "Towards Data Science",
+          "why": "Walks through agent-as-a-tool and handoff patterns with a concrete EV-adviser/support-agent example — a solid reference if you're structuring your own multi-agent orchestration instead of hand-rolling it.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "What frontier labs buy: a data deep dive with Handshake AI",
+          "url": "https://lspace.beehiiv.com/p/what-frontier-labs-buy-a-data-deep-dive-with-handshake-ai-garrett-lord-team",
+          "source": "Latent Space (podcast)",
+          "why": "A startup that went from launch to $1B gross annualized revenue in a year selling RL environments and evals to labs — the live walkthroughs of a finance agent's spreadsheet mistake and a vision model misreading brain-tissue slides are a good gut-check on where models still fail quietly.",
+          "minutes": 12,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What two models did Anthropic release together, sharing the same underlying architecture?",
+          "choices": [
+            "Claude Fable 5.2 and Mythos 5.2",
+            "Claude Opus 6 and Haiku 6",
+            "Claude Sonnet 5.5 and Haiku 5.5",
+            "Mythos 5.2 and Muse Ember"
+          ],
+          "a": "Claude Fable 5.2 and Mythos 5.2"
+        },
+        {
+          "q": "What's the headline claim about Meta's Muse Ember?",
+          "choices": [
+            "It's Meta's largest frontier model yet",
+            "It reportedly matches Claude Haiku 5.5's top reasoning score at about a third of the cost",
+            "It's a new voice-synthesis model",
+            "It replaces Llama entirely"
+          ],
+          "a": "It reportedly matches Claude Haiku 5.5's top reasoning score at about a third of the cost"
+        },
+        {
+          "q": "Name Google's two new TPU chips and what each is optimized for.",
+          "a": "TPU 8i Max (massive context windows / higher compute density) and TPU 8tx (secure, confidential inference)."
+        },
+        {
+          "q": "How much did Anthropic reportedly spend on gas generators, and whose equipment orders did it take over?",
+          "choices": [
+            "$1.2B from GE",
+            "$3.4B worth of Caterpillar generators, taking over OnePWR's orders",
+            "$500M from Siemens",
+            "$10B from Cummins"
+          ],
+          "a": "$3.4B worth of Caterpillar generators, taking over OnePWR's orders"
+        },
+        {
+          "q": "What did NVIDIA's AutoCompress framework optimize for, instead of just raw parameter count?",
+          "a": "Hardware-specific latency, throughput, and memory constraints."
+        },
+        {
+          "q": "How much did AutoCompress shrink Nemotron 3.5 Super, in parameters?",
+          "a": "From 120B down to 74B, while retaining its performance."
+        },
+        {
+          "q": "In the modified Monty Hall tests, what did most of the five LLMs do even on variants where switching was the wrong move?",
+          "choices": [
+            "All correctly recommended staying",
+            "They still recommended switching, out of pattern-matching rather than reasoning through the new rule",
+            "They refused to answer",
+            "Only the largest model got it right"
+          ],
+          "a": "They still recommended switching, out of pattern-matching rather than reasoning through the new rule"
+        },
+        {
+          "q": "What are the two core building-block patterns the TDS piece uses to construct multi-agent systems with the OpenAI Agents SDK?",
+          "a": "Agent-as-a-tool, and handoffs (a router agent passing requests to specialists)."
+        },
+        {
+          "q": "In the Handshake AI finance demo, what mistake did the agent make while building its workbook?",
+          "a": "It carried an incorrect goodwill figure from the client's email into its Python calculation and subtracted it — even though it could correctly explain the tax treatment when asked directly."
+        },
+        {
+          "q": "Roughly how fast did Handshake AI's data-training business grow?",
+          "choices": [
+            "From $1M to $10M over two years",
+            "Launch to about $1B in gross annualized revenue in roughly a year",
+            "It has been running for a decade",
+            "It hasn't launched commercially yet"
+          ],
+          "a": "Launch to about $1B in gross annualized revenue in roughly a year"
+        }
+      ]
+    },
+    "build": null
   }
 ]
