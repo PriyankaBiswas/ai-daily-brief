@@ -11276,6 +11276,38 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Catch an LLM pattern-matching its way through a puzzle it's seen a thousand times — and see if one prompt tweak fixes it.",
+      "category": "prompt-engineering",
+      "why": "Today's Monty Hall piece shows five LLMs still saying \"switch\" on variants where it's the wrong move — pure pattern-matching over reasoning. This build has you reproduce that failure yourself, then test whether an explicit \"the rule has changed, re-derive from scratch\" instruction actually changes the model's behavior. It's a hands-on look at how prompt framing nudges a model toward reasoning instead of memorized recall.",
+      "plan": [
+        {
+          "step": "Write 3 short logic puzzles that mimic a famous one (Monty Hall, the trolley problem, a classic riddle) but with one rule flipped so the 'obvious' memorized answer is wrong.",
+          "minutes": 5
+        },
+        {
+          "step": "Run each puzzle through Claude or ChatGPT with a plain, direct question. Record whether it gives the memorized (wrong) answer or the correct one.",
+          "minutes": 5
+        },
+        {
+          "step": "Re-run the same 3 puzzles, this time prefacing each with: 'The usual rule has been changed in this version — don't assume the standard answer, re-derive it step by step from what's actually stated.'",
+          "minutes": 5
+        },
+        {
+          "step": "Tally results: plain prompt vs. intervention prompt, correct vs. incorrect, across all 3 puzzles.",
+          "minutes": 5
+        },
+        {
+          "step": "Write 2-3 sentences on what you noticed — did the intervention help, hurt, or do nothing? Any puzzle where even the explicit warning didn't help?",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A short notes doc with 3 puzzles, each tested under 2 prompt styles, marked correct/incorrect, plus one takeaway sentence on what nudges reasoning over pattern-matching.",
+      "stretch_goal": "Add a third prompt style — a one-shot example showing a 'rule changed' puzzle solved correctly — and see if it beats the plain explicit-instruction version.",
+      "tools": [
+        "Claude or ChatGPT (chat UI is fine, no API key needed)",
+        "a plain text file or notes app"
+      ]
+    }
   }
 ]

@@ -571,7 +571,40 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Claude Fable 5.2 and Mythos 5.2</li><li><span class="quiz-q-num">2.</span> It reportedly matches Claude Haiku 5.5&#x27;s top reasoning score at about a third of the cost</li><li><span class="quiz-q-num">3.</span> TPU 8i Max (massive context windows / higher compute density) and TPU 8tx (secure, confidential inference).</li><li><span class="quiz-q-num">4.</span> $3.4B worth of Caterpillar generators, taking over OnePWR&#x27;s orders</li><li><span class="quiz-q-num">5.</span> Hardware-specific latency, throughput, and memory constraints.</li><li><span class="quiz-q-num">6.</span> From 120B down to 74B, while retaining its performance.</li><li><span class="quiz-q-num">7.</span> They still recommended switching, out of pattern-matching rather than reasoning through the new rule</li><li><span class="quiz-q-num">8.</span> Agent-as-a-tool, and handoffs (a router agent passing requests to specialists).</li><li><span class="quiz-q-num">9.</span> It carried an incorrect goodwill figure from the client&#x27;s email into its Python calculation and subtracted it — even though it could correctly explain the tax treatment when asked directly.</li><li><span class="quiz-q-num">10.</span> Launch to about $1B in gross annualized revenue in roughly a year</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">prompt-engineering</span>
+      </div>
+      <p class="build-pitch">Catch an LLM pattern-matching its way through a puzzle it&#x27;s seen a thousand times — and see if one prompt tweak fixes it.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Today&#x27;s Monty Hall piece shows five LLMs still saying &quot;switch&quot; on variants where it&#x27;s the wrong move — pure pattern-matching over reasoning. This build has you reproduce that failure yourself, then test whether an explicit &quot;the rule has changed, re-derive from scratch&quot; instruction actually changes the model&#x27;s behavior. It&#x27;s a hands-on look at how prompt framing nudges a model toward reasoning instead of memorized recall.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Write 3 short logic puzzles that mimic a famous one (Monty Hall, the trolley problem, a classic riddle) but with one rule flipped so the &#x27;obvious&#x27; memorized answer is wrong.</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Run each puzzle through Claude or ChatGPT with a plain, direct question. Record whether it gives the memorized (wrong) answer or the correct one.</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Re-run the same 3 puzzles, this time prefacing each with: &#x27;The usual rule has been changed in this version — don&#x27;t assume the standard answer, re-derive it step by step from what&#x27;s actually stated.&#x27;</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Tally results: plain prompt vs. intervention prompt, correct vs. incorrect, across all 3 puzzles.</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write 2-3 sentences on what you noticed — did the intervention help, hurt, or do nothing? Any puzzle where even the explicit warning didn&#x27;t help?</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A short notes doc with 3 puzzles, each tested under 2 prompt styles, marked correct/incorrect, plus one takeaway sentence on what nudges reasoning over pattern-matching.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Add a third prompt style — a one-shot example showing a &#x27;rule changed&#x27; puzzle solved correctly — and see if it beats the plain explicit-instruction version.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Claude or ChatGPT (chat UI is fine, no API key needed)</li><li>a plain text file or notes app</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
