@@ -11447,6 +11447,33 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a tiny brute-force model checker that proves — or breaks — a toy handshake protocol's safety property, the kid-sibling of DeepMind's AlphaProof Code verifying Signal.",
+      "category": "paper-reimplementation",
+      "why": "Today's AlphaProof Code item is about mathematically verifying a real crypto protocol by exhaustively checking reachable states instead of testing a handful of cases. This build does the same thing in miniature on a toy handshake, so the core idea behind formal verification clicks without needing any theorem-prover tooling.",
+      "plan": [
+        {
+          "step": "Define a toy 3-step handshake as a state machine in Python (messages, who signs what, when a session key is considered established)",
+          "minutes": 8
+        },
+        {
+          "step": "Write an exhaustive BFS over all reachable states, including message drops and reorderings",
+          "minutes": 10
+        },
+        {
+          "step": "Check a safety invariant across every reachable state: 'no session key is established unless both signatures were seen'",
+          "minutes": 7
+        },
+        {
+          "step": "Weaken the protocol on purpose (skip one signature check) and rerun the checker — watch it catch the exact violating trace",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "The checker prints 'SAFE' on the original protocol, then prints 'VIOLATION FOUND' plus the exact sequence of states/messages that breaks the invariant once you weaken it.",
+      "stretch_goal": "Add a replay/MITM step (attacker can resend an old signed message) to the state space and see if the invariant still holds, or if your checker finds a new hole.",
+      "tools": [
+        "Python (stdlib only — itertools, collections.deque for BFS)"
+      ]
+    }
   }
 ]
