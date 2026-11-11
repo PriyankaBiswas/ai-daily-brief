@@ -11309,5 +11309,144 @@
         "a plain text file or notes app"
       ]
     }
+  },
+  {
+    "date": "2026-11-11",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ A busier newsletter day — TLDR AI, Latent Space (twice), and Towards Data Science all cleared dedup. Big-company news collided today: Anthropic launched its IPO roadshow and shipped new Claude artifact types in the same cycle Google put Gemini 4 Carbon into general availability, while a security story (35,000+ exposed Grok-built apps) and two dev-tooling deep dives round things out.",
+      "items": [
+        {
+          "title": "Anthropic launches its IPO roadshow",
+          "url": "https://www.anthropic.com/news/roadshow-launch",
+          "source": "Anthropic (via TLDR AI)",
+          "why": "825 million shares at $70–$78, listing on Nasdaq under ANT — the concrete pricing that last week's \"IPO math gets rockier\" speculation was waiting on.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "Gemini 4 Carbon is now generally available",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+          "source": "Google (via TLDR AI)",
+          "why": "Google's claiming #1 on CursorBench 4.0, WANDR, and AutomationBench at under half the cost of the next-best external model, same price as Gemini 4 Argon — worth a look if you're picking a default model right now.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic ships Claude Sheets, Whiteboards, and interactive connectors",
+          "url": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors",
+          "source": "Anthropic (via TLDR AI)",
+          "why": "New artifact types for spreadsheets/dashboards plus embedded partner apps (Adobe, Atlassian) and Salesforce/NetSuite/Workday plugins — a real push toward Claude as a workspace, not just a chat window.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "More than 35,000 Grok-built apps were open to anyone with the link, including SpaceX's own",
+          "url": "https://blog.claroc.io/ghostshares-grok-build-apps",
+          "source": "Claroc (via TLDR AI)",
+          "why": "Public-by-default sharing exposed internal tools and at least one patient's lab results — a sharp reminder to check default visibility settings on anything you vibe-code and ship.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Inside OpenAI's Codex workshop at AI Engineer Code Summit",
+          "url": "https://lspace.beehiiv.com/p/codex-work",
+          "source": "Latent Space",
+          "why": "First-hand notes on Codex's awkward local-to-cloud handoff, using voice as a control plane rather than just dictation, and why OpenAI's own \"power users\" still find personal agents (dots) a little weird to work with.",
+          "minutes": 9,
+          "skip_ok": true
+        },
+        {
+          "title": "DeepMind's AlphaProof Code verifies Signal's security properties",
+          "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+          "source": "Google DeepMind (via TLDR AI)",
+          "why": "A multi-agent framework that mathematically verified key properties of Signal's cryptographic protocol at the implementation level — formal verification meeting real-world shipped crypto, not just a toy proof.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Ask AI to Refine Your Ideas, Not Invent Them",
+          "url": "https://towardsdatascience.com/ask-ai-to-refine-your-ideas-not-invent-them/",
+          "source": "Towards Data Science",
+          "why": "Study-backed case that asking AI for ideas shrinks the variety of ideas across a group, while using it to refine ideas you already had preserves it — a concrete rule of thumb for how to actually prompt it. (Same digest also covers Copilot catching 8/8 in-diff bugs but missing both bugs outside the diff, if you want the practitioner angle on code review.)",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "Why Coding Agents Keep Picking Resend",
+          "url": "https://lspace.beehiiv.com/p/resend",
+          "source": "Latent Space (podcast)",
+          "why": "Resend's CEO on designing for \"agent experience\" — markdown-readable pricing pages, an MCP server that grew from 20 to 80+ tools, and why Claude Code picked Resend over SendGrid in 64 of 102 recommendations in one study.",
+          "minutes": 10,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What ticker will Anthropic list under on Nasdaq?",
+          "choices": [
+            "ANTH",
+            "ANT",
+            "CLAU",
+            "AIQ"
+          ],
+          "a": "ANT"
+        },
+        {
+          "q": "What price range and share count did Anthropic set for its IPO roadshow?",
+          "a": "825 million shares at $70–$78 each."
+        },
+        {
+          "q": "Name one benchmark Google claims Gemini 4 Carbon ranks first on.",
+          "choices": [
+            "CursorBench 4.0",
+            "MMLU",
+            "SWE-bench Verified",
+            "ARC-AGI"
+          ],
+          "a": "CursorBench 4.0 (also Perplexity's WANDR and Zapier's AutomationBench)"
+        },
+        {
+          "q": "Which of these is NOT one of the new Claude artifact types announced this week?",
+          "choices": [
+            "Sheets",
+            "Whiteboards",
+            "Slides",
+            "Data"
+          ],
+          "a": "Slides"
+        },
+        {
+          "q": "Name one company whose plugins now ship with Claude with built-in skills for sales, finance, or HR work.",
+          "a": "Salesforce, NetSuite, or Workday"
+        },
+        {
+          "q": "Roughly how many Grok-built apps were reportedly left publicly accessible to anyone with the link?",
+          "a": "More than 35,000"
+        },
+        {
+          "q": "Which company's workshop on Codex did Latent Space attend at the AI Engineer Code Summit?",
+          "choices": [
+            "Anthropic",
+            "Google DeepMind",
+            "OpenAI",
+            "xAI"
+          ],
+          "a": "OpenAI"
+        },
+        {
+          "q": "In the Latent Space Codex piece, what's a \"dot\" used for?",
+          "a": "A personal AI agent with context on a user's dev boxes, laptop, and cloud environments — used to delegate tasks, flag things you missed, and act as a presence across the apps you work in."
+        },
+        {
+          "q": "What did DeepMind's AlphaProof Code mathematically verify, according to TLDR AI?",
+          "a": "Key security properties of Signal's cryptographic protocol, at the implementation level."
+        },
+        {
+          "q": "Per the Towards Data Science piece, what's the better order of operations: ask AI for ideas first, or generate your own ideas first?",
+          "a": "Generate your own ideas first, then use AI to refine or challenge them — asking AI to invent ideas from scratch shrinks the variety of ideas across a group."
+        }
+      ]
+    },
+    "build": null
   }
 ]

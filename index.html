@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Tuesday, November 10, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ Model-launch day: Anthropic and Meta both shipped new models within hours of each other, alongside the usual compute-infrastructure arms race and a couple of sharp, skeptical research reads.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Wednesday, November 11, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ A busier newsletter day — TLDR AI, Latent Space (twice), and Towards Data Science all cleared dedup. Big-company news collided today: Anthropic launched its IPO roadshow and shipped new Claude artifact types in the same cycle Google put Gemini 4 Carbon into general availability, while a security story (35,000+ exposed Grok-built apps) and two dev-tooling deep dives round things out.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.anthropic.com/news/roadshow-launch" target="_blank" rel="noopener">Anthropic launches its IPO roadshow</a>
+            <span class="badge badge-mono">4 min</span>
+          </div>
+          <div class="item-source">Anthropic (via TLDR AI)</div>
+          <p class="item-why">825 million shares at $70–$78, listing on Nasdaq under ANT — the concrete pricing that last week&#x27;s &quot;IPO math gets rockier&quot; speculation was waiting on.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/" target="_blank" rel="noopener">Gemini 4 Carbon is now generally available</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">Google (via TLDR AI)</div>
+          <p class="item-why">Google&#x27;s claiming #1 on CursorBench 4.0, WANDR, and AutomationBench at under half the cost of the next-best external model, same price as Gemini 4 Argon — worth a look if you&#x27;re picking a default model right now.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors" target="_blank" rel="noopener">Anthropic ships Claude Sheets, Whiteboards, and interactive connectors</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">Anthropic (via TLDR AI)</div>
+          <p class="item-why">New artifact types for spreadsheets/dashboards plus embedded partner apps (Adobe, Atlassian) and Salesforce/NetSuite/Workday plugins — a real push toward Claude as a workspace, not just a chat window.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.claroc.io/ghostshares-grok-build-apps" target="_blank" rel="noopener">More than 35,000 Grok-built apps were open to anyone with the link, including SpaceX&#x27;s own</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Claroc (via TLDR AI)</div>
+          <p class="item-why">Public-by-default sharing exposed internal tools and at least one patient&#x27;s lab results — a sharp reminder to check default visibility settings on anything you vibe-code and ship.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://lspace.beehiiv.com/p/codex-work" target="_blank" rel="noopener">Inside OpenAI&#x27;s Codex workshop at AI Engineer Code Summit</a>
+            <span class="badge badge-mono">9 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Latent Space</div>
+          <p class="item-why">First-hand notes on Codex&#x27;s awkward local-to-cloud handoff, using voice as a control plane rather than just dictation, and why OpenAI&#x27;s own &quot;power users&quot; still find personal agents (dots) a little weird to work with.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://deepmind.google/blog/introducing-alphaproof-code/" target="_blank" rel="noopener">DeepMind&#x27;s AlphaProof Code verifies Signal&#x27;s security properties</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Google DeepMind (via TLDR AI)</div>
+          <p class="item-why">A multi-agent framework that mathematically verified key properties of Signal&#x27;s cryptographic protocol at the implementation level — formal verification meeting real-world shipped crypto, not just a toy proof.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/ask-ai-to-refine-your-ideas-not-invent-them/" target="_blank" rel="noopener">Ask AI to Refine Your Ideas, Not Invent Them</a>
+            <span class="badge badge-mono">7 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">Study-backed case that asking AI for ideas shrinks the variety of ideas across a group, while using it to refine ideas you already had preserves it — a concrete rule of thumb for how to actually prompt it. (Same digest also covers Copilot catching 8/8 in-diff bugs but missing both bugs outside the diff, if you want the practitioner angle on code review.)</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://lspace.beehiiv.com/p/resend" target="_blank" rel="noopener">Why Coding Agents Keep Picking Resend</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Latent Space (podcast)</div>
+          <p class="item-why">Resend&#x27;s CEO on designing for &quot;agent experience&quot; — markdown-readable pricing pages, an MCP server that grew from 20 to 80+ tools, and why Claude Code picked Resend over SendGrid in 64 of 102 recommendations in one study.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What ticker will Anthropic list under on Nasdaq?</p>
+          <ul class="quiz-choices"><li>ANTH</li><li>ANT</li><li>CLAU</li><li>AIQ</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What price range and share count did Anthropic set for its IPO roadshow?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Name one benchmark Google claims Gemini 4 Carbon ranks first on.</p>
+          <ul class="quiz-choices"><li>CursorBench 4.0</li><li>MMLU</li><li>SWE-bench Verified</li><li>ARC-AGI</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which of these is NOT one of the new Claude artifact types announced this week?</p>
+          <ul class="quiz-choices"><li>Sheets</li><li>Whiteboards</li><li>Slides</li><li>Data</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Name one company whose plugins now ship with Claude with built-in skills for sales, finance, or HR work.</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly how many Grok-built apps were reportedly left publicly accessible to anyone with the link?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which company&#x27;s workshop on Codex did Latent Space attend at the AI Engineer Code Summit?</p>
+          <ul class="quiz-choices"><li>Anthropic</li><li>Google DeepMind</li><li>OpenAI</li><li>xAI</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the Latent Space Codex piece, what&#x27;s a &quot;dot&quot; used for?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What did DeepMind&#x27;s AlphaProof Code mathematically verify, according to TLDR AI?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Per the Towards Data Science piece, what&#x27;s the better order of operations: ask AI for ideas first, or generate your own ideas first?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> ANT</li><li><span class="quiz-q-num">2.</span> 825 million shares at $70–$78 each.</li><li><span class="quiz-q-num">3.</span> CursorBench 4.0 (also Perplexity&#x27;s WANDR and Zapier&#x27;s AutomationBench)</li><li><span class="quiz-q-num">4.</span> Slides</li><li><span class="quiz-q-num">5.</span> Salesforce, NetSuite, or Workday</li><li><span class="quiz-q-num">6.</span> More than 35,000</li><li><span class="quiz-q-num">7.</span> OpenAI</li><li><span class="quiz-q-num">8.</span> A personal AI agent with context on a user&#x27;s dev boxes, laptop, and cloud environments — used to delegate tasks, flag things you missed, and act as a presence across the apps you work in.</li><li><span class="quiz-q-num">9.</span> Key security properties of Signal&#x27;s cryptographic protocol, at the implementation level.</li><li><span class="quiz-q-num">10.</span> Generate your own ideas first, then use AI to refine or challenge them — asking AI to invent ideas from scratch shrinks the variety of ideas across a group.</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 9 – 15</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Tue, Nov 10</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ Model-launch day: Anthropic and Meta both shipped new models within hours of each other, alongside the usual compute-infrastructure arms race and a couple of sharp, skeptical research reads.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener">Claude Fable 5.2 and Mythos 5.2 ship</a>
@@ -605,21 +731,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Claude or ChatGPT (chat UI is fine, no API key needed)</li><li>a plain text file or notes app</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 9 – 15</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Mon, Nov 9</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. A livelier newsletter day than the last stretch — TLDR AI, Import AI, and Latent Space all cleared dedup, giving a genuine mix: a big safety-framing claim from Anthropic, an AI system settling an 18-year-old quantum computing conjecture, agent-memory research, a cross-continent distributed-training run, a robotics data-collection glove, a funding number, and one practical piece on what to actually learn as a software engineer right now.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
