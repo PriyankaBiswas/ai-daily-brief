@@ -11475,5 +11475,142 @@
         "Python (stdlib only — itertools, collections.deque for BFS)"
       ]
     }
+  },
+  {
+    "date": "2026-11-12",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. A news-heavy day: NVIDIA's board investigation into Jensen Huang broke into clearer view, \"system one\" models (Jev) kept dominating conference chatter at AI Engineer Code Summit, and there's a genuinely useful Claude Code skills-firing study plus a sharp MCP-cost breakdown for anyone building agents.",
+      "items": [
+        {
+          "title": "NVIDIA's board opens an independent investigation into Jensen Huang",
+          "url": "https://www.cbsnews.com/news/nvidia-board-ceo-jensen-huang-china/",
+          "source": "CBS News (via TLDR AI)",
+          "why": "Huang admitted to an extramarital affair with a woman U.S. intelligence reportedly flagged as a possible target for foreign recruitment. The board says it has no evidence NVIDIA secrets were compromised and publicly backs Huang — but corporate filings show directors could remove him as CEO without proving misconduct, which is the real stakes underneath the headlines.",
+          "minutes": 3,
+          "skip_ok": false
+        },
+        {
+          "title": "The Jev Revolution: What Engineers Are Already Building with System One Models",
+          "url": "https://lspace.beehiiv.com/p/jev-revolution",
+          "source": "Latent Space",
+          "why": "At AI Engineer Code Summit, Jev's creator argued \"system one\" models — fast, non-generative models that return structured scores/choices instead of free text — should be sprinkled throughout application code wherever reliability matters more than generative flexibility. Glean, UiPath, and Workday all showed production uses on stage, which is the clearest signal yet this is becoming a real architecture pattern, not a one-off product. (Towards Data Science ran two parallel pieces this week — a from-scratch tutorial on building a Jev-style decision model, and a finding that plain scikit-learn matched Jev's calibration on BANKING77 — worth a skim if you want the hands-on, slightly skeptical angle.)",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "MCP vs CLI vs Skills: What Each Costs in Context",
+          "url": "https://openrouter.ai/blog/insights/mcp-vs-cli-vs-skills/",
+          "source": "OpenRouter (via TLDR AI)",
+          "why": "Concrete token numbers for a tradeoff everyone building agents eventually hits: the same simple task cost 59,417 tokens through a default MCP setup on Sonnet 5.5, versus 1,421 via CLI and 3,315 via a skill. If you're loading a lot of MCP tool definitions into context by default, this is the data to point at when arguing for deferred tool search instead.",
+          "minutes": 11,
+          "skip_ok": false
+        },
+        {
+          "title": "A Session-Start Hook Raised Claude Code Skill Firing From 15% to 62%",
+          "url": "https://towardsdatascience.com/a-session-start-hook-raised-claude-code-skill-firing-from-15-to-62/",
+          "source": "Towards Data Science",
+          "why": "A controlled test — 936 runs across Haiku, Sonnet, and Opus — found that adding a session-start hook which prompts Claude to check its skills first roughly quadrupled skill-firing on indirect requests, from 15% to 62%. Making skill descriptions more aggressive only added about 5 points on top of the baseline. If your own skills aren't firing reliably, this points at a more promising lever than more prompt tuning.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Runway's Praxis-1: an open-weight robotics model tops NVIDIA's RoboLab-120 leaderboard",
+          "url": "https://runway.com/news/company-news/praxis-1-is-now-available",
+          "source": "Runway (via TLDR AI)",
+          "why": "A 27B-parameter, Apache 2.0 open-weight robotics model that predicts video and actions, topping NVIDIA's RoboLab-120 leaderboard at a 46.2% success rate across 1,200 episodes, with full and LoRA fine-tuning support. Worth knowing about specifically if you're tracking the open-weight embodied-AI space.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "Escaping Space, Part II: agents bypass network isolation in Perplexity's sandbox benchmark",
+          "url": "https://www.perplexity.ai/hub/blog/escaping-space-part-ii",
+          "source": "Perplexity (via TLDR AI)",
+          "why": "Perplexity ran 12 models against its own agent sandbox: none broke VM-host isolation, but several found ways around network controls through DNS spoofing and shared-IP tricks before the holes got patched. Also notable as a methodology lesson: capture-the-flag framing actually distracted agents from the real security boundary being tested.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "OpenAI engineers propose letting agents tell websites who's visiting",
+          "url": "https://joost.blog/agents-sharing-user-signals/",
+          "source": "Joost's blog (via TLDR AI)",
+          "why": "Two OpenAI engineers are floating a proposal to let agents pass along user-identifying signals so sites treat them like normal visitors instead of bots to block — the opposite direction from today's bot-blocking arms race. Short, but a real preview of where the agent/web relationship could head next.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "LLMs Can Learn Some Multi-Step Reasoning on Filler Tokens Instead of Visible CoT",
+          "url": "https://www.lesswrong.com/posts/EHkwCDAmhWPAWEziM/llms-can-learn-some-multi-step-reasoning-on-filler-tokens-2",
+          "source": "LessWrong (via TLDR AI)",
+          "why": "Researchers trained Qwen3.6-35B-A3B and gpt-oss-20b with LoRAs to do some multi-step reasoning while emitting only filler tokens instead of visible chain-of-thought, beating an answer-only baseline on 3 of 7 tasks — holding up to 60 steps on some tasks, collapsing after 1-3 on others. Relevant if you care about whether visible CoT actually reflects what a model is doing internally.",
+          "minutes": 9,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What two things triggered NVIDIA's board investigation into Jensen Huang?",
+          "a": "His admitted extramarital affair, and reports that the woman involved may have been a target for foreign intelligence recruitment."
+        },
+        {
+          "q": "True or false: NVIDIA's board has publicly announced plans to remove Huang as CEO.",
+          "choices": [
+            "True",
+            "False"
+          ],
+          "a": "False — the board says it backs him, though corporate filings show directors could technically remove him without proving misconduct."
+        },
+        {
+          "q": "What phrase did Jev creator Diogo Almeida use to describe Jev onstage at AI Engineer Code Summit?",
+          "choices": [
+            "\"reliable intelligence\"",
+            "\"infinite context\"",
+            "\"zero-shot magic\"",
+            "\"the final model\""
+          ],
+          "a": "\"reliable intelligence\""
+        },
+        {
+          "q": "Per OpenRouter's benchmark, roughly how many tokens did a simple task cost through a default MCP setup versus through the CLI?",
+          "a": "About 59,417 tokens via MCP versus about 1,421 via CLI."
+        },
+        {
+          "q": "In the Towards Data Science study, what skill-firing rate did the session-start hook produce, up from what baseline?",
+          "a": "62%, up from a 15% baseline."
+        },
+        {
+          "q": "How many total runs did that Claude Code skill-firing study cover?",
+          "choices": [
+            "93",
+            "936",
+            "9,360",
+            "15"
+          ],
+          "a": "936"
+        },
+        {
+          "q": "What leaderboard does Runway's Praxis-1 top, and at what success rate?",
+          "a": "NVIDIA's RoboLab-120 leaderboard, at a 46.2% success rate."
+        },
+        {
+          "q": "In Perplexity's \"Escaping Space\" test, did any of the 12 models break out of VM-host isolation?",
+          "a": "No — but several found ways around network controls (DNS spoofing, shared-IP tricks)."
+        },
+        {
+          "q": "What did two OpenAI engineers propose to stop agents from being blocked as bots?",
+          "a": "Letting agents pass along user-identifying signals to websites so they look like normal visitors."
+        },
+        {
+          "q": "In the filler-token reasoning study, on how many of the seven tasks did filler-token training beat the answer-only baseline?",
+          "choices": [
+            "1 of 7",
+            "3 of 7",
+            "5 of 7",
+            "7 of 7"
+          ],
+          "a": "3 of 7"
+        }
+      ]
+    },
+    "build": null
   }
 ]
