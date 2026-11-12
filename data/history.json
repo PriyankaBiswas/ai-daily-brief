@@ -11611,6 +11611,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Those last few builds went out without a reply — no stress at all. Here's a fast, concrete one: reproduce today's MCP-vs-CLI-vs-skills token blowup yourself, in about 10 lines of Python.",
+      "category": "infra/deployment",
+      "why": "Today's OpenRouter piece found the same simple tool call costs 59,417 tokens through a default MCP setup, vs 1,421 via CLI and 3,315 via a skill. You'll write a toy tool definition three ways and count the tokens yourself with tiktoken — so the 'defer tool loading' argument stops being someone else's benchmark and becomes a number you watched happen on your own screen.",
+      "plan": [
+        {
+          "step": "Write one toy tool (say, a 'get_weather' call) three ways: a full verbose MCP-style JSON schema, a one-line CLI usage string, and a short skill-style blurb",
+          "minutes": 8
+        },
+        {
+          "step": "pip install tiktoken, then count tokens for each of the three strings with the cl100k_base encoding",
+          "minutes": 5
+        },
+        {
+          "step": "Multiply the MCP schema's count by 20 (simulating 20 tools loaded into context by default) and compare that total against a single CLI or skill call",
+          "minutes": 7
+        },
+        {
+          "step": "Print a one-line verdict: how many tokens you just burned for nothing by loading everything upfront",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A script that prints three token counts side by side, then a line like 'loading 20 tools by default costs you N tokens before you've done anything' once the MCP number is scaled up.",
+      "stretch_goal": "Swap the toy tool for a real one — count the tokens in this session's own deferred-tool listing (the block of names you saw at the top of this conversation) instead of a made-up example.",
+      "tools": [
+        "Python 3",
+        "tiktoken"
+      ]
+    }
   }
 ]

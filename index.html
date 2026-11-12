@@ -571,7 +571,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> His admitted extramarital affair, and reports that the woman involved may have been a target for foreign intelligence recruitment.</li><li><span class="quiz-q-num">2.</span> False — the board says it backs him, though corporate filings show directors could technically remove him without proving misconduct.</li><li><span class="quiz-q-num">3.</span> &quot;reliable intelligence&quot;</li><li><span class="quiz-q-num">4.</span> About 59,417 tokens via MCP versus about 1,421 via CLI.</li><li><span class="quiz-q-num">5.</span> 62%, up from a 15% baseline.</li><li><span class="quiz-q-num">6.</span> 936</li><li><span class="quiz-q-num">7.</span> NVIDIA&#x27;s RoboLab-120 leaderboard, at a 46.2% success rate.</li><li><span class="quiz-q-num">8.</span> No — but several found ways around network controls (DNS spoofing, shared-IP tricks).</li><li><span class="quiz-q-num">9.</span> Letting agents pass along user-identifying signals to websites so they look like normal visitors.</li><li><span class="quiz-q-num">10.</span> 3 of 7</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">infra/deployment</span>
+      </div>
+      <p class="build-pitch">Those last few builds went out without a reply — no stress at all. Here&#x27;s a fast, concrete one: reproduce today&#x27;s MCP-vs-CLI-vs-skills token blowup yourself, in about 10 lines of Python.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Today&#x27;s OpenRouter piece found the same simple tool call costs 59,417 tokens through a default MCP setup, vs 1,421 via CLI and 3,315 via a skill. You&#x27;ll write a toy tool definition three ways and count the tokens yourself with tiktoken — so the &#x27;defer tool loading&#x27; argument stops being someone else&#x27;s benchmark and becomes a number you watched happen on your own screen.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Write one toy tool (say, a &#x27;get_weather&#x27; call) three ways: a full verbose MCP-style JSON schema, a one-line CLI usage string, and a short skill-style blurb</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">pip install tiktoken, then count tokens for each of the three strings with the cl100k_base encoding</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Multiply the MCP schema&#x27;s count by 20 (simulating 20 tools loaded into context by default) and compare that total against a single CLI or skill call</span>
+            <span class="badge badge-mono">7 min</span></li><li><span class="plan-step">Print a one-line verdict: how many tokens you just burned for nothing by loading everything upfront</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A script that prints three token counts side by side, then a line like &#x27;loading 20 tools by default costs you N tokens before you&#x27;ve done anything&#x27; once the MCP number is scaled up.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Swap the toy tool for a real one — count the tokens in this session&#x27;s own deferred-tool listing (the block of names you saw at the top of this conversation) instead of a made-up example.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Python 3</li><li>tiktoken</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
