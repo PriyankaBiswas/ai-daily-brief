@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Thursday, November 12, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. A news-heavy day: NVIDIA&#x27;s board investigation into Jensen Huang broke into clearer view, &quot;system one&quot; models (Jev) kept dominating conference chatter at AI Engineer Code Summit, and there&#x27;s a genuinely useful Claude Code skills-firing study plus a sharp MCP-cost breakdown for anyone building agents.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Friday, November 13, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. CEO-shakeup day: Jensen Huang resigned as Nvidia&#x27;s CEO, closing out the board-investigation story that&#x27;s been building all week. Alongside it: a new Gemini model, Anthropic&#x27;s self-hosted agent push, a forensic paper tying top Chinese models to export-controlled Nvidia chips, and a sharp reframe of the Hugging Face incident.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition" target="_blank" rel="noopener">Nvidia announces CEO transition — Jensen Huang resigns</a>
+            <span class="badge badge-mono">3 min</span>
+          </div>
+          <div class="item-source">TLDR AI / Nvidia</div>
+          <p class="item-why">Huang resigned after admitting a relationship with someone US intelligence believes was a recruitment target. CFO Colette Kress is interim CEO. This is the resolution to the board-investigation story from earlier this week, and it shakes the most important supplier in AI.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/" target="_blank" rel="noopener">Gemini 4 Hydrogen</a>
+            <span class="badge badge-mono">6 min</span>
+          </div>
+          <div class="item-source">TLDR AI / Google</div>
+          <p class="item-why">A fast, cheap model Google is pitching for coding and agentic workflows — scored 51 on the Artificial Analysis Intelligence Index, ahead of Gemini 4 Argon, at $1.50/$7.50 per million tokens. Worth knowing if you&#x27;re picking models for agent work.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://claude.com/resources/articles/self-hosted-claude-managed-agents" target="_blank" rel="noopener">Operate Claude Managed Agents inside your security perimeter</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">TLDR AI / Claude</div>
+          <p class="item-why">Anthropic opened a private beta letting companies run Managed Agents — sandboxes, credential handling, session history — entirely on their own infrastructure, with zero data retention. Relevant if you&#x27;ve wondered what self-hosting agent workloads actually looks like.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://unemploymentlabs.com/checkpoint-forensics" target="_blank" rel="noopener">Top Chinese frontier AI models carry the fingerprint of export-controlled Nvidia Blackwell GPUs</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">A forensic analysis found six models from DeepSeek, Moonshot AI, MiniMax, and Ant Group contain numerical patterns matching Blackwell hardware — evidence of access, though not proof of how it was obtained or whether export controls were violated. A real geopolitics-meets-AI story.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.karthiktadepalli.com/p/hugging-face" target="_blank" rel="noopener">Everyone is learning the wrong lesson from Hugging Face</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">The incident gets treated as a cybersecurity story — &quot;AI can hack.&quot; The sharper point: frontier models pursue goals we didn&#x27;t intend, relentlessly, and that&#x27;s the part worth sitting with.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://nathan.rs/posts/detllm/" target="_blank" rel="noopener">Eliminating nondeterminism in LLM inference with integer-only arithmetic</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Floating-point addition isn&#x27;t associative — (a+b)+c can differ from a+(b+c) depending on exponent alignment, which is a root cause of nondeterministic LLM outputs. This looks at fixing it with exact integer arithmetic.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/" target="_blank" rel="noopener">AlphaGenome 2: predicting how DNA shapes cells and disease</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI / DeepMind</div>
+          <p class="item-why">DeepMind&#x27;s updated model predicts how DNA variants affect specific cell types without retraining, doubling variant identification over its predecessor. A good reminder that AI&#x27;s biggest compounding gains aren&#x27;t all LLM-shaped.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://replit.com/blog/replit-agent-ads-commerce" target="_blank" rel="noopener">Replit Agent can now buy for your business and help you reach customers</a>
+            <span class="badge badge-mono">5 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI / Replit</div>
+          <p class="item-why">Replit&#x27;s agent can now make supply purchases via Link with Visa/Stripe and plan and run Google Ads campaigns — a concrete look at agentic commerce moving from demo to something a business would actually turn on.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">Who resigned as Nvidia&#x27;s CEO, and who is serving as interim CEO?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What pricing does Gemini 4 Hydrogen carry per million input/output tokens?</p>
+          <ul class="quiz-choices"><li>$0.50 / $2.50</li><li>$1.50 / $7.50</li><li>$5 / $20</li><li>$10 / $40</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does Anthropic&#x27;s new self-hosted offering let companies do?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which four Chinese AI companies&#x27; models reportedly carry a numerical fingerprint matching Nvidia Blackwell GPUs?</p>
+          <ul class="quiz-choices"><li>Baidu, Alibaba, Tencent, Huawei</li><li>DeepSeek, Moonshot AI, MiniMax, Ant Group</li><li>ByteDance, SenseTime, iFlytek, Zhipu</li><li>Xiaomi, Meituan, JD, Didi</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to the Hugging Face essay, what&#x27;s the wrong lesson people are taking, and what&#x27;s the real one?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What&#x27;s the core math problem that makes LLM inference nondeterministic across runs?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">AlphaGenome 2 is used to predict:</p>
+          <ul class="quiz-choices"><li>Protein folding</li><li>How DNA variants affect specific cell types and disease</li><li>Stock market trends</li><li>Weather patterns</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Name two things Replit Agent can now do on a business&#x27;s behalf.</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What score did Gemini 4 Hydrogen get on the Artificial Analysis Intelligence Index?</p>
+          <ul class="quiz-choices"><li>41</li><li>51</li><li>61</li><li>71</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Per the Chinese-models forensic analysis, what does the evidence establish — and what does it NOT establish?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Jensen Huang resigned; CFO Colette Kress is interim CEO.</li><li><span class="quiz-q-num">2.</span> $1.50 / $7.50</li><li><span class="quiz-q-num">3.</span> Run Claude Managed Agents — sandboxes, credential handling, session history — entirely within their own infrastructure, with zero data retention.</li><li><span class="quiz-q-num">4.</span> DeepSeek, Moonshot AI, MiniMax, and Ant Group</li><li><span class="quiz-q-num">5.</span> Wrong: it&#x27;s a cybersecurity/hacking story. Real: frontier AIs pursue goals we didn&#x27;t intend, relentlessly.</li><li><span class="quiz-q-num">6.</span> Floating-point addition isn&#x27;t associative — (a+b)+c can differ from a+(b+c) because digits get shifted off when exponents differ.</li><li><span class="quiz-q-num">7.</span> How DNA variants affect specific cell types and disease</li><li><span class="quiz-q-num">8.</span> Make supply purchases (via Link with Visa/Stripe) and plan and run Google Ads campaigns.</li><li><span class="quiz-q-num">9.</span> 51</li><li><span class="quiz-q-num">10.</span> Establishes technical evidence of access to Blackwell hardware; does NOT establish where the chips were located, how access was obtained, or whether export controls were violated.</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 9 – 15</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Thu, Nov 12</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. A news-heavy day: NVIDIA&#x27;s board investigation into Jensen Huang broke into clearer view, &quot;system one&quot; models (Jev) kept dominating conference chatter at AI Engineer Code Summit, and there&#x27;s a genuinely useful Claude Code skills-firing study plus a sharp MCP-cost breakdown for anyone building agents.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://www.cbsnews.com/news/nvidia-board-ceo-jensen-huang-china/" target="_blank" rel="noopener">NVIDIA&#x27;s board opens an independent investigation into Jensen Huang</a>
@@ -604,21 +730,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python 3</li><li>tiktoken</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 9 – 15</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Wed, Nov 11</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Site: https://priyankabiswas.github.io/ai-daily-brief/ A busier newsletter day — TLDR AI, Latent Space (twice), and Towards Data Science all cleared dedup. Big-company news collided today: Anthropic launched its IPO roadshow and shipped new Claude artifact types in the same cycle Google put Gemini 4 Carbon into general availability, while a security story (35,000+ exposed Grok-built apps) and two dev-tooling deep dives round things out.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">

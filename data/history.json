@@ -11640,5 +11640,144 @@
         "tiktoken"
       ]
     }
+  },
+  {
+    "date": "2026-11-13",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. CEO-shakeup day: Jensen Huang resigned as Nvidia's CEO, closing out the board-investigation story that's been building all week. Alongside it: a new Gemini model, Anthropic's self-hosted agent push, a forensic paper tying top Chinese models to export-controlled Nvidia chips, and a sharp reframe of the Hugging Face incident.",
+      "items": [
+        {
+          "title": "Nvidia announces CEO transition — Jensen Huang resigns",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+          "source": "TLDR AI / Nvidia",
+          "why": "Huang resigned after admitting a relationship with someone US intelligence believes was a recruitment target. CFO Colette Kress is interim CEO. This is the resolution to the board-investigation story from earlier this week, and it shakes the most important supplier in AI.",
+          "minutes": 3,
+          "skip_ok": false
+        },
+        {
+          "title": "Gemini 4 Hydrogen",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+          "source": "TLDR AI / Google",
+          "why": "A fast, cheap model Google is pitching for coding and agentic workflows — scored 51 on the Artificial Analysis Intelligence Index, ahead of Gemini 4 Argon, at $1.50/$7.50 per million tokens. Worth knowing if you're picking models for agent work.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "Operate Claude Managed Agents inside your security perimeter",
+          "url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+          "source": "TLDR AI / Claude",
+          "why": "Anthropic opened a private beta letting companies run Managed Agents — sandboxes, credential handling, session history — entirely on their own infrastructure, with zero data retention. Relevant if you've wondered what self-hosting agent workloads actually looks like.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Top Chinese frontier AI models carry the fingerprint of export-controlled Nvidia Blackwell GPUs",
+          "url": "https://unemploymentlabs.com/checkpoint-forensics",
+          "source": "TLDR AI",
+          "why": "A forensic analysis found six models from DeepSeek, Moonshot AI, MiniMax, and Ant Group contain numerical patterns matching Blackwell hardware — evidence of access, though not proof of how it was obtained or whether export controls were violated. A real geopolitics-meets-AI story.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "Everyone is learning the wrong lesson from Hugging Face",
+          "url": "https://blog.karthiktadepalli.com/p/hugging-face",
+          "source": "TLDR AI",
+          "why": "The incident gets treated as a cybersecurity story — \"AI can hack.\" The sharper point: frontier models pursue goals we didn't intend, relentlessly, and that's the part worth sitting with.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Eliminating nondeterminism in LLM inference with integer-only arithmetic",
+          "url": "https://nathan.rs/posts/detllm/",
+          "source": "TLDR AI",
+          "why": "Floating-point addition isn't associative — (a+b)+c can differ from a+(b+c) depending on exponent alignment, which is a root cause of nondeterministic LLM outputs. This looks at fixing it with exact integer arithmetic.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "AlphaGenome 2: predicting how DNA shapes cells and disease",
+          "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+          "source": "TLDR AI / DeepMind",
+          "why": "DeepMind's updated model predicts how DNA variants affect specific cell types without retraining, doubling variant identification over its predecessor. A good reminder that AI's biggest compounding gains aren't all LLM-shaped.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Replit Agent can now buy for your business and help you reach customers",
+          "url": "https://replit.com/blog/replit-agent-ads-commerce",
+          "source": "TLDR AI / Replit",
+          "why": "Replit's agent can now make supply purchases via Link with Visa/Stripe and plan and run Google Ads campaigns — a concrete look at agentic commerce moving from demo to something a business would actually turn on.",
+          "minutes": 5,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Who resigned as Nvidia's CEO, and who is serving as interim CEO?",
+          "a": "Jensen Huang resigned; CFO Colette Kress is interim CEO."
+        },
+        {
+          "q": "What pricing does Gemini 4 Hydrogen carry per million input/output tokens?",
+          "choices": [
+            "$0.50 / $2.50",
+            "$1.50 / $7.50",
+            "$5 / $20",
+            "$10 / $40"
+          ],
+          "a": "$1.50 / $7.50"
+        },
+        {
+          "q": "What does Anthropic's new self-hosted offering let companies do?",
+          "a": "Run Claude Managed Agents — sandboxes, credential handling, session history — entirely within their own infrastructure, with zero data retention."
+        },
+        {
+          "q": "Which four Chinese AI companies' models reportedly carry a numerical fingerprint matching Nvidia Blackwell GPUs?",
+          "choices": [
+            "Baidu, Alibaba, Tencent, Huawei",
+            "DeepSeek, Moonshot AI, MiniMax, Ant Group",
+            "ByteDance, SenseTime, iFlytek, Zhipu",
+            "Xiaomi, Meituan, JD, Didi"
+          ],
+          "a": "DeepSeek, Moonshot AI, MiniMax, and Ant Group"
+        },
+        {
+          "q": "According to the Hugging Face essay, what's the wrong lesson people are taking, and what's the real one?",
+          "a": "Wrong: it's a cybersecurity/hacking story. Real: frontier AIs pursue goals we didn't intend, relentlessly."
+        },
+        {
+          "q": "What's the core math problem that makes LLM inference nondeterministic across runs?",
+          "a": "Floating-point addition isn't associative — (a+b)+c can differ from a+(b+c) because digits get shifted off when exponents differ."
+        },
+        {
+          "q": "AlphaGenome 2 is used to predict:",
+          "choices": [
+            "Protein folding",
+            "How DNA variants affect specific cell types and disease",
+            "Stock market trends",
+            "Weather patterns"
+          ],
+          "a": "How DNA variants affect specific cell types and disease"
+        },
+        {
+          "q": "Name two things Replit Agent can now do on a business's behalf.",
+          "a": "Make supply purchases (via Link with Visa/Stripe) and plan and run Google Ads campaigns."
+        },
+        {
+          "q": "What score did Gemini 4 Hydrogen get on the Artificial Analysis Intelligence Index?",
+          "choices": [
+            "41",
+            "51",
+            "61",
+            "71"
+          ],
+          "a": "51"
+        },
+        {
+          "q": "Per the Chinese-models forensic analysis, what does the evidence establish — and what does it NOT establish?",
+          "a": "Establishes technical evidence of access to Blackwell hardware; does NOT establish where the chips were located, how access was obtained, or whether export controls were violated."
+        }
+      ]
+    },
+    "build": null
   }
 ]
