@@ -571,7 +571,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Jensen Huang resigned; CFO Colette Kress is interim CEO.</li><li><span class="quiz-q-num">2.</span> $1.50 / $7.50</li><li><span class="quiz-q-num">3.</span> Run Claude Managed Agents — sandboxes, credential handling, session history — entirely within their own infrastructure, with zero data retention.</li><li><span class="quiz-q-num">4.</span> DeepSeek, Moonshot AI, MiniMax, and Ant Group</li><li><span class="quiz-q-num">5.</span> Wrong: it&#x27;s a cybersecurity/hacking story. Real: frontier AIs pursue goals we didn&#x27;t intend, relentlessly.</li><li><span class="quiz-q-num">6.</span> Floating-point addition isn&#x27;t associative — (a+b)+c can differ from a+(b+c) because digits get shifted off when exponents differ.</li><li><span class="quiz-q-num">7.</span> How DNA variants affect specific cell types and disease</li><li><span class="quiz-q-num">8.</span> Make supply purchases (via Link with Visa/Stripe) and plan and run Google Ads campaigns.</li><li><span class="quiz-q-num">9.</span> 51</li><li><span class="quiz-q-num">10.</span> Establishes technical evidence of access to Blackwell hardware; does NOT establish where the chips were located, how access was obtained, or whether export controls were violated.</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">UI-for-AI</span>
+      </div>
+      <p class="build-pitch">Been quiet on these — here&#x27;s a quick one to jump back in with: build a one-page toy that makes an LLM&#x27;s own weak spot visible, right in the browser.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Today&#x27;s reading item on nondeterministic LLM inference explains that floating-point addition isn&#x27;t associative — (a+b)+c can differ from a+(b+c) depending on exponent alignment, which is a root cause of nondeterministic outputs. This build makes that abstract fact concrete and visible: you&#x27;ll watch two &#x27;identical&#x27; sums disagree in real time.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Scaffold a single HTML file with a textarea for a list of numbers and a &#x27;Sum it&#x27; button</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write a JS function that sums the numbers left-to-right, and a second that sums a shuffled copy of the same list</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Display both sums side by side and highlight the difference in red when they don&#x27;t match</span>
+            <span class="badge badge-mono">7 min</span></li><li><span class="plan-step">Add a &#x27;shuffle &amp; resum 100x&#x27; button that reports how many of the 100 runs landed on a different total</span>
+            <span class="badge badge-mono">7 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>Paste in a list mixing a few huge numbers with a few tiny ones (e.g. 1e16, 1, 1, 1, -1e16), hit the button, and watch the left-to-right sum and the shuffled sum disagree — then hit &#x27;shuffle &amp; resum 100x&#x27; and see the drift happen dozens of times out of 100.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Add a toggle that reruns the sums using a Kahan (compensated) summation algorithm and show the drift collapse to zero — a hands-on demo of exactly the kind of fix the article points at.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>plain HTML/CSS/vanilla JS — no dependencies, no API key, no build step</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

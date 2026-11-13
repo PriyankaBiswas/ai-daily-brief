@@ -11778,6 +11778,33 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Been quiet on these — here's a quick one to jump back in with: build a one-page toy that makes an LLM's own weak spot visible, right in the browser.",
+      "category": "UI-for-AI",
+      "why": "Today's reading item on nondeterministic LLM inference explains that floating-point addition isn't associative — (a+b)+c can differ from a+(b+c) depending on exponent alignment, which is a root cause of nondeterministic outputs. This build makes that abstract fact concrete and visible: you'll watch two 'identical' sums disagree in real time.",
+      "plan": [
+        {
+          "step": "Scaffold a single HTML file with a textarea for a list of numbers and a 'Sum it' button",
+          "minutes": 5
+        },
+        {
+          "step": "Write a JS function that sums the numbers left-to-right, and a second that sums a shuffled copy of the same list",
+          "minutes": 8
+        },
+        {
+          "step": "Display both sums side by side and highlight the difference in red when they don't match",
+          "minutes": 7
+        },
+        {
+          "step": "Add a 'shuffle & resum 100x' button that reports how many of the 100 runs landed on a different total",
+          "minutes": 7
+        }
+      ],
+      "done_looks_like": "Paste in a list mixing a few huge numbers with a few tiny ones (e.g. 1e16, 1, 1, 1, -1e16), hit the button, and watch the left-to-right sum and the shuffled sum disagree — then hit 'shuffle & resum 100x' and see the drift happen dozens of times out of 100.",
+      "stretch_goal": "Add a toggle that reruns the sums using a Kahan (compensated) summation algorithm and show the drift collapse to zero — a hands-on demo of exactly the kind of fix the article points at.",
+      "tools": [
+        "plain HTML/CSS/vanilla JS — no dependencies, no API key, no build step"
+      ]
+    }
   }
 ]
