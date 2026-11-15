@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Friday, November 13, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. CEO-shakeup day: Jensen Huang resigned as Nvidia&#x27;s CEO, closing out the board-investigation story that&#x27;s been building all week. Alongside it: a new Gemini model, Anthropic&#x27;s self-hosted agent push, a forensic paper tying top Chinese models to export-controlled Nvidia chips, and a sharp reframe of the Hugging Face incident.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Sunday, November 15, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s mix leans toward safety tooling and research practice: a new culture-war manifesto against low-effort AI output, a couple of infrastructure milestones, and a cluster of deep-dive pieces on where agents and RAG systems quietly fail.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.slopmanifesto.com/" target="_blank" rel="noopener">The No AI Slop Manifesto</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Latent Space</div>
+          <p class="item-why">Grew out of closing-keynote discussion at the AIE CODE conference and picked up cosignatures from a long list of speakers, then hit the Hacker News front page. Worth reading once if you want the actual text behind a phrase (&#x27;AI slop&#x27;) that&#x27;s about to show up in every internal team debate about shipping AI-generated work.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0" target="_blank" rel="noopener">llama.cpp and ggml both reach v1.0</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Latent Space</div>
+          <p class="item-why">The release declares API stability and removes 35 deprecated functions from the public header — a quiet but real milestone for the project every local-inference tool quietly depends on.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://worldlabs.ai/atlas" target="_blank" rel="noopener">World Labs ships Atlas, an omni model for text, images, video, and 3D</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Atlas combines all four modalities into one shared spatial context and can generate, reconstruct, and simulate scenes — a useful marker of where &#x27;multimodal&#x27; is heading next: space, not just pixels and tokens.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.perplexity.ai/hub/blog/perplexity-decider" target="_blank" rel="noopener">Perplexity ships Decider v1.3 and Decider Flash v1.3</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Purpose-built &#x27;decision models&#x27; (classify, route, rank, evaluate) are becoming their own product category rather than a side feature of big LLMs — these updates add named-entity and PII highlighting on top of the usual classification/ranking tasks.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/" target="_blank" rel="noopener">How agent anomaly detection scores on benchmarks it didn&#x27;t write</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Flagged 87% of executed harmful instructions in external testing — strong on goal hijacking and tool misuse, weaker on poisoned memory. A concrete data point for anyone deciding whether to trust an anomaly detector&#x27;s self-reported numbers.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/i-mutation-tested-50-python-libraries-tests-in-the-young-ones-missed-41-of-planted-faults/" target="_blank" rel="noopener">I mutation-tested 50 Python libraries — tests in the younger ones missed 41% of planted faults</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">A direct, empirical answer to &#x27;does our test suite actually catch bugs?&#x27; using mutation testing instead of coverage percentage — the kind of result that&#x27;s easy to reproduce on your own repo.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/rag-retrieval-lost-40-points-when-distracting-passages-grew-to-2-68m/" target="_blank" rel="noopener">RAG retrieval lost 40 points when distracting passages grew to 2.68M</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">A scaling study on exactly the failure mode most RAG pipelines never test for: what happens to retrieval accuracy as the distractor pool grows by orders of magnitude, not just by a few documents.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/what-ai-agents-speed-up-in-phd-research-and-what-they-cant/" target="_blank" rel="noopener">What AI agents speed up in PhD research, and what they can&#x27;t</a>
+            <span class="badge badge-mono">7 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">A grounded, first-person account of where agentic tools actually save a researcher time (code, fact-checking, citations) versus where judgment and research taste remain the bottleneck — a useful corrective to blanket &#x27;AI speeds up science&#x27; claims.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">The &#x27;No AI Slop Manifesto&#x27; originated out of discussions at which event, before Dex introduced it in the closing keynote?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">True or False: llama.cpp&#x27;s v1.0 release was primarily about adding major new features.</p>
+          <ul class="quiz-choices"><li>True</li><li>False</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which four input modalities does World Labs&#x27; Atlas model natively operate on?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What kind of tasks does Perplexity Decider v1.3 support?</p>
+          <ul class="quiz-choices"><li>Binary and multi-class classification</li><li>Image generation</li><li>Code completion</li><li>Machine translation</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In external testing, what percentage of executed harmful instructions did agent anomaly detection flag?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Despite its strengths on goal hijacking and tool misuse, where did agent anomaly detection show the most weakness?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the mutation-testing study of 50 Python libraries, roughly what fraction of planted faults did the younger libraries&#x27; tests miss?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the RAG scaling study, what happened to retrieval accuracy as the distractor pool grew to 2.68 million passages?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to the PhD-research piece, what remains the main bottleneck even as AI agents speed up coding and fact-checking?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Besides llama.cpp, name another inference/serving project that also announced reaching v1.0 this week.</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The AIE CODE conference (the coding-agent conference covered by Latent Space).</li><li><span class="quiz-q-num">2.</span> False — it declared API stability and removed 35 deprecated functions from the public header.</li><li><span class="quiz-q-num">3.</span> Text, images, video, and 3D.</li><li><span class="quiz-q-num">4.</span> Binary and multi-class classification (with ordered or unordered labels), used for classifying, routing, ranking, and evaluating inputs.</li><li><span class="quiz-q-num">5.</span> 87%.</li><li><span class="quiz-q-num">6.</span> Poisoned memory.</li><li><span class="quiz-q-num">7.</span> 41%.</li><li><span class="quiz-q-num">8.</span> It dropped by about 40 points.</li><li><span class="quiz-q-num">9.</span> Research judgment/taste — deciding what&#x27;s worth working on and interpreting results.</li><li><span class="quiz-q-num">10.</span> SGLang (announced 1.0 at the SGLang Summit).</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 9 – 15</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Fri, Nov 13</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. CEO-shakeup day: Jensen Huang resigned as Nvidia&#x27;s CEO, closing out the board-investigation story that&#x27;s been building all week. Alongside it: a new Gemini model, Anthropic&#x27;s self-hosted agent push, a forensic paper tying top Chinese models to export-controlled Nvidia chips, and a sharp reframe of the Hugging Face incident.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition" target="_blank" rel="noopener">Nvidia announces CEO transition — Jensen Huang resigns</a>
@@ -604,21 +730,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>plain HTML/CSS/vanilla JS — no dependencies, no API key, no build step</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 9 – 15</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Thu, Nov 12</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. A news-heavy day: NVIDIA&#x27;s board investigation into Jensen Huang broke into clearer view, &quot;system one&quot; models (Jev) kept dominating conference chatter at AI Engineer Code Summit, and there&#x27;s a genuinely useful Claude Code skills-firing study plus a sharp MCP-cost breakdown for anyone building agents.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
