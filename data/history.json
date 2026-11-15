@@ -11930,6 +11930,38 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Mutation-test one of your own tiny functions and watch your test suite miss bugs you planted on purpose.",
+      "category": "data/eval exercise",
+      "why": "Riffs directly on today's 'I mutation-tested 50 Python libraries' piece \u2014 tests in younger libraries missed 41% of planted faults. Instead of trusting coverage %, you hand-plant a few bugs and see which ones your own tests actually catch, making that 41% number concrete on your own code.",
+      "plan": [
+        {
+          "step": "Grab or write one small pure-Python function (~10 lines) \u2014 e.g. clamp(), is_valid_password(), or a date-range check.",
+          "minutes": 3
+        },
+        {
+          "step": "Write 3-5 quick pytest asserts covering its obvious cases.",
+          "minutes": 7
+        },
+        {
+          "step": "Hand-mutate the function 5 times, one change at a time (flip a <, change +1 to -1, swap and/or, nudge a boundary, flip a return value) \u2014 rerun your tests after each mutation.",
+          "minutes": 10
+        },
+        {
+          "step": "Tally results: how many of the 5 mutants did your tests catch vs. let slip through silently?",
+          "minutes": 3
+        },
+        {
+          "step": "Write one sentence on the specific edge case your tests never exercised.",
+          "minutes": 2
+        }
+      ],
+      "done_looks_like": "A list of 5 mutations with pass/fail against your test suite, plus one sentence naming the exact blind spot it exposed.",
+      "stretch_goal": "Automate the mutating with Python's `ast` module \u2014 walk the function's AST, flip comparison operators programmatically, and rerun pytest for each generated mutant (a tiny hand-rolled version of mutmut).",
+      "tools": [
+        "pytest",
+        "python ast module (stretch only)"
+      ]
+    }
   }
 ]

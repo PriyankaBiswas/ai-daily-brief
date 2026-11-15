@@ -571,7 +571,40 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The AIE CODE conference (the coding-agent conference covered by Latent Space).</li><li><span class="quiz-q-num">2.</span> False — it declared API stability and removed 35 deprecated functions from the public header.</li><li><span class="quiz-q-num">3.</span> Text, images, video, and 3D.</li><li><span class="quiz-q-num">4.</span> Binary and multi-class classification (with ordered or unordered labels), used for classifying, routing, ranking, and evaluating inputs.</li><li><span class="quiz-q-num">5.</span> 87%.</li><li><span class="quiz-q-num">6.</span> Poisoned memory.</li><li><span class="quiz-q-num">7.</span> 41%.</li><li><span class="quiz-q-num">8.</span> It dropped by about 40 points.</li><li><span class="quiz-q-num">9.</span> Research judgment/taste — deciding what&#x27;s worth working on and interpreting results.</li><li><span class="quiz-q-num">10.</span> SGLang (announced 1.0 at the SGLang Summit).</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">data/eval exercise</span>
+      </div>
+      <p class="build-pitch">Mutation-test one of your own tiny functions and watch your test suite miss bugs you planted on purpose.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs directly on today&#x27;s &#x27;I mutation-tested 50 Python libraries&#x27; piece — tests in younger libraries missed 41% of planted faults. Instead of trusting coverage %, you hand-plant a few bugs and see which ones your own tests actually catch, making that 41% number concrete on your own code.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Grab or write one small pure-Python function (~10 lines) — e.g. clamp(), is_valid_password(), or a date-range check.</span>
+            <span class="badge badge-mono">3 min</span></li><li><span class="plan-step">Write 3-5 quick pytest asserts covering its obvious cases.</span>
+            <span class="badge badge-mono">7 min</span></li><li><span class="plan-step">Hand-mutate the function 5 times, one change at a time (flip a &lt;, change +1 to -1, swap and/or, nudge a boundary, flip a return value) — rerun your tests after each mutation.</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Tally results: how many of the 5 mutants did your tests catch vs. let slip through silently?</span>
+            <span class="badge badge-mono">3 min</span></li><li><span class="plan-step">Write one sentence on the specific edge case your tests never exercised.</span>
+            <span class="badge badge-mono">2 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A list of 5 mutations with pass/fail against your test suite, plus one sentence naming the exact blind spot it exposed.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Automate the mutating with Python&#x27;s `ast` module — walk the function&#x27;s AST, flip comparison operators programmatically, and rerun pytest for each generated mutant (a tiny hand-rolled version of mutmut).</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>pytest</li><li>python ast module (stretch only)</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
