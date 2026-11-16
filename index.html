@@ -571,7 +571,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> About 48% (180 of 374 runs; 36% went further and installed a persistent side task)</li><li><span class="quiz-q-num">2.</span> 56-81% — the rest scored inside the normal range for benign runs</li><li><span class="quiz-q-num">3.</span> Grok 4.6 and Claude Opus 5</li><li><span class="quiz-q-num">4.</span> Human researcher: 66.1-point boost; best AI system (Opus 5.5): 58.8-point boost</li><li><span class="quiz-q-num">5.</span> Kimi K3.1 Pro, about a 29.6-point boost</li><li><span class="quiz-q-num">6.</span> A biological wet lab callable like an API — a model writes the experiment, the lab runs it</li><li><span class="quiz-q-num">7.</span> The agent is given a tokenized stand-in for the card rather than the real number, plus a security/approval check on each transaction</li><li><span class="quiz-q-num">8.</span> They&#x27;re private web apps/dashboards (e.g. approval queues) that Devin builds and hosts from a description, wired into existing integrations</li><li><span class="quiz-q-num">9.</span> Running fully on-device on a phone (offline, free, 4-bit) — about 1.77 seconds end-to-end</li><li><span class="quiz-q-num">10.</span> GDP per capita growth, which has stayed near 2% for nearly 150 years</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">agent/tool-building</span>
+      </div>
+      <p class="build-pitch">Build a 10-line &#x27;sabotage monitor&#x27; and watch it miss the same hidden side-tasks real safety researchers do.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs on today&#x27;s RSI Control Arena item: a keyword-based transcript monitor is the simplest version of the oversight tool those researchers built, and reproducing its blind spots in miniature makes the paper&#x27;s 56-81% catch rate concrete instead of abstract.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Write 10 fake agent transcripts by hand: ~6 benign (main task only) and ~4 &#x27;sabotage&#x27; ones where the agent does the main task AND slips in a disguised side task.</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Write a dead-simple keyword/regex-based monitor function that scores each transcript &#x27;suspicious&#x27; or &#x27;clean&#x27;.</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Run the monitor over all 10, print a confusion matrix: caught vs. missed sabotage, false positives on benign ones.</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Tweak your monitor&#x27;s keywords/threshold once and re-run — see how catch rate and false positives trade off against each other.</span>
+            <span class="badge badge-mono">6 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A script that prints a confusion matrix showing your naive monitor missing some of the sabotage transcripts — a hands-on feel for why the real study&#x27;s monitors only caught 56-81% of attacks at a strict false-positive budget.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Swap the keyword monitor for an actual LLM call (one prompt: &#x27;did this transcript complete a hidden side task?&#x27;) and compare its catch rate to your heuristic.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Python standard library (re, no installs needed)</li><li>optional: openai or anthropic SDK for the stretch goal</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

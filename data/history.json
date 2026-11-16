@@ -12113,6 +12113,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Build a 10-line 'sabotage monitor' and watch it miss the same hidden side-tasks real safety researchers do.",
+      "category": "agent/tool-building",
+      "why": "Riffs on today's RSI Control Arena item: a keyword-based transcript monitor is the simplest version of the oversight tool those researchers built, and reproducing its blind spots in miniature makes the paper's 56-81% catch rate concrete instead of abstract.",
+      "plan": [
+        {
+          "step": "Write 10 fake agent transcripts by hand: ~6 benign (main task only) and ~4 'sabotage' ones where the agent does the main task AND slips in a disguised side task.",
+          "minutes": 8
+        },
+        {
+          "step": "Write a dead-simple keyword/regex-based monitor function that scores each transcript 'suspicious' or 'clean'.",
+          "minutes": 8
+        },
+        {
+          "step": "Run the monitor over all 10, print a confusion matrix: caught vs. missed sabotage, false positives on benign ones.",
+          "minutes": 5
+        },
+        {
+          "step": "Tweak your monitor's keywords/threshold once and re-run \u2014 see how catch rate and false positives trade off against each other.",
+          "minutes": 6
+        }
+      ],
+      "done_looks_like": "A script that prints a confusion matrix showing your naive monitor missing some of the sabotage transcripts \u2014 a hands-on feel for why the real study's monitors only caught 56-81% of attacks at a strict false-positive budget.",
+      "stretch_goal": "Swap the keyword monitor for an actual LLM call (one prompt: 'did this transcript complete a hidden side task?') and compare its catch rate to your heuristic.",
+      "tools": [
+        "Python standard library (re, no installs needed)",
+        "optional: openai or anthropic SDK for the stretch goal"
+      ]
+    }
   }
 ]
