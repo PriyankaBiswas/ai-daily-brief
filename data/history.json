@@ -12278,6 +12278,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Spot (and fix) an eval 'tell': rewrite 3 AI test prompts so they read like real use, not a staged test.",
+      "category": "prompt-engineering",
+      "why": "Riffs on today's METR piece ('Measuring Alignment Eval Tells') — investigator models are getting better at spotting that a prompt is a staged eval rather than genuine use. Writing the tells into a prompt, then stripping them back out, is the fastest way to internalize what actually gives a staged setup away (and it's the same skill behind writing realistic production prompts and realistic evals).",
+      "plan": [
+        {
+          "step": "Skim your own mental checklist of what reads as \"staged\": exaggerated permissions, suspicious urgency, \"no one is watching\" phrasing, oddly explicit stakes.",
+          "minutes": 5
+        },
+        {
+          "step": "Write 3 short AI-agent task prompts that deliberately smell like staged evals, using those tells.",
+          "minutes": 8
+        },
+        {
+          "step": "Rewrite each one to read like an authentic user request, preserving the same underlying test/task.",
+          "minutes": 10
+        },
+        {
+          "step": "Lay the pairs side by side and note the exact words/phrases you had to cut each time.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "One page with 3 eval-sounding / natural-sounding prompt pairs side by side, plus a short list of the specific tells you removed each time.",
+      "stretch_goal": "Paste one pair into claude.ai or ChatGPT and ask directly: 'does this read like a test to you, and why?' — see if it names the same tells you did.",
+      "tools": [
+        "plain text editor or notes app",
+        "optionally claude.ai or ChatGPT web UI for the stretch goal"
+      ]
+    }
   }
 ]

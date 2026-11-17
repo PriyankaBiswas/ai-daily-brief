@@ -563,7 +563,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> About 38%</li><li><span class="quiz-q-num">2.</span> Silent (behavioral) drift</li><li><span class="quiz-q-num">3.</span> Protein (amino-acid) sequences</li><li><span class="quiz-q-num">4.</span> Fable 5.2</li><li><span class="quiz-q-num">5.</span> Opus 5.5 and Astra agents</li><li><span class="quiz-q-num">6.</span> Four</li><li><span class="quiz-q-num">7.</span> Dario Amodei (Anthropic&#x27;s CEO)</li><li><span class="quiz-q-num">8.</span> 10,000</li><li><span class="quiz-q-num">9.</span> The Hugging Face rogue-agent incident</li><li><span class="quiz-q-num">10.</span> How an object got to where it is (its trajectory)</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">prompt-engineering</span>
+      </div>
+      <p class="build-pitch">Spot (and fix) an eval &#x27;tell&#x27;: rewrite 3 AI test prompts so they read like real use, not a staged test.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs on today&#x27;s METR piece (&#x27;Measuring Alignment Eval Tells&#x27;) — investigator models are getting better at spotting that a prompt is a staged eval rather than genuine use. Writing the tells into a prompt, then stripping them back out, is the fastest way to internalize what actually gives a staged setup away (and it&#x27;s the same skill behind writing realistic production prompts and realistic evals).</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Skim your own mental checklist of what reads as &quot;staged&quot;: exaggerated permissions, suspicious urgency, &quot;no one is watching&quot; phrasing, oddly explicit stakes.</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write 3 short AI-agent task prompts that deliberately smell like staged evals, using those tells.</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Rewrite each one to read like an authentic user request, preserving the same underlying test/task.</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Lay the pairs side by side and note the exact words/phrases you had to cut each time.</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>One page with 3 eval-sounding / natural-sounding prompt pairs side by side, plus a short list of the specific tells you removed each time.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Paste one pair into claude.ai or ChatGPT and ask directly: &#x27;does this read like a test to you, and why?&#x27; — see if it names the same tells you did.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>plain text editor or notes app</li><li>optionally claude.ai or ChatGPT web UI for the stretch goal</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
