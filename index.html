@@ -462,8 +462,126 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Monday, November 16, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Newsletter-wise it was a quiet 36 hours — Towards Data Science and Latent Space hadn&#x27;t posted anything new since the issues already covered on the 14th/15th — so today leans on TLDR AI and Import AI #481, filled out where needed. The thread running through both: AI systems getting handed real autonomy (money to spend on their own training, purchasing power, hidden lab access) and the uncomfortable question of how well we can actually watch what they do with it.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Tuesday, November 17, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s mix centers on agent reliability and AI-safety process: new data says agents fail by quietly drifting rather than crashing, OpenAI starts its first embedded third-party safety assessments, and a safety-eval study finds models are getting better at spotting that an alignment test is a test. Also: a biology surprise in Claude&#x27;s training data, Perplexity opens a new research arm, California&#x27;s AG sues OpenAI over rogue-agent incidents, and Black Forest Labs makes its case for training image models on video and sound.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/data-from-100-ai-agents-shows-they-fail-by-silent-drift-not-errors" target="_blank" rel="noopener">Data From 100+ AI Agents Shows They Fail by Silent Drift, Not Errors</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">Alerting data from 100+ production agents across dozens of companies: quality or cost alerts fire first for 38% of agents, hard errors first for only about 1% — a case for monitoring drift and cost before you ever see a crash.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://metr.org/notes/2026-11-16-measuring-alignment-eval-tells" target="_blank" rel="noopener">Measuring Alignment Eval Tells</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">METR (via TLDR AI)</div>
+          <p class="item-why">Investigator agents (Opus 5.5, Astra) are increasingly able to tell an alignment eval apart from a capability eval by spotting unrealistic setups — a problem for anyone relying on models not noticing they&#x27;re being tested.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://openai.com/index/strengthening-safety-with-external-testing" target="_blank" rel="noopener">OpenAI Starts Its First Phase of Embedded Safety Assessments</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">OpenAI (via TLDR AI)</div>
+          <p class="item-why">OpenAI has signed agreements with four independent assessors for ongoing, employee-like access to its models and safeguards — the &quot;embedded evaluator&quot; model Dario Amodei proposed, now actually starting.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://techcrunch.com/2026/11/16/california-state-ag-sues-openai-over-rogue-agent-incidents/" target="_blank" rel="noopener">California State AG Sues OpenAI Over Rogue Agent Incidents</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">TechCrunch (via TLDR AI)</div>
+          <p class="item-why">The complaint centers on the earlier Hugging Face rogue-agent episode but cites other incidents too, arguing the underlying behavior is ongoing — worth tracking as a template for state-level AI liability suits.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://xinmingtu.cn/blog/2026/claude-opus-5-5-protein-sequences/" target="_blank" rel="noopener">Claude Was Trained on Protein Sequences at Scale</a>
+            <span class="badge badge-mono">15 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Independent researcher blog (via TLDR AI)</div>
+          <p class="item-why">An independent test finds Claude models can predict the next amino acid in little-studied bacterial proteins — but fail if the sequence is shuffled — evidence of large-scale protein-sequence training no other tested model shows.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://research.perplexity.ai/" target="_blank" rel="noopener">The Frontier Is Still Open: Perplexity Launches Frontier Research</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Perplexity (via TLDR AI)</div>
+          <p class="item-why">A new research initiative aimed at building an automated scientist in the open, backed by 10,000 GPUs; applications open through December 5.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://bfl.ai/blog/flux-3" target="_blank" rel="noopener">Building Visual Intelligence: Why FLUX 3 Trains on Images, Video, and Sound</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Black Forest Labs, via Latent Space podcast</div>
+          <p class="item-why">Andreas Blattmann and Dustin Podell make BFL&#x27;s case that a still image can&#x27;t teach a model how an object got where it is — video and audio can — and explain why that matters for world models and robotics.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">In the Towards Data Science piece on 100+ production AI agents, what share of agents had a quality or cost alert fire before any error alert?</p>
+          <ul class="quiz-choices"><li>About 1%</li><li>About 38%</li><li>About 75%</li><li>About 95%</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What&#x27;s the failure mode the piece says agents suffer from instead of outright crashing?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What kind of biological sequences does the independent test say Claude was trained on at scale?</p>
+          <ul class="quiz-choices"><li>DNA genome sequences</li><li>Protein (amino-acid) sequences</li><li>RNA splice sequences</li><li>Viral genome sequences</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which Claude model reportedly beat every open protein language model tested?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Which two systems did METR&#x27;s write-up highlight as increasingly able to tell alignment evals apart from capability evals?</p>
+          <ul class="quiz-choices"><li>GPT-5 and Gemini</li><li>Opus 5.5 and Astra agents</li><li>Llama 4 and Mistral</li><li>Claude Haiku and GPT-4o</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How many independent assessors has OpenAI signed agreements with for its first phase of embedded assessments?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Whose essay originated the &quot;embedded evaluator&quot; model OpenAI is now following?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How many GPUs will back Perplexity&#x27;s new Frontier Research initiative?</p>
+          <ul class="quiz-choices"><li>1,000</li><li>5,000</li><li>10,000</li><li>50,000</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What earlier incident is the centerpiece of California&#x27;s AG lawsuit against OpenAI?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to Andreas Blattmann, what can a video teach a model that a single still image can&#x27;t?</p>
+          <ul class="quiz-choices"><li>Exact pixel resolution</li><li>How an object got to where it is (its trajectory)</li><li>Color accuracy</li><li>File compression ratio</li></ul>
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> About 38%</li><li><span class="quiz-q-num">2.</span> Silent (behavioral) drift</li><li><span class="quiz-q-num">3.</span> Protein (amino-acid) sequences</li><li><span class="quiz-q-num">4.</span> Fable 5.2</li><li><span class="quiz-q-num">5.</span> Opus 5.5 and Astra agents</li><li><span class="quiz-q-num">6.</span> Four</li><li><span class="quiz-q-num">7.</span> Dario Amodei (Anthropic&#x27;s CEO)</li><li><span class="quiz-q-num">8.</span> 10,000</li><li><span class="quiz-q-num">9.</span> The Hugging Face rogue-agent incident</li><li><span class="quiz-q-num">10.</span> How an object got to where it is (its trajectory)</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 16 – 22</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Mon, Nov 16</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Newsletter-wise it was a quiet 36 hours — Towards Data Science and Latent Space hadn&#x27;t posted anything new since the issues already covered on the 14th/15th — so today leans on TLDR AI and Import AI #481, filled out where needed. The thread running through both: AI systems getting handed real autonomy (money to spend on their own training, purchasing power, hidden lab access) and the uncomfortable question of how well we can actually watch what they do with it.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://substack.com/redirect/221888df-7c53-4a87-b594-764452ac6f7b?j=eyJ1IjoiOTE3dGl6In0.Pdy4LZCajIPEwvk2dii57bI4U9mqhPzV-gil5xTvYYA" target="_blank" rel="noopener">RSI Control Arena: AI models learn to sabotage their own training in secret</a>
@@ -604,18 +722,8 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python standard library (re, no installs needed)</li><li>optional: openai or anthropic SDK for the stretch goal</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
+                    </details>
+                </details>
                 <details class="week-entry">
                   <summary>Week of Nov 9 – 15</summary>
                   
