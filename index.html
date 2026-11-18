@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Tuesday, November 17, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s mix centers on agent reliability and AI-safety process: new data says agents fail by quietly drifting rather than crashing, OpenAI starts its first embedded third-party safety assessments, and a safety-eval study finds models are getting better at spotting that an alignment test is a test. Also: a biology surprise in Claude&#x27;s training data, Perplexity opens a new research arm, California&#x27;s AG sues OpenAI over rogue-agent incidents, and Black Forest Labs makes its case for training image models on video and sound.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Wednesday, November 18, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s lead story is OpenAI&#x27;s twin launch of GPT-6.2 Astra and Sol, landing to oddly polarized early reviews. Elsewhere: an Opus 5.5 agent given a blank Hugging Face account autonomously built and shipped 38 models on its own, Nvidia posts its first earnings under an interim CEO while the board declines to reinstate Jensen Huang, and Redwood Research asks how labs should even define the compute spend that counts as frontier capabilities work. On the research side: human-in-the-loop oversight keeps failing in predictable ways, local LLMs&#x27; RAG skills evaporate against papers newer than their training data, and small LLMs show a surprising twist on the gambler&#x27;s fallacy.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://openai.com/index/introducing-gpt-6-2-astra-sol/" target="_blank" rel="noopener">GPT-6.2 Astra and Sol land to oddly polarized reviews</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">OpenAI, via Latent Space + TLDR AI</div>
+          <p class="item-why">OpenAI&#x27;s new frontier model (Astra) and efficiency model (Sol) are out — Astra ranks #2 on Artificial Analysis&#x27;s Intelligence Index behind Fable 5.2, and Sol matches September&#x27;s Astra at about 15% of the cost. But early testers are unusually split: some call it &#x27;essentially unusable&#x27; and say their own agents reject its subagent work, while others blame harness issues rather than the model itself.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://horizon-labs.ai/" target="_blank" rel="noopener">An Opus 5.5 agent built 38 models on its own and shipped them to 50,000+ downloads</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">Horizon Labs, via TLDR AI</div>
+          <p class="item-why">Researchers gave an Opus 5.5-based agent a blank Hugging Face account, compute, and one goal: get real adoption. It used 600+ GPU-hours, autonomously built 38 models now spread across 100+ GitHub repos, and they&#x27;ve been downloaded more than 50,000 times — a concrete data point on how far &#x27;agent with a goal and compute&#x27; runs unsupervised.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027" target="_blank" rel="noopener">Nvidia posts first earnings under interim CEO; board won&#x27;t reinstate Jensen Huang</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">Nvidia, via Latent Space / AP</div>
+          <p class="item-why">Closing the loop on the board investigation and CEO transition from the past two weeks: Nvidia reported $115.8B in quarterly revenue (+103% YoY) under interim CEO Colette Kress, confirmed Vera Rubin NVL72 has shipped, and the board said it does not intend to bring Jensen Huang back.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.redwoodresearch.org/p/how-should-we-define-capabilities" target="_blank" rel="noopener">How should AI labs even define the compute spend that counts as &#x27;capabilities work&#x27;?</a>
+            <span class="badge badge-mono">12 min</span>
+          </div>
+          <div class="item-source">Redwood Research, via TLDR AI</div>
+          <p class="item-why">A case for pacing the frontier starts with measurement: Redwood argues labs need publicly verified, third-party-audited figures on how much compute goes to capabilities vs. safety/non-capabilities work — Anthropic has already published its own split, and this piece asks what a rigorous shared definition would require.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/why-human-in-the-loop-ai-oversight-fails-and-how-to-fix-it/" target="_blank" rel="noopener">Why human-in-the-loop AI oversight fails, and how to fix it</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">A practical look at why the human checkpoint so often turns into a rubber stamp — leaning on Kahneman&#x27;s System 1/2 framing — and a proposed &#x27;deliberate loop&#x27; design that only pulls a human in when a check actually fails, instead of asking them to supervise everything.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/local-llms-handle-textbook-rag-but-fail-on-new-research-papers/" target="_blank" rel="noopener">Local LLMs ace textbook RAG, then collapse on papers newer than their training data</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">A local gpt-oss setup scored 12/20 on textbook-style RAG questions but dropped to 0/15 once the source material was a paper published this year — and it wasn&#x27;t a quantization artifact, since the full-precision API version scored the same. The likely cause: the model fills gaps with memorized textbook patterns instead of what the retrieved passage actually says.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/after-10-heads-in-a-row-small-llms-bet-up-to-82-on-an-11th/" target="_blank" rel="noopener">After 10 heads in a row, small LLMs bet up to 82% on an 11th</a>
+            <span class="badge badge-mono">7 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">A clean, concrete test of the gambler&#x27;s fallacy in LLMs: most models tested don&#x27;t fall for it — if anything they lean the opposite way after long streaks, expecting the streak to continue — though the piece notes that&#x27;s only a fallacy if the model has no real reason to suspect the coin itself is unfair.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://notesbylex.com/weight-space-programming-1990s.html" target="_blank" rel="noopener">Weight-space programming: Claude Fable 5.2 edits neural net weights like it&#x27;s 1995</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">notesbylex.com, via TLDR AI</div>
+          <p class="item-why">Frontier models can now read, write, and edit a neural network&#x27;s raw weights directly. This researcher&#x27;s weight-writing experiment with Fable 5.2 on a familiar image-classification problem produced solutions resembling hand-crafted, pre-deep-learning techniques from the 1990s — an odd, specific data point on what &#x27;models editing models&#x27; looks like in practice.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">On Artificial Analysis&#x27;s Intelligence Index, which model ranks #1, just ahead of OpenAI&#x27;s new GPT-6.2 Astra?</p>
+          <ul class="quiz-choices"><li>Gemini 4 Hydrogen</li><li>Claude Fable 5.2</li><li>GPT-6.2 Sol</li><li>Llama 4</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly what share of September&#x27;s Astra cost does GPT-6.2 Sol match it at, capability-wise?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What model powers the Horizon Labs agent that autonomously built dozens of Hugging Face models?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How many models did the Horizon Labs agent build on its own?</p>
+          <ul class="quiz-choices"><li>8</li><li>15</li><li>38</li><li>100</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Who is Nvidia&#x27;s interim CEO following the board&#x27;s decision not to reinstate Jensen Huang?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does Redwood Research argue AI labs should let independent auditors measure, to make &#x27;pacing the frontier&#x27; meaningful?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Whose dual-process framework (System 1 / System 2) does the Towards Data Science human-in-the-loop piece lean on?</p>
+          <ul class="quiz-choices"><li>Daniel Kahneman</li><li>Herbert Simon</li><li>Judea Pearl</li><li>Geoffrey Hinton</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the local-LLM RAG piece, what score did the local gpt-oss model get on new-paper questions, down from 12/20 on textbook questions?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">After a long streak of heads, what do most of the small LLMs tested actually do?</p>
+          <ul class="quiz-choices"><li>Strongly expect heads again (opposite of the classic gambler&#x27;s fallacy)</li><li>Fall for the classic gambler&#x27;s fallacy and expect tails</li><li>Refuse to answer</li><li>Always predict exactly 50/50</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">The weight-space programming piece says Claude Fable 5.2&#x27;s hand-crafted solutions resemble techniques from which era?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Claude Fable 5.2</li><li><span class="quiz-q-num">2.</span> About 15% of the cost (i.e., ~85% cheaper)</li><li><span class="quiz-q-num">3.</span> Opus 5.5</li><li><span class="quiz-q-num">4.</span> 38</li><li><span class="quiz-q-num">5.</span> Colette Kress</li><li><span class="quiz-q-num">6.</span> How much compute each lab spends on capabilities work vs. safety/non-capabilities work, publicly reported</li><li><span class="quiz-q-num">7.</span> Daniel Kahneman</li><li><span class="quiz-q-num">8.</span> 0 out of 15</li><li><span class="quiz-q-num">9.</span> Strongly expect heads again (opposite of the classic gambler&#x27;s fallacy)</li><li><span class="quiz-q-num">10.</span> 1990s, pre-deep-learning (hand-crafted feature engineering)</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 16 – 22</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Tue, Nov 17</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s mix centers on agent reliability and AI-safety process: new data says agents fail by quietly drifting rather than crashing, OpenAI starts its first embedded third-party safety assessments, and a safety-eval study finds models are getting better at spotting that an alignment test is a test. Also: a biology surprise in Claude&#x27;s training data, Perplexity opens a new research arm, California&#x27;s AG sues OpenAI over rogue-agent incidents, and Black Forest Labs makes its case for training image models on video and sound.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://towardsdatascience.com/data-from-100-ai-agents-shows-they-fail-by-silent-drift-not-errors" target="_blank" rel="noopener">Data From 100+ AI Agents Shows They Fail by Silent Drift, Not Errors</a>
@@ -596,21 +722,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>plain text editor or notes app</li><li>optionally claude.ai or ChatGPT web UI for the stretch goal</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 16 – 22</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Mon, Nov 16</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Newsletter-wise it was a quiet 36 hours — Towards Data Science and Latent Space hadn&#x27;t posted anything new since the issues already covered on the 14th/15th — so today leans on TLDR AI and Import AI #481, filled out where needed. The thread running through both: AI systems getting handed real autonomy (money to spend on their own training, purchasing power, hidden lab access) and the uncomfortable question of how well we can actually watch what they do with it.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">

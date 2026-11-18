@@ -12307,5 +12307,144 @@
         "optionally claude.ai or ChatGPT web UI for the stretch goal"
       ]
     }
+  },
+  {
+    "date": "2026-11-18",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. Today's lead story is OpenAI's twin launch of GPT-6.2 Astra and Sol, landing to oddly polarized early reviews. Elsewhere: an Opus 5.5 agent given a blank Hugging Face account autonomously built and shipped 38 models on its own, Nvidia posts its first earnings under an interim CEO while the board declines to reinstate Jensen Huang, and Redwood Research asks how labs should even define the compute spend that counts as frontier capabilities work. On the research side: human-in-the-loop oversight keeps failing in predictable ways, local LLMs' RAG skills evaporate against papers newer than their training data, and small LLMs show a surprising twist on the gambler's fallacy.",
+      "items": [
+        {
+          "title": "GPT-6.2 Astra and Sol land to oddly polarized reviews",
+          "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+          "source": "OpenAI, via Latent Space + TLDR AI",
+          "why": "OpenAI's new frontier model (Astra) and efficiency model (Sol) are out — Astra ranks #2 on Artificial Analysis's Intelligence Index behind Fable 5.2, and Sol matches September's Astra at about 15% of the cost. But early testers are unusually split: some call it 'essentially unusable' and say their own agents reject its subagent work, while others blame harness issues rather than the model itself.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "An Opus 5.5 agent built 38 models on its own and shipped them to 50,000+ downloads",
+          "url": "https://horizon-labs.ai/",
+          "source": "Horizon Labs, via TLDR AI",
+          "why": "Researchers gave an Opus 5.5-based agent a blank Hugging Face account, compute, and one goal: get real adoption. It used 600+ GPU-hours, autonomously built 38 models now spread across 100+ GitHub repos, and they've been downloaded more than 50,000 times — a concrete data point on how far 'agent with a goal and compute' runs unsupervised.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "Nvidia posts first earnings under interim CEO; board won't reinstate Jensen Huang",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027",
+          "source": "Nvidia, via Latent Space / AP",
+          "why": "Closing the loop on the board investigation and CEO transition from the past two weeks: Nvidia reported $115.8B in quarterly revenue (+103% YoY) under interim CEO Colette Kress, confirmed Vera Rubin NVL72 has shipped, and the board said it does not intend to bring Jensen Huang back.",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "How should AI labs even define the compute spend that counts as 'capabilities work'?",
+          "url": "https://blog.redwoodresearch.org/p/how-should-we-define-capabilities",
+          "source": "Redwood Research, via TLDR AI",
+          "why": "A case for pacing the frontier starts with measurement: Redwood argues labs need publicly verified, third-party-audited figures on how much compute goes to capabilities vs. safety/non-capabilities work — Anthropic has already published its own split, and this piece asks what a rigorous shared definition would require.",
+          "minutes": 12,
+          "skip_ok": false
+        },
+        {
+          "title": "Why human-in-the-loop AI oversight fails, and how to fix it",
+          "url": "https://towardsdatascience.com/why-human-in-the-loop-ai-oversight-fails-and-how-to-fix-it/",
+          "source": "Towards Data Science",
+          "why": "A practical look at why the human checkpoint so often turns into a rubber stamp — leaning on Kahneman's System 1/2 framing — and a proposed 'deliberate loop' design that only pulls a human in when a check actually fails, instead of asking them to supervise everything.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Local LLMs ace textbook RAG, then collapse on papers newer than their training data",
+          "url": "https://towardsdatascience.com/local-llms-handle-textbook-rag-but-fail-on-new-research-papers/",
+          "source": "Towards Data Science",
+          "why": "A local gpt-oss setup scored 12/20 on textbook-style RAG questions but dropped to 0/15 once the source material was a paper published this year — and it wasn't a quantization artifact, since the full-precision API version scored the same. The likely cause: the model fills gaps with memorized textbook patterns instead of what the retrieved passage actually says.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "After 10 heads in a row, small LLMs bet up to 82% on an 11th",
+          "url": "https://towardsdatascience.com/after-10-heads-in-a-row-small-llms-bet-up-to-82-on-an-11th/",
+          "source": "Towards Data Science",
+          "why": "A clean, concrete test of the gambler's fallacy in LLMs: most models tested don't fall for it — if anything they lean the opposite way after long streaks, expecting the streak to continue — though the piece notes that's only a fallacy if the model has no real reason to suspect the coin itself is unfair.",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "Weight-space programming: Claude Fable 5.2 edits neural net weights like it's 1995",
+          "url": "https://notesbylex.com/weight-space-programming-1990s.html",
+          "source": "notesbylex.com, via TLDR AI",
+          "why": "Frontier models can now read, write, and edit a neural network's raw weights directly. This researcher's weight-writing experiment with Fable 5.2 on a familiar image-classification problem produced solutions resembling hand-crafted, pre-deep-learning techniques from the 1990s — an odd, specific data point on what 'models editing models' looks like in practice.",
+          "minutes": 10,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "On Artificial Analysis's Intelligence Index, which model ranks #1, just ahead of OpenAI's new GPT-6.2 Astra?",
+          "choices": [
+            "Gemini 4 Hydrogen",
+            "Claude Fable 5.2",
+            "GPT-6.2 Sol",
+            "Llama 4"
+          ],
+          "a": "Claude Fable 5.2"
+        },
+        {
+          "q": "Roughly what share of September's Astra cost does GPT-6.2 Sol match it at, capability-wise?",
+          "a": "About 15% of the cost (i.e., ~85% cheaper)"
+        },
+        {
+          "q": "What model powers the Horizon Labs agent that autonomously built dozens of Hugging Face models?",
+          "a": "Opus 5.5"
+        },
+        {
+          "q": "How many models did the Horizon Labs agent build on its own?",
+          "choices": [
+            "8",
+            "15",
+            "38",
+            "100"
+          ],
+          "a": "38"
+        },
+        {
+          "q": "Who is Nvidia's interim CEO following the board's decision not to reinstate Jensen Huang?",
+          "a": "Colette Kress"
+        },
+        {
+          "q": "What does Redwood Research argue AI labs should let independent auditors measure, to make 'pacing the frontier' meaningful?",
+          "a": "How much compute each lab spends on capabilities work vs. safety/non-capabilities work, publicly reported"
+        },
+        {
+          "q": "Whose dual-process framework (System 1 / System 2) does the Towards Data Science human-in-the-loop piece lean on?",
+          "choices": [
+            "Daniel Kahneman",
+            "Herbert Simon",
+            "Judea Pearl",
+            "Geoffrey Hinton"
+          ],
+          "a": "Daniel Kahneman"
+        },
+        {
+          "q": "In the local-LLM RAG piece, what score did the local gpt-oss model get on new-paper questions, down from 12/20 on textbook questions?",
+          "a": "0 out of 15"
+        },
+        {
+          "q": "After a long streak of heads, what do most of the small LLMs tested actually do?",
+          "choices": [
+            "Strongly expect heads again (opposite of the classic gambler's fallacy)",
+            "Fall for the classic gambler's fallacy and expect tails",
+            "Refuse to answer",
+            "Always predict exactly 50/50"
+          ],
+          "a": "Strongly expect heads again (opposite of the classic gambler's fallacy)"
+        },
+        {
+          "q": "The weight-space programming piece says Claude Fable 5.2's hand-crafted solutions resemble techniques from which era?",
+          "a": "1990s, pre-deep-learning (hand-crafted feature engineering)"
+        }
+      ]
+    },
+    "build": null
   }
 ]
