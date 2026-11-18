@@ -571,7 +571,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Claude Fable 5.2</li><li><span class="quiz-q-num">2.</span> About 15% of the cost (i.e., ~85% cheaper)</li><li><span class="quiz-q-num">3.</span> Opus 5.5</li><li><span class="quiz-q-num">4.</span> 38</li><li><span class="quiz-q-num">5.</span> Colette Kress</li><li><span class="quiz-q-num">6.</span> How much compute each lab spends on capabilities work vs. safety/non-capabilities work, publicly reported</li><li><span class="quiz-q-num">7.</span> Daniel Kahneman</li><li><span class="quiz-q-num">8.</span> 0 out of 15</li><li><span class="quiz-q-num">9.</span> Strongly expect heads again (opposite of the classic gambler&#x27;s fallacy)</li><li><span class="quiz-q-num">10.</span> 1990s, pre-deep-learning (hand-crafted feature engineering)</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">fine-tuning/training</span>
+      </div>
+      <p class="build-pitch">Been quiet on these — here&#x27;s a quick one to jump back in with: hand-edit a tiny classifier&#x27;s weights like it&#x27;s 1990, and watch it still work.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs on today&#x27;s weight-space programming item — Fable 5.2 editing neural net weights directly and landing on 1990s-style, hand-crafted solutions. You&#x27;ll do the human version: train a tiny linear classifier, then hand-set its weight vector yourself (no gradient descent) and see how close you can get to the trained version&#x27;s accuracy. It&#x27;s a fast, concrete way to see what weights actually encode.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Generate a small 2D synthetic dataset (two blobs) with numpy and train a scikit-learn LogisticRegression on it</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Print the trained weight vector + bias and its accuracy on a held-out set</span>
+            <span class="badge badge-mono">3 min</span></li><li><span class="plan-step">By hand, write down your own weight vector + bias (e.g. a simple &#x27;which side of this line&#x27; rule you eyeball from a scatter plot) — no training involved</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Plug your hand-set weights into the same predict formula and compare accuracy to the trained model</span>
+            <span class="badge badge-mono">6 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>Two weight vectors side by side (trained vs. hand-crafted) with their accuracy scores printed — ideally your hand-crafted one lands within a few points of the trained one.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Try it on a slightly harder 2-feature dataset (e.g. two interleaved moons) and see where hand-crafted weights start to fall apart against the trained model.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>numpy</li><li>scikit-learn (LogisticRegression)</li><li>matplotlib (optional, to eyeball the scatter plot before hand-setting weights)</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

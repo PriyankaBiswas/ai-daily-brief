@@ -12445,6 +12445,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Been quiet on these — here's a quick one to jump back in with: hand-edit a tiny classifier's weights like it's 1990, and watch it still work.",
+      "category": "fine-tuning/training",
+      "why": "Riffs on today's weight-space programming item — Fable 5.2 editing neural net weights directly and landing on 1990s-style, hand-crafted solutions. You'll do the human version: train a tiny linear classifier, then hand-set its weight vector yourself (no gradient descent) and see how close you can get to the trained version's accuracy. It's a fast, concrete way to see what weights actually encode.",
+      "plan": [
+        {
+          "step": "Generate a small 2D synthetic dataset (two blobs) with numpy and train a scikit-learn LogisticRegression on it",
+          "minutes": 8
+        },
+        {
+          "step": "Print the trained weight vector + bias and its accuracy on a held-out set",
+          "minutes": 3
+        },
+        {
+          "step": "By hand, write down your own weight vector + bias (e.g. a simple 'which side of this line' rule you eyeball from a scatter plot) — no training involved",
+          "minutes": 8
+        },
+        {
+          "step": "Plug your hand-set weights into the same predict formula and compare accuracy to the trained model",
+          "minutes": 6
+        }
+      ],
+      "done_looks_like": "Two weight vectors side by side (trained vs. hand-crafted) with their accuracy scores printed — ideally your hand-crafted one lands within a few points of the trained one.",
+      "stretch_goal": "Try it on a slightly harder 2-feature dataset (e.g. two interleaved moons) and see where hand-crafted weights start to fall apart against the trained model.",
+      "tools": [
+        "numpy",
+        "scikit-learn (LogisticRegression)",
+        "matplotlib (optional, to eyeball the scatter plot before hand-setting weights)"
+      ]
+    }
   }
 ]
