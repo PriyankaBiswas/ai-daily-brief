@@ -12475,5 +12475,144 @@
         "matplotlib (optional, to eyeball the scatter plot before hand-setting weights)"
       ]
     }
+  },
+  {
+    "date": "2026-11-19",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. Today's lead story is Google's Gemini 4 Neon, a new frontier-level model aimed at coding, knowledge work, and science — slotting in just behind GPT-6.2 Astra and Fable 5.2 on the Intelligence Index. Elsewhere: OpenAI's own models are now helping redesign OpenAI's chips, Isomorphic Labs raised a $5B Series C to scale its AI drug-design platform, and Epoch AI data shows Anthropic's compute spend growing faster than OpenAI's ahead of its IPO roadshow. On the practical engineering side: two pieces on taming coding agents at scale — one on using an orchestrator session to cut wasted time by 30%, another on governing accumulating agent skills as versioned plugins — plus a walkthrough of Google's ADK for agents that need to pause and wait hours for a human. And for background: a case that superintelligence could plausibly arrive as soon as next year, and what that would demand of any real preparation plan.",
+      "items": [
+        {
+          "title": "Google introduces Gemini 4 Neon",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+          "source": "Google, via TLDR AI",
+          "why": "Google's newest frontier-level model targets complex coding, knowledge work, and science tasks. It scored 61 on the Artificial Analysis Intelligence Index — just behind GPT-6.2 Astra's 62 and Fable 5.2's 65 — and is priced at $3/$15 per million input/output tokens, landing as a credible mid-tier option in an increasingly crowded top of the model leaderboard.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI's own models are now redesigning its chips",
+          "url": "https://spectrum.ieee.org/llms-for-chip-design",
+          "source": "IEEE Spectrum, via TLDR AI",
+          "why": "At Hot Chips 2026, OpenAI's chip team detailed how AI-guided physical-design optimization cut the area of key circuit blocks (like matrix-multiplication units) by roughly 10-13% versus an optimized human baseline on the Jalapeño inference chip — a concrete, measured example of models speeding up their own infrastructure's design, not just writing application code.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Google ADK agents that pause, resume, and wait hours for a human",
+          "url": "https://towardsdatascience.com/google-adk-agents-that-pause-resume-and-wait-hours-for-a-human/",
+          "source": "Towards Data Science (Benjamin Etienne)",
+          "why": "A practical look at a problem every long-running agent hits: a client shouldn't have to keep a connection open for an 83-second task, let alone one that takes hours. Walks through using Google's Agent Development Kit — Runners, DatabaseSessionService, Events, FunctionCalls — to persist, pause, and resume agents via webhooks instead of blocking calls.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Isomorphic Labs raises $5B Series C",
+          "url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round",
+          "source": "Isomorphic Labs, via Latent Space",
+          "why": "DeepMind's drug-discovery spinout closed a $5B round co-led by Greenoaks and Sequoia, earmarked for scaling its AI drug-design platform and therapeutic pipeline — one of the largest funding events of the week outside the frontier-model arms race.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "How to improve coding agent efficiency by 30% with an orchestrator",
+          "url": "https://towardsdatascience.com/how-to-improve-coding-agent-efficiency-by-30-with-an-orchestrator",
+          "source": "Towards Data Science (Eivind Kjosbakken)",
+          "why": "Instead of juggling multiple coding-agent sessions and checking each one for when it's stuck waiting on you, the author routes everything through one orchestrator session (running in Codex) that watches the others — reporting roughly 30% efficiency gains, mostly from not losing time hunting for which session needs your input.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "How to govern coding agent skills across repos with plugins",
+          "url": "https://towardsdatascience.com/how-to-govern-coding-agent-skills-across-repos-with-plugins/",
+          "source": "Towards Data Science (Erika Gomes-Gonçalves)",
+          "why": "Directly relevant to how this very pipeline is built: as skills, rules, hooks, and MCP configs accumulate around coding agents, the piece argues for packaging them as versioned plugins distributed through a marketplace (demoed with Claude Code and AWS) rather than letting them sprawl as untracked local files.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic's compute spending is increasing 4x per year, outpacing OpenAI's 3x",
+          "url": "https://epoch.ai/data-insights/anthropic-openai-compute-spend-growth",
+          "source": "Epoch AI, via TLDR AI",
+          "why": "Anthropic spent nearly $10B on compute and infrastructure in Q3 2026 alone. Epoch's data point: Anthropic's compute spend is growing faster year-over-year than OpenAI's — a useful anchor for thinking about the capital intensity behind the IPO roadshow.",
+          "minutes": 5,
+          "skip_ok": true
+        },
+        {
+          "title": "Quickly, there's no time",
+          "url": "https://thezvi.substack.com/p/quickly-theres-no-time",
+          "source": "Don't Worry About the Vase (Zvi Mowshowitz), via TLDR AI",
+          "why": "An argument that the odds of superintelligence arriving as soon as next year are high enough that any serious preparation plan has to assume full automation of AI R&D is coming — and has to include mechanisms to deliberately slow the resulting capability growth, not just steer it.",
+          "minutes": 10,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What score did Gemini 4 Neon get on the Artificial Analysis Intelligence Index, and how does that compare to GPT-6.2 Astra?",
+          "a": "61 — just behind Astra's 62 (and Fable 5.2's 65)"
+        },
+        {
+          "q": "Gemini 4 Neon is priced per million tokens at roughly:",
+          "choices": [
+            "$3 input / $15 output",
+            "$8 input / $40 output",
+            "$2 input / $10 output",
+            "$1 input / $5 output"
+          ],
+          "a": "$3 input / $15 output"
+        },
+        {
+          "q": "At Hot Chips 2026, roughly how much did AI-guided physical-design optimization cut the area of key circuit blocks on OpenAI's Jalapeño chip, versus an optimized human baseline?",
+          "a": "Roughly 10-13%"
+        },
+        {
+          "q": "The Towards Data Science ADK piece opens with an example of an RSS agent whose synchronous connection stayed open for how long?",
+          "choices": [
+            "83 seconds",
+            "8 minutes",
+            "83 minutes",
+            "8 hours"
+          ],
+          "a": "83 seconds"
+        },
+        {
+          "q": "Which Google agent framework does the pause/resume article walk through (covering Runners, DatabaseSessionService, Events, FunctionCalls)?",
+          "a": "Agent Development Kit (ADK)"
+        },
+        {
+          "q": "Who co-led Isomorphic Labs' $5B Series C round?",
+          "a": "Greenoaks and Sequoia"
+        },
+        {
+          "q": "The coding-agent orchestrator piece reports roughly what efficiency gain from routing sessions through one watcher session?",
+          "choices": [
+            "10%",
+            "30%",
+            "50%",
+            "70%"
+          ],
+          "a": "30%"
+        },
+        {
+          "q": "What does the 'governing coding agent skills' piece propose packaging skills, rules, hooks, and MCP configs as, to keep them from sprawling across repos?",
+          "a": "Versioned plugins distributed through a marketplace"
+        },
+        {
+          "q": "Roughly how much did Anthropic spend on compute and infrastructure in Q3 2026 alone, per Epoch AI?",
+          "a": "Nearly $10 billion"
+        },
+        {
+          "q": "Zvi's 'Quickly, there's no time' essay argues any real preparation plan for possible near-term superintelligence must include what?",
+          "choices": [
+            "Mechanisms to deliberately slow resulting capability growth",
+            "A plan to simply ban all AI research",
+            "Nothing — current pace is already safe",
+            "A requirement that only governments build frontier models"
+          ],
+          "a": "Mechanisms to deliberately slow resulting capability growth"
+        }
+      ]
+    },
+    "build": null
   }
 ]
