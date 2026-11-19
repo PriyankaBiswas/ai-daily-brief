@@ -12613,6 +12613,40 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Been quiet on these — here's a quick one to jump back in with: hit one free, keyless API and rank today's frontier models by what they actually cost.",
+      "category": "API-exploration",
+      "why": "Today's lead story pins a number on Gemini 4 Neon — $3/$15 per million input/output tokens — and places it just behind GPT-6.2 Astra and Fable 5.2 on the Intelligence Index. Rather than taking that framing on faith, you'll pull live pricing yourself from OpenRouter's public models endpoint (no signup, no key) and see how today's frontier pack actually lines up on price.",
+      "plan": [
+        {
+          "step": "GET https://openrouter.ai/api/v1/models with Python's requests (no API key required) and parse the JSON response",
+          "minutes": 5
+        },
+        {
+          "step": "Pull out each model's id, prompt price, and completion price, and convert both to dollars per million tokens",
+          "minutes": 6
+        },
+        {
+          "step": "Sort the list by input price and print the 15 cheapest alongside the priciest few frontier models",
+          "minutes": 6
+        },
+        {
+          "step": "Find Gemini-4-neon-ish entries (or the closest match) and see where they land relative to $3/$15 and against GPT/Claude-class models nearby",
+          "minutes": 5
+        },
+        {
+          "step": "Eyeball it: does price loosely track recency/size the way the article implies, or is the ranking messier than the narrative?",
+          "minutes": 4
+        }
+      ],
+      "done_looks_like": "A printed, sorted table — model id, input $/M, output $/M, context length — with today's frontier models (Neon-class, Astra-class, Fable-class) visible in the mix, cheapest to priciest.",
+      "stretch_goal": "Hand-add a crude 'intelligence score' column using today's Index numbers (65 / 62 / 61 for Fable 5.2 / GPT-6.2 Astra / Gemini 4 Neon) and compute a rough price-per-point ratio to see which model is the best deal, not just the cheapest.",
+      "tools": [
+        "Python",
+        "requests",
+        "OpenRouter public models API (api/v1/models, no key needed)",
+        "json"
+      ]
+    }
   }
 ]
