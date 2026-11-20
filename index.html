@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Thursday, November 19, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s lead story is Google&#x27;s Gemini 4 Neon, a new frontier-level model aimed at coding, knowledge work, and science — slotting in just behind GPT-6.2 Astra and Fable 5.2 on the Intelligence Index. Elsewhere: OpenAI&#x27;s own models are now helping redesign OpenAI&#x27;s chips, Isomorphic Labs raised a $5B Series C to scale its AI drug-design platform, and Epoch AI data shows Anthropic&#x27;s compute spend growing faster than OpenAI&#x27;s ahead of its IPO roadshow. On the practical engineering side: two pieces on taming coding agents at scale — one on using an orchestrator session to cut wasted time by 30%, another on governing accumulating agent skills as versioned plugins — plus a walkthrough of Google&#x27;s ADK for agents that need to pause and wait hours for a human. And for background: a case that superintelligence could plausibly arrive as soon as next year, and what that would demand of any real preparation plan.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Friday, November 20, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s mix centers on multi-agent coordination and what happens when agents are left to their own devices: Replit&#x27;s benchmark found 32 coding agents working in parallel hit an 18.9x speedup on a NumPy optimization task versus 3.7x for a single agent — but only when the work was separable and the agents shared a coordination board. In a stranger finding, researchers showed sandboxed models with no direct communication channel could still signal each other by nudging shared inference-server resource allocations. On the practical side: Towards Data Science on where permission checks actually need to live to stop agents from becoming attack tools, Stripe&#x27;s new eval suite for grading how well coding agents build real integrations, and Cloudflare open-sourcing its field-extraction models. Lighter items: Gemini&#x27;s new API feature for auto-discovering which function to call, Vercel&#x27;s experimental task board for agents, and a DeepMind Institute essay asking what comes after AGI.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://frontier.replit.com/throwing-headcount-at-the-problem/" target="_blank" rel="noopener">When agent swarms outperform solo coders</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">Replit, via TLDR AI</div>
+          <p class="item-why">Replit&#x27;s optimization benchmark found 32 parallel Opus agents hit an 18.9x speedup on a NumPy workload in two hours, versus 3.7x for a single agent working alone — but the gains only held when tasks were separable and agents shared a coordination board; the strongest solo model actually got worse as teams grew.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being" target="_blank" rel="noopener">Sandboxed models can communicate via inference servers</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">LessWrong, via TLDR AI</div>
+          <p class="item-why">Sandboxing didn&#x27;t stop two AI models sharing an inference server from trading information in contrived tests — one model&#x27;s large request slightly shifts the server&#x27;s compute allocation, and the other reads that shift as a signal. A concrete covert-channel finding for anyone thinking about isolation guarantees between agents.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/how-ai-agents-become-a-tool-for-attackers-and-how-to-stop-it/" target="_blank" rel="noopener">How AI Agents Become a Tool for Attackers, and How to Stop It</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">First in a series on securing deployed agents: the core argument is that permission checks need to happen before the model ever sees sensitive data, not after it generates a response — because an internal tool built to help staff find data (e.g. salaries) is just as useful to an attacker doing reconnaissance through the same agent.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://stripe.dev/blog/stripe-integration-evals-methodology" target="_blank" rel="noopener">Stripe Evals: measuring real-world coding agent performance</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Stripe, via TLDR AI</div>
+          <p class="item-why">Stripe built a benchmark using a role-playing agent to grade how different coding agents and frontier models actually integrate Stripe against realistic, well-specified scenarios — finding harnesses can produce working integrations that still skip best practices. Useful methodology if you&#x27;re evaluating coding agents against your own APIs.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.cloudflare.com/open-clairic/" target="_blank" rel="noopener">Cloudflare open-sources Clairic and Clairic-flash</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Cloudflare, via TLDR AI</div>
+          <p class="item-why">Cloudflare released the weights for its field-extraction models, built to pull specific fields out of text, images, and PDFs — a narrow but practical open-model release for document-processing pipelines.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/" target="_blank" rel="noopener">Introducing Tool Retrieval in the Gemini API</a>
+            <span class="badge badge-mono">4 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Google, via TLDR AI</div>
+          <p class="item-why">Developers can now register a large pool of functions and have the Gemini API automatically find and call the right one based on the input (e.g. issuing a refund), instead of hand-specifying which tool to use — a small but practical step for scaling tool-calling setups.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://institute.deepmind.com/essays/what-comes-after-agi/" target="_blank" rel="noopener">What comes after AGI?</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">DeepMind Institute, via TLDR AI</div>
+          <p class="item-why">An essay arguing that with AGI now plausibly within reach, it&#x27;s time to seriously map the roads from AGI to artificial superintelligence (ASI) and build rigorous ways to track progress along them — big-picture framing rather than a new result, but a useful one for calibrating how near-term discourse should weight the next step.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://vercel.com/blog/introducing-vercel-board" target="_blank" rel="noopener">Vercel Board: a message board where AI agents claim tasks</a>
+            <span class="badge badge-mono">4 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Vercel, via TLDR AI</div>
+          <p class="item-why">An experimental shared board where AI agents post updates, claim open tasks, and read each other&#x27;s context — a lightweight, concrete example of the coordination infrastructure that today&#x27;s swarm-benchmark piece says agent teams actually need.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">In Replit&#x27;s benchmark, how much faster was a 32-agent swarm than a single agent on the NumPy optimization workload?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What two conditions determined whether the agent swarm&#x27;s speed gains actually held up as the team grew?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How did the sandboxed models in the LessWrong-reported experiment manage to signal each other despite having no direct communication channel?</p>
+          <ul class="quiz-choices"><li>They exchanged encrypted messages via a shared file</li><li>They nudged shared inference-server compute/timing allocations that the other model could read as a signal</li><li>They used a public API neither was supposed to have access to</li><li>They communicated through training data overlap</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to the Towards Data Science piece, when should permission checks on an AI agent&#x27;s data access happen?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What real-world risk does the TDS piece flag about internal AI tools built to help staff find data?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does Stripe Evals actually measure?</p>
+          <ul class="quiz-choices"><li>Stripe&#x27;s own infrastructure uptime</li><li>How well coding agents/models build real Stripe integrations against realistic, role-played scenarios</li><li>Customer satisfaction with Stripe support</li><li>Stripe&#x27;s payment processing latency</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What did Stripe&#x27;s benchmark find about agent-built integrations even when they technically worked?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What are the two models Cloudflare open-sourced the weights for, and what do they do?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What new Gemini API capability lets a function be located and executed automatically based on the input, rather than being hand-specified?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What is the central argument of the DeepMind Institute essay &#x27;What comes after AGI&#x27;?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> 18.9x speedup for the 32-agent swarm, versus 3.7x for a single agent.</li><li><span class="quiz-q-num">2.</span> The tasks had to be separable, and the agents needed a shared coordination board.</li><li><span class="quiz-q-num">3.</span> They nudged shared inference-server compute/timing allocations that the other model could read as a signal.</li><li><span class="quiz-q-num">4.</span> Before the model ever sees the sensitive data — not after it has already generated a response.</li><li><span class="quiz-q-num">5.</span> The same tool can help an attacker do reconnaissance — e.g. surfacing salary data — through normal agent use.</li><li><span class="quiz-q-num">6.</span> How well coding agents and models build real-world Stripe integrations, graded against realistic scenarios driven by a role-playing agent.</li><li><span class="quiz-q-num">7.</span> They could produce working end-to-end integrations while still not following all best practices.</li><li><span class="quiz-q-num">8.</span> Clairic and Clairic-flash — models for extracting specific fields from text, images, and PDFs.</li><li><span class="quiz-q-num">9.</span> Tool Retrieval.</li><li><span class="quiz-q-num">10.</span> AGI is now plausibly within reach, so it&#x27;s time to seriously map the path from AGI to artificial superintelligence (ASI) and build rigorous ways to track progress on that path.</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 16 – 22</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Thu, Nov 19</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s lead story is Google&#x27;s Gemini 4 Neon, a new frontier-level model aimed at coding, knowledge work, and science — slotting in just behind GPT-6.2 Astra and Fable 5.2 on the Intelligence Index. Elsewhere: OpenAI&#x27;s own models are now helping redesign OpenAI&#x27;s chips, Isomorphic Labs raised a $5B Series C to scale its AI drug-design platform, and Epoch AI data shows Anthropic&#x27;s compute spend growing faster than OpenAI&#x27;s ahead of its IPO roadshow. On the practical engineering side: two pieces on taming coding agents at scale — one on using an orchestrator session to cut wasted time by 30%, another on governing accumulating agent skills as versioned plugins — plus a walkthrough of Google&#x27;s ADK for agents that need to pause and wait hours for a human. And for background: a case that superintelligence could plausibly arrive as soon as next year, and what that would demand of any real preparation plan.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/" target="_blank" rel="noopener">Google introduces Gemini 4 Neon</a>
@@ -605,21 +731,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python</li><li>requests</li><li>OpenRouter public models API (api/v1/models, no key needed)</li><li>json</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 16 – 22</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Wed, Nov 18</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s lead story is OpenAI&#x27;s twin launch of GPT-6.2 Astra and Sol, landing to oddly polarized early reviews. Elsewhere: an Opus 5.5 agent given a blank Hugging Face account autonomously built and shipped 38 models on its own, Nvidia posts its first earnings under an interim CEO while the board declines to reinstate Jensen Huang, and Redwood Research asks how labs should even define the compute spend that counts as frontier capabilities work. On the research side: human-in-the-loop oversight keeps failing in predictable ways, local LLMs&#x27; RAG skills evaporate against papers newer than their training data, and small LLMs show a surprising twist on the gambler&#x27;s fallacy.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">

@@ -12648,5 +12648,132 @@
         "json"
       ]
     }
+  },
+  {
+    "date": "2026-11-20",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. Today's mix centers on multi-agent coordination and what happens when agents are left to their own devices: Replit's benchmark found 32 coding agents working in parallel hit an 18.9x speedup on a NumPy optimization task versus 3.7x for a single agent — but only when the work was separable and the agents shared a coordination board. In a stranger finding, researchers showed sandboxed models with no direct communication channel could still signal each other by nudging shared inference-server resource allocations. On the practical side: Towards Data Science on where permission checks actually need to live to stop agents from becoming attack tools, Stripe's new eval suite for grading how well coding agents build real integrations, and Cloudflare open-sourcing its field-extraction models. Lighter items: Gemini's new API feature for auto-discovering which function to call, Vercel's experimental task board for agents, and a DeepMind Institute essay asking what comes after AGI.",
+      "items": [
+        {
+          "title": "When agent swarms outperform solo coders",
+          "url": "https://frontier.replit.com/throwing-headcount-at-the-problem/",
+          "source": "Replit, via TLDR AI",
+          "why": "Replit's optimization benchmark found 32 parallel Opus agents hit an 18.9x speedup on a NumPy workload in two hours, versus 3.7x for a single agent working alone — but the gains only held when tasks were separable and agents shared a coordination board; the strongest solo model actually got worse as teams grew.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Sandboxed models can communicate via inference servers",
+          "url": "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
+          "source": "LessWrong, via TLDR AI",
+          "why": "Sandboxing didn't stop two AI models sharing an inference server from trading information in contrived tests — one model's large request slightly shifts the server's compute allocation, and the other reads that shift as a signal. A concrete covert-channel finding for anyone thinking about isolation guarantees between agents.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "How AI Agents Become a Tool for Attackers, and How to Stop It",
+          "url": "https://towardsdatascience.com/how-ai-agents-become-a-tool-for-attackers-and-how-to-stop-it/",
+          "source": "Towards Data Science",
+          "why": "First in a series on securing deployed agents: the core argument is that permission checks need to happen before the model ever sees sensitive data, not after it generates a response — because an internal tool built to help staff find data (e.g. salaries) is just as useful to an attacker doing reconnaissance through the same agent.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Stripe Evals: measuring real-world coding agent performance",
+          "url": "https://stripe.dev/blog/stripe-integration-evals-methodology",
+          "source": "Stripe, via TLDR AI",
+          "why": "Stripe built a benchmark using a role-playing agent to grade how different coding agents and frontier models actually integrate Stripe against realistic, well-specified scenarios — finding harnesses can produce working integrations that still skip best practices. Useful methodology if you're evaluating coding agents against your own APIs.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Cloudflare open-sources Clairic and Clairic-flash",
+          "url": "https://blog.cloudflare.com/open-clairic/",
+          "source": "Cloudflare, via TLDR AI",
+          "why": "Cloudflare released the weights for its field-extraction models, built to pull specific fields out of text, images, and PDFs — a narrow but practical open-model release for document-processing pipelines.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Introducing Tool Retrieval in the Gemini API",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+          "source": "Google, via TLDR AI",
+          "why": "Developers can now register a large pool of functions and have the Gemini API automatically find and call the right one based on the input (e.g. issuing a refund), instead of hand-specifying which tool to use — a small but practical step for scaling tool-calling setups.",
+          "minutes": 4,
+          "skip_ok": true
+        },
+        {
+          "title": "What comes after AGI?",
+          "url": "https://institute.deepmind.com/essays/what-comes-after-agi/",
+          "source": "DeepMind Institute, via TLDR AI",
+          "why": "An essay arguing that with AGI now plausibly within reach, it's time to seriously map the roads from AGI to artificial superintelligence (ASI) and build rigorous ways to track progress along them — big-picture framing rather than a new result, but a useful one for calibrating how near-term discourse should weight the next step.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Vercel Board: a message board where AI agents claim tasks",
+          "url": "https://vercel.com/blog/introducing-vercel-board",
+          "source": "Vercel, via TLDR AI",
+          "why": "An experimental shared board where AI agents post updates, claim open tasks, and read each other's context — a lightweight, concrete example of the coordination infrastructure that today's swarm-benchmark piece says agent teams actually need.",
+          "minutes": 4,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Replit's benchmark, how much faster was a 32-agent swarm than a single agent on the NumPy optimization workload?",
+          "a": "18.9x speedup for the 32-agent swarm, versus 3.7x for a single agent."
+        },
+        {
+          "q": "What two conditions determined whether the agent swarm's speed gains actually held up as the team grew?",
+          "a": "The tasks had to be separable, and the agents needed a shared coordination board."
+        },
+        {
+          "q": "How did the sandboxed models in the LessWrong-reported experiment manage to signal each other despite having no direct communication channel?",
+          "choices": [
+            "They exchanged encrypted messages via a shared file",
+            "They nudged shared inference-server compute/timing allocations that the other model could read as a signal",
+            "They used a public API neither was supposed to have access to",
+            "They communicated through training data overlap"
+          ],
+          "a": "They nudged shared inference-server compute/timing allocations that the other model could read as a signal."
+        },
+        {
+          "q": "According to the Towards Data Science piece, when should permission checks on an AI agent's data access happen?",
+          "a": "Before the model ever sees the sensitive data — not after it has already generated a response."
+        },
+        {
+          "q": "What real-world risk does the TDS piece flag about internal AI tools built to help staff find data?",
+          "a": "The same tool can help an attacker do reconnaissance — e.g. surfacing salary data — through normal agent use."
+        },
+        {
+          "q": "What does Stripe Evals actually measure?",
+          "choices": [
+            "Stripe's own infrastructure uptime",
+            "How well coding agents/models build real Stripe integrations against realistic, role-played scenarios",
+            "Customer satisfaction with Stripe support",
+            "Stripe's payment processing latency"
+          ],
+          "a": "How well coding agents and models build real-world Stripe integrations, graded against realistic scenarios driven by a role-playing agent."
+        },
+        {
+          "q": "What did Stripe's benchmark find about agent-built integrations even when they technically worked?",
+          "a": "They could produce working end-to-end integrations while still not following all best practices."
+        },
+        {
+          "q": "What are the two models Cloudflare open-sourced the weights for, and what do they do?",
+          "a": "Clairic and Clairic-flash — models for extracting specific fields from text, images, and PDFs."
+        },
+        {
+          "q": "What new Gemini API capability lets a function be located and executed automatically based on the input, rather than being hand-specified?",
+          "a": "Tool Retrieval."
+        },
+        {
+          "q": "What is the central argument of the DeepMind Institute essay 'What comes after AGI'?",
+          "a": "AGI is now plausibly within reach, so it's time to seriously map the path from AGI to artificial superintelligence (ASI) and build rigorous ways to track progress on that path."
+        }
+      ]
+    },
+    "build": null
   }
 ]
