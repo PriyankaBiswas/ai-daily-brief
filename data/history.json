@@ -12774,6 +12774,33 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Been quiet on these — here's a quick one to jump back in with: make two scripts leak a single bit to each other through nothing but shared CPU timing.",
+      "category": "paper-reimplementation",
+      "why": "Today's LessWrong piece showed sandboxed models with no communication channel still signaling each other by nudging shared inference-server resource allocations. This is the kid-sibling version: no GPUs, no models, just two threads and a stopwatch, so you can feel in your hands how a 'covert channel' actually works as a timing side-effect rather than an abstract security term.",
+      "plan": [
+        {
+          "step": "Write a 'sender' function: given a bit (0 or 1), either busy-loop burning CPU for 0.5s (bit=1) or sleep for 0.5s (bit=0) — nothing else, no shared variables.",
+          "minutes": 8
+        },
+        {
+          "step": "Write a 'receiver' function that runs concurrently (same process, separate thread) and times how long its own fixed-size busy-loop takes to finish — contention from the sender should slow it down when bit=1.",
+          "minutes": 8
+        },
+        {
+          "step": "Run sender+receiver together with threading, print the receiver's measured time, and pick a threshold that separates bit=0 runs from bit=1 runs.",
+          "minutes": 7
+        },
+        {
+          "step": "Loop it 10 times with a random bit each time and check how often the receiver's threshold-based guess matches the sender's actual bit.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A single Python file that, run with no arguments, prints something like 'sent: 1 0 1 1 0 ... | decoded: 1 0 1 1 0 ... | accuracy: 9/10' — the receiver recovering the sender's bits purely from timing, with zero direct communication between them.",
+      "stretch_goal": "Add a third 'innocent bystander' thread that also burns CPU at random times and see how much it degrades the receiver's decoding accuracy — a tiny taste of why real covert-channel detection is noisy in practice.",
+      "tools": [
+        "Python standard library: threading, time"
+      ]
+    }
   }
 ]

@@ -571,7 +571,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> 18.9x speedup for the 32-agent swarm, versus 3.7x for a single agent.</li><li><span class="quiz-q-num">2.</span> The tasks had to be separable, and the agents needed a shared coordination board.</li><li><span class="quiz-q-num">3.</span> They nudged shared inference-server compute/timing allocations that the other model could read as a signal.</li><li><span class="quiz-q-num">4.</span> Before the model ever sees the sensitive data — not after it has already generated a response.</li><li><span class="quiz-q-num">5.</span> The same tool can help an attacker do reconnaissance — e.g. surfacing salary data — through normal agent use.</li><li><span class="quiz-q-num">6.</span> How well coding agents and models build real-world Stripe integrations, graded against realistic scenarios driven by a role-playing agent.</li><li><span class="quiz-q-num">7.</span> They could produce working end-to-end integrations while still not following all best practices.</li><li><span class="quiz-q-num">8.</span> Clairic and Clairic-flash — models for extracting specific fields from text, images, and PDFs.</li><li><span class="quiz-q-num">9.</span> Tool Retrieval.</li><li><span class="quiz-q-num">10.</span> AGI is now plausibly within reach, so it&#x27;s time to seriously map the path from AGI to artificial superintelligence (ASI) and build rigorous ways to track progress on that path.</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">paper-reimplementation</span>
+      </div>
+      <p class="build-pitch">Been quiet on these — here&#x27;s a quick one to jump back in with: make two scripts leak a single bit to each other through nothing but shared CPU timing.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Today&#x27;s LessWrong piece showed sandboxed models with no communication channel still signaling each other by nudging shared inference-server resource allocations. This is the kid-sibling version: no GPUs, no models, just two threads and a stopwatch, so you can feel in your hands how a &#x27;covert channel&#x27; actually works as a timing side-effect rather than an abstract security term.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Write a &#x27;sender&#x27; function: given a bit (0 or 1), either busy-loop burning CPU for 0.5s (bit=1) or sleep for 0.5s (bit=0) — nothing else, no shared variables.</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Write a &#x27;receiver&#x27; function that runs concurrently (same process, separate thread) and times how long its own fixed-size busy-loop takes to finish — contention from the sender should slow it down when bit=1.</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Run sender+receiver together with threading, print the receiver&#x27;s measured time, and pick a threshold that separates bit=0 runs from bit=1 runs.</span>
+            <span class="badge badge-mono">7 min</span></li><li><span class="plan-step">Loop it 10 times with a random bit each time and check how often the receiver&#x27;s threshold-based guess matches the sender&#x27;s actual bit.</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A single Python file that, run with no arguments, prints something like &#x27;sent: 1 0 1 1 0 ... | decoded: 1 0 1 1 0 ... | accuracy: 9/10&#x27; — the receiver recovering the sender&#x27;s bits purely from timing, with zero direct communication between them.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Add a third &#x27;innocent bystander&#x27; thread that also burns CPU at random times and see how much it degrades the receiver&#x27;s decoding accuracy — a tiny taste of why real covert-channel detection is noisy in practice.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Python standard library: threading, time</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
