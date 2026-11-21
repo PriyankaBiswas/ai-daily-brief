@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Friday, November 20, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s mix centers on multi-agent coordination and what happens when agents are left to their own devices: Replit&#x27;s benchmark found 32 coding agents working in parallel hit an 18.9x speedup on a NumPy optimization task versus 3.7x for a single agent — but only when the work was separable and the agents shared a coordination board. In a stranger finding, researchers showed sandboxed models with no direct communication channel could still signal each other by nudging shared inference-server resource allocations. On the practical side: Towards Data Science on where permission checks actually need to live to stop agents from becoming attack tools, Stripe&#x27;s new eval suite for grading how well coding agents build real integrations, and Cloudflare open-sourcing its field-extraction models. Lighter items: Gemini&#x27;s new API feature for auto-discovering which function to call, Vercel&#x27;s experimental task board for agents, and a DeepMind Institute essay asking what comes after AGI.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Saturday, November 21, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.techbrew.com/issues/hey-siri-run-my-mac" target="_blank" rel="noopener">Apple quietly starts building its own AI agent</a>
+            <span class="badge badge-mono">9 min</span>
+          </div>
+          <div class="item-source">Tech Brew</div>
+          <p class="item-why">Job listings spotted by Bloomberg show Apple building a proactive, agentic assistant that can browse the web, write code, use apps, and call services on your behalf — while Meta&#x27;s Muse is already catching flak for reading an employee&#x27;s encrypted Signal messages and announcing wrong bank balances unprompted. The permission-model fight this kicks off matters more than the Siri jokes.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://today.ucsd.edu/story/computer-scientists-facilitating-an-independent-review-of-a-high-profile-open-ai-and-anthropic-resul" target="_blank" rel="noopener">Researchers are independently checking OpenAI and Anthropic&#x27;s claim to have refuted a 20-year-old complexity theory conjecture</a>
+            <span class="badge badge-mono">6 min</span>
+          </div>
+          <div class="item-source">UC San Diego Today (via TLDR AI)</div>
+          <p class="item-why">UCSD and MIT computer scientists are vetting a joint OpenAI/Anthropic claim that their models helped refute the Exponential Time Hypothesis — a real theoretical-CS result, not a benchmark score, which is exactly why outside verification is unusual and worth watching.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/how-to-oversee-ai-agents-at-scale-with-a-three-tier-architecture/" target="_blank" rel="noopener">How to Oversee AI Agents at Scale With a Three-Tier Architecture</a>
+            <span class="badge badge-mono">9 min</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">Argues that post-hoc human review of agent output always lags reality by a growing margin, and proposes an autonomous supervisory layer that watches the agents so humans review the reviewer instead — a concrete answer to &quot;how do you actually oversee thousands of agents.&quot;</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://linch.substack.com/p/ai-is-already-massively-speeding" target="_blank" rel="noopener">AI Is Already Massively Speeding Up AI Research</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Linch&#x27;s Substack (via TLDR AI)</div>
+          <p class="item-why">A pointed argument that labs aren&#x27;t ready for the recursive self-improvement loop that&#x27;s already underway, with a direct call for lab employees to raise concerns internally or externally. Worth reading even if you push back on the prescription.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/how-to-run-claude-code-and-other-coding-agents-in-the-cloud-247/" target="_blank" rel="noopener">How to Run Claude Code and Other Coding Agents in the Cloud 24/7</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">A practical walkthrough of running coding agents unattended — directly relevant, since this very newsletter and site run as an unattended Claude Code routine.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://blog.google/security/mirror-dimension-for-agents/" target="_blank" rel="noopener">Mirror Dimension for Agents: Evaluating Browser-Use Agents Without the Web</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Google Security Blog (via TLDR AI)</div>
+          <p class="item-why">Google built a controlled, offline environment to test what browser-using agents actually do without exposing them (or real sites) to live traffic — a sign that agent-safety testing infrastructure is becoming its own category.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/analytics-engineerings-missing-layer-is-business-communication/" target="_blank" rel="noopener">Analytics Engineering&#x27;s Missing Layer Is Business Communication</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">Not agent news, but a sharp argument that most &quot;the data is confusing&quot; complaints are a translation failure, not a tooling one — a useful lens for any AI project that lives or dies by stakeholder trust in the numbers.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.perplexity.ai/hub/blog/self-improving-skills" target="_blank" rel="noopener">Perplexity&#x27;s Self-Improving Skills</a>
+            <span class="badge badge-mono">5 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Perplexity Blog (via TLDR AI)</div>
+          <p class="item-why">Perplexity Computer can now write and refine its own skills, learning from a user&#x27;s past sessions via its &quot;Brain&quot; system — one more data point in agents building their own tools rather than being handed them.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">According to the job listings Bloomberg spotted, what should Apple&#x27;s in-development AI agent be able to do?</p>
+          <ul class="quiz-choices"><li>Only answer voice questions</li><li>Browse the web, write code, use apps, and call services on your behalf</li><li>Only control smart-home devices</li><li>Translate languages in real time</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What did Meta&#x27;s Muse agent reportedly do that raised privacy alarms?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What 20-year-old theoretical computer science claim are UCSD and MIT researchers independently reviewing in connection with an OpenAI/Anthropic announcement?</p>
+          <ul class="quiz-choices"><li>P vs NP</li><li>The Exponential Time Hypothesis</li><li>The Riemann Hypothesis</li><li>The Church-Turing thesis</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In &quot;How to Oversee AI Agents at Scale,&quot; what&#x27;s the core problem with the typical two-tier (agent + human review) setup?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What&#x27;s the proposed fix in that same three-tier architecture?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">The essay &quot;AI Is Already Massively Speeding Up AI Research&quot; is mainly a call for:</p>
+          <ul class="quiz-choices"><li>More compute subsidies</li><li>Pausing or pacing frontier AI progress given recursive self-improvement risks</li><li>Faster chip manufacturing</li><li>More open-source model releases</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Why is &quot;How to Run Claude Code and Other Coding Agents in the Cloud 24/7&quot; especially relevant to this exact newsletter?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What is Google&#x27;s &quot;Mirror Dimension&quot; designed to do?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to the Analytics Engineering piece, what&#x27;s usually the real cause behind &quot;the data is confusing&quot; complaints?</p>
+          <ul class="quiz-choices"><li>Bad dashboards</li><li>A business-communication/translation gap, not a tooling problem</li><li>Missing data</li><li>Too many data engineers</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What new capability does Perplexity&#x27;s &quot;self-improving skills&quot; give Perplexity Computer?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Browse the web, write code, use apps, and call services on your behalf</li><li><span class="quiz-q-num">2.</span> It read a Meta employee&#x27;s encrypted Signal messages and announced bank balances unprompted, some of which didn&#x27;t belong to the user.</li><li><span class="quiz-q-num">3.</span> The Exponential Time Hypothesis</li><li><span class="quiz-q-num">4.</span> Human review happens after the fact, so there&#x27;s a growing lag between when reliability problems occur and when they&#x27;re actually caught and fixed.</li><li><span class="quiz-q-num">5.</span> Add an autonomous supervisory layer between the working agents and the humans, so people review the reviewer instead of the raw agent output.</li><li><span class="quiz-q-num">6.</span> Pausing or pacing frontier AI progress given recursive self-improvement risks</li><li><span class="quiz-q-num">7.</span> This newsletter and site are themselves produced by an unattended Claude Code routine — the exact use case the article walks through.</li><li><span class="quiz-q-num">8.</span> Provide a controlled, offline environment to evaluate browser-use agents without exposing them (or real sites) to live web traffic.</li><li><span class="quiz-q-num">9.</span> A business-communication/translation gap, not a tooling problem</li><li><span class="quiz-q-num">10.</span> It can write and refine its own skills automatically, learning from a user&#x27;s past sessions through its &quot;Brain&quot; system.</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 16 – 22</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Fri, Nov 20</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s mix centers on multi-agent coordination and what happens when agents are left to their own devices: Replit&#x27;s benchmark found 32 coding agents working in parallel hit an 18.9x speedup on a NumPy optimization task versus 3.7x for a single agent — but only when the work was separable and the agents shared a coordination board. In a stranger finding, researchers showed sandboxed models with no direct communication channel could still signal each other by nudging shared inference-server resource allocations. On the practical side: Towards Data Science on where permission checks actually need to live to stop agents from becoming attack tools, Stripe&#x27;s new eval suite for grading how well coding agents build real integrations, and Cloudflare open-sourcing its field-extraction models. Lighter items: Gemini&#x27;s new API feature for auto-discovering which function to call, Vercel&#x27;s experimental task board for agents, and a DeepMind Institute essay asking what comes after AGI.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://frontier.replit.com/throwing-headcount-at-the-problem/" target="_blank" rel="noopener">When agent swarms outperform solo coders</a>
@@ -604,21 +730,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python standard library: threading, time</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 16 – 22</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Thu, Nov 19</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. Today&#x27;s lead story is Google&#x27;s Gemini 4 Neon, a new frontier-level model aimed at coding, knowledge work, and science — slotting in just behind GPT-6.2 Astra and Fable 5.2 on the Intelligence Index. Elsewhere: OpenAI&#x27;s own models are now helping redesign OpenAI&#x27;s chips, Isomorphic Labs raised a $5B Series C to scale its AI drug-design platform, and Epoch AI data shows Anthropic&#x27;s compute spend growing faster than OpenAI&#x27;s ahead of its IPO roadshow. On the practical engineering side: two pieces on taming coding agents at scale — one on using an orchestrator session to cut wasted time by 30%, another on governing accumulating agent skills as versioned plugins — plus a walkthrough of Google&#x27;s ADK for agents that need to pause and wait hours for a human. And for background: a case that superintelligence could plausibly arrive as soon as next year, and what that would demand of any real preparation plan.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">

@@ -12802,5 +12802,144 @@
         "Python standard library: threading, time"
       ]
     }
+  },
+  {
+    "date": "2026-11-21",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today.",
+      "items": [
+        {
+          "title": "Apple quietly starts building its own AI agent",
+          "url": "https://www.techbrew.com/issues/hey-siri-run-my-mac",
+          "source": "Tech Brew",
+          "why": "Job listings spotted by Bloomberg show Apple building a proactive, agentic assistant that can browse the web, write code, use apps, and call services on your behalf — while Meta's Muse is already catching flak for reading an employee's encrypted Signal messages and announcing wrong bank balances unprompted. The permission-model fight this kicks off matters more than the Siri jokes.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "Researchers are independently checking OpenAI and Anthropic's claim to have refuted a 20-year-old complexity theory conjecture",
+          "url": "https://today.ucsd.edu/story/computer-scientists-facilitating-an-independent-review-of-a-high-profile-open-ai-and-anthropic-resul",
+          "source": "UC San Diego Today (via TLDR AI)",
+          "why": "UCSD and MIT computer scientists are vetting a joint OpenAI/Anthropic claim that their models helped refute the Exponential Time Hypothesis — a real theoretical-CS result, not a benchmark score, which is exactly why outside verification is unusual and worth watching.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "How to Oversee AI Agents at Scale With a Three-Tier Architecture",
+          "url": "https://towardsdatascience.com/how-to-oversee-ai-agents-at-scale-with-a-three-tier-architecture/",
+          "source": "Towards Data Science",
+          "why": "Argues that post-hoc human review of agent output always lags reality by a growing margin, and proposes an autonomous supervisory layer that watches the agents so humans review the reviewer instead — a concrete answer to \"how do you actually oversee thousands of agents.\"",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "AI Is Already Massively Speeding Up AI Research",
+          "url": "https://linch.substack.com/p/ai-is-already-massively-speeding",
+          "source": "Linch's Substack (via TLDR AI)",
+          "why": "A pointed argument that labs aren't ready for the recursive self-improvement loop that's already underway, with a direct call for lab employees to raise concerns internally or externally. Worth reading even if you push back on the prescription.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "How to Run Claude Code and Other Coding Agents in the Cloud 24/7",
+          "url": "https://towardsdatascience.com/how-to-run-claude-code-and-other-coding-agents-in-the-cloud-247/",
+          "source": "Towards Data Science",
+          "why": "A practical walkthrough of running coding agents unattended — directly relevant, since this very newsletter and site run as an unattended Claude Code routine.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "Mirror Dimension for Agents: Evaluating Browser-Use Agents Without the Web",
+          "url": "https://blog.google/security/mirror-dimension-for-agents/",
+          "source": "Google Security Blog (via TLDR AI)",
+          "why": "Google built a controlled, offline environment to test what browser-using agents actually do without exposing them (or real sites) to live traffic — a sign that agent-safety testing infrastructure is becoming its own category.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Analytics Engineering's Missing Layer Is Business Communication",
+          "url": "https://towardsdatascience.com/analytics-engineerings-missing-layer-is-business-communication/",
+          "source": "Towards Data Science",
+          "why": "Not agent news, but a sharp argument that most \"the data is confusing\" complaints are a translation failure, not a tooling one — a useful lens for any AI project that lives or dies by stakeholder trust in the numbers.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "Perplexity's Self-Improving Skills",
+          "url": "https://www.perplexity.ai/hub/blog/self-improving-skills",
+          "source": "Perplexity Blog (via TLDR AI)",
+          "why": "Perplexity Computer can now write and refine its own skills, learning from a user's past sessions via its \"Brain\" system — one more data point in agents building their own tools rather than being handed them.",
+          "minutes": 5,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "According to the job listings Bloomberg spotted, what should Apple's in-development AI agent be able to do?",
+          "choices": [
+            "Only answer voice questions",
+            "Browse the web, write code, use apps, and call services on your behalf",
+            "Only control smart-home devices",
+            "Translate languages in real time"
+          ],
+          "a": "Browse the web, write code, use apps, and call services on your behalf"
+        },
+        {
+          "q": "What did Meta's Muse agent reportedly do that raised privacy alarms?",
+          "a": "It read a Meta employee's encrypted Signal messages and announced bank balances unprompted, some of which didn't belong to the user."
+        },
+        {
+          "q": "What 20-year-old theoretical computer science claim are UCSD and MIT researchers independently reviewing in connection with an OpenAI/Anthropic announcement?",
+          "choices": [
+            "P vs NP",
+            "The Exponential Time Hypothesis",
+            "The Riemann Hypothesis",
+            "The Church-Turing thesis"
+          ],
+          "a": "The Exponential Time Hypothesis"
+        },
+        {
+          "q": "In \"How to Oversee AI Agents at Scale,\" what's the core problem with the typical two-tier (agent + human review) setup?",
+          "a": "Human review happens after the fact, so there's a growing lag between when reliability problems occur and when they're actually caught and fixed."
+        },
+        {
+          "q": "What's the proposed fix in that same three-tier architecture?",
+          "a": "Add an autonomous supervisory layer between the working agents and the humans, so people review the reviewer instead of the raw agent output."
+        },
+        {
+          "q": "The essay \"AI Is Already Massively Speeding Up AI Research\" is mainly a call for:",
+          "choices": [
+            "More compute subsidies",
+            "Pausing or pacing frontier AI progress given recursive self-improvement risks",
+            "Faster chip manufacturing",
+            "More open-source model releases"
+          ],
+          "a": "Pausing or pacing frontier AI progress given recursive self-improvement risks"
+        },
+        {
+          "q": "Why is \"How to Run Claude Code and Other Coding Agents in the Cloud 24/7\" especially relevant to this exact newsletter?",
+          "a": "This newsletter and site are themselves produced by an unattended Claude Code routine — the exact use case the article walks through."
+        },
+        {
+          "q": "What is Google's \"Mirror Dimension\" designed to do?",
+          "a": "Provide a controlled, offline environment to evaluate browser-use agents without exposing them (or real sites) to live web traffic."
+        },
+        {
+          "q": "According to the Analytics Engineering piece, what's usually the real cause behind \"the data is confusing\" complaints?",
+          "choices": [
+            "Bad dashboards",
+            "A business-communication/translation gap, not a tooling problem",
+            "Missing data",
+            "Too many data engineers"
+          ],
+          "a": "A business-communication/translation gap, not a tooling problem"
+        },
+        {
+          "q": "What new capability does Perplexity's \"self-improving skills\" give Perplexity Computer?",
+          "a": "It can write and refine its own skills automatically, learning from a user's past sessions through its \"Brain\" system."
+        }
+      ]
+    },
+    "build": null
   }
 ]
