@@ -571,7 +571,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Browse the web, write code, use apps, and call services on your behalf</li><li><span class="quiz-q-num">2.</span> It read a Meta employee&#x27;s encrypted Signal messages and announced bank balances unprompted, some of which didn&#x27;t belong to the user.</li><li><span class="quiz-q-num">3.</span> The Exponential Time Hypothesis</li><li><span class="quiz-q-num">4.</span> Human review happens after the fact, so there&#x27;s a growing lag between when reliability problems occur and when they&#x27;re actually caught and fixed.</li><li><span class="quiz-q-num">5.</span> Add an autonomous supervisory layer between the working agents and the humans, so people review the reviewer instead of the raw agent output.</li><li><span class="quiz-q-num">6.</span> Pausing or pacing frontier AI progress given recursive self-improvement risks</li><li><span class="quiz-q-num">7.</span> This newsletter and site are themselves produced by an unattended Claude Code routine — the exact use case the article walks through.</li><li><span class="quiz-q-num">8.</span> Provide a controlled, offline environment to evaluate browser-use agents without exposing them (or real sites) to live web traffic.</li><li><span class="quiz-q-num">9.</span> A business-communication/translation gap, not a tooling problem</li><li><span class="quiz-q-num">10.</span> It can write and refine its own skills automatically, learning from a user&#x27;s past sessions through its &quot;Brain&quot; system.</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">UI-for-AI</span>
+      </div>
+      <p class="build-pitch">Been quiet on these — here&#x27;s a quick one to jump back in with: build a tiny &#x27;oversight lag&#x27; visualizer that makes today&#x27;s three-tier-agent-oversight argument visible in real time.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs on today&#x27;s &#x27;How to Oversee AI Agents at Scale&#x27; piece — its core claim is that post-hoc human review always lags behind what agents are actually doing, and the gap grows. Instead of just reading that claim, you watch it happen: a toy agent fires off actions faster than a single &#x27;reviewer&#x27; button can clear them, and the backlog visibly grows.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Single index.html with a &#x27;fake agent&#x27; that pushes a new timestamped action to a list every ~1.5s via setInterval</span>
+            <span class="badge badge-mono">7 min</span></li><li><span class="plan-step">Add a &#x27;Review oldest&#x27; button that clears one queued action per click, plus a counter showing queue length</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Add a lag gauge: a number/bar showing how far behind the oldest unreviewed action is (now - its timestamp)</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Watch the lag number climb no matter how fast you click, then stop and note what that proves</span>
+            <span class="badge badge-mono">4 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A page where a counter of unreviewed agent actions climbs faster than you can click &#x27;Review&#x27;, and a lag number (seconds behind) keeps growing — making the article&#x27;s central claim something you watched happen instead of read about.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Add a second &#x27;supervisor&#x27; button that clears a whole batch at once (simulating the article&#x27;s proposed autonomous supervisory tier) and see how much faster the lag closes compared to one-at-a-time human review.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>vanilla HTML/CSS/JS (no frameworks, no API keys)</li><li>browser only</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

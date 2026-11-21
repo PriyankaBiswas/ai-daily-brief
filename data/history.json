@@ -12940,6 +12940,34 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Been quiet on these — here's a quick one to jump back in with: build a tiny 'oversight lag' visualizer that makes today's three-tier-agent-oversight argument visible in real time.",
+      "category": "UI-for-AI",
+      "why": "Riffs on today's 'How to Oversee AI Agents at Scale' piece — its core claim is that post-hoc human review always lags behind what agents are actually doing, and the gap grows. Instead of just reading that claim, you watch it happen: a toy agent fires off actions faster than a single 'reviewer' button can clear them, and the backlog visibly grows.",
+      "plan": [
+        {
+          "step": "Single index.html with a 'fake agent' that pushes a new timestamped action to a list every ~1.5s via setInterval",
+          "minutes": 7
+        },
+        {
+          "step": "Add a 'Review oldest' button that clears one queued action per click, plus a counter showing queue length",
+          "minutes": 8
+        },
+        {
+          "step": "Add a lag gauge: a number/bar showing how far behind the oldest unreviewed action is (now - its timestamp)",
+          "minutes": 8
+        },
+        {
+          "step": "Watch the lag number climb no matter how fast you click, then stop and note what that proves",
+          "minutes": 4
+        }
+      ],
+      "done_looks_like": "A page where a counter of unreviewed agent actions climbs faster than you can click 'Review', and a lag number (seconds behind) keeps growing — making the article's central claim something you watched happen instead of read about.",
+      "stretch_goal": "Add a second 'supervisor' button that clears a whole batch at once (simulating the article's proposed autonomous supervisory tier) and see how much faster the lag closes compared to one-at-a-time human review.",
+      "tools": [
+        "vanilla HTML/CSS/JS (no frameworks, no API keys)",
+        "browser only"
+      ]
+    }
   }
 ]
