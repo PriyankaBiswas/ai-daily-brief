@@ -563,7 +563,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> 67.2%</li><li><span class="quiz-q-num">2.</span> Levent Alpöge or Ralph Furman</li><li><span class="quiz-q-num">3.</span> $83</li><li><span class="quiz-q-num">4.</span> About $2.1 trillion</li><li><span class="quiz-q-num">5.</span> In the new paper a model rewrites its OWN weights via its own reasoning (no gradient update); weight-space programming was one model editing a DIFFERENT model&#x27;s weights.</li><li><span class="quiz-q-num">6.</span> 2 of 3 (Android and Mac; blocked on iPhone)</li><li><span class="quiz-q-num">7.</span> Notification access that had been granted for unrelated reasons</li><li><span class="quiz-q-num">8.</span> Detected October 22; confirmed publicly November 19</li><li><span class="quiz-q-num">9.</span> Tencent and CATL</li><li><span class="quiz-q-num">10.</span> Schools can decline Gemini specifically, but AI Mode and AI Overviews remain integrated into Search either way</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">fine-tuning/training</span>
+      </div>
+      <p class="build-pitch">Make a tiny model edit its own weights with no gradient, no backprop — just a hand-written rule — and see if that&#x27;s actually learning or a party trick.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Three build emails in a row went unanswered — totally fine, no backlog, no guilt. Keeping today&#x27;s deliberately small so it&#x27;s easy to pick back up. Today&#x27;s self-rewriting-weights paper claims a model can update its own weights via its own reasoning, no gradient step involved — which sounds almost too clean. Building the simplest possible toy version of that claim (a hand-rule nudge instead of calculus) gives you a gut feel for whether &#x27;no gradient&#x27; is doing real work, or just hiding a gradient-shaped heuristic under a different name.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Generate a small 2D toy classification dataset (sklearn make_classification) and a logistic regression with deliberately bad starting weights.</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write a `self_edit()` function: no .backward(), no loss.grad — just look at which examples are misclassified and nudge one weight toward the sign of the biggest mistake.</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Run 5-8 rounds of self_edit(), printing accuracy before/after each round.</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Run one real SGD gradient step on the same starting weights for comparison, and write one line: did the gradient-free rule actually learn, or just get lucky?</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A runnable script where a toy logistic regression updates its own weights across several rounds without ever computing a gradient, with printed accuracy numbers proving (or disproving) that it&#x27;s improving — plus a one-line verdict comparing it to a real gradient step.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Plot both accuracy curves (your heuristic self-edit vs. real SGD) on the same axes and see which one generalizes better on held-out data.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>numpy</li><li>scikit-learn (make_classification, train_test_split)</li><li>matplotlib (optional, for the stretch plot)</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

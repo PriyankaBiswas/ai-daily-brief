@@ -13099,6 +13099,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Make a tiny model edit its own weights with no gradient, no backprop — just a hand-written rule — and see if that's actually learning or a party trick.",
+      "category": "fine-tuning/training",
+      "why": "Three build emails in a row went unanswered — totally fine, no backlog, no guilt. Keeping today's deliberately small so it's easy to pick back up. Today's self-rewriting-weights paper claims a model can update its own weights via its own reasoning, no gradient step involved — which sounds almost too clean. Building the simplest possible toy version of that claim (a hand-rule nudge instead of calculus) gives you a gut feel for whether 'no gradient' is doing real work, or just hiding a gradient-shaped heuristic under a different name.",
+      "plan": [
+        {
+          "step": "Generate a small 2D toy classification dataset (sklearn make_classification) and a logistic regression with deliberately bad starting weights.",
+          "minutes": 5
+        },
+        {
+          "step": "Write a `self_edit()` function: no .backward(), no loss.grad — just look at which examples are misclassified and nudge one weight toward the sign of the biggest mistake.",
+          "minutes": 10
+        },
+        {
+          "step": "Run 5-8 rounds of self_edit(), printing accuracy before/after each round.",
+          "minutes": 8
+        },
+        {
+          "step": "Run one real SGD gradient step on the same starting weights for comparison, and write one line: did the gradient-free rule actually learn, or just get lucky?",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A runnable script where a toy logistic regression updates its own weights across several rounds without ever computing a gradient, with printed accuracy numbers proving (or disproving) that it's improving — plus a one-line verdict comparing it to a real gradient step.",
+      "stretch_goal": "Plot both accuracy curves (your heuristic self-edit vs. real SGD) on the same axes and see which one generalizes better on held-out data.",
+      "tools": [
+        "numpy",
+        "scikit-learn (make_classification, train_test_split)",
+        "matplotlib (optional, for the stretch plot)"
+      ]
+    }
   }
 ]
