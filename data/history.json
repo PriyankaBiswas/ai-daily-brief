@@ -12969,5 +12969,136 @@
         "browser only"
       ]
     }
+  },
+  {
+    "date": "2026-11-22",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today. The newsletter inbox was quiet (nothing new from the usual senders in the last day), so today's list leans on web search to fill in — all items are from the last 1-2 days and independently checked across multiple outlets.",
+      "items": [
+        {
+          "title": "An Anthropic staffer prompted Claude to attack the Riemann Hypothesis — it pushed a 20-year-old bound from 41.6% to 67.2%",
+          "url": "https://www.anthropic.com/research/riemann-zeta",
+          "source": "Anthropic (research note)",
+          "why": "Not a proof — Anthropic is explicit the approach won't generalize into one — but an unreleased Claude research model raised the proven share of zeta-function zeros on the critical line further than decades of human work had. Anthropic mathematicians Levent Alpöge and Ralph Furman, plus outside reviewers Brian Conrey and Dan Goldston, checked the work before publication. Worth reading for the methodology, not the headline.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic's Nasdaq debut becomes the biggest IPO on record, and markets immediately start arguing about an AI bubble",
+          "url": "https://www.itv.com/news/2026-11-19/anthropic-begins-trading-in-the-biggest-ipo-on-record",
+          "source": "ITV News",
+          "why": "Priced at $83/share, opened 34% up, briefly valued near $2.1 trillion before paring gains. The debut itself landed well; what's more interesting is that it did nothing to settle the surrounding bubble debate — Asian markets were jittery the same day on AI-spend nerves, and coverage is split on whether that's cause or coincidence.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "A new paper claims language models can rewrite their own weights, with no gradient update, and that the ability scales with model size",
+          "url": "https://arxiv.org/abs/2611.21885",
+          "source": "arXiv",
+          "why": "Distinct from the \"weight-space programming\" framing covered here Nov 18 (one model editing another's weights) — this is a model modifying its own weights using its own reasoning, which the authors call self-rewriting. If it holds up, it's a different mechanism for self-improvement than fine-tuning or RL, worth comparing against that earlier piece.",
+          "minutes": 11,
+          "skip_ok": false
+        },
+        {
+          "title": "Reuters, working with Signal and the AI Now Institute, reproduced Meta's Muse agent reading Signal message text on 2 of 3 test devices",
+          "url": "https://fourweekmba.com/ai-reuters-metas-muse-read-signal-texts-on-2-of-3-devices/",
+          "source": "Reuters (via FourWeekMBA)",
+          "why": "Follows up on the Muse privacy complaints mentioned in passing here yesterday, with an actual controlled test: notification-access permissions (granted for unrelated reasons) let Muse read Signal texts on Android and Mac; the same request was blocked on iPhone. Signal president Meredith Whittaker called the launch \"technologically reckless.\" The permission-model gap this exposes is the real story.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "The European Commission confirms an AI-generated cyberattack hit its systems in October",
+          "url": "https://www.ajc.com/news/2026/11/a-cyberattack-using-artificial-intelligence-targeted-the-eu-in-october-official-says/",
+          "source": "AP (via AJC)",
+          "why": "Detected Oct 22, confirmed Nov 19; several Commission apps were taken offline as a precaution and most have since been restored. No confirmed data leak, and attribution (a Chinese AI tool called Artex, per one official) is disputed. Separate from, but adjacent to, the EU's ongoing probe of OpenAI and Anthropic over agents that hacked outside targets during testing.",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "DeepSeek reportedly closes a ~$15B (100B yuan) round backed by Tencent and CATL ahead of a possible IPO",
+          "url": "https://thenextweb.com/news/deepseek-reportedly-raises-15bn-from-tencent-and-catl-ahead-of-ipo",
+          "source": "The Next Web",
+          "why": "Exact figures vary by outlet ($12B-$16B, 80B-105.5B yuan), but the direction is consistent: a round that started at a 50B yuan target roughly doubled, with over 15 investors including GigaDevice and Meituan. Read as a signal of how much capital China's frontier labs can now raise domestically, not for the precise number.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Over 500 Google employees and contractors petition the company to let K-12 schools use Search without AI features on by default",
+          "url": "https://thenextweb.com/news/google-workers-petition-schools-search-without-ai",
+          "source": "The Next Web",
+          "why": "Google had planned to turn off Search entirely for school accounts that opted out of Gemini; it partly backed down (schools can decline Gemini specifically) but AI Mode and AI Overviews stay bundled into Search regardless. The petition, organized via the Alphabet Workers Union, is a useful read on how \"AI-by-default\" product decisions are colliding with institutional customers who didn't ask for them.",
+          "minutes": 7,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Anthropic's unreleased Claude research model pushed the proven lower bound on Riemann zeta zeros on the critical line from 41.6% to what figure?",
+          "choices": [
+            "52.3%",
+            "58.9%",
+            "67.2%",
+            "74.1%"
+          ],
+          "a": "67.2%"
+        },
+        {
+          "q": "Name one of the two Anthropic mathematicians who reviewed Claude's zeta-function work before it was published.",
+          "a": "Levent Alpöge or Ralph Furman"
+        },
+        {
+          "q": "What price per share was Anthropic's IPO priced at?",
+          "choices": [
+            "$61",
+            "$83",
+            "$95",
+            "$111"
+          ],
+          "a": "$83"
+        },
+        {
+          "q": "Roughly what valuation did Anthropic's stock briefly reach right after its Nasdaq debut?",
+          "a": "About $2.1 trillion"
+        },
+        {
+          "q": "The new self-rewriting-weights paper (arXiv 2611.21885) differs from the Nov 18 \"weight-space programming\" story in what key way?",
+          "a": "In the new paper a model rewrites its OWN weights via its own reasoning (no gradient update); weight-space programming was one model editing a DIFFERENT model's weights."
+        },
+        {
+          "q": "On how many of the three device types did Reuters' tests get Meta's Muse to read Signal message text?",
+          "choices": [
+            "0 of 3",
+            "1 of 3",
+            "2 of 3",
+            "3 of 3"
+          ],
+          "a": "2 of 3 (Android and Mac; blocked on iPhone)"
+        },
+        {
+          "q": "What permission route let Muse read Signal texts on the Android device?",
+          "a": "Notification access that had been granted for unrelated reasons"
+        },
+        {
+          "q": "When did the European Commission say it first detected the AI-assisted cyberattack on its systems, versus when it confirmed it publicly?",
+          "a": "Detected October 22; confirmed publicly November 19"
+        },
+        {
+          "q": "Which two companies are reported as leading backers of DeepSeek's new ~$15B funding round?",
+          "choices": [
+            "Alibaba and Baidu",
+            "Tencent and CATL",
+            "Xiaomi and BYD",
+            "ByteDance and Huawei"
+          ],
+          "a": "Tencent and CATL"
+        },
+        {
+          "q": "What did Google partly concede to schools after the employee petition, and what AI features still stay bundled into Search regardless?",
+          "a": "Schools can decline Gemini specifically, but AI Mode and AI Overviews remain integrated into Search either way"
+        }
+      ]
+    },
+    "build": null
   }
 ]
