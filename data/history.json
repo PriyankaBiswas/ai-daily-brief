@@ -13129,5 +13129,144 @@
         "matplotlib (optional, for the stretch plot)"
       ]
     }
+  },
+  {
+    "date": "2026-11-23",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today — no backlog, no worries either way. Today's newsletters (Morning Brew's Tech Brew, TLDR AI, Import AI) were useful but thin or scrambled in spots, so a few items lean on web search for a cleaner, more canonical source than the newsletter's own broken redirect links.",
+      "items": [
+        {
+          "title": "Nvidia's board reverses course and reinstates Jensen Huang as CEO, five days after saying it wouldn't",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm",
+          "source": "Nvidia (SEC Form 8-K press release)",
+          "why": "On Nov 17 the board said flatly it did not intend to bring Huang back after his resignation. On Nov 22 it reinstated him unanimously, effective immediately, saying it got input from \"senior levels of the United States government\" that reinstatement posed no national security risk. The board's own investigation into him continues in parallel. Whatever flipped in five days is more interesting than the reversal itself — worth watching for reporting on what that government input actually was.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "A further Lean-checked refinement to the Riemann zeta-zero bound surfaces — but the sourcing is thin",
+          "url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+          "source": "Lean community (blog)",
+          "why": "Follows the Nov 21–22 coverage here of Anthropic's Claude-assisted push on the proven share of zeta zeros on the critical line. This week's claim is a further nudge (to roughly 67.28%) backed by a 17-million-line Lean library with no `sorry`s, plus a claimed independent replay through a second proof checker (NanoDa). Caveat worth keeping in mind: the Lean-checked and independently-replayed claims are circulating via posts from people involved, not a paper or repo README I could verify directly — and nobody, including Anthropic, is claiming RH itself is proven.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Thinking Machines releases Inkling 2 Mini, a 26.4B open-weight model that thinks longer before answering",
+          "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+          "source": "Thinking Machines (official)",
+          "why": "Does extra internal computation before responding (more test-time reasoning, same idea as o-series/R1-style models) and leads every open-weight model under 100B parameters on the DeepSWE coding benchmark. Worth a skim for where open-weight reasoning models are landing size-for-size against the frontier.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Tencent ships Hy4: a 770B-parameter open multimodal model with a 49B-active MoE and million-token context",
+          "url": "https://huggingface.co/tencent/Hy4",
+          "source": "Hugging Face (model card)",
+          "why": "Text, image, and video understanding in one open-weight model, combining sparse attention, a speculative-decoding drafter, and million-token context — aimed at coding, computer use, and long-running assistant workflows. Another data point in the open-weight MoE race alongside DeepSeek and Alibaba's recent releases.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "METR: the length of tasks frontier models can complete is still doubling roughly every 3.6 months",
+          "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
+          "source": "METR",
+          "why": "METR's quarterly capability update says frontier models now often match or beat skilled humans on well-defined coding and optimization tasks, and that public evidence can't rule out a drastic speedup in AI R&D within a couple of years. This is the kind of trend line worth tracking quarter over quarter rather than reacting to any single data point.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "A Lawrence Livermore benchmark tests whether AI agents know when to be uncertain — only two models pass reliably",
+          "url": "https://importai.substack.com/p/import-ai-482-huawei-kernel-benchmarks",
+          "source": "Import AI (Jack Clark)",
+          "why": "SciResearch-Eval gives agents a deliberately-flawed physics simulator and scores whether their reported 95% confidence intervals are honest, not just their point answers. When the simulator is missing real physics, only GPT-6 Astra and Claude Fable 5.2 stayed reliable at default settings; everything else, including Claude 5.5 at lower reasoning settings, didn't. A good concrete test of \"does the model know what it doesn't know\" rather than a vibes-based claim about it.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Chinese researchers release AscendGYM, a benchmark for AI-optimized kernels on Huawei's Ascend chips",
+          "url": "https://importai.substack.com/p/import-ai-482-huawei-kernel-benchmarks",
+          "source": "Import AI (Jack Clark)",
+          "why": "Export controls block China from frontier Western chips, so improving Huawei Ascend performance via AI-written kernels is a direct lever on closing that gap. In early tests, Opus 5 was the strongest model (via Claude Code), GPT-5.6 the most token-efficient. Worth reading as one more ingredient in China's self-improving compute stack, not as a one-off benchmark paper.",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "Stanford's Yejin Choi and Carlos Guestrin launch Noeri, a $110M bet against one-model-fits-all AI",
+          "url": "https://letsdatascience.com/news/noeri-launches-with-110m-to-build-self-improving-ai-systems-aa443e0d",
+          "source": "LetsDataScience",
+          "why": "Pitch is \"plural intelligence\": many small, specialized, continually-learning models tuned to a specific organization's data, instead of one frozen frontier model serving everyone. Backed by Menlo Ventures and others. The flagship evidence (a small orchestrated model reportedly beating GPT-5 on a Stanford microbiology team's work) is a single case study, not an independent benchmark — worth reading with that grain of salt.",
+          "minutes": 6,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What did Nvidia's board do on November 22, reversing a position it had taken on November 17?",
+          "choices": [
+            "Fired interim CEO and promoted the CFO",
+            "Reinstated Jensen Huang as CEO, effective immediately",
+            "Announced it would sell the company",
+            "Extended the independent investigation into Huang by six months"
+          ],
+          "a": "Reinstated Jensen Huang as CEO, effective immediately"
+        },
+        {
+          "q": "What did Nvidia's board say it received that let it conclude reinstating Huang posed no national security risk?",
+          "a": "Input from senior levels of the U.S. government"
+        },
+        {
+          "q": "The newest Lean-checked refinement of the Riemann zeta-zero bound (to roughly 67.28%) comes with what important caveat mentioned in today's list?",
+          "a": "The Lean-verification and independent-replay claims circulate via posts from people involved, not a verified paper/repo, and nobody claims the Riemann Hypothesis itself is proven"
+        },
+        {
+          "q": "How many parameters does Thinking Machines' new open-weight reasoning model, Inkling 2 Mini, have?",
+          "choices": [
+            "8B",
+            "14B",
+            "26.4B",
+            "70B"
+          ],
+          "a": "26.4B"
+        },
+        {
+          "q": "What benchmark does Inkling 2 Mini lead among open-weight models under 100B parameters?",
+          "a": "The DeepSWE coding benchmark"
+        },
+        {
+          "q": "Tencent's Hy4 activates how many of its 770B total parameters per token, and what's its context length?",
+          "a": "49B parameters per token active (MoE); roughly a million-token context"
+        },
+        {
+          "q": "Per METR's Q4 2026 update, roughly how often does the length of tasks frontier models can complete double?",
+          "choices": [
+            "Every 1.5 months",
+            "Every 3.6 months",
+            "Every 9 months",
+            "Every 18 months"
+          ],
+          "a": "Every 3.6 months"
+        },
+        {
+          "q": "In Lawrence Livermore's SciResearch-Eval, which two models stayed reliable at default settings when the simulator was missing real physics?",
+          "choices": [
+            "GPT-6 Astra and Claude Fable 5.2",
+            "Claude 5.5 and Gemini 4",
+            "GPT-5.6 and GLM-5.3",
+            "Opus 5 and Codex"
+          ],
+          "a": "GPT-6 Astra and Claude Fable 5.2"
+        },
+        {
+          "q": "Why does AscendGYM (the new Huawei-chip kernel-optimization benchmark) matter beyond being a research tool?",
+          "a": "It's a direct lever for China to improve Ascend chip performance via AI-written kernels, helping close the gap left by export controls on Western chips"
+        },
+        {
+          "q": "What is the core thesis behind Noeri, the new startup from Stanford's Yejin Choi and Carlos Guestrin?",
+          "a": "\"Plural intelligence\" — many small, specialized, continually-learning models each tuned to a place/people/problem, instead of one monolithic frontier model"
+        }
+      ]
+    },
+    "build": null
   }
 ]

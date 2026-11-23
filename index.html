@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Sunday, November 22, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. The newsletter inbox was quiet (nothing new from the usual senders in the last day), so today&#x27;s list leans on web search to fill in — all items are from the last 1-2 days and independently checked across multiple outlets.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Monday, November 23, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today — no backlog, no worries either way. Today&#x27;s newsletters (Morning Brew&#x27;s Tech Brew, TLDR AI, Import AI) were useful but thin or scrambled in spots, so a few items lean on web search for a cleaner, more canonical source than the newsletter&#x27;s own broken redirect links.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000090/nov23pressrelease.htm" target="_blank" rel="noopener">Nvidia&#x27;s board reverses course and reinstates Jensen Huang as CEO, five days after saying it wouldn&#x27;t</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">Nvidia (SEC Form 8-K press release)</div>
+          <p class="item-why">On Nov 17 the board said flatly it did not intend to bring Huang back after his resignation. On Nov 22 it reinstated him unanimously, effective immediately, saying it got input from &quot;senior levels of the United States government&quot; that reinstatement posed no national security risk. The board&#x27;s own investigation into him continues in parallel. Whatever flipped in five days is more interesting than the reversal itself — worth watching for reporting on what that government input actually was.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/" target="_blank" rel="noopener">A further Lean-checked refinement to the Riemann zeta-zero bound surfaces — but the sourcing is thin</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Lean community (blog)</div>
+          <p class="item-why">Follows the Nov 21–22 coverage here of Anthropic&#x27;s Claude-assisted push on the proven share of zeta zeros on the critical line. This week&#x27;s claim is a further nudge (to roughly 67.28%) backed by a 17-million-line Lean library with no `sorry`s, plus a claimed independent replay through a second proof checker (NanoDa). Caveat worth keeping in mind: the Lean-checked and independently-replayed claims are circulating via posts from people involved, not a paper or repo README I could verify directly — and nobody, including Anthropic, is claiming RH itself is proven.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://thinkingmachines.ai/news/inkling-2-mini/" target="_blank" rel="noopener">Thinking Machines releases Inkling 2 Mini, a 26.4B open-weight model that thinks longer before answering</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Thinking Machines (official)</div>
+          <p class="item-why">Does extra internal computation before responding (more test-time reasoning, same idea as o-series/R1-style models) and leads every open-weight model under 100B parameters on the DeepSWE coding benchmark. Worth a skim for where open-weight reasoning models are landing size-for-size against the frontier.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://huggingface.co/tencent/Hy4" target="_blank" rel="noopener">Tencent ships Hy4: a 770B-parameter open multimodal model with a 49B-active MoE and million-token context</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Hugging Face (model card)</div>
+          <p class="item-why">Text, image, and video understanding in one open-weight model, combining sparse attention, a speculative-decoding drafter, and million-token context — aimed at coding, computer use, and long-running assistant workflows. Another data point in the open-weight MoE race alongside DeepSeek and Alibaba&#x27;s recent releases.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://metr.org/blog/2026-11-20-q4-2026-capability-update/" target="_blank" rel="noopener">METR: the length of tasks frontier models can complete is still doubling roughly every 3.6 months</a>
+            <span class="badge badge-mono">9 min</span>
+          </div>
+          <div class="item-source">METR</div>
+          <p class="item-why">METR&#x27;s quarterly capability update says frontier models now often match or beat skilled humans on well-defined coding and optimization tasks, and that public evidence can&#x27;t rule out a drastic speedup in AI R&amp;D within a couple of years. This is the kind of trend line worth tracking quarter over quarter rather than reacting to any single data point.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://importai.substack.com/p/import-ai-482-huawei-kernel-benchmarks" target="_blank" rel="noopener">A Lawrence Livermore benchmark tests whether AI agents know when to be uncertain — only two models pass reliably</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Import AI (Jack Clark)</div>
+          <p class="item-why">SciResearch-Eval gives agents a deliberately-flawed physics simulator and scores whether their reported 95% confidence intervals are honest, not just their point answers. When the simulator is missing real physics, only GPT-6 Astra and Claude Fable 5.2 stayed reliable at default settings; everything else, including Claude 5.5 at lower reasoning settings, didn&#x27;t. A good concrete test of &quot;does the model know what it doesn&#x27;t know&quot; rather than a vibes-based claim about it.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://importai.substack.com/p/import-ai-482-huawei-kernel-benchmarks" target="_blank" rel="noopener">Chinese researchers release AscendGYM, a benchmark for AI-optimized kernels on Huawei&#x27;s Ascend chips</a>
+            <span class="badge badge-mono">7 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Import AI (Jack Clark)</div>
+          <p class="item-why">Export controls block China from frontier Western chips, so improving Huawei Ascend performance via AI-written kernels is a direct lever on closing that gap. In early tests, Opus 5 was the strongest model (via Claude Code), GPT-5.6 the most token-efficient. Worth reading as one more ingredient in China&#x27;s self-improving compute stack, not as a one-off benchmark paper.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://letsdatascience.com/news/noeri-launches-with-110m-to-build-self-improving-ai-systems-aa443e0d" target="_blank" rel="noopener">Stanford&#x27;s Yejin Choi and Carlos Guestrin launch Noeri, a $110M bet against one-model-fits-all AI</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">LetsDataScience</div>
+          <p class="item-why">Pitch is &quot;plural intelligence&quot;: many small, specialized, continually-learning models tuned to a specific organization&#x27;s data, instead of one frozen frontier model serving everyone. Backed by Menlo Ventures and others. The flagship evidence (a small orchestrated model reportedly beating GPT-5 on a Stanford microbiology team&#x27;s work) is a single case study, not an independent benchmark — worth reading with that grain of salt.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What did Nvidia&#x27;s board do on November 22, reversing a position it had taken on November 17?</p>
+          <ul class="quiz-choices"><li>Fired interim CEO and promoted the CFO</li><li>Reinstated Jensen Huang as CEO, effective immediately</li><li>Announced it would sell the company</li><li>Extended the independent investigation into Huang by six months</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What did Nvidia&#x27;s board say it received that let it conclude reinstating Huang posed no national security risk?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">The newest Lean-checked refinement of the Riemann zeta-zero bound (to roughly 67.28%) comes with what important caveat mentioned in today&#x27;s list?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How many parameters does Thinking Machines&#x27; new open-weight reasoning model, Inkling 2 Mini, have?</p>
+          <ul class="quiz-choices"><li>8B</li><li>14B</li><li>26.4B</li><li>70B</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What benchmark does Inkling 2 Mini lead among open-weight models under 100B parameters?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Tencent&#x27;s Hy4 activates how many of its 770B total parameters per token, and what&#x27;s its context length?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Per METR&#x27;s Q4 2026 update, roughly how often does the length of tasks frontier models can complete double?</p>
+          <ul class="quiz-choices"><li>Every 1.5 months</li><li>Every 3.6 months</li><li>Every 9 months</li><li>Every 18 months</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In Lawrence Livermore&#x27;s SciResearch-Eval, which two models stayed reliable at default settings when the simulator was missing real physics?</p>
+          <ul class="quiz-choices"><li>GPT-6 Astra and Claude Fable 5.2</li><li>Claude 5.5 and Gemini 4</li><li>GPT-5.6 and GLM-5.3</li><li>Opus 5 and Codex</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Why does AscendGYM (the new Huawei-chip kernel-optimization benchmark) matter beyond being a research tool?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What is the core thesis behind Noeri, the new startup from Stanford&#x27;s Yejin Choi and Carlos Guestrin?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Reinstated Jensen Huang as CEO, effective immediately</li><li><span class="quiz-q-num">2.</span> Input from senior levels of the U.S. government</li><li><span class="quiz-q-num">3.</span> The Lean-verification and independent-replay claims circulate via posts from people involved, not a verified paper/repo, and nobody claims the Riemann Hypothesis itself is proven</li><li><span class="quiz-q-num">4.</span> 26.4B</li><li><span class="quiz-q-num">5.</span> The DeepSWE coding benchmark</li><li><span class="quiz-q-num">6.</span> 49B parameters per token active (MoE); roughly a million-token context</li><li><span class="quiz-q-num">7.</span> Every 3.6 months</li><li><span class="quiz-q-num">8.</span> GPT-6 Astra and Claude Fable 5.2</li><li><span class="quiz-q-num">9.</span> It&#x27;s a direct lever for China to improve Ascend chip performance via AI-written kernels, helping close the gap left by export controls on Western chips</li><li><span class="quiz-q-num">10.</span> &quot;Plural intelligence&quot; — many small, specialized, continually-learning models each tuned to a place/people/problem, instead of one monolithic frontier model</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 16 – 22</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Sun, Nov 22</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today. The newsletter inbox was quiet (nothing new from the usual senders in the last day), so today&#x27;s list leans on web search to fill in — all items are from the last 1-2 days and independently checked across multiple outlets.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://www.anthropic.com/research/riemann-zeta" target="_blank" rel="noopener">An Anthropic staffer prompted Claude to attack the Riemann Hypothesis — it pushed a 20-year-old bound from 41.6% to 67.2%</a>
@@ -596,21 +722,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>numpy</li><li>scikit-learn (make_classification, train_test_split)</li><li>matplotlib (optional, for the stretch plot)</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 16 – 22</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Sat, Nov 21</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
