@@ -13202,7 +13202,7 @@
       ],
       "quiz": [
         {
-          "q": "What did Nvidia's board do on November 22, reversing a position it had taken on November 17?",
+          "q": "What did Nvidia's board do on November 22-23, reversing a position it had taken on November 17?",
           "choices": [
             "Fired interim CEO and promoted the CFO",
             "Reinstated Jensen Huang as CEO, effective immediately",
@@ -13212,8 +13212,8 @@
           "a": "Reinstated Jensen Huang as CEO, effective immediately"
         },
         {
-          "q": "What did Nvidia's board say it received that let it conclude reinstating Huang posed no national security risk?",
-          "a": "Input from senior levels of the U.S. government"
+          "q": "What new committee did Nvidia's board form alongside reinstating Huang?",
+          "a": "A National Security and Export Control Committee of independent directors"
         },
         {
           "q": "The newest Lean-checked refinement of the Riemann zeta-zero bound (to roughly 67.28%) comes with what important caveat mentioned in today's list?",
