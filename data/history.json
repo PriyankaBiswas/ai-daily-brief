@@ -13268,5 +13268,150 @@
       ]
     },
     "build": null
+  },
+  {
+    "date": "2026-11-24",
+    "reading": {
+      "intro": "No reply on yesterday's list, so no recap today — no backlog, no worries either way. Eight items, ~57 min: a paper on language models writing their own weight edits, Anthropic's new agent trio for shipping PRs, DeepMind pairing Gemini agents with a formal prover to find cheaper quantum algorithms, what a high prompt-cache hit rate can hide, a Linux exploit-shielding runtime from OpenAI and Cisco, Amazon's reported $7.5B buy of Decart, Z.ai's Loop Transformer flagship, and Microsoft's in-house RL infra for post-training.",
+      "items": [
+        {
+          "title": "A new paper claims language models can write their own weight-edit programs, with no gradient step",
+          "url": "https://arxiv.org/abs/2611.29513",
+          "source": "arXiv (SELFWRITE, via TLDR AI)",
+          "why": "Today's models only change through training recipes or scaffolding — gradient descent writes every update, not the model. SELFWRITE instead has the current model study its own reasoning on fresh problems, inspect its own weights and activations in a live Python session, and write a program that constructs a low-rank weight edit for itself from white-box primitives. It reportedly raises accuracy on a held-out split the loop never sees, without a single gradient step — a genuinely different self-improvement mechanism, not just more RL.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "Anthropic ships Claude Ship, a trio of agents that gets GitHub pull requests ready to merge",
+          "url": "https://code.claude.com/docs/en/claude-ship",
+          "source": "Anthropic / Claude Code docs (via TLDR AI)",
+          "why": "Code Review flags issues, PR Steward pushes the fixes, and Claude Approvals checks the change against a team's approval policy — three separate agent roles on one PR instead of one do-everything bot. Worth a skim just to see how Anthropic is dividing 'get this merged' into discrete jobs.",
+          "minutes": 6,
+          "skip_ok": false
+        },
+        {
+          "title": "DeepMind pairs swarms of Gemini 4 agents with the Lean prover to find cheaper quantum algorithms",
+          "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+          "source": "Google DeepMind (via TLDR AI)",
+          "why": "Teams of Gemini 4 agents searched for cheaper versions of known quantum circuits, with every candidate checked for correctness in the Lean theorem prover rather than taken on faith. One circuit relevant to fusion-energy research came out 11.8x cheaper to run. A clean example of agents plus formal verification doing real scientific work, not just topping a benchmark.",
+          "minutes": 7,
+          "skip_ok": false
+        },
+        {
+          "title": "What a 90% prompt-cache hit rate hides about the attention work underneath",
+          "url": "https://towardsdatascience.com/what-a-90-prompt-cache-hit-rate-hides-about-attention-work/",
+          "source": "Towards Data Science",
+          "why": "A high cache-hit rate on your API bill looks like a clean win, but it can mask how much attention compute you're still burning per request and where your prompt structure is quietly forcing cache misses. Useful if you're running Claude Code or any agent loop at volume and only watching the cost dashboard.",
+          "minutes": 9,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI and Cisco ship Shirudo, an open-source runtime that shields unpatched Linux systems",
+          "url": "https://links.tldrnewsletter.com/4goFjt",
+          "source": "TLDR AI",
+          "why": "Lets teams deploy temporary shields that block known exploit paths while the real patch is still rolling out, instead of eating the downtime of an emergency restart. Pragmatic infrastructure security rather than a model release — worth knowing if you run production Linux.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Amazon reportedly pays $7.5B for Decart's AI optimization stack ahead of a push to sell Trainium capacity",
+          "url": "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/",
+          "source": "TechCrunch (via TLDR AI)",
+          "why": "Decart's DOS software helps models run efficiently across Nvidia, Google, and Amazon hardware — Amazon buying the team and tech outright is a direct bet on making Trainium cheaper to run on, which matters for anyone watching whether AWS can compete with Nvidia on inference economics.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Z.ai launches GLM-5.4, its first flagship model built on a 'Loop Transformer'",
+          "url": "https://z.ai/blog/glm-5.4",
+          "source": "Z.ai (via TLDR AI)",
+          "why": "Reuses a shared block of layers to reason more deeply without adding parameters, with Z.ai claiming intelligence comparable to models several times its size. Another entrant in the 'do more per parameter' race alongside DeepSeek and Alibaba's recent open-weight releases.",
+          "minutes": 6,
+          "skip_ok": true
+        },
+        {
+          "title": "Microsoft AI details Rocket, its in-house RL framework for post-training a 3-trillion-parameter model from scratch",
+          "url": "https://microsoft.ai/news/rl-infrastructure-at-microsoft-ai/",
+          "source": "Microsoft AI (via TLDR AI)",
+          "why": "Built to post-train MAI Base 2 without distilling from any third-party model's outputs — a look at what it actually takes, infrastructure-wise, for a lab to go fully independent of OpenAI/Anthropic/Google weights. Dense and infra-heavy; skip if RL training systems aren't your thing.",
+          "minutes": 9,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does SELFWRITE have the model do each generation, instead of relying on a gradient-descent update?",
+          "choices": [
+            "Nothing — it still uses ordinary gradient descent",
+            "Inspect its own weights/activations and write a program that builds a low-rank weight edit for itself",
+            "Ask a human engineer to hand-edit the weights",
+            "Retrain from scratch on a bigger dataset"
+          ],
+          "a": "Inspect its own weights/activations and write a program that builds a low-rank weight edit for itself"
+        },
+        {
+          "q": "Name the three agents that make up Anthropic's Claude Ship.",
+          "a": "Code Review, PR Steward, and Claude Approvals"
+        },
+        {
+          "q": "What formal-verification tool did DeepMind use to check the correctness of its agent-discovered quantum algorithms?",
+          "choices": [
+            "Coq",
+            "Lean",
+            "Isabelle",
+            "Z3"
+          ],
+          "a": "Lean"
+        },
+        {
+          "q": "By roughly what factor did one DeepMind-found quantum circuit (relevant to fusion-energy research) cut its computing cost?",
+          "a": "About 11.8x"
+        },
+        {
+          "q": "According to today's Towards Data Science piece, a high prompt-cache hit rate can hide what?",
+          "choices": [
+            "That you aren't actually using the model at all",
+            "How much attention compute you're still burning per request, and where your prompt structure forces cache misses",
+            "That your API key has been leaked",
+            "Nothing — it's a perfect proxy for total cost"
+          ],
+          "a": "How much attention compute you're still burning per request, and where your prompt structure forces cache misses"
+        },
+        {
+          "q": "What does OpenAI and Cisco's Shirudo runtime let teams do while a real patch is still rolling out?",
+          "a": "Deploy temporary shields that block known exploit paths without restarting the service"
+        },
+        {
+          "q": "Roughly how much did Amazon reportedly pay for Decart's AI optimization stack?",
+          "choices": [
+            "$750M",
+            "$1.5B",
+            "$7.5B",
+            "$75B"
+          ],
+          "a": "$7.5B"
+        },
+        {
+          "q": "What chip business is Amazon reportedly trying to strengthen by acquiring Decart's optimization tech?",
+          "a": "Selling / renting out Trainium chip capacity"
+        },
+        {
+          "q": "What architectural idea does Z.ai's GLM-5.4 use to reason more deeply without adding parameters?",
+          "a": "A 'Loop Transformer' that reuses a shared block of layers"
+        },
+        {
+          "q": "What is Microsoft AI's Rocket framework built for?",
+          "choices": [
+            "Serving production inference traffic",
+            "In-house reinforcement learning to post-train a 3T-parameter model without distilling from third-party models",
+            "A new chatbot front-end",
+            "A GitHub PR review bot"
+          ],
+          "a": "In-house reinforcement learning to post-train a 3T-parameter model without distilling from third-party models"
+        }
+      ]
+    },
+    "build": null
   }
 ]

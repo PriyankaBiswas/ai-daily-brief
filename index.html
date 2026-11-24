@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Monday, November 23, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today — no backlog, no worries either way. Today&#x27;s newsletters (Morning Brew&#x27;s Tech Brew, TLDR AI, Import AI) were useful but thin or scrambled in spots, so a few items lean on web search for a cleaner, more canonical source than the newsletter&#x27;s own broken redirect links.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Tuesday, November 24, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today — no backlog, no worries either way. Eight items, ~57 min: a paper on language models writing their own weight edits, Anthropic&#x27;s new agent trio for shipping PRs, DeepMind pairing Gemini agents with a formal prover to find cheaper quantum algorithms, what a high prompt-cache hit rate can hide, a Linux exploit-shielding runtime from OpenAI and Cisco, Amazon&#x27;s reported $7.5B buy of Decart, Z.ai&#x27;s Loop Transformer flagship, and Microsoft&#x27;s in-house RL infra for post-training.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://arxiv.org/abs/2611.29513" target="_blank" rel="noopener">A new paper claims language models can write their own weight-edit programs, with no gradient step</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">arXiv (SELFWRITE, via TLDR AI)</div>
+          <p class="item-why">Today&#x27;s models only change through training recipes or scaffolding — gradient descent writes every update, not the model. SELFWRITE instead has the current model study its own reasoning on fresh problems, inspect its own weights and activations in a live Python session, and write a program that constructs a low-rank weight edit for itself from white-box primitives. It reportedly raises accuracy on a held-out split the loop never sees, without a single gradient step — a genuinely different self-improvement mechanism, not just more RL.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://code.claude.com/docs/en/claude-ship" target="_blank" rel="noopener">Anthropic ships Claude Ship, a trio of agents that gets GitHub pull requests ready to merge</a>
+            <span class="badge badge-mono">6 min</span>
+          </div>
+          <div class="item-source">Anthropic / Claude Code docs (via TLDR AI)</div>
+          <p class="item-why">Code Review flags issues, PR Steward pushes the fixes, and Claude Approvals checks the change against a team&#x27;s approval policy — three separate agent roles on one PR instead of one do-everything bot. Worth a skim just to see how Anthropic is dividing &#x27;get this merged&#x27; into discrete jobs.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/" target="_blank" rel="noopener">DeepMind pairs swarms of Gemini 4 agents with the Lean prover to find cheaper quantum algorithms</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">Google DeepMind (via TLDR AI)</div>
+          <p class="item-why">Teams of Gemini 4 agents searched for cheaper versions of known quantum circuits, with every candidate checked for correctness in the Lean theorem prover rather than taken on faith. One circuit relevant to fusion-energy research came out 11.8x cheaper to run. A clean example of agents plus formal verification doing real scientific work, not just topping a benchmark.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/what-a-90-prompt-cache-hit-rate-hides-about-attention-work/" target="_blank" rel="noopener">What a 90% prompt-cache hit rate hides about the attention work underneath</a>
+            <span class="badge badge-mono">9 min</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">A high cache-hit rate on your API bill looks like a clean win, but it can mask how much attention compute you&#x27;re still burning per request and where your prompt structure is quietly forcing cache misses. Useful if you&#x27;re running Claude Code or any agent loop at volume and only watching the cost dashboard.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://links.tldrnewsletter.com/4goFjt" target="_blank" rel="noopener">OpenAI and Cisco ship Shirudo, an open-source runtime that shields unpatched Linux systems</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Lets teams deploy temporary shields that block known exploit paths while the real patch is still rolling out, instead of eating the downtime of an emergency restart. Pragmatic infrastructure security rather than a model release — worth knowing if you run production Linux.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/" target="_blank" rel="noopener">Amazon reportedly pays $7.5B for Decart&#x27;s AI optimization stack ahead of a push to sell Trainium capacity</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TechCrunch (via TLDR AI)</div>
+          <p class="item-why">Decart&#x27;s DOS software helps models run efficiently across Nvidia, Google, and Amazon hardware — Amazon buying the team and tech outright is a direct bet on making Trainium cheaper to run on, which matters for anyone watching whether AWS can compete with Nvidia on inference economics.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://z.ai/blog/glm-5.4" target="_blank" rel="noopener">Z.ai launches GLM-5.4, its first flagship model built on a &#x27;Loop Transformer&#x27;</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Z.ai (via TLDR AI)</div>
+          <p class="item-why">Reuses a shared block of layers to reason more deeply without adding parameters, with Z.ai claiming intelligence comparable to models several times its size. Another entrant in the &#x27;do more per parameter&#x27; race alongside DeepSeek and Alibaba&#x27;s recent open-weight releases.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://microsoft.ai/news/rl-infrastructure-at-microsoft-ai/" target="_blank" rel="noopener">Microsoft AI details Rocket, its in-house RL framework for post-training a 3-trillion-parameter model from scratch</a>
+            <span class="badge badge-mono">9 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Microsoft AI (via TLDR AI)</div>
+          <p class="item-why">Built to post-train MAI Base 2 without distilling from any third-party model&#x27;s outputs — a look at what it actually takes, infrastructure-wise, for a lab to go fully independent of OpenAI/Anthropic/Google weights. Dense and infra-heavy; skip if RL training systems aren&#x27;t your thing.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What does SELFWRITE have the model do each generation, instead of relying on a gradient-descent update?</p>
+          <ul class="quiz-choices"><li>Nothing — it still uses ordinary gradient descent</li><li>Inspect its own weights/activations and write a program that builds a low-rank weight edit for itself</li><li>Ask a human engineer to hand-edit the weights</li><li>Retrain from scratch on a bigger dataset</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Name the three agents that make up Anthropic&#x27;s Claude Ship.</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What formal-verification tool did DeepMind use to check the correctness of its agent-discovered quantum algorithms?</p>
+          <ul class="quiz-choices"><li>Coq</li><li>Lean</li><li>Isabelle</li><li>Z3</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">By roughly what factor did one DeepMind-found quantum circuit (relevant to fusion-energy research) cut its computing cost?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to today&#x27;s Towards Data Science piece, a high prompt-cache hit rate can hide what?</p>
+          <ul class="quiz-choices"><li>That you aren&#x27;t actually using the model at all</li><li>How much attention compute you&#x27;re still burning per request, and where your prompt structure forces cache misses</li><li>That your API key has been leaked</li><li>Nothing — it&#x27;s a perfect proxy for total cost</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What does OpenAI and Cisco&#x27;s Shirudo runtime let teams do while a real patch is still rolling out?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Roughly how much did Amazon reportedly pay for Decart&#x27;s AI optimization stack?</p>
+          <ul class="quiz-choices"><li>$750M</li><li>$1.5B</li><li>$7.5B</li><li>$75B</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What chip business is Amazon reportedly trying to strengthen by acquiring Decart&#x27;s optimization tech?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What architectural idea does Z.ai&#x27;s GLM-5.4 use to reason more deeply without adding parameters?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What is Microsoft AI&#x27;s Rocket framework built for?</p>
+          <ul class="quiz-choices"><li>Serving production inference traffic</li><li>In-house reinforcement learning to post-train a 3T-parameter model without distilling from third-party models</li><li>A new chatbot front-end</li><li>A GitHub PR review bot</li></ul>
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Inspect its own weights/activations and write a program that builds a low-rank weight edit for itself</li><li><span class="quiz-q-num">2.</span> Code Review, PR Steward, and Claude Approvals</li><li><span class="quiz-q-num">3.</span> Lean</li><li><span class="quiz-q-num">4.</span> About 11.8x</li><li><span class="quiz-q-num">5.</span> How much attention compute you&#x27;re still burning per request, and where your prompt structure forces cache misses</li><li><span class="quiz-q-num">6.</span> Deploy temporary shields that block known exploit paths without restarting the service</li><li><span class="quiz-q-num">7.</span> $7.5B</li><li><span class="quiz-q-num">8.</span> Selling / renting out Trainium chip capacity</li><li><span class="quiz-q-num">9.</span> A &#x27;Loop Transformer&#x27; that reuses a shared block of layers</li><li><span class="quiz-q-num">10.</span> In-house reinforcement learning to post-train a 3T-parameter model without distilling from third-party models</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 23 – 29</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Mon, Nov 23</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today — no backlog, no worries either way. Today&#x27;s newsletters (Morning Brew&#x27;s Tech Brew, TLDR AI, Import AI) were useful but thin or scrambled in spots, so a few items lean on web search for a cleaner, more canonical source than the newsletter&#x27;s own broken redirect links.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director" target="_blank" rel="noopener">Nvidia&#x27;s board reverses course and reinstates Jensen Huang as CEO, five days after saying it wouldn&#x27;t</a>
@@ -572,18 +698,8 @@ details[open] > summary::before {
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Reinstated Jensen Huang as CEO, effective immediately</li><li><span class="quiz-q-num">2.</span> A National Security and Export Control Committee of independent directors</li><li><span class="quiz-q-num">3.</span> The Lean-verification and independent-replay claims circulate via posts from people involved, not a verified paper/repo, and nobody claims the Riemann Hypothesis itself is proven</li><li><span class="quiz-q-num">4.</span> 26.4B</li><li><span class="quiz-q-num">5.</span> The DeepSWE coding benchmark</li><li><span class="quiz-q-num">6.</span> 49B parameters per token active (MoE); roughly a million-token context</li><li><span class="quiz-q-num">7.</span> Every 3.6 months</li><li><span class="quiz-q-num">8.</span> GPT-6 Astra and Claude Fable 5.2</li><li><span class="quiz-q-num">9.</span> It&#x27;s a direct lever for China to improve Ascend chip performance via AI-written kernels, helping close the gap left by export controls on Western chips</li><li><span class="quiz-q-num">10.</span> &quot;Plural intelligence&quot; — many small, specialized, continually-learning models each tuned to a place/people/problem, instead of one monolithic frontier model</li></ol>
     </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
+                    </details>
+                </details>
                 <details class="week-entry">
                   <summary>Week of Nov 16 – 22</summary>
                   
