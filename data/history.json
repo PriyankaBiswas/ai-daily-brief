@@ -13412,6 +13412,31 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Been quiet on these — here's a quick one to jump back in with: build a 15-line calculator that shows how a 90% prompt-cache hit rate can still hide most of your real attention compute.",
+      "category": "data/eval exercise",
+      "why": "Today's Towards Data Science piece on prompt caching argues a high cache-hit % looks like a clean cost win but can mask how much attention compute you're still burning per request. Cache-hit rate counts tokens reused, not compute saved — attention cost scales with total sequence length, so every fresh token in a growing agent conversation still forces a full attention pass over the entire cached prefix. This build makes that gap visible with real numbers instead of taking the claim on faith.",
+      "plan": [
+        {
+          "step": "Model per-request cost: tokens_cached, tokens_new, a cached-token discount (e.g. 10% of fresh-token price), and a naive 'savings = hit_rate' assumption",
+          "minutes": 8
+        },
+        {
+          "step": "Simulate a growing multi-turn agent conversation (context grows each turn) and compute the REAL compute multiplier: attention work scales with total context length regardless of what's cached, not just with the fresh-token count",
+          "minutes": 10
+        },
+        {
+          "step": "Print a table comparing reported cache-hit % to the real compute multiplier turn by turn, and watch the gap widen as the conversation grows",
+          "minutes": 7
+        }
+      ],
+      "done_looks_like": "A printed table (or quick matplotlib line chart) showing, turn by turn, the reported cache-hit rate sitting flat near 90% while the real attention-compute multiplier keeps climbing — proof the two numbers diverge exactly as the article claims.",
+      "stretch_goal": "Swap in real numbers from your own Claude Code or API usage dashboard (actual cached vs. fresh token counts) instead of simulated ones, and see how big the real gap is for your own sessions.",
+      "tools": [
+        "Python (stdlib only)",
+        "matplotlib (optional, for the chart)",
+        "Anthropic API prompt caching / cache_control (optional, for real numbers)"
+      ]
+    }
   }
 ]

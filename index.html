@@ -571,7 +571,38 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Inspect its own weights/activations and write a program that builds a low-rank weight edit for itself</li><li><span class="quiz-q-num">2.</span> Code Review, PR Steward, and Claude Approvals</li><li><span class="quiz-q-num">3.</span> Lean</li><li><span class="quiz-q-num">4.</span> About 11.8x</li><li><span class="quiz-q-num">5.</span> How much attention compute you&#x27;re still burning per request, and where your prompt structure forces cache misses</li><li><span class="quiz-q-num">6.</span> Deploy temporary shields that block known exploit paths without restarting the service</li><li><span class="quiz-q-num">7.</span> $7.5B</li><li><span class="quiz-q-num">8.</span> Selling / renting out Trainium chip capacity</li><li><span class="quiz-q-num">9.</span> A &#x27;Loop Transformer&#x27; that reuses a shared block of layers</li><li><span class="quiz-q-num">10.</span> In-house reinforcement learning to post-train a 3T-parameter model without distilling from third-party models</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">data/eval exercise</span>
+      </div>
+      <p class="build-pitch">Been quiet on these — here&#x27;s a quick one to jump back in with: build a 15-line calculator that shows how a 90% prompt-cache hit rate can still hide most of your real attention compute.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Today&#x27;s Towards Data Science piece on prompt caching argues a high cache-hit % looks like a clean cost win but can mask how much attention compute you&#x27;re still burning per request. Cache-hit rate counts tokens reused, not compute saved — attention cost scales with total sequence length, so every fresh token in a growing agent conversation still forces a full attention pass over the entire cached prefix. This build makes that gap visible with real numbers instead of taking the claim on faith.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Model per-request cost: tokens_cached, tokens_new, a cached-token discount (e.g. 10% of fresh-token price), and a naive &#x27;savings = hit_rate&#x27; assumption</span>
+            <span class="badge badge-mono">8 min</span></li><li><span class="plan-step">Simulate a growing multi-turn agent conversation (context grows each turn) and compute the REAL compute multiplier: attention work scales with total context length regardless of what&#x27;s cached, not just with the fresh-token count</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Print a table comparing reported cache-hit % to the real compute multiplier turn by turn, and watch the gap widen as the conversation grows</span>
+            <span class="badge badge-mono">7 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A printed table (or quick matplotlib line chart) showing, turn by turn, the reported cache-hit rate sitting flat near 90% while the real attention-compute multiplier keeps climbing — proof the two numbers diverge exactly as the article claims.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Swap in real numbers from your own Claude Code or API usage dashboard (actual cached vs. fresh token counts) instead of simulated ones, and see how big the real gap is for your own sessions.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Python (stdlib only)</li><li>matplotlib (optional, for the chart)</li><li>Anthropic API prompt caching / cache_control (optional, for real numbers)</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
