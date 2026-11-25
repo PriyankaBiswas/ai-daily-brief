@@ -462,8 +462,126 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Tuesday, November 24, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today — no backlog, no worries either way. Eight items, ~57 min: a paper on language models writing their own weight edits, Anthropic&#x27;s new agent trio for shipping PRs, DeepMind pairing Gemini agents with a formal prover to find cheaper quantum algorithms, what a high prompt-cache hit rate can hide, a Linux exploit-shielding runtime from OpenAI and Cisco, Amazon&#x27;s reported $7.5B buy of Decart, Z.ai&#x27;s Loop Transformer flagship, and Microsoft&#x27;s in-house RL infra for post-training.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Wednesday, November 25, 2026</h2>
+    <div class="day-content"><p class="day-intro">Newsletter coverage was thin overnight — mostly TLDR AI, since nothing new from Towards Data Science, Import AI, or Tech Brew survived dedup against the last few days. Today leans security and science: Amazon says attackers&#x27; AI agents found and exploited a zero-day with almost no human steering, and OpenAI claims GPT-6 models can design working proteins with reasoning and code alone — though the lab results are messier than that headline suggests. Also: a fresh refinement in the matrix-multiplication-exponent proof, research arguing agent swarms underperform well-rested solo agents, and three incremental ships (Cognition&#x27;s SWE-2.1, PrismML&#x27;s Ternary Bonsai 2.5, and Claude Artifacts as desktop apps).</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input/" target="_blank" rel="noopener">Amazon says attackers&#x27; AI agents found and exploited a zero-day with almost no human input</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Ars Technica (via TLDR AI)</div>
+          <p class="item-why">Amazon reports AI agents running on Cairn — an open-source, Claude Code/Codex-backed &#x27;pentest&#x27; framework that Palo Alto Networks&#x27; Unit 42 already linked to a Chinese-speaking group&#x27;s 25-operation campaign against 19 organizations (10 breached) — found and exploited a zero-day in a medical-imaging AI app on a university server with no human oversight beyond a one-line goal prompt. A direct continuation of this year&#x27;s agentic-security thread: offensive AI agents are operating at machine speed with minimal steering, and defenders are the ones playing catch-up.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://mlq.ai/news/openai-says-its-gpt-6-models-designed-working-proteins-with-reasoning-and-code-alone/" target="_blank" rel="noopener">OpenAI says GPT-6 models can design working proteins with reasoning and code alone — though the full picture is messier</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">OpenAI (via MLQ.ai, TLDR AI)</div>
+          <p class="item-why">In wet-lab tests run with partner Onava, 35 of 322 GPT-6-designed minibinders actually bound their targets, and an internal model beat RFdiffusion on a motif-scaffolding benchmark (43.7% vs 27.8%). But the &#x27;no specialized biology models&#x27; framing is contested by OpenAI&#x27;s own numbers: the pipeline still leaned on dedicated structure-prediction tools like Boltz-2 and ESMFold2 to filter candidates, and sequence-to-structure prediction — a TM-score of 0.38 vs 0.93 for a dedicated predictor — remains a clear weak point. A real result, just not the clean end-to-end story the headline implies.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf" target="_blank" rel="noopener">A new refinement surfaces in the matrix-multiplication-exponent proof (ω ≤ 9/4)</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">OpenAI math preprint repo (via TLDR AI)</div>
+          <p class="item-why">Builds on October&#x27;s OpenAI-credited proof that the matrix-multiplication exponent is at most 9/4 (beating the prior 2.258 bound), using degenerations of polynomial-multiplication tensors and Strassen&#x27;s asymptotic spectrum of tensors. This Nov. 24 preprint pushes the same result further — part of the same &#x27;AI labs proving pure math theorems&#x27; thread as September&#x27;s Riemann zeta-zero work. Still asymptotic and unrefereed; the implied algorithms have no practical matrix size.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://cognition.com/blog/swe-2-1" target="_blank" rel="noopener">Cognition ships SWE-2.1, an upgraded coding/agent model built on Kimi K3</a>
+            <span class="badge badge-mono">7 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Cognition (via TLDR AI)</div>
+          <p class="item-why">Follow-up to September&#x27;s SWE-2 (itself a post-trained Kimi K3), reportedly adding more RL training and stronger security skills, with Cognition claiming the score roughly doubles to 50.0 on Terminal-Bench 4.1 — the harder, current edition where SWE-2 had trailed badly (27.3%). The numbers are Cognition&#x27;s own; no independent eval yet.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.paradigm3.org/research/swarms" target="_blank" rel="noopener">New research argues agent swarms underperform single fresh-context agents at equal token budgets</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Paradigm (via TLDR AI)</div>
+          <p class="item-why">The paper reports that adding more agents to a swarm introduces a performance penalty that grows with swarm size, and that the &#x27;swarm premium&#x27; seen in earlier benchmarks mostly reflected single agents going stale over a long run rather than any real multi-agent advantage — give a solo agent a fresh context reset instead and it wins. If it holds up under scrutiny, it&#x27;s a useful corrective to a lot of swarm-orchestration hype.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://prismml.com/news/bonsai-2-5-27b" target="_blank" rel="noopener">PrismML ships Ternary Bonsai 2.5 27B, a small on-device model for agentic coding</a>
+            <span class="badge badge-mono">7 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">PrismML (via TLDR AI)</div>
+          <p class="item-why">Follow-up to September&#x27;s Ternary Bonsai 2 27B (27B params, weights limited to three values, ~98% of full-precision benchmark performance at roughly 1/9th the size). This version reportedly keeps the same ~5.9GB footprint while pushing agentic coding, multi-turn tool use, and multi-step task execution further — aimed at on-device agents that touch private files without a round trip to a frontier API.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://claude.com/resources/articles/install-as-app" target="_blank" rel="noopener">Claude Artifacts become installable Mac and Windows apps</a>
+            <span class="badge badge-mono">3 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Anthropic (via TLDR AI)</div>
+          <p class="item-why">In beta on all plans — each artifact now gets its own icon and window, updates live when the artifact changes, and can be shared like a small standalone app. Minor, but a real shift in how artifacts get used day to day instead of staying inside a chat tab.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">What open-source framework were the AI agents in Amazon&#x27;s zero-day report running on?</p>
+          <ul class="quiz-choices"><li>ARTEX</li><li>Cairn</li><li>AutoSwarm</li><li>CoreBreak</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How much human oversight did those agents reportedly have beyond the initial prompt?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In OpenAI&#x27;s wet-lab tests, how many of the 322 GPT-6-designed minibinders actually bound their targets?</p>
+          <ul class="quiz-choices"><li>35</li><li>161</li><li>280</li><li>322</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What specialized tools did OpenAI&#x27;s protein-design pipeline still rely on, despite the &#x27;no specialized biology models&#x27; framing?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What is the current claimed upper bound on the matrix-multiplication exponent ω?</p>
+          <ul class="quiz-choices"><li>2</li><li>9/4 (2.25)</li><li>2.258</li><li>3</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What mathematical theory does the matrix-multiplication exponent proof lean on?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What base model is Cognition&#x27;s SWE-2.1 built on top of?</p>
+          <ul class="quiz-choices"><li>GPT-6</li><li>Kimi K3</li><li>DeepSeek V4</li><li>Claude Fable 5.1</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Per the new swarm research, what actually caused earlier &#x27;swarm premium&#x27; results in benchmarks?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What&#x27;s distinctive about Ternary Bonsai 2.5 27B&#x27;s weights?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What changes about Claude Artifacts with the new Mac/Windows apps?</p>
+          <ul class="quiz-choices"><li>Nothing, it&#x27;s the same browser view</li><li>They become installable with their own icon/window, live updates, and can be shared like a standalone app</li><li>They now require a paid plan</li><li>They only work offline</li></ul>
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Cairn</li><li><span class="quiz-q-num">2.</span> None — just a one-line goal prompt, no step-by-step human guidance</li><li><span class="quiz-q-num">3.</span> 35</li><li><span class="quiz-q-num">4.</span> Dedicated structure-prediction models like Boltz-2 and ESMFold2, used to filter candidates</li><li><span class="quiz-q-num">5.</span> 9/4 (2.25)</li><li><span class="quiz-q-num">6.</span> Strassen&#x27;s theory of the asymptotic spectrum of tensors (plus degenerations of polynomial-multiplication tensors)</li><li><span class="quiz-q-num">7.</span> Kimi K3</li><li><span class="quiz-q-num">8.</span> Single agents going stale over a long run, not a genuine multi-agent advantage</li><li><span class="quiz-q-num">9.</span> They&#x27;re quantized to just three values (ternary quantization), ~1/9th the size at ~98% of full-precision benchmark performance</li><li><span class="quiz-q-num">10.</span> They become installable with their own icon/window, live updates, and can be shared like a standalone app</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 23 – 29</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Tue, Nov 24</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today — no backlog, no worries either way. Eight items, ~57 min: a paper on language models writing their own weight edits, Anthropic&#x27;s new agent trio for shipping PRs, DeepMind pairing Gemini agents with a formal prover to find cheaper quantum algorithms, what a high prompt-cache hit rate can hide, a Linux exploit-shielding runtime from OpenAI and Cisco, Amazon&#x27;s reported $7.5B buy of Decart, Z.ai&#x27;s Loop Transformer flagship, and Microsoft&#x27;s in-house RL infra for post-training.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://arxiv.org/abs/2611.29513" target="_blank" rel="noopener">A new paper claims language models can write their own weight-edit programs, with no gradient step</a>
@@ -603,21 +721,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python (stdlib only)</li><li>matplotlib (optional, for the chart)</li><li>Anthropic API prompt caching / cache_control (optional, for real numbers)</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 23 – 29</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Mon, Nov 23</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today — no backlog, no worries either way. Today&#x27;s newsletters (Morning Brew&#x27;s Tech Brew, TLDR AI, Import AI) were useful but thin or scrambled in spots, so a few items lean on web search for a cleaner, more canonical source than the newsletter&#x27;s own broken redirect links.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">

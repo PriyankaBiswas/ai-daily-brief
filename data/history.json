@@ -13438,5 +13438,142 @@
         "Anthropic API prompt caching / cache_control (optional, for real numbers)"
       ]
     }
+  },
+  {
+    "date": "2026-11-25",
+    "reading": {
+      "intro": "Newsletter coverage was thin overnight — mostly TLDR AI, since nothing new from Towards Data Science, Import AI, or Tech Brew survived dedup against the last few days. Today leans security and science: Amazon says attackers' AI agents found and exploited a zero-day with almost no human steering, and OpenAI claims GPT-6 models can design working proteins with reasoning and code alone — though the lab results are messier than that headline suggests. Also: a fresh refinement in the matrix-multiplication-exponent proof, research arguing agent swarms underperform well-rested solo agents, and three incremental ships (Cognition's SWE-2.1, PrismML's Ternary Bonsai 2.5, and Claude Artifacts as desktop apps).",
+      "items": [
+        {
+          "title": "Amazon says attackers' AI agents found and exploited a zero-day with almost no human input",
+          "url": "https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input/",
+          "source": "Ars Technica (via TLDR AI)",
+          "why": "Amazon reports AI agents running on Cairn — an open-source, Claude Code/Codex-backed 'pentest' framework that Palo Alto Networks' Unit 42 already linked to a Chinese-speaking group's 25-operation campaign against 19 organizations (10 breached) — found and exploited a zero-day in a medical-imaging AI app on a university server with no human oversight beyond a one-line goal prompt. A direct continuation of this year's agentic-security thread: offensive AI agents are operating at machine speed with minimal steering, and defenders are the ones playing catch-up.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "OpenAI says GPT-6 models can design working proteins with reasoning and code alone — though the full picture is messier",
+          "url": "https://mlq.ai/news/openai-says-its-gpt-6-models-designed-working-proteins-with-reasoning-and-code-alone/",
+          "source": "OpenAI (via MLQ.ai, TLDR AI)",
+          "why": "In wet-lab tests run with partner Onava, 35 of 322 GPT-6-designed minibinders actually bound their targets, and an internal model beat RFdiffusion on a motif-scaffolding benchmark (43.7% vs 27.8%). But the 'no specialized biology models' framing is contested by OpenAI's own numbers: the pipeline still leaned on dedicated structure-prediction tools like Boltz-2 and ESMFold2 to filter candidates, and sequence-to-structure prediction — a TM-score of 0.38 vs 0.93 for a dedicated predictor — remains a clear weak point. A real result, just not the clean end-to-end story the headline implies.",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "A new refinement surfaces in the matrix-multiplication-exponent proof (ω ≤ 9/4)",
+          "url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+          "source": "OpenAI math preprint repo (via TLDR AI)",
+          "why": "Builds on October's OpenAI-credited proof that the matrix-multiplication exponent is at most 9/4 (beating the prior 2.258 bound), using degenerations of polynomial-multiplication tensors and Strassen's asymptotic spectrum of tensors. This Nov. 24 preprint pushes the same result further — part of the same 'AI labs proving pure math theorems' thread as September's Riemann zeta-zero work. Still asymptotic and unrefereed; the implied algorithms have no practical matrix size.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "Cognition ships SWE-2.1, an upgraded coding/agent model built on Kimi K3",
+          "url": "https://cognition.com/blog/swe-2-1",
+          "source": "Cognition (via TLDR AI)",
+          "why": "Follow-up to September's SWE-2 (itself a post-trained Kimi K3), reportedly adding more RL training and stronger security skills, with Cognition claiming the score roughly doubles to 50.0 on Terminal-Bench 4.1 — the harder, current edition where SWE-2 had trailed badly (27.3%). The numbers are Cognition's own; no independent eval yet.",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "New research argues agent swarms underperform single fresh-context agents at equal token budgets",
+          "url": "https://www.paradigm3.org/research/swarms",
+          "source": "Paradigm (via TLDR AI)",
+          "why": "The paper reports that adding more agents to a swarm introduces a performance penalty that grows with swarm size, and that the 'swarm premium' seen in earlier benchmarks mostly reflected single agents going stale over a long run rather than any real multi-agent advantage — give a solo agent a fresh context reset instead and it wins. If it holds up under scrutiny, it's a useful corrective to a lot of swarm-orchestration hype.",
+          "minutes": 10,
+          "skip_ok": true
+        },
+        {
+          "title": "PrismML ships Ternary Bonsai 2.5 27B, a small on-device model for agentic coding",
+          "url": "https://prismml.com/news/bonsai-2-5-27b",
+          "source": "PrismML (via TLDR AI)",
+          "why": "Follow-up to September's Ternary Bonsai 2 27B (27B params, weights limited to three values, ~98% of full-precision benchmark performance at roughly 1/9th the size). This version reportedly keeps the same ~5.9GB footprint while pushing agentic coding, multi-turn tool use, and multi-step task execution further — aimed at on-device agents that touch private files without a round trip to a frontier API.",
+          "minutes": 7,
+          "skip_ok": true
+        },
+        {
+          "title": "Claude Artifacts become installable Mac and Windows apps",
+          "url": "https://claude.com/resources/articles/install-as-app",
+          "source": "Anthropic (via TLDR AI)",
+          "why": "In beta on all plans — each artifact now gets its own icon and window, updates live when the artifact changes, and can be shared like a small standalone app. Minor, but a real shift in how artifacts get used day to day instead of staying inside a chat tab.",
+          "minutes": 3,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What open-source framework were the AI agents in Amazon's zero-day report running on?",
+          "choices": [
+            "ARTEX",
+            "Cairn",
+            "AutoSwarm",
+            "CoreBreak"
+          ],
+          "a": "Cairn"
+        },
+        {
+          "q": "How much human oversight did those agents reportedly have beyond the initial prompt?",
+          "a": "None — just a one-line goal prompt, no step-by-step human guidance"
+        },
+        {
+          "q": "In OpenAI's wet-lab tests, how many of the 322 GPT-6-designed minibinders actually bound their targets?",
+          "choices": [
+            "35",
+            "161",
+            "280",
+            "322"
+          ],
+          "a": "35"
+        },
+        {
+          "q": "What specialized tools did OpenAI's protein-design pipeline still rely on, despite the 'no specialized biology models' framing?",
+          "a": "Dedicated structure-prediction models like Boltz-2 and ESMFold2, used to filter candidates"
+        },
+        {
+          "q": "What is the current claimed upper bound on the matrix-multiplication exponent ω?",
+          "choices": [
+            "2",
+            "9/4 (2.25)",
+            "2.258",
+            "3"
+          ],
+          "a": "9/4 (2.25)"
+        },
+        {
+          "q": "What mathematical theory does the matrix-multiplication exponent proof lean on?",
+          "a": "Strassen's theory of the asymptotic spectrum of tensors (plus degenerations of polynomial-multiplication tensors)"
+        },
+        {
+          "q": "What base model is Cognition's SWE-2.1 built on top of?",
+          "choices": [
+            "GPT-6",
+            "Kimi K3",
+            "DeepSeek V4",
+            "Claude Fable 5.1"
+          ],
+          "a": "Kimi K3"
+        },
+        {
+          "q": "Per the new swarm research, what actually caused earlier 'swarm premium' results in benchmarks?",
+          "a": "Single agents going stale over a long run, not a genuine multi-agent advantage"
+        },
+        {
+          "q": "What's distinctive about Ternary Bonsai 2.5 27B's weights?",
+          "a": "They're quantized to just three values (ternary quantization), ~1/9th the size at ~98% of full-precision benchmark performance"
+        },
+        {
+          "q": "What changes about Claude Artifacts with the new Mac/Windows apps?",
+          "choices": [
+            "Nothing, it's the same browser view",
+            "They become installable with their own icon/window, live updates, and can be shared like a standalone app",
+            "They now require a paid plan",
+            "They only work offline"
+          ],
+          "a": "They become installable with their own icon/window, live updates, and can be shared like a standalone app"
+        }
+      ]
+    },
+    "build": null
   }
 ]
