@@ -13574,6 +13574,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Been quiet on these — here's a quick one to jump back in with: write a one-prompt agent that finishes a goal on its own loop, the same trick behind Amazon's zero-day story.",
+      "category": "agent/tool-building",
+      "why": "Riffs on today's #1 item: Amazon's report of AI agents (on the Cairn framework) finding and exploiting a zero-day from a single one-line goal prompt, with no step-by-step human steering. You'll build a toy version of that exact mechanic — a loop that keeps calling Claude with one tool until the model itself decides it's done — which is the core agentic pattern under all the scarier headlines.",
+      "plan": [
+        {
+          "step": "Pick a trivial goal and exactly one tool (e.g. 'find the largest file in this repo' with a list_files tool).",
+          "minutes": 5
+        },
+        {
+          "step": "Write the loop: send the goal + tool definition to Claude, execute whatever tool call comes back, feed the result in as a new message, repeat until Claude replies with a final answer instead of a tool call.",
+          "minutes": 10
+        },
+        {
+          "step": "Run it end-to-end from the single starting prompt with zero follow-up input from you — confirm it reaches an answer alone.",
+          "minutes": 10
+        },
+        {
+          "step": "Print the full transcript (goal, each tool call, each result, final answer) so you can see the autonomy loop at a glance.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "`python one_shot_agent.py \"<goal>\"` runs with no further input from you and prints a final answer plus the tool-call transcript that got it there.",
+      "stretch_goal": "Give it a second tool and see whether it picks the right one on its own, unprompted.",
+      "tools": [
+        "Anthropic Messages API (claude-sonnet-5)",
+        "Python",
+        "anthropic SDK (tool_use / tool_result blocks)"
+      ]
+    }
   }
 ]

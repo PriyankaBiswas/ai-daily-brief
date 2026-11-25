@@ -563,7 +563,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Cairn</li><li><span class="quiz-q-num">2.</span> None — just a one-line goal prompt, no step-by-step human guidance</li><li><span class="quiz-q-num">3.</span> 35</li><li><span class="quiz-q-num">4.</span> Dedicated structure-prediction models like Boltz-2 and ESMFold2, used to filter candidates</li><li><span class="quiz-q-num">5.</span> 9/4 (2.25)</li><li><span class="quiz-q-num">6.</span> Strassen&#x27;s theory of the asymptotic spectrum of tensors (plus degenerations of polynomial-multiplication tensors)</li><li><span class="quiz-q-num">7.</span> Kimi K3</li><li><span class="quiz-q-num">8.</span> Single agents going stale over a long run, not a genuine multi-agent advantage</li><li><span class="quiz-q-num">9.</span> They&#x27;re quantized to just three values (ternary quantization), ~1/9th the size at ~98% of full-precision benchmark performance</li><li><span class="quiz-q-num">10.</span> They become installable with their own icon/window, live updates, and can be shared like a standalone app</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">agent/tool-building</span>
+      </div>
+      <p class="build-pitch">Been quiet on these — here&#x27;s a quick one to jump back in with: write a one-prompt agent that finishes a goal on its own loop, the same trick behind Amazon&#x27;s zero-day story.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs on today&#x27;s #1 item: Amazon&#x27;s report of AI agents (on the Cairn framework) finding and exploiting a zero-day from a single one-line goal prompt, with no step-by-step human steering. You&#x27;ll build a toy version of that exact mechanic — a loop that keeps calling Claude with one tool until the model itself decides it&#x27;s done — which is the core agentic pattern under all the scarier headlines.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Pick a trivial goal and exactly one tool (e.g. &#x27;find the largest file in this repo&#x27; with a list_files tool).</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write the loop: send the goal + tool definition to Claude, execute whatever tool call comes back, feed the result in as a new message, repeat until Claude replies with a final answer instead of a tool call.</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Run it end-to-end from the single starting prompt with zero follow-up input from you — confirm it reaches an answer alone.</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Print the full transcript (goal, each tool call, each result, final answer) so you can see the autonomy loop at a glance.</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>`python one_shot_agent.py &quot;&lt;goal&gt;&quot;` runs with no further input from you and prints a final answer plus the tool-call transcript that got it there.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Give it a second tool and see whether it picks the right one on its own, unprompted.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Anthropic Messages API (claude-sonnet-5)</li><li>Python</li><li>anthropic SDK (tool_use / tool_result blocks)</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
