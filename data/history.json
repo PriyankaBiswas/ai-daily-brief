@@ -13740,6 +13740,36 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Been quiet on these — here's a quick one to jump back in with: benchmark model latency the way today's \"Latency Doesn't Lie\" post did, and see if raw speed actually predicts size.",
+      "category": "API-exploration",
+      "why": "Riffs directly on today's reading item about reverse-engineering Jev's base model from response latency — this gives you hands-on intuition for why prefill/decode cost scales with model size, and why throughput is a real (if noisy) fingerprint.",
+      "plan": [
+        {
+          "step": "Pick 2-3 models you can hit right now — a clear 'big' and 'small' pair (e.g. GPT-4o vs GPT-4o-mini, Claude Sonnet vs Haiku, or a local Ollama 1B vs 7B/8B model).",
+          "minutes": 5
+        },
+        {
+          "step": "Write a ~15-line script that sends the same fixed prompt to each model and times time-to-first-token plus total tokens/sec.",
+          "minutes": 10
+        },
+        {
+          "step": "Run it 3x per model and print a table of model vs avg latency vs tokens/sec.",
+          "minutes": 10
+        },
+        {
+          "step": "Before you look anything up, write one sentence guessing which model is 'bigger' based purely on your numbers — then check if you're right.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "A printed table of 2-3 models with avg time-to-first-token and tokens/sec side by side, plus your written guess of which is biggest made before checking — so you can see whether raw throughput actually tracks size the way the blog post assumed.",
+      "stretch_goal": "Add a mid-size third model and see if the latency gaps are evenly spaced or clustered — real model families usually aren't linear.",
+      "tools": [
+        "Python",
+        "time.monotonic / time.perf_counter",
+        "openai or anthropic SDK (or requests)",
+        "Ollama, if you want a free local comparison point"
+      ]
+    }
   }
 ]

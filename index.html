@@ -563,7 +563,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Anthropic</li><li><span class="quiz-q-num">2.</span> Any of: quadratic programming, mixed-integer non-linear programming, large-scale optimization, semidefinite programming</li><li><span class="quiz-q-num">3.</span> 21-32%</li><li><span class="quiz-q-num">4.</span> No — they rarely misused what they found</li><li><span class="quiz-q-num">5.</span> Qwen3.5-35B-A3B</li><li><span class="quiz-q-num">6.</span> System One workloads are input-heavy, so prefill dominates cost, and that cost/latency profile matched a specific model</li><li><span class="quiz-q-num">7.</span> 480B</li><li><span class="quiz-q-num">8.</span> It includes matching, lip-synced audio</li><li><span class="quiz-q-num">9.</span> Put in less effort</li><li><span class="quiz-q-num">10.</span> The ability to search/browse the web as it looked on a specific past date, up to 365 days back</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">API-exploration</span>
+      </div>
+      <p class="build-pitch">Been quiet on these — here&#x27;s a quick one to jump back in with: benchmark model latency the way today&#x27;s &quot;Latency Doesn&#x27;t Lie&quot; post did, and see if raw speed actually predicts size.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs directly on today&#x27;s reading item about reverse-engineering Jev&#x27;s base model from response latency — this gives you hands-on intuition for why prefill/decode cost scales with model size, and why throughput is a real (if noisy) fingerprint.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Pick 2-3 models you can hit right now — a clear &#x27;big&#x27; and &#x27;small&#x27; pair (e.g. GPT-4o vs GPT-4o-mini, Claude Sonnet vs Haiku, or a local Ollama 1B vs 7B/8B model).</span>
+            <span class="badge badge-mono">5 min</span></li><li><span class="plan-step">Write a ~15-line script that sends the same fixed prompt to each model and times time-to-first-token plus total tokens/sec.</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Run it 3x per model and print a table of model vs avg latency vs tokens/sec.</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Before you look anything up, write one sentence guessing which model is &#x27;bigger&#x27; based purely on your numbers — then check if you&#x27;re right.</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>A printed table of 2-3 models with avg time-to-first-token and tokens/sec side by side, plus your written guess of which is biggest made before checking — so you can see whether raw throughput actually tracks size the way the blog post assumed.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Add a mid-size third model and see if the latency gaps are evenly spaced or clustered — real model families usually aren&#x27;t linear.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Python</li><li>time.monotonic / time.perf_counter</li><li>openai or anthropic SDK (or requests)</li><li>Ollama, if you want a free local comparison point</li></ul>
+        </div>
+    </div></div>
   </section>
 
   
