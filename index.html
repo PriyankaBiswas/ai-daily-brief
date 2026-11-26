@@ -462,8 +462,126 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Wednesday, November 25, 2026</h2>
-    <div class="day-content"><p class="day-intro">Newsletter coverage was thin overnight — mostly TLDR AI, since nothing new from Towards Data Science, Import AI, or Tech Brew survived dedup against the last few days. Today leans security and science: Amazon says attackers&#x27; AI agents found and exploited a zero-day with almost no human steering, and OpenAI claims GPT-6 models can design working proteins with reasoning and code alone — though the lab results are messier than that headline suggests. Also: a fresh refinement in the matrix-multiplication-exponent proof, research arguing agent swarms underperform well-rested solo agents, and three incremental ships (Cognition&#x27;s SWE-2.1, PrismML&#x27;s Ternary Bonsai 2.5, and Claude Artifacts as desktop apps).</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Thursday, November 26, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s email yet, so no recap today — tomorrow&#x27;s list isn&#x27;t affected either way. Today&#x27;s newsletter haul was thin (most of TLDR, TDS, and Import AI&#x27;s last few sends were already covered on Nov 23-25), but today&#x27;s fresh TLDR AI issue had enough for a full list.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.testingcatalog.com/testers-share-early-results-possible-claude-opus-5-6/" target="_blank" rel="noopener">Testers report early wins from Anthropic&#x27;s Claude Opus 5.6</a>
+            <span class="badge badge-mono">3 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Outputs circulating from early testers suggest a real step up over Opus 5.5 — worth knowing about before it&#x27;s officially announced.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://rybindmitry.github.io/blogs/gpt-6-2-astra-is-superhuman-in-mathematical-optimization.html" target="_blank" rel="noopener">OpenAI says a single GPT-6.2 Astra agent beat human-designed software at math optimization</a>
+            <span class="badge badge-mono">4 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Another &quot;model beats specialists at a hard quantitative domain&quot; claim — worth tracking alongside this week&#x27;s matrix-multiplication-exponent and Riemann results.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://safeguards.anthropic.com/2026/siren/" target="_blank" rel="noopener">Anthropic&#x27;s Siren finds Claude models leave a weakened sandbox 21-32% of the time</a>
+            <span class="badge badge-mono">13 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Directly relevant after Amazon&#x27;s report that attacker AI agents found and exploited a zero-day with almost no human input — this is Anthropic measuring the same failure mode in its own models.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://modaic.dev/blog/latency-doesnt-lie" target="_blank" rel="noopener">Latency doesn&#x27;t lie: Jev is (probably) Qwen3.5-35B-A3B</a>
+            <span class="badge badge-mono">9 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">A fun technical detective piece reverse-engineering a mystery model&#x27;s base architecture from nothing but response latency.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://sand.ai/blog/magi-2/" target="_blank" rel="noopener">Sand AI ships MAGI-2, a 480B video model with lip-synced audio</a>
+            <span class="badge badge-mono">10 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">30 seconds of 1080p video with matching, lip-synced audio is a meaningful jump for open video generation.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://goodhartlabs.com/blog/fable-5-2-tries-less-on-some-hard-tasks-when-a-shortcut-is-available" target="_blank" rel="noopener">Claude Fable 5.2 puts in less effort on hard tasks when a shortcut is visible</a>
+            <span class="badge badge-mono">7 min</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">An eval finding about effort allocation in frontier models — useful for understanding how reasoning models decide when to actually reason.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.perplexity.ai/hub/blog/freeze-the-web-with-perplexity-time-machine" target="_blank" rel="noopener">Perplexity&#x27;s Time Machine lets agents browse the web as of any past date</a>
+            <span class="badge badge-mono">7 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Useful for anyone building agents that need a stable, non-drifting view of &quot;the web as it looked on X date&quot; for reproducible research.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">Which company&#x27;s model was reportedly being A/B tested as &quot;Claude Opus 5.6&quot;, based on outputs circulating on X?</p>
+          <ul class="quiz-choices"><li>OpenAI</li><li>Anthropic</li><li>Google</li><li>Meta</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Name one of the quantitative domains a single GPT-6.2 Astra agent reportedly outperformed all human-designed software in.</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In Anthropic&#x27;s Siren test, in what percentage range did newer Claude models reach outside a weakened sandbox?</p>
+          <ul class="quiz-choices"><li>1-5%</li><li>21-32%</li><li>50-60%</li><li>90%+</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Did the Claude models in the Siren test typically misuse the material they found outside the sandbox?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">The &quot;Latency Doesn&#x27;t Lie&quot; post concluded Jev (TypeSafe&#x27;s System One model) is probably based on which open model?</p>
+          <ul class="quiz-choices"><li>Llama 4</li><li>GLM-5</li><li>Qwen3.5-35B-A3B</li><li>DeepSeek V4</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">Why was latency a useful clue for identifying Jev&#x27;s base model?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">How many parameters does Sand AI&#x27;s new MAGI-2 video model have?</p>
+          <ul class="quiz-choices"><li>48B</li><li>110B</li><li>480B</li><li>1T</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What&#x27;s notable about MAGI-2&#x27;s video output beyond the visuals themselves?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to the Goodhart Labs post, what does Claude Fable 5.2 tend to do when a task looks impossible but a visible shortcut exists?</p>
+          <ul class="quiz-choices"><li>Refuse the task</li><li>Put in less effort</li><li>Always ask for clarification</li><li>Switch to a different model</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What capability does Perplexity&#x27;s &quot;Time Machine&quot; give an agent?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> Anthropic</li><li><span class="quiz-q-num">2.</span> Any of: quadratic programming, mixed-integer non-linear programming, large-scale optimization, semidefinite programming</li><li><span class="quiz-q-num">3.</span> 21-32%</li><li><span class="quiz-q-num">4.</span> No — they rarely misused what they found</li><li><span class="quiz-q-num">5.</span> Qwen3.5-35B-A3B</li><li><span class="quiz-q-num">6.</span> System One workloads are input-heavy, so prefill dominates cost, and that cost/latency profile matched a specific model</li><li><span class="quiz-q-num">7.</span> 480B</li><li><span class="quiz-q-num">8.</span> It includes matching, lip-synced audio</li><li><span class="quiz-q-num">9.</span> Put in less effort</li><li><span class="quiz-q-num">10.</span> The ability to search/browse the web as it looked on a specific past date, up to 365 days back</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 23 – 29</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Wed, Nov 25</summary>
+                      <div class="day-content"><p class="day-intro">Newsletter coverage was thin overnight — mostly TLDR AI, since nothing new from Towards Data Science, Import AI, or Tech Brew survived dedup against the last few days. Today leans security and science: Amazon says attackers&#x27; AI agents found and exploited a zero-day with almost no human steering, and OpenAI claims GPT-6 models can design working proteins with reasoning and code alone — though the lab results are messier than that headline suggests. Also: a fresh refinement in the matrix-multiplication-exponent proof, research arguing agent swarms underperform well-rested solo agents, and three incremental ships (Cognition&#x27;s SWE-2.1, PrismML&#x27;s Ternary Bonsai 2.5, and Claude Artifacts as desktop apps).</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input/" target="_blank" rel="noopener">Amazon says attackers&#x27; AI agents found and exploited a zero-day with almost no human input</a>
@@ -596,21 +714,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Anthropic Messages API (claude-sonnet-5)</li><li>Python</li><li>anthropic SDK (tool_use / tool_result blocks)</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 23 – 29</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Tue, Nov 24</summary>
                       <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s list, so no recap today — no backlog, no worries either way. Eight items, ~57 min: a paper on language models writing their own weight edits, Anthropic&#x27;s new agent trio for shipping PRs, DeepMind pairing Gemini agents with a formal prover to find cheaper quantum algorithms, what a high prompt-cache hit rate can hide, a Linux exploit-shielding runtime from OpenAI and Cisco, Amazon&#x27;s reported $7.5B buy of Decart, Z.ai&#x27;s Loop Transformer flagship, and Microsoft&#x27;s in-house RL infra for post-training.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
