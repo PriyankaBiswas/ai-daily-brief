@@ -571,7 +571,39 @@ details[open] > summary::before {
     <details class="answers">
       <summary>🔒 Answers</summary>
       <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The New Stack</li><li><span class="quiz-q-num">2.</span> False — they produce noticeably fewer reasoning and output tokens</li><li><span class="quiz-q-num">3.</span> About $1,500</li><li><span class="quiz-q-num">4.</span> Sculptor</li><li><span class="quiz-q-num">5.</span> $10M-$100M</li><li><span class="quiz-q-num">6.</span> A rotation and a global scale fit in closed form</li><li><span class="quiz-q-num">7.</span> The Platonic Representation Hypothesis</li><li><span class="quiz-q-num">8.</span> Custom training loops and model serving</li><li><span class="quiz-q-num">9.</span> A software dependency / supply-chain risk</li><li><span class="quiz-q-num">10.</span> DuckDB and Polars</li></ol>
-    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+    </details><h3 class="section-label">Build idea</h3>
+    <div class="build-card">
+      <div class="build-head">
+        <span class="badge badge-category">prompt-engineering</span>
+      </div>
+      <p class="build-pitch">Been quiet on these — here&#x27;s a quick one to jump back in with: dial a model&#x27;s &quot;reasoning effort&quot; yourself and watch exactly where quality cracks, before Astra/Sol users have to tell you.</p>
+      <div class="build-field">
+        <h4>Why</h4>
+        <p>Riffs directly on today&#x27;s lead story — OpenAI&#x27;s GPT-6.2 Astra and Sol shipping with fewer reasoning/output tokens and testers noticing the quality hit. This gives you hands-on proof of that exact tradeoff: same puzzle, three effort levels, see where the answer breaks.</p>
+      </div>
+      <div class="build-field">
+        <h4>Plan</h4>
+        <ol class="plan-list"><li><span class="plan-step">Pick one deliberately tricky multi-step puzzle (a word problem or logic riddle with a non-obvious trap — something you&#x27;d get wrong if you rushed it).</span>
+            <span class="badge badge-mono">4 min</span></li><li><span class="plan-step">Write a ~15-line script (Anthropic Python SDK) that sends the SAME puzzle to Claude three times: once told to answer immediately with no working shown, once told to think briefly, once given an explicit extended-thinking budget.</span>
+            <span class="badge badge-mono">10 min</span></li><li><span class="plan-step">Run it and print the three answers side by side with their lengths.</span>
+            <span class="badge badge-mono">6 min</span></li><li><span class="plan-step">Mark each answer right or wrong, and write one sentence on exactly which effort level is where it flipped from wrong to right.</span>
+            <span class="badge badge-mono">5 min</span></li></ol>
+      </div>
+      <div class="build-field">
+        <h4>Done looks like</h4>
+        <p>Three answers to the same puzzle from three effort settings, graded right/wrong, with one sentence pointing to the exact effort level where quality cracked — the same cost-vs-quality tradeoff Astra/Sol testers are complaining about, reproduced on your own machine.</p>
+      </div>
+      
+        <div class="build-field">
+          <h4>Stretch goal</h4>
+          <p>Run the same three-tier test on 2 more puzzle types (math vs. logic vs. reading comprehension) and see if the quality cliff shows up at the same effort level every time, or if it&#x27;s puzzle-dependent.</p>
+        </div>
+      
+        <div class="build-field">
+          <h4>Tools</h4>
+          <ul class="tools-list"><li>Anthropic Python SDK (anthropic)</li><li>Claude API extended thinking / effort parameter</li><li>a multi-step reasoning puzzle</li></ul>
+        </div>
+    </div></div>
   </section>
 
   

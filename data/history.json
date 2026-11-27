@@ -13903,6 +13903,35 @@
         }
       ]
     },
-    "build": null
+    "build": {
+      "pitch": "Been quiet on these — here's a quick one to jump back in with: dial a model's \"reasoning effort\" yourself and watch exactly where quality cracks, before Astra/Sol users have to tell you.",
+      "category": "prompt-engineering",
+      "why": "Riffs directly on today's lead story — OpenAI's GPT-6.2 Astra and Sol shipping with fewer reasoning/output tokens and testers noticing the quality hit. This gives you hands-on proof of that exact tradeoff: same puzzle, three effort levels, see where the answer breaks.",
+      "plan": [
+        {
+          "step": "Pick one deliberately tricky multi-step puzzle (a word problem or logic riddle with a non-obvious trap — something you'd get wrong if you rushed it).",
+          "minutes": 4
+        },
+        {
+          "step": "Write a ~15-line script (Anthropic Python SDK) that sends the SAME puzzle to Claude three times: once told to answer immediately with no working shown, once told to think briefly, once given an explicit extended-thinking budget.",
+          "minutes": 10
+        },
+        {
+          "step": "Run it and print the three answers side by side with their lengths.",
+          "minutes": 6
+        },
+        {
+          "step": "Mark each answer right or wrong, and write one sentence on exactly which effort level is where it flipped from wrong to right.",
+          "minutes": 5
+        }
+      ],
+      "done_looks_like": "Three answers to the same puzzle from three effort settings, graded right/wrong, with one sentence pointing to the exact effort level where quality cracked — the same cost-vs-quality tradeoff Astra/Sol testers are complaining about, reproduced on your own machine.",
+      "stretch_goal": "Run the same three-tier test on 2 more puzzle types (math vs. logic vs. reading comprehension) and see if the quality cliff shows up at the same effort level every time, or if it's puzzle-dependent.",
+      "tools": [
+        "Anthropic Python SDK (anthropic)",
+        "Claude API extended thinking / effort parameter",
+        "a multi-step reasoning puzzle"
+      ]
+    }
   }
 ]
