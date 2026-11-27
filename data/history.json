@@ -13771,5 +13771,138 @@
         "Ollama, if you want a free local comparison point"
       ]
     }
+  },
+  {
+    "date": "2026-11-27",
+    "reading": {
+      "intro": "No reply on yesterday's email yet, so no recap today — today's list length wasn't affected either way. Thanksgiving slowed most newsletters down this week (no fresh Rundown, DeepLearning.AI, Import AI, or The New Stack issues in the window), so today leans on a fresh TLDR AI send plus Tuesday's Towards Data Science and Latent Space issues, which hadn't been tapped yet.",
+      "items": [
+        {
+          "title": "OpenAI's GPT-6.2 Astra and Sol face backlash over cost-driven cuts to reasoning",
+          "url": "https://thenewstack.io/astra-reasoning-effort-cost/",
+          "source": "The New Stack / TLDR AI",
+          "why": "Both new flagship models are shipping with noticeably fewer reasoning and output tokens than their predecessors, and early testers are pushing back hard — a visible signal OpenAI is now trading answer quality for serving cost, not just racing on capability.",
+          "minutes": 4,
+          "skip_ok": false
+        },
+        {
+          "title": "How Clay builds GTM agents — Jeff Barg, Head of AI",
+          "url": "https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/how_clay_builds_gtm_agents_jeff_barg_head_of_ai?play=01a21990-d1c6-7a0c-b8e0-fa2c1f04b55c",
+          "source": "Latent Space",
+          "why": "A rare, granular look at running agents at real GTM scale: roughly $1,500 to score all 40 million companies in Clay's database with a classifier, why their first tool-loop agent (Sculptor) got rebuilt into a full coding agent, and Jeff's rule of thumb for when post-training your own model actually pays off ($10-100M in inference spend).",
+          "minutes": 10,
+          "skip_ok": false
+        },
+        {
+          "title": "Plato's Key: LLMs can borrow each other's representations with just a rotation and a scale",
+          "url": "https://hazyresearch.stanford.edu/blog/2026-11-25-platos-key",
+          "source": "Hazy Research (Stanford) / TLDR AI",
+          "why": "Direct test of the Platonic Representation Hypothesis — separately trained models converge on geometrically similar internal representations, and one LLM can use another's representations in place of its own after only a simple closed-form rotation-and-scale transform, no gradient descent required.",
+          "minutes": 8,
+          "skip_ok": false
+        },
+        {
+          "title": "CoreWeave Forge connects custom training loops to model serving",
+          "url": "https://thenewstack.io/coreweave-forge-training-loops/",
+          "source": "The New Stack / Towards Data Science",
+          "why": "Infra news for anyone training custom models: Forge targets the usually hand-glued gap between \"we trained a good checkpoint\" and \"it's actually being served.\"",
+          "minutes": 5,
+          "skip_ok": false
+        },
+        {
+          "title": "Your model is a dependency",
+          "url": "https://www.cesarsotovalero.net/blog/your-model-is-a-dependency.html",
+          "source": "TLDR AI",
+          "why": "Argues the LLM you pick is a software dependency like any other — it can bloat, break, or quietly turn into a liability — and that the software supply-chain playbook (pinning, auditing, fallback plans) applies to model choice almost line for line.",
+          "minutes": 16,
+          "skip_ok": true
+        },
+        {
+          "title": "Anthropic preps a Google Drive file browser inside Claude",
+          "url": "https://www.testingcatalog.com/anthropic-prepares-google-drive-file-browser-for-claude/",
+          "source": "TLDR AI",
+          "why": "Small but concrete sign of where Projects is headed — browsing and searching Docs, Sheets, and Slides directly from Claude's sidebar.",
+          "minutes": 2,
+          "skip_ok": true
+        },
+        {
+          "title": "DuckDB 2.0 vs Polars 2.0 in five real-world tests and one 14x gap",
+          "url": "https://towardsdatascience.com/duckdb-20-vs-polars-20-in-five-real-world-tests-and-one-14x-gap/",
+          "source": "Towards Data Science",
+          "why": "A hands-on benchmark of the two most popular in-process data tools' 2.0 releases across five realistic workloads, with one test showing a 14x performance gap between them.",
+          "minutes": 8,
+          "skip_ok": true
+        },
+        {
+          "title": "A second LLM judge hit 87.5% precision but still left 21 of 33 cases for humans",
+          "url": "https://towardsdatascience.com/a-second-llm-judge-hit-875-precision-but-left-21-of-33-for-humans/",
+          "source": "Towards Data Science",
+          "why": "Concrete numbers on where LLM-as-judge pipelines still fall short — useful if you're building eval or moderation systems and deciding how much to automate versus route to a human.",
+          "minutes": 6,
+          "skip_ok": true
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which outlet's reporting framed OpenAI's GPT-6.2 Astra and Sol launch around a shift toward cost control?",
+          "choices": [
+            "The New Stack",
+            "TechCrunch",
+            "Axios",
+            "Wired"
+          ],
+          "a": "The New Stack"
+        },
+        {
+          "q": "True or false: testers found GPT-6.2 Astra and Sol produce MORE reasoning and output tokens than their predecessors.",
+          "a": "False — they produce noticeably fewer reasoning and output tokens"
+        },
+        {
+          "q": "In the Latent Space interview, roughly what did Jeff Barg estimate it would cost to run a classifier like TypeSafe's Jev against Clay's entire 40-million-company database?",
+          "a": "About $1,500"
+        },
+        {
+          "q": "What is the name of Clay's coding agent that was rebuilt from a simple tool-loop into a full coding agent running in a cloud sandbox?",
+          "a": "Sculptor"
+        },
+        {
+          "q": "According to Jeff Barg, roughly how much does a company typically need to spend on inference before post-training its own model starts to make sense?",
+          "choices": [
+            "$10K-$100K",
+            "$1M-$10M",
+            "$10M-$100M",
+            "$1B+"
+          ],
+          "a": "$10M-$100M"
+        },
+        {
+          "q": "What simple transform let one LLM use another model's internal representations in place of its own, per the \"Plato's Key\" post?",
+          "choices": [
+            "Full retraining",
+            "A rotation and a global scale fit in closed form",
+            "Knowledge distillation",
+            "Prompt engineering"
+          ],
+          "a": "A rotation and a global scale fit in closed form"
+        },
+        {
+          "q": "What hypothesis does \"Plato's Key\" test — the idea that separately trained neural networks converge toward a shared representation of reality?",
+          "a": "The Platonic Representation Hypothesis"
+        },
+        {
+          "q": "What two things is CoreWeave Forge designed to connect?",
+          "a": "Custom training loops and model serving"
+        },
+        {
+          "q": "The \"Your model is a dependency\" post argues an LLM should be managed like what kind of risk?",
+          "a": "A software dependency / supply-chain risk"
+        },
+        {
+          "q": "In the Towards Data Science benchmark, which two data tools' 2.0 releases were compared, with one test showing a 14x performance gap?",
+          "a": "DuckDB and Polars"
+        }
+      ]
+    },
+    "build": null
   }
 ]

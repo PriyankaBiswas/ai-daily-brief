@@ -462,8 +462,134 @@ details[open] > summary::before {
   </header>
 
   <section class="today">
-    <h2 class="day-heading">Thursday, November 26, 2026</h2>
-    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s email yet, so no recap today — tomorrow&#x27;s list isn&#x27;t affected either way. Today&#x27;s newsletter haul was thin (most of TLDR, TDS, and Import AI&#x27;s last few sends were already covered on Nov 23-25), but today&#x27;s fresh TLDR AI issue had enough for a full list.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+    <h2 class="day-heading">Friday, November 27, 2026</h2>
+    <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s email yet, so no recap today — today&#x27;s list length wasn&#x27;t affected either way. Thanksgiving slowed most newsletters down this week (no fresh Rundown, DeepLearning.AI, Import AI, or The New Stack issues in the window), so today leans on a fresh TLDR AI send plus Tuesday&#x27;s Towards Data Science and Latent Space issues, which hadn&#x27;t been tapped yet.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://thenewstack.io/astra-reasoning-effort-cost/" target="_blank" rel="noopener">OpenAI&#x27;s GPT-6.2 Astra and Sol face backlash over cost-driven cuts to reasoning</a>
+            <span class="badge badge-mono">4 min</span>
+          </div>
+          <div class="item-source">The New Stack / TLDR AI</div>
+          <p class="item-why">Both new flagship models are shipping with noticeably fewer reasoning and output tokens than their predecessors, and early testers are pushing back hard — a visible signal OpenAI is now trading answer quality for serving cost, not just racing on capability.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://lspace.beehiiv.com/podcast/s/latent_space_the_ai_engineer_podcast/how_clay_builds_gtm_agents_jeff_barg_head_of_ai?play=01a21990-d1c6-7a0c-b8e0-fa2c1f04b55c" target="_blank" rel="noopener">How Clay builds GTM agents — Jeff Barg, Head of AI</a>
+            <span class="badge badge-mono">10 min</span>
+          </div>
+          <div class="item-source">Latent Space</div>
+          <p class="item-why">A rare, granular look at running agents at real GTM scale: roughly $1,500 to score all 40 million companies in Clay&#x27;s database with a classifier, why their first tool-loop agent (Sculptor) got rebuilt into a full coding agent, and Jeff&#x27;s rule of thumb for when post-training your own model actually pays off ($10-100M in inference spend).</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://hazyresearch.stanford.edu/blog/2026-11-25-platos-key" target="_blank" rel="noopener">Plato&#x27;s Key: LLMs can borrow each other&#x27;s representations with just a rotation and a scale</a>
+            <span class="badge badge-mono">8 min</span>
+          </div>
+          <div class="item-source">Hazy Research (Stanford) / TLDR AI</div>
+          <p class="item-why">Direct test of the Platonic Representation Hypothesis — separately trained models converge on geometrically similar internal representations, and one LLM can use another&#x27;s representations in place of its own after only a simple closed-form rotation-and-scale transform, no gradient descent required.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://thenewstack.io/coreweave-forge-training-loops/" target="_blank" rel="noopener">CoreWeave Forge connects custom training loops to model serving</a>
+            <span class="badge badge-mono">5 min</span>
+          </div>
+          <div class="item-source">The New Stack / Towards Data Science</div>
+          <p class="item-why">Infra news for anyone training custom models: Forge targets the usually hand-glued gap between &quot;we trained a good checkpoint&quot; and &quot;it&#x27;s actually being served.&quot;</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.cesarsotovalero.net/blog/your-model-is-a-dependency.html" target="_blank" rel="noopener">Your model is a dependency</a>
+            <span class="badge badge-mono">16 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Argues the LLM you pick is a software dependency like any other — it can bloat, break, or quietly turn into a liability — and that the software supply-chain playbook (pinning, auditing, fallback plans) applies to model choice almost line for line.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://www.testingcatalog.com/anthropic-prepares-google-drive-file-browser-for-claude/" target="_blank" rel="noopener">Anthropic preps a Google Drive file browser inside Claude</a>
+            <span class="badge badge-mono">2 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">TLDR AI</div>
+          <p class="item-why">Small but concrete sign of where Projects is headed — browsing and searching Docs, Sheets, and Slides directly from Claude&#x27;s sidebar.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/duckdb-20-vs-polars-20-in-five-real-world-tests-and-one-14x-gap/" target="_blank" rel="noopener">DuckDB 2.0 vs Polars 2.0 in five real-world tests and one 14x gap</a>
+            <span class="badge badge-mono">8 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">A hands-on benchmark of the two most popular in-process data tools&#x27; 2.0 releases across five realistic workloads, with one test showing a 14x performance gap between them.</p>
+        </li>
+        <li class="item">
+          <div class="item-head">
+            <a class="item-title" href="https://towardsdatascience.com/a-second-llm-judge-hit-875-precision-but-left-21-of-33-for-humans/" target="_blank" rel="noopener">A second LLM judge hit 87.5% precision but still left 21 of 33 cases for humans</a>
+            <span class="badge badge-mono">6 min</span><span class="badge badge-skip">skip ok</span>
+          </div>
+          <div class="item-source">Towards Data Science</div>
+          <p class="item-why">Concrete numbers on where LLM-as-judge pipelines still fall short — useful if you&#x27;re building eval or moderation systems and deciding how much to automate versus route to a human.</p>
+        </li></ol><h3 class="section-label">Recall quiz</h3><ol class="quiz-list">
+        <li class="quiz-q">
+          <p class="quiz-question">Which outlet&#x27;s reporting framed OpenAI&#x27;s GPT-6.2 Astra and Sol launch around a shift toward cost control?</p>
+          <ul class="quiz-choices"><li>The New Stack</li><li>TechCrunch</li><li>Axios</li><li>Wired</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">True or false: testers found GPT-6.2 Astra and Sol produce MORE reasoning and output tokens than their predecessors.</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the Latent Space interview, roughly what did Jeff Barg estimate it would cost to run a classifier like TypeSafe&#x27;s Jev against Clay&#x27;s entire 40-million-company database?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What is the name of Clay&#x27;s coding agent that was rebuilt from a simple tool-loop into a full coding agent running in a cloud sandbox?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">According to Jeff Barg, roughly how much does a company typically need to spend on inference before post-training its own model starts to make sense?</p>
+          <ul class="quiz-choices"><li>$10K-$100K</li><li>$1M-$10M</li><li>$10M-$100M</li><li>$1B+</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What simple transform let one LLM use another model&#x27;s internal representations in place of its own, per the &quot;Plato&#x27;s Key&quot; post?</p>
+          <ul class="quiz-choices"><li>Full retraining</li><li>A rotation and a global scale fit in closed form</li><li>Knowledge distillation</li><li>Prompt engineering</li></ul>
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What hypothesis does &quot;Plato&#x27;s Key&quot; test — the idea that separately trained neural networks converge toward a shared representation of reality?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">What two things is CoreWeave Forge designed to connect?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">The &quot;Your model is a dependency&quot; post argues an LLM should be managed like what kind of risk?</p>
+          
+        </li>
+        <li class="quiz-q">
+          <p class="quiz-question">In the Towards Data Science benchmark, which two data tools&#x27; 2.0 releases were compared, with one test showing a 14x performance gap?</p>
+          
+        </li></ol>
+    <details class="answers">
+      <summary>🔒 Answers</summary>
+      <ol class="answer-list"><li><span class="quiz-q-num">1.</span> The New Stack</li><li><span class="quiz-q-num">2.</span> False — they produce noticeably fewer reasoning and output tokens</li><li><span class="quiz-q-num">3.</span> About $1,500</li><li><span class="quiz-q-num">4.</span> Sculptor</li><li><span class="quiz-q-num">5.</span> $10M-$100M</li><li><span class="quiz-q-num">6.</span> A rotation and a global scale fit in closed form</li><li><span class="quiz-q-num">7.</span> The Platonic Representation Hypothesis</li><li><span class="quiz-q-num">8.</span> Custom training loops and model serving</li><li><span class="quiz-q-num">9.</span> A software dependency / supply-chain risk</li><li><span class="quiz-q-num">10.</span> DuckDB and Polars</li></ol>
+    </details><h3 class="section-label">Build idea</h3><p class="build-pending">Build idea lands at 11:30am</p></div>
+  </section>
+
+  
+    <details class="archive-root">
+      <summary>Archive</summary>
+      <div class="archive-tree">
+        <details class="year-entry">
+          <summary>2026</summary>
+          
+            <details class="month-entry">
+              <summary>November</summary>
+              
+                <details class="week-entry">
+                  <summary>Week of Nov 23 – 29</summary>
+                  
+                    <details class="day-entry">
+                      <summary>Thu, Nov 26</summary>
+                      <div class="day-content"><p class="day-intro">No reply on yesterday&#x27;s email yet, so no recap today — tomorrow&#x27;s list isn&#x27;t affected either way. Today&#x27;s newsletter haul was thin (most of TLDR, TDS, and Import AI&#x27;s last few sends were already covered on Nov 23-25), but today&#x27;s fresh TLDR AI issue had enough for a full list.</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
         <li class="item">
           <div class="item-head">
             <a class="item-title" href="https://www.testingcatalog.com/testers-share-early-results-possible-claude-opus-5-6/" target="_blank" rel="noopener">Testers report early wins from Anthropic&#x27;s Claude Opus 5.6</a>
@@ -596,21 +722,7 @@ details[open] > summary::before {
           <ul class="tools-list"><li>Python</li><li>time.monotonic / time.perf_counter</li><li>openai or anthropic SDK (or requests)</li><li>Ollama, if you want a free local comparison point</li></ul>
         </div>
     </div></div>
-  </section>
-
-  
-    <details class="archive-root">
-      <summary>Archive</summary>
-      <div class="archive-tree">
-        <details class="year-entry">
-          <summary>2026</summary>
-          
-            <details class="month-entry">
-              <summary>November</summary>
-              
-                <details class="week-entry">
-                  <summary>Week of Nov 23 – 29</summary>
-                  
+                    </details>
                     <details class="day-entry">
                       <summary>Wed, Nov 25</summary>
                       <div class="day-content"><p class="day-intro">Newsletter coverage was thin overnight — mostly TLDR AI, since nothing new from Towards Data Science, Import AI, or Tech Brew survived dedup against the last few days. Today leans security and science: Amazon says attackers&#x27; AI agents found and exploited a zero-day with almost no human steering, and OpenAI claims GPT-6 models can design working proteins with reasoning and code alone — though the lab results are messier than that headline suggests. Also: a fresh refinement in the matrix-multiplication-exponent proof, research arguing agent swarms underperform well-rested solo agents, and three incremental ships (Cognition&#x27;s SWE-2.1, PrismML&#x27;s Ternary Bonsai 2.5, and Claude Artifacts as desktop apps).</p><h3 class="section-label">Reading list</h3><ol class="reading-list">
